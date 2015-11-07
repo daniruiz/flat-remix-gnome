@@ -14,7 +14,7 @@
    height="64"
    id="svg11252"
    version="1.1"
-   inkscape:version="0.91+devel r14080 custom"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="dash-placeholder.svg"
    viewBox="0 0 64 64">
   <metadata
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0.82745098"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1013"
+     inkscape:window-width="3840"
+     inkscape:window-height="2036"
      id="namedview17"
      showgrid="false"
-     inkscape:zoom="3.6875"
-     inkscape:cx="169.22034"
+     inkscape:zoom="28.78125"
+     inkscape:cx="32"
      inkscape:cy="32"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="64"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg11252"
      inkscape:snap-global="true"
@@ -171,22 +171,9 @@
        r="30"
        gradientTransform="matrix(1.0666667,-4.7733334e-8,4.7733334e-8,1.0666667,-2.1333339,39.200002)"
        gradientUnits="userSpaceOnUse" />
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4168"
-       x="-0.06"
-       width="1.12"
-       y="-0.06"
-       height="1.12">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.63691406"
-         id="feGaussianBlur4170" />
-    </filter>
   </defs>
-  <circle
-     style="opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:#585858;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4168)"
+  <ellipse
+     style="opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:#585858;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
      id="path4154"
      cx="32"
      cy="32"

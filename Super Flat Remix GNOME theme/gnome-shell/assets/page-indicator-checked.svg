@@ -13,8 +13,8 @@
    height="18"
    id="svg4703"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="page-indicator-active.svg">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="page-indicator-checked.svg">
   <defs
      id="defs4705" />
   <sodipodi:namedview
@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.197802"
-     inkscape:cx="2.1522887"
-     inkscape:cy="16.782904"
+     inkscape:zoom="88.791208"
+     inkscape:cx="9.6548122"
+     inkscape:cy="9.5999366"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="1021"
+     inkscape:window-width="3840"
+     inkscape:window-height="2036"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="64"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4708">
@@ -55,7 +55,7 @@
      transform="translate(0,2)">
     <path
        transform="matrix(0.72823872,0,0,0.8336417,-1512.2872,-525.55618)"
-       d="m 2099.9808,638.83099 c 0,5.29998 -4.9184,9.59645 -10.9854,9.59645 -6.0671,0 -10.9854,-4.29647 -10.9854,-9.59645 0,-5.29997 4.9183,-9.59645 10.9854,-9.59645 6.067,0 10.9854,4.29648 10.9854,9.59645 z"
+       d="m 2099.9808,638.83099 a 10.985409,9.5964489 0 0 1 -10.9854,9.59645 10.985409,9.5964489 0 0 1 -10.9854,-9.59645 10.985409,9.5964489 0 0 1 10.9854,-9.59645 10.985409,9.5964489 0 0 1 10.9854,9.59645 z"
        sodipodi:ry="9.5964489"
        sodipodi:rx="10.985409"
        sodipodi:cy="638.83099"
