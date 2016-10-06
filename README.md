@@ -8,6 +8,6 @@ Super Flat remix GNOME theme is a pretty simple shell theme, derived from [Paper
 ![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/1.jpg~original)
 ![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/3.jpg~original)
 
-This theme was designed to fit with the [Super Flat Remix icon theme](http://the-ilife.com/post/127).
+This theme was designed to fit with the [Super Flat Remix icon theme](https://github.com/daniruiz/Super-Flat-Remix).
 
 ![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/2.jpg~original)
