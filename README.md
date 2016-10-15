@@ -7,11 +7,8 @@ Flat remix GNOME theme is a pretty simple shell theme. Its design is mostly flat
 
 ![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/Flat_Remix_GnomeTheme.png~original)
 
-<<<<<<< HEAD
 It was designed specifically for gnome-shell 3.22 but it should work perfectly on any version after gnome-shell 3.16.
 
-=======
->>>>>>> 2ad50e8a707e8d436b9e99f1ac69abed978326df
 This theme was designed to fit with the [Flat Remix icon theme](https://github.com/daniruiz/Super-Flat-Remix).
 
 ![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/screenshot3.jpg~original)
@@ -22,15 +19,15 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
 If you want to install it manually:
 
      Download and uncompress the zip file.
-     Move "Flat Remix" folder to ".icons" in your home directory.
+     Move "Flat Remix" folder to ".themes" in your home directory.
      Select "Flat Remix" as icon theme in your tweak tools application.
 
 If you prefer to use the terminal:
 
      cd /tmp
-     git clone https://github.com/daniruiz/Flat-Remix
-     mkdir -p ~/.icons
-     mv "Flat-Remix/Flat Remix" ~/.icons
+     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme
+     mkdir -p ~/.themes
+     mv "Flat-Remix-GNOME-theme/Flat Remix" ~/.themes
 
 ##Donate
 
