@@ -20,7 +20,7 @@ If you want to install it manually:
 
      Download and uncompress the zip file.
      Move "Flat Remix" folder to ".themes" in your home directory.
-     Select "Flat Remix" as icon theme in your tweak tools application.
+     Select "Flat Remix" as shell theme in your tweak tools application.
 
 If you prefer to use the terminal:
 
