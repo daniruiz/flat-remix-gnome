@@ -11,7 +11,7 @@ It was designed specifically for gnome-shell 3.22 but it should work perfectly o
 
 This theme was designed to fit with the [Flat Remix icon theme](https://github.com/daniruiz/Super-Flat-Remix).
 
-![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/screenshot3.jpg~original)
+![alt tag](hhttp://i1123.photobucket.com/albums/l553/mikelon1/drawing_2.png~original)
 
 
 ##Installation
