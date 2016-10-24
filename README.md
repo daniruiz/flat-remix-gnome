@@ -1,11 +1,10 @@
-Flat Remix GNOME theme
-===========
+![alt tag](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Flat%20Remix/logo.png?raw=true)
 
 This theme is available for use under a Creative Commons ShareAlike license.
 
 Flat remix GNOME theme is a pretty simple shell theme. Its design is mostly flat with a subtle use of shadows, highlights and gradients for some depth.
 
-![alt tag](http://i1123.photobucket.com/albums/l553/mikelon1/Flat_Remix_GnomeTheme.png~original)
+![alt tag](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Flat%20Remix/preview.png?raw=true)
 
 It was designed specifically for gnome-shell 3.22 but it should work perfectly on any version after gnome-shell 3.16.
 
