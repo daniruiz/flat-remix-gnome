@@ -1,23 +1,4 @@
-/* Flat Remix theme
-*
-* This file is part of the Flat Remix theme.
-*
-* Layout and code style adapted from the Paper theme.
-*
-* This program is free software; you can redistribute it and/or modify it
-* under the terms and conditions of the GNU General Public License,
-* version 3, as published by the Free Software Foundation.
-*
-* This program is distributed in the hope it will be useful, but WITHOUT ANY
-* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-* FOR A PARTICULAR PURPOSE.	See the GNU Lesser General Public License for
-* more details.
-*/
 
-/*	#d41a1aff	rojo
-	#e15e5eff	rojo claro
-
-*/
 stage {
 	font-family: Source Sans Pro, Cantarell, Sans-Serif;
 	font-size: 11pt;
@@ -1213,7 +1194,7 @@ StScrollBar {
 .grid-search-result:active .overview-icon,
 .grid-search-result:checked .overview-icon {
 	background: black;
-	border: 0;
+	border: 1px;
 	box-shadow: inset 0 -2px 0 white;
 	border-radius: 0;
 }
