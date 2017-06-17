@@ -632,55 +632,60 @@ StScrollBar {
 .datemenu-calendar-column {
 	spacing: 0.5em; }
 
-.datemenu-displays-section {
-	padding-bottom: 3em; }
-
 .datemenu-today-button,
 .world-clocks-button,
-.message-list-section-title {
-	border-radius: 4px;
-	padding: .4em; }
+.weather-button,
+.events-section-title {
+    background: transparent;
+    padding: 15px;
+    border-radius: 0;
+    color: #5c616c;
+}
 
 .message-list-section-list:ltr {
-	padding-left: .4em; }
+    padding-left: .4em;}
 
 .message-list-section-list:rtl {
-	padding-right: .4em; }
+    padding-right: .4em;}
 
+.datemenu-today-button {
+    color: #5c616c;}
 .datemenu-today-button:hover, .datemenu-today-button:focus,
 .world-clocks-button:hover,
 .world-clocks-button:focus,
-.message-list-section-title:hover,
-.message-list-section-title:focus {
-	background-image: none;
-	background-gradient-direction: none;
-	box-shadow: none;
-	border: none;
-	background-color: rgba(92, 97, 108, 0.02); }
+.weather-button:hover,
+.weather-button:focus,
+.events-section-title:hover,
+.events-section-title:focus {
+    background: rgba(92, 97, 108, 0.02);
+    box-shadow: inset 0, -3px, 0 black;
+    padding: 15px;}
 .datemenu-today-button:active,
 .world-clocks-button:active,
-.message-list-section-title:active {
-	background-image: none;
-	background-gradient-direction: none;
-	box-shadow: none;
-	border: none;
-	background-color: transparent; }
+.weather-button:active,
+.events-section-title:active {
+    background-color: transparent;
+    border-color: transparent; }
 
 .datemenu-today-button .date-label {
-	font-size: 1.5em; }
+    font-size: 1.5em; }
 
 .world-clocks-header,
-.message-list-section-title {
-	color: #5c616c;
-	font-weight: bold; }
+.weather-header,
+.events-section-title {
+    color: #5c616c;
+    font-weight: bold; }
 
 .world-clocks-grid {
-	spacing-rows: 0.4em; }
+    spacing-rows: 0.4em; }
+
+.weather-box {
+    spacing: 0.4em; }
 
 .calendar-month-label {
-	color: #5c616c;
-	font-weight: bold;
-	padding: 8px 0; }
+    color: #5c616c;
+    font-weight: bold;
+    padding: 8px 0; }
 
 /* Calendar page buttons */
 .pager-button {
@@ -1337,7 +1342,7 @@ StScrollBar {
 		padding: 5px; }
 	.notification-banner .notification-content {
 		padding: 5px;
-		spacing: 5px; }a
+		spacing: 5px; }
 	.notification-banner .secondary-icon {
 		icon-size: 1.09em; }
 	.notification-banner .notification-actions {
