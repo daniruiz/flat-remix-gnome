@@ -94,7 +94,7 @@ StScrollBar StBin#trough {
     background-color: transparent; }
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
     border-radius: 8px;
-    background: rgba(92, 97, 108, 0.5);
+    background: white;
     width: 10px;
     margin: 3px; }
 StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
@@ -623,6 +623,8 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
     margin: 0 1.5em; }
 
 .datemenu-calendar-column {
+    border-left: 1px solid;
+    border-color: #dbdee0;
     spacing: 0.5em; }
 
 .datemenu-today-button,
@@ -634,7 +636,6 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
     border-radius: 0;
     color: #5c616c;
 }
-
 
 .datemenu-today-button {
     color: #5c616c;}
@@ -770,6 +771,14 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
     spacing: 0.7em;}
 .message-list-section-list:ltr {
     padding-left: .4em; }
+.message-list StScrollBar StButton#vhandle, .message-list StScrollBar StButton#hhandle {
+    border-radius: 8px;
+    background: rgba(92, 97, 108, 0.1);
+    width: 10px;
+    margin: 3px; }
+.message-list StScrollBar StButton#vhandle:hover, .message-list StScrollBar StButton#hhandle:hover, .message-list StScrollBar StButton#vhandle:active, .message-list StScrollBar StButton#hhandle:active {
+    box-shadow: none;
+    background-color: #367bf0; }
 
 .message-list-clear-button.button {
     color: #5c616c;
