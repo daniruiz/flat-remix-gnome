@@ -839,10 +839,15 @@ StScrollBar {
 	icon-size: 16px; }
 
 .message-title {
-	font-weight: bold; }
-
+    color: inherit;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 2px 0 2px 0;}
+    
 .message-content {
-	padding: 8px; }
+    color: inherit;
+    padding: 8px;
+    font-size: 1em;}
 
 .messages-indicator-highlight {
 	-gradient-height: 0px;
