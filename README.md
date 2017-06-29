@@ -27,10 +27,10 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
 #### Terminal installation
 
 ```
-     cd /tmp;
-     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme;
-     mkdir -p ~/.themes;
-     mv "Flat-Remix-GNOME-theme/Flat Remix" ~/.themes;
+     rm -rf /tmp/Flat-Remix-GNOME-theme/ && cd /tmp &&
+     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme &&
+     mkdir -p ~/.themes && cp -r "/tmp/Flat-Remix-GNOME-theme/Flat Remix" ~/.themes &&
+     gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
 ```
 
 ###### Ach based distributions
