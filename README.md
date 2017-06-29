@@ -45,6 +45,7 @@ You know... working with coffee is always better  *:)*
 
 
 <br/>
+
 # Screenshots
 
 ![Screenshot 1](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/1.png?raw=true)
