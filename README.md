@@ -1,33 +1,42 @@
 ![alt tag](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Flat%20Remix/logo.png?raw=true)
 
+###### Flat-Remix is licensed under the GNU General Public License v3.0
+<hr>
+<br>
 This theme is available for use under a Creative Commons ShareAlike license.
 
-Flat remix GNOME theme is a pretty simple shell theme. Its design is mostly flat with a subtle use of shadows, highlights and gradients for some depth.
+Flat Remix GNOME theme is a pretty simple shell theme inspired on material design. It was designed specifically for gnome-shell 3.24 but it should work perfectly on any version after gnome-shell 3.16.
 
-![alt tag](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Flat%20Remix/preview.png?raw=true)
+![Flat Remix Gnome shell theme](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Flat%20Remix/preview.png?raw=true)
 
-It was designed specifically for gnome-shell 3.22 but it should work perfectly on any version after gnome-shell 3.16.
-
+<br>
 This theme was designed to fit with the [Flat Remix icon theme](https://github.com/daniruiz/Super-Flat-Remix).
 
-![alt tag](https://raw.githubusercontent.com/daniruiz/Flat-Remix/master/Flat%20Remix/preview.png)
+![Flat Remix icon theme](https://raw.githubusercontent.com/daniruiz/Flat-Remix/master/Flat%20Remix/preview.png)
+
+# Installation
+
+#### Manual installation
+
+1. Download and uncompress the zip file.
+1. Move "Flat Remix" folder to ".themes" in your home directory.
+1. Select "Flat Remix" as shell theme in gnome-tweak-tool.
+
+#### Terminal installation
+
+```
+     cd /tmp;
+     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme;
+     mkdir -p ~/.themes;
+     mv "Flat-Remix-GNOME-theme/Flat Remix" ~/.themes;
+```
+
+###### Ach based distributions
+ [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
 
 
-## Installation
 
-If you want to install it manually:
-
-     Download and uncompress the zip file.
-     Move "Flat Remix" folder to ".themes" in your home directory.
-     Select "Flat Remix" as shell theme in your tweak tools application.
-
-If you prefer to use the terminal:
-
-     cd /tmp
-     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme
-     mkdir -p ~/.themes
-     mv "Flat-Remix-GNOME-theme/Flat Remix" ~/.themes
-
-## Donate
+# Donate
 
 You can also support the development of Flat Remix by [donating](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7LEWLS78EAJGJ).
+You know... working with coffee is always better  *:)*
