@@ -41,6 +41,7 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
 # Donate
 
 You can also support the development of Flat Remix by [donating](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7LEWLS78EAJGJ).
+
 You know... working with coffee is always better  *:)*
 
 
