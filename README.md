@@ -1,6 +1,6 @@
 ![alt tag](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/logo.png?raw=true)
 
-###### Flat-Remix is licensed under the GNU General Public License v3.0
+###### Flat-Remix is licensed under the Creative Commons Attribution Share Alike 4.0
 <hr>
 <br>
 
