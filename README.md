@@ -33,9 +33,9 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
      gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
 ```
 
-###### Ach based distributions
- [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
-
+##### Ach based distributions
++ [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
++ Or you can download the official [`PKGBUILD`](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/PKGBUILD)
 
 
 # Donate
