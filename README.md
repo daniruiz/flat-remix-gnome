@@ -33,6 +33,14 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
      gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
 ```
 
+#### Ubuntu based distributions:
+
+```
+     sudo add-apt-repository ppa:noobslab/themes
+     sudo apt-get update
+     sudo apt-get install flat-remix-gs-theme
+```
+
 ##### Ach based distributions
 + [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
 
