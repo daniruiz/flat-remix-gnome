@@ -41,7 +41,7 @@ This theme was designed to fit with the [Flat Remix icon theme](https://github.c
      sudo apt-get install flat-remix-gs-theme
 ```
 
-##### Acrh based distributions
+##### Arch based distributions
 + [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
 
 
