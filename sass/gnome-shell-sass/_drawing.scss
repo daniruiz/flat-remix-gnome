@@ -25,7 +25,7 @@
 
 // entries
 
-@mixin entry($t, $fc:$selected_bg_color, $edge: $borders_edge) {
+@mixin entry($t, $fc:$color1, $edge: $borders_edge) {
 //
 // Entries drawing function
 //
@@ -40,14 +40,14 @@
   $_inner_shadows: inset 0 2px 4px transparentize(black, 0.6);
 
   @if $t==normal {
-    background-color: $base_color;
+    background-color: rgba($secondary_color, .5);
     border-color: $borders_color;
     @include _shadows($_inner_shadows);
 
   }
   @if $t==focus {
     @include _shadows($_inner_shadows);
-    border-color: if($fc==$selected_bg_color,
+    border-color: if($fc==$color1,
                      $selected_borders_color,
                      darken($fc,35%));
   }
@@ -156,7 +156,7 @@
     color: $osd_fg_color;
     text-shadow: 0 1px black;
     icon-shadow: 0 1px black;
-    box-shadow: inset 0px 0px 0px 1px $selected_bg_color;
+    box-shadow: inset 0px 0px 0px 1px $color1;
   }
 
   @else if $t==hover {

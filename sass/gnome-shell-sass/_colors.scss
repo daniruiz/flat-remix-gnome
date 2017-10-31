@@ -1,17 +1,7 @@
-Mis nuevos colores {
-color: #5c616c;
-color: #9fb0b9;
-color: white;
-color: black;
-color: #367bf0;
-color: #fd7e00;
-color: #d41a1a;
-color: #1ba389;
-}
-
 
 $primary_color: white;
 $secondary_color: black;
+
 
 $bg_color: white;
 $highlight_color: #9fb0b9;
@@ -25,13 +15,26 @@ $color2: #1ba389;
 $warning_color: #fd7e00;
 $error_color: #d41a1a;
 
+/*
+  $primary_color: black;
+  $secondary_color: white;
+
+  $bg_color: black;
+  $highlight_color: #9fb0b9;
+  $font_color: white;
+  $dark_font_color: darken($font_color, 30%);
+  $light_font_color: lighten($font_color, 30%);
+  $panel_font_color: white;
+  $panel_background_color: rgba(black, 0.2);
+  $color1: magenta;
+  $color2: blue;
+  $warning_color: #fd7e00;
+  $error_color: #d41a1a;
+*/
 
 
 
 
-$base_color: rgba(black,.05);
-$success_color: if($variant =='light', #73d216, darken(#73d216,10%));
-$destructive_color: if($variant =='light', #ef2929, darken(#ef2929,10%));
 
 
 
@@ -42,15 +45,14 @@ $destructive_color: if($variant =='light', #ef2929, darken(#ef2929,10%));
 $fg_color: #eeeeec;
 
 $selected_fg_color: #ffffff;
-$selected_bg_color: if($variant == 'light', #4a90d9, darken(#4a90d9,20%));
-$selected_borders_color: if($variant=='light', darken($selected_bg_color, 30%),
-                                               darken($selected_bg_color, 20%));
+$selected_borders_color: if($variant=='light', darken($color1, 30%),
+                                               darken($color1, 20%));
 $borders_color: if($variant =='light', darken($bg_color,30%), darken($bg_color,12%));
 $borders_edge: if($variant =='light', white, transparentize($fg_color, 0.9));
-$link_color: if($variant == 'light', darken($selected_bg_color,10%),
-                                     lighten($selected_bg_color,20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color,20%),
-                                     lighten($selected_bg_color,10%));
+$link_color: if($variant == 'light', darken($color1,10%),
+                                     lighten($color1,20%));
+$link_visited_color: if($variant == 'light', darken($color1,20%),
+                                     lighten($color1,10%));
 $top_hilight: $borders_edge;
 
 
@@ -63,11 +65,9 @@ $tooltip_borders_color: $osd_outer_borders_color;
 
 //insensitive state derived colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 50%);
-$insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_borders_color: $borders_color;
 
 //colors for the backdrop state, derived from the main colors.
-$backdrop_base_color: if($variant =='light', darken($base_color,1%), lighten($base_color,1%));
 $backdrop_bg_color: $bg_color;
 $backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 80%);
 $backdrop_insensitive_color: if($variant =='light', darken($backdrop_bg_color,15%), lighten($backdrop_bg_color,15%));
