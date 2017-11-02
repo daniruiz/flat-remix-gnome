@@ -480,11 +480,63 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
 
 
 /* OSD */
-
+.osd-window {
+    text-align: center;
+    font-weight: bold;
+    spacing: 1em;
+    padding: 20px;
+    margin: 32px;
+    min-width: 64px;
+    min-height: 64px;}
+.osd-window .osd-monitor-label {
+    font-size: 3em; }
+.osd-window .level {
+    height: 0.6em;
+    border-radius: 0.3em;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black; }
+.osd-window .level-bar {
+    background-color: black; }
 
 
 /* App Switcher */
+.switcher-popup {
+    padding: 8px;
+    spacing: 16px;
+}
 
+.switcher-list-item-container {
+    spacing: 8px; }
+
+.switcher-list .item-box {
+    font-weight: bold;
+    color: #666;
+    padding: 8px;
+    border-radius: 4px; }
+
+.switcher-list .item-box:outlined {
+    padding: 6px;
+    border: 2px solid rgba(0,0,0,0.1); }
+
+.switcher-list .item-box:selected {
+    background-color: rgba(92, 97, 108, 0.02);
+    box-shadow: inset 0 -3px 0 black;
+    color: black;
+}
+
+.switcher-list .thumbnail-box {
+    padding: 2px;
+    spacing: 4px; }
+
+.switcher-list .thumbnail { width: 256px; }
+
+.switcher-arrow { border-color: transparent; }
+
+.input-source-switcher-symbol {
+    font-size: 34pt;
+    width: 96px;
+    height: 96px;
+}
 
 /* Workspace Switcher */
 .ws-switcher-active-up, .ws-switcher-active-down {
@@ -495,6 +547,16 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
 
 .ws-switcher-box {
     background-color: rgba(159, 176, 185, 0.1);
+}
+
+.osd-window, .resize-popup, .switcher-list, .workspace-switcher-container {
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    color: black;
+    border-radius: 5px;
+    padding: 7px;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
+    border: none;
 }
 
 /* Tiled window previews */
@@ -512,7 +574,7 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
     color: white;
     height: 24px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     text-shadow: 0 0 4px rgba(0,0,0,.5);
 }
 #panel #panelLeft, #panel #panelCenter { spacing: 0; }
@@ -725,10 +787,10 @@ StScrollBar StButton#vhandle:hover, StScrollBar StButton#hhandle:hover, StScroll
     border: 2px solid transparent;
     box-shadow: 0 2px 2px 2px rgba(0,0,0,.1); }
 .message-list-clear-button.button:hover {
-    color: black; 
+    color: black;
     border-color: black; }
 .message-list-clear-button.button:active {
-    color: black; 
+    color: black;
     border-color: transparent; }
 .message-list-section-title-box {
     spacing: 0.4em; }

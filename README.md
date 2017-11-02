@@ -59,7 +59,7 @@ You know... working with coffee is always better  :wink:
 # Screenshots
 
 ![Screenshot 1](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/1.png?raw=true)
-![Screenshot 1](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/dark1.png?raw=true)
+![Screenshot dark1](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/dark1.png?raw=true)
 ![Screenshot 2](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/2.png?raw=true)
 ![Screenshot 3](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/3.png?raw=true)
 ![Screenshot 4](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/4.png?raw=true)
