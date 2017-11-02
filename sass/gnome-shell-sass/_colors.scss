@@ -9,28 +9,30 @@ $font_color: #5c616c;
 $dark_font_color: darken($font_color, 30%);
 $light_font_color: lighten($font_color, 30%);
 $panel_font_color: white;
-$panel_background_color: rgba(black, 0.2);
+$panel_background_color: rgba(0,0,0, .2 );
 $color1: #367bf0;
 $color2: #1ba389;
 $warning_color: #fd7e00;
 $error_color: #d41a1a;
 
+
 /*
-  $primary_color: black;
+  $primary_color: #111;
   $secondary_color: white;
 
-  $bg_color: black;
-  $highlight_color: #9fb0b9;
+  $bg_color: #111;
+  $highlight_color: lighten(#9fb0b9, 90%);
   $font_color: white;
-  $dark_font_color: darken($font_color, 30%);
+  $dark_font_color: white;
   $light_font_color: lighten($font_color, 30%);
   $panel_font_color: white;
-  $panel_background_color: rgba(black, 0.2);
-  $color1: magenta;
-  $color2: blue;
+  //$panel_background_color: rgba(0,0,0, .4);
+  //$color1: #ba174e;
+  //$color2: blue;
   $warning_color: #fd7e00;
   $error_color: #d41a1a;
 */
+
 
 
 
