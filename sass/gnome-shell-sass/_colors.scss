@@ -16,22 +16,41 @@ $warning_color: #fd7e00;
 $error_color: #d41a1a;
 
 
+// Dark
 /*
-  $primary_color: #111;
-  $secondary_color: white;
-
-  $bg_color: #111;
-  $highlight_color: lighten(#9fb0b9, 90%);
-  $font_color: white;
-  $dark_font_color: white;
-  $light_font_color: lighten($font_color, 30%);
-  $panel_font_color: white;
-  //$panel_background_color: rgba(0,0,0, .4);
-  //$color1: #ba174e;
-  //$color2: blue;
-  $warning_color: #fd7e00;
-  $error_color: #d41a1a;
+$primary_color: #111;
+$secondary_color: white;
+$bg_color: #111;
+$highlight_color: lighten(#9fb0b9, 90%);
+$font_color: white;
+$dark_font_color: white;
+$light_font_color: lighten($font_color, 30%);
+$panel_font_color: white;
+$panel_background_color: rgba(0,0,0, .2);
+$color1: #367bf0;
+$color2: #1ba389;
+$warning_color: #fd7e00;
+$error_color: #d41a1a;
 */
+
+
+// Miami
+
+$primary_color: #120E29;
+$secondary_color: white;
+
+$bg_color: #120E29;
+$highlight_color: lighten(#9fb0b9, 90%);
+$font_color: white;
+$dark_font_color: white;
+$light_font_color: rgba(255,255,255, .7);
+$panel_font_color: white;
+$panel_background_color: rgba(0,0,0, .4);
+$color1: #FC17AF;
+$color2: #5AEED8;
+$warning_color: #fd7e00;
+$error_color: #d41a1a;
+
 
 
 

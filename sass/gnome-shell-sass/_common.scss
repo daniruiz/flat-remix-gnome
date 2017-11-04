@@ -15,14 +15,23 @@ stage {
 
 /* Buttons */
 .button {
-  border-radius: 3px;
-  border-width: 1px;
+  border-radius: 2px;
+  border: none;
+  margin-top: 0.5em;
   padding: 4px 32px;
-  @include button(normal);
-  &:focus { @include button(focus); }
-  &:insensitive { @include button(insensitive); }
-  &:active { @include button(active); }
-
+  color: $dark_font_color;
+  font-weight: bold;
+  background-color: $primary_color;
+  background-gradient-direction: none;
+  background-gradient-start: none;
+  background-gradient-end: none;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+  &:hover, &:focus, &:active, &:active {
+    color: $light_font_color;
+    background-color: rgba($primary_color, 0.3);
+  }
 }
 
 .modal-dialog-linked-button {
@@ -699,7 +708,7 @@ StScrollBar {
     background-color: rgba($bg_color,0.8);
     border: none;
     color: black;
-    border-radius: 0px;
+    border-radius: 3px;
     padding: 7px;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
     border: none;
@@ -708,18 +717,18 @@ StScrollBar {
   .workspace-switcher {
     background: transparent;
     border: none;
-    border-radius: 0px;
+    border-radius: 3px;
     padding: 0px;
     spacing: 0px;
   }
 
   .ws-switcher-active-up, .ws-switcher-active-down {
     height: 30px;
-    background-color: transparent;
-    border: 5px solid $highlight_color;
+    background-color: $color1;
+    border: none;
     //background-image: url("resource:///org/gnome/shell/theme/ws-switch-arrow-up.png");
     background-size: 32px;
-    border-radius: 0px;
+    border-radius: 3px;
   }
 
   .ws-switcher-box {
@@ -940,7 +949,7 @@ StScrollBar {
       background-color: transparent;
       width: 32px;
       border-radius: 32px;
-      &:hover, &:focus { background-color: rgba($highlight_color, .05) }
+      &:hover, &:focus { background-color: rgba($highlight_color, .1) }
       &:active { 
         background-color: white;
         border-radius: 0px;
@@ -966,7 +975,7 @@ StScrollBar {
       margin: 2px;
       border-radius: 1.4em;
       border: none;
-      &:hover,&:focus { background-color: rgba($highlight_color, .05) }
+      &:hover,&:focus { background-color: rgba($highlight_color, .1) }
       &:active,&:selected {
         color: $font_color;
         background-color: transparent;
@@ -989,13 +998,14 @@ StScrollBar {
       .calendar-nonwork-day {
         color: rgba($font_color, .5);
       }
-      .calendar-today, .calendar-today:hover {
+      .calendar-today, .calendar-today:hover, .calendar-today:active, .calendar-today:focus {
         background-image: none;
-        text-shadow:none;
+        text-shadow: none;
         font-weight: bold;
-        background-color: $color2;
-        color: white;
+        background-color: $color2!important;
+        color: white!important;
       }
+
       .calendar-day-with-events, .calendar-day-with-events:hover {
         color: $font_color;
         box-shadow: inset 0 0 0 2px $secondary_color;
@@ -1020,12 +1030,21 @@ StScrollBar {
       .message-list {
          width: 420px;
       }
-
-        .message-list-clear-button.button {
-          background-color: transparent;
-          &:hover,&:focus { background-color: lighten($bg_color,5%); }
-          margin: 1.5em 1.5em 0;
+      .message-list-clear-button.button {
+        color: $font_color;
+        font-weight: bold;
+        background: $bg_color;
+        border: 2px solid transparent;
+        box-shadow: 0 2px 2px 2px rgba(0,0,0,.1);
+        &:hover {
+          color: $dark_font_color;
+          border-color: $secondary_color;
         }
+        &:active {
+          color: $dark_font_color;
+          border-color: transparent;
+        }
+      }
 
         .message-list-sections {
           spacing: 1.5em;
@@ -1213,7 +1232,7 @@ StScrollBar {
 /* OVERVIEW */
 
 #overview {
-  spacing: 24px; //
+  spacing: 24px;
 }
 
 .overview-controls {
@@ -1249,7 +1268,7 @@ StScrollBar {
     width: 320px;
     border: none;
     color: rgba(255,255,255,0.7);
-    caret-color: rgba(255,255,255,0.7);
+    caret-color: black;
     caret-size: 1px;
     background-color: rgba(255,255,255,0.1);
     background-gradient-direction: none;
