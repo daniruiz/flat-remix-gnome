@@ -18,13 +18,13 @@ $error_color: #d41a1a;
 
 // Dark
 /*
-$primary_color: #111;
+$primary_color: #050505;
 $secondary_color: white;
-$bg_color: #111;
+$bg_color: #050505;
 $highlight_color: lighten(#9fb0b9, 90%);
 $font_color: white;
 $dark_font_color: white;
-$light_font_color: lighten($font_color, 30%);
+$light_font_color: darken($font_color, 20%);
 $panel_font_color: white;
 $panel_background_color: rgba(0,0,0, .2);
 $color1: #367bf0;
@@ -35,7 +35,7 @@ $error_color: #d41a1a;
 
 
 // Miami
-
+/*
 $primary_color: #120E29;
 $secondary_color: white;
 
@@ -45,15 +45,12 @@ $font_color: white;
 $dark_font_color: white;
 $light_font_color: rgba(255,255,255, .7);
 $panel_font_color: white;
-$panel_background_color: rgba(0,0,0, .4);
+$panel_background_color: rgba(0,0,0, .2);
 $color1: #FC17AF;
 $color2: #5AEED8;
 $warning_color: #fd7e00;
 $error_color: #d41a1a;
-
-
-
-
+*/
 
 
 

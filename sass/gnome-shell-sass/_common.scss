@@ -124,24 +124,24 @@ StScrollBar {
   StBin {
     width: 24px;
     height: 22px;
-    background-image: url("resource:///org/gnome/shell/theme/checkbox-off.svg");
+    background-image: url("assets/checkbox-off.svg");
   }
-  &:focus StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox-off-focused.svg"); }
-  &:checked StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox.svg"); }
-  &:focus:checked StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox-focused.svg"); }
+  &:focus StBin { background-image: url("assets/checkbox-off-focused.svg"); }
+  &:checked StBin { background-image: url("assets/checkbox.svg"); }
+  &:focus:checked StBin { background-image: rl("assets/checkbox-focused.svg"); }
 }
 
 /* Switches */
 .toggle-switch {
-  width: 65px;
-  height: 22px;
+  width: 72px;
+  height: 21px;
   background-size: contain;
 }
 
   @each $v in us, intl {
     .toggle-switch-#{$v} {
-      background-image: url("resource:///org/gnome/shell/theme/toggle-off-#{$v}.svg");
-      &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-#{$v}.svg"); }
+      background-image: url("assets/toggle-off.svg");
+      &:checked { background-image: url("assets/toggle-on.svg"); }
     }
   }
 
@@ -1033,7 +1033,7 @@ StScrollBar {
       .message-list-clear-button.button {
         color: $font_color;
         font-weight: bold;
-        background: $bg_color;
+        background: lighten($bg_color, 3%);
         border: 2px solid transparent;
         box-shadow: 0 2px 2px 2px rgba(0,0,0,.1);
         &:hover {
@@ -1056,23 +1056,36 @@ StScrollBar {
         }
 
         .message {
-          &:hover,&:focus { background-color: lighten($bg_color,5%); }
-          border-radius: 3px;
+          background-color: rgba($highlight_color, .03);
+          margin: 4px;
+          border-radius: 2px;
+          &:hover,&:focus {
+            background-color: $bg_color;
+            box-shadow: 0 2px 2px 2px rgba(darken($bg_color, 30%), .3);
+            margin-bottom: 6px;
+            margin-top: 2px;
+            border-radius: 3px;
+            transition-duration: 200ms;
+          }
+          &:active {
+            background-color: rgba($highlight_color, .03);
+            box-shadow: none;
+          }
         }
 
           .message-icon-bin {
-            padding: 0.68em 0.2em 0.68em 0.68em;
-            &:rtl { padding: 0.68em 0.68em 0.68em 0.2em; }
+            padding: 8px 0px 8px 8px;;
+            &:rtl { padding: 8px 8px 8px 0px; }
           }
 
           .message-icon-bin > StIcon {
-            color: darken($fg_color,20%);
-            icon-size: 1.09em;
+            color: $font_color;
+            icon-size: 48px;
             -st-icon-style: symbolic;
           }
 
           .message-secondary-bin {
-            padding: 0 0.82em;;
+            color: $font_color;
           }
 
           .message-secondary-bin > .event-time {
@@ -1084,26 +1097,30 @@ StScrollBar {
           }
 
           .message-secondary-bin > StIcon {
-            icon-size: 1.09em;
+            icon-size: 16px;
           }
 
           .message-title {
-            color: darken($fg_color,5%);
+            color: $dark_font_color;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 2px 0 2px 0;
           }
 
           .message-content {
-            color: darken($fg_color,20%);
-            padding: 10px;
+            color: $font_color;
+            padding: 8px;
+            font-size: 1em;
           }
 
           .message-media-control {
             padding: 12px;
-            color: darken($fg_color, 20%);
+            color: $font_color;
 
             &:last-child:ltr { padding-right: 18px; }
             &:last-child:rtl { padding-left: 18px; }
-            &:hover { color: $fg_color; }
-            &:insensitive { color: darken($fg_color,40%); }
+            &:hover { color: $dark_font_color; }
+            &:insensitive { color: $light_font_color; }
           }
 
           .media-message-cover-icon {
@@ -1325,7 +1342,7 @@ StScrollBar {
     border: 1px solid transparent;
 
     .placeholder {
-      background-image: url("assets/dash-placeholder.svg");
+      background-image: none;
       background-size: contain;
       height: 64px;
       border-color: transparent;
@@ -1350,8 +1367,9 @@ StScrollBar {
   .dash-label { //osd tooltip
     border-radius: 7px;
     padding: 4px 12px;
-    color: $primary_color;
-    background-color: rgba(39, 47, 50, 0.7);;
+    color: $dark_font_color;
+    background-color: $primary_color;
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,.1);
     text-align: center;
     -x-offset: 8px;
   }
@@ -1489,23 +1507,26 @@ StScrollBar {
 
   // Workspace pager
   .workspace-thumbnails { //container ala dash
-    @extend %overview-panel;
+    color: $light_font_color;
+    background-color: $panel_background_color;
+    border: none;
     visible-width: 32px; //amount visible before hover
     spacing: 11px;
     padding: 8px;
-    border-radius: 9px 0 0 9px;
+    border-radius: 6px 0 0 6px;
     //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: 0 9px 9px 0;}
+    &:rtl { border-radius: 0 6px 6px 0;}
 
     .placeholder {
-      background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+      background-image: none;
       background-size: contain;
       height: 24px;
     }
   }
   .workspace-thumbnail-indicator {
-    border: 4px solid $color1;
-    padding: 1px;
+    border: 5px solid white;
+    border-radius: 2px;
+    padding: 0;
   }
 
   //Some hacks I don't even
@@ -1515,12 +1536,6 @@ StScrollBar {
     // horizontal padding to make sure scrollbars or dash don't overlap content
     padding: 0px 88px 10px 88px;
   }
-
-%overview-panel {
-  color: $_bubble_fg_color;
-  background-color: $_bubble_bg_color;
-  border: 1px solid $_bubble_borders_color;
-}
 
 %status_text {
   font-size: 2em;
