@@ -6,8 +6,6 @@
 
 Flat Remix GNOME theme is a pretty simple shell theme inspired on material design. It has been designed specifically for gnome-shell 3.26 but it should work perfectly on any version after gnome-shell 3.16.
 
-![Flat Remix Gnome shell theme perview](https://github.com/daniruiz/Flat-Remix-GNOME-theme/blob/master/Images/preview.png?raw=true)
-
 <br/>
 
 # Screenshots
@@ -15,12 +13,6 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 ![Screenshot light](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1.png)
 ![Screenshot dark](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1dark.png)
 ![Screenshot dark miami](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1dark-miami.png)
-
-This theme fits with [Flat Remix icon theme](https://github.com/daniruiz/Flat-Remix/).
-
-<br/>
-
-![Flat Remix icon theme perview](https://raw.githubusercontent.com/daniruiz/Flat-Remix/master/preview.png)
 
 # Installation
 
@@ -49,6 +41,17 @@ This theme fits with [Flat Remix icon theme](https://github.com/daniruiz/Flat-Re
 
 ##### Arch based distributions
 + [`gnome-shell-theme-super-flat-remix-git`](https://aur.archlinux.org/packages/gnome-shell-theme-super-flat-remix-git/) (AUR)
+
+<br/>
+
+# Flat Remix Icon theme
+[Flat Remix icon theme](https://github.com/daniruiz/Flat-Remix/).
+
+<br/>
+
+![Flat Remix icon theme perview](https://raw.githubusercontent.com/daniruiz/Flat-Remix/master/preview.png)
+
+
 
 # Donate
 
