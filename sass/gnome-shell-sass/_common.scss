@@ -190,7 +190,6 @@ StScrollBar {
     color: $dark_font_color;
     padding-bottom: .4em;
   }
-
 }
 
   .mount-dialog-subject,
@@ -358,8 +357,8 @@ StScrollBar {
   }
 
   .mount-dialog-app-list-item {
-    color: darken($fg_color,10%);
-    &:hover { color: $fg_color; }
+    color: $dark_font_color;
+    &:hover { color: $font_color; }
     &:ltr { padding-right: 1em; }
     &:rtl { padding-left: 1em; }
   }
@@ -552,8 +551,8 @@ StScrollBar {
   }
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
-    -boxpointer-gap: 4px;
-    margin-bottom: 1.75em;
+    -boxpointer-gap: 10px;
+    margin: 0 10px 10px 0;
   }
 }
 
@@ -643,7 +642,7 @@ StScrollBar {
 .osd-window,
 .resize-popup,
 .switcher-list {
-  background-color: rgba($bg_color,1);
+  background-color: $bg_color;
   border: none;
   color: $secondary_color;
   border-radius: 5px;
@@ -684,12 +683,12 @@ StScrollBar {
 
   .switcher-list .separator {
     width: 1px;
-    background: $borders_color;
+    background: $secondary_color;
   }
 
   .switcher-arrow {
+    border-color: $secondary_color;
     color: $secondary_color;
-    border-color: transparent;
   }
 
   .input-source-switcher-symbol {
@@ -946,14 +945,14 @@ StScrollBar {
 
     .pager-button {
       color: $font_color;
-      background-color: transparent;
+      background-color: lighten($bg_color, 3%);
       width: 32px;
       border-radius: 32px;
       &:hover, &:focus { background-color: rgba($highlight_color, .1) }
       &:active { 
-        background-color: white;
+        background-color: $bg_color;
         border-radius: 0px;
-        box-shadow: inset 0 -3px 0 solid black;
+        box-shadow: inset 0 -3px 0 solid $secondary_color;
       }
     }
 
@@ -1688,7 +1687,7 @@ StScrollBar {
 /* On-screen Keyboard */
 
 #keyboard {
-    background-color: transparentize($osd_bg_color, 0.3);
+    background-color: rgba(0,0,0,.3);
 }
 
   .keyboard-layout {
@@ -1705,8 +1704,9 @@ StScrollBar {
     font-size: 14pt;
     font-weight: bold;
     border-radius: 5px;
-    border: 1px solid $borders-color;
-    color: white;
+    background-color: $bg_color;
+    border: 1px solid $secondary_color;
+    color: $dark_font_color;
     &:focus { @include button(focus); }
     &:hover,&:checked { @include button(hover); }
     &:active { @include button(active);}

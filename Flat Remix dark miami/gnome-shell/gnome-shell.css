@@ -325,9 +325,9 @@ StScrollBar {
   padding-left: 32px; }
 
 .mount-dialog-app-list-item {
-  color: #d6d6d1; }
+  color: white; }
   .mount-dialog-app-list-item:hover {
-    color: #eeeeec; }
+    color: white; }
   .mount-dialog-app-list-item:ltr {
     padding-right: 1em; }
   .mount-dialog-app-list-item:rtl {
@@ -487,8 +487,8 @@ StScrollBar {
     .popup-menu .popup-inactive-menu-item:insensitive {
       color: rgba(255, 255, 255, 0.5); }
   .popup-menu.panel-menu {
-    -boxpointer-gap: 4px;
-    margin-bottom: 1.75em; }
+    -boxpointer-gap: 10px;
+    margin: 0 10px 10px 0; }
 
 .popup-menu-ornament {
   text-align: right;
@@ -564,7 +564,7 @@ StScrollBar {
 .osd-window,
 .resize-popup,
 .switcher-list {
-  background-color: #120e29;
+  background-color: #120E29;
   border: none;
   color: white;
   border-radius: 5px;
@@ -600,11 +600,11 @@ StScrollBar {
 
 .switcher-list .separator {
   width: 1px;
-  background: black; }
+  background: white; }
 
 .switcher-arrow {
-  color: white;
-  border-color: transparent; }
+  border-color: white;
+  color: white; }
 
 .input-source-switcher-symbol {
   font-size: 34pt;
@@ -816,15 +816,15 @@ StScrollBar {
 
 .pager-button {
   color: white;
-  background-color: transparent;
+  background-color: #171234;
   width: 32px;
   border-radius: 32px; }
   .pager-button:hover, .pager-button:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .pager-button:active {
-    background-color: white;
+    background-color: #120E29;
     border-radius: 0px;
-    box-shadow: inset 0 -3px 0 solid black; }
+    box-shadow: inset 0 -3px 0 solid white; }
 
 .calendar-change-month-back {
   background-image: url("assets/calendar-arrow-left.svg"); }
@@ -1541,7 +1541,7 @@ StScrollBar {
 
 /* On-screen Keyboard */
 #keyboard {
-  background-color: rgba(46, 52, 54, 0.7); }
+  background-color: rgba(0, 0, 0, 0.3); }
 
 .keyboard-layout {
   spacing: 10px;
@@ -1562,7 +1562,8 @@ StScrollBar {
   font-size: 14pt;
   font-weight: bold;
   border-radius: 5px;
-  border: 1px solid black;
+  background-color: #120E29;
+  border: 1px solid white;
   color: white; }
   .keyboard-key:focus {
     color: #eeeeec;

@@ -23,41 +23,7 @@
   @else { box-shadow: $shadow1; }
 }
 
-// entries
 
-@mixin entry($t, $fc:$color1, $edge: $borders_edge) {
-//
-// Entries drawing function
-//
-// $t: entry type
-// $fc: focus color
-// $edge: set to none to not draw the bottom edge or specify a color to not
-//        use the default one
-//
-// possible $t values:
-// normal, focus, insensitive
-//
-  $_inner_shadows: inset 0 2px 4px transparentize(black, 0.6);
-
-  @if $t==normal {
-    background-color: rgba($secondary_color, .5);
-    border-color: $borders_color;
-    @include _shadows($_inner_shadows);
-
-  }
-  @if $t==focus {
-    @include _shadows($_inner_shadows);
-    border-color: if($fc==$color1,
-                     $selected_borders_color,
-                     darken($fc,35%));
-  }
-  @if $t==hover { }
-  @if $t==insensitive {
-    color: $insensitive_fg_color;
-    border-color: $insensitive_bg_color;
-    box-shadow: none;
-  }
-}
 
 // buttons
 

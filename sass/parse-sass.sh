@@ -1,10 +1,8 @@
 #!/bin/sh
 
-srcdir=`dirname $0`
-stamp=${1}
-for scss in $srcdir/*.scss
+for scss in *.scss
 do
-  sassc -a $scss ${scss%%.scss}.css || exit 1
+  sassc -a $scss ${scss%%.scss}.css
 done
 
-[ "$stamp" ] && touch $stamp
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'

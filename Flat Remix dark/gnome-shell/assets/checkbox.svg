@@ -14,22 +14,10 @@
    height="40"
    id="svg5038"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    sodipodi:docname="checkbox.svg">
   <defs
      id="defs5040">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient3849">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop3851" />
-      <stop
-         style="stop-color:#f6f6f6;stop-opacity:1"
-         offset="1"
-         id="stop3853" />
-    </linearGradient>
     <inkscape:path-effect
        effect="spiro"
        id="path-effect5837"
@@ -68,16 +56,6 @@
          offset="1"
          id="stop85847-7-3" />
     </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3849"
-       id="linearGradient3855"
-       x1="20"
-       y1="18"
-       x2="20"
-       y2="38"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0,1)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -88,16 +66,16 @@
      inkscape:pageshadow="2"
      inkscape:zoom="16.281134"
      inkscape:cx="32.541596"
-     inkscape:cy="39.28622"
+     inkscape:cy="22.088401"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="2092"
-     inkscape:window-x="1920"
-     inkscape:window-y="68"
-     inkscape:window-maximized="0"
+     inkscape:window-height="994"
+     inkscape:window-x="1080"
+     inkscape:window-y="521"
+     inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:snap-bbox-edge-midpoints="true"
@@ -131,7 +109,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssssss" />
     <path
-       style="color:#000000;fill:url(#linearGradient3855);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:new"
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:new"
        d="m 11.2,17 c -0.179012,0 -0.349221,0.02877 -0.515625,0.06875 C 9.717815,17.300959 9,18.160211 9,19.2 l 0,17.6 c 0,1.2188 0.9812,2.2 2.2,2.2 l 17.6,0 C 30.0188,39 31,38.0188 31,36.8 L 31,19.2 C 31,18.160211 30.282185,17.300959 29.315625,17.06875 29.145002,17.048816 28.976147,17 28.8,17 z"
        id="path4863-7-1"
        inkscape:connector-curvature="0"
