@@ -19,20 +19,66 @@ stage {
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
-  color: $dark_font_color;
+  color: #dbdee0;
   font-weight: bold;
-  background-color: $primary_color;
+  background-color: rgba(255,255,255,0.0);
   background-gradient-direction: none;
-  background-gradient-start: none;
-  background-gradient-end: none;
+  background-gradient-start: rgba(255,255,255,0);
+  background-gradient-end: rgba(255,255,255,0);
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none;
-  &:hover, &:focus, &:active, &:active {
-    color: $light_font_color;
-    background-color: rgba($primary_color, 0.3);
+  &:hover, &:focuse {
+    color: white;
+    border: none;
+    background-color: rgba(255,255,255,0.1);
+    background-gradient-direction: none;
+    background-gradient-start: none;
+    background-gradient-end: none;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+  }
+  &:insensitive {
+    color: rgba(255,255,255,0.3);
+    border: none;
+    background-color: rgba(0,0,0,0.0);
+    background-gradient-direction: none;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
+  }
+  &:active {
+    color: white;
+    border: none;
+    background-color: rgba(0,0,0,0.1);
+    background-gradient-direction: none;
+    background-gradient-start: rgba(0,0,0,0.1);
+    background-gradient-end: rgba(0,0,0,0.1);
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
   }
 }
+
+.button:insensitive {
+    color: rgba(255,255,255,0.3);
+    border: none;
+    background-color: rgba(0,0,0,0.0);
+    background-gradient-direction: none;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; }
+.button:active {
+    color: white;
+    border: none;
+    background-color: rgba(0,0,0,0.1);
+    background-gradient-direction: none;
+    background-gradient-start: rgba(0,0,0,0.1);
+    background-gradient-end: rgba(0,0,0,0.1);
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; }
 
 .modal-dialog-linked-button {
   padding: 0;
@@ -1395,14 +1441,30 @@ StScrollBar {
     padding-bottom: 32px;
   }
   .app-view-control { //favorties | all toggle button
+    background-gradient-direction: none;
+    background-color: rgba(255,255,255,0.1);
     padding: 4px 32px;
-    &:checked { @include button(active); }
+    border-width: 0px;
+    color: #dbdee0;
+    &:checked {
+      color: #454d50;
+      border-color: rgba(0,0,0,0);
+      border-width: 0px;
+      background-gradient-direction: none;
+      background-color: white;
+      box-shadow: none;
+      text-shadow: none;
+      icon-shadow: none;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
+    }
     &:first-child {
-      border-right-width: 0;
-      border-radius: 3px 0 0 3px;
+      background-gradient-direction: none;
+      border-radius: 2px 0 0 2px;
     }
     &:last-child {
-     border-radius: 0 3px 3px 0;
+      border-right-width: 0;
+      background-gradient-direction: none;
+      border-radius: 0 2px 2px 0;
     }
   }
 
@@ -1956,18 +2018,19 @@ StScrollBar {
   background-color: rgba(0,0,0,0.80);
   spacing: 4px;
   padding: 4px;
-  border: 2px solid grey;
-  border-radius: 4px;
+  border: none;
+  border-radius: 2px;
+  color: white;
   & > #Toolbar {
-    border: 1px solid grey;
-    border-radius: 4px;
+    border: 1px solid white;
+    border-radius: 2px;
   }
   .labels { spacing: 4px; }
   .notebook-tab {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
     font-weight: bold;
-    color: #ccc;
+    color: white;
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
@@ -1976,8 +2039,8 @@ StScrollBar {
       text-shadow: black 0px 2px 2px;
     }
     &:selected {
-      border-bottom-width: 2px;
-      border-color: lighten($color1,5%);
+      border-bottom-width: 4px;
+      border-color: $color1;
       color: white;
       text-shadow: black 0px 2px 2px;
     }
@@ -1992,8 +2055,8 @@ StScrollBar {
       selected-color: $primary_color;
     }
     .shell-link {
-      color: #999999;
-      &:hover { color: #dddddd; }
+      color: white;
+      &:hover { color: #eee; }
      }
   }
 
@@ -2007,10 +2070,10 @@ StScrollBar {
   }
 
   .lg-obj-inspector-button {
-      border: 1px solid gray;
+      border: 2px solid white;
       padding: 4px;
-      border-radius: 4px;
-      &:hover { border: 1px solid #ffffff; }
+      border-radius: 2px;
+      &:hover { border: 1px solid #eee; }
   }
 
   #lookingGlassExtensions { padding: 4px; }
@@ -2021,8 +2084,8 @@ StScrollBar {
   }
 
   .lg-extension {
-      border: 1px solid #6f6f6f;
-      border-radius: 4px;
+      border: 2px solid white;
+      border-radius: 2px;
       padding: 4px;
   }
 
@@ -2036,7 +2099,7 @@ StScrollBar {
 
   #LookingGlassPropertyInspector {
     background: rgba(0, 0, 0, 0.8);
-    border: 2px solid grey;
-    border-radius: 4px;
+    border: 2px solid white;
+    border-radius: 2px;
     padding: 6px;
   }

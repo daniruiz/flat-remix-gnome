@@ -10,18 +10,63 @@ stage {
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
-  color: white;
+  color: #dbdee0;
   font-weight: bold;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0);
   background-gradient-direction: none;
-  background-gradient-start: none;
-  background-gradient-end: none;
+  background-gradient-start: rgba(255, 255, 255, 0);
+  background-gradient-end: rgba(255, 255, 255, 0);
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none; }
-  .button:hover, .button:focus, .button:active, .button:active {
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(0, 0, 0, 0.3); }
+  .button:hover, .button:focuse {
+    color: white;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-gradient-direction: none;
+    background-gradient-start: none;
+    background-gradient-end: none;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; }
+  .button:insensitive {
+    color: rgba(255, 255, 255, 0.3);
+    border: none;
+    background-color: transparent;
+    background-gradient-direction: none;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; }
+  .button:active {
+    color: white;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-gradient-direction: none;
+    background-gradient-start: rgba(0, 0, 0, 0.1);
+    background-gradient-end: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; }
+
+.button:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+  border: none;
+  background-color: transparent;
+  background-gradient-direction: none;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none; }
+
+.button:active {
+  color: white;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-gradient-direction: none;
+  background-gradient-start: rgba(0, 0, 0, 0.1);
+  background-gradient-end: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none; }
 
 .modal-dialog-linked-button {
   padding: 0;
@@ -1230,19 +1275,28 @@ StScrollBar {
   padding-bottom: 32px; }
 
 .app-view-control {
-  padding: 4px 32px; }
+  background-gradient-direction: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 4px 32px;
+  border-width: 0px;
+  color: #dbdee0; }
   .app-view-control:checked {
-    color: white;
-    border-color: rgba(0, 0, 0, 0.7);
-    background-color: #222728;
-    box-shadow: inset 0 0 black;
+    color: #454d50;
+    border-color: transparent;
+    border-width: 0px;
+    background-gradient-direction: none;
+    background-color: white;
+    box-shadow: none;
     text-shadow: none;
-    icon-shadow: none; }
+    icon-shadow: none;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5); }
   .app-view-control:first-child {
-    border-right-width: 0;
-    border-radius: 3px 0 0 3px; }
+    background-gradient-direction: none;
+    border-radius: 2px 0 0 2px; }
   .app-view-control:last-child {
-    border-radius: 0 3px 3px 0; }
+    border-right-width: 0;
+    background-gradient-direction: none;
+    border-radius: 0 2px 2px 0; }
 
 .search-provider-icon:active, .search-provider-icon:checked,
 .list-search-result:active,
@@ -1804,18 +1858,19 @@ StScrollBar {
   background-color: rgba(0, 0, 0, 0.8);
   spacing: 4px;
   padding: 4px;
-  border: 2px solid grey;
-  border-radius: 4px; }
+  border: none;
+  border-radius: 2px;
+  color: white; }
   #LookingGlassDialog > #Toolbar {
-    border: 1px solid grey;
-    border-radius: 4px; }
+    border: 1px solid white;
+    border-radius: 2px; }
   #LookingGlassDialog .labels {
     spacing: 4px; }
   #LookingGlassDialog .notebook-tab {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
     font-weight: bold;
-    color: #ccc;
+    color: white;
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em; }
@@ -1823,8 +1878,8 @@ StScrollBar {
       color: white;
       text-shadow: black 0px 2px 2px; }
     #LookingGlassDialog .notebook-tab:selected {
-      border-bottom-width: 2px;
-      border-color: #fc30b8;
+      border-bottom-width: 4px;
+      border-color: #FC17AF;
       color: white;
       text-shadow: black 0px 2px 2px; }
   #LookingGlassDialog StBoxLayout#EvalBox {
@@ -1838,9 +1893,9 @@ StScrollBar {
   selected-color: black; }
 
 .lg-dialog .shell-link {
-  color: #999999; }
+  color: white; }
   .lg-dialog .shell-link:hover {
-    color: #dddddd; }
+    color: #eee; }
 
 .lg-completions-text {
   font-size: .9em;
@@ -1850,11 +1905,11 @@ StScrollBar {
   spacing: 4px; }
 
 .lg-obj-inspector-button {
-  border: 1px solid gray;
+  border: 2px solid white;
   padding: 4px;
-  border-radius: 4px; }
+  border-radius: 2px; }
   .lg-obj-inspector-button:hover {
-    border: 1px solid #ffffff; }
+    border: 1px solid #eee; }
 
 #lookingGlassExtensions {
   padding: 4px; }
@@ -1864,8 +1919,8 @@ StScrollBar {
   spacing: 6px; }
 
 .lg-extension {
-  border: 1px solid #6f6f6f;
-  border-radius: 4px;
+  border: 2px solid white;
+  border-radius: 2px;
   padding: 4px; }
 
 .lg-extension-name {
@@ -1876,6 +1931,6 @@ StScrollBar {
 
 #LookingGlassPropertyInspector {
   background: rgba(0, 0, 0, 0.8);
-  border: 2px solid grey;
-  border-radius: 4px;
+  border: 2px solid white;
+  border-radius: 2px;
   padding: 6px; }
