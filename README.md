@@ -26,19 +26,19 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 
 #### Terminal installation
 
-```
-     rm -rf /tmp/Flat-Remix-GNOME-theme/ && cd /tmp &&
-     git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme &&
-     mkdir -p ~/.themes && cp -r /tmp/Flat-Remix-GNOME-theme/Flat\ Remix* ~/.themes &&
-     gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
+```sh
+rm -rf /tmp/Flat-Remix-GNOME-theme/ && cd /tmp &&
+git clone https://github.com/daniruiz/Flat-Remix-GNOME-theme &&
+mkdir -p ~/.themes && cp -r /tmp/Flat-Remix-GNOME-theme/Flat\ Remix* ~/.themes &&
+gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
 ```
 
 #### Ubuntu based distributions:
 
-```
-     sudo add-apt-repository ppa:noobslab/themes
-     sudo apt-get update
-     sudo apt-get install flat-remix-gs-theme
+```sh
+sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
+sudo apt-get install flat-remix-gs-theme
 ```
 
 ##### Arch based distributions
