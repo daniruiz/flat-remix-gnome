@@ -4,7 +4,9 @@
 <hr>
 <br>
 
-Flat Remix GNOME theme is a pretty simple shell theme inspired on material design. It has been designed specifically for gnome-shell 3.26 but it should work perfectly on any version after gnome-shell 3.16.
+Flat Remix GNOME theme is a pretty simple shell theme inspired on material design.
+
+It has been designed specifically for gnome-shell 3.26 but it should work perfectly on any version after gnome-shell 3.16.
 
 <br/>
 
@@ -36,9 +38,9 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 #### Ubuntu based distributions:
 
 ```
-     sudo add-apt-repository ppa:noobslab/themes
+     sudo add-apt-repository ppa:daniruiz/flat-remix
      sudo apt-get update
-     sudo apt-get install flat-remix-gs-theme
+     sudo apt-get install flat-remix-gnome
 ```
 
 ##### Arch based distributions
@@ -57,12 +59,16 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 
 # Donate
 
-You can also support the development of Flat Remix by [donating](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7LEWLS78EAJGJ).
 
-Bitcoin Wallet: 1K4RhLu7u5xGheWrLAnMPhF2mTA7oMCMj4<br>
-Monero Wallet:  46o1H6xAnvNY25N1rosd9oUcN2pxhYaErU9qc48VwDNf3xrzSWhqWC5WbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zCs4zx
+# Donate
 
-You know... working with coffee is always better  :wink:
+You can also support the development of Flat Remix by donating  
 
-
-<br/>
+- [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7LEWLS78EAJGJ)  
+  
+- [Patreon](www.patreon.com/daniruiz)  
+  
+- Bitcoin Wallet:  
+`1K4RhLu7u5xGheWrLAnMPhF2mTA7oMCMj4`  
+  
+- Monero Wallet:   `46o1H6xAnvNY25N1rosd9oUcN2pxhYaErU9qc48VwDNf3xrzSWhqWC5WbwaVe4vUMveKAzAiA4j8xgUi29TpKXpm3zCs4zx`  
