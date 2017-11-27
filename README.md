@@ -48,8 +48,7 @@ sudo apt-get install flat-remix-gnome
 
 <br/>
 
-# Flat Remix Icon theme
-[Flat Remix icon theme](https://github.com/daniruiz/Flat-Remix/).
+# [Flat Remix icon theme](https://github.com/daniruiz/Flat-Remix/)
 
 <br/>
 
