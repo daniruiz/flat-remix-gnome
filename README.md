@@ -38,9 +38,9 @@ gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix";
 #### Ubuntu based distributions:
 
 ```sh
-sudo add-apt-repository ppa:noobslab/themes
+sudo add-apt-repository ppa:daniruiz/flat-remix
 sudo apt-get update
-sudo apt-get install flat-remix-gs-theme
+sudo apt-get install flat-remix-gnome
 ```
 
 ##### Arch based distributions
@@ -66,7 +66,7 @@ You can also support the development of Flat Remix by donating
 
 - [Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7LEWLS78EAJGJ)  
   
-- [Patreon](www.patreon.com/daniruiz)  
+- [Patreon](https://www.patreon.com/daniruiz)  
   
 - Bitcoin Wallet:  
 `1K4RhLu7u5xGheWrLAnMPhF2mTA7oMCMj4`  
