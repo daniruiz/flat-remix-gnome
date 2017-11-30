@@ -44,7 +44,7 @@ sudo apt-get install flat-remix-gnome
 ```
 
 ##### Arch based distributions
-+ [`flat-remix-gnome`](https://aur.archlinux.org/packages/flat-remix-gnome/) (AUR)
++ [`flat-remix-gnome-git`](https://aur.archlinux.org/packages/flat-remix-gnome-git/) (AUR)
 
 <br/>
 
