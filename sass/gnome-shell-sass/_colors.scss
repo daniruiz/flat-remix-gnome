@@ -58,7 +58,7 @@ $error_color: #d41a1a;
 
 $fg_color: #eeeeec;
 $selected_fg_color: #ffffff;
-$borders_edge: if($variant =='light', white, transparentize(#eeeeec, 0.9));
+$borders_edge: transparentize(#eeeeec, 0.9);
 $osd_fg_color: #eeeeec;
 $osd_bg_color: #2e3436;
 $osd_borders_color: transparentize(black, 0.3);

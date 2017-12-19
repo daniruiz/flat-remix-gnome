@@ -169,7 +169,7 @@ StScrollBar {
   background-image: url("assets/checkbox.svg"); }
 
 .check-box:focus:checked StBin {
-  background-image: rl("assets/checkbox-focused.svg"); }
+  background-image: url("assets/checkbox-focused.svg"); }
 
 /* Switches */
 .toggle-switch {
@@ -386,7 +386,7 @@ StScrollBar {
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 34em;
-  border: 3px solid rgba(238, 238, 236, 0.2); }
+  border: none; }
   .prompt-dialog .message-dialog-main-layout {
     spacing: 24px;
     padding: 10px; }
@@ -563,7 +563,7 @@ StScrollBar {
 
 /* fallback menu
 - odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
-  app menu inside the main app window itself rather than the top bar
+app menu inside the main app window itself rather than the top bar
 */
 /* OSD */
 .osd-window {
@@ -859,7 +859,8 @@ StScrollBar {
   color: white;
   background-color: #0d0d0d;
   width: 32px;
-  border-radius: 32px; }
+  height: 32px;
+  border-radius: 100px; }
   .pager-button:hover, .pager-button:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .pager-button:active {
@@ -880,12 +881,10 @@ StScrollBar {
 .calendar-day-base {
   font-size: 80%;
   text-align: center;
-  width: 2.4em;
-  height: 2.4em;
-  padding: 0.1em;
-  margin: 2px;
-  border-radius: 1.4em;
-  border: none; }
+  height: 2.5em;
+  width: 2.5em;
+  border: none;
+  border-radius: 5em; }
   .calendar-day-base:hover, .calendar-day-base:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .calendar-day-base:active, .calendar-day-base:selected {
@@ -899,12 +898,6 @@ StScrollBar {
 
 .calendar-day {
   border-width: 0; }
-
-.calendar-day-top {
-  border-top-width: px; }
-
-.calendar-day-left {
-  border-left-width: 0px; }
 
 .calendar-nonwork-day {
   color: rgba(255, 255, 255, 0.5); }
@@ -933,8 +926,8 @@ StScrollBar {
   border-radius: 2px;
   padding: 0.5em 0 0;
   margin: 6px;
-  background-color: rgba(238, 238, 236, 0.3);
-  color: #050505; }
+  background-color: rgba(255, 255, 255, 0.01);
+  color: rgba(255, 255, 255, 0.4); }
 
 /* Message list */
 .message-list {
@@ -992,7 +985,7 @@ StScrollBar {
   color: #8e8e80;
   font-size: 0.7em;
   /* HACK: the label should be baseline-aligned with a 1em label,
-                     fake this with some bottom padding */
+    fake this with some bottom padding */
   padding-bottom: 0.13em; }
 
 .message-secondary-bin > StIcon {
@@ -1401,13 +1394,13 @@ StScrollBar {
   .page-indicator .page-indicator-icon {
     width: 18px;
     height: 18px;
-    background-image: url(resource:///org/gnome/shell/theme/page-indicator-inactive.svg); }
+    background-image: url("assets/page-indicator-inactive.svg"); }
   .page-indicator:hover .page-indicator-icon {
-    background-image: url(resource:///org/gnome/shell/theme/page-indicator-hover.svg); }
+    background-image: url("assets/page-indicator-hover.svg"); }
   .page-indicator:active .page-indicator-icon {
-    background-image: url(resource:///org/gnome/shell/theme/page-indicator-active.svg); }
+    background-image: url("assets/page-indicator-active.svg"); }
   .page-indicator:checked .page-indicator-icon, .page-indicator:checked:active {
-    background-image: url(resource:///org/gnome/shell/theme/page-indicator-checked.svg); }
+    background-image: url("assets/page-indicator-checked.svg"); }
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
@@ -1684,7 +1677,7 @@ StScrollBar {
       color: #eeeeec;
       background-color: rgba(54, 123, 240, 0.5);
       border-color: rgba(0, 0, 0, 0.7);
-      box-shadow: inset 0 1px #454f52;
+      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
       text-shadow: 0 1px black;
       icon-shadow: 0 1px black; }
       .login-dialog .modal-dialog-button:default:hover, .login-dialog .modal-dialog-button:default:focus {
@@ -1697,14 +1690,14 @@ StScrollBar {
       .login-dialog .modal-dialog-button:default:active {
         color: white;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: #1e6bee;
+        background-color: #367bf0;
         box-shadow: inset 0 0 black;
         text-shadow: none;
         icon-shadow: none; }
       .login-dialog .modal-dialog-button:default:insensitive {
-        color: #7a7a79;
+        color: #367bf0;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: rgba(61, 66, 67, 0.7);
+        background-color: rgba(5, 5, 5, 0.7);
         box-shadow: none;
         text-shadow: none;
         icon-shadow: none; }
@@ -1860,7 +1853,7 @@ StScrollBar {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); }
 
 #lockDialogGroup {
-  background: #2e3436 url(resource:///org/gnome/shell/theme/noise-texture.png);
+  background: #2e3436 url("assets/noise-texture.png");
   background-repeat: repeat; }
 
 #screenShieldNotifications StButton#vhandle, #screenShieldNotifications StButton#hhandle {
