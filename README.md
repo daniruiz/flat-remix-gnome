@@ -4,9 +4,7 @@
 <hr>
 <br>
 
-Flat Remix GNOME theme is a pretty simple shell theme inspired on material design.
-
-It has been designed specifically for gnome-shell 3.26 but it should work perfectly on any version after gnome-shell 3.16.
+Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.
 
 <br/>
 
