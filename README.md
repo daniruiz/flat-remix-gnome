@@ -41,6 +41,13 @@ sudo apt-get update
 sudo apt-get install flat-remix-gnome
 ```
 
+##### Fedora based distributions
+
+```sh
+sudo dnf copr enable daniruiz/flat-remix
+sudo dnf install flat-remix-gnome
+```
+
 ##### Arch based distributions
 + [`flat-remix-gnome-git`](https://aur.archlinux.org/packages/flat-remix-gnome-git/) (AUR)
 
