@@ -12,7 +12,7 @@ all:
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
-	cp -R $(DESTDIR)$(PREFIX)/share/themes
+	cp -R $(THEMES) $(DESTDIR)$(PREFIX)/share/themes
 
 uninstall:
 	-rm -rf $(foreach theme,$(DESTDIR)$(PREFIX)/share/themes/$(theme))
