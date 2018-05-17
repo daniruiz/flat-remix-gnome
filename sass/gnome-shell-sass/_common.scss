@@ -809,6 +809,7 @@ app menu inside the main app window itself rather than the top bar
     height: 24px;
     color: $panel_font_color;
     background: $panel_background_color;
+    background-gradient-direction: none;
     &.unlock-screen,
     &.login-screen,
     &.lock-screen {
