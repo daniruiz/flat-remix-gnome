@@ -34,7 +34,7 @@ stage {
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none; }
-  .button:hover, .button:focuse {
+  .button:hover, .button:focus {
     color: white;
     border: none;
     background-color: rgba(255, 255, 255, 0.1);
