@@ -706,7 +706,8 @@ app menu inside the main app window itself rather than the top bar
   font-size: 12px;
   height: 24px;
   color: white;
-  background: rgba(0, 0, 0, 0.2); }
+  background: rgba(0, 0, 0, 0.2);
+  background-gradient-direction: none; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
     background-color: transparent; }
   #panel #panelLeft, #panel #panelCenter {
