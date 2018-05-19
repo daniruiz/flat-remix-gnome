@@ -56,6 +56,11 @@ sudo dnf install flat-remix-gnome
 # [Flat Remix icon theme](https://github.com/daniruiz/Flat-Remix/)
 ![Flat Remix icon theme perview](https://raw.githubusercontent.com/daniruiz/Flat-Remix/master/preview.png)
 
+<br/>
+
+# [Flat Remix icon theme](https://github.com/daniruiz/flat-remix-gtk)
+![Flat Remix icon theme perview](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GTK/master/1.png)
+
 
 # Donate
 
