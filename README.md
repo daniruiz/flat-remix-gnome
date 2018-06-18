@@ -11,9 +11,13 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 
 # Screenshots
 
+#### Flat Remix
 ![Screenshot Flat Remix light](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1.png)
+#### Flat Remix Dark
 ![Screenshot Flat Remix dark](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1dark.png)
+#### Flat Remix Miami
 ![Screenshot Flat Remix miami](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1miami.png)
+#### Flat Remix Dark Miami
 ![Screenshot Flat Remix dark miami](https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/1dark-miami.png)
 
 
