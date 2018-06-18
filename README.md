@@ -4,7 +4,8 @@
 <hr>
 <br>
 
-Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.
+Flat Remix GNOME theme is a pretty simple shell theme inspired on material design. It follows a modern design using "flat" colors with high contrasts and sharp borders.
+
 
 <br/>
 
