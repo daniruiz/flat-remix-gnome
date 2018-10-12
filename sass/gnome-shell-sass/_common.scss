@@ -29,7 +29,7 @@ stage {
     text-shadow: none;
     icon-shadow: none;
     &:hover, &:focus {
-        color: white;
+        color: #FFF;
         border: none;
         background-color: rgba(255,255,255,0.1);
         background-gradient-direction: none;
@@ -49,7 +49,7 @@ stage {
         icon-shadow: none;
     }
     &:active {
-        color: white;
+        color: #FFF;
         border: none;
         background-color: rgba(0,0,0,0.1);
         background-gradient-direction: none;
@@ -70,7 +70,7 @@ stage {
     text-shadow: none;
     icon-shadow: none; }
 .button:active {
-    color: white;
+    color: #FFF;
     border: none;
     background-color: rgba(0,0,0,0.1);
     background-gradient-direction: none;
@@ -86,10 +86,10 @@ stage {
     border-radius: 0;
     border: none;
     height: 50px;
-    color: white;
+    color: #FFF;
     border-radius: 0;
-    background-color: black;
-    box-shadow: inset 0 0 black;
+    background-color: #000;
+    box-shadow: inset 0 0 #000;
     font-weight: bold;
 }
 
@@ -155,13 +155,14 @@ StScrollBar {
 
 .slider {
     height: 1.09em;
-    -slider-height: 5px;
-    -slider-background-color: rgba($secondary_color, .05); //background of the trough
-    -slider-border-color: $color1; //trough border color
-    -slider-active-background-color: $color1; //active trough fill
-    -slider-active-border-color: $color1; //active trough border
-    -slider-border-width: 0px;
-    -slider-handle-radius: 0px;
+    -barlevel-height: .35em;
+    -barlevel-background-color: rgba($secondary_color, .05);
+    -barlevel-border-color: $color1;
+    -barlevel-active-background-color: $color1;
+    -barlevel-overdrive-color: $color1;
+    -barlevel-overdrive-separator-width: 0.1em;
+    -barlevel-border-width: 0;
+    -slider-handle-radius: 0;
 }
 
 /* Check Boxes */
@@ -355,10 +356,10 @@ StScrollBar {
     height: 50px;
     background-color: #d41a1a;
     font-size: 10pt;
-    color: white;
+    color: #FFF;
 }
 .end-session-dialog .modal-dialog-linked-button:last-child:active {
-    color: white;
+    color: #FFF;
     background-color: rgba(#d41a1a, .7);
 }
 
@@ -753,7 +754,7 @@ app menu inside the main app window itself rather than the top bar
 .workspace-switcher-container {
     background-color: rgba($bg_color,0.8);
     border: none;
-    color: black;
+    color: #000;
     border-radius: 3px;
     padding: 7px;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
@@ -1045,7 +1046,7 @@ app menu inside the main app window itself rather than the top bar
     text-shadow: none;
     font-weight: bold;
     background-color: $color2!important;
-    color: white!important;
+    color: #FFF!important;
 }
 
 .calendar-day-with-events, .calendar-day-with-events:hover {
@@ -1309,14 +1310,14 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .window-clone-border {
-    border: 4px solid white;
+    border: 4px solid #FFF;
     border-radius: 4px;
-    box-shadow: 0 2px 5px 0 white;
+    box-shadow: 0 2px 5px 0 #FFF;
 }
 .window-caption {
     spacing: 25px;
-    color: black;
-    background-color: white;
+    color: #000;
+    background-color: #FFF;
     border-radius: 3px;
     padding: 4px 12px;
     -shell-caption-spacing: 12px;
@@ -1327,7 +1328,7 @@ app menu inside the main app window itself rather than the top bar
     width: 320px;
     border: none;
     color: rgba(255,255,255,0.7);
-    caret-color: black;
+    caret-color: #000;
     caret-size: 1px;
     background-color: rgba(255,255,255,0.1);
     background-gradient-direction: none;
@@ -1335,11 +1336,11 @@ app menu inside the main app window itself rather than the top bar
     border-radius: 2px;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5);
     &:focus, &:hover {
-        background-color: white;
-        color: black;
+        background-color: #FFF;
+        color: #000;
         box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
         transition-duration: 200ms;
-        .search-entry-icon { color: black; }
+        .search-entry-icon { color: #000; }
     }
 
     .search-entry-icon { icon-size: 1em; padding: 0 4px; color: rgba(255,255,255,0.7); }
@@ -1397,7 +1398,7 @@ app menu inside the main app window itself rather than the top bar
     }
     .overview-icon StIcon {
         icon-shadow: rgba(0,0,0,.7) 0px 2px 6px;
-        color: white;
+        color: #FFF;
 
     }
 }
@@ -1427,8 +1428,8 @@ app menu inside the main app window itself rather than the top bar
 //.app-display { spacing: 20px; }
 
 .system-action-icon {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #FFF;
     border-radius: 99px;
     icon-size: 48px;
 }
@@ -1447,7 +1448,7 @@ app menu inside the main app window itself rather than the top bar
         border-color: rgba(0,0,0,0);
         border-width: 0px;
         background-gradient-direction: none;
-        background-color: white;
+        background-color: #FFF;
         box-shadow: none;
         text-shadow: none;
         icon-shadow: none;
@@ -1501,8 +1502,8 @@ app menu inside the main app window itself rather than the top bar
     border-radius: 5px;
     width: 20px;
     height: 4px;
-    background-color: white;
-    box-shadow: 0 1px 4px 1px black;
+    background-color: #FFF;
+    box-shadow: 0 1px 4px 1px #000;
     margin-bottom: 2px;
 }
 
@@ -1521,7 +1522,7 @@ app menu inside the main app window itself rather than the top bar
 
 .show-apps:checked .show-apps-icon,
 .show-apps:focus .show-apps-icon {
-    color: white;
+    color: #FFF;
     transition-duration: 100ms;
 }
 
@@ -1582,7 +1583,7 @@ app menu inside the main app window itself rather than the top bar
     }
 }
 .workspace-thumbnail-indicator {
-    border: 5px solid white;
+    border: 5px solid #FFF;
     border-radius: 2px;
     padding: 0;
 }
@@ -1770,7 +1771,7 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .keyboard-subkeys { //long press on a key popup
-    color: white;
+    color: #FFF;
     padding: 5px;
     -arrow-border-radius: 10px;
     -arrow-background-color: transparentize($osd_bg_color, 0.3);
@@ -1846,18 +1847,18 @@ app menu inside the main app window itself rather than the top bar
             background-color: rgba($color1, 0.5);
             border-color: rgba($primary_color, 0.7);
             box-shadow: 0 3px 8px 0 rgba(0,0,0,0.5);
-            text-shadow: 0 1px black;
-            icon-shadow: 0 1px black;
+            text-shadow: 0 1px #000;
+            icon-shadow: 0 1px #000;
             &:hover,&:focus {
-                color: white;
+                color: #FFF;
                 border-color: rgba($primary_color, 0.7);
                 background-color: rgba($color1, 0.7);
                 box-shadow: inset 0 1px #5d696d;
-                text-shadow: 0 1px black;
-                icon-shadow: 0 1px black;
+                text-shadow: 0 1px #000;
+                icon-shadow: 0 1px #000;
             }
             &:active {
-                color: white;
+                color: #FFF;
                 border-color: rgba($primary_color, 0.7);
                 background-color: $color1;
                 box-shadow: inset 0 0 $primary_color;
@@ -1963,7 +1964,7 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .screen-shield-arrows Gjs_Arrow {
-    color: white;
+    color: #FFF;
     width: 80px;
     height: 48px;
     -arrow-thickness: 12px;
@@ -1971,7 +1972,7 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .screen-shield-clock {
-    color: white;
+    color: #FFF;
     text-shadow: 0px 1px 2px rgba(0,0,0,0.6);
     font-weight: bold;
     text-align: center;
@@ -2017,8 +2018,8 @@ app menu inside the main app window itself rather than the top bar
 #panel.lock-screen { background-color: transparentize($_bubble_bg_color, 0.5); }
 
 .screen-shield-background { //just the shadow, really
-    background: black;
-    box-shadow: 0px 2px 4px transparentize(black,0.6);
+    background: #000;
+    box-shadow: 0px 2px 4px transparentize(#000,0.6);
 }
 
 #lockDialogGroup {
@@ -2042,9 +2043,9 @@ app menu inside the main app window itself rather than the top bar
     padding: 4px;
     border: none;
     border-radius: 2px;
-    color: white;
+    color: #FFF;
     & > #Toolbar {
-        border: 1px solid white;
+        border: 1px solid #FFF;
         border-radius: 2px;
     }
     .labels { spacing: 4px; }
@@ -2052,19 +2053,19 @@ app menu inside the main app window itself rather than the top bar
         -natural-hpadding: 12px;
         -minimum-hpadding: 6px;
         font-weight: bold;
-        color: white;
+        color: #FFF;
         transition-duration: 100ms;
         padding-left: .3em;
         padding-right: .3em;
         &:hover {
-            color: white;
-            text-shadow: black 0px 2px 2px;
+            color: #FFF;
+            text-shadow: #000 0px 2px 2px;
         }
         &:selected {
             border-bottom-width: 4px;
             border-color: $color1;
-            color: white;
-            text-shadow: black 0px 2px 2px;
+            color: #FFF;
+            text-shadow: #000 0px 2px 2px;
         }
     }
     StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
@@ -2077,7 +2078,7 @@ app menu inside the main app window itself rather than the top bar
         selected-color: $primary_color;
     }
     .shell-link {
-        color: white;
+        color: #FFF;
         &:hover { color: #eee; }
     }
 }
@@ -2092,7 +2093,7 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .lg-obj-inspector-button {
-    border: 2px solid white;
+    border: 2px solid #FFF;
     padding: 4px;
     border-radius: 2px;
     &:hover { border: 1px solid #eee; }
@@ -2106,7 +2107,7 @@ app menu inside the main app window itself rather than the top bar
 }
 
 .lg-extension {
-    border: 2px solid white;
+    border: 2px solid #FFF;
     border-radius: 2px;
     padding: 4px;
 }
@@ -2121,7 +2122,7 @@ app menu inside the main app window itself rather than the top bar
 
 #LookingGlassPropertyInspector {
     background: rgba(0, 0, 0, 0.8);
-    border: 2px solid white;
+    border: 2px solid #FFF;
     border-radius: 2px;
     padding: 6px;
 }

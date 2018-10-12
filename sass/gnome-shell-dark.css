@@ -1,7 +1,7 @@
 stage {
   font-family: Source Sans Pro, Cantarell, Sans-Serif;
   font-size: 11pt;
-  color: white; }
+  color: #FFF; }
 
 /* WIDGETS */
 /* Buttons */
@@ -20,7 +20,7 @@ stage {
   text-shadow: none;
   icon-shadow: none; }
   .button:hover, .button:focus {
-    color: white;
+    color: #FFF;
     border: none;
     background-color: rgba(255, 255, 255, 0.1);
     background-gradient-direction: none;
@@ -38,7 +38,7 @@ stage {
     text-shadow: none;
     icon-shadow: none; }
   .button:active {
-    color: white;
+    color: #FFF;
     border: none;
     background-color: rgba(0, 0, 0, 0.1);
     background-gradient-direction: none;
@@ -58,7 +58,7 @@ stage {
   icon-shadow: none; }
 
 .button:active {
-  color: white;
+  color: #FFF;
   border: none;
   background-color: rgba(0, 0, 0, 0.1);
   background-gradient-direction: none;
@@ -74,10 +74,10 @@ stage {
   border-radius: 0;
   border: none;
   height: 50px;
-  color: white;
+  color: #FFF;
   border-radius: 0;
-  background-color: black;
-  box-shadow: inset 0 0 black;
+  background-color: #000;
+  box-shadow: inset 0 0 #000;
   font-weight: bold; }
 
 /* Entries */
@@ -85,24 +85,24 @@ StEntry {
   border-radius: 2px;
   padding: 4px;
   border-width: 1px;
-  color: white;
-  background-color: #120E29;
+  color: #FFF;
+  background-color: #050505;
   background-gradient-direction: none;
   border-color: transparent;
   box-shadow: none;
-  selection-background-color: #FC17AF;
-  selected-color: #120E29; }
+  selection-background-color: #367bf0;
+  selected-color: #050505; }
   StEntry:focus {
-    background-color: #120E29;
-    color: white;
+    background-color: #050505;
+    color: #FFF;
     box-shadow: none;
     border-color: transparent; }
   StEntry:insensitive {
-    color: rgba(255, 255, 255, 0.7);
+    color: #cccccc;
     box-shadow: none; }
   StEntry StIcon.capslock-warning {
     icon-size: 16px;
-    warning-color: #fd7e00;
+    warning-color: #ff6600;
     padding: 0 4px; }
 
 /* Scrollbars */
@@ -129,13 +129,14 @@ StScrollBar {
 /* Slider */
 .slider {
   height: 1.09em;
-  -slider-height: 5px;
-  -slider-background-color: rgba(255, 255, 255, 0.05);
-  -slider-border-color: #FC17AF;
-  -slider-active-background-color: #FC17AF;
-  -slider-active-border-color: #FC17AF;
-  -slider-border-width: 0px;
-  -slider-handle-radius: 0px; }
+  -barlevel-height: .35em;
+  -barlevel-background-color: rgba(255, 255, 255, 0.05);
+  -barlevel-border-color: #367bf0;
+  -barlevel-active-background-color: #367bf0;
+  -barlevel-overdrive-color: #367bf0;
+  -barlevel-overdrive-separator-width: 0.1em;
+  -barlevel-border-width: 0;
+  -slider-handle-radius: 0; }
 
 /* Check Boxes */
 .check-box StBoxLayout {
@@ -173,9 +174,9 @@ StScrollBar {
 
 /* links */
 .shell-link {
-  color: #FC17AF; }
+  color: #367bf0; }
   .shell-link:hover {
-    color: #FC17AF;
+    color: #367bf0;
     font-weight: bold; }
 
 /* Modal Dialogs */
@@ -183,15 +184,15 @@ StScrollBar {
   font-size: 110%; }
 
 .lightbox {
-  background-color: white; }
+  background-color: #FFF; }
 
 .flashspot {
-  background-color: #120E29; }
+  background-color: #050505; }
 
 .modal-dialog {
   border-radius: 2px;
-  color: white;
-  background-color: #120E29;
+  color: #FFF;
+  background-color: #050505;
   border: none;
   box-shadow: 0 9px 12px rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.32), 0 3px 3px rgba(0, 0, 0, 0.26); }
   .modal-dialog .modal-dialog-content-box {
@@ -203,7 +204,7 @@ StScrollBar {
     background-gradient-direction: none;
     box-shadow: none;
     border: none;
-    color: white;
+    color: #FFF;
     border-radius: 1px; }
   .modal-dialog .run-dialog-error-box {
     padding-top: 16px;
@@ -213,7 +214,7 @@ StScrollBar {
   .modal-dialog .run-dialog-label {
     font-size: 12pt;
     font-weight: bold;
-    color: white;
+    color: #FFF;
     padding-bottom: .4em; }
 
 .mount-dialog-subject,
@@ -262,7 +263,7 @@ StScrollBar {
 
 .end-session-dialog-warning {
   width: 28em;
-  color: #fd7e00;
+  color: #ff6600;
   padding-top: 6px; }
   .end-session-dialog-warning:rtl {
     text-align: right; }
@@ -274,7 +275,7 @@ StScrollBar {
   background-size: contain; }
 
 .end-session-dialog-shutdown-icon {
-  color: white;
+  color: #FFF;
   width: 48px;
   height: 48px; }
 
@@ -312,10 +313,10 @@ StScrollBar {
   height: 50px;
   background-color: #d41a1a;
   font-size: 10pt;
-  color: white; }
+  color: #FFF; }
 
 .end-session-dialog .modal-dialog-linked-button:last-child:active {
-  color: white;
+  color: #FFF;
   background-color: rgba(212, 26, 26, 0.7); }
 
 /* ShellMountOperation Dialogs */
@@ -350,9 +351,9 @@ StScrollBar {
   padding-left: 32px; }
 
 .mount-dialog-app-list-item {
-  color: white; }
+  color: #FFF; }
   .mount-dialog-app-list-item:hover {
-    color: white; }
+    color: #FFF; }
   .mount-dialog-app-list-item:ltr {
     padding-right: 1em; }
   .mount-dialog-app-list-item:rtl {
@@ -388,7 +389,7 @@ StScrollBar {
 
 .prompt-dialog-error-label {
   font-size: 10pt;
-  color: #d41a1a;
+  color: #d31919;
   padding-bottom: 8px; }
 
 .prompt-dialog-info-label {
@@ -411,7 +412,7 @@ StScrollBar {
     padding-right: 10px; }
 
 .polkit-dialog-user-root-label {
-  color: #fd7e00; }
+  color: #ff6600; }
 
 .polkit-dialog-user-icon {
   border-radius: 5px;
@@ -438,7 +439,7 @@ StScrollBar {
   border: 1px solid rgba(238, 238, 236, 0.2);
   border-radius: 12px; }
   .audio-selection-device:active, .audio-selection-device:hover, .audio-selection-device:focus {
-    background-color: #FC17AF; }
+    background-color: #367bf0; }
 
 .audio-selection-device-box {
   padding: 20px;
@@ -479,16 +480,16 @@ StScrollBar {
 /* Popovers/Menus */
 .popup-menu {
   margin: 5px 9px;
-  color: white;
+  color: #FFF;
   font-size: 13px; }
   .popup-menu .popup-menu-icon {
     icon-size: 13px;
-    color: white; }
+    color: #FFF; }
   .popup-menu .popup-sub-menu {
     padding: 10px 0;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: inset 0 -2px 7px -2px rgba(0, 0, 0, 0.1);
-    color: white; }
+    color: #FFF; }
   .popup-menu .popup-menu-content {
     padding: 1em 0em 1em 0em; }
   .popup-menu .popup-menu-item {
@@ -502,13 +503,13 @@ StScrollBar {
       background: transparent;
       box-shadow: none; }
     .popup-menu .popup-menu-item:active, .popup-menu .popup-menu-item.selected {
-      color: white;
+      color: #FFF;
       background: rgba(255, 255, 255, 0.05); }
     .popup-menu .popup-menu-item:insensitive {
       color: rgba(255, 255, 255, 0.5);
       background: transparent; }
   .popup-menu .popup-inactive-menu-item {
-    color: white; }
+    color: #FFF; }
     .popup-menu .popup-inactive-menu-item:insensitive {
       color: rgba(255, 255, 255, 0.5); }
   .popup-menu.panel-menu {
@@ -522,7 +523,7 @@ StScrollBar {
 
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-  -arrow-background-color: #120E29;
+  -arrow-background-color: #050505;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
   -arrow-base: 64px;
@@ -530,7 +531,7 @@ StScrollBar {
   -arrow-box-shadow: none;
   margin: 0.1em 0.3em 0.5em;
   border-radius: 2px;
-  background-color: #120E29;
+  background-color: #050505;
   box-shadow: 0 9px 12px rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.32), 0 3px 3px rgba(0, 0, 0, 0.26); }
 
 .popup-separator-menu-item {
@@ -564,9 +565,9 @@ app menu inside the main app window itself rather than the top bar
     height: 0.6em;
     border-radius: 0.3em;
     background-color: rgba(255, 255, 255, 0.1);
-    color: white; }
+    color: #FFF; }
   .osd-window .level-bar {
-    background-color: white;
+    background-color: #FFF;
     border-radius: 0.3em; }
 
 /* Pad OSD */
@@ -589,9 +590,9 @@ app menu inside the main app window itself rather than the top bar
 .osd-window,
 .resize-popup,
 .switcher-list {
-  background-color: #120E29;
+  background-color: #050505;
   border: none;
-  color: white;
+  color: #FFF;
   border-radius: 5px;
   padding: 7px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
@@ -602,7 +603,7 @@ app menu inside the main app window itself rather than the top bar
 
 .switcher-list .item-box {
   font-weight: bold;
-  color: white;
+  color: #FFF;
   padding: 8px;
   border-radius: 4px; }
 
@@ -613,8 +614,8 @@ app menu inside the main app window itself rather than the top bar
 .switcher-list .item-box:selected {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 0;
-  box-shadow: inset 0 -5px 0 white;
-  color: white; }
+  box-shadow: inset 0 -5px 0 #FFF;
+  color: #FFF; }
 
 .switcher-list .thumbnail-box {
   padding: 2px;
@@ -625,11 +626,11 @@ app menu inside the main app window itself rather than the top bar
 
 .switcher-list .separator {
   width: 1px;
-  background: white; }
+  background: #FFF; }
 
 .switcher-arrow {
-  border-color: white;
-  color: white; }
+  border-color: #FFF;
+  color: #FFF; }
 
 .input-source-switcher-symbol {
   font-size: 34pt;
@@ -638,16 +639,16 @@ app menu inside the main app window itself rather than the top bar
 
 /* Window Cycler */
 .cycler-highlight {
-  border: 5px solid #FC17AF; }
+  border: 5px solid #367bf0; }
 
 /* Workspace Switcher */
 .workspace-switcher-group {
   padding: 12px; }
 
 .workspace-switcher-container {
-  background-color: rgba(18, 14, 41, 0.8);
+  background-color: rgba(5, 5, 5, 0.8);
   border: none;
-  color: black;
+  color: #000;
   border-radius: 3px;
   padding: 7px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
@@ -662,7 +663,7 @@ app menu inside the main app window itself rather than the top bar
 
 .ws-switcher-active-up, .ws-switcher-active-down {
   height: 30px;
-  background-color: #FC17AF;
+  background-color: #367bf0;
   border: none;
   background-size: 32px;
   border-radius: 3px; }
@@ -676,7 +677,7 @@ app menu inside the main app window itself rather than the top bar
 /* Tiled window previews */
 .tile-preview {
   background-color: transparent;
-  border: 2px solid black;
+  border: 2px solid #000;
   border-radius: 0; }
 
 /* TOP BAR */
@@ -689,7 +690,7 @@ app menu inside the main app window itself rather than the top bar
   font-weight: normal;
   font-size: 12px;
   height: 24px;
-  color: white;
+  color: #FFF;
   background: rgba(0, 0, 0, 0.2);
   background-gradient-direction: none; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
@@ -702,7 +703,7 @@ app menu inside the main app window itself rather than the top bar
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent; }
     #panel .panel-corner:active, #panel .panel-corner:overview, #panel .panel-corner:focus {
-      -panel-corner-border-color: #fc30b8; }
+      -panel-corner-border-color: #4e8bf2; }
     #panel .panel-corner.lock-screen, #panel .panel-corner.login-screen, #panel .panel-corner.unlock-screen {
       -panel-corner-radius: 0;
       -panel-corner-background-color: transparent;
@@ -713,18 +714,18 @@ app menu inside the main app window itself rather than the top bar
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
     transition-duration: 100ms;
     font-weight: bold;
-    color: white; }
+    color: #FFF; }
     #panel .panel-button .app-menu-icon {
       -st-icon-style: symbolic;
       margin-left: 4px;
       margin-right: 4px; }
-    #panel .panel-button .popup-menu-hover {
+    #panel .panel-button .system-status-icon {
       icon-size: 13px;
       font-size: 13px;
       icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
     #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
       background-color: rgba(0, 0, 0, 0.01);
-      box-shadow: inset 0 -2px 0px white;
+      box-shadow: inset 0 -2px 0px #FFF;
       color: white;
       text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); }
       #panel .panel-button:active > .system-status-icon, #panel .panel-button:overview > .system-status-icon, #panel .panel-button:focus > .system-status-icon, #panel .panel-button:checked > .system-status-icon {
@@ -750,7 +751,7 @@ app menu inside the main app window itself rather than the top bar
   #panel .power-status.panel-status-indicators-box {
     spacing: 0; }
   #panel .screencast-indicator {
-    color: #fd7e00; }
+    color: #ff6600; }
   #panel #panelActivities.panel-button > * {
     border: none;
     background-image: url("assets/view-grid-symbolic.svg");
@@ -762,7 +763,7 @@ app menu inside the main app window itself rather than the top bar
 
 #calendarArea {
   padding: 0.75em 1.0em;
-  color: white; }
+  color: #FFF; }
 
 .calendar {
   margin-bottom: 1em; }
@@ -794,7 +795,7 @@ app menu inside the main app window itself rather than the top bar
   background: transparent;
   padding: 15px;
   border-radius: 0;
-  color: white; }
+  color: #FFF; }
   .datemenu-today-button:hover, .datemenu-today-button:focus,
   .world-clocks-button:hover,
   .world-clocks-button:focus,
@@ -803,7 +804,7 @@ app menu inside the main app window itself rather than the top bar
   .events-section-title:hover,
   .events-section-title:focus {
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: inset 0, -3px, 0 white;
+    box-shadow: inset 0, -3px, 0 #FFF;
     padding: 15px; }
   .datemenu-today-button:active,
   .world-clocks-button:active,
@@ -824,7 +825,7 @@ app menu inside the main app window itself rather than the top bar
 .world-clocks-header,
 .weather-header,
 .events-section-title {
-  color: white;
+  color: #FFF;
   font-weight: bold; }
 
 .world-clocks-grid {
@@ -834,22 +835,22 @@ app menu inside the main app window itself rather than the top bar
   spacing: 0.4em; }
 
 .calendar-month-label {
-  color: white;
+  color: #FFF;
   font-weight: bold;
   padding: 8px 0; }
 
 .pager-button {
-  color: white;
-  background-color: #171234;
+  color: #FFF;
+  background-color: #0d0d0d;
   width: 32px;
   height: 32px;
   border-radius: 100px; }
   .pager-button:hover, .pager-button:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .pager-button:active {
-    background-color: #120E29;
+    background-color: #050505;
     border-radius: 0px;
-    box-shadow: inset 0 -3px 0 solid white; }
+    box-shadow: inset 0 -3px 0 solid #FFF; }
 
 .calendar-change-month-back {
   background-image: url("assets/calendar-arrow-left.svg"); }
@@ -871,7 +872,7 @@ app menu inside the main app window itself rather than the top bar
   .calendar-day-base:hover, .calendar-day-base:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .calendar-day-base:active, .calendar-day-base:selected {
-    color: white;
+    color: #FFF;
     background-color: transparent;
     border-color: transparent; }
   .calendar-day-base.calendar-day-heading {
@@ -889,12 +890,12 @@ app menu inside the main app window itself rather than the top bar
   background-image: none;
   text-shadow: none;
   font-weight: bold;
-  background-color: #5AEED8 !important;
-  color: white !important; }
+  background-color: #19a187 !important;
+  color: #FFF !important; }
 
 .calendar-day-with-events, .calendar-day-with-events:hover {
-  color: white;
-  box-shadow: inset 0 0 0 2px white;
+  color: #FFF;
+  box-shadow: inset 0 0 0 2px #FFF;
   font-weight: bold; }
 
 .calendar-other-month-day {
@@ -917,16 +918,16 @@ app menu inside the main app window itself rather than the top bar
   width: 420px; }
 
 .message-list-clear-button.button {
-  color: white;
+  color: #FFF;
   font-weight: bold;
-  background: #171234;
+  background: #0d0d0d;
   border: 2px solid transparent;
   box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1); }
   .message-list-clear-button.button:hover {
-    color: white;
-    border-color: white; }
+    color: #FFF;
+    border-color: #FFF; }
   .message-list-clear-button.button:active {
-    color: white;
+    color: #FFF;
     border-color: transparent; }
 
 .message-list-sections {
@@ -941,7 +942,7 @@ app menu inside the main app window itself rather than the top bar
   margin: 4px;
   border-radius: 2px; }
   .message:hover, .message:focus {
-    background-color: #120E29;
+    background-color: #050505;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
     margin-bottom: 6px;
     margin-top: 2px;
@@ -957,12 +958,12 @@ app menu inside the main app window itself rather than the top bar
     padding: 8px 8px 8px 0px; }
 
 .message-icon-bin > StIcon {
-  color: white;
+  color: #FFF;
   icon-size: 48px;
   -st-icon-style: symbolic; }
 
 .message-secondary-bin {
-  color: white; }
+  color: #FFF; }
 
 .message-secondary-bin > .event-time {
   color: #8e8e80;
@@ -975,34 +976,34 @@ app menu inside the main app window itself rather than the top bar
   icon-size: 16px; }
 
 .message-title {
-  color: white;
+  color: #FFF;
   font-weight: bold;
   font-size: 1em;
   padding: 2px 0 2px 0; }
 
 .message-content {
-  color: white;
+  color: #FFF;
   padding: 8px;
   font-size: 1em; }
 
 .message-media-control {
   padding: 12px;
-  color: white; }
+  color: #FFF; }
   .message-media-control:last-child:ltr {
     padding-right: 18px; }
   .message-media-control:last-child:rtl {
     padding-left: 18px; }
   .message-media-control:hover {
-    color: white; }
+    color: #FFF; }
   .message-media-control:insensitive {
-    color: rgba(255, 255, 255, 0.7); }
+    color: #cccccc; }
 
 .media-message-cover-icon {
   icon-size: 48px !important; }
   .media-message-cover-icon.fallback {
-    color: #231b4f;
-    background-color: #120E29;
-    border: 2px solid #120E29;
+    color: #1f1f1f;
+    background-color: #050505;
+    border: 2px solid #050505;
     border-radius: 2px;
     icon-size: 16px;
     padding: 8px; }
@@ -1028,14 +1029,14 @@ app menu inside the main app window itself rather than the top bar
     padding: 0 4px; }
 
 .system-menu-action {
-  color: white;
+  color: #FFF;
   border-radius: 32px;
   /* wish we could do 50% */
   padding: 13px;
   border: 1px solid transparent; }
   .system-menu-action:hover, .system-menu-action:focus, .system-menu-action:active {
-    background-color: #FC17AF;
-    color: #120E29;
+    background-color: #367bf0;
+    color: #050505;
     border: none;
     padding: 14px; }
   .system-menu-action > StIcon {
@@ -1090,13 +1091,13 @@ app menu inside the main app window itself rather than the top bar
   text-align: center; }
 
 .nm-dialog-airplane-text {
-  color: white; }
+  color: #FFF; }
 
 .nm-dialog-header-icon {
   icon-size: 32px; }
 
 .nm-dialog-scroll-view {
-  border: 1px solid rgba(18, 14, 41, 0.1); }
+  border: 1px solid rgba(5, 5, 5, 0.1); }
 
 .nm-dialog-header {
   font-weight: bold; }
@@ -1108,8 +1109,8 @@ app menu inside the main app window itself rather than the top bar
   spacing: 20px; }
 
 .nm-dialog-item:selected {
-  background-color: white;
-  color: black; }
+  background-color: #FFF;
+  color: #000; }
 
 .nm-dialog-icons {
   spacing: .5em; }
@@ -1118,7 +1119,7 @@ app menu inside the main app window itself rather than the top bar
   icon-size: 16px; }
 
 .no-networks-label {
-  color: white; }
+  color: #FFF; }
 
 .no-networks-box {
   spacing: 12px; }
@@ -1140,14 +1141,14 @@ app menu inside the main app window itself rather than the top bar
     padding: 32px; }
 
 .window-clone-border {
-  border: 4px solid white;
+  border: 4px solid #FFF;
   border-radius: 4px;
-  box-shadow: 0 2px 5px 0 white; }
+  box-shadow: 0 2px 5px 0 #FFF; }
 
 .window-caption {
   spacing: 25px;
-  color: black;
-  background-color: white;
+  color: #000;
+  background-color: #FFF;
   border-radius: 3px;
   padding: 4px 12px;
   -shell-caption-spacing: 12px; }
@@ -1156,7 +1157,7 @@ app menu inside the main app window itself rather than the top bar
   width: 320px;
   border: none;
   color: rgba(255, 255, 255, 0.7);
-  caret-color: black;
+  caret-color: #000;
   caret-size: 1px;
   background-color: rgba(255, 255, 255, 0.1);
   background-gradient-direction: none;
@@ -1164,12 +1165,12 @@ app menu inside the main app window itself rather than the top bar
   border-radius: 2px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5); }
   .search-entry:focus, .search-entry:hover {
-    background-color: white;
-    color: black;
+    background-color: #FFF;
+    color: #000;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
     transition-duration: 200ms; }
     .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
-      color: black; }
+      color: #000; }
   .search-entry .search-entry-icon {
     icon-size: 1em;
     padding: 0 4px;
@@ -1220,7 +1221,7 @@ app menu inside the main app window itself rather than the top bar
 /* DASHBOARD */
 #dash {
   font-size: 20pt;
-  color: white;
+  color: #FFF;
   background: transparent;
   padding: 4px 0;
   border: 1px solid transparent; }
@@ -1235,7 +1236,7 @@ app menu inside the main app window itself rather than the top bar
     height: 24px; }
   #dash .overview-icon StIcon {
     icon-shadow: rgba(0, 0, 0, 0.7) 0px 2px 6px;
-    color: white; }
+    color: #FFF; }
 
 .dash-item-container > StWidget {
   padding: 4px 8px; }
@@ -1243,8 +1244,8 @@ app menu inside the main app window itself rather than the top bar
 .dash-label {
   border-radius: 7px;
   padding: 4px 12px;
-  color: white;
-  background-color: black;
+  color: #FFF;
+  background-color: #000;
   box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
   text-align: center;
   -x-offset: 8px; }
@@ -1258,8 +1259,8 @@ app menu inside the main app window itself rather than the top bar
     icon-size: 96px; }
 
 .system-action-icon {
-  background-color: black;
-  color: white;
+  background-color: #000;
+  color: #FFF;
   border-radius: 99px;
   icon-size: 48px; }
 
@@ -1277,7 +1278,7 @@ app menu inside the main app window itself rather than the top bar
     border-color: transparent;
     border-width: 0px;
     background-gradient-direction: none;
-    background-color: white;
+    background-color: #FFF;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
@@ -1334,8 +1335,8 @@ app menu inside the main app window itself rather than the top bar
   border-radius: 5px;
   width: 20px;
   height: 4px;
-  background-color: white;
-  box-shadow: 0 1px 4px 1px black;
+  background-color: #FFF;
+  box-shadow: 0 1px 4px 1px #000;
   margin-bottom: 2px; }
 
 .search-provider-icon,
@@ -1355,7 +1356,7 @@ app menu inside the main app window itself rather than the top bar
 
 .show-apps:checked .show-apps-icon,
 .show-apps:focus .show-apps-icon {
-  color: white;
+  color: #FFF;
   transition-duration: 100ms; }
 
 .app-folder-popup {
@@ -1391,7 +1392,7 @@ app menu inside the main app window itself rather than the top bar
   spacing: 4px; }
 
 .workspace-thumbnails {
-  color: rgba(255, 255, 255, 0.7);
+  color: #cccccc;
   background-color: rgba(0, 0, 0, 0.2);
   border: none;
   visible-width: 32px;
@@ -1406,7 +1407,7 @@ app menu inside the main app window itself rather than the top bar
     height: 24px; }
 
 .workspace-thumbnail-indicator {
-  border: 5px solid white;
+  border: 5px solid #FFF;
   border-radius: 2px;
   padding: 0; }
 
@@ -1422,7 +1423,7 @@ app menu inside the main app window itself rather than the top bar
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 .url-highlighter {
-  link-color: #FC17AF;
+  link-color: #367bf0;
   font-weight: bold; }
 
 .notification-banner {
@@ -1430,14 +1431,14 @@ app menu inside the main app window itself rather than the top bar
   width: 34em;
   margin: 5px;
   border-radius: 2px;
-  color: white;
-  background-color: #120E29;
+  color: #FFF;
+  background-color: #050505;
   border: none;
   border-width: 0px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5); }
   .notification-banner:hover, .notification-banner:focus {
     margin: 5px;
-    background-color: #120E29;
+    background-color: #050505;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5); }
   .notification-banner .notification-icon {
     padding: 5px; }
@@ -1447,16 +1448,16 @@ app menu inside the main app window itself rather than the top bar
   .notification-banner .secondary-icon {
     icon-size: 1.09em; }
   .notification-banner .notification-actions {
-    background-color: #120E29;
+    background-color: #050505;
     border-radius: 2px;
     padding-top: 0px;
     spacing: 1px; }
   .notification-banner .notification-button {
     border: none;
     padding: 4px 4px 5px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #cccccc;
     font-weight: bold;
-    background-color: #120E29;
+    background-color: #050505;
     border-color: transparent;
     box-shadow: none;
     border-radius: 0px;
@@ -1468,7 +1469,7 @@ app menu inside the main app window itself rather than the top bar
     .notification-banner .notification-button:last-child {
       border-radius: 0 0 2px 0; }
     .notification-banner .notification-button:hover, .notification-banner .notification-buttonfocus {
-      color: white;
+      color: #FFF;
       font-weight: bold; }
 
 .summary-source-counter {
@@ -1478,8 +1479,8 @@ app menu inside the main app window itself rather than the top bar
   width: 1.6em;
   -shell-counter-overlap-x: 3px;
   -shell-counter-overlap-y: 3px;
-  background-color: #FC17AF;
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #367bf0;
+  color: #cccccc;
   border: 2px solid #eeeeec;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 0.9em; }
@@ -1494,7 +1495,7 @@ app menu inside the main app window itself rather than the top bar
   margin: 5px; }
 
 .chat-log-message {
-  color: rgba(255, 255, 255, 0.7); }
+  color: #cccccc; }
 
 .chat-new-group {
   padding-top: 1em; }
@@ -1507,7 +1508,7 @@ app menu inside the main app window itself rather than the top bar
 
 .chat-sent {
   padding-left: 18pt;
-  color: rgba(255, 255, 255, 0.7); }
+  color: #cccccc; }
   .chat-sent:rtl {
     padding-left: 0;
     padding-right: 18pt; }
@@ -1516,7 +1517,7 @@ app menu inside the main app window itself rather than the top bar
   padding-left: 4px;
   font-size: 9pt;
   font-weight: bold;
-  color: white; }
+  color: #FFF; }
   .chat-meta-message:rtl {
     padding-left: 0;
     padding-right: 4px; }
@@ -1541,7 +1542,7 @@ app menu inside the main app window itself rather than the top bar
   spacing: 8px;
   border-radius: 4px; }
   .hotplug-resident-mount:hover {
-    background-color: rgba(18, 14, 41, 0.3); }
+    background-color: rgba(5, 5, 5, 0.3); }
 
 .hotplug-resident-mount-label {
   color: inherit;
@@ -1561,7 +1562,7 @@ app menu inside the main app window itself rather than the top bar
 
 /* Eeeky things */
 .magnifier-zoom-region {
-  border: 2px solid #FC17AF; }
+  border: 2px solid #367bf0; }
   .magnifier-zoom-region.full-screen {
     border-width: 0; }
 
@@ -1582,15 +1583,15 @@ app menu inside the main app window itself rather than the top bar
   font-size: 14pt;
   font-weight: bold;
   border-radius: 2px;
-  background-color: #120E29;
-  border: 3px solid white;
-  color: white;
+  background-color: #050505;
+  border: 3px solid #FFF;
+  color: #FFF;
   box-shadow: none; }
   .keyboard-key:active {
     border: none; }
 
 .keyboard-subkeys {
-  color: white;
+  color: #FFF;
   padding: 5px;
   -arrow-border-radius: 10px;
   -arrow-background-color: rgba(46, 52, 54, 0.7);
@@ -1612,7 +1613,7 @@ app menu inside the main app window itself rather than the top bar
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 4px; }
   .candidate-box:selected, .candidate-box:hover {
-    background-color: #FC17AF;
+    background-color: #367bf0;
     color: #ffffff; }
 
 .candidate-page-button-box {
@@ -1658,29 +1659,29 @@ app menu inside the main app window itself rather than the top bar
     padding: 3px 18px; }
     .login-dialog .modal-dialog-button:default {
       color: #eeeeec;
-      background-color: rgba(252, 23, 175, 0.5);
+      background-color: rgba(54, 123, 240, 0.5);
       border-color: rgba(0, 0, 0, 0.7);
       box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
-      text-shadow: 0 1px black;
-      icon-shadow: 0 1px black; }
+      text-shadow: 0 1px #000;
+      icon-shadow: 0 1px #000; }
       .login-dialog .modal-dialog-button:default:hover, .login-dialog .modal-dialog-button:default:focus {
-        color: white;
+        color: #FFF;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: rgba(252, 23, 175, 0.7);
+        background-color: rgba(54, 123, 240, 0.7);
         box-shadow: inset 0 1px #5d696d;
-        text-shadow: 0 1px black;
-        icon-shadow: 0 1px black; }
+        text-shadow: 0 1px #000;
+        icon-shadow: 0 1px #000; }
       .login-dialog .modal-dialog-button:default:active {
-        color: white;
+        color: #FFF;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: #FC17AF;
-        box-shadow: inset 0 0 black;
+        background-color: #367bf0;
+        box-shadow: inset 0 0 #000;
         text-shadow: none;
         icon-shadow: none; }
       .login-dialog .modal-dialog-button:default:insensitive {
-        color: #FC17AF;
+        color: #367bf0;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: rgba(18, 14, 41, 0.7);
+        background-color: rgba(5, 5, 5, 0.7);
         box-shadow: none;
         text-shadow: none;
         icon-shadow: none; }
@@ -1695,7 +1696,7 @@ app menu inside the main app window itself rather than the top bar
   spacing: 5px; }
 
 .login-dialog-message-warning {
-  color: #fd7e00; }
+  color: #ff6600; }
 
 .login-dialog-message-hint {
   padding-top: 0;
@@ -1724,10 +1725,10 @@ app menu inside the main app window itself rather than the top bar
   padding: .2em;
   width: 23em; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
-    background-color: #FC17AF;
+    background-color: #367bf0;
     color: #ffffff; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    border-right: 2px solid #FC17AF; }
+    border-right: 2px solid #367bf0; }
 
 .login-dialog-user-list-item {
   border-radius: 5px;
@@ -1783,14 +1784,14 @@ app menu inside the main app window itself rather than the top bar
   padding-bottom: 3em; }
 
 .screen-shield-arrows Gjs_Arrow {
-  color: white;
+  color: #FFF;
   width: 80px;
   height: 48px;
   -arrow-thickness: 12px;
   -arrow-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
 
 .screen-shield-clock {
-  color: white;
+  color: #FFF;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
   font-weight: bold;
   text-align: center;
@@ -1832,7 +1833,7 @@ app menu inside the main app window itself rather than the top bar
   background-color: rgba(46, 52, 54, 0.5); }
 
 .screen-shield-background {
-  background: black;
+  background: #000;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); }
 
 #lockDialogGroup {
@@ -1840,11 +1841,11 @@ app menu inside the main app window itself rather than the top bar
   background-repeat: repeat; }
 
 #screenShieldNotifications StButton#vhandle, #screenShieldNotifications StButton#hhandle {
-  background-color: rgba(18, 14, 41, 0.3); }
+  background-color: rgba(5, 5, 5, 0.3); }
   #screenShieldNotifications StButton#vhandle:hover, #screenShieldNotifications StButton#vhandle:focus, #screenShieldNotifications StButton#hhandle:hover, #screenShieldNotifications StButton#hhandle:focus {
-    background-color: rgba(18, 14, 41, 0.5); }
+    background-color: rgba(5, 5, 5, 0.5); }
   #screenShieldNotifications StButton#vhandle:active, #screenShieldNotifications StButton#hhandle:active {
-    background-color: rgba(252, 23, 175, 0.5); }
+    background-color: rgba(54, 123, 240, 0.5); }
 
 #LookingGlassDialog {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1852,9 +1853,9 @@ app menu inside the main app window itself rather than the top bar
   padding: 4px;
   border: none;
   border-radius: 2px;
-  color: white; }
+  color: #FFF; }
   #LookingGlassDialog > #Toolbar {
-    border: 1px solid white;
+    border: 1px solid #FFF;
     border-radius: 2px; }
   #LookingGlassDialog .labels {
     spacing: 4px; }
@@ -1862,18 +1863,18 @@ app menu inside the main app window itself rather than the top bar
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
     font-weight: bold;
-    color: white;
+    color: #FFF;
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em; }
     #LookingGlassDialog .notebook-tab:hover {
-      color: white;
-      text-shadow: black 0px 2px 2px; }
+      color: #FFF;
+      text-shadow: #000 0px 2px 2px; }
     #LookingGlassDialog .notebook-tab:selected {
       border-bottom-width: 4px;
-      border-color: #FC17AF;
-      color: white;
-      text-shadow: black 0px 2px 2px; }
+      border-color: #367bf0;
+      color: #FFF;
+      text-shadow: #000 0px 2px 2px; }
   #LookingGlassDialog StBoxLayout#EvalBox {
     padding: 4px;
     spacing: 4px; }
@@ -1881,11 +1882,11 @@ app menu inside the main app window itself rather than the top bar
     spacing: 4px; }
 
 .lg-dialog StEntry {
-  selection-background-color: #FC17AF;
-  selected-color: black; }
+  selection-background-color: #367bf0;
+  selected-color: #000; }
 
 .lg-dialog .shell-link {
-  color: white; }
+  color: #FFF; }
   .lg-dialog .shell-link:hover {
     color: #eee; }
 
@@ -1897,7 +1898,7 @@ app menu inside the main app window itself rather than the top bar
   spacing: 4px; }
 
 .lg-obj-inspector-button {
-  border: 2px solid white;
+  border: 2px solid #FFF;
   padding: 4px;
   border-radius: 2px; }
   .lg-obj-inspector-button:hover {
@@ -1911,7 +1912,7 @@ app menu inside the main app window itself rather than the top bar
   spacing: 6px; }
 
 .lg-extension {
-  border: 2px solid white;
+  border: 2px solid #FFF;
   border-radius: 2px;
   padding: 4px; }
 
@@ -1923,6 +1924,6 @@ app menu inside the main app window itself rather than the top bar
 
 #LookingGlassPropertyInspector {
   background: rgba(0, 0, 0, 0.8);
-  border: 2px solid white;
+  border: 2px solid #FFF;
   border-radius: 2px;
   padding: 6px; }
