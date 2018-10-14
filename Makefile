@@ -3,7 +3,7 @@
 
 PREFIX ?= /usr
 IGNORE ?=
-THEMES ?= Flat-Remix Flat-Remix-Dark-Miami Flat-Remix-Dark Flat-Remix-Miami
+THEMES ?= Flat-Remix Flat-Remix-Miami-Dark Flat-Remix-Dark Flat-Remix-Miami
 
 # excludes IGNORE from THEMES list
 THEMES := $(filter-out $(IGNORE), $(THEMES))
