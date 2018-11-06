@@ -2,7 +2,7 @@
 
 for scss in *.scss
 do
-  sassc -a $scss ${scss%%.scss}.css
+  scss -q $scss ${scss%%.scss}.css
 done
 
 
