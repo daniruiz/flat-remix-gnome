@@ -1,1746 +1,1944 @@
+//This is the RIGHT PLACE to edit the stylesheet
 
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+$panel-corner-radius: 6px;
+
+/* GLOBALS */
 $font-size: 11;
-$font-family: Source Sans Pro, Cantarell, Sans-Serif;
-$_bubble_bg_color: opacify($osd_bg_color,0.25);
+$font-family: Cantarell, Sans-Serif;
+$_bubble_bg_color: opacify($osd_bg_color, 0.25);
 $_bubble_fg_color: $osd_fg_color;
-$_bubble_borders_color: transparentize($osd_fg_color,0.8);
+$_bubble_borders_color: transparentize($osd_fg_color, 0.8);
 
 stage {
-    font-family: $font-family;
-    font-size: 11pt;
-    color: $font_color;
+  font-family: $font-family;
+  @include fontsize($font-size);
+  color: $fg_color;
 }
 
 /* WIDGETS */
 
 /* Buttons */
 .button {
-    border-radius: 2px;
-    border: none;
-    margin-top: 0.5em;
-    padding: 4px 32px;
-    color: #dbdee0;
-    font-weight: bold;
-    background-color: rgba(255,255,255,0.0);
-    background-gradient-direction: none;
-    background-gradient-start: rgba(255,255,255,0);
-    background-gradient-end: rgba(255,255,255,0);
-    box-shadow: none;
-    text-shadow: none;
-    icon-shadow: none;
-    &:hover, &:focus {
-        color: #FFF;
-        border: none;
-        background-color: rgba(255,255,255,0.1);
-        background-gradient-direction: none;
-        background-gradient-start: none;
-        background-gradient-end: none;
-        box-shadow: none;
-        text-shadow: none;
-        icon-shadow: none;
-    }
-    &:insensitive {
-        color: rgba(255,255,255,0.3);
-        border: none;
-        background-color: rgba(0,0,0,0.0);
-        background-gradient-direction: none;
-        box-shadow: none;
-        text-shadow: none;
-        icon-shadow: none;
-    }
-    &:active {
-        color: #FFF;
-        border: none;
-        background-color: rgba(0,0,0,0.1);
-        background-gradient-direction: none;
-        background-gradient-start: rgba(0,0,0,0.1);
-        background-gradient-end: rgba(0,0,0,0.1);
-        box-shadow: none;
-        text-shadow: none;
-        icon-shadow: none;
-    }
+  border-radius: 3px;
+  border-width: 1px;
+  padding: 4px 32px;
+  @include button(normal);
+  &:focus {
+    @include button(focus);
+  }
+  &:hover {
+    @include button(hover);
+  }
+  &:insensitive {
+    @include button(insensitive);
+  }
+  &:active {
+    @include button(active);
+  }
 }
 
-.button:insensitive {
-    color: rgba(255,255,255,0.3);
-    border: none;
-    background-color: rgba(0,0,0,0.0);
-    background-gradient-direction: none;
-    box-shadow: none;
-    text-shadow: none;
-    icon-shadow: none; }
-.button:active {
-    color: #FFF;
-    border: none;
-    background-color: rgba(0,0,0,0.1);
-    background-gradient-direction: none;
-    background-gradient-start: rgba(0,0,0,0.1);
-    background-gradient-end: rgba(0,0,0,0.1);
-    box-shadow: none;
-    text-shadow: none;
-    icon-shadow: none; }
-
 .modal-dialog-linked-button {
-    padding: 0;
-    outline: 0;
-    border-radius: 0;
-    border: none;
-    height: 50px;
-    color: #FFF;
-    border-radius: 0;
-    background-color: #000;
-    box-shadow: inset 0 0 #000;
-    font-weight: bold;
+  border-right-width: 1px;
+  @include button(normal);
+  &:insensitive {
+    @include button(insensitive);
+  }
+  &:hover {
+    @include button(hover);
+  }
+  &:focus {
+    @include button(focus);
+  }
+  &:active {
+    @include button(active);
+  }
+  padding: 12px;
+
+  &:first-child {
+    border-radius: 0px 0px 0px 6px;
+  }
+  &:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px 6px 0px;
+  }
+  &:first-child:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px 6px 6px;
+  }
 }
 
 /* Entries */
 StEntry {
-    border-radius: 2px;
-    padding: 4px;
-    border-width: 1px;
-    color: $font_color;
-    background-color: $bg_color;
-    background-gradient-direction: none;
-    border-color: transparent;
-    box-shadow: none;
-    selection-background-color: $color1;
-    selected-color: $bg_color;
-    &:focus {
-        background-color: $bg_color;
-        color: $dark_font_color;
-        box-shadow: none;
-        border-color: transparent;
-    }
-    &:insensitive {
-        color: $light_font_color;
-        box-shadow: none;
-    }
-    StIcon.capslock-warning {
-        icon-size: 16px;
-        warning-color: $warning_color;
-        padding: 0 4px;
-    }
+  border-radius: 3px;
+  padding: 4px;
+  border-width: 1px;
+  color: $fg_color;
+  @include entry(normal);
+  //&:hover { @include entry(hover);}
+  &:focus {
+    @include entry(focus, $fc: transparentize($fg_color, 0.5));
+  }
+  &:insensitive {
+    @include entry(insensitive);
+  }
+  selection-background-color: $color1;
+  selected-color: $selected_fg_color;
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning_color;
+    padding: 0 4px;
+  }
 }
-
 
 /* Scrollbars */
 
 StScrollView {
-    &.vfade { -st-vfade-offset: 68px; }
-    &.hfade { -st-hfade-offset: 68px; }
+  &.vfade {
+    -st-vfade-offset: 68px;
+  }
+  &.hfade {
+    -st-hfade-offset: 68px;
+  }
 }
 
 StScrollBar {
-    padding: 0;
+  padding: 0;
 
-    StScrollView & {
-        min-width: 14px;
-        min-height: 14px;
-    }
+  StScrollView & {
+    min-width: 14px;
+    min-height: 14px;
+  }
 
-    StBin#trough {
-        border-radius: 0;
-        background-color: transparent;
-    }
+  StBin#trough {
+    border-radius: 0;
+    background-color: transparent;
+  }
 
-    StButton#vhandle, StButton#hhandle {
-        background: rgba($secondary_color, .1);
-        border-radius: 8px;
-        width: 10px;
-        margin: 3px;
+  StButton#vhandle, StButton#hhandle {
+    border-radius: 8px;
+    background-color: mix($fg_color, $bg_color, 60%);
+    //border: 3px solid transparent; //would be nice to margin or at least to transparent
+    margin: 3px;
+    &:hover {
+      background-color: mix($fg_color, $bg_color, 80%);
     }
+    &:active {
+      background-color: $color1;
+    }
+  }
 }
 
 /* Slider */
 
 .slider {
-    height: 1.09em;
-    -barlevel-height: .35em;
-    -barlevel-background-color: rgba($secondary_color, .05);
-    -barlevel-border-color: $color1;
-    -barlevel-active-background-color: $color1;
-    -barlevel-overdrive-color: $color1;
-    -barlevel-overdrive-separator-width: 0.1em;
-    -barlevel-border-width: 0;
-    
-    -slider-height: .35em;
-    -slider-background-color: rgba($secondary_color, .05); //background of the trough
-    -slider-border-color: $color1; //trough border color
-    -slider-active-background-color: $color1; //active trough fill
-    -slider-active-border-color: $color1; //active trough border
-    -slider-border-width: 0px;
-    -slider-handle-radius: 0px;
-    
-    -slider-handle-radius: 0;
+  height: 1.09em;
+  -barlevel-height: .35em;
+  -barlevel-background-color: rgba($secondary_color, .05);
+  -barlevel-border-color: $color1;
+  -barlevel-active-background-color: $color1;
+  -barlevel-overdrive-color: $color1;
+  -barlevel-overdrive-separator-width: 0.1em;
+  -barlevel-border-width: 0;
+
+  -slider-height: .35em;
+  -slider-background-color: rgba($secondary_color, .05); //background of the trough
+  -slider-border-color: $color1; //trough border color
+  -slider-active-background-color: $color1; //active trough fill
+  -slider-active-border-color: $color1; //active trough border
+  -slider-border-width: 0;
+  -slider-handle-radius: 0;
+
+  -slider-handle-radius: 0;
 }
 
 /* Check Boxes */
 
 .check-box {
-    StBoxLayout { spacing: .8em; }
-    StBin {
-        width: 24px;
-        height: 22px;
-        background-image: url("assets/checkbox-off.svg");
-    }
-    &:focus StBin { background-image: url("assets/checkbox-off-focused.svg"); }
-    &:checked StBin { background-image: url("assets/checkbox.svg"); }
-    &:focus:checked StBin { background-image: url("assets/checkbox-focused.svg"); }
+  StBoxLayout {
+    spacing: .8em;
+  }
+  StBin {
+    width: 24px;
+    height: 22px;
+    background-image: url("resource:///org/gnome/shell/theme/checkbox-off.svg");
+  }
+  &:focus StBin {
+    background-image: url("resource:///org/gnome/shell/theme/checkbox-off-focused.svg");
+  }
+  &:checked StBin {
+    background-image: url("resource:///org/gnome/shell/theme/checkbox.svg");
+  }
+  &:focus:checked StBin {
+    background-image: url("resource:///org/gnome/shell/theme/checkbox-focused.svg");
+  }
 }
 
 /* Switches */
 .toggle-switch {
-    width: 72px;
-    height: 21px;
-    background-size: contain;
+  width: 65px;
+  height: 22px;
+  background-size: contain;
 }
 
 @each $v in us, intl {
-    .toggle-switch-#{$v} {
-        background-image: url("assets/toggle-off.svg");
-        &:checked { background-image: url("assets/toggle-on.svg"); }
+  .toggle-switch-#{$v} {
+    background-image: url("resource:///org/gnome/shell/theme/toggle-off-#{$v}.svg");
+    &:checked {
+      background-image: url("resource:///org/gnome/shell/theme/toggle-on-#{$v}.svg");
     }
+  }
 }
 
 /* links */
 .shell-link {
-    color: $color1;
-    &:hover {
-        color: $color1;
-        font-weight: bold;
-    }
+  color: $link_color;
+  &:hover {
+    color: lighten($link_color, 10%);
+  }
 }
 
 /* Modal Dialogs */
 
-.headline { font-size: 110%; }
-.lightbox { background-color: $secondary_color; }
-.flashspot { background-color: $bg_color; }
+.headline {
+  font-size: 110%;
+}
+
+.lightbox {
+  background-color: black;
+}
+
+.flashspot {
+  background-color: white;
+}
 
 .modal-dialog {
-    border-radius: 2px;
-    color: $dark_font_color;
-    background-color: $bg_color;
-    border: none;
-    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.32), 0 3px 3px rgba(0, 0, 0, 0.26);
-    .modal-dialog-content-box {
-        padding: 24px;
-    }
-    .run-dialog-entry {
-        width: 20em;
-        margin-bottom: 6px;
-        background-color: rgba($secondary_color, .05);
-        background-gradient-direction: none;
-        box-shadow: none;
-        border: none;
-        color: $dark_font_color;
-        border-radius: 1px;
-    }
-    .run-dialog-error-box {
-        padding-top: 16px;
-        spacing: 6px;
-    }
-    .run-dialog-button-box { padding-top: 1em; }
-    .run-dialog-label {
-        font-size: 12pt;
-        font-weight: bold;
-        color: $dark_font_color;
-        padding-bottom: .4em;
-    }
+  border-radius: 9px;
+  color: $osd_fg_color;
+  background-color: transparentize(darken($osd_bg_color, 10%), 0.05);
+  border: 1px solid $_bubble_borders_color;
+  .modal-dialog-content-box {
+    padding: 24px;
+  }
+  .run-dialog-entry {
+    width: 20em;
+    margin-bottom: 6px;
+  }
+  .run-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+  }
+  .run-dialog-button-box {
+    padding-top: 1em;
+  }
+  .run-dialog-label {
+    @include fontsize($font-size + 1.1);
+    font-weight: bold;
+    color: darken($osd_fg_color, 10%);
+    padding-bottom: .4em;
+  }
+
 }
 
 .mount-dialog-subject,
 .end-session-dialog-subject { //this should be a generic header class
-    font-size: 14pt;
+  @include fontsize($font-size * 1.3);
 }
 
 /* Message Dialog */
 .message-dialog-main-layout {
-    padding: 12px 20px 0;
-    spacing: 12px;
+  padding: 12px 20px 0;
+  spacing: 12px;
 }
 
 .message-dialog-content {
-    max-width: 28em;
-    spacing: 20px;
+  max-width: 28em;
+  spacing: 20px;
 }
 
 .message-dialog-icon {
-    min-width: 48px;
-    icon-size: 48px;
+  min-width: 48px;
+  icon-size: 48px;
 }
 
 .message-dialog-title {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .message-dialog-subtitle {
-    color: darken($fg_color,40%);
-    font-weight: bold;
+  color: darken($fg_color, 40%);
+  font-weight: bold;
 }
 
 /* End Session Dialog */
 .end-session-dialog {
-    spacing: 42px;
-    border: none;
-    border-radius: 2px;
+  spacing: 42px;
+  border: 1px solid $_bubble_borders_color;
 }
 
 .end-session-dialog-list {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .end-session-dialog-layout {
-    padding-left: 17px;
-    &:rtl { padding-right: 17px; }
+  padding-left: 17px;
+  &:rtl {
+    padding-right: 17px;
+  }
 }
 
 .end-session-dialog-description {
-    width: 28em;
-    padding-bottom: 10px;
-    &:rtl {
-        text-align: right;
-    }
+  width: 28em;
+  padding-bottom: 10px;
+  &:rtl {
+    text-align: right;
+  }
 }
 
 .end-session-dialog-warning {
-    width: 28em;
-    color: $warning_color;
-    padding-top: 6px;
-    &:rtl {
-        text-align: right;
-    }
+  width: 28em;
+  color: $warning_color;
+  padding-top: 6px;
+  &:rtl {
+    text-align: right;
+  }
 }
 
 .end-session-dialog-logout-icon {
-    //border: 2px solid #8b8b8b;
-    border-radius: 5px;
-    width: 48px;
-    height: 48px;
-    background-size: contain;
+  //border: 2px solid #8b8b8b;
+  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
 }
 
 .end-session-dialog-shutdown-icon {
-    color: $secondary_color;
-    width: 48px;
-    height: 48px;
+  color: $fg_color;
+  width: 48px;
+  height: 48px;
 }
 
 .end-session-dialog-inhibitor-layout {
-    spacing: 16px;
-    max-height: 200px;
-    padding-right: 65px;
-    padding-left: 65px;
+  spacing: 16px;
+  max-height: 200px;
+  padding-right: 65px;
+  padding-left: 65px;
 }
 
 .end-session-dialog-session-list,
 .end-session-dialog-app-list {
-    spacing: 1em;
+  spacing: 1em;
 }
 
 .end-session-dialog-list-header {
-    font-weight: bold;
-    &:rtl { text-align: right; }
+  font-weight: bold;
+  &:rtl {
+    text-align: right;
+  }
 }
 
 .end-session-dialog-app-list-item,
 .end-session-dialog-session-list-item {
-    spacing: 1em;
+  spacing: 1em;
 }
 
 .end-session-dialog-app-list-item-name,
 .end-session-dialog-session-list-item-name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .end-session-dialog-app-list-item-description {
-    color: darken($fg_color,5%);
-    font-size: 10pt;
-}
-
-.end-session-dialog .modal-dialog-linked-button:last-child {
-    padding: 0;
-    border-radius: 0;
-    border: none;
-    height: 50px;
-    background-color: #d41a1a;
-    font-size: 10pt;
-    color: #FFF;
-}
-.end-session-dialog .modal-dialog-linked-button:last-child:active {
-    color: #FFF;
-    background-color: rgba(#d41a1a, .7);
+  color: darken($fg_color, 5%);
+  font-size: 10pt;
 }
 
 /* ShellMountOperation Dialogs */
-.shell-mount-operation-icon { icon-size: 48px; }
+.shell-mount-operation-icon {
+  icon-size: 48px;
+}
 
 .mount-dialog {
-    spacing: 24px;
+  spacing: 24px;
 
-    .message-dialog-title {
-        padding-top: 10px;
-        padding-left: 17px;
-        padding-bottom: 6px;
-        max-width: 34em;
-    }
+  .message-dialog-title {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+    max-width: 34em;
+  }
 
-    .message-dialog-title:rtl {
-        padding-left: 0px;
-        padding-right: 17px;
-    }
+  .message-dialog-title:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+  }
 
-    .message-dialog-body {
-        padding-left: 17px;
-        width: 28em;
-    }
+  .message-dialog-body {
+    padding-left: 17px;
+    width: 28em;
+  }
 
-    .message-dialog-body:rtl {
-        padding-left: 0px;
-        padding-right: 17px;
-    }
+  .message-dialog-body:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+  }
 }
 
 .mount-dialog-app-list {
-    max-height: 200px;
-    padding-top: 24px;
-    padding-left: 49px;
-    padding-right: 32px;
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
 }
 
 .mount-dialog-app-list:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
+  padding-right: 49px;
+  padding-left: 32px;
 }
 
 .mount-dialog-app-list-item {
-    color: $dark_font_color;
-    &:hover { color: $font_color; }
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
+  color: darken($fg_color, 10%);
+  &:hover {
+    color: $fg_color;
+  }
+  &:ltr {
+    padding-right: 1em;
+  }
+  &:rtl {
+    padding-left: 1em;
+  }
 }
 
 .mount-dialog-app-list-item-icon {
-    &:ltr { padding-right: 17px; }
-    &:rtl { padding-left: 17px; }
+  &:ltr {
+    padding-right: 17px;
+  }
+  &:rtl {
+    padding-left: 17px;
+  }
 }
 
 .mount-dialog-app-list-item-name {
-    font-size: 10pt;
+  font-size: 10pt;
 }
-
 
 /* Password or Authentication Dialog */
 
 .prompt-dialog {
-    //this is the width of the entire modal popup
-    width: 34em;
-    border: none;
+  //this is the width of the entire modal popup
+  width: 34em;
+  border: 3px solid $_bubble_borders_color;
 
-    .message-dialog-main-layout { spacing: 24px; padding: 10px; }
-    .message-dialog-content { spacing: 16px; }
-    .message-dialog-title { color: darken($osd_fg_color,25%); }
+  .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+  .message-dialog-content {
+    spacing: 16px;
+  }
+  .message-dialog-title {
+    color: darken($osd_fg_color, 25%);
+  }
 }
 
 .prompt-dialog-description:rtl {
-    text-align: right;
+  text-align: right;
 }
 
 .prompt-dialog-password-box {
-    spacing: 1em;
-    padding-bottom: 1em;
+  spacing: 1em;
+  padding-bottom: 1em;
 }
 
 .prompt-dialog-error-label {
-    font-size: 10pt;
-    color: $error_color;
-    padding-bottom: 8px;
+  font-size: 10pt;
+  color: $error_color;
+  padding-bottom: 8px;
 }
 
 .prompt-dialog-info-label {
-    font-size: 10pt;
-    padding-bottom: 8px;
+  font-size: 10pt;
+  padding-bottom: 8px;
 }
 
 .hidden {
-    color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0);
 }
 
 .prompt-dialog-null-label {
-    font-size: 10pt;
-    padding-bottom: 8px;
+  font-size: 10pt;
+  padding-bottom: 8px;
 }
-
 
 /* Polkit Dialog */
 
 .polkit-dialog-user-layout {
-    padding-left: 10px;
-    spacing: 10px;
-    &:rtl {
-        padding-left: 0px;
-        padding-right: 10px;
-    }
+  padding-left: 10px;
+  spacing: 10px;
+  &:rtl {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
 }
 
 .polkit-dialog-user-root-label {
-    color: $warning_color;
+  color: $warning_color;
 }
 
 .polkit-dialog-user-icon {
-    border-radius: 5px;
-    background-size: contain;
-    width: 48px;
-    height: 48px;
+  border-radius: 5px;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
 }
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-    spacing: 30px;
+  spacing: 30px;
 }
 
 .audio-selection-content {
-    spacing: 20px;
-    padding: 24px;
+  spacing: 20px;
+  padding: 24px;
 }
 
 .audio-selection-title {
-    font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .audio-selection-box {
-    spacing: 20px;
+  spacing: 20px;
 }
 
 .audio-selection-device {
-    border: 1px solid $_bubble_borders_color;
-    border-radius: 12px;
-    &:active,&:hover,&:focus { background-color: $color1; }
+  border: 1px solid $_bubble_borders_color;
+  border-radius: 12px;
+  &:active, &:hover, &:focus {
+    background-color: $color1;
+  }
 }
 
 .audio-selection-device-box {
-    padding: 20px;
-    spacing: 20px;
+  padding: 20px;
+  spacing: 20px;
 }
 
 .audio-selection-device-icon {
-    icon-size: 64px;
+  icon-size: 64px;
 }
 
 /* Access Dialog */
 .access-dialog {
-    spacing: 30px;
+  spacing: 30px;
 }
 
 /* Geolocation Dialog */
 .geolocation-dialog {
-    spacing: 30px;
+  spacing: 30px;
 }
 
 /* Extension Dialog */
 .extension-dialog {
-    .message-dialog-main-layout { spacing: 24px; padding: 10px; }
-    .message-dialog-title { color: darken($osd_fg_color,25%); }
+  .message-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+  .message-dialog-title {
+    color: darken($osd_fg_color, 25%);
+  }
 }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
-    spacing: 30px;
+  spacing: 30px;
 }
 
 /* Network Agent Dialog */
 
 .network-dialog-secret-table {
-    spacing-rows: 15px;
-    spacing-columns: 1em;
+  spacing-rows: 15px;
+  spacing-columns: 1em;
 }
 
 .keyring-dialog-control-table {
-    spacing-rows: 15px;
-    spacing-columns: 1em;
+  spacing-rows: 15px;
+  spacing-columns: 1em;
 }
 
 /* Popovers/Menus */
 
 .popup-menu {
-    margin: 5px 9px;
-    color: $font_color;
-    font-size: 13px;
+  min-width: 15em;
 
-    .popup-menu-arrow { } //defined globally in the TOP BAR
-    .popup-menu-icon {
-        icon-size: 13px;
-        color: $font_color;
-    }
-    .popup-sub-menu {
-        padding: 10px 0;
-        background: rgba($highlight_color, 0.05);
-        box-shadow: inset 0 -2px 7px -2px rgba(0, 0, 0, 0.1);
-        color: $font_color;
-    }
+  .popup-menu-arrow {
+  }
+  //defined globally in the TOP BAR
+  .popup-sub-menu {
+    background-color: darken($bg_color, 2%);
+    box-shadow: inset 0 -1px 0px lighten(transparent, 5%);
+  }
 
-    .popup-menu-content { padding: 1em 0em 1em 0em; }
-    .popup-menu-item {
-        spacing: 12px;
+  .popup-menu-content {
+    padding: 1em 0em;
+  }
+  .popup-menu-item {
+    spacing: 12px;
 
-        &:ltr { padding: .4em 3em .4em 0em; }
-        &:rtl { padding: .4em 0em .4em 3em; }
-        &:checked {
-            font-weight: normal;
-            background: transparent;
-            box-shadow: none;
-        }
-        &:active, &.selected {
-            color: $font_color;
-            background: rgba($highlight_color, .05);
-        }
-        &:insensitive {
-            color: rgba($font_color, .5);
-            background: transparent;
-        }
+    &:ltr {
+      padding: .4em 1.75em .4em 0em;
     }
+    &:rtl {
+      padding: .4em 0em .4em 1.75em;
+    }
+    &:checked {
+      background-color: darken($bg_color, 2%);
+      box-shadow: inset 0 1px 0px lighten(transparent, 5%);
+      font-weight: bold;
+    }
+    &.selected {
+      background-color: transparentize($fg_color, 0.9);
+      color: $fg_color;
+    }
+    &:active {
+      background-color: $color1;
+      color: $selected_fg_color;
+    }
+    &:insensitive {
+      color: transparentize($fg_color, .5);
+    }
+  }
 
-    .popup-inactive-menu-item { //all icons and other graphical elements
-        color: $font_color;
+  .popup-inactive-menu-item { //all icons and other graphical elements
+    color: $fg_color;
 
-        &:insensitive { color: rgba($font_color, .5); }
+    &:insensitive {
+      color: transparentize($fg_color, 0.5);
     }
-    //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
-    &.panel-menu {
-        -boxpointer-gap: 10px;
-        margin: 0 10px 10px 0;
-    }
+  }
+  //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
+  &.panel-menu {
+    -boxpointer-gap: 4px;
+    margin-bottom: 1.75em;
+  }
 }
-
-
 
 .popup-menu-ornament {
-    text-align: right;
-    margin-left: 10px;
-    width: 16px;
+  text-align: right;
+  width: 1.2em;
 }
+
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-    -arrow-background-color: $bg_color;
-    -arrow-border-width: 0;
-    -arrow-border-color: transparent;
-    -arrow-base: 64px;
-    -arrow-rise: 0;
-    -arrow-box-shadow: none;
-    margin: 0.1em 0.3em 0.5em;
-    border-radius: 2px;
-    background-color: $bg_color;
-    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.4), 0 5px 5px rgba(0, 0, 0, 0.32), 0 3px 3px rgba(0, 0, 0, 0.26); 
+  -arrow-border-radius: 3px;
+  -arrow-background-color: $bg_color;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 64px;
+  -arrow-rise: 0;
+  -arrow-box-shadow: none;
+  margin: .4em .8em;
+  background-color: $bg_color;
+  box-shadow: 0 2px if($variant == 'dark', 11px 3px #000, 8px 0 transparentize(#000, .6));
+  border-radius: 3px;
 }
 
 .popup-separator-menu-item {
-    //-margin-horizontal: 24px;
-    height: 1px; //not really the whole box
-    margin: 15px 0px;
-    background-color: transparent;
-    border-color: rgba($secondary_color, .05);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+  //-margin-horizontal: 24px;
+  height: 1px; //not really the whole box
+  margin: 6px 64px;
+  background-color: transparent;
+  border-color: lighten(transparent, 10%);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
-
 // Background menu
-.background-menu { -boxpointer-gap: 4px; -arrow-rise: 0px; }
+.background-menu {
+  -boxpointer-gap: 4px;
+  -arrow-rise: 0px;
+}
 
 /* fallback menu
 - odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
-app menu inside the main app window itself rather than the top bar
+  app menu inside the main app window itself rather than the top bar
 */
-
 
 /* OSD */
 .osd-window {
-    text-align: center;
-    font-weight: bold;
-    spacing: 1em;
-    padding: 20px;
-    margin: 32px;
-    min-width: 64px;
-    min-height: 64px;
+  text-align: center;
+  font-weight: bold;
+  spacing: 1em;
+  margin: 32px;
+  min-width: 64px;
+  min-height: 64px;
 
-    .osd-monitor-label { font-size: 3em; }
-    .level {
-        height: 0.6em;
-        border-radius: 0.3em;
-        background-color: rgba($secondary_color, 0.1);
-        color: $secondary_color;
-    }
-    .level-bar {
-        background-color: $secondary_color;
-        border-radius: 0.3em;
-    }
+  .osd-monitor-label {
+    font-size: 3em;
+  }
+  .level {
+    height: 0.6em;
+    -barlevel-height: 0.6em;
+    -barlevel-background-color: transparentize(darken($osd_bg_color, 15%), 0.5);
+    -barlevel-active-background-color: $osd_fg_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 0.2em;
+  }
 }
 
 /* Pad OSD */
 .pad-osd-window {
-    padding: 32px;
-    background-color: transparentize($secondary_color, 0.2);
+  padding: 32px;
+  background-color: transparentize(black, 0.2);
 
-    .pad-osd-title-box { spacing: 12px; }
-    .pad-osd-title-menu-box { spacing: 6px; }
+  .pad-osd-title-box {
+    spacing: 12px;
+  }
+  .pad-osd-title-menu-box {
+    spacing: 6px;
+  }
 }
 
 .combo-box-label {
-    width: 15em;
+  width: 15em;
 }
 
 /* App Switcher */
 .switcher-popup {
-    padding: 8px;
-    spacing: 16px;
+  padding: 8px;
+  spacing: 16px;
 }
 
 .osd-window,
 .resize-popup,
 .switcher-list {
-    background-color: $bg_color;
-    border: none;
-    color: $secondary_color;
-    border-radius: 5px;
-    padding: 7px;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0, .5);
-    border: none;
+  @extend %osd-panel;
 }
 
-.switcher-list-item-container { spacing: 8px;  }
+.switcher-list-item-container {
+  spacing: 8px;
+}
 
 .switcher-list .item-box {
-    font-weight: bold;
-    color: $font_color;
-    padding: 8px;
-    border-radius: 4px;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .switcher-list .item-box:outlined {
-    padding: 6px;
-    border: 2px solid rgba($secondary_color, .1);
+  padding: 6px;
+  border: 2px solid darken(transparent, 10%);
 }
 
 .switcher-list .item-box:selected {
-    background-color: rgba($secondary_color, .05);
-    border-radius: 0;
-    box-shadow: inset 0 -5px 0 $secondary_color;
-    color: $secondary_color;
+  background-color: $color1;
+  color: $selected_fg_color;
 }
 
 .switcher-list .thumbnail-box {
-    padding: 2px;
-    spacing: 4px;
+  padding: 2px;
+  spacing: 4px;
 }
 
 .switcher-list .thumbnail {
-    width:  256px;
+  width: 256px;
 }
 
 .switcher-list .separator {
-    width: 1px;
-    background: $secondary_color;
+  width: 1px;
+  background: transparent;
 }
 
 .switcher-arrow {
-    border-color: $secondary_color;
-    color: $secondary_color;
+  border-color: rgba(0, 0, 0, 0);
+  color: transparentize($fg_color, 0.2);
+  &:highlighted {
+    color: $fg_color;
+  }
 }
 
 .input-source-switcher-symbol {
-    font-size: 34pt;
-    width: 96px;
-    height: 96px;
+  font-size: 34pt;
+  width: 96px;
+  height: 96px;
 }
 
 /* Window Cycler */
-.cycler-highlight { border: 5px solid $color1; }
+.cycler-highlight {
+  border: 5px solid $color1;
+}
 
 /* Workspace Switcher */
-.workspace-switcher-group { padding: 12px; }
+.workspace-switcher-group {
+  padding: 12px;
+}
 
 .workspace-switcher-container {
-    background-color: rgba($bg_color,0.8);
-    border: none;
-    color: #000;
-    border-radius: 3px;
-    padding: 7px;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
-    border: none;
+  @extend %osd-panel;
 }
 
 .workspace-switcher {
-    background: transparent;
-    border: none;
-    border-radius: 3px;
-    padding: 0px;
-    spacing: 0px;
+  background: transparent;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  spacing: 8px;
 }
 
 .ws-switcher-active-up, .ws-switcher-active-down {
-    height: 30px;
-    background-color: $color1;
-    border: none;
-    //background-image: url("resource:///org/gnome/shell/theme/ws-switch-arrow-up.png");
-    background-size: 32px;
-    border-radius: 3px;
+  height: 50px;
+  background-color: $color1;
+  color: $selected_fg_color;
+  background-size: 32px;
+  border-radius: 8px;
 }
 
 .ws-switcher-box {
-    height: 50px;
-    border: none;
-    background: transparent;
-    border-radius: 8px;
+  height: 50px;
+  border: 1px solid transparentize($osd_fg_color, 0.9);
+  background: transparent;
+  border-radius: 8px;
 }
 
 %osd-panel {
-    color: $_bubble_fg_color;
-    background-color: $_bubble_bg_color;
-    border: 1px solid $_bubble_borders_color;
-    border-radius: 12px;
-    padding: 12px;
+  color: $_bubble_fg_color;
+  background-color: $_bubble_bg_color;
+  border: 1px solid $_bubble_borders_color;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 /* Tiled window previews */
 .tile-preview {
-    background-color: transparent;
-    border: 2px solid $primary_color;
-    border-radius: 0;
+  background-color: transparentize($color1, 0.5);
+  border: 1px solid $color1;
+}
+
+.tile-preview-left.on-primary {
+  border-radius: $panel-corner-radius 0 0 0;
+}
+
+.tile-preview-right.on-primary {
+  border-radius: 0 $panel-corner-radius 0 0;
+}
+
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: $panel-corner-radius $panel-corner-radius 0 0;
 }
 
 /* TOP BAR */
-#panelBox{ padding: 5px 10px; }
+#panelBox {
+  padding: .4em .8em;
+}
+
 #panel {
-    text-shadow: 0 0 4px rgba(0,0,0,.5);
-    border-radius: 5px;
-    font-weight: normal;
-    font-size: 12px;
-    height: 24px;
+  transition-duration: 500ms;
+  font-feature-settings: "tnum";
+  text-shadow: 0 0 4px rgba(0, 0, 0, .5);
+  border-radius: .4em;
+  font-weight: normal;
+  font-size: .85em;
+  height: 1.9em;
+  color: $panel_font_color;
+  background: $panel_background_color;
+  background-gradient-direction: none;
+
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen {
+    background-color: transparent;
+  }
+
+  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
+    spacing: 0;
+  }
+
+  .panel-corner {
+    -panel-corner-radius: 0;
+    -panel-corner-background-color: transparent;
+    -panel-corner-border-color: transparent;
+  }
+
+  .panel-button {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+    font-weight: bold;
     color: $panel_font_color;
-    background: $panel_background_color;
-    background-gradient-direction: none;
-    &.unlock-screen,
-    &.login-screen,
-    &.lock-screen {
-        background-color: transparent;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+    transition-duration: 100ms;
+
+    .app-menu-icon {
+      -st-icon-style: symbolic;
+      margin-left: 4px;
+      margin-right: 4px;
+      //dimensions of the icon are hardcoded
     }
 
-    #panelLeft, #panelCenter { // spacing between activities<>app menu and such
-        spacing: 0;
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
     }
+
+    &:hover {
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      // Trick due to St limitations. It needs a background to draw
+      // a box-shadow
+      background-color: rgba(0, 0, 0, 0.01);
+      box-shadow: inset 0 -2px 0px $panel_font_color;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+
+      & > .system-status-icon {
+        icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .system-status-icon {
+      icon-size: 1.09em;
+      padding: 0 5px;
+    }
+    .unlock-screen &,
+    .login-screen &,
+    .lock-screen & {
+      color: lighten($fg_color, 10%);
+      &:focus, &:hover, &:active {
+        color: lighten($fg_color, 10%);
+      }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  .screencast-indicator {
+    color: $warning_color;
+  }
+
+  #panelActivities.panel-button > * {
+    border: none;
+    background-image: url("assets/view-grid-symbolic.svg");
+    background-size: 16px 16px;
+    background-position: 50% 50%;
+    margin: 0 .3em;
+    width: 1.2em;
+    color: transparent;
+  }
+
+  .remote-access-indicator {
+    color: $warning_color;
+  }
+
+  &.solid {
+    background-color: black;
+    /* transition from transparent to solid */
+    transition-duration: 300ms;
 
     .panel-corner {
-        -panel-corner-radius: 0;
-        -panel-corner-background-color: rgba(0, 0, 0, 0.35);
-        -panel-corner-border-width: 2px;
-        -panel-corner-border-color: transparent;
-
-        &:active, &:overview, &:focus {
-            -panel-corner-border-color: lighten($color1,5%);
-        }
-
-        &.lock-screen, &.login-screen, &.unlock-screen {
-            -panel-corner-radius: 0;
-            -panel-corner-background-color: transparent;
-            -panel-corner-border-color: transparent;
-        }
+      -panel-corner-background-color: black;
     }
 
     .panel-button {
-        -natural-hpadding: 12px;
-        -minimum-hpadding: 6px;
-        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-        transition-duration: 100ms;
-        font-weight: bold;
-        color: $panel_font_color;
+      color: #ccc;
+      text-shadow: none;
 
-        .app-menu-icon {
-            -st-icon-style: symbolic;
-            margin-left: 4px;
-            margin-right: 4px;
-            //dimensions of the icon are hardcoded
-        }
-
-        .system-status-icon {
-            icon-size: 13px;
-            font-size: 13px;
-            icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        &:hover {
-        }
-
-        &:active, &:overview, &:focus, &:checked {
-            // Trick due to St limitations. It needs a background to draw
-            // a box-shadow
-            background-color: rgba(0, 0, 0, 0.01);
-            box-shadow: inset 0 -2px 0px $panel_font_color;
-            color: lighten($fg_color,10%);
-            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-
-            & > .system-status-icon { icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
-        }
-
-        .system-status-icon { icon-size: 1.09em; padding: 0 5px; }
-        .unlock-screen &,
-        .login-screen &,
-        .lock-screen & {
-            color: lighten($fg_color, 10%);
-            &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
-        }
+      &:hover, &:active, &:overview, &:focus, &:checked {
+        color: lighten($fg_color, 10%);
+      }
     }
 
-    .panel-status-indicators-box,
-    .panel-status-menu-box {
-        spacing: 3px;
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
     }
-
-    // spacing between power icon and (optional) percentage label
-    .power-status.panel-status-indicators-box {
-        spacing: 0;
-    }
-
-    .screencast-indicator { color: $warning_color; }
-
-    #panelActivities.panel-button > * {
-        border: none;
-        background-image: url("assets/view-grid-symbolic.svg");
-        background-size: 16px 16px;
-        background-position: 50% 50%;
-        margin: 0 3px;
-        width: 15px;
-        color: transparent;
-    }
-
-
-    &.solid {} // on full window
+  }
 }
 
 // calendar popover
 #calendarArea {
-    padding: 0.75em 1.0em;
-    color: $font_color;
+  padding: 0.75em 1.0em;
+  color: $fg_color;
 }
 
 .calendar {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .calendar,
 .datemenu-today-button,
 .datemenu-displays-box,
 .message-list-sections {
-    margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 .datemenu-calendar-column {
-    border: none solid rgba($secondary_color, .05);
-    spacing: 0.5em;
-    &:ltr { border-left-width: 1px; }
-    &:rtl { border-right-width: 1px; }
+  spacing: 0.5em;
 }
-.datemenu-displays-section { padding-bottom: 0em; }
-.datemenu-displays-box { spacing: 0em; }
+
+.datemenu-displays-section {
+  padding-bottom: 0em;
+}
+
+.datemenu-displays-box {
+  spacing: 0em;
+}
+
+.datemenu-calendar-column {
+  border: 0 solid lighten($bg_color, 5%);
+  &:ltr {
+    border-left-width: 1px;
+  }
+  &:rtl {
+    border-right-width: 1px;
+  }
+}
+
+.message-list-section-list:ltr {
+  padding-left: .7em;
+}
+
+.message-list-section-list:rtl {
+  padding-right: .7em;
+}
 
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
 .events-section-title {
-    background: transparent;
-    padding: 15px;
-    border-radius: 0;
-    color: $font_color;
-    &:hover,&:focus {
-        background: rgba($highlight_color, .05);
-        box-shadow: inset 0, -3px, 0 $secondary_color;
-        padding: 15px;
-    }
-    &:active {
-        background-color: transparent;
-        border-color: transparent;
-    }
-}
-
-.message-list-section-list:ltr {
-    padding-left: .7em;
-}
-
-.message-list-section-list:rtl {
-    padding-right: .7em;
+  padding: 1.36em;
+  background: transparent;
+  border-radius: 0;
+  color: $fg_color;
+  &:hover, &:focus {
+    background: rgba($highlight_color, .05);
+    box-shadow: inset 0, -3px, 0 $secondary_color;
+  }
+  &:active {
+    background-color: transparent;
+    border-color: transparent;
+  }
 }
 
 .datemenu-today-button .day-label {
 }
 
 .datemenu-today-button .date-label {
-    font-size: 1.5em;
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 .world-clocks-header,
 .weather-header,
 .events-section-title {
-    color: $font_color;
-    font-weight: bold;
+  color: $fg_color;
+  font-weight: bold;
 }
 
 .world-clocks-grid {
-    spacing-rows: 0.4em;
+  spacing-rows: 0.4em;
 }
 
 .weather-box {
-    spacing: 0.4em;
+  spacing: 0.4em;
 }
 
 .calendar-month-label {
-    color: $font_color;
-    font-weight: bold;
-    padding: 8px 0;
-    &:focus {}
+  color: $fg_color;
+  font-weight: bold;
+  padding: 8px 0;
+  &:focus {
+  }
 }
 
 .pager-button {
-    color: $font_color;
-    background-color: lighten($bg_color, 3%);
-    width: 32px;
-    height: 32px;
-    border-radius: 100px;
-    &:hover, &:focus { background-color: rgba($highlight_color, .1) }
-    &:active { 
-        background-color: $bg_color;
-        border-radius: 0px;
-        box-shadow: inset 0 -3px 0 solid $secondary_color;
-    }
+  color: white;
+  background-color: transparent;
+  width: 32px;
+  border-radius: 6px;
+  &:hover, &:focus { background-color: rgba($highlight_color, .1) }
+  &:active {
+    background-color: $bg_color;
+    border-radius: 0px;
+    box-shadow: inset 0 -3px 0 solid $secondary_color;
+  }
 }
 
 .calendar-change-month-back { //arrow back
-    background-image: url("assets/calendar-arrow-left.svg");
-    &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
+  background-image: url("assets/calendar-arrow-left.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-right.svg"); }
 }
 .calendar-change-month-forward { //arrow foreward
-    background-image: url("assets/calendar-arrow-right.svg");
-    &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
+  background-image: url("assets/calendar-arrow-right.svg");
+  &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
 }
 
 .calendar-day-base {
-    font-size: 80%;
-    text-align: center;
-    height: 2.5em;
-    width: 2.5em;
-    border: none;
-    border-radius: 5em;
-    &:hover,&:focus { background-color: rgba($highlight_color, .1) }
-    &:active,&:selected {
-        color: $font_color;
-        background-color: transparent;
-        border-color: transparent; //avoid jumparound due to today
-    }
-    &.calendar-day-heading {  //day of week heading
-        color: rgba($secondary_color, .3);
-        margin-top: 1em;
-        font-size: 70%;
-    }
+  font-size: 80%;
+  text-align: center;
+  height: 2.5em;
+  width: 2.5em;
+  border: none;
+  border-radius: 5em;
+  &:hover,&:focus { background-color: rgba($highlight_color, .1) }
+  &:active,&:selected {
+    color: #FFF;
+    background-color: $color1;
+    border-color: transparent; //avoid jumparound due to today
+  }
+  &.calendar-day-heading {  //day of week heading
+    color: rgba($secondary_color, .3);
+    margin-top: 1em;
+    font-size: 70%;
+  }
+  &.calendar-today {
+    background: $color2;
+    color: white;
+  }
 }
+
 .calendar-day { //border collapse hack - see calendar.js
-    border-width: 0;
+  border-width: 0;
 }
+
+.calendar-day-top {
+  border-top-width: 1px;
+}
+
+.calendar-day-left {
+  border-left-width: 1px;
+}
+
 .calendar-work-day {
 
 }
+
 .calendar-nonwork-day {
-    color: rgba($font_color, .5);
-}
-.calendar-today, .calendar-today:hover, .calendar-today:active, .calendar-today:focus {
-    background-image: none;
-    text-shadow: none;
-    font-weight: bold;
-    background-color: $color2!important;
-    color: #FFF!important;
+  color: rgba($fg_color, .5);
 }
 
 .calendar-day-with-events, .calendar-day-with-events:hover {
-    color: $font_color;
-    box-shadow: inset 0 0 0 2px $secondary_color;
-    font-weight: bold;
+  color: $fg_color;
+  box-shadow: inset 0 0 0 2px $secondary_color;
+  font-weight: bold;
 }
 .calendar-other-month-day {
-    color: rgba($font_color, .2);
-    opacity: 0.2;
+  color: rgba($fg_color, .2);
+  opacity: 0.2;
 }
+
 .calendar-week-number {
-    font-size: 70%;
-    font-weight: bold;
-    width: 2.3em; height: 1.8em;
-    border-radius: 2px;
-    padding: 0.5em 0 0;
-    margin: 6px;
-    background-color: rgba($secondary_color,0.01);
-    color: rgba($font_color, .4);
+  font-size: 70%;
+  font-weight: bold;
+  width: 2.3em; height: 1.8em;
+  border-radius: 2px;
+  padding: 0.5em 0 0;
+  margin: 6px;
+  background-color: rgba($secondary_color,0.01);
+  color: rgba($fg_color, .4);
 }
 
 /* Message list */
 .message-list {
-    width: 420px;
+  width: 31.5em;
 }
+
 .message-list-clear-button.button {
-    color: $font_color;
-    font-weight: bold;
-    background: lighten($bg_color, 3%);
-    border: 2px solid transparent;
-    box-shadow: 0 2px 2px 2px rgba(0,0,0,.1);
-    &:hover {
-        color: $dark_font_color;
-        border-color: $secondary_color;
-    }
-    &:active {
-        color: $dark_font_color;
-        border-color: transparent;
-    }
+  background-color: transparent;
+  &:hover, &:focus {
+    background-color: lighten($bg_color, 5%);
+  }
+  margin: 1.5em 1.5em 0;
 }
 
 .message-list-sections {
-    spacing: 1.5em;
+  spacing: 1em;
 }
 
 .message-list-section,
 .message-list-section-list {
-    spacing: 0.7em;
+  spacing: 0.4em;
 }
 
 .message {
-    background-color: rgba($highlight_color, .03);
-    margin: 4px;
-    border-radius: 2px;
-    &:hover,&:focus {
-        background-color: $bg_color;
-        box-shadow: 0 2px 2px 2px rgba(darken($bg_color, 30%), .3);
-        margin-bottom: 6px;
-        margin-top: 2px;
-        border-radius: 3px;
-        transition-duration: 200ms;
-    }
-    &:active {
-        background-color: rgba($highlight_color, .03);
-        box-shadow: none;
-    }
+  &:hover, &:focus {
+    background-color: lighten($bg_color, 5%);
+  }
+  border-radius: 3px;
 }
 
 .message-icon-bin {
-    padding: 8px 0px 8px 8px;;
-    &:rtl { padding: 8px 8px 8px 0px; }
+  padding: 0.68em 0.2em 0.68em 0.68em;
+  &:rtl {
+    padding: 0.68em 0.68em 0.68em 0.2em;
+  }
 }
 
 .message-icon-bin > StIcon {
-    color: $font_color;
-    icon-size: 48px;
-    -st-icon-style: symbolic;
+  color: darken($fg_color, 20%);
+  icon-size: 1.09em;
+  -st-icon-style: symbolic;
 }
 
 .message-secondary-bin {
-    color: $font_color;
+  padding: 0 0.82em;;
 }
 
 .message-secondary-bin > .event-time {
-    color: darken($fg_color,40%);
-    font-size: 0.7em;
-    /* HACK: the label should be baseline-aligned with a 1em label,
-    fake this with some bottom padding */
-    padding-bottom: 0.13em;
+  color: darken($fg_color, 40%);
+  font-size: 0.7em;
+  /* HACK: the label should be baseline-aligned with a 1em label,
+           fake this with some bottom padding */
+  padding-bottom: 0.13em;
 }
 
 .message-secondary-bin > StIcon {
-    icon-size: 16px;
+  icon-size: 1.09em;
 }
 
 .message-title {
-    color: $dark_font_color;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 2px 0 2px 0;
+  color: darken($fg_color, 5%);
 }
 
 .message-content {
-    color: $font_color;
-    padding: 8px;
-    font-size: 1em;
+  color: darken($fg_color, 20%);
+  padding: 10px;
 }
 
 .message-media-control {
-    padding: 12px;
-    color: $font_color;
+  padding: 12px;
+  color: darken($fg_color, 20%);
 
-    &:last-child:ltr { padding-right: 18px; }
-    &:last-child:rtl { padding-left: 18px; }
-    &:hover { color: $dark_font_color; }
-    &:insensitive { color: $light_font_color; }
+  &:last-child:ltr {
+    padding-right: 18px;
+  }
+  &:last-child:rtl {
+    padding-left: 18px;
+  }
+  &:hover {
+    color: $fg_color;
+  }
+  &:insensitive {
+    color: darken($fg_color, 40%);
+  }
 }
 
 .media-message-cover-icon {
-    icon-size: 48px !important;
-    &.fallback {
-        color: lighten($bg_color,10%);
-        background-color: $bg_color;
-        border: 2px solid $bg_color;
-        border-radius: 2px;
-        icon-size: 16px;
-        padding: 8px; }
+  icon-size: 48px !important;
+  &.fallback {
+    color: lighten($bg_color, 10%);
+    background-color: $bg_color;
+    border: 2px solid $bg_color;
+    border-radius: 2px;
+    icon-size: 16px;
+    padding: 8px;
+  }
 }
-
 
 // a little unstructured mess:
 
 .system-switch-user-submenu-icon.user-icon {
-    icon-size: 20px;
-    padding: 0 2px;
+  icon-size: 20px;
+  padding: 0 2px;
 }
+
 .system-switch-user-submenu-icon.default-icon {
-    icon-size: 16px;
-    padding: 0 4px;
+  icon-size: 16px;
+  padding: 0 4px;
 }
 
 #appMenu {
-    spinner-image: url("assets/process-working.svg");
-    spacing: 4px;
-    padding: 0 8px;
-    .label-shadow { color: transparent; }
+  spinner-image: url("resource:///org/gnome/shell/theme/process-working.svg");
+  spacing: 4px;
+
+  .label-shadow {
+    color: transparent;
+  }
 }
 
 .aggregate-menu {
-    min-width: 360px;
-    .popup-menu-icon { padding: 0 4px; }
+  min-width: 21em;
+  .popup-menu-icon {
+    padding: 0 4px;
+  }
+  .popup-sub-menu .popup-menu-item > :first-child {
+    &:ltr { /* 12px spacing + 2*4px padding */
+      padding-left: 20px;
+      margin-left: 1.09em;
+    }
+    &:rtl { /* 12px spacing + 2*4px padding */
+      padding-right: 20px;
+      margin-right: 1.09em;
+    }
+  }
 }
 
 .system-menu-action {
-    color: $secondary_color;
-    border-radius: 32px; /* wish we could do 50% */
-    padding: 13px;
-    border: 1px solid transparent;
+  -st-icon-style: symbolic;
+  color: $fg_color;
+  border-radius: 32px; /* wish we could do 50% */
+  padding: 13px;
+  border: 1px solid lighten(transparent, 5%);
 
-    &:hover, &:focus, &:active {
-        background-color: $color1;
-        color: $bg_color;
-        border: none;
-        padding: 14px;
-    }
+  &:hover, &:focus {
+    background-color: transparentize($fg_color, 0.9);
+    color: $fg_color;
+    border: none;
+    padding: 14px;
+  }
+  &:active {
+    background-color: $color1;
+    color: $selected_fg_color;
+  }
 
-    & > StIcon { icon-size: 16px; }
+  & > StIcon {
+    icon-size: 16px;
+  }
 }
 
 //Activities Ripples
 .ripple-box {
-    width: 52px;
-    height: 52px;
-    background-image: url("assets/corner-ripple-ltr.png");
-    background-size: contain;
+  width: 52px;
+  height: 52px;
+  background-image: url("resource:///org/gnome/shell/theme/corner-ripple-ltr.png");
+  background-size: contain;
 }
 
 .ripple-box:rtl {
-    background-image: url("assets/corner-ripple-rtl.png");
+  background-image: url("resource:///org/gnome/shell/theme/corner-ripple-rtl.png");
 }
 
 // not really top bar only
-.popup-menu-arrow { width: 16px; height: 16px; }
-.popup-menu-icon { icon-size: 1.09em; }
+.popup-menu-arrow {
+  width: 16px;
+  height: 16px;
+}
+
+.popup-menu-icon {
+  icon-size: 1.09em;
+}
 
 //close buttons
 
 .window-close {
-    background-image: url("assets/close-window.svg");
-    background-size: 32px;
-    height: 32px;
-    width: 32px;
-    -shell-close-overlap: 16px;
+  background-image: url("resource:///org/gnome/shell/theme/close-window.svg");
+  background-size: 32px;
+  height: 32px;
+  width: 32px;
+  -shell-close-overlap: 16px;
+
+  &:hover {
+    background-image: url("resource:///org/gnome/shell/theme/close-window-hover.svg");
+  }
+  &:active {
+    background-image: url("resource:///org/gnome/shell/theme/close-window-active.svg");
+  }
 }
 
 /* NETWORK DIALOGS */
 
 .nm-dialog {
-    max-height: 500px;
-    min-height: 450px;
-    min-width: 470px;
+  max-height: 34em;
+  min-height: 31em;
+  min-width: 32em;
 }
 
 .nm-dialog-content {
-    spacing: 20px; }
-
-.nm-dialog-header-hbox {
-    spacing: 10px; }
-
-.nm-dialog-airplane-box {
-    spacing: 12px; }
-.nm-dialog-header-hbox { spacing: 10px; }
-.nm-dialog-airplane-box { spacing: 12px; }
-
-.nm-dialog-airplane-headline {
-    font-weight: bold;
-    text-align: center;
+  spacing: 20px;
+  padding: 24px;
 }
 
-.nm-dialog-airplane-text { color: $font_color; }
-.nm-dialog-header-icon { icon-size: 32px; }
-.nm-dialog-scroll-view { border: 1px solid rgba($bg_color, .1); }
-.nm-dialog-header { font-weight: bold; }
+.nm-dialog-header-hbox {
+  spacing: 10px;
+}
+
+.nm-dialog-airplane-box {
+  spacing: 12px;
+}
+
+.nm-dialog-airplane-headline {
+  font-weight: bold;
+  text-align: center;
+}
+
+.nm-dialog-airplane-text {
+  color: $fg_color;
+}
+
+.nm-dialog-header-icon {
+  icon-size: 32px;
+}
+
+.nm-dialog-scroll-view {
+  border: 2px solid transparent;
+}
+
+.nm-dialog-header {
+  font-weight: bold;
+}
 
 .nm-dialog-item {
-    font-size: 110%;
-    border-bottom: 1px solid rgba($secondary_color, .7);
-    padding: 12px;
-    spacing: 20px;
+  font-size: 110%;
+  border-bottom: 1px solid transparent;
+  padding: 12px;
+  spacing: 20px;
 }
 
 .nm-dialog-item:selected {
-    background-color: $secondary_color;
-    color: $primary_color;
+  background-color: $color1;
+  color: $selected_fg_color;
 }
 
-.nm-dialog-icons { spacing: .5em; }
-.nm-dialog-icon { icon-size: 16px; }
-.no-networks-label { color: $font_color; }
-.no-networks-box { spacing: 12px; }
+.nm-dialog-icons {
+  spacing: .5em;
+}
+
+.nm-dialog-icon {
+  icon-size: 16px;
+}
+
+.no-networks-label {
+  color: #999999;
+}
+
+.no-networks-box {
+  spacing: 12px;
+}
 
 /* OVERVIEW */
 
 #overview {
-    spacing: 24px;
+  spacing: 24px; //
 }
 
 .overview-controls {
-    padding-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 .window-picker { //container around window thumbnails
-    -horizontal-spacing: 32px;
-    -vertical-spacing: 32px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-bottom: 48px;
+  -horizontal-spacing: 16px;
+  -vertical-spacing: 16px;
+  padding: 0 16px 16px;
 
-    &.external-monitor { padding: 32px; }
+  &.external-monitor {
+    padding: 16px;
+  }
 }
 
 .window-clone-border {
-    border: 4px solid #FFF;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px 0 #FFF;
+  border: 4px solid $color1;
+  border-radius: 4px;
+  // For window decorations with round corners we can't match
+  // the exact shape when the window is scaled. So apply a shadow
+  // to fix that case
+  box-shadow: inset 0px 0px 0px 1px $color1;
 }
+
 .window-caption {
-    spacing: 25px;
-    color: #000;
-    background-color: #FFF;
-    border-radius: 3px;
-    padding: 4px 12px;
-    -shell-caption-spacing: 12px;
+  spacing: 25px;
+  color: $selected_fg_color;
+  background-color: $color1;
+  border-radius: 8px;
+  padding: 4px 12px;
 }
 
 //search entry
 .search-entry {
-    width: 320px;
-    border: none;
-    color: rgba(255,255,255,0.7);
-    caret-color: #000;
-    caret-size: 1px;
-    background-color: rgba(255,255,255,0.1);
-    background-gradient-direction: none;
-    padding: 7px 9px;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5);
-    &:focus, &:hover {
-        background-color: #FFF;
-        color: #000;
-        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
-        transition-duration: 200ms;
-        .search-entry-icon { color: #000; }
-    }
+  width: 320px;
+  padding: 7px 9px;
+  border-radius: 100px;
+  border: 0;
+  color: $secondary_color;
+  background-color: rgba($primary_color, .7);
+  box-shadow: none;
+  &:focus {
+    padding: 6px 8px;
+    border: 0;
+    background-color: $primary_color;
+  }
 
-    .search-entry-icon { icon-size: 1em; padding: 0 4px; color: rgba(255,255,255,0.7); }
+  .search-entry-icon {
+    icon-size: 1em;
+    padding: 0 4px;
+    color: transparentize($fg_color, .3);
+  }
+
+  &:hover, &:focus {
+    .search-entry-icon {
+      color: $fg_color;
+    }
+  }
 }
 
 //search results
 
 #searchResultsBin {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 #searchResultsContent {
-    padding-left: 20px;
-    padding-right: 20px;
-    spacing: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  spacing: 16px;
 }
 
-.search-section { spacing: 16px; } // This should be equal to #searchResultsContent spacing
-.search-section-content { spacing: 32px; } // This is the space between the provider icon and the results container
+.search-section {
+  spacing: 16px;
+}
+
+// This should be equal to #searchResultsContent spacing
+.search-section-content {
+  spacing: 32px;
+}
+
+// This is the space between the provider icon and the results container
 .search-statustext { // "no results"
-    @extend %status_text;
+  @extend %status_text;
 }
-.list-search-results { spacing: 3px; }
 
-.search-section-separator { height: 2px; background-color: rgba(255, 255, 255, 0.2); }
+.list-search-results {
+  spacing: 3px;
+}
 
-.list-search-result-content { spacing: 30px; }
-.list-search-result-title { color: darken($osd_fg_color,5%); spacing: 12px; }
-.list-search-result-description { color: transparentize(darken($osd_fg_color,15%), 0.5); }
-.list-search-provider-details { width: 150px; color: darken($osd_fg_color,5%); margin-top: 0.24em; }
-.list-search-provider-content { spacing: 20px; }
-.search-provider-icon { padding: 15px; }
+.search-section-separator {
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
+.list-search-result-content {
+  spacing: 30px;
+}
+
+.list-search-result-title {
+  color: darken($osd_fg_color, 5%);
+  spacing: 12px;
+}
+
+.list-search-result-description {
+  color: transparentize(darken($osd_fg_color, 15%), 0.5);
+}
+
+.list-search-provider-details {
+  width: 150px;
+  color: darken($osd_fg_color, 5%);
+  margin-top: 0.24em;
+}
+
+.list-search-provider-content {
+  spacing: 20px;
+}
+
+.search-provider-icon {
+  padding: 15px;
+}
 
 /* DASHBOARD */
 
 #dash {
-    font-size: 20pt;
-    color: $font_color;
-    background: transparent;
-    padding: 4px 0;
-    border: 1px solid transparent;
+  font-size: 9pt;
+  color: $_bubble_fg_color;
+  background-color: $_bubble_bg_color;
+  padding: 4px 0;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-left: 0px;
+  border-radius: 0px 9px 9px 0px;
 
-    .placeholder {
-        background-image: none;
-        background-size: contain;
-        height: 64px;
-        border-color: transparent;
-        border-radius: 5px;
-    }
+  &:rtl {
+    border-radius: 9px 0 0 9px;
+  }
 
-    .empty-dash-drop-target {
-        width: 24px;
-        height: 24px;
-    }
-    .overview-icon StIcon {
-        icon-shadow: rgba(0,0,0,.7) 0px 2px 6px;
-        color: #FFF;
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
 
-    }
+  .empty-dash-drop-target {
+    width: 24px;
+    height: 24px;
+  }
+
 }
 
 .dash-item-container > StWidget {
-    padding: 4px 8px;
+  padding: 4px 8px;
 }
 
 .dash-label { //osd tooltip
-    border-radius: 7px;
-    padding: 4px 12px;
-    color: $dark_font_color;
-    background-color: $primary_color;
-    box-shadow: 0 1px 4px 1px rgba(0,0,0,.1);
-    text-align: center;
-    -x-offset: 8px;
+  border-radius: 7px;
+  padding: 4px 12px;
+  color: $osd_fg_color;
+  background-color: transparentize($osd_bg_color, 0.3);
+  text-align: center;
+  -x-offset: 8px;
 }
 
 /* App Vault/Grid */
 .icon-grid {
-    spacing: 30px;
-    -shell-grid-horizontal-item-size: 144px;
-    -shell-grid-vertical-item-size: 144px;
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
 
-    .overview-icon { icon-size: 96px; }
+  .overview-icon {
+    icon-size: 96px;
+  }
 }
+
 //.app-display { spacing: 20px; }
 
 .system-action-icon {
-    background-color: #000;
-    color: #FFF;
-    border-radius: 99px;
-    icon-size: 48px;
+  background-color: black;
+  color: white;
+  border-radius: 99px;
+  icon-size: 48px;
 }
 
 .app-view-controls { //favorties | all toggle container
-    padding-bottom: 32px;
+  padding-bottom: 32px;
 }
+
 .app-view-control { //favorties | all toggle button
-    background-gradient-direction: none;
-    background-color: rgba(255,255,255,0.1);
-    padding: 4px 32px;
-    border-width: 0px;
-    color: #dbdee0;
-    &:checked {
-        color: #454d50;
-        border-color: rgba(0,0,0,0);
-        border-width: 0px;
-        background-gradient-direction: none;
-        background-color: #FFF;
-        box-shadow: none;
-        text-shadow: none;
-        icon-shadow: none;
-        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
-    }
-    &:first-child {
-        background-gradient-direction: none;
-        border-radius: 2px 0 0 2px;
-    }
-    &:last-child {
-        border-right-width: 0;
-        background-gradient-direction: none;
-        border-radius: 0 2px 2px 0;
-    }
+  padding: 4px 32px;
+  &:checked {
+    @include button(active);
+  }
+  &:first-child {
+    border-right-width: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  &:last-child {
+    border-radius: 0 3px 3px 0;
+  }
 }
 
 //Icon tile
 .search-provider-icon,
 .list-search-result {
-    @extend %icon_tile;
-    &:active, &:checked { background-color: transparentize(darken($osd_bg_color,10%),.1); }
-    &:focus, &:selected, &:hover {
-        background-color: transparentize($osd_fg_color,.9);
-        transition-duration: 200ms;
-    }
+  @extend %icon_tile;
+  &:active, &:checked {
+    background-color: transparentize(darken($osd_bg_color, 10%), .1);
+  }
+  &:focus, &:selected, &:hover {
+    background-color: transparentize($osd_fg_color, .9);
+    transition-duration: 200ms;
+  }
 }
+
 .app-well-app,
 .app-well-app.app-folder,
 .show-apps,
 .grid-search-result {
-    & .overview-icon {
-        @extend %icon_tile;
-    }
-    &:active .overview-icon,
-    &:checked .overview-icon {
-        background-color: transparentize(darken($osd_bg_color,10%),.1);
-        box-shadow: inset 0 1px 2px $osd_borders_color;
-    }
-    &:hover .overview-icon,
-    &:focus .overview-icon,
-    &:selected .overview-icon {
-        background-color: transparentize($osd_fg_color,.9);
-        transition-duration: 0ms;
-        border-image: none;
-        background-image: none;
-    }
+  & .overview-icon {
+    @extend %icon_tile;
+  }
+  &:active .overview-icon,
+  &:checked .overview-icon {
+    background-color: transparentize(darken($osd_bg_color, 10%), .1);
+    box-shadow: inset 0 1px 2px $osd_borders_color;
+  }
+  &:hover .overview-icon,
+  &:focus .overview-icon,
+  &:selected .overview-icon {
+    background-color: transparentize($osd_fg_color, .9);
+    transition-duration: 0ms;
+    border-image: none;
+    background-image: none;
+  }
 
 }
 
 .app-well-app-running-dot { //running apps indicator
-    border-radius: 5px;
-    width: 20px;
-    height: 4px;
-    background-color: #FFF;
-    box-shadow: 0 1px 4px 1px #000;
-    margin-bottom: 2px;
+  width: 10px;
+  height: 3px;
+  background-color: $color1;
+  margin-bottom: 2px;
 }
 
 %icon_tile {
-    color: $osd_fg_color;
-    border-radius: 4px;
-    padding: 6px;
-    border: 1px solid transparent;
-    transition-duration: 100ms;
-    text-align: center;
+  color: $osd_fg_color;
+  border-radius: 4px;
+  padding: 6px;
+  border: 1px solid transparent;
+  transition-duration: 100ms;
+  text-align: center;
 }
 
 .app-well-app.app-folder > .overview-icon {
-    background-color: transparentize($osd_bg_color,.6);
+  background-color: transparentize($osd_bg_color, .6);
 }
 
 .show-apps:checked .show-apps-icon,
 .show-apps:focus .show-apps-icon {
-    color: #FFF;
-    transition-duration: 100ms;
+  color: white;
+  transition-duration: 100ms;
 }
-
 
 // Collections
 .app-folder-popup { //expanded collection
-    -arrow-border-radius: 8px;
-    -arrow-background-color: transparentize($osd_bg_color,0.7);
-    -arrow-base: 24px;
-    -arrow-rise: 11px;
+  -arrow-border-radius: 8px;
+  -arrow-background-color: transparentize($osd_bg_color, 0.7);
+  -arrow-base: 24px;
+  -arrow-rise: 11px;
 }
-.app-folder-popup-bin { padding: 5px; }
+
+.app-folder-popup-bin {
+  padding: 5px;
+}
+
 .app-folder-icon {
-    padding: 5px;
-    spacing-rows: 5px;
-    spacing-columns: 5px;
+  padding: 5px;
+  spacing-rows: 5px;
+  spacing-columns: 5px;
 }
 
 .page-indicator {
-    padding: 15px 20px;
+  padding: 15px 20px;
 
-    .page-indicator-icon {
-        width: 18px;
-        height: 18px;
-        background-image: url("assets/page-indicator-inactive.svg");
-    }
+  .page-indicator-icon {
+    width: 18px;
+    height: 18px;
+    background-image: url(resource:///org/gnome/shell/theme/page-indicator-inactive.svg);
+  }
 
-    &:hover .page-indicator-icon { background-image: url("assets/page-indicator-hover.svg"); }
-    &:active .page-indicator-icon { background-image: url("assets/page-indicator-active.svg"); }
-    &:checked .page-indicator-icon,
-    &:checked:active { background-image: url("assets/page-indicator-checked.svg"); }
+  &:hover .page-indicator-icon {
+    background-image: url(resource:///org/gnome/shell/theme/page-indicator-hover.svg);
+  }
+  &:active .page-indicator-icon {
+    background-image: url(resource:///org/gnome/shell/theme/page-indicator-active.svg);
+  }
+  &:checked .page-indicator-icon,
+  &:checked:active {
+    background-image: url(resource:///org/gnome/shell/theme/page-indicator-checked.svg);
+  }
 }
 
-.no-frequent-applications-label { @extend %status_text; }
+.no-frequent-applications-label {
+  @extend %status_text;
+}
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
-    padding: 10px 8px 5px 8px;
-    spacing: 4px;
+  padding: 10px 8px 5px 8px;
+  spacing: 4px;
 }
 
 // Workspace pager
 .workspace-thumbnails { //container ala dash
-    color: $light_font_color;
-    background-color: $panel_background_color;
-    border: none;
-    visible-width: 32px; //amount visible before hover
-    spacing: 11px;
-    padding: 8px;
-    border-radius: 6px 0 0 6px;
-    //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: 0 6px 6px 0;}
+  @extend %overview-panel;
+  visible-width: 32px; //amount visible before hover
+  spacing: 11px;
+  padding: 8px;
+  border-radius: 9px 0 0 9px;
+  //border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
+  &:rtl {
+    border-radius: 0 9px 9px 0;
+  }
 
-    .placeholder {
-        background-image: none;
-        background-size: contain;
-        height: 24px;
-    }
+  .placeholder {
+    background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
 }
+
 .workspace-thumbnail-indicator {
-    border: 5px solid #FFF;
-    border-radius: 2px;
-    padding: 0;
+  border: 4px solid $color1;
+  padding: 1px;
 }
 
 //Some hacks I don't even
 .search-display > StBoxLayout,
 .all-apps,
 .frequent-apps > StBoxLayout {
-    // horizontal padding to make sure scrollbars or dash don't overlap content
-    padding: 0px 88px 10px 88px;
+  // horizontal padding to make sure scrollbars or dash don't overlap content
+  padding: 0px 88px 10px 88px;
+}
+
+%overview-panel {
+  color: $_bubble_fg_color;
+  background-color: $_bubble_bg_color;
+  border: 1px solid $_bubble_borders_color;
 }
 
 %status_text {
-    font-size: 2em;
-    font-weight: bold;
-    color: $fg_color;
+  font-size: 2em;
+  font-weight: bold;
+  color: $fg_color;
 }
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 
 .url-highlighter {
-    link-color: $color1;
-    font-weight: bold;
+  link-color: lighten($color1, 10%);
 }
 
 // Banners
 .notification-banner {
-    font-size: 11pt;
-    width: 34em;
-    margin: 5px;
-    border-radius: 2px;
-    color: $font_color;
-    background-color: $bg_color;
-    border: none;
-    border-width: 0px;
-    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.5);
-    &:hover, &:focus {
-        margin: 5px;
-        background-color: $bg_color;
-        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.5);
-    }
+  font-size: 11pt;
+  width: 34em;
+  margin: 5px;
+  border-radius: 6px;
+  color: $_bubble_fg_color;
+  background-color: $_bubble_bg_color;
+  border: 1px solid transparent;
+  //box-shadow: 0 1px 4px black;
+  &:hover {
+    background-color: $_bubble_bg_color;
+  }
+  &:focus {
+    background-color: $_bubble_bg_color;
+  }
 
-    .notification-icon { padding: 5px; }
-    .notification-content { padding: 5px; spacing: 5px; }
-    .secondary-icon { icon-size: 1.09em; }
-    .notification-actions {
-        background-color: $bg_color;
-        border-radius: 2px;
-        padding-top: 0px;
-        spacing: 1px;
+  .notification-icon {
+    padding: 5px;
+  }
+  .notification-content {
+    padding: 5px;
+    spacing: 5px;
+  }
+  .secondary-icon {
+    icon-size: 1.09em;
+  }
+  .notification-actions {
+    background-color: transparent;
+    padding-top: 2px;
+    spacing: 1px;
+  }
+  .notification-button {
+    padding: 4px 4px 5px;
+    background-color: darken($_bubble_bg_color, 5%);
+    &:first-child {
+      border-radius: 0 0 0 6px;
     }
-    .notification-button {
-        border: none;
-        padding: 4px 4px 5px;
-        color: $light_font_color;
-        font-weight: bold;
-        background-color: $bg_color;
-        border-color: transparent;
-        box-shadow: none;
-        border-radius: 0px;
-        text-shadow:none;
-        &:first-child { border-radius: 0 0 0 2px; }
-        &:not(:first-child):not(:last-child) { border-radius: 0; }
-        &:last-child { border-radius: 0 0 2px 0; }
-        &:hover, &focus {
-            color: $dark_font_color;
-            font-weight: bold;
-        }
+    &:last-child {
+      border-radius: 0 0 6px 0;
     }
+    &:hover, &focus {
+      background-color: darken($_bubble_bg_color, 2%);
+    }
+  }
 }
+
 .summary-source-counter {
-    font-size: 10pt;
-    font-weight: bold;
-    height: 1.6em; width: 1.6em;
-    -shell-counter-overlap-x: 3px;
-    -shell-counter-overlap-y: 3px;
-    background-color: $color1;
-    color: $light_font_color;
-    border: 2px solid $osd_fg_color;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
-    border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
+  font-size: 10pt;
+  font-weight: bold;
+  height: 1.6em;
+  width: 1.6em;
+  -shell-counter-overlap-x: 3px;
+  -shell-counter-overlap-y: 3px;
+  background-color: $color1;
+  color: $selected_fg_color;
+  border: 2px solid $osd_fg_color;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 0.9em; // should be 0.8 but whatever; wish I could do 50%;
 }
 
-.secondary-icon { icon-size: 1.09em; }
+.secondary-icon {
+  icon-size: 1.09em;
+}
 
 //chat bubbles
-.chat-body { spacing: 5px; }
-.chat-response { margin: 5px; }
-.chat-log-message { color: $light_font_color; }
-.chat-new-group { padding-top: 1em; }
+.chat-body {
+  spacing: 5px;
+}
+
+.chat-response {
+  margin: 5px;
+}
+
+.chat-log-message {
+  color: darken($fg_color, 10%);
+}
+
+.chat-new-group {
+  padding-top: 1em;
+}
+
 .chat-received {
-    padding-left: 4px;
-    &:rtl { padding-left: 0px; padding-right: 4px; }
+  padding-left: 4px;
+  &:rtl {
+    padding-left: 0px;
+    padding-right: 4px;
+  }
 }
+
 .chat-sent {
-    padding-left: 18pt;
-    color: $light_font_color;
-    &:rtl { padding-left: 0; padding-right: 18pt; }
+  padding-left: 18pt;
+  color: darken($fg_color, 15%);
+  &:rtl {
+    padding-left: 0;
+    padding-right: 18pt;
+  }
 }
+
 .chat-meta-message {
-    padding-left: 4px;
-    font-size: 9pt;
-    font-weight: bold;
-    color: $dark_font_color;
-    &:rtl { padding-left: 0; padding-right: 4px; }
+  padding-left: 4px;
+  font-size: 9pt;
+  font-weight: bold;
+  color: darken($fg_color, 20%);
+  &:rtl {
+    padding-left: 0;
+    padding-right: 4px;
+  }
 }
 
 //hotplug
 .hotplug-transient-box {
-    spacing: 6px;
-    padding: 2px 72px 2px 12px;
+  spacing: 6px;
+  padding: 2px 72px 2px 12px;
 }
+
 .hotplug-notification-item {
-    padding: 2px 10px;
-    &:focus { padding: 1px 71px 1px 11px; }
+  padding: 2px 10px;
+  &:focus {
+    padding: 1px 71px 1px 11px;
+  }
 }
 
 .hotplug-notification-item-icon {
-    icon-size: 24px;
-    padding: 2px 5px;
+  icon-size: 24px;
+  padding: 2px 5px;
 }
 
-.hotplug-resident-box { spacing: 8px; }
+.hotplug-resident-box {
+  spacing: 8px;
+}
 
 .hotplug-resident-mount {
-    spacing: 8px;
-    border-radius: 4px;
-    &:hover { background-color: transparentize($bg_color,0.7); }
+  spacing: 8px;
+  border-radius: 4px;
+  &:hover {
+    background-color: transparentize($bg_color, 0.7);
+  }
 }
 
 .hotplug-resident-mount-label {
-    color: inherit;
-    padding-left: 6px;
+  color: inherit;
+  padding-left: 6px;
 }
 
 .hotplug-resident-mount-icon {
-    icon-size: 24px;
-    padding-left: 6px;
+  icon-size: 24px;
+  padding-left: 6px;
 }
 
 .hotplug-resident-eject-icon {
-    icon-size: 16px;
+  icon-size: 16px;
 }
 
 .hotplug-resident-eject-button {
-    padding: 7px;
-    border-radius: 5px;
-    color: pink;
+  padding: 7px;
+  border-radius: 5px;
+  color: pink;
 }
 
 /* Eeeky things */
@@ -1748,390 +1946,496 @@ app menu inside the main app window itself rather than the top bar
 //magnifier
 
 .magnifier-zoom-region {
-    border: 2px solid $color1;
-    &.full-screen { border-width: 0; }
+  border: 2px solid $color1;
+  &.full-screen {
+    border-width: 0;
+  }
 }
 
 //Keyboard
 /* On-screen Keyboard */
+.word-suggestions {
+  font-size: 14pt;
+  spacing: 12px;
+  min-height: 20pt;
+}
 
 #keyboard {
-    background-color: rgba(0,0,0,.3);
+  background-color: transparentize($osd_bg_color, 0.3);
 }
 
-.keyboard-layout {
-    spacing: 10px;
-    padding: 10px;
+.key-container {
+  padding: 4px;
+  spacing: 4px;
 }
-
-.keyboard-row { spacing: 15px; }
 
 .keyboard-key {
-    min-height: 2em;
-    min-width: 2em;
-    font-size: 14pt;
-    font-weight: bold;
-    border-radius: 2px;
-    background-color: $bg_color;
-    border: 3px solid $secondary_color;
-    color: $dark_font_color;
-    box-shadow: none; 
-    &:active { border: none; }
+  background-color: #393f3f;
+  min-height: 2em;
+  min-width: 2em;
+  font-size: 16pt;
+  border-radius: 3px;
+  border: 1px solid #464d4d;
+  color: #e5e5e5;
+  &:focus {
+    @include button(focus);
+  }
+  &:hover, &:checked {
+    @include button(hover);
+  }
+  &:active {
+    @include button(active);
+  }
+  &:grayed { //FIXME
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+    border-color: $osd_borders_color;
+  }
+  &.default-key {
+    border-color: #2d3232;
+    background-color: #1d2020;
+    background-size: 20px;
+  }
+  &.enter-key {
+    border-color: #005684;
+    background-color: #006098;
+    background-image: url("resource:///org/gnome/shell/theme/key-enter.svg");
+  }
+  &.shift-key-lowercase {
+    background-image: url("resource:///org/gnome/shell/theme/key-shift.svg");
+  }
+  &.shift-key-uppercase {
+    background-image: url("resource:///org/gnome/shell/theme/key-shift-uppercase.svg");
+  }
+  &.shift-key-uppercase:latched {
+    background-image: url("resource:///org/gnome/shell/theme/key-shift-latched-uppercase.svg");
+  }
+  &.hide-key {
+    background-image: url("resource:///org/gnome/shell/theme/key-hide.svg");
+  }
+  &.layout-key {
+    background-image: url("resource:///org/gnome/shell/theme/key-layout.svg");
+  }
 }
 
 .keyboard-subkeys { //long press on a key popup
-    color: #FFF;
-    padding: 5px;
-    -arrow-border-radius: 10px;
-    -arrow-background-color: transparentize($osd_bg_color, 0.3);
-    -arrow-border-width: 2px;
-    -arrow-border-color: $_bubble_borders_color;
-    -arrow-base: 20px;
-    -arrow-rise: 10px;
-    -boxpointer-gap: 5px;
+  color: white;
+  -arrow-border-radius: 10px;
+  -arrow-background-color: transparentize($osd_bg_color, 0.3);
+  -arrow-border-width: 2px;
+  -arrow-border-color: $_bubble_borders_color;
+  -arrow-base: 20px;
+  -arrow-rise: 10px;
+  -boxpointer-gap: 5px;
 }
 
 // IBus Candidate Popup
 
 .candidate-popup-content {
-    padding: 0.5em;
-    spacing: 0.3em;
+  padding: 0.5em;
+  spacing: 0.3em;
 }
 
 .candidate-index {
-    padding: 0 0.5em 0 0;
-    color: darken($fg_color,10%);
+  padding: 0 0.5em 0 0;
+  color: darken($fg_color, 10%);
 }
 
 .candidate-box {
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    border-radius: 4px;
-    &:selected,&:hover { background-color: $color1; color: $selected_fg_color; }
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-radius: 4px;
+  &:selected, &:hover {
+    background-color: $color1;
+    color: $selected_fg_color;
+  }
 }
 
 .candidate-page-button-box {
-    height: 2em;
-    .vertical & { padding-top: 0.5em; }
-    .horizontal & { padding-left: 0.5em; }
+  height: 2em;
+  .vertical & {
+    padding-top: 0.5em;
+  }
+  .horizontal & {
+    padding-left: 0.5em;
+  }
 }
 
 .candidate-page-button {
-    padding: 4px;
+  padding: 4px;
 }
 
-.candidate-page-button-previous { border-radius: 4px 0px 0px 4px; border-right-width: 0; }
-.candidate-page-button-next { border-radius: 0px 4px 4px 0px;  }
-.candidate-page-button-icon { icon-size: 1em; }
+.candidate-page-button-previous {
+  border-radius: 4px 0px 0px 4px;
+  border-right-width: 0;
+}
+
+.candidate-page-button-next {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.candidate-page-button-icon {
+  icon-size: 1em;
+}
 
 /* Auth Dialogs & Screen Shield */
 
 .framed-user-icon {
-    background-size: contain;
-    border: 2px solid $osd_fg_color;
-    color: $osd_fg_color;
-    border-radius: 3px;
-    &:hover {
-        border-color: lighten($osd_fg_color,30%);
-        color: lighten($osd_fg_color,30%);
-    }
+  background-size: contain;
+  border: 2px solid $osd_fg_color;
+  color: $osd_fg_color;
+  border-radius: 3px;
+  &:hover {
+    border-color: lighten($osd_fg_color, 30%);
+    color: lighten($osd_fg_color, 30%);
+  }
 }
 
 // LOGIN DIALOG
 
 .login-dialog-banner-view {
-    padding-top: 24px;
-    max-width: 23em;
+  padding-top: 24px;
+  max-width: 23em;
 }
 
 .login-dialog {
-    //reset
-    border: none;
-    background-color: transparent;
+  //reset
+  border: none;
+  background-color: transparent;
 
-    .modal-dialog-button-box { spacing: 3px; }
-    .modal-dialog-button {
-        padding: 3px 18px;
-        &:default {
-            color: $fg_color;
-            background-color: rgba($color1, 0.5);
-            border-color: rgba($primary_color, 0.7);
-            box-shadow: 0 3px 8px 0 rgba(0,0,0,0.5);
-            text-shadow: 0 1px #000;
-            icon-shadow: 0 1px #000;
-            &:hover,&:focus {
-                color: #FFF;
-                border-color: rgba($primary_color, 0.7);
-                background-color: rgba($color1, 0.7);
-                box-shadow: inset 0 1px #5d696d;
-                text-shadow: 0 1px #000;
-                icon-shadow: 0 1px #000;
-            }
-            &:active {
-                color: #FFF;
-                border-color: rgba($primary_color, 0.7);
-                background-color: $color1;
-                box-shadow: inset 0 0 $primary_color;
-                text-shadow: none;
-                icon-shadow: none;
-            }
-            &:insensitive {
-                color: $color1;
-                border-color: rgba($primary_color, 0.7);
-                background-color: rgba($bg_color, 0.7);
-                box-shadow: none;
-                text-shadow: none;
-                icon-shadow: none;
-            }
+  .modal-dialog-button-box {
+    spacing: 3px;
+  }
+  .modal-dialog-button {
+    padding: 3px 18px;
+    &:default {
+      @include button(normal, $c: $color1);
+      &:hover, &:focus {
+        @include button(hover, $c: $color1);
+      }
+      &:active {
+        @include button(active, $c: $color1);
+      }
+      &:insensitive {
+        @include button(insensitive);
+      }
 
-        }
     }
+  }
 
 }
 
-.login-dialog-logo-bin { padding: 24px 0px; }
-.login-dialog-banner { color: darken($osd_fg_color,10%); }
-.login-dialog-button-box { spacing: 5px; }
-.login-dialog-message-warning { color: $warning_color; }
-.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
-.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-logo-bin {
+  padding: 24px 0px;
+}
+
+.login-dialog-banner {
+  color: darken($osd_fg_color, 10%);
+}
+
+.login-dialog-button-box {
+  spacing: 5px;
+}
+
+.login-dialog-message-warning {
+  color: $warning_color;
+}
+
+.login-dialog-message-hint {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+.login-dialog-user-selection-box {
+  padding: 100px 0px;
+}
+
 .login-dialog-not-listed-label {
-    padding-left: 2px;
-    .login-dialog-not-listed-button:focus &,
-    .login-dialog-not-listed-button:hover & {
-        color: $osd_fg_color;
-    }
-}
-.login-dialog-not-listed-label {
-    font-size: 90%;
-    font-weight: bold;
-    color: darken($osd_fg_color,30%);
-    padding-top: 1em;
+  padding-left: 2px;
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
+    color: $osd_fg_color;
+  }
 }
 
-.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-not-listed-label {
+  font-size: 90%;
+  font-weight: bold;
+  color: darken($osd_fg_color, 30%);
+  padding-top: 1em;
+}
+
+.login-dialog-user-list-view {
+  -st-vfade-offset: 1em;
+}
+
 .login-dialog-user-list {
-    spacing: 12px;
-    padding: .2em;
-    width: 23em;
-    &:expanded .login-dialog-user-list-item:selected { background-color: $color1; color: $selected_fg_color; }
-    &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $color1; }
+  spacing: 12px;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected {
+    background-color: $color1;
+    color: $selected_fg_color;
+  }
+  &:expanded .login-dialog-user-list-item:logged-in {
+    border-right: 2px solid $color1;
+  }
 }
+
 .login-dialog-user-list-item {
-    border-radius: 5px;
-    padding: .2em;
-    color: darken($osd_fg_color,30%);
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
-    .login-dialog-timed-login-indicator {
-        height: 2px;
-        margin: 2px 0 0 0;
-        background-color: $osd_fg_color;
-    }
-    &:focus .login-dialog-timed-login-indicator { background-color: $selected_fg_color; }
+  border-radius: 5px;
+  padding: 6px;
+  color: darken($osd_fg_color, 30%);
+  &:ltr .user-widget {
+    padding-right: 1em;
+  }
+  &:rtl .user-widget {
+    padding-left: 1em;
+  }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin-top: 6px;
+    background-color: $osd_fg_color;
+  }
+  &:focus .login-dialog-timed-login-indicator {
+    background-color: $selected_fg_color;
+  }
 }
 
 .login-dialog-username,
 .user-widget-label {
-    color: $osd_fg_color;
-    font-size: 120%;
-    font-weight: bold;
-    text-align: left;
-    padding-left: 15px;
+  color: $osd_fg_color;
+  font-size: 120%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
 }
+
 .user-widget-label {
-    &:ltr { padding-left: 18px; }
-    &:rtl { padding-right: 18px; }
+  &:ltr {
+    padding-left: 14px;
+  }
+  &:rtl {
+    padding-right: 14px;
+  }
 }
 
 .login-dialog-prompt-layout {
-    padding-top: 24px;
-    padding-bottom: 12px;
-    spacing: 8px;
-    width: 23em;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: 8px;
+  width: 23em;
 }
 
 .login-dialog-prompt-label {
-    color: darken($osd_fg_color, 20%);
-    font-size: 110%;
-    padding-top: 1em;
+  color: darken($osd_fg_color, 20%);
+  font-size: 110%;
+  padding-top: 1em;
 }
 
 .login-dialog-session-list-button StIcon {
-    icon-size: 1.25em;
+  icon-size: 1.25em;
 }
 
 .login-dialog-session-list-button {
-    color: darken($osd_fg_color,30%);
-    &:hover,&:focus { color: $osd_fg_color; }
-    &:active { color: darken($osd_fg_color, 50%); }
+  color: darken($osd_fg_color, 30%);
+  &:hover, &:focus {
+    color: $osd_fg_color;
+  }
+  &:active {
+    color: darken($osd_fg_color, 50%);
+  }
 }
 
 //SCREEN SHIELD
 
 .screen-shield-arrows {
-    padding-bottom: 3em;
+  padding-bottom: 3em;
 }
 
 .screen-shield-arrows Gjs_Arrow {
-    color: #FFF;
-    width: 80px;
-    height: 48px;
-    -arrow-thickness: 12px;
-    -arrow-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  color: white;
+  width: 80px;
+  height: 48px;
+  -arrow-thickness: 12px;
+  -arrow-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .screen-shield-clock {
-    color: #FFF;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.6);
-    font-weight: bold;
-    text-align: center;
-    padding-bottom: 1.5em;
+  color: white;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1.5em;
 }
 
 .screen-shield-clock-time {
-    font-size: 72pt;
-    text-shadow: 0px 2px 2px rgba(0,0,0,0.4);
+  font-size: 72pt;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  font-feature-settings: "tnum";
 }
 
-.screen-shield-clock-date { font-size: 28pt; }
+.screen-shield-clock-date {
+  font-size: 28pt;
+  font-weight: normal;
+}
 
 .screen-shield-notifications-container {
-    spacing: 6px;
-    width: 30em;
-    background-color: transparent;
-    max-height: 500px;
-    .summary-notification-stack-scrollview {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+  spacing: 6px;
+  width: 30em;
+  background-color: transparent;
+  max-height: 500px;
+  .summary-notification-stack-scrollview {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
-    .notification,
-    .screen-shield-notification-source {
-        padding: 12px 6px;
-        border: 1px solid $_bubble_borders_color;
-        background-color: transparentize($osd_bg_color,0.5);
-        color: $_bubble_fg_color;
-        border-radius: 4px;
-    }
-    .notification { margin-right: 15px; } //compensate for space allocated to the scrollbar
+  .notification,
+  .screen-shield-notification-source {
+    padding: 12px 6px;
+    border: 1px solid $_bubble_borders_color;
+    background-color: transparentize($osd_bg_color, 0.5);
+    color: $_bubble_fg_color;
+    border-radius: 4px;
+  }
+  .notification {
+    margin-right: 15px;
+  }
+  //compensate for space allocated to the scrollbar
 }
-
 
 .screen-shield-notification-label {
-    font-weight: bold;
-    padding: 0px 0px 0px 12px;
+  font-weight: bold;
+  padding: 0px 0px 0px 12px;
 }
 
-.screen-shield-notification-count-text { padding: 0px 0px 0px 12px; }
+.screen-shield-notification-count-text {
+  padding: 0px 0px 0px 12px;
+}
 
-#panel.lock-screen { background-color: transparentize($_bubble_bg_color, 0.5); }
+#panel.lock-screen {
+  background-color: transparentize($_bubble_bg_color, 0.5);
+}
 
 .screen-shield-background { //just the shadow, really
-    background: #000;
-    box-shadow: 0px 2px 4px transparentize(#000,0.6);
+  background: black;
+  box-shadow: 0px 2px 4px transparentize(black, 0.6);
 }
 
 #lockDialogGroup {
-    background: #2e3436 url("assets/noise-texture.png");
-    background-repeat: repeat;
+  background: #2e3436 url(resource:///org/gnome/shell/theme/noise-texture.png);
+  background-repeat: repeat;
 }
 
 #screenShieldNotifications {
-    StButton#vhandle, StButton#hhandle {
-        background-color: transparentize($bg_color,0.7);
-        &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
-        &:active { background-color: transparentize($color1,0.5); }
+  StButton#vhandle, StButton#hhandle {
+    background-color: transparentize($bg_color, 0.7);
+    &:hover, &:focus {
+      background-color: transparentize($bg_color, 0.5);
     }
+    &:active {
+      background-color: transparentize($color1, 0.5);
+    }
+  }
 }
-
 
 // Looking Glass
 #LookingGlassDialog {
-    background-color: rgba(0,0,0,0.80);
+  background-color: rgba(0, 0, 0, 0.80);
+  spacing: 4px;
+  padding: 4px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  & > #Toolbar {
+    border: 1px solid grey;
+    border-radius: 4px;
+  }
+  .labels {
     spacing: 4px;
+  }
+  .notebook-tab {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+    font-weight: bold;
+    color: #ccc;
+    transition-duration: 100ms;
+    padding-left: .3em;
+    padding-right: .3em;
+    &:hover {
+      color: white;
+      text-shadow: black 0px 2px 2px;
+    }
+    &:selected {
+      border-bottom-width: 2px;
+      border-color: lighten($color1, 5%);
+      color: white;
+      text-shadow: black 0px 2px 2px;
+    }
+  }
+  StBoxLayout#EvalBox {
     padding: 4px;
-    border: none;
-    border-radius: 2px;
-    color: #FFF;
-    & > #Toolbar {
-        border: 1px solid #FFF;
-        border-radius: 2px;
-    }
-    .labels { spacing: 4px; }
-    .notebook-tab {
-        -natural-hpadding: 12px;
-        -minimum-hpadding: 6px;
-        font-weight: bold;
-        color: #FFF;
-        transition-duration: 100ms;
-        padding-left: .3em;
-        padding-right: .3em;
-        &:hover {
-            color: #FFF;
-            text-shadow: #000 0px 2px 2px;
-        }
-        &:selected {
-            border-bottom-width: 4px;
-            border-color: $color1;
-            color: #FFF;
-            text-shadow: #000 0px 2px 2px;
-        }
-    }
-    StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
-    StBoxLayout#ResultsArea { spacing: 4px; }
+    spacing: 4px;
+  }
+  StBoxLayout#ResultsArea {
+    spacing: 4px;
+  }
 }
 
 .lg-dialog {
-    StEntry {
-        selection-background-color: $color1;
-        selected-color: $primary_color;
+  StEntry {
+    selection-background-color: #bbbbbb;
+    selected-color: #333333;
+  }
+  .shell-link {
+    color: #999999;
+    &:hover {
+      color: #dddddd;
     }
-    .shell-link {
-        color: #FFF;
-        &:hover { color: #eee; }
-    }
+  }
 }
 
 .lg-completions-text {
-    font-size: .9em;
-    font-style: italic;
+  font-size: .9em;
+  font-style: italic;
 }
 
 .lg-obj-inspector-title {
-    spacing: 4px;
+  spacing: 4px;
 }
 
 .lg-obj-inspector-button {
-    border: 2px solid #FFF;
-    padding: 4px;
-    border-radius: 2px;
-    &:hover { border: 1px solid #eee; }
+  border: 1px solid gray;
+  padding: 4px;
+  border-radius: 4px;
+  &:hover {
+    border: 1px solid #ffffff;
+  }
 }
 
-#lookingGlassExtensions { padding: 4px; }
+#lookingGlassExtensions {
+  padding: 4px;
+}
 
 .lg-extensions-list {
-    padding: 4px;
-    spacing: 6px;
+  padding: 4px;
+  spacing: 6px;
 }
 
 .lg-extension {
-    border: 2px solid #FFF;
-    border-radius: 2px;
-    padding: 4px;
+  border: 1px solid #6f6f6f;
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .lg-extension-name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .lg-extension-meta {
-    spacing: 6px;
+  spacing: 6px;
 }
 
 #LookingGlassPropertyInspector {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #FFF;
-    border-radius: 2px;
-    padding: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid grey;
+  border-radius: 4px;
+  padding: 6px;
 }

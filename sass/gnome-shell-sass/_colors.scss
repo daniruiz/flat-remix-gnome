@@ -5,9 +5,9 @@ $secondary_color: #000;
 
 $bg_color: #FFF;
 $highlight_color: #9fb0b9;
-$font_color:  #5c616c;
-$dark_font_color: darken($font_color, 30%);
-$light_font_color: lighten($font_color, 30%);
+$fg_color:  #5c616c;
+$dark_font_color: darken($fg_color, 30%);
+$light_font_color: lighten($fg_color, 30%);
 $panel_font_color: #FFF;
 $panel_background_color: rgba(0,0,0, .2 );
 $color1: #367bf0;
@@ -22,9 +22,9 @@ $error_color: #d31919;
   $secondary_color: #FFF;
   $bg_color: #050505;
   $highlight_color: lighten(#9fb0b9, 90%);
-  $font_color: #FFF;
+  $fg_color: #FFF;
   $dark_font_color: #FFF;
-  $light_font_color: darken($font_color, 20%);
+  $light_font_color: darken($fg_color, 20%);
   $panel_font_color: #FFF;
   $panel_background_color: rgba(0, 0, 0, .2);
   $color1: #367bf0;
@@ -42,7 +42,7 @@ $error_color: #d31919;
 
   $bg_color: #290351;
   $highlight_color: lighten(#9fb0b9, 90%);
-  $font_color: #FFF;
+  $fg_color: #FFF;
   $dark_font_color: #FFF;
   $light_font_color: rgba(255, 255, 255, .7);
   $panel_font_color: #FFF;
@@ -60,7 +60,7 @@ $error_color: #d31919;
 
   $bg_color: #120E29;
   $highlight_color: lighten(#9fb0b9, 90%);
-  $font_color: #FFF;
+  $fg_color: #FFF;
   $dark_font_color: #FFF;
   $light_font_color: rgba(255, 255, 255, .7);
   $panel_font_color: #FFF;
@@ -75,7 +75,6 @@ $error_color: #d31919;
 
 
 
-$fg_color: #eeeeec;
 $selected_fg_color: #ffffff;
 $borders_edge: transparentize(#eeeeec, 0.9);
 $osd_fg_color: #eeeeec;
@@ -84,3 +83,7 @@ $osd_borders_color: transparentize(#000, 0.3);
 $insensitive_fg_color: mix(#eeeeec, $bg_color, 50%);
 
 
+$base_color: brown;
+$insensitive_bg_color: purple;
+$destructive_color: yellow;
+$link_color: $color1;

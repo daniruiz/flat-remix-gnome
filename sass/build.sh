@@ -2,7 +2,7 @@
 
 for scss in *.scss
 do
-  scss -q $scss ${scss%%.scss}.css
+  scss --sourcemap=none -q $scss ${scss%%.scss}.css
 done
 
 
