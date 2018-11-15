@@ -1,8 +1,6 @@
 
 $primary_color: #FFF;
 $secondary_color: #000;
-
-
 $bg_color: #FFF;
 $highlight_color: #9fb0b9;
 $fg_color:  #5c616c;
@@ -16,7 +14,24 @@ $warning_color: #ff6600;
 $error_color: #d31919;
 
 
-@if $variant == 'dark' and $miami-theme == 'false'
+@if $variant == 'dark'
+{
+  $primary_color: #2f343f;
+  $secondary_color: #FFF;
+  $bg_color: #383C4A;
+  $highlight_color: lighten(#9fb0b9, 90%);
+  $fg_color: #FFF;
+  $dark_font_color: #FFF;
+  $light_font_color: darken($fg_color, 20%);
+  $panel_font_color: #FFF;
+  $panel_background_color: rgba(0, 0, 0, .2);
+  $color1: #367bf0;
+  $color2: #19a187;
+  $warning_color: #ff6600;
+  $error_color: #d31919;
+}
+
+@if $variant == 'darkest'
 {
   $primary_color: #000;
   $secondary_color: #FFF;
@@ -33,9 +48,7 @@ $error_color: #d31919;
   $error_color: #d31919;
 }
 
-
-
-@if $variant == 'light' and $miami-theme == 'true'
+@if $variant == 'miami'
 {
   $primary_color: #000;
   $secondary_color: #FFF;
@@ -53,7 +66,7 @@ $error_color: #d31919;
   $error_color: #d31919;
 }
 
-@if $variant == 'dark' and $miami-theme == 'true'
+@if $variant == 'miami-dark'
 {
   $primary_color: #000;
   $secondary_color: #FFF;

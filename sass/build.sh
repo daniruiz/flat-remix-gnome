@@ -8,6 +8,7 @@ done
 
 cp -f gnome-shell.css ../Flat-Remix/gnome-shell/gnome-shell.css
 cp -f gnome-shell-dark.css ../Flat-Remix-Dark/gnome-shell/gnome-shell.css
+cp -f gnome-shell-darkest.css ../Flat-Remix-Darkest/gnome-shell/gnome-shell.css
 cp -f gnome-shell-miami.css ../Flat-Remix-Miami/gnome-shell/gnome-shell.css
 cp -f gnome-shell-miami-dark.css ../Flat-Remix-Miami-Dark/gnome-shell/gnome-shell.css
 
