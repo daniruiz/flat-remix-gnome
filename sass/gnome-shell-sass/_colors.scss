@@ -10,8 +10,6 @@ $panel_font_color: #FFF;
 $panel_background_color: rgba(0,0,0, .2 );
 $color1: #367bf0;
 $color2: #19a187;
-$warning_color: #ff6600;
-$error_color: #d31919;
 
 
 @if $variant == 'dark'
@@ -27,8 +25,6 @@ $error_color: #d31919;
   $panel_background_color: rgba(0, 0, 0, .2);
   $color1: #367bf0;
   $color2: #19a187;
-  $warning_color: #ff6600;
-  $error_color: #d31919;
 }
 
 @if $variant == 'darkest'
@@ -44,8 +40,6 @@ $error_color: #d31919;
   $panel_background_color: rgba(0, 0, 0, .2);
   $color1: #367bf0;
   $color2: #19a187;
-  $warning_color: #ff6600;
-  $error_color: #d31919;
 }
 
 @if $variant == 'miami'
@@ -62,8 +56,6 @@ $error_color: #d31919;
   $panel_background_color: rgba(#020322, .2);
   $color1: magenta;
   $color2: #08ecbe;
-  $warning_color: #ff6600;
-  $error_color: #d31919;
 }
 
 @if $variant == 'miami-dark'
@@ -80,12 +72,12 @@ $error_color: #d31919;
   $panel_background_color: rgba(0, 0, 0, .2);
   $color1: #FC17AF;
   $color2: #5AEED8;
-  $warning_color: #ff6600;
-  $error_color: #d31919;
 }
 
 
-
+$warning_color: #ff6600;
+$error_color: #d31919;
+$destructive_color: $error_color;
 
 
 $selected_fg_color: #ffffff;
@@ -98,5 +90,4 @@ $insensitive_fg_color: mix(#eeeeec, $bg_color, 50%);
 
 $base_color: brown;
 $insensitive_bg_color: purple;
-$destructive_color: yellow;
 $link_color: $color1;
