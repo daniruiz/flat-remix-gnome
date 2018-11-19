@@ -82,9 +82,8 @@ StEntry {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: none; }
   StEntry StIcon.capslock-warning {
-    icon-size: 16px;
-    warning-color: #ff6600;
-    padding: 0 4px; }
+    icon-size: 1em;
+    warning-color: #ff6600; }
 
 /* Scrollbars */
 StScrollView.vfade {
@@ -127,10 +126,10 @@ StScrollBar {
 
 /* Check Boxes */
 .check-box StBoxLayout {
-  spacing: .8em; }
+  margin: 0 .5em; }
 .check-box StBin {
-  width: 24px;
-  height: 22px;
+  width: 1.5em;
+  height: 1.5em;
   background-size: contain;
   background-image: url("assets/checkbox-off.svg"); }
 .check-box:focus StBin {
@@ -142,7 +141,7 @@ StScrollBar {
 
 /* Switches */
 .toggle-switch {
-  width: 3.25em;
+  width: 3.43em;
   height: 1.5em;
   background-size: contain; }
 
@@ -181,7 +180,7 @@ StScrollBar {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4); }
   .modal-dialog .modal-dialog-content-box {
     padding: 2.1em; }
-  .modal-dialog .run-dialog-entry {
+  .modal-dialog StEntry {
     width: 20em;
     margin-bottom: .54em;
     background-color: rgba(255, 255, 255, 0.05);
@@ -252,15 +251,14 @@ StScrollBar {
     text-align: right; }
 
 .end-session-dialog-logout-icon {
-  border-radius: 5px;
-  width: 48px;
-  height: 48px;
-  background-size: contain; }
-
-.end-session-dialog-shutdown-icon {
   color: #FFF;
   width: 48px;
   height: 48px; }
+
+.end-session-dialog-shutdown-icon {
+  color: #FFF;
+  width: 4.8em;
+  height: 4.8em; }
 
 .end-session-dialog-inhibitor-layout {
   spacing: 16px;
@@ -304,34 +302,34 @@ StScrollBar {
 
 /* ShellMountOperation Dialogs */
 .shell-mount-operation-icon {
-  icon-size: 48px; }
+  icon-size: 4.36em; }
 
 .mount-dialog {
-  spacing: 24px; }
+  spacing: 2.18em; }
   .mount-dialog .message-dialog-title {
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 6px;
+    padding-top: .9em;
+    padding-left: 1.54em;
+    padding-bottom: .54em;
     max-width: 34em; }
   .mount-dialog .message-dialog-title:rtl {
-    padding-left: 0px;
-    padding-right: 17px; }
+    padding-left: 0;
+    padding-right: 1.54em; }
   .mount-dialog .message-dialog-body {
-    padding-left: 17px;
+    padding-left: 1.54em;
     width: 28em; }
   .mount-dialog .message-dialog-body:rtl {
-    padding-left: 0px;
-    padding-right: 17px; }
+    padding-left: 0;
+    padding-right: 1.54em; }
 
 .mount-dialog-app-list {
-  max-height: 200px;
-  padding-top: 24px;
-  padding-left: 49px;
-  padding-right: 32px; }
+  max-height: 18.18em;
+  padding-top: 2.18em;
+  padding-left: 4.45em;
+  padding-right: 2.9em; }
 
 .mount-dialog-app-list:rtl {
-  padding-right: 49px;
-  padding-left: 32px; }
+  padding-right: 4.45em;
+  padding-left: 2.9em; }
 
 .mount-dialog-app-list-item {
   color: #e6e6e6; }
@@ -343,9 +341,9 @@ StScrollBar {
     padding-left: 1em; }
 
 .mount-dialog-app-list-item-icon:ltr {
-  padding-right: 17px; }
+  padding-right: 1.54em; }
 .mount-dialog-app-list-item-icon:rtl {
-  padding-left: 17px; }
+  padding-left: 1.54em; }
 
 .mount-dialog-app-list-item-name {
   font-size: 10pt; }
@@ -353,12 +351,12 @@ StScrollBar {
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 34em;
-  border: 3px solid transparent; }
+  border: 0; }
   .prompt-dialog .message-dialog-main-layout {
-    spacing: 24px;
-    padding: 10px; }
+    spacing: 2.4em;
+    padding: .9em; }
   .prompt-dialog .message-dialog-content {
-    spacing: 16px; }
+    spacing: 1.45em; }
   .prompt-dialog .message-dialog-title {
     color: #969fa5; }
 
@@ -376,86 +374,86 @@ StScrollBar {
 
 .prompt-dialog-info-label {
   font-size: 10pt;
-  padding-bottom: 8px; }
+  padding-bottom: .8em; }
 
 .hidden {
   color: rgba(0, 0, 0, 0); }
 
 .prompt-dialog-null-label {
   font-size: 10pt;
-  padding-bottom: 8px; }
+  padding-bottom: .8em; }
 
 /* Polkit Dialog */
 .polkit-dialog-user-layout {
-  padding-left: 10px;
-  spacing: 10px; }
+  padding-left: .9em;
+  spacing: .9em; }
   .polkit-dialog-user-layout:rtl {
-    padding-left: 0px;
-    padding-right: 10px; }
+    padding-left: 0;
+    padding-right: .9em; }
 
 .polkit-dialog-user-root-label {
   color: #ff6600; }
 
 .polkit-dialog-user-icon {
-  border-radius: 5px;
+  border-radius: .45em;
   background-size: contain;
-  width: 48px;
-  height: 48px; }
+  width: 4.36em;
+  height: 4.36em; }
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-  spacing: 30px; }
+  spacing: 2.72em; }
 
 .audio-selection-content {
-  spacing: 20px;
-  padding: 24px; }
+  spacing: 1.81em;
+  padding: 2.18em; }
 
 .audio-selection-title {
   font-weight: bold;
   text-align: center; }
 
 .audio-selection-box {
-  spacing: 20px; }
+  spacing: 1.81em; }
 
 .audio-selection-device {
-  border: 1px solid transparent;
-  border-radius: 12px; }
+  border: 0;
+  border-radius: 6px; }
   .audio-selection-device:active, .audio-selection-device:hover, .audio-selection-device:focus {
     background-color: #FFF; }
 
 .audio-selection-device-box {
-  padding: 20px;
-  spacing: 20px; }
+  padding: 1.81em;
+  spacing: 1.81em; }
 
 .audio-selection-device-icon {
-  icon-size: 64px; }
+  icon-size: 6.4em; }
 
 /* Access Dialog */
 .access-dialog {
-  spacing: 30px; }
+  spacing: 2.72em; }
 
 /* Geolocation Dialog */
 .geolocation-dialog {
-  spacing: 30px; }
+  spacing: 2.72em; }
 
 /* Extension Dialog */
 .extension-dialog .message-dialog-main-layout {
-  spacing: 24px;
-  padding: 10px; }
+  spacing: 2.18em;
+  padding: .9em; }
 .extension-dialog .message-dialog-title {
   color: #969fa5; }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
-  spacing: 30px; }
+  spacing: 2.72em; }
 
 /* Network Agent Dialog */
 .network-dialog-secret-table {
-  spacing-rows: 15px;
+  spacing-rows: 1.36em;
   spacing-columns: 1em; }
 
 .keyring-dialog-control-table {
-  spacing-rows: 15px;
+  spacing-rows: 1.36em;
   spacing-columns: 1em; }
 
 /* Popovers/Menus */
@@ -610,21 +608,21 @@ StScrollBar {
 
 .workspace-switcher {
   background: transparent;
-  border: 0px;
-  border-radius: 0px;
-  padding: 0px;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
   spacing: 8px; }
 
 .ws-switcher-active-up, .ws-switcher-active-down {
   height: 30px;
   background-color: magenta;
-  border: none;
+  border: 0;
   background-size: 32px;
   border-radius: 3px; }
 
 .ws-switcher-box {
   height: 50px;
-  border: none;
+  border: 0;
   background: transparent;
   border-radius: 8px; }
 
@@ -632,7 +630,7 @@ StScrollBar {
 .resize-popup,
 .switcher-list, .workspace-switcher-container {
   background-color: #290351;
-  border: none;
+  border: 0;
   color: #FFF;
   border-radius: 6px;
   padding: 7px;
@@ -710,7 +708,7 @@ StScrollBar {
   #panel .screencast-indicator {
     color: #ff6600; }
   #panel #panelActivities.panel-button > * {
-    border: none;
+    border: 0;
     background-image: url("assets/view-grid-symbolic.svg");
     background-size: 1.1em;
     background-position: 50% 50%;
@@ -758,7 +756,7 @@ StScrollBar {
   spacing: 0em; }
 
 .datemenu-calendar-column {
-  border: none solid #35046a;
+  border: 0 solid #35046a;
   spacing: 0.5em; }
   .datemenu-calendar-column:ltr {
     border-left-width: 1px; }
@@ -821,7 +819,7 @@ StScrollBar {
   background-color: transparent;
   width: 2em;
   height: 2em;
-  border-radius: 0.3em; }
+  border-radius: 3px; }
   .pager-button:hover, .pager-button:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .pager-button:active {
@@ -846,7 +844,7 @@ StScrollBar {
   text-align: center;
   height: 2.5em;
   width: 2.5em;
-  border: none;
+  border: 0;
   border-radius: 5em; }
   .calendar-day-base:hover, .calendar-day-base:focus {
     background-color: rgba(255, 255, 255, 0.1); }
@@ -877,7 +875,8 @@ StScrollBar {
 .calendar-day-with-events {
   color: #FFF;
   box-shadow: inset 0 0 0 0.2em #FFF;
-  font-weight: bold; }
+  font-weight: bold;
+  background-image: none; }
 
 .calendar-other-month-day {
   color: rgba(255, 255, 255, 0.2);
@@ -995,12 +994,12 @@ StScrollBar {
     padding: .8em; }
 
 .system-switch-user-submenu-icon.user-icon {
-  icon-size: 20px;
-  padding: 0 2px; }
+  icon-size: 1.81em;
+  padding: 0 .18em; }
 
 .system-switch-user-submenu-icon.default-icon {
-  icon-size: 16px;
-  padding: 0 4px; }
+  icon-size: 1em;
+  padding: 0 .36em; }
 
 #appMenu {
   spinner-image: url("assets/process-working.svg");
@@ -1011,14 +1010,12 @@ StScrollBar {
 .aggregate-menu {
   min-width: 21em; }
   .aggregate-menu .popup-menu-icon {
-    padding: 0 4px; }
+    padding: 0 .36em; }
   .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
-    /* 12px spacing + 2*4px padding */
-    padding-left: 20px;
+    padding-left: 1.18em;
     margin-left: 1.09em; }
   .aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
-    /* 12px spacing + 2*4px padding */
-    padding-right: 20px;
+    padding-right: 1.18em;
     margin-right: 1.09em; }
 
 .system-menu-action {
@@ -1066,7 +1063,9 @@ StScrollBar {
   height: 32px;
   width: 32px;
   -shell-close-overlap: 16px; }
-  .window-close:hover, .window-close:active {
+  .window-close:hover {
+    background-image: url("assets/close-window-hover.svg"); }
+  .window-close:active {
     background-image: url("assets/close-window-active.svg"); }
 
 /* NETWORK DIALOGS */
@@ -1582,6 +1581,18 @@ StScrollBar {
   box-shadow: none; }
   .keyboard-key:active {
     border: none; }
+  .keyboard-key.enter-key {
+    background-image: url("assets/key-enter.svg"); }
+  .keyboard-key.shift-key-lowercase {
+    background-image: url("assets/key-shift.svg"); }
+  .keyboard-key.shift-key-uppercase {
+    background-image: url("assets/key-shift-uppercase.svg"); }
+  .keyboard-key.shift-key-uppercase:latched {
+    background-image: url("assets/key-shift-latched-uppercase.svg"); }
+  .keyboard-key.hide-key {
+    background-image: url("assets/key-hide.svg"); }
+  .keyboard-key.layout-key {
+    background-image: url("assets/key-layout.svg"); }
 
 .keyboard-subkeys {
   color: #FFF;
@@ -1632,7 +1643,7 @@ StScrollBar {
 /* Auth Dialogs & Screen Shield */
 .framed-user-icon {
   background-size: contain;
-  border: 2px solid #dbdee0;
+  border: 0;
   color: #dbdee0;
   border-radius: 3px; }
   .framed-user-icon:hover {
@@ -1644,7 +1655,7 @@ StScrollBar {
   max-width: 23em; }
 
 .login-dialog {
-  border: none;
+  border: 0;
   background-color: transparent; }
   .login-dialog .modal-dialog-button-box {
     spacing: 3px; }
