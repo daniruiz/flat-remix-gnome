@@ -419,7 +419,8 @@ StScrollBar {
   border: 0;
   border-radius: 6px; }
   .audio-selection-device:active, .audio-selection-device:hover, .audio-selection-device:focus {
-    background-color: #000; }
+    background-color: #000;
+    color: #FFF; }
 
 .audio-selection-device-box {
   padding: 1.81em;
@@ -707,7 +708,7 @@ StScrollBar {
     spacing: 0; }
   #panel .screencast-indicator {
     color: #ff6600; }
-  #panel #panelActivities.panel-button > * {
+  #panel #panelActivities.panel-button StLabel {
     border: 0;
     background-image: url("assets/view-grid-symbolic.svg");
     background-size: 1.1em;
@@ -717,21 +718,6 @@ StScrollBar {
     color: transparent; }
   #panel .remote-access-indicator {
     color: #ff6600; }
-  #panel.solid {
-    background-color: black;
-    /* transition from transparent to solid */
-    transition-duration: 300ms; }
-    #panel.solid .panel-corner {
-      -panel-corner-background-color: black; }
-    #panel.solid .panel-button {
-      color: #ccc;
-      text-shadow: none; }
-      #panel.solid .panel-button:hover, #panel.solid .panel-button:active, #panel.solid .panel-button:overview, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked {
-        color: #737a88; }
-    #panel.solid .system-status-icon,
-    #panel.solid .app-menu-icon > StIcon,
-    #panel.solid .popup-menu-arrow {
-      icon-shadow: none; }
 
 #calendarArea {
   padding: 0.75em 1.0em;

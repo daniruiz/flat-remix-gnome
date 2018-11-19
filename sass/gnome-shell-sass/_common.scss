@@ -549,7 +549,7 @@ StScrollBar {
 
 .audio-selection-device {
   border: 0;
-  border-radius: 3px;
+  border-radius: 6px;
   &:active, &:hover, &:focus {
     background-color: $secondary_color;
     color: $primary_color;
@@ -959,7 +959,7 @@ StScrollBar {
     color: $warning_color;
   }
 
-  #panelActivities.panel-button > * {
+  #panelActivities.panel-button StLabel {
     border: 0;
     background-image: url("assets/view-grid-symbolic.svg");
     background-size: 1.1em;
@@ -973,30 +973,6 @@ StScrollBar {
     color: $warning_color;
   }
 
-  &.solid {
-    background-color: black;
-    /* transition from transparent to solid */
-    transition-duration: 300ms;
-
-    .panel-corner {
-      -panel-corner-background-color: black;
-    }
-
-    .panel-button {
-      color: #ccc;
-      text-shadow: none;
-
-      &:hover, &:active, &:overview, &:focus, &:checked {
-        color: lighten($fg_color, 10%);
-      }
-    }
-
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
-    }
-  }
 }
 
 // calendar popover
