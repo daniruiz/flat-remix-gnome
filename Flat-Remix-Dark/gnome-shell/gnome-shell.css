@@ -1357,15 +1357,19 @@ StScrollBar {
 .page-indicator {
   padding: 15px 20px; }
   .page-indicator .page-indicator-icon {
-    width: 18px;
-    height: 18px;
-    background-image: url("assets/page-indicator-inactive.svg"); }
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px; }
   .page-indicator:hover .page-indicator-icon {
-    background-image: url("assets/page-indicator-hover.svg"); }
+    border-color: #FFF; }
   .page-indicator:active .page-indicator-icon {
-    background-image: url("assets/page-indicator-active.svg"); }
+    border: none;
+    margin: 2px;
+    background-color: #FFF; }
   .page-indicator:checked .page-indicator-icon, .page-indicator:checked:active {
-    background-image: url("assets/page-indicator-checked.svg"); }
+    background-color: #FFF; }
 
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {

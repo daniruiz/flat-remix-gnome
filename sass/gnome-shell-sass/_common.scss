@@ -1787,21 +1787,17 @@ StScrollBar {
   padding: 15px 20px;
 
   .page-indicator-icon {
-    width: 18px;
-    height: 18px;
-    background-image: url("assets/page-indicator-inactive.svg");
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius:12px;
   }
 
-  &:hover .page-indicator-icon {
-    background-image: url("assets/page-indicator-hover.svg");
-  }
-  &:active .page-indicator-icon {
-    background-image: url("assets/page-indicator-active.svg");
-  }
+  &:hover .page-indicator-icon { border-color: #FFF; }
+  &:active .page-indicator-icon { border: none; margin: 2px; background-color:#FFF; }
   &:checked .page-indicator-icon,
-  &:checked:active {
-    background-image: url("assets/page-indicator-checked.svg");
-  }
+  &:checked:active { background-color: #FFF; }
 }
 
 .no-frequent-applications-label {
