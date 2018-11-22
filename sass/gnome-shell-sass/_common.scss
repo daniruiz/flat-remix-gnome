@@ -1076,7 +1076,7 @@ StScrollBar {
 }
 
 .pager-button {
-  color: white;
+  color: #FFF;
   background-color: transparent;
   width: 2em;
   height: 2em;
@@ -1157,12 +1157,15 @@ StScrollBar {
   color: $fg_color;
   box-shadow: inset 0 0 0 .2em $secondary_color;
   font-weight: bold;
-  background-image: none;
+  background: $bg_color; // can't set box-shadow with no background
+
+  &.calendar-other-month-day {
+    box-shadow: inset 0 0 0 .2em rgba($secondary_color, .2);
+  }
 }
 
 .calendar-other-month-day {
   color: rgba($fg_color, .2);
-  opacity: 0.2;
 }
 
 .calendar-week-number {
@@ -1795,9 +1798,15 @@ StScrollBar {
   }
 
   &:hover .page-indicator-icon { border-color: #FFF; }
-  &:active .page-indicator-icon { border: none; margin: 2px; background-color:#FFF; }
-  &:checked .page-indicator-icon,
-  &:checked:active { background-color: #FFF; }
+  &:checked .page-indicator-icon {
+    border: 0;
+    margin: 2px;
+    background-color:#FFF;
+  }
+  &:active .page-indicator-icon {
+    border-color: #FFF;
+    background-color: #FFF;
+  }
 }
 
 .no-frequent-applications-label {
@@ -1983,20 +1992,24 @@ StScrollBar {
 
 //hotplug
 .hotplug-transient-box {
-  spacing: 6px;
-  padding: 2px 72px 2px 12px;
+  spacing: .42em;
+  padding: .14em 5.14em .14em .85em;
 }
 
 .hotplug-notification-item {
-  padding: 2px 10px;
-  &:focus {
-    padding: 1px 71px 1px 11px;
+  padding: 0.14em .35em;
+  color: $light_font_color;
+  &:hover {
+    color: $fg_color;
+  }
+  &:active {
+    color: $dark_font_color;
   }
 }
 
 .hotplug-notification-item-icon {
-  icon-size: 24px;
-  padding: 2px 5px;
+  icon-size: 1.71em;
+  padding: 0.14em 1.42em;
 }
 
 .hotplug-resident-box {
@@ -2439,6 +2452,7 @@ StScrollBar {
   border-radius: 2px;
   color: #FFF;
   & > #Toolbar {
+    background: #FFF;
     border: 1px solid #FFF;
     border-radius: 2px;
   }
@@ -2449,18 +2463,16 @@ StScrollBar {
     -natural-hpadding: 12px;
     -minimum-hpadding: 6px;
     font-weight: bold;
-    color: #FFF;
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
+    color: $dark_font_color;
     &:hover {
-      color: #FFF;
       text-shadow: #000 0px 2px 2px;
     }
     &:selected {
       border-bottom-width: 4px;
       border-color: $color1;
-      color: #FFF;
       text-shadow: #000 0px 2px 2px;
     }
   }
