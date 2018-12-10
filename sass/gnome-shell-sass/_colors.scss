@@ -81,8 +81,5 @@ $destructive_color: $error_color;
 
 $link_color: $color1;
 $selected_fg_color: #ffffff;
-$borders_edge: transparentize(#eeeeec, 0.9);
 $osd_fg_color: #dbdee0;
 $osd_bg_color: #2e3436;
-$osd_borders_color: transparentize(#000, 0.3);
-$insensitive_fg_color: mix(#eeeeec, $bg_color, 50%);

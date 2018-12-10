@@ -9,9 +9,6 @@ $panel-corner-radius: 0;
 /* GLOBALS */
 $font-size: 10;
 $font-family: Cantarell, Sans-Serif;
-$_bubble_bg_color: opacify($osd_bg_color, 0.25);
-$_bubble_fg_color: $osd_fg_color;
-$_bubble_borders_color: transparentize($osd_fg_color, 0.8);
 
 @mixin fontsize($size: 24, $base: 16) {
   font-size: round($size) + pt;
@@ -1114,12 +1111,16 @@ StScrollBar {
   width: 2.5em;
   border: 0;
   border-radius: 5em;
+  padding: 0.1em;
+  margin: 2px;
+  font-feature-settings: "tnum";
   &:hover, &:focus {
     background-color: rgba($highlight_color, .1)
   }
   &:active, &:selected {
     color: #FFF;
     background-color: $color1;
+    font-weight: bold;
     border-color: transparent; //avoid jumparound due to today
   }
   &.calendar-day-heading { //day of week heading
@@ -1129,6 +1130,7 @@ StScrollBar {
   }
   &.calendar-today {
     background: $color2;
+    font-weight: bold;
     color: white;
   }
 }
@@ -1194,6 +1196,7 @@ StScrollBar {
   border-radius: .3em;
   padding: .4em 2.3em;
   font-size: .9em;
+  margin: 1.5em 1.5em 0;
   &:hover {
     color: $dark_font_color;
     border-color: $secondary_color;
@@ -1520,10 +1523,12 @@ StScrollBar {
 .search-entry {
   width: 23em;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: #FFF;
   caret-color: #000;
   caret-size: .1em;
-  background-color: rgba(255, 255, 255, 0.1);
+  text-shadow: 1px 0 4px rgba(0, 0, 0, .75);
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
   background-gradient-direction: none;
   padding: .63em .81em;
   border-radius: .3em;
@@ -1534,16 +1539,19 @@ StScrollBar {
     background-color: #FFF;
     color: #000;
     box-shadow: none;
+    text-shadow: none;
     .search-entry-icon {
       color: #000;
+      icon-shadow: none;
     }
   }
 
   .search-entry-icon {
     icon-size: 1em;
     padding: 0 .36em;
-    color: rgba(255, 255, 255, 0.7);
+    color: #FFF;
     transition-duration: 200ms;
+    icon-shadow: 1px 0 4px rgba(0, 0, 0, .75);
   }
 }
 
@@ -1666,7 +1674,7 @@ StScrollBar {
 
 .system-action-icon {
   background-color: black;
-  color: white;
+  color: #FFF;
   border-radius: 99px;
   icon-size: 48px;
 }
@@ -1683,6 +1691,7 @@ StScrollBar {
   color: #FFF;
   box-shadow: none;
   font-weight: bold;
+  margin: 0;
   &:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border-width: 0;
@@ -1727,6 +1736,10 @@ StScrollBar {
 .grid-search-result {
   & .overview-icon {
     @extend %icon_tile;
+    font-weight: bold;
+    & StIcon {
+      icon-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    }
   }
   &:active .overview-icon,
   &:checked .overview-icon,
@@ -1750,7 +1763,7 @@ StScrollBar {
 }
 
 %icon_tile {
-  color: $osd_fg_color;
+  color: #FFF;
   border-radius: 4px;
   padding: 6px;
   border: transparent;
@@ -1793,19 +1806,18 @@ StScrollBar {
     width: 12px;
     height: 12px;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius:12px;
   }
 
   &:hover .page-indicator-icon { border-color: #FFF; }
   &:checked .page-indicator-icon {
-    border: 0;
-    margin: 2px;
     background-color:#FFF;
   }
   &:active .page-indicator-icon {
-    border-color: #FFF;
-    background-color: #FFF;
+    border: 0;
+    margin: 2px;
+    background-color:#FFF;
   }
 }
 
@@ -2110,7 +2122,7 @@ StScrollBar {
   -arrow-border-radius: 10px;
   -arrow-background-color: transparentize($osd_bg_color, 0.3);
   -arrow-border-width: 2px;
-  -arrow-border-color: $_bubble_borders_color;
+  -arrow-border-color: $secondary_color;
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px;
@@ -2397,9 +2409,9 @@ StScrollBar {
   .notification,
   .screen-shield-notification-source {
     padding: 12px 6px;
-    border: 1px solid $_bubble_borders_color;
+    border: 1px solid $secondary_color;
     background-color: transparentize($osd_bg_color, 0.5);
-    color: $_bubble_fg_color;
+    color: $osd_fg_color;
     border-radius: 4px;
   }
   .notification {
@@ -2415,10 +2427,6 @@ StScrollBar {
 
 .screen-shield-notification-count-text {
   padding: 0px 0px 0px 12px;
-}
-
-#panel.lock-screen {
-  background-color: transparentize($_bubble_bg_color, 0.5);
 }
 
 .screen-shield-background { //just the shadow, really

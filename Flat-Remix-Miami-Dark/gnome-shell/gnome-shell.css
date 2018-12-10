@@ -832,12 +832,16 @@ StScrollBar {
   height: 2.5em;
   width: 2.5em;
   border: 0;
-  border-radius: 5em; }
+  border-radius: 5em;
+  padding: 0.1em;
+  margin: 2px;
+  font-feature-settings: "tnum"; }
   .calendar-day-base:hover, .calendar-day-base:focus {
     background-color: rgba(255, 255, 255, 0.1); }
   .calendar-day-base:active, .calendar-day-base:selected {
     color: #FFF;
     background-color: #FC17AF;
+    font-weight: bold;
     border-color: transparent; }
   .calendar-day-base.calendar-day-heading {
     color: rgba(255, 255, 255, 0.3);
@@ -845,6 +849,7 @@ StScrollBar {
     font-size: 70%; }
   .calendar-day-base.calendar-today {
     background: #5AEED8;
+    font-weight: bold;
     color: white; }
 
 .calendar-day {
@@ -893,7 +898,8 @@ StScrollBar {
   box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
   border-radius: .3em;
   padding: .4em 2.3em;
-  font-size: .9em; }
+  font-size: .9em;
+  margin: 1.5em 1.5em 0; }
   .message-list-clear-button.button:hover {
     color: #FFF;
     border-color: #FFF;
@@ -1141,10 +1147,12 @@ StScrollBar {
 .search-entry {
   width: 23em;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: #FFF;
   caret-color: #000;
   caret-size: .1em;
-  background-color: rgba(255, 255, 255, 0.1);
+  text-shadow: 1px 0 4px rgba(0, 0, 0, 0.75);
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
   background-gradient-direction: none;
   padding: .63em .81em;
   border-radius: .3em;
@@ -1154,14 +1162,17 @@ StScrollBar {
   .search-entry:focus, .search-entry:hover {
     background-color: #FFF;
     color: #000;
-    box-shadow: none; }
+    box-shadow: none;
+    text-shadow: none; }
     .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
-      color: #000; }
+      color: #000;
+      icon-shadow: none; }
   .search-entry .search-entry-icon {
     icon-size: 1em;
     padding: 0 .36em;
-    color: rgba(255, 255, 255, 0.7);
-    transition-duration: 200ms; }
+    color: #FFF;
+    transition-duration: 200ms;
+    icon-shadow: 1px 0 4px rgba(0, 0, 0, 0.75); }
 
 #searchResultsBin {
   max-width: 1000px; }
@@ -1247,7 +1258,7 @@ StScrollBar {
 
 .system-action-icon {
   background-color: black;
-  color: white;
+  color: #FFF;
   border-radius: 99px;
   icon-size: 48px; }
 
@@ -1261,7 +1272,8 @@ StScrollBar {
   border-width: 0;
   color: #FFF;
   box-shadow: none;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 0; }
   .app-view-control:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border-width: 0;
@@ -1293,6 +1305,16 @@ StScrollBar {
   background-color: rgba(219, 222, 224, 0.1);
   transition-duration: 200ms; }
 
+.app-well-app .overview-icon,
+.app-well-app.app-folder .overview-icon,
+.show-apps .overview-icon,
+.grid-search-result .overview-icon {
+  font-weight: bold; }
+  .app-well-app .overview-icon StIcon,
+  .app-well-app.app-folder .overview-icon StIcon,
+  .show-apps .overview-icon StIcon,
+  .grid-search-result .overview-icon StIcon {
+    icon-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 .app-well-app:active .overview-icon, .app-well-app:checked .overview-icon, .app-well-app:hover .overview-icon, .app-well-app:focus .overview-icon, .app-well-app:selected .overview-icon,
 .app-well-app.app-folder:active .overview-icon,
 .app-well-app.app-folder:checked .overview-icon,
@@ -1326,7 +1348,7 @@ StScrollBar {
 .app-well-app.app-folder .overview-icon,
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
-  color: #dbdee0;
+  color: #FFF;
   border-radius: 4px;
   padding: 6px;
   border: transparent;
@@ -1361,16 +1383,15 @@ StScrollBar {
     width: 12px;
     height: 12px;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 12px; }
   .page-indicator:hover .page-indicator-icon {
     border-color: #FFF; }
   .page-indicator:checked .page-indicator-icon {
-    border: 0;
-    margin: 2px;
     background-color: #FFF; }
   .page-indicator:active .page-indicator-icon {
-    border-color: #FFF;
+    border: 0;
+    margin: 2px;
     background-color: #FFF; }
 
 .app-well-app > .overview-icon.overview-icon-with-label,
@@ -1596,7 +1617,7 @@ StScrollBar {
   -arrow-border-radius: 10px;
   -arrow-background-color: rgba(46, 52, 54, 0.7);
   -arrow-border-width: 2px;
-  -arrow-border-color: rgba(219, 222, 224, 0.2);
+  -arrow-border-color: #FFF;
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px; }
@@ -1813,7 +1834,7 @@ StScrollBar {
   .screen-shield-notifications-container .notification,
   .screen-shield-notifications-container .screen-shield-notification-source {
     padding: 12px 6px;
-    border: 1px solid rgba(219, 222, 224, 0.2);
+    border: 1px solid #FFF;
     background-color: rgba(46, 52, 54, 0.5);
     color: #dbdee0;
     border-radius: 4px; }
@@ -1826,9 +1847,6 @@ StScrollBar {
 
 .screen-shield-notification-count-text {
   padding: 0px 0px 0px 12px; }
-
-#panel.lock-screen {
-  background-color: rgba(46, 52, 54, 0.5); }
 
 .screen-shield-background {
   background: #000;
