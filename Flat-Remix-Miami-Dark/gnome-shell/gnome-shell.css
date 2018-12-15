@@ -56,9 +56,9 @@ stage {
   border-radius: 0;
   border: none;
   height: 3.2em;
-  color: #FFF;
+  color: #000;
   border-radius: 0;
-  background-color: #000;
+  background-color: #FFF;
   box-shadow: none;
   font-weight: bold; }
 
@@ -657,7 +657,7 @@ StScrollBar {
 
 #panel {
   font-feature-settings: "tnum";
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   border-radius: .5em;
   font-weight: normal;
   font-size: .9em;
@@ -1150,7 +1150,7 @@ StScrollBar {
   color: #FFF;
   caret-color: #000;
   caret-size: .1em;
-  text-shadow: 1px 0 4px rgba(0, 0, 0, 0.75);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   background-gradient-direction: none;
@@ -1172,7 +1172,7 @@ StScrollBar {
     padding: 0 .36em;
     color: #FFF;
     transition-duration: 200ms;
-    icon-shadow: 1px 0 4px rgba(0, 0, 0, 0.75); }
+    icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
 
 #searchResultsBin {
   max-width: 1000px; }
@@ -1183,7 +1183,9 @@ StScrollBar {
   spacing: 16px; }
 
 .search-section {
-  spacing: 16px; }
+  spacing: 16px;
+  color: #FFF;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
 
 .search-section-content {
   spacing: 32px; }
@@ -1199,15 +1201,16 @@ StScrollBar {
   spacing: 30px; }
 
 .list-search-result-title {
-  color: #cdd1d4;
+  color: #FFF;
   spacing: 12px; }
 
 .list-search-result-description {
-  color: rgba(178, 184, 189, 0.5); }
+  color: rgba(255, 255, 255, 0.7); }
 
 .list-search-provider-details {
   width: 150px;
-  color: #cdd1d4;
+  color: #FFF;
+  font-weight: bold;
   margin-top: 0.24em; }
 
 .list-search-provider-content {
@@ -1309,7 +1312,8 @@ StScrollBar {
 .app-well-app.app-folder .overview-icon,
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
-  font-weight: bold; }
+  font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
   .app-well-app .overview-icon StIcon,
   .app-well-app.app-folder .overview-icon StIcon,
   .show-apps .overview-icon StIcon,
