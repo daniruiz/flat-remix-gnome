@@ -1887,7 +1887,7 @@ StScrollBar {
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
-    color: #161719; }
+    color: #000; }
     #LookingGlassDialog .notebook-tab:hover {
       text-shadow: #000 0px 2px 2px; }
     #LookingGlassDialog .notebook-tab:selected {

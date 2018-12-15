@@ -2478,7 +2478,7 @@ StScrollBar {
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
-    color: $dark_font_color;
+    color: #000;
     &:hover {
       text-shadow: #000 0px 2px 2px;
     }

@@ -71,7 +71,7 @@ StEntry {
   background-color: #290351;
   background-gradient-direction: none;
   box-shadow: none;
-  selection-background-color: magenta;
+  selection-background-color: #f0f;
   selected-color: #290351; }
   StEntry:focus {
     background-color: #290351;
@@ -110,15 +110,15 @@ StScrollBar {
   height: 1.09em;
   -barlevel-height: .35em;
   -barlevel-background-color: rgba(255, 255, 255, 0.05);
-  -barlevel-border-color: magenta;
-  -barlevel-active-background-color: magenta;
+  -barlevel-border-color: #f0f;
+  -barlevel-active-background-color: #f0f;
   -barlevel-overdrive-color: #d31919;
   -barlevel-overdrive-separator-width: 0.1em;
   -barlevel-border-width: 0;
   -slider-height: .35em;
   -slider-background-color: rgba(255, 255, 255, 0.05);
-  -slider-border-color: magenta;
-  -slider-active-background-color: magenta;
+  -slider-border-color: #f0f;
+  -slider-active-background-color: #f0f;
   -slider-active-border-color: #d31919;
   -slider-border-width: 0;
   -slider-handle-radius: 0;
@@ -157,9 +157,9 @@ StScrollBar {
 
 /* links */
 .shell-link {
-  color: magenta; }
+  color: #f0f; }
   .shell-link:hover {
-    color: magenta;
+    color: #f0f;
     font-weight: bold; }
 
 /* Modal Dialogs */
@@ -601,7 +601,7 @@ StScrollBar {
 
 /* Window Cycler */
 .cycler-highlight {
-  border: 5px solid magenta; }
+  border: 5px solid #f0f; }
 
 /* Workspace Switcher */
 .workspace-switcher-group {
@@ -616,7 +616,7 @@ StScrollBar {
 
 .ws-switcher-active-up, .ws-switcher-active-down {
   height: 30px;
-  background-color: magenta;
+  background-color: #f0f;
   border: 0;
   background-size: 32px;
   border-radius: 3px; }
@@ -840,7 +840,7 @@ StScrollBar {
     background-color: rgba(255, 255, 255, 0.1); }
   .calendar-day-base:active, .calendar-day-base:selected {
     color: #FFF;
-    background-color: magenta;
+    background-color: #f0f;
     font-weight: bold;
     border-color: transparent; }
   .calendar-day-base.calendar-day-heading {
@@ -1023,7 +1023,7 @@ StScrollBar {
     background-color: rgba(255, 255, 255, 0.1);
     color: #FFF; }
   .system-menu-action:active {
-    background-color: magenta;
+    background-color: #f0f;
     color: #ffffff; }
   .system-menu-action > StIcon {
     icon-size: 1em; }
@@ -1101,7 +1101,7 @@ StScrollBar {
   spacing: 1.66em; }
 
 .nm-dialog-item:selected {
-  background-color: magenta;
+  background-color: #f0f;
   color: #ffffff; }
 
 .nm-dialog-icons {
@@ -1434,7 +1434,7 @@ StScrollBar {
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 .url-highlighter {
-  link-color: magenta;
+  link-color: #f0f;
   font-weight: bold; }
 
 .notification-banner {
@@ -1489,7 +1489,7 @@ StScrollBar {
   width: 1.6em;
   -shell-counter-overlap-x: 3px;
   -shell-counter-overlap-y: 3px;
-  background-color: magenta;
+  background-color: #f0f;
   color: #ffffff;
   border: 2px solid #dbdee0;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
@@ -1575,7 +1575,7 @@ StScrollBar {
 
 /* Eeeky things */
 .magnifier-zoom-region {
-  border: 2px solid magenta; }
+  border: 2px solid #f0f; }
   .magnifier-zoom-region.full-screen {
     border-width: 0; }
 
@@ -1638,7 +1638,7 @@ StScrollBar {
   padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 4px; }
   .candidate-box:selected, .candidate-box:hover {
-    background-color: magenta;
+    background-color: #f0f;
     color: #ffffff; }
 
 .candidate-page-button-box {
@@ -1699,12 +1699,12 @@ StScrollBar {
       .login-dialog .modal-dialog-button:default:active {
         color: #FFF;
         border-color: rgba(0, 0, 0, 0.7);
-        background-color: magenta;
+        background-color: #f0f;
         box-shadow: inset 0 0 #000;
         text-shadow: none;
         icon-shadow: none; }
       .login-dialog .modal-dialog-button:default:insensitive {
-        color: magenta;
+        color: #f0f;
         border-color: rgba(0, 0, 0, 0.7);
         background-color: rgba(41, 3, 81, 0.7);
         box-shadow: none;
@@ -1749,10 +1749,10 @@ StScrollBar {
   padding: .2em;
   width: 23em; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
-    background-color: magenta;
+    background-color: #f0f;
     color: #ffffff; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-    border-right: 2px solid magenta; }
+    border-right: 2px solid #f0f; }
 
 .login-dialog-user-list-item {
   border-radius: 5px;
@@ -1887,12 +1887,12 @@ StScrollBar {
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
-    color: #FFF; }
+    color: #000; }
     #LookingGlassDialog .notebook-tab:hover {
       text-shadow: #000 0px 2px 2px; }
     #LookingGlassDialog .notebook-tab:selected {
       border-bottom-width: 4px;
-      border-color: magenta;
+      border-color: #f0f;
       text-shadow: #000 0px 2px 2px; }
   #LookingGlassDialog StBoxLayout#EvalBox {
     padding: 4px;
@@ -1901,7 +1901,7 @@ StScrollBar {
     spacing: 4px; }
 
 .lg-dialog StEntry {
-  selection-background-color: magenta;
+  selection-background-color: #f0f;
   selected-color: #000; }
 .lg-dialog .shell-link {
   color: #FFF; }
