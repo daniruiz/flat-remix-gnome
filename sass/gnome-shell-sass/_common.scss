@@ -4,8 +4,6 @@
 $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
 /* #{$cakeisalie} */
 
-$panel-corner-radius: 0;
-
 /* GLOBALS */
 $font-size: 10;
 $font-family: Cantarell, Sans-Serif;
@@ -76,9 +74,9 @@ stage {
   border-radius: 0;
   border: none;
   height: 3.2em;
-  color: #FFF;
+  color: $primary_color;
   border-radius: 0;
-  background-color: #000;
+  background-color: $secondary_color;
   box-shadow: none;
   font-weight: bold;
 }
@@ -849,15 +847,15 @@ StScrollBar {
 }
 
 .tile-preview-left.on-primary {
-  border-radius: $panel-corner-radius 0 0 0;
+  border-radius: 0 0 0 0;
 }
 
 .tile-preview-right.on-primary {
-  border-radius: 0 $panel-corner-radius 0 0;
+  border-radius: 0 0 0 0;
 }
 
 .tile-preview-left.tile-preview-right.on-primary {
-  border-radius: $panel-corner-radius $panel-corner-radius 0 0;
+  border-radius: 0 0 0 0;
 }
 
 /* TOP BAR */
@@ -867,7 +865,7 @@ StScrollBar {
 
 #panel {
   font-feature-settings: "tnum";
-  text-shadow: 0 0 4px rgba(0, 0, 0, .5);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   border-radius: .5em;
   font-weight: normal;
   font-size: .9em;
@@ -1526,7 +1524,7 @@ StScrollBar {
   color: #FFF;
   caret-color: #000;
   caret-size: .1em;
-  text-shadow: 1px 0 4px rgba(0, 0, 0, .75);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   background-gradient-direction: none;
@@ -1551,7 +1549,7 @@ StScrollBar {
     padding: 0 .36em;
     color: #FFF;
     transition-duration: 200ms;
-    icon-shadow: 1px 0 4px rgba(0, 0, 0, .75);
+    icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -1569,6 +1567,8 @@ StScrollBar {
 
 .search-section {
   spacing: 16px;
+  color: #FFF;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 // This should be equal to #searchResultsContent spacing
@@ -1595,17 +1595,18 @@ StScrollBar {
 }
 
 .list-search-result-title {
-  color: darken($osd_fg_color, 5%);
+  color: #FFF;
   spacing: 12px;
 }
 
 .list-search-result-description {
-  color: transparentize(darken($osd_fg_color, 15%), 0.5);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .list-search-provider-details {
   width: 150px;
-  color: darken($osd_fg_color, 5%);
+  color: #FFF;
+  font-weight: bold;
   margin-top: 0.24em;
 }
 
@@ -1737,6 +1738,7 @@ StScrollBar {
   & .overview-icon {
     @extend %icon_tile;
     font-weight: bold;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
     & StIcon {
       icon-shadow: 0 0 10px rgba(0, 0, 0, .3);
     }
@@ -1807,17 +1809,19 @@ StScrollBar {
     height: 12px;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
-    border-radius:12px;
+    border-radius: 12px;
   }
 
-  &:hover .page-indicator-icon { border-color: #FFF; }
+  &:hover .page-indicator-icon {
+    border-color: #FFF;
+  }
   &:checked .page-indicator-icon {
-    background-color:#FFF;
+    background-color: #FFF;
   }
   &:active .page-indicator-icon {
     border: 0;
     margin: 2px;
-    background-color:#FFF;
+    background-color: #FFF;
   }
 }
 
@@ -1867,7 +1871,7 @@ StScrollBar {
 %status_text {
   font-size: 2em;
   font-weight: bold;
-  color: $fg_color;
+  color: #FFF;
 }
 
 /* NOTIFICATIONS & MESSAGE TRAY */

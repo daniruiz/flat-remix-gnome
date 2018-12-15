@@ -1,19 +1,16 @@
-
 $primary_color: #FFF;
 $secondary_color: #000;
 $bg_color: #FFF;
 $highlight_color: #9fb0b9;
-$fg_color:  #5c616c;
+$fg_color: #5c616c;
 $dark_font_color: darken($fg_color, 30%);
 $light_font_color: lighten($fg_color, 30%);
 $panel_font_color: #FFF;
-$panel_background_color: rgba(0,0,0, .2 );
+$panel_background_color: rgba(0, 0, 0, .2);
 $color1: #367bf0;
 $color2: #19a187;
 
-
-@if $variant == 'dark'
-{
+@if $variant == 'dark' {
   $primary_color: #2f343f;
   $secondary_color: #FFF;
   $bg_color: #383C4A;
@@ -27,8 +24,7 @@ $color2: #19a187;
   $color2: #19a187;
 }
 
-@if $variant == 'darkest'
-{
+@if $variant == 'darkest' {
   $primary_color: #000;
   $secondary_color: #FFF;
   $bg_color: #050505;
@@ -42,8 +38,7 @@ $color2: #19a187;
   $color2: #19a187;
 }
 
-@if $variant == 'miami'
-{
+@if $variant == 'miami' {
   $primary_color: #000;
   $secondary_color: #FFF;
 
@@ -58,8 +53,7 @@ $color2: #19a187;
   $color2: #08ecbe;
 }
 
-@if $variant == 'miami-dark'
-{
+@if $variant == 'miami-dark' {
   $primary_color: #000;
   $secondary_color: #FFF;
 
@@ -73,7 +67,6 @@ $color2: #19a187;
   $color1: #FC17AF;
   $color2: #5AEED8;
 }
-
 
 $warning_color: #ff6600;
 $error_color: #d31919;
