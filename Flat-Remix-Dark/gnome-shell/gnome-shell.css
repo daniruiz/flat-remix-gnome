@@ -51,11 +51,10 @@ stage {
     icon-shadow: none; }
 
 .modal-dialog-linked-button {
-  padding: 0;
+  padding: 1.1em;
   outline: 0;
   border-radius: 0;
   border: none;
-  height: 3.2em;
   color: #2f343f;
   border-radius: 0;
   background-color: #FFF;
@@ -179,10 +178,10 @@ StScrollBar {
   border: 0;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4); }
   .modal-dialog .modal-dialog-content-box {
-    padding: 2.1em; }
+    padding: 2.4em; }
   .modal-dialog StEntry {
     width: 20em;
-    margin-bottom: .54em;
+    margin-bottom: 6px;
     background-color: rgba(255, 255, 255, 0.05);
     background-gradient-direction: none;
     box-shadow: none;
@@ -206,16 +205,17 @@ StScrollBar {
 
 /* Message Dialog */
 .message-dialog-main-layout {
-  padding: 1.09em 1.81em 0;
-  spacing: 1.09em; }
+  padding: .86em 1.43em 0;
+  spacing: .86em; }
 
 .message-dialog-content {
-  max-width: 28em;
-  spacing: 1.81em; }
+  max-width: 2em;
+  spacing: 1.43em; }
 
 .message-dialog-icon {
-  min-width: 2.54em;
-  icon-size: 2.54em; }
+  width: 48px;
+  height: 48px;
+  icon-size: 48px; }
 
 .message-dialog-title {
   font-weight: bold; }
@@ -226,27 +226,28 @@ StScrollBar {
 
 /* End Session Dialog */
 .end-session-dialog {
-  spacing: 3.81em;
+  padding-top: 1em;
+  spacing: 1em;
   border: none; }
 
 .end-session-dialog-list {
-  padding-top: 1.81em; }
+  padding-top: 1em; }
 
 .end-session-dialog-layout {
-  padding-left: 1.54em; }
+  padding-left: 1.2em; }
   .end-session-dialog-layout:rtl {
-    padding-right: 1.54em; }
+    padding-right: 1.2em; }
 
 .end-session-dialog-description {
   width: 28em;
-  padding-bottom: 0.9em; }
+  padding-bottom: 0.71em; }
   .end-session-dialog-description:rtl {
     text-align: right; }
 
 .end-session-dialog-warning {
   width: 28em;
   color: #ff6600;
-  padding-top: 0.54em; }
+  padding-top: 0.43em; }
   .end-session-dialog-warning:rtl {
     text-align: right; }
 
@@ -257,14 +258,14 @@ StScrollBar {
 
 .end-session-dialog-shutdown-icon {
   color: #FFF;
-  width: 4.8em;
-  height: 4.8em; }
+  width: 48px;
+  height: 48px; }
 
 .end-session-dialog-inhibitor-layout {
-  spacing: 16px;
+  spacing: 1.14em;
   max-height: 200px;
-  padding-right: 65px;
-  padding-left: 65px; }
+  padding-right: 4.64em;
+  padding-left: 4.64em; }
 
 .end-session-dialog-session-list,
 .end-session-dialog-app-list {
@@ -288,13 +289,7 @@ StScrollBar {
   font-size: 10pt; }
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  height: 50px;
-  background-color: #d41a1a;
-  font-size: 10pt;
-  color: #FFF; }
+  background-color: #d41a1a; }
 
 .end-session-dialog .modal-dialog-linked-button:last-child:active {
   color: #FFF;
@@ -302,34 +297,34 @@ StScrollBar {
 
 /* ShellMountOperation Dialogs */
 .shell-mount-operation-icon {
-  icon-size: 4.36em; }
+  icon-size: 48px; }
 
 .mount-dialog {
-  spacing: 2.18em; }
+  spacing: 1.71em; }
   .mount-dialog .message-dialog-title {
-    padding-top: .9em;
-    padding-left: 1.54em;
-    padding-bottom: .54em;
+    padding-top: .71em;
+    padding-left: 1.21em;
+    padding-bottom: .43em;
     max-width: 34em; }
   .mount-dialog .message-dialog-title:rtl {
     padding-left: 0;
-    padding-right: 1.54em; }
+    padding-right: 1.21em; }
   .mount-dialog .message-dialog-body {
-    padding-left: 1.54em;
+    padding-left: 1.21em;
     width: 28em; }
   .mount-dialog .message-dialog-body:rtl {
     padding-left: 0;
-    padding-right: 1.54em; }
+    padding-right: 1.21em; }
 
 .mount-dialog-app-list {
-  max-height: 18.18em;
-  padding-top: 2.18em;
-  padding-left: 4.45em;
-  padding-right: 2.9em; }
+  max-height: 200px;
+  padding-top: 1.71em;
+  padding-left: 3.5em;
+  padding-right: 2.29em; }
 
 .mount-dialog-app-list:rtl {
-  padding-right: 4.45em;
-  padding-left: 2.9em; }
+  padding-right: 3.5em;
+  padding-left: 2.29em; }
 
 .mount-dialog-app-list-item {
   color: #e6e6e6; }
@@ -341,9 +336,9 @@ StScrollBar {
     padding-left: 1em; }
 
 .mount-dialog-app-list-item-icon:ltr {
-  padding-right: 1.54em; }
+  padding-right: 1.21em; }
 .mount-dialog-app-list-item-icon:rtl {
-  padding-left: 1.54em; }
+  padding-left: 1.21em; }
 
 .mount-dialog-app-list-item-name {
   font-size: 10pt; }
@@ -353,10 +348,10 @@ StScrollBar {
   width: 34em;
   border: 0; }
   .prompt-dialog .message-dialog-main-layout {
-    spacing: 2.4em;
-    padding: .9em; }
+    spacing: 1.71em;
+    padding: .71em; }
   .prompt-dialog .message-dialog-content {
-    spacing: 1.45em; }
+    spacing: 1.14em; }
   .prompt-dialog .message-dialog-title {
     color: #969fa5; }
 
@@ -370,50 +365,50 @@ StScrollBar {
 .prompt-dialog-error-label {
   font-size: 10pt;
   color: #d31919;
-  padding-bottom: 8px; }
+  padding: 0; }
 
 .prompt-dialog-info-label {
   font-size: 10pt;
-  padding-bottom: .8em; }
+  padding: 0; }
 
 .hidden {
   color: rgba(0, 0, 0, 0); }
 
 .prompt-dialog-null-label {
   font-size: 10pt;
-  padding-bottom: .8em; }
+  padding: 0; }
 
 /* Polkit Dialog */
 .polkit-dialog-user-layout {
-  padding-left: .9em;
-  spacing: .9em; }
+  padding-left: .71em;
+  spacing: .71em; }
   .polkit-dialog-user-layout:rtl {
     padding-left: 0;
-    padding-right: .9em; }
+    padding-right: .71em; }
 
 .polkit-dialog-user-root-label {
   color: #ff6600; }
 
 .polkit-dialog-user-icon {
-  border-radius: .45em;
+  border-radius: 0;
   background-size: contain;
-  width: 4.36em;
-  height: 4.36em; }
+  width: 48px;
+  height: 48px; }
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-  spacing: 2.72em; }
+  spacing: 2.14em; }
 
 .audio-selection-content {
-  spacing: 1.81em;
-  padding: 2.18em; }
+  spacing: 1.42em;
+  padding: 1.71em; }
 
 .audio-selection-title {
   font-weight: bold;
   text-align: center; }
 
 .audio-selection-box {
-  spacing: 1.81em; }
+  spacing: 1.42em; }
 
 .audio-selection-device {
   border: 0;
@@ -423,38 +418,38 @@ StScrollBar {
     color: #2f343f; }
 
 .audio-selection-device-box {
-  padding: 1.81em;
-  spacing: 1.81em; }
+  padding: 1.42em;
+  spacing: 1.42em; }
 
 .audio-selection-device-icon {
-  icon-size: 6.4em; }
+  icon-size: 4.57em; }
 
 /* Access Dialog */
 .access-dialog {
-  spacing: 2.72em; }
+  spacing: 2.14em; }
 
 /* Geolocation Dialog */
 .geolocation-dialog {
-  spacing: 2.72em; }
+  spacing: 2.14em; }
 
 /* Extension Dialog */
 .extension-dialog .message-dialog-main-layout {
-  spacing: 2.18em;
-  padding: .9em; }
+  spacing: 1.71em;
+  padding: .71em; }
 .extension-dialog .message-dialog-title {
   color: #969fa5; }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
-  spacing: 2.72em; }
+  spacing: 2.14em; }
 
 /* Network Agent Dialog */
 .network-dialog-secret-table {
-  spacing-rows: 1.36em;
+  spacing-rows: 1.07em;
   spacing-columns: 1em; }
 
 .keyring-dialog-control-table {
-  spacing-rows: 1.36em;
+  spacing-rows: 1.07em;
   spacing-columns: 1em; }
 
 /* Popovers/Menus */
