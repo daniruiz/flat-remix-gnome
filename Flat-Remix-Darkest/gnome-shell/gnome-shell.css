@@ -563,6 +563,8 @@ StScrollBar {
 .switcher-popup {
   padding: 8px;
   spacing: 16px; }
+  .switcher-popup StIcon {
+    icon-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
 .switcher-list-item-container {
   spacing: 8px; }

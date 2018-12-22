@@ -744,6 +744,9 @@ StScrollBar {
 .switcher-popup {
   padding: 8px;
   spacing: 16px;
+  & StIcon {
+    icon-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  }
 }
 
 .osd-window,
