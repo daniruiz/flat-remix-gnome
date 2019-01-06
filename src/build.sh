@@ -36,8 +36,3 @@ do
   (cd "$theme" && glib-compile-resources gnome-shell-theme.gresource.xml)
   cp "$theme"/gnome-shell-theme.gresource ../$(basename "$theme")
 done
-
-# Install new themes
-sudo cp -rf ../Flat-Remix* /usr/share/themes
-
-gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'

@@ -971,7 +971,6 @@ StScrollBar {
     border: 0;
     background-image: url("assets/view-grid-symbolic.svg");
     background-size: 1.1em;
-    background-position: 50% 50%;
     margin: 0 .3em;
     width: 1em;
     color: transparent;
@@ -1200,7 +1199,7 @@ StScrollBar {
   border: .23em solid if($variant=='darkest' or $variant=='miami-dark', rgba($secondary_color, .1), transparent);
   box-shadow: 0 1px 2px 1px rgba(if($variant=='darkest' or $variant=='miami-dark', transparent, darken($bg_color, 30%)), .3);
   border-radius: 4px;
-  padding: .7em 2.3em;
+  padding: .5em 2.3em;
   font-size: .9em;
   margin: 1.5em 1.5em 0;
   &:hover {
@@ -2448,7 +2447,7 @@ StScrollBar {
 }
 
 #lockDialogGroup {
-  background: #2e3436 url("assets/noise-texture.png");
+  background: #2e3436;
   background-repeat: repeat;
 }
 
