@@ -1,3 +1,4 @@
 .idea
 sass/.sass-cache
 sass/*.css
+.sass-cache
