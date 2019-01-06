@@ -1,0 +1,11 @@
+@import "Flat-Remix-Darkest";
+
+//force symbolic icons
+stage {
+  -st-icon-style: symbolic;
+}
+
+.toggle-switch-us, .toggle-switch-intl {
+  background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
+  &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+}
