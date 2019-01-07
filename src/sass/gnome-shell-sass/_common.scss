@@ -2213,43 +2213,39 @@ StScrollBar {
   border: 0;
   background-color: transparent;
 
+  color: #FFF;
+  StIcon { color: #FFF; }
+
   .modal-dialog-button-box {
     spacing: 3px;
   }
   .modal-dialog-button {
-    padding: 3px 18px;
+    padding: 7px 18px;
+    border-radius: 6px;
+    margin-bottom: 7px;
     &:default {
-      color: $fg_color;
-      background-color: rgba($color1, 0.5);
-      border-color: rgba($primary_color, 0.7);
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.5);
-      text-shadow: 0 1px #000;
-      icon-shadow: 0 1px #000;
+      color: #FFF;
+      background-color: $color1;
+      border-color: $color1;
+      box-shadow: none;
+      text-shadow: none;
+      icon-shadow: none;
       &:hover, &:focus {
         color: #FFF;
-        border-color: rgba($primary_color, 0.7);
-        background-color: rgba($color1, 0.7);
-        box-shadow: inset 0 1px #5d696d;
-        text-shadow: 0 1px #000;
-        icon-shadow: 0 1px #000;
-      }
-      &:active {
-        color: #FFF;
-        border-color: rgba($primary_color, 0.7);
-        background-color: $color1;
-        box-shadow: inset 0 0 $primary_color;
+        border-color: lighten($color1, 5%);
+        background-color: lighten($color1, 5%);
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
         text-shadow: none;
         icon-shadow: none;
       }
-      &:insensitive {
+      &:active, &:insensitive {
         color: $color1;
-        border-color: rgba($primary_color, 0.7);
-        background-color: rgba($bg_color, 0.7);
+        border-color: rgba(255, 255, 255, .1);
+        background-color: rgba(255, 255, 255, .1);
         box-shadow: none;
-        text-shadow: none;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, .5);
         icon-shadow: none;
       }
-
     }
   }
 
@@ -2260,11 +2256,11 @@ StScrollBar {
 }
 
 .login-dialog-banner {
-  color: darken($osd_fg_color, 10%);
+  color: #FFF;
 }
 
 .login-dialog-button-box {
-  spacing: 5px;
+  spacing: 10px;
 }
 
 .login-dialog-message-warning {
@@ -2284,14 +2280,14 @@ StScrollBar {
   padding-left: 2px;
   .login-dialog-not-listed-button:focus &,
   .login-dialog-not-listed-button:hover & {
-    color: $osd_fg_color;
+    color: #FFF;
   }
 }
 
 .login-dialog-not-listed-label {
   font-size: 90%;
   font-weight: bold;
-  color: darken($osd_fg_color, 30%);
+  color: #FFF;
   padding-top: 1em;
 }
 
@@ -2301,11 +2297,12 @@ StScrollBar {
 
 .login-dialog-user-list {
   spacing: 12px;
-  padding: .2em;
   width: 23em;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 6px;
   &:expanded .login-dialog-user-list-item:selected {
     background-color: $color1;
-    color: $selected_fg_color;
+    color: #FFF;
   }
   &:expanded .login-dialog-user-list-item:logged-in {
     border-right: 2px solid $color1;
@@ -2314,17 +2311,17 @@ StScrollBar {
 
 .login-dialog-user-list-item {
   border-radius: 6px;
-  padding: .2em;
-  color: darken($osd_fg_color, 30%);
-  &:ltr {
+  padding: 6px;
+  color: #FFF;
+  &:ltr .user-widget {
     padding-right: 1em;
   }
-  &:rtl {
+  &:rtl .user-widget {
     padding-left: 1em;
   }
   .login-dialog-timed-login-indicator {
     height: 2px;
-    margin: 2px 0 0 0;
+    margin-top: 6px;
     background-color: $osd_fg_color;
   }
   &:focus .login-dialog-timed-login-indicator {
@@ -2334,7 +2331,7 @@ StScrollBar {
 
 .login-dialog-username,
 .user-widget-label {
-  color: $osd_fg_color;
+  color: #FFF;
   font-size: 120%;
   font-weight: bold;
   text-align: left;
@@ -2343,22 +2340,22 @@ StScrollBar {
 
 .user-widget-label {
   &:ltr {
-    padding-left: 18px;
+    padding-left: 14px;
   }
   &:rtl {
-    padding-right: 18px;
+    padding-right: 14px;
   }
 }
 
 .login-dialog-prompt-layout {
-  padding-top: 24px;
+  padding-top: 30px;
   padding-bottom: 12px;
   spacing: 8px;
   width: 23em;
 }
 
 .login-dialog-prompt-label {
-  color: darken($osd_fg_color, 20%);
+  color: #FFF;
   font-size: 110%;
   padding-top: 1em;
 }
@@ -2368,12 +2365,12 @@ StScrollBar {
 }
 
 .login-dialog-session-list-button {
-  color: darken($osd_fg_color, 30%);
+  color: #FFF;
   &:hover, &:focus {
-    color: $osd_fg_color;
+    color: #FFF;
   }
   &:active {
-    color: darken($osd_fg_color, 50%);
+    color: #FFF;
   }
 }
 
@@ -2447,8 +2444,7 @@ StScrollBar {
 }
 
 #lockDialogGroup {
-  background: #2e3436;
-  background-repeat: repeat;
+  background: #272a34;
 }
 
 #screenShieldNotifications {
