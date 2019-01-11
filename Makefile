@@ -4,6 +4,8 @@
 PREFIX ?= /usr
 IGNORE ?=
 THEMES ?= Flat-Remix Flat-Remix-Miami-Dark Flat-Remix-Dark Flat-Remix-Darkest Flat-Remix-Miami
+MODES ?= flat-remix-darkest flat-remix-dark flat-remix flat-remix-miami-dark flat-remix-miami
+
 
 # excludes IGNORE from THEMES list
 THEMES := $(filter-out $(IGNORE), $(THEMES))
@@ -11,11 +13,25 @@ THEMES := $(filter-out $(IGNORE), $(THEMES))
 all:
 
 install:
-	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
-	cp -R $(THEMES) $(DESTDIR)$(PREFIX)/share/themes
-
+	install -dm755 "$(DESTDIR)$(PREFIX)/share/themes"
+	cp -a $(THEMES) "$(DESTDIR)$(PREFIX)/share/themes"
+	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme"
+	for theme in $(THEMES); \
+	do \
+		ln -sf "/usr/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}"; \
+	done
+	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes"
+	cp -a src/modes/* "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes/"
+	install -dm755 "$(DESTDIR)$(PREFIX)/share/xsessions"
+	cp -a src/sessions/* "$(DESTDIR)$(PREFIX)/share/xsessions/"
+	install -dm755 "$(DESTDIR)$(PREFIX)/share/wayland-sessions"
+	cp -a src/sessions/* "$(DESTDIR)$(PREFIX)/share/wayland-sessions/"
 uninstall:
-	-rm -rf $(foreach theme,$(DESTDIR)$(PREFIX)/share/themes/$(theme))
+	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/themes/$(theme))
+	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$(theme))
+	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/gnome-shell/modes/$(mode).json)
+	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/xsessions/$(mode)-gnome.desktop)
+	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/wayland-sessions/$(mode)-gnome.desktop)
 
 _get_version:
 	$(eval VERSION := $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
