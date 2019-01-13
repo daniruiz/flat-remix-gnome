@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* This stylesheet is generated, DO NOT EDIT */
 /* GLOBALS */
 stage {
@@ -1149,7 +1150,7 @@ StScrollBar {
   -shell-caption-spacing: 12px; }
 
 .search-entry {
-  width: 23em;
+  width: 21em;
   border: none;
   color: #FFF;
   caret-color: #000;
@@ -1276,7 +1277,7 @@ StScrollBar {
 .app-view-control {
   background-gradient-direction: none;
   background-color: rgba(255, 255, 255, 0.2);
-  padding: .36em 1.9em;
+  padding: .36em 1.5em;
   border-width: 0;
   color: #FFF;
   box-shadow: none;
@@ -1319,11 +1320,6 @@ StScrollBar {
 .grid-search-result .overview-icon {
   font-weight: bold;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
-  .app-well-app .overview-icon StIcon,
-  .app-well-app.app-folder .overview-icon StIcon,
-  .show-apps .overview-icon StIcon,
-  .grid-search-result .overview-icon StIcon {
-    icon-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 .app-well-app:active .overview-icon, .app-well-app:checked .overview-icon, .app-well-app:hover .overview-icon, .app-well-app:focus .overview-icon, .app-well-app:selected .overview-icon,
 .app-well-app.app-folder:active .overview-icon,
 .app-well-app.app-folder:checked .overview-icon,
@@ -1686,32 +1682,32 @@ StScrollBar {
   color: #FFF; }
   .login-dialog StIcon {
     color: #FFF; }
+  .login-dialog StEntry {
+    background: #272a34;
+    color: #FFF; }
   .login-dialog .modal-dialog-button-box {
     spacing: 3px; }
   .login-dialog .modal-dialog-button {
     padding: 7px 18px;
     border-radius: 6px;
-    margin-bottom: 6px; }
+    margin-bottom: 7px; }
     .login-dialog .modal-dialog-button:default {
       color: #FFF;
       background-color: #367bf0;
       border-color: #367bf0;
-      box-shadow: none;
-      text-shadow: none;
+      box-shadow: 0 3px 0 #0c419b;
       icon-shadow: none; }
       .login-dialog .modal-dialog-button:default:hover, .login-dialog .modal-dialog-button:default:focus {
         color: #FFF;
         border-color: #4e8bf2;
         background-color: #4e8bf2;
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
-        text-shadow: none;
+        box-shadow: none;
         icon-shadow: none; }
       .login-dialog .modal-dialog-button:default:active, .login-dialog .modal-dialog-button:default:insensitive {
         color: #367bf0;
         border-color: rgba(255, 255, 255, 0.1);
         background-color: rgba(255, 255, 255, 0.1);
         box-shadow: none;
-        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
         icon-shadow: none; }
 
 .login-dialog-logo-bin {
@@ -1861,7 +1857,9 @@ StScrollBar {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); }
 
 #lockDialogGroup {
-  background: #272a34; }
+  background: #383c4a;
+  background-image: url("/home/daniruiz/Imágenes/Wallpapers/Abstract Fluids.png");
+  background-size: contain; }
 
 #screenShieldNotifications StButton#vhandle, #screenShieldNotifications StButton#hhandle {
   background-color: rgba(255, 255, 255, 0.3); }
