@@ -18,20 +18,20 @@ install:
 	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme"
 	for theme in $(THEMES); \
 	do \
-		ln -sf "/usr/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}"; \
+		ln -sf "$(PREFIX)/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}"; \
 	done
 	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes"
 	cp -a src/modes/* "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes/"
 	install -dm755 "$(DESTDIR)$(PREFIX)/share/xsessions"
-	cp -a src/sessions/* "$(DESTDIR)$(PREFIX)/share/xsessions/"
+	cp -a src/sessions/xsessions/* "$(DESTDIR)$(PREFIX)/share/xsessions/"
 	install -dm755 "$(DESTDIR)$(PREFIX)/share/wayland-sessions"
-	cp -a src/sessions/* "$(DESTDIR)$(PREFIX)/share/wayland-sessions/"
+	cp -a src/sessions/wayland-sessions/* "$(DESTDIR)$(PREFIX)/share/wayland-sessions/"
 uninstall:
 	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/themes/$(theme))
 	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$(theme))
 	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/gnome-shell/modes/$(mode).json)
-	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/xsessions/$(mode)-gnome.desktop)
-	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/wayland-sessions/$(mode)-gnome.desktop)
+	-rm -rf $(DESTDIR)$(PREFIX)/share/xsessions/?_flat-remix*.desktop
+	-rm -rf $(DESTDIR)$(PREFIX)/share/wayland-sessions/?_flat-remix*.desktop
 
 _get_version:
 	$(eval VERSION := $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
