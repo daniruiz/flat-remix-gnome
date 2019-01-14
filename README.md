@@ -28,17 +28,22 @@ Flat Remix GNOME theme is a pretty simple shell theme inspired on material desig
 
 #### Manual installation
 
-1. Download and uncompress the zip file.
-1. Move "Flat Remix" folder to ".themes" in your home directory.
-1. Select "Flat Remix" as shell theme in gnome-tweak-tool.
+1. Download and uncompress the zip file.  
+1. Move "Flat-Remix" folder to ".themes" in your home directory.  
+1. Install [user themes extension](https://extensions.gnome.org/extension/19/user-themes/)  
+1. To set the theme, run the following command in terminal:  
+`gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix"`  
+or select "Flat-Remix" via gnome-tweaks.  
 
 #### Terminal installation
 
 ```sh
-cd /tmp && rm -rf flat-remix-gnome-theme &&
-git clone https://github.com/daniruiz/flat-remix-gnome &&
-mkdir -p ~/.themes && cp -r /tmp/flat-remix-gnome/Flat-Remix* ~/.themes &&
-gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix";
+cd /tmp && rm -rf flat-remix-gnome &&
+git clone https://github.com/daniruiz/flat-remix-gnome && cd flat-remix-gnome &&
+sudo make install
+
+sudo mv /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.old &&
+sudo ln /usr/share/themes/Flat-Remix/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource
 ```
 
 #### Ubuntu based distributions:
@@ -60,6 +65,10 @@ sudo dnf install flat-remix-gnome
 + [`flat-remix-gnome-git`](https://aur.archlinux.org/packages/flat-remix-gnome-git/) (AUR)
 
 <br/>
+<hr>
+<p align="center">
+<img src="https://raw.githubusercontent.com/daniruiz/Flat-Remix-GNOME-theme/master/Images/gdm-session-selector.jpg">
+</p>
 
 # [Flat Remix ICON theme](https://github.com/daniruiz/Flat-Remix/)  
 
