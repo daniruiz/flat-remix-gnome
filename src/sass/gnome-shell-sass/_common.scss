@@ -2211,10 +2211,13 @@ StScrollBar {
   background-color: transparent;
 
   color: #FFF;
-  StIcon { color: #FFF; }
+  StIcon {
+    color: #FFF;
+    icon-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  }
 
   StEntry {
-    background: #272a34;
+    background: rgba(#383c4a, .3);
     color: #FFF;
   }
 
@@ -2225,8 +2228,9 @@ StScrollBar {
     padding: 7px 18px;
     border-radius: 6px;
     margin-bottom: 7px;
+    transition-duration: 100ms;
+    color: #FFF;
     &:default {
-      color: #FFF;
       background-color: $color1;
       border-color: $color1;
       box-shadow: 0 3px 0 darken($color1, 25%);
@@ -2235,7 +2239,7 @@ StScrollBar {
         color: #FFF;
         border-color: lighten($color1, 5%);
         background-color: lighten($color1, 5%);
-        box-shadow: none;
+        box-shadow: 0 3px 0 darken($color1, 20%);
         icon-shadow: none;
       }
       &:active, &:insensitive {
@@ -2244,6 +2248,7 @@ StScrollBar {
         background-color: rgba(255, 255, 255, .1);
         box-shadow: none;
         icon-shadow: none;
+        transition-duration: 0;
       }
     }
   }
@@ -2263,7 +2268,7 @@ StScrollBar {
 }
 
 .login-dialog-message-warning {
-  color: $warning_color;
+  color: $error_color;
 }
 
 .login-dialog-message-hint {
@@ -2347,8 +2352,8 @@ StScrollBar {
 }
 
 .login-dialog-prompt-layout {
-  padding-top: 30px;
-  padding-bottom: 12px;
+  padding: 20px;
+  border-radius: 6px;
   spacing: 8px;
   width: 23em;
 }
@@ -2443,7 +2448,8 @@ StScrollBar {
 }
 
 #lockDialogGroup {
-  background: #383c4a;
+  background: url("assets/login-background.jpg");
+  background-size: cover;
 }
 
 #screenShieldNotifications {
