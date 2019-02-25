@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="42" version="1.1" viewBox="0 0 96 42">
+ <defs>
+  <linearGradient id="linearGradient6567" x1="41" x2="41" y1="1032.362" y2="1050.362" gradientTransform="matrix(2,0,0,2,-161.28,-2047.3738)" gradientUnits="userSpaceOnUse" xlink:href="#selected_fg_color"/>
+  <linearGradient id="selected_fg_color" osb:paint="solid">
+   <stop style="stop-color:#ffffff" offset="0"/>
+  </linearGradient>
+  <linearGradient id="linearGradient6569" x1="980.05" x2="980.05" y1="-456.095" y2="-454.095" gradientTransform="matrix(2.0000001,0,0,2.0000001,-2035.0038,1038.4791)" gradientUnits="userSpaceOnUse" xlink:href="#selected_fg_color"/>
+  <linearGradient id="linearGradient6571" x1="981.55" x2="981.55" y1="-462.095" y2="-454.095" gradientTransform="matrix(2.0000001,0,0,2.0000001,-2035.0038,1038.4791)" gradientUnits="userSpaceOnUse" xlink:href="#selected_fg_color"/>
+ </defs>
+ <g transform="matrix(0.9,0,0,0.9,146.352,-10.815)">
+  <rect width="100" height="40" x="-159.28" y="15.35" rx="22" ry="22" style="fill:#367bf0"/>
+  <circle cx="-79.28" cy="35.351" r="18" style="fill:url(#linearGradient6567)"/>
+  <rect style="fill:url(#linearGradient6569)" width="10" height="4" x="-79.9" y="126.29" rx="1.333" ry="1.333" transform="rotate(45)"/>
+  <rect style="fill:url(#linearGradient6571)" width="4" height="16" x="-73.9" y="114.29" ry="0" transform="rotate(45)"/>
+ </g>
+</svg>

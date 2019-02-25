@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="0 0 32 32">
+ <g style="enable-background:new" transform="matrix(2,0,0,2,135.99464,-895.9793)">
+  <path d="m -65,450 v 12" style="fill-rule:evenodd;stroke:#000000;stroke-linecap:square"/>
+  <path d="m -65,456 h 4 l 1,2 h 5 v -6 h -4 l -1,-2 h -5 z" style="fill:none;stroke:#000000;stroke-linejoin:round"/>
+  <path style="fill-rule:evenodd" d="m -65,456 h 4 l 1,2 h 5 v -6 h -4 l -1,-2 h -5 z"/>
+  <rect style="fill:none" width="16" height="16" x="-68" y="448"/>
+ </g>
+</svg>
