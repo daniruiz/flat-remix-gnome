@@ -62,7 +62,7 @@ sudo dnf install flat-remix-gnome
 ```
 
 ##### Arch based distributions
-+ [`flat-remix-gnome-git`](https://aur.archlinux.org/packages/flat-remix-gnome-git/) (AUR)
++ [`flat-remix-gnome`](https://aur.archlinux.org/packages/flat-remix-gnome/) (AUR)
 
 <br/>
 <hr>
