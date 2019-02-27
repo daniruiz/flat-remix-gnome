@@ -3,8 +3,8 @@
 
 PREFIX ?= /usr
 IGNORE ?=
-THEMES ?= Flat-Remix Flat-Remix-Miami-Dark Flat-Remix-Dark Flat-Remix-Darkest Flat-Remix-Miami
-MODES ?= flat-remix-darkest flat-remix-dark flat-remix flat-remix-miami-dark flat-remix-miami
+THEMES ?= Flat-Remix Flat-Remix-Dark Flat-Remix-Darkest Flat-Remix-Darkest-fullPanel Flat-Remix-Dark-fullPanel Flat-Remix-fullPanel Flat-Remix-Miami Flat-Remix-Miami-Dark Flat-Remix-Miami-Dark-fullPanel Flat-Remix-Miami-fullPanel
+MODES ?= flat-remix-darkest-fullpanel.json flat-remix-darkest.json flat-remix-dark-fullpanel.json flat-remix-dark.json flat-remix-fullpanel.json flat-remix.json flat-remix-miami-dark-fullpanel.json flat-remix-miami-dark.json flat-remix-miami-fullpanel.json flat-remix-miami.json
 
 
 # excludes IGNORE from THEMES list
