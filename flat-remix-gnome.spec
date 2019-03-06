@@ -1,5 +1,5 @@
 Name:           flat-remix-gnome
-Version:        20190227
+Version:        20190306
 Release:        1
 License:        CC-BY-SA-4.0
 Summary:        Flat Remix GNOME theme
@@ -12,18 +12,15 @@ BuildArch:      noarch
 %description
 Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.
 
-This package contains the following themes:
+Themes:
+ • Flat Remix
+ • Flat Remix Dark
+ • Flat Remix Darkest
+ • Flat Remix Miami
+ • Flat Remix Miami Dark
 
- - Flat-Remix
- - Flat-Remix-fullPanel
- - Flat-Remix-Dark
- - Flat-Remix-Dark-fullPanel
- - Flat-Remix-Darkest
- - Flat-Remix-Darkest-fullPanel
- - Flat-Remix-Miami
- - Flat-Remix-Miami-fullPanel
- - Flat-Remix-Miami-Dark
- - Flat-Remix-Miami-Dark-fullPanel
+Variants:
+ • Full Panel: No topbar spacing
 
 
 %prep
