@@ -5,6 +5,7 @@ USAGE="$(basename "$0") [--login-background FILE]
 
     Options:
       --login-background FILE \t use a custom login background image
+      --rebuild-theme         \t regenerate theme CSS files
       -h, --help              \t show this help text"
 
 
@@ -21,6 +22,10 @@ do
 			shift # past argument
 			shift # past value
 			;;
+		--rebuild-theme)
+			REBUILD_CSS=1
+			shift # past argument
+			;;
 		-h|--help)
 			echo -e "$USAGE"
 			exit 0
@@ -33,14 +38,17 @@ rm -rf "$TMP"
 mkdir -p "$TMP"
 
 # Build CSS files
-for scss in sass/*.scss
-do
-	scss --sourcemap=none -C -q "$scss" "$TMP"/"$(basename ${scss%%.scss})".css
-done
+if (( $REBUILD_CSS ))
+then
+	for scss in sass/*.scss
+	do
+		scss --sourcemap=none -C -q "$scss" css/"$(basename ${scss%%.scss})".css
+	done
+fi
 
-for css in "$TMP"/Flat-Remix*.css
+for css in css/Flat-Remix*.css
 do
- cp -f "$css" ../"$(basename "${css%.css}")"/gnome-shell/gnome-shell.css
+	cp -f "$css" ../"$(basename "${css%.css}")"/gnome-shell/gnome-shell.css
 done
 
 # Copy assets
@@ -54,6 +62,7 @@ done
 
 # Generate gresource files
 cp -r assets/* "$TMP"
+cp css/* "$TMP"
 sed "s/assets/resource:\/\/\/org\/gnome\/shell\/theme/g" -i "$TMP"/*.css
 for theme in "$TMP"/Flat-Remix*/
 do
