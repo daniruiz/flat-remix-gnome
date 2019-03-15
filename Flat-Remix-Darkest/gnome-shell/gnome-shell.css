@@ -1860,7 +1860,7 @@ StScrollBar {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); }
 
 #lockDialogGroup {
-  background: url("assets/login-background.jpg");
+  background: url("assets/login-background");
   background-size: cover; }
 
 #screenShieldNotifications StButton#vhandle, #screenShieldNotifications StButton#hhandle {
