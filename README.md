@@ -39,11 +39,12 @@ or select "Flat-Remix" via gnome-tweaks.
 
 ```sh
 cd /tmp && rm -rf flat-remix-gnome &&
-git clone https://github.com/daniruiz/flat-remix-gnome && cd flat-remix-gnome &&
+git clone https://github.com/daniruiz/flat-remix-gnome && cd flat-remix-gnome;
+# (cd src && ./build.sh --login-background /path/to/image)  ### If you want to change the login wallpaper
 sudo make install
 
-sudo mv /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.old &&
-sudo ln /usr/share/themes/Flat-Remix/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource
+sudo mv -n /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.old &&
+sudo ln -sf /usr/share/themes/Flat-Remix/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource
 ```
 
 #### Ubuntu based distributions:
