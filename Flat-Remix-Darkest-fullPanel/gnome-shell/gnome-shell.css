@@ -546,6 +546,9 @@ StScrollBar {
     -barlevel-active-background-color: #ffffff;
     -barlevel-overdrive-color: #d41919;
     -barlevel-overdrive-separator-width: 0.2em; }
+  .osd-window .level-bar {
+    background-color: #dbdee0;
+    border-radius: 6px; }
 
 /* Pad OSD */
 .pad-osd-window {

@@ -721,6 +721,11 @@ StScrollBar {
     -barlevel-overdrive-color: $destructive_color;
     -barlevel-overdrive-separator-width: 0.2em;
   }
+  .level-bar {
+    background-color: $osd_fg_color;
+    border-radius: 6px;
+  }
+
 }
 
 /* Pad OSD */
