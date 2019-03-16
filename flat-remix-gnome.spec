@@ -42,7 +42,7 @@ mv /usr/share/gnome-shell/gnome-shell-theme.gresource.old /usr/share/gnome-shell
 
 %files
 %defattr(-,root,root)
-%doc LICENSE README.md CREDITS
+%doc LICENSE README.md
 %{_datadir}/themes/Flat-Remix-Miami-Dark
 %{_datadir}/themes/Flat-Remix-Darkest
 %{_datadir}/themes/Flat-Remix-Dark
