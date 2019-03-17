@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1.1" viewBox="0 0 32 32">
- <g style="enable-background:new" transform="matrix(2,0,0,2,135.99464,-895.9793)">
-  <path d="m -65,450 v 12" style="fill-rule:evenodd;stroke:#000000;stroke-linecap:square"/>
-  <path d="m -65,456 h 4 l 1,2 h 5 v -6 h -4 l -1,-2 h -5 z" style="fill:none;stroke:#000000;stroke-linejoin:round"/>
-  <path style="fill-rule:evenodd" d="m -65,456 h 4 l 1,2 h 5 v -6 h -4 l -1,-2 h -5 z"/>
-  <rect style="fill:none" width="16" height="16" x="-68" y="448"/>
- </g>
-</svg>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(2 0 0 2 135.99 -895.98)" enable-background="new" fill="#fff"><path d="m-65 450v12" fill-rule="evenodd" stroke="#fff" stroke-linecap="square"/><path d="m-65 456h4l1 2h5v-6h-4l-1-2h-5z" stroke="#fff" stroke-linejoin="round"/><path d="m-65 456h4l1 2h5v-6h-4l-1-2h-5z" fill-rule="evenodd"/></g></svg>

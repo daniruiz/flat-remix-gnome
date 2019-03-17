@@ -609,8 +609,7 @@ StScrollBar {
 .popup-menu {
   min-width: 15em;
 
-  .popup-menu-arrow {
-  }
+  .popup-menu-arrow {}
   //defined globally in the TOP BAR
   .popup-sub-menu {
     background-color: darken($bg_color, 2%);
@@ -1085,7 +1084,6 @@ StScrollBar {
 }
 
 .pager-button {
-  color: #FFF;
   background-color: transparent;
   width: 2em;
   height: 2em;
@@ -1100,6 +1098,7 @@ StScrollBar {
   }
 }
 
+// UNTIL GNOME 3.30
 .calendar-change-month-back { //arrow back
   background-image: url("assets/calendar-arrow-left.svg");
   background-size: 1em;
@@ -1108,12 +1107,18 @@ StScrollBar {
   }
 }
 
+// UNTIL GNOME 3.30
 .calendar-change-month-forward { //arrow foreward
   background-image: url("assets/calendar-arrow-right.svg");
   background-size: 1em;
   &:rtl {
     background-image: url("assets/calendar-arrow-left.svg");
   }
+}
+
+
+.calendar-change-month-back StIcon, .calendar-change-month-forward StIcon { // arrows
+  icon-size: 1.09em;
 }
 
 .calendar-day-base {
@@ -1319,15 +1324,16 @@ StScrollBar {
 }
 
 // a little unstructured mess:
+.system-switch-user-submenu-icon, .system-switch-user-submenu-icon.default-icon {
+  &, &.default-icon {
+    icon-size: 1.091em;
+    padding: 0 .36em;
+  }
 
-.system-switch-user-submenu-icon.user-icon {
-  icon-size: 1.81em;
-  padding: 0 .18em;
-}
-
-.system-switch-user-submenu-icon.default-icon {
-  icon-size: 1em;
-  padding: 0 .36em;
+  &.user-icon {
+    icon-size: 1.81em;
+    padding: 0 .18em;
+  }
 }
 
 #appMenu {
@@ -1377,24 +1383,16 @@ StScrollBar {
   }
 }
 
-//Activities Ripples
+// Activities Ripples
 .ripple-box {
-  width: 3.5em;
-  height: 3.5em;
-  background-image: none;
-  background-size: contain;
-  background: rgba(255, 255, 255, .2);
-  border-radius: 0 0 100px 0;
-  border: solid #FFF;
-  border-width: .3em;
-  border-top-width: 0;
-  border-left-width: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 0 0 52px 0; // radius the size of the box give us the curve
+  background-color: rgba(white, .4);
+  box-shadow: 0 0 2px 2px white;
 }
 
-.ripple-box:rtl {
-  border-top-width: 0;
-  border-right-width: 0;
-}
+.ripple-box:rtl { border-radius: 0 0 0 52px; } // just a simple change to the border radius position
 
 // not really top bar only
 .popup-menu-arrow {
@@ -1411,6 +1409,10 @@ StScrollBar {
 .window-close {
   background-image: url("assets/close-window.svg");
   background-size: 32px;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: transparent;
   height: 32px;
   width: 32px;
   -shell-close-overlap: 16px;
@@ -2192,13 +2194,12 @@ StScrollBar {
 
 /* Auth Dialogs & Screen Shield */
 
-.framed-user-icon {
+.user-icon, .framed-user-icon {
   background-size: contain;
   border: 0;
   color: $osd_fg_color;
-  border-radius: 3px;
+  border-radius: 100px;
   &:hover {
-    border-color: lighten($osd_fg_color, 30%);
     color: lighten($osd_fg_color, 30%);
   }
 }

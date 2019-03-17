@@ -811,7 +811,6 @@ StScrollBar {
   padding: 8px 0; }
 
 .pager-button {
-  color: #FFF;
   background-color: transparent;
   width: 2em;
   height: 2em;
@@ -834,6 +833,9 @@ StScrollBar {
   background-size: 1em; }
   .calendar-change-month-forward:rtl {
     background-image: url("assets/calendar-arrow-left.svg"); }
+
+.calendar-change-month-back StIcon, .calendar-change-month-forward StIcon {
+  icon-size: 1.09em; }
 
 .calendar-day-base {
   font-size: 80%;
@@ -994,13 +996,12 @@ StScrollBar {
     icon-size: 1.6em;
     padding: .8em; }
 
-.system-switch-user-submenu-icon.user-icon {
+.system-switch-user-submenu-icon, .system-switch-user-submenu-icon.default-icon, .system-switch-user-submenu-icon.default-icon, .system-switch-user-submenu-icon.default-icon.default-icon {
+  icon-size: 1.091em;
+  padding: 0 .36em; }
+.system-switch-user-submenu-icon.user-icon, .system-switch-user-submenu-icon.default-icon.user-icon {
   icon-size: 1.81em;
   padding: 0 .18em; }
-
-.system-switch-user-submenu-icon.default-icon {
-  icon-size: 1em;
-  padding: 0 .36em; }
 
 #appMenu {
   spinner-image: url("assets/process-working.svg");
@@ -1036,20 +1037,14 @@ StScrollBar {
     icon-size: 1em; }
 
 .ripple-box {
-  width: 3.5em;
-  height: 3.5em;
-  background-image: none;
-  background-size: contain;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 100px 0;
-  border: solid #FFF;
-  border-width: .3em;
-  border-top-width: 0;
-  border-left-width: 0; }
+  width: 52px;
+  height: 52px;
+  border-radius: 0 0 52px 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 2px 2px white; }
 
 .ripple-box:rtl {
-  border-top-width: 0;
-  border-right-width: 0; }
+  border-radius: 0 0 0 52px; }
 
 .popup-menu-arrow {
   width: 1em;
@@ -1061,6 +1056,10 @@ StScrollBar {
 .window-close {
   background-image: url("assets/close-window.svg");
   background-size: 32px;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: transparent;
   height: 32px;
   width: 32px;
   -shell-close-overlap: 16px; }
@@ -1665,13 +1664,12 @@ StScrollBar {
   icon-size: 1em; }
 
 /* Auth Dialogs & Screen Shield */
-.framed-user-icon {
+.user-icon, .framed-user-icon {
   background-size: contain;
   border: 0;
   color: #dbdee0;
-  border-radius: 3px; }
-  .framed-user-icon:hover {
-    border-color: white;
+  border-radius: 100px; }
+  .user-icon:hover, .framed-user-icon:hover {
     color: white; }
 
 .login-dialog-banner-view {

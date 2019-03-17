@@ -5,7 +5,7 @@ USAGE="$(basename "$0") [--login-background FILE]
 
     Options:
       --login-background FILE \t use a custom login background image
-      --rebuild-theme         \t regenerate theme CSS files
+      -r, --rebuild-theme         \t regenerate theme CSS files
       -h, --help              \t show this help text"
 
 
@@ -22,7 +22,7 @@ do
 			shift # past argument
 			shift # past value
 			;;
-		--rebuild-theme)
+		-r|--rebuild-theme)
 			REBUILD_CSS=1
 			shift # past argument
 			;;
