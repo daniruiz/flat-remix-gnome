@@ -3,7 +3,7 @@
 
 PREFIX ?= /usr
 IGNORE ?=
-THEMES ?= Flat-Remix Flat-Remix-Dark Flat-Remix-Darkest Flat-Remix-Darkest-fullPanel Flat-Remix-Dark-fullPanel Flat-Remix-fullPanel Flat-Remix-Miami Flat-Remix-Miami-Dark Flat-Remix-Miami-Dark-fullPanel Flat-Remix-Miami-fullPanel
+THEMES ?= $(patsubst %/index.theme,%,$(wildcard ./*/index.theme))
 MODES ?= flat-remix-darkest-fullpanel.json flat-remix-darkest.json flat-remix-dark-fullpanel.json flat-remix-dark.json flat-remix-fullpanel.json flat-remix.json flat-remix-miami-dark-fullpanel.json flat-remix-miami-dark.json flat-remix-miami-fullpanel.json flat-remix-miami.json
 
 
@@ -13,25 +13,31 @@ THEMES := $(filter-out $(IGNORE), $(THEMES))
 all:
 
 install:
-	install -dm755 "$(DESTDIR)$(PREFIX)/share/themes"
+	mkdir -p "$(DESTDIR)$(PREFIX)/share/themes"
 	cp -a $(THEMES) "$(DESTDIR)$(PREFIX)/share/themes"
-	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme"
-	for theme in $(THEMES); \
-	do \
-		ln -sf "$(PREFIX)/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}"; \
-	done
-	install -dm755 "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes"
+	mkdir -p "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme"
+	$(foreach theme, $(THEMES), ln -sf "$(PREFIX)/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}")
+	mkdir -p "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes"
 	cp -a src/modes/* "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes/"
-	install -dm755 "$(DESTDIR)$(PREFIX)/share/xsessions"
+	mkdir -p "$(DESTDIR)$(PREFIX)/share/xsessions"
 	cp -a src/sessions/xsessions/* "$(DESTDIR)$(PREFIX)/share/xsessions/"
-	install -dm755 "$(DESTDIR)$(PREFIX)/share/wayland-sessions"
+	mkdir -p "$(DESTDIR)$(PREFIX)/share/wayland-sessions"
 	cp -a src/sessions/wayland-sessions/* "$(DESTDIR)$(PREFIX)/share/wayland-sessions/"
+
+	# skip replacing gnome's gresource file when packaging
+	$(if $(DESTDIR),,$(MAKE) Flat-Remix)
+
+$(THEMES):
+	-mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
+	-ln -sf $(PREFIX)/share/themes/$@/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
+
 uninstall:
-	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/themes/$(theme))
-	-rm -rf $(foreach theme, $(THEMES), $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$(theme))
-	-rm -rf $(foreach mode, $(MODES), $(DESTDIR)$(PREFIX)/share/gnome-shell/modes/$(mode).json)
-	-rm -rf $(DESTDIR)$(PREFIX)/share/xsessions/?_flat-remix*.desktop
-	-rm -rf $(DESTDIR)$(PREFIX)/share/wayland-sessions/?_flat-remix*.desktop
+	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/themes/$(theme))
+	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/gnome-shell/theme/$(theme))
+	-rm -rf $(foreach mode, $(MODES), $(PREFIX)/share/gnome-shell/modes/$(mode))
+	-rm -rf $(PREFIX)/share/xsessions/??_flat-remix*.desktop
+	-rm -rf $(PREFIX)/share/wayland-sessions/??_flat-remix*.desktop
+	-mv $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 
 _get_version:
 	$(eval VERSION := $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
