@@ -1,13 +1,13 @@
-Name:           flat-remix-gnome
-Version:        20190306
-Release:        1
-License:        CC-BY-SA-4.0
-Summary:        Flat Remix GNOME theme
-Url:            https://drasite.com/flat-remix-gnome
-Group:          User Interface/Desktops
-Source:         https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildArch:      noarch
+Name: flat-remix-gnome
+Version: 20190318
+Release: 1
+License: CC-BY-SA-4.0
+Summary: Flat Remix GNOME theme
+Url: https://drasite.com/flat-remix-gnome
+Group: User Interface/Desktops
+Source: https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-build
+BuildArch: noarch
 
 %description
 Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.

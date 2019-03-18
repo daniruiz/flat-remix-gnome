@@ -13,16 +13,19 @@ THEMES := $(filter-out $(IGNORE), $(THEMES))
 all:
 
 install:
-	mkdir -p "$(DESTDIR)$(PREFIX)/share/themes"
-	cp -a $(THEMES) "$(DESTDIR)$(PREFIX)/share/themes"
-	mkdir -p "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme"
-	$(foreach theme, $(THEMES), ln -sf "$(PREFIX)/share/themes/$${theme}/gnome-shell" "$(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}")
-	mkdir -p "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes"
-	cp -a src/modes/* "$(DESTDIR)$(PREFIX)/share/gnome-shell/modes/"
-	mkdir -p "$(DESTDIR)$(PREFIX)/share/xsessions"
-	cp -a src/sessions/xsessions/* "$(DESTDIR)$(PREFIX)/share/xsessions/"
-	mkdir -p "$(DESTDIR)$(PREFIX)/share/wayland-sessions"
-	cp -a src/sessions/wayland-sessions/* "$(DESTDIR)$(PREFIX)/share/wayland-sessions/"
+	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
+	cp -a $(THEMES) $(DESTDIR)$(PREFIX)/share/themes/
+	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome-shell/theme
+	for theme in $(THEMES); \
+	do \
+		ln -sf $(PREFIX)/share/themes/$${theme}/gnome-shell $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$${theme}; \
+	done
+	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome-shell/modes
+	cp -a src/modes/* $(DESTDIR)$(PREFIX)/share/gnome-shell/modes/
+	mkdir -p $(DESTDIR)$(PREFIX)/share/xsessions
+	cp -a src/sessions/xsessions/* $(DESTDIR)$(PREFIX)/share/xsessions/
+	mkdir -p $(DESTDIR)$(PREFIX)/share/wayland-sessions
+	cp -a src/sessions/wayland-sessions/* $(DESTDIR)$(PREFIX)/share/wayland-sessions/
 
 	# skip replacing gnome's gresource file when packaging
 	$(if $(DESTDIR),,$(MAKE) Flat-Remix)
@@ -53,10 +56,14 @@ aur_release: _get_version
 	git commit -a -m "$(VERSION)"; \
 	git push origin
 
+copr_release: _get_version
+	sed "s/Version:.*/Version: $(VERSION)/" -i flat-remix-gnome.spec
+
 release: _get_version
+	$(MAKE) aur_release
+	$(MAKE) copr_release
 	git tag -f $(VERSION)
 	git push origin --tags
-	$(MAKE) aur_release
 
 undo_release: _get_version
 	-git tag -d $(VERSION)
