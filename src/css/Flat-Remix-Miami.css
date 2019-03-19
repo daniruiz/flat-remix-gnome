@@ -502,7 +502,7 @@ StScrollBar {
   -arrow-background-color: #290351;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
+  -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
   margin: 0.3em 0.8em;
@@ -518,7 +518,7 @@ StScrollBar {
   border-bottom-style: solid; }
 
 .background-menu {
-  -boxpointer-gap: 4px;
+  -boxpointer-gap: 0px;
   -arrow-rise: 0px; }
 
 /* fallback menu
@@ -663,7 +663,8 @@ StScrollBar {
 
 /* TOP BAR */
 #panelBox {
-  padding: 0.35em 0.8em; }
+  padding: 0.35em 0.8em;
+  background: transparent; }
 
 #panel {
   font-feature-settings: "tnum";

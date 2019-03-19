@@ -667,10 +667,10 @@ StScrollBar {
   -arrow-background-color: $bg_color;
   -arrow-border-width: 0;
   -arrow-border-color: transparent;
-  -arrow-base: 64px;
+  -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
-  margin: .3em if($full-panel == 'true', .3em, .8em);
+  margin: .3em if($full-panel == 'true', .6em, .8em);
   background-color: $bg_color;
   box-shadow: 0 2px 8px 0 transparentize(#000, .6);
   border-radius: 6px;
@@ -687,7 +687,7 @@ StScrollBar {
 
 // Background menu
 .background-menu {
-  -boxpointer-gap: 4px;
+  -boxpointer-gap: 0px;
   -arrow-rise: 0px;
 }
 
@@ -875,6 +875,7 @@ StScrollBar {
 /* TOP BAR */
 #panelBox {
   padding: if($full-panel == 'true', 0, .35em .8em);
+  background: transparent;
 }
 
 #panel {
@@ -883,7 +884,7 @@ StScrollBar {
   border-radius: if($full-panel == 'true', 0, 6px);
   font-weight: normal;
   font-size: .9em;
-  height: if($full-panel == 'true', 2.8em, 2em);
+  height: 2em;
   color: $panel_font_color;
   background: $panel_background_color;
   background-gradient-direction: none;
@@ -935,7 +936,7 @@ StScrollBar {
       // Trick due to St limitations. It needs a background to draw
       // a box-shadow
       background-color: rgba(0, 0, 0, 0.01);
-      box-shadow: inset 0 if($full-panel == 'true', -.3em, -.2em) 0 $panel_font_color;
+      box-shadow: inset 0 -.2em 0 $panel_font_color;
       text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 
       & > .system-status-icon {
