@@ -32,11 +32,9 @@
 ```sh
 cd /tmp && rm -rf flat-remix-gnome &&
 git clone https://github.com/daniruiz/flat-remix-gnome && cd flat-remix-gnome;
-# (cd src && ./build.sh --login-background /path/to/image)  ### If you want to change the login wallpaper
+# If you want to change the login wallpaper
+# (cd src && ./build.sh --login-background /path/to/image)
 sudo make install
-
-sudo mv -n /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.old &&
-sudo ln -sf /usr/share/themes/Flat-Remix/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource
 ```
 
 #### Ubuntu based distributions:
