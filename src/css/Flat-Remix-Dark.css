@@ -130,7 +130,7 @@ StScrollBar {
 
 /* Check Boxes */
 .check-box StBoxLayout {
-  margin: 0 .5em; }
+  spacing: .8em; }
 .check-box StBin {
   width: 1.5em;
   height: 1.5em;
