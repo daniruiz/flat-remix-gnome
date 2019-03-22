@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 USAGE="$(basename "$0") [--login-background FILE]
     Generate Flat-Remix gnome-shell theme variants
