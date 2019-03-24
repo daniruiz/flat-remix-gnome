@@ -69,12 +69,15 @@ aur_release: _get_version
 
 copr_release: _get_version
 	sed "s/Version:.*/Version: $(VERSION)/" -i flat-remix-gnome.spec
+	git add flat-remix-gnome.spec
+	git commit -m "Update flat-remix-gnome.spec version $(VERSION)"
+	git push origin
 
 release: _get_version
-	$(MAKE) aur_release
 	$(MAKE) copr_release
 	git tag -f $(VERSION)
 	git push origin --tags
+	$(MAKE) aur_release
 
 undo_release: _get_version
 	-git tag -d $(VERSION)
