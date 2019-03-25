@@ -5,7 +5,7 @@ PREFIX ?= /usr
 IGNORE ?=
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard ./*/index.theme))
 MODES ?= flat-remix-darkest-fullpanel.json flat-remix-darkest.json flat-remix-dark-fullpanel.json flat-remix-dark.json flat-remix-fullpanel.json flat-remix.json flat-remix-miami-dark-fullpanel.json flat-remix-miami-dark.json flat-remix-miami-fullpanel.json flat-remix-miami.json
-IS_UBUNTU ?= $(shell [ $$(lsb_release -si 2> /dev/null || echo "") = Ubuntu ] && echo true)
+IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo true)
 
 
 # excludes IGNORE from THEMES list
