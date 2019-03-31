@@ -215,13 +215,14 @@ StScrollBar {
   spacing: .86em; }
 
 .message-dialog-content {
-  max-width: 2em;
+  width: 28em;
   spacing: 1.43em; }
 
 .message-dialog-icon {
   width: 48px;
   height: 48px;
-  icon-size: 48px; }
+  icon-size: 48px;
+  margin-right: 20px; }
 
 .message-dialog-title {
   font-weight: bold; }
