@@ -215,7 +215,7 @@ StScrollBar {
   spacing: .86em; }
 
 .message-dialog-content {
-  width: 28em;
+  max-width: 20em;
   spacing: 1.43em; }
 
 .message-dialog-icon {
