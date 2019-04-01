@@ -74,9 +74,9 @@ copr_release: _get_version
 	git push origin
 
 release: _get_version
-	$(MAKE) copr_release
 	git tag -f $(VERSION)
 	git push origin --tags
+	$(MAKE) copr_release
 	$(MAKE) aur_release
 
 undo_release: _get_version
