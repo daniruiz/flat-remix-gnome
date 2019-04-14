@@ -12,6 +12,7 @@ IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo tru
 THEMES := $(filter-out $(IGNORE), $(THEMES))
 
 all:
+	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/themes

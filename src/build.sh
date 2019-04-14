@@ -5,13 +5,14 @@ USAGE="$(basename "$0") [--login-background FILE]
 
     Options:
       --login-background FILE \t use a custom login background image
-      -r, --rebuild-theme         \t regenerate theme CSS files
+      --blur N                \t apply gaussian blur to login background image (default 2.5)
+      -r, --rebuild-theme     \t regenerate theme CSS files
       -h, --help              \t show this help text"
 
 
 TMP="/tmp/flat-remix-gnome"
-LOGIN_BACKGROUND=''
-
+LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
+BLUR=2.5
 while [[ $# -gt 0 ]]
 do
 	key="$1"
@@ -25,6 +26,11 @@ do
 		-r|--rebuild-theme)
 			REBUILD_CSS=1
 			shift # past argument
+			;;
+		--blur)
+			BLUR="$2"
+			shift # past argument
+			shift # past value
 			;;
 		-h|--help)
 			echo -e "$USAGE"
@@ -52,12 +58,13 @@ do
 done
 
 # Copy assets
+[[ $LOGIN_BACKGROUND != '' ]] && convert -scale 10% -blur 0x${BLUR} -resize 1000% $LOGIN_BACKGROUND "$TMP"/login-background;
 for assets in assets/*
 do
 	target=../"${assets#assets/}"/gnome-shell/assets
 	rm -f "$target"/*
 	cp -rf "$assets"/* "$target"
-	[[ $LOGIN_BACKGROUND != '' ]] && cp -f "$LOGIN_BACKGROUND" "$target"/login-background
+	[[ $LOGIN_BACKGROUND != '' ]] && cp -f "$TMP"/login-background "$target"/login-background
 done
 
 # Generate gresource files
