@@ -12,7 +12,7 @@ USAGE="$(basename "$0") [--login-background FILE]
 
 TMP="/tmp/flat-remix-gnome"
 LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
-BLUR=2.5
+BLUR=6
 while [[ $# -gt 0 ]]
 do
 	key="$1"
@@ -58,7 +58,13 @@ do
 done
 
 # Copy assets
-[[ $LOGIN_BACKGROUND != '' ]] && convert -scale 10% -blur 0x${BLUR} -resize 1000% $LOGIN_BACKGROUND "$TMP"/login-background;
+if [[ $LOGIN_BACKGROUND != '' ]]
+then
+	if [[ $BLUR < 1 || $BLUR == 1 ]]
+		then convert -gaussian-blur 0x${BLUR} $LOGIN_BACKGROUND "$TMP"/login-background;
+		else convert -scale 10% -gaussian-blur 0x${BLUR} -resize 1000% $LOGIN_BACKGROUND "$TMP"/login-background;
+	fi
+fi
 for assets in assets/*
 do
 	target=../"${assets#assets/}"/gnome-shell/assets
