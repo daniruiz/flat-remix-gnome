@@ -79,7 +79,7 @@ cp css/* "$TMP"
 sed "s/assets/resource:\/\/\/org\/gnome\/shell\/theme/g" -i "$TMP"/*.css
 for theme in "$TMP"/Flat-Remix*/
 do
-	[[ $LOGIN_BACKGROUND != '' ]] && cp -f "$LOGIN_BACKGROUND" "$theme"/login-background
+	[[ $LOGIN_BACKGROUND != '' ]] && cp -f "$TMP"/login-background "$theme"/login-background
 	cp gnome-shell-theme.gresource.xml "$theme"
 	cp "$TMP"/"$(basename ${theme%/})".css "$theme"gnome-shell.css
 	cp "$TMP"/gnome-shell-high-contrast.css "$theme"
