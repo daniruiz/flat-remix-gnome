@@ -1,0 +1,29 @@
+#!/bin/sh
+
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Blue/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Blue-Dark/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Blue-Light/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Green/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Green-Dark/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Green-Light/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Red/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Red-Dark/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Red-Light/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Yellow/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Yellow-Dark/gnome-shell/gnome-shell.css > /dev/null
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Yellow-Light/gnome-shell/gnome-shell.css > /dev/null
+
+
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Blue/gnome-shell/gnome-shell.css 20
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Blue-Dark/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Blue-Light/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Green/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Green-Dark/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Green-Light/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Red/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Red-Dark/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Red-Light/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Yellow/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Yellow-Dark/gnome-shell/gnome-shell.css 17
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Yellow-Light/gnome-shell/gnome-shell.css 17
+

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Flat Remix Darkest (full panel)
+Comment=This session logs you into Flat Remix Darkest GNOME
+Exec=env GNOME_SHELL_SESSION_MODE=flat-remix-darkest-fullpanel gnome-session
+TryExec=gnome-session
+Type=Application
+DesktopNames=Flat-Remix-Darkest-GNOME;GNOME;

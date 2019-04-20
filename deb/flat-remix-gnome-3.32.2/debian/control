@@ -1,0 +1,21 @@
+Source: flat-remix-gnome
+Section: misc
+Priority: optional
+Maintainer: Daniel Ruiz de Alegría <daniel@drasite.com>
+Build-Depends: debhelper (>= 9)
+Homepage: https://drasite.com/flat-remix-gnome
+
+Package: flat-remix-gnome
+Architecture: any
+Description: Flat Remix gnome-shell theme
+ Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.
+ .
+ Themes:
+  • Flat Remix
+  • Flat Remix Dark
+  • Flat Remix Darkest
+  • Flat Remix Miami
+  • Flat Remix Miami Dark
+ .
+ Variants:
+  • Full Panel: No topbar spacing

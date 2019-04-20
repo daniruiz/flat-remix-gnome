@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Flat Remix
+Comment=This session logs you into Flat Remix GNOME
+Exec=env GNOME_SHELL_SESSION_MODE=flat-remix gnome-session
+TryExec=gnome-session
+Type=Application
+DesktopNames=Flat-Remix-GNOME;GNOME;
