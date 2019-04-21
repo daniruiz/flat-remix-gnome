@@ -1,5 +1,6 @@
-flat-remix-gnome (3.32.2) disco; urgency=low
+flat-remix-gnome (3.32.2-1) disco; urgency=low
 
-  * Release 3.32.2
+  * Release 3.32.2-1
 
- -- Daniel Ruiz de Alegría <daniel@drasite.com>  Thu, 25 Apr 2019 08:26:04 +0200
+ -- Daniel Ruiz de Alegría <daniel@drasite.com>  Thu, 25 Apr 2019 09:32:18 +0200
+
