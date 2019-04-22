@@ -1,5 +1,6 @@
 #!/bin/sh
 
+update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix/gnome-shell/gnome-shell.css > /dev/null
 update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Dark/gnome-shell/gnome-shell.css > /dev/null
 update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Darkest/gnome-shell/gnome-shell.css > /dev/null
 update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Darkest-fullPanel/gnome-shell/gnome-shell.css > /dev/null
@@ -10,7 +11,8 @@ update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Miami-Dark/gn
 update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Miami-Dark-fullPanel/gnome-shell/gnome-shell.css > /dev/null
 update-alternatives --remove gdm3.css /usr/share/themes/Flat-Remix-Miami-fullPanel/gnome-shell/gnome-shell.css > /dev/null
 
-update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Dark/gnome-shell/gnome-shell.css 20
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix/gnome-shell/gnome-shell.css 20
+update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Dark/gnome-shell/gnome-shell.css 17
 update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Darkest/gnome-shell/gnome-shell.css 17
 update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Darkest-fullPanel/gnome-shell/gnome-shell.css 17
 update-alternatives --install /usr/share/gnome-shell/theme/gdm3.css gdm3.css /usr/share/themes/Flat-Remix-Dark-fullPanel/gnome-shell/gnome-shell.css 17
