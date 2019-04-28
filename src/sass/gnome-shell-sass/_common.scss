@@ -1122,16 +1122,50 @@ StScrollBar {
 .world-clocks-header,
 .weather-header,
 .events-section-title {
-  color: $fg_color;
+  color: $dark_font_color;
   font-weight: bold;
 }
 
-.world-clocks-grid {
+.weather-header.location {
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.world-clocks-grid,
+.weather-grid {
   spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
+  font-size: .9em;
 }
 
 .weather-box {
   spacing: 0.4em;
+}
+
+.world-clocks-city {
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1em;
+}
+
+.world-clocks-timezone {
+  color: $fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.7em;
+}
+
+.weather-forecast-icon {
+  icon-size: 2.42em;
+}
+
+.weather-forecast-time {
+  color: $fg_color;
+  font-size: 0.8em;
 }
 
 .calendar-month-label {
