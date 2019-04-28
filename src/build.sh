@@ -5,14 +5,16 @@ USAGE="$(basename "$0") [--login-background FILE]
 
     Options:
       --login-background FILE \t use a custom login background image
+      --sync-login-background \t use gnome settings lock background as login background image
       --blur N                \t apply gaussian blur to login background image (default 2.5)
       -r, --rebuild-theme     \t regenerate theme CSS files
       -h, --help              \t show this help text"
 
 
 TMP="/tmp/flat-remix-gnome"
-LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
+LOGIN_BACKGROUND=''
 BLUR=6
+
 while [[ $# -gt 0 ]]
 do
 	key="$1"
@@ -22,6 +24,10 @@ do
 			LOGIN_BACKGROUND="$2"
 			shift # past argument
 			shift # past value
+			;;
+		--sync-login-background)
+			SYNC_LOGIN_BACKGROUND=1
+			shift # past argument
 			;;
 		-r|--rebuild-theme)
 			REBUILD_CSS=1
@@ -58,6 +64,7 @@ do
 done
 
 # Copy assets
+(( $SYNC_LOGIN_BACKGROUND )) && LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
 if [[ $LOGIN_BACKGROUND != '' ]]
 then
 	if [[ $BLUR < 1 || $BLUR == 1 ]]
