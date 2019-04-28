@@ -1366,6 +1366,11 @@ StScrollBar {
   -st-icon-style: symbolic;
 }
 
+.message-icon-bin > .fallback-window-icon {
+  width: 3em;
+  height: 3em;
+}
+
 .message-secondary-bin {
   padding: 0 0.82em;
 }
