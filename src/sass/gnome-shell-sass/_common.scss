@@ -216,12 +216,14 @@ StScrollBar {
   height: 1.5em;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
+
   &:checked { background-image: url("assets/toggle-on.svg"); }
 }
 
 @each $v in us, intl {
   .toggle-switch-#{$v} {
     background-image: url("assets/toggle-off.svg");
+
     &:checked { background-image: url("assets/toggle-on.svg"); }
   }
 }
@@ -907,20 +909,12 @@ StScrollBar {
 
 /* Tiled window previews */
 .tile-preview {
-  background-color: transparentize($primary_color, 0.5);
-  border: 1px solid $primary_color;
+  background-color: transparentize($bg_color, 0.5);
+  border: 1px solid $bg_color;
 }
 
-.tile-preview-left.on-primary {
-  border-radius: 0 0 0 0;
-}
-
-.tile-preview-right.on-primary {
-  border-radius: 0 0 0 0;
-}
-
-.tile-preview-left.tile-preview-right.on-primary {
-  border-radius: 0 0 0 0;
+.tile-preview-left.on-primary, .tile-preview-right.on-primary, .tile-preview-left.tile-preview-right.on-primary {
+  border-radius: 0;
 }
 
 /* TOP BAR */
