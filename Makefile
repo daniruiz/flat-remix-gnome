@@ -14,6 +14,9 @@ THEMES := $(filter-out $(IGNORE), $(THEMES))
 all:
 	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh --sync-login-background
 
+build:
+	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh -r
+
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
 	cp -a $(THEMES) $(DESTDIR)$(PREFIX)/share/themes/
