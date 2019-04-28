@@ -2233,7 +2233,16 @@ StScrollBar {
 /* On-screen Keyboard */
 
 #keyboard {
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .75);
+
+  .page-indicator {
+    padding: 8px 8px;
+
+    .page-indicator-icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
 }
 
 .keyboard-layout {
@@ -2243,6 +2252,11 @@ StScrollBar {
 
 .keyboard-row {
   spacing: 15px;
+}
+
+.key-container {
+  padding: 4px;
+  spacing: 4px;
 }
 
 .keyboard-key {
@@ -2295,6 +2309,22 @@ StScrollBar {
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px;
+}
+
+.emoji-page {
+  .keyboard-key {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2em;
+  }
+}
+
+.emoji-panel {
+  .keyboard-key:latched {
+    background-color: $bg_color;
+    border-color: $bg_color;;
+  }
 }
 
 // IBus Candidate Popup
