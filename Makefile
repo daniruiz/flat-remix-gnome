@@ -79,15 +79,15 @@ aur_release: _get_tag
 	sed "s/pkgver\s*=.*/pkgver=$(TAG)/" -i PKGBUILD .SRCINFO; \
 	makepkg --printsrcinfo > .SRCINFO; \
 	git commit -a -m "$(TAG)"; \
-	git push origin;
+	git push origin master;
 
 	git commit aur -m "$(TAG)"
-	git push origin
+	git push origin master
 
 copr_release: _get_tag
 	sed "s/Version:.*/Version: $(TAG)/" -i flat-remix-gnome.spec
 	git commit flat-remix-gnome.spec -m "Update flat-remix-gnome.spec version $(TAG)"
-	git push origin
+	git push origin master
 
 undo_release: _get_tag
 	-git tag -d $(TAG)
