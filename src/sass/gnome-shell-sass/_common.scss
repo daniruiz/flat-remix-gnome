@@ -1611,6 +1611,8 @@ StScrollBar {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.search-section:last-child .search-section-separator { background-color: transparent; }
+
 .list-search-result-content {
   spacing: 30px;
 }
