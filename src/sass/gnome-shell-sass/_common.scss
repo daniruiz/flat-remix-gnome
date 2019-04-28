@@ -908,7 +908,7 @@ StScrollBar {
 }
 
 /* Tiled window previews */
-.tile-preview {
+.tile-preview, .select-area-rubberband {
   background-color: transparentize($bg_color, 0.5);
   border: 1px solid $bg_color;
 }
