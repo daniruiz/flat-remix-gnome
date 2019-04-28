@@ -1422,6 +1422,11 @@ StScrollBar {
   }
 }
 
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
+}
+
 .aggregate-menu {
   min-width: 21em;
 
