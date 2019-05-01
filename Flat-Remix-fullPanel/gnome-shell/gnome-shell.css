@@ -1902,7 +1902,7 @@ StScrollBar {
   .screen-shield-notifications-container .notification,
   .screen-shield-notifications-container .screen-shield-notification-source {
     padding: 12px 6px;
-    border: 1px solid #000;
+    border: 0;
     background-color: rgba(46, 52, 54, 0.5);
     color: #DBDEE0;
     border-radius: 6px; }

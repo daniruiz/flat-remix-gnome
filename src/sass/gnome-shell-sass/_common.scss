@@ -2636,7 +2636,7 @@ StScrollBar {
   .notification,
   .screen-shield-notification-source {
     padding: 12px 6px;
-    border: 1px solid $secondary_color;
+    border: 0;
     background-color: transparentize($osd_bg_color, 0.5);
     color: $osd_fg_color;
     border-radius: 6px;
