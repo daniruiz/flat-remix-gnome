@@ -1581,7 +1581,7 @@ StScrollBar {
 }
 
 .nm-dialog-scroll-view {
-  border: 1px solid rgba($bg_color, .1);
+  border: 0;
 }
 
 .nm-dialog-header {
@@ -1590,14 +1590,14 @@ StScrollBar {
 
 .nm-dialog-item {
   font-size: 110%;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0;
   padding: 1em;
   spacing: 1.66em;
-}
 
-.nm-dialog-item:selected {
-  background-color: $color1;
-  color: $selected_fg_color;
+  &:selected {
+    background: rgba($highlight_color, .05);
+    box-shadow: inset 0 -.25em 0 0 $secondary_color;
+  }
 }
 
 .nm-dialog-icons {

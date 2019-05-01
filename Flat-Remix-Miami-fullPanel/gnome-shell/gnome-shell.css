@@ -1135,20 +1135,19 @@ StScrollBar {
   icon-size: 2.9em; }
 
 .nm-dialog-scroll-view {
-  border: 1px solid rgba(41, 3, 81, 0.1); }
+  border: 0; }
 
 .nm-dialog-header {
   font-weight: bold; }
 
 .nm-dialog-item {
   font-size: 110%;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0;
   padding: 1em;
   spacing: 1.66em; }
-
-.nm-dialog-item:selected {
-  background-color: #F0F;
-  color: #FFF; }
+  .nm-dialog-item:selected {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 -0.25em 0 0 #FFF; }
 
 .nm-dialog-icons {
   spacing: .5em; }
