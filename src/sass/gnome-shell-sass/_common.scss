@@ -889,15 +889,13 @@ StScrollBar {
   background-color: $color1;
   box-shadow: $box-shadow;
   border: 0;
-  background-size: 32px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .ws-switcher-box {
   height: 50px;
   border: 0;
   background: transparent;
-  border-radius: 6px;
 }
 
 %osd-panel {

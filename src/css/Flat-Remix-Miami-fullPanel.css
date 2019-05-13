@@ -637,14 +637,12 @@ StScrollBar {
   background-color: #F0F;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
   border: 0;
-  background-size: 32px;
-  border-radius: 4px; }
+  border-radius: 3px; }
 
 .ws-switcher-box {
   height: 50px;
   border: 0;
-  background: transparent;
-  border-radius: 6px; }
+  background: transparent; }
 
 .osd-window,
 .resize-popup,
