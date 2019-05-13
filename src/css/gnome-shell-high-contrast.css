@@ -650,11 +650,11 @@ StScrollBar {
 .resize-popup,
 .switcher-list, .workspace-switcher-container {
   background-color: #050505;
-  border: 0;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   color: #FFF;
   border-radius: 6px;
   padding: 7px;
-  box-shadow: 0 0 0 4px rgba(5, 5, 5, 0.4); }
+  box-shadow: 0 0 0 6px rgba(5, 5, 5, 0.4); }
 
 /* Tiled window previews */
 .tile-preview, .select-area-rubberband {

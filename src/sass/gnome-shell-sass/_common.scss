@@ -902,11 +902,11 @@ StScrollBar {
 
 %osd-panel {
   background-color: $bg_color;
-  border: 0;
+  border: 2px solid transparentize(black, .9);
   color: $secondary_color;
   border-radius: 6px;
   padding: 7px;
-  box-shadow: 0 0 0 4px transparentize($bg_color, .6);
+  box-shadow: 0 0 0 6px transparentize($bg_color, .6);
 }
 
 /* Tiled window previews */
