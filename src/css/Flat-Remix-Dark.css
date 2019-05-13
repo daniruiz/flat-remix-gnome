@@ -677,7 +677,7 @@ StScrollBar {
   font-size: .9em;
   height: 2em;
   color: #FFF;
-  background: rgba(56, 60, 74, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   background-gradient-direction: none; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
     background-color: transparent; }
@@ -1448,7 +1448,7 @@ StScrollBar {
 
 .workspace-thumbnails {
   color: #cccccc;
-  background-color: rgba(56, 60, 74, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   border: none;
   visible-width: 32px;
   spacing: 11px;
