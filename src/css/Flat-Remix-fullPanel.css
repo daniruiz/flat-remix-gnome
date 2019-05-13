@@ -474,23 +474,26 @@ StScrollBar {
 .popup-menu {
   min-width: 15em; }
   .popup-menu .popup-sub-menu {
-    background-color: #fafafa;
-    box-shadow: inset 0 -2px 7px -2px rgba(0, 0, 0, 0.1); }
+    background-color: rgba(155, 160, 179, 0.1);
+    border-radius: 0 0 6px 6px;
+    box-shadow: none; }
   .popup-menu .popup-menu-content {
     padding: 1em 0em; }
   .popup-menu .popup-menu-item {
-    spacing: 1.2em; }
+    spacing: 6px; }
     .popup-menu .popup-menu-item:ltr {
-      padding: .4em 2.4em .4em 0em; }
+      padding: .4em 1.75em .4em 0em; }
     .popup-menu .popup-menu-item:rtl {
-      padding: .4em 0em .4em 2.4em; }
+      padding: .4em 0em .4em 1.75em; }
     .popup-menu .popup-menu-item:checked {
-      background-color: #fafafa;
-      box-shadow: inset 0 1px 0px rgba(13, 13, 13, 0);
-      font-weight: bold; }
+      background-color: rgba(155, 160, 179, 0.1);
+      box-shadow: none;
+      font-weight: bold;
+      border-radius: 6px 6px 0 0 !important; }
     .popup-menu .popup-menu-item.selected, .popup-menu .popup-menu-item:active {
-      background-color: rgba(96, 99, 110, 0.1);
-      color: #60636E; }
+      background-color: rgba(155, 160, 179, 0.1);
+      color: #60636E;
+      border-radius: 6px; }
     .popup-menu .popup-menu-item:insensitive {
       color: rgba(96, 99, 110, 0.5); }
   .popup-menu .popup-inactive-menu-item {
@@ -1065,7 +1068,7 @@ StScrollBar {
   padding: 1.3em;
   border: 0; }
   .system-menu-action:hover, .system-menu-action:focus {
-    background-color: rgba(96, 99, 110, 0.1);
+    background-color: rgba(155, 160, 179, 0.1);
     color: #60636E; }
   .system-menu-action:active {
     background-color: #367BF0;
