@@ -58,7 +58,7 @@ else
 endif
 
 _get_version:
-	$(eval VERSION := $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
+	$(eval VERSION ?= $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
 	@echo $(VERSION)
 
 _get_tag:
@@ -69,24 +69,23 @@ dist: _get_version
 	git archive --format=tar.gz -o $(notdir $(CURDIR))-$(VERSION).tar.gz master -- $(THEMES)
 
 release: _get_version
+	$(MAKE) aur_release VERSION=$(VERSION)
+	$(MAKE) copr_release VERSION=$(VERSION)
 	git tag -f $(VERSION)
-	$(MAKE) aur_release
-	$(MAKE) copr_release
 	git push origin --tags
 
-aur_release: _get_tag
+aur_release: _get_version _get_tag
 	cd aur; \
-	sed "s/pkgver\s*=.*/pkgver=$(TAG)/" -i PKGBUILD .SRCINFO; \
-	makepkg --printsrcinfo > .SRCINFO; \
-	git commit -a -m "$(TAG)"; \
+	sed "s/$(TAG)/$(VERSION)/g" -i PKGBUILD .SRCINFO; \
+	git commit -a -m "Update aur version $(VERSION)"; \
 	git push origin master;
 
-	git commit aur -m "$(TAG)"
+	git commit aur -m "$(VERSION)"
 	git push origin master
 
-copr_release: _get_tag
-	sed "s/Version:.*/Version: $(TAG)/" -i flat-remix-gnome.spec
-	git commit flat-remix-gnome.spec -m "Update flat-remix-gnome.spec version $(TAG)"
+copr_release: _get_version _get_tag
+	sed "s/$(TAG)/$(VERSION)/g" -i flat-remix-gtk.spec
+	git commit flat-remix-gtk.spec -m "Update flat-remix-gtk.spec version $(VERSION)"
 	git push origin master
 
 undo_release: _get_tag
