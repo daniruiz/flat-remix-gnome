@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="96" height="42" version="1.1" viewBox="0 0 96 42">
- <g transform="matrix(0.9,0,0,0.9,146.352,-10.815)">
-  <rect width="100" height="40" x="-159.28" y="15.35" rx="22" ry="22" style="fill:#f0f"/>
-  <circle cx="-79.28" cy="35.351" r="18" style="fill:#290351"/>
-  <rect style="fill:#290351" width="10" height="4" x="-79.9" y="126.29" rx="1.333" ry="1.333" transform="rotate(45)"/>
-  <rect style="fill:#290351" width="4" height="16" x="-73.9" y="114.29" ry="0" transform="rotate(45)"/>
+<svg width="91.696" height="44.682" version="1.1" viewBox="0 0 91.696 44.682" xmlns="http://www.w3.org/2000/svg">
+ <rect x="1.4598" y="1.1017" width="88.776" height="42.479" rx="20.883" ry="20.462" style="fill:#367bf0;paint-order:normal;stroke-width:2.1862;stroke:#0d4bb3"/>
+ <g transform="matrix(-1 0 0 1 91.863 0)">
+  <path d="m22.109 3.3136h0.46724c10.475 0 18.835 8.4474 18.835 19.032v0.0041c0 10.585-8.3597 19.032-18.835 19.032h-0.46724c-10.475 0-18.835-8.4475-18.835-19.032v-0.0041c0-10.585 8.3597-19.032 18.835-19.032z" style="color-rendering:auto;color:#000000;dominant-baseline:auto;fill:#290351;font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;image-rendering:auto;isolation:auto;mix-blend-mode:normal;paint-order:normal;shape-padding:0;shape-rendering:auto;solid-color:#000000;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
  </g>
 </svg>
