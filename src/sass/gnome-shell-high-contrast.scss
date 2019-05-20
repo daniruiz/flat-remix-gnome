@@ -5,7 +5,14 @@ stage {
   -st-icon-style: symbolic;
 }
 
-.toggle-switch-us, .toggle-switch-intl {
-  background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
-  &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+.toggle-switch {
+    background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
+    &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+}
+
+@each $v in us, intl {
+  .toggle-switch-#{$v} {
+    background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
+    &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+  }
 }

@@ -2014,7 +2014,17 @@ StScrollBar {
 stage {
   -st-icon-style: symbolic; }
 
-.toggle-switch-us, .toggle-switch-intl {
+.toggle-switch {
   background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg"); }
-  .toggle-switch-us:checked, .toggle-switch-intl:checked {
+  .toggle-switch:checked {
+    background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+
+.toggle-switch-us {
+  background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg"); }
+  .toggle-switch-us:checked {
+    background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
+
+.toggle-switch-intl {
+  background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg"); }
+  .toggle-switch-intl:checked {
     background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
