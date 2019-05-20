@@ -187,7 +187,7 @@ StScrollBar {
   color: #FFF;
   background-color: #290351;
   border: 0;
-  box-shadow: none; }
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4); }
   .modal-dialog StEntry {
     background-color: rgba(255, 255, 255, 0.15);
     background-gradient-direction: none;

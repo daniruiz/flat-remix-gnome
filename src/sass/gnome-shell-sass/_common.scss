@@ -259,7 +259,7 @@ StScrollBar {
   color: $dark_font_color;
   background-color: $bg_color;
   border: 0;
-  box-shadow: none;
+  box-shadow: $box-shadow;
 
   StEntry {
     background-color: rgba($secondary_color, if($variant=='light', .05, .15));
