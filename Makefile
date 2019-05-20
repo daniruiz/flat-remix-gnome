@@ -15,7 +15,7 @@ all:
 	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh --sync-login-background
 
 build:
-	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh -r
+	cd src && ./build.sh -r
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
