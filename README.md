@@ -27,14 +27,17 @@
 1. Install [user themes extension](https://extensions.gnome.org/extension/19/user-themes/)  
 1. Run ```gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix"``` or select "Flat-Remix" via gnome-tweaks.
 
-#### Terminal installation
+#### How to install the login theme
+Be sure you are capable of reinstalling gnome-shell/gdm in case it fails.
+You need to have installed imagemagick and glib-compile-resources:
+```sh
+sudo apt install libglib2.0-dev-bin imagemagick 
+```
 
 ```sh
-cd /tmp && rm -rf flat-remix-gnome &&
-git clone https://github.com/daniruiz/flat-remix-gnome && cd flat-remix-gnome;
-# If you want to change the login wallpaper
-# (cd src && ./build.sh --login-background /path/to/image)
-sudo make install
+git clone https://github.com/daniruiz/flat-remix-gnome
+cd flat-remix-gnome
+make && sudo make install
 ```
 
 #### Ubuntu based distributions:
