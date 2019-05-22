@@ -1,5 +1,5 @@
 Name: flat-remix-gnome
-Version: 20190514
+Version: 20190521
 Release: 1
 License: CC-BY-SA-4.0
 Summary: Flat Remix GNOME theme
