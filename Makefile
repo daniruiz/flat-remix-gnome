@@ -14,7 +14,8 @@ MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 THEMES := $(filter-out $(IGNORE), $(THEMES))
 
 all:
-	cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh --sync-login-background
+	# skip background-sync when packaging
+	$(if $(DEB_BUILD_OPTIONS),, cd src && HOME=$$(eval echo ~$$SUDO_USER) ./build.sh --sync-login-background)
 
 build:
 	cd src && ./build.sh -r
