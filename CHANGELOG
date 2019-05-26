@@ -1,0 +1,13 @@
+[20190514]
+ * Update flat-remix-gnome.spec version 20190521
+ * 20190521
+ * Add login theme installation explanation
+ * Use dafault login background if lock image is xml
+ * Fix makefile for Pop OS
+ * Convert build.sh script to posix sh
+ * Bring modal-dialog shadow back
+ * Update make build script
+ * Fix high contrast switches
+ * Syncronize switch assets with gtk theme
+ * Add shadow to close icons
+

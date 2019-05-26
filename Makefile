@@ -6,6 +6,8 @@ IGNORE ?=
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard ./*/index.theme))
 MODES ?= flat-remix-darkest-fullpanel.json flat-remix-darkest.json flat-remix-dark-fullpanel.json flat-remix-dark.json flat-remix-fullpanel.json flat-remix.json flat-remix-miami-dark-fullpanel.json flat-remix-miami-dark.json flat-remix-miami-fullpanel.json flat-remix-miami.json
 IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo true)
+PKGNAME = flat-remix-gnome
+MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 
 
 # excludes IGNORE from THEMES list
@@ -69,28 +71,49 @@ dist: _get_version
 	git archive --format=tar.gz -o $(notdir $(CURDIR))-$(VERSION).tar.gz master -- $(THEMES)
 
 release: _get_version
+	$(MAKE) generate_changelog VERSION=$(VERSION)
 	$(MAKE) aur_release VERSION=$(VERSION)
 	$(MAKE) copr_release VERSION=$(VERSION)
+	$(MAKE) launchpad_release
 	git tag -f $(VERSION)
 	git push origin --tags
 
 aur_release: _get_version _get_tag
 	cd aur; \
 	sed "s/$(TAG)/$(VERSION)/g" -i PKGBUILD .SRCINFO; \
-	git commit -a -m "Update aur version $(VERSION)"; \
+	git commit -a -m "$(VERSION)"; \
 	git push origin master;
 
-	git commit aur -m "$(VERSION)"
+	git commit aur -m "Update aur version $(VERSION)"
 	git push origin master
 
 copr_release: _get_version _get_tag
-	sed "s/$(TAG)/$(VERSION)/g" -i flat-remix-gnome.spec
-	git commit flat-remix-gnome.spec -m "Update flat-remix-gnome.spec version $(VERSION)"
+	sed "s/$(TAG)/$(VERSION)/g" -i $(PKGNAME).spec
+	git commit $(PKGNAME).spec -m "Update $(PKGNAME).spec version $(VERSION)"
 	git push origin master
+
+launchpad_release: _get_version
+	cp -a Flat-Remix* src Makefile deb/$(PKGNAME)
+	sed "s/{}/$(VERSION)/g" -i deb/$(PKGNAME)/debian/changelog-template
+	cd deb/$(PKGNAME)/debian/ && echo " -- $(MAINTAINER)  $$(date -R)" | cat changelog-template - > changelog
+	cd deb/$(PKGNAME) && debuild -S -d
+	dput ppa deb/$(PKGNAME)_$(VERSION)_source.changes
+	git checkout deb
+	git clean -df deb
 
 undo_release: _get_tag
 	-git tag -d $(TAG)
 	-git push --delete origin $(TAG)
+
+generate_changelog: _get_version _get_tag
+	git checkout $(TAG) CHANGELOG
+	echo [$(VERSION)] > /tmp/out
+	git log --pretty=format:' * %s' $(TAG)..HEAD >> /tmp/out
+	echo >> /tmp/out
+	echo | cat - CHANGELOG >> /tmp/out
+	mv /tmp/out CHANGELOG
+	git commit CHANGELOG -m "Update CHANGELOG version $(VERSION)"
+	git push origin master
 
 
 .PHONY: $(THEMES) all install uninstall _get_version dist release undo_release
