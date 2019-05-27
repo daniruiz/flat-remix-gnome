@@ -31,9 +31,7 @@ install:
 	cp -a src/sessions/xsessions/* $(DESTDIR)$(PREFIX)/share/xsessions/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/wayland-sessions
 	cp -a src/sessions/wayland-sessions/* $(DESTDIR)$(PREFIX)/share/wayland-sessions/
-ifeq ($(IS_UBUNTU), true)
 	ln -sf $(PREFIX)/share/themes/Flat-Remix/gnome-shell/assets/ $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/assets
-endif
 
 	# skip replacing gnome's theme when packaging
 	$(if $(DESTDIR),, $(MAKE) Flat-Remix)
