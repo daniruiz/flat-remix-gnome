@@ -1,3 +1,11 @@
+[20190530]
+ * Remove unnecessary MODES variable
+ * Remove dialog linked button focus decoration
+ * Fix ubuntu ppa package, no assets symlink; Fixes #86
+ * fixup! Add makefile CHANGELOG autogeneration and launchpad_release functions
+ * Add FUNDING.yml
+ * Add makefile CHANGELOG autogeneration and launchpad_release functions
+
 [20190514]
  * Update flat-remix-gnome.spec version 20190521
  * 20190521
