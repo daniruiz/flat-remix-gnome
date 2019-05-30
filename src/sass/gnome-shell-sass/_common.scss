@@ -82,9 +82,9 @@ stage {
   background-color: $secondary_color;
   box-shadow: none;
   font-weight: bold;
-  box-shadow: inset 0 -4px 0 rgba(black, .3);
+  box-shadow: inset 0 -4px 0 transparentize($bg_color, .6);
 
-  &:focus { box-shadow: inset 0 -4px 0 $bg_color; }
+  &:focus { text-shadow: 0 1px 2px $primary_color; }
 
   &:first-child {
     border-radius: 0px 0px 0px 3px;
@@ -415,14 +415,11 @@ StScrollBar {
 .end-session-dialog .modal-dialog-linked-button:last-child {
   background-color: #D41A1A;
   color: white;
-  box-shadow: inset 0 -4px 0 rgba(black, .3);
 
   &:active {
     color: white;
     background-color: rgba(#d41a1a, .7);
   }
-
-  &:focus { box-shadow: inset 0 -4px 0 rgba(black, .5) }
 }
 
 /* ShellMountOperation Dialogs */

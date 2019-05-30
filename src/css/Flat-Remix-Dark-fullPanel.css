@@ -59,9 +59,9 @@ stage {
   background-color: #FFF;
   box-shadow: none;
   font-weight: bold;
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: inset 0 -4px 0 rgba(56, 60, 74, 0.4); }
   .modal-dialog-linked-button:focus {
-    box-shadow: inset 0 -4px 0 #383C4A; }
+    text-shadow: 0 1px 2px #2F343F; }
   .modal-dialog-linked-button:first-child {
     border-radius: 0px 0px 0px 3px; }
   .modal-dialog-linked-button:last-child {
@@ -305,13 +305,10 @@ StScrollBar {
 
 .end-session-dialog .modal-dialog-linked-button:last-child {
   background-color: #D41A1A;
-  color: white;
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.3); }
+  color: white; }
   .end-session-dialog .modal-dialog-linked-button:last-child:active {
     color: white;
     background-color: rgba(212, 26, 26, 0.7); }
-  .end-session-dialog .modal-dialog-linked-button:last-child:focus {
-    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.5); }
 
 /* ShellMountOperation Dialogs */
 .shell-mount-operation-icon {
