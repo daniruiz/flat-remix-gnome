@@ -4,7 +4,6 @@
 PREFIX ?= /usr
 IGNORE ?=
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard ./*/index.theme))
-MODES ?= flat-remix-darkest-fullpanel.json flat-remix-darkest.json flat-remix-dark-fullpanel.json flat-remix-dark.json flat-remix-fullpanel.json flat-remix.json flat-remix-miami-dark-fullpanel.json flat-remix-miami-dark.json flat-remix-miami-fullpanel.json flat-remix-miami.json
 IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo true)
 PKGNAME = flat-remix-gnome
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
@@ -48,7 +47,7 @@ endif
 uninstall:
 	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/themes/$(theme))
 	-rm -rf $(foreach theme, $(THEMES) assets, $(PREFIX)/share/gnome-shell/theme/$(theme))
-	-rm -rf $(foreach mode, $(MODES), $(PREFIX)/share/gnome-shell/modes/$(mode))
+	-rm -rf $(PREFIX)/share/gnome-shell/modes/flat-remix*.json
 	-rm -rf $(PREFIX)/share/xsessions/??_flat-remix*.desktop
 	-rm -rf $(PREFIX)/share/wayland-sessions/??_flat-remix*.desktop
 ifeq ($(IS_UBUNTU), true)
@@ -115,7 +114,7 @@ generate_changelog: _get_version _get_tag
 	git push origin master
 
 
-.PHONY: $(THEMES) all install uninstall _get_version dist release undo_release
+.PHONY: $(THEMES) all build install uninstall _get_version _get_tag dist release aur_release copr_release launchpad_release undo_release generate_changelog
 
 # .BEGIN is ignored by GNU make so we can use it as a guard
 .BEGIN:
