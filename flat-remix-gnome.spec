@@ -63,6 +63,7 @@ mv /usr/share/gnome-shell/gnome-shell-theme.gresource.old /usr/share/gnome-shell
 %{_datadir}/gnome-shell/theme/Flat-Remix-Dark-fullPanel
 %{_datadir}/gnome-shell/theme/Flat-Remix-Miami-fullPanel
 %{_datadir}/gnome-shell/theme/Flat-Remix-fullPanel
+%{_datadir}/gnome-shell/theme/assets
 %{_datadir}/gnome-shell/modes
 %{_datadir}/xsessions
 %{_datadir}/wayland-sessions
