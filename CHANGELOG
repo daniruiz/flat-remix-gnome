@@ -1,20 +1,12 @@
+[20190608]
+ * Fix Pop OS theme conflicts; Fixes #89
+
 [20190530]
- * Remove unnecessary MODES variable
  * Remove dialog linked button focus decoration
- * Fix ubuntu ppa package, no assets symlink; Fixes #86
- * fixup! Add makefile CHANGELOG autogeneration and launchpad_release functions
- * Add FUNDING.yml
- * Add makefile CHANGELOG autogeneration and launchpad_release functions
 
 [20190514]
- * Update flat-remix-gnome.spec version 20190521
- * 20190521
- * Add login theme installation explanation
  * Use dafault login background if lock image is xml
- * Fix makefile for Pop OS
- * Convert build.sh script to posix sh
  * Bring modal-dialog shadow back
- * Update make build script
  * Fix high contrast switches
  * Syncronize switch assets with gtk theme
  * Add shadow to close icons
