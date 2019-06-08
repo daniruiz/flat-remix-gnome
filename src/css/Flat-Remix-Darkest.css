@@ -59,7 +59,8 @@ stage {
   background-color: #FFF;
   box-shadow: none;
   font-weight: bold;
-  box-shadow: inset 0 -4px 0 rgba(5, 5, 5, 0.4); }
+  box-shadow: inset 0 -4px 0 rgba(5, 5, 5, 0.4);
+  margin: 0; }
   .modal-dialog-linked-button:focus {
     text-shadow: 0 1px 2px #000; }
   .modal-dialog-linked-button:first-child {
@@ -486,10 +487,11 @@ StScrollBar {
       background-color: rgba(255, 255, 255, 0.1);
       box-shadow: none;
       font-weight: bold;
+      color: #FFF;
       border-radius: 6px 6px 0 0 !important; }
     .popup-menu .popup-menu-item.selected, .popup-menu .popup-menu-item:active {
       background-color: rgba(255, 255, 255, 0.1);
-      color: #FFF;
+      color: #FFF !important;
       border-radius: 6px; }
     .popup-menu .popup-menu-item:insensitive {
       color: rgba(255, 255, 255, 0.5); }
@@ -1204,7 +1206,7 @@ StScrollBar {
   .search-entry:focus, .search-entry:hover {
     font-weight: 400;
     background-color: white;
-    color: black;
+    color: black !important;
     box-shadow: none;
     text-shadow: none; }
     .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
@@ -1312,7 +1314,8 @@ StScrollBar {
   icon-size: 48px; }
 
 .app-view-controls {
-  padding-bottom: 32px; }
+  padding-bottom: 32px;
+  width: 18em; }
 
 .app-view-control {
   background-gradient-direction: none;
@@ -1324,14 +1327,14 @@ StScrollBar {
   font-weight: bold;
   margin: 0; }
   .app-view-control:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3) !important;
     border-width: 0;
     border: transparent;
     box-shadow: none; }
-  .app-view-control:checked {
+  .app-view-control:checked, .app-view-control:active {
     color: black;
     background-gradient-direction: none;
-    background-color: white;
+    background-color: white !important;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none; }
@@ -1412,7 +1415,10 @@ StScrollBar {
   -arrow-border-radius: 6px;
   -arrow-background-color: rgba(46, 52, 54, 0.3);
   -arrow-base: 24px;
-  -arrow-rise: 11px; }
+  -arrow-rise: 11px;
+  border: 0;
+  background: transparent;
+  margin: 0; }
 
 .app-folder-popup-bin {
   padding: 5px; }
@@ -1446,7 +1452,7 @@ StScrollBar {
 
 .workspace-thumbnails {
   color: #cccccc;
-  background-color: rgba(5, 5, 5, 0.3);
+  background-color: rgba(5, 5, 5, 0.3) !important;
   border: none;
   visible-width: 32px;
   spacing: 11px;

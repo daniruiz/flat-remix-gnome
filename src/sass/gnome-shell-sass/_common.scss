@@ -83,6 +83,7 @@ stage {
   box-shadow: none;
   font-weight: bold;
   box-shadow: inset 0 -4px 0 transparentize($bg_color, .6);
+  margin: 0;
 
   &:focus { text-shadow: 0 1px 2px $primary_color; }
 
@@ -670,12 +671,13 @@ StScrollBar {
       background-color: rgba($highlight_color, .1);
       box-shadow: none;
       font-weight: bold;
+      color: $fg_color;
       border-radius: 6px 6px 0 0!important;
     }
 
     &.selected, &:active {
       background-color: rgba($highlight_color, .1);
-      color: $fg_color;
+      color: $fg_color!important;
       border-radius: 6px;
     }
 
@@ -1663,7 +1665,7 @@ StScrollBar {
   &:focus, &:hover {
     font-weight: 400;
     background-color: white;
-    color: black;
+    color: black!important;
     box-shadow: none;
     text-shadow: none;
 
@@ -1814,6 +1816,7 @@ StScrollBar {
 
 .app-view-controls { //favorties | all toggle container
   padding-bottom: 32px;
+  width: 18em;
 }
 
 .app-view-control { //favorties | all toggle button
@@ -1827,16 +1830,16 @@ StScrollBar {
   margin: 0;
 
   &:hover {
-    background-color: rgba(white, 0.3);
+    background-color: rgba(white, 0.3)!important;
     border-width: 0;
     border: transparent;
     box-shadow: none;
   }
 
-  &:checked {
+  &:checked, &:active {
     color: black;
     background-gradient-direction: none;
-    background-color: white;
+    background-color: white!important;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
@@ -1925,6 +1928,9 @@ StScrollBar {
   -arrow-background-color: transparentize($osd_bg_color, 0.7);
   -arrow-base: 24px;
   -arrow-rise: 11px;
+  border: 0;
+  background: transparent;
+  margin: 0;
 }
 
 .app-folder-popup-bin {
@@ -1976,7 +1982,7 @@ StScrollBar {
 // Workspace pager
 .workspace-thumbnails { //container ala dash
   color: $light_font_color;
-  background-color: $panel_background_color;
+  background-color: $panel_background_color!important;
   border: none;
   visible-width: 32px; //amount visible before hover
   spacing: 11px;
