@@ -369,7 +369,7 @@ StScrollBar {
   .prompt-dialog .message-dialog-content {
     spacing: 1.14em; }
   .prompt-dialog .message-dialog-title {
-    color: #969fa5; }
+    color: #bfbfbf; }
 
 .prompt-dialog-description:rtl {
   text-align: right; }
@@ -453,7 +453,7 @@ StScrollBar {
   spacing: 1.71em;
   padding: .71em; }
 .extension-dialog .message-dialog-title {
-  color: #969fa5; }
+  color: #bfbfbf; }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
@@ -558,7 +558,7 @@ StScrollBar {
     -barlevel-overdrive-color: #D41919;
     -barlevel-overdrive-separator-width: 0.2em; }
   .osd-window .level-bar {
-    background-color: #DBDEE0;
+    background-color: #FFF;
     border-radius: 6px; }
 
 /* Pad OSD */
@@ -1349,12 +1349,12 @@ StScrollBar {
 .search-provider-icon:active, .search-provider-icon:checked,
 .list-search-result:active,
 .list-search-result:checked {
-  background-color: rgba(23, 25, 26, 0.9); }
+  background-color: rgba(0, 0, 0, 0.9); }
 .search-provider-icon:focus, .search-provider-icon:selected, .search-provider-icon:hover,
 .list-search-result:focus,
 .list-search-result:selected,
 .list-search-result:hover {
-  background-color: rgba(219, 222, 224, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   transition-duration: 200ms; }
 
 .app-well-app .overview-icon,
@@ -1379,7 +1379,7 @@ StScrollBar {
 .grid-search-result:hover .overview-icon,
 .grid-search-result:focus .overview-icon,
 .grid-search-result:selected .overview-icon {
-  background-color: rgba(219, 222, 224, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   transition-duration: 100ms;
   border-image: none;
   background-image: none;
@@ -1404,7 +1404,7 @@ StScrollBar {
   text-align: center; }
 
 .app-well-app.app-folder > .overview-icon {
-  background-color: rgba(46, 52, 54, 0.4); }
+  background-color: rgba(0, 0, 0, 0.5); }
 
 .show-apps:checked .show-apps-icon,
 .show-apps:focus .show-apps-icon {
@@ -1413,7 +1413,7 @@ StScrollBar {
 
 .app-folder-popup {
   -arrow-border-radius: 6px;
-  -arrow-background-color: rgba(46, 52, 54, 0.3);
+  -arrow-background-color: rgba(0, 0, 0, 0.5);
   -arrow-base: 24px;
   -arrow-rise: 11px;
   border: 0;
@@ -1538,7 +1538,7 @@ StScrollBar {
   -shell-counter-overlap-y: 3px;
   background-color: #367BF0;
   color: #FFF;
-  border: 2px solid #DBDEE0;
+  border: 2px solid #FFF;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 0.9em; }
 
@@ -1675,7 +1675,7 @@ StScrollBar {
   color: white;
   padding: 5px;
   -arrow-border-radius: 6px;
-  -arrow-background-color: rgba(46, 52, 54, 0.7);
+  -arrow-background-color: rgba(0, 0, 0, 0.7);
   -arrow-border-width: 2px;
   -arrow-border-color: #000;
   -arrow-base: 20px;
@@ -1731,7 +1731,7 @@ StScrollBar {
 .user-icon, .framed-user-icon {
   background-size: contain;
   border: 0;
-  color: #DBDEE0;
+  color: #FFF;
   border-radius: 100px; }
   .user-icon:hover, .framed-user-icon:hover {
     color: white; }
@@ -1832,7 +1832,7 @@ StScrollBar {
   .login-dialog-user-list-item .login-dialog-timed-login-indicator {
     height: 2px;
     margin-top: 6px;
-    background-color: #DBDEE0; }
+    background-color: #FFF; }
   .login-dialog-user-list-item:focus .login-dialog-timed-login-indicator {
     background-color: #FFF; }
 
@@ -1906,8 +1906,8 @@ StScrollBar {
   .screen-shield-notifications-container .screen-shield-notification-source {
     padding: 12px 6px;
     border: 0;
-    background-color: rgba(46, 52, 54, 0.5);
-    color: #DBDEE0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
     border-radius: 6px; }
   .screen-shield-notifications-container .notification {
     margin-right: 15px; }

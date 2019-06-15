@@ -1913,7 +1913,7 @@ StScrollBar {
 }
 
 .app-well-app.app-folder > .overview-icon {
-  background-color: transparentize($osd_bg_color, .6);
+  background-color: transparentize($osd_bg_color, .5);
 }
 
 .show-apps:checked .show-apps-icon,
@@ -1925,7 +1925,7 @@ StScrollBar {
 // Collections
 .app-folder-popup { //expanded collection
   -arrow-border-radius: 6px;
-  -arrow-background-color: transparentize($osd_bg_color, 0.7);
+  -arrow-background-color: transparentize($osd_bg_color, 0.5);
   -arrow-base: 24px;
   -arrow-rise: 11px;
   border: 0;
