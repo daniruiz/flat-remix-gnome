@@ -1,3 +1,8 @@
+[20190616]
+ * Remove .modal-dialog-linked-button inset shadow for light variant
+ * Change ScreenShield notification and app folder background
+ * Lighten .modal-dialog-linked-button inset shadow
+
 [20190608]
  * Fix Pop OS theme conflicts; Fixes #89
 
