@@ -1,5 +1,6 @@
 $primary_color: #FFF;
 $secondary_color: #000;
+
 $bg_color: #FFF;
 $highlight_color: lighten(#383C4A, 40%);
 $fg_color: #60636E;
@@ -10,16 +11,18 @@ $panel_background_color: rgba(0, 0, 0, .2);
 $color1: #367BF0;
 $color2: #19A187;
 
+
 @if $variant == 'dark' {
   $primary_color: #2F343F;
   $secondary_color: #FFF;
+
   $bg_color: #383C4A;
   $highlight_color: #FFF;
   $fg_color: #FFF;
   $dark_font_color: #FFF;
   $light_font_color: darken($fg_color, 20%);
   $panel_font_color: #FFF;
-  $panel_background_color: rgba(0, 0, 0, .3);
+  $panel_background_color: rgba(#383c4a, .3);
   $color1: #367BF0;
   $color2: #19A187;
 }
@@ -27,6 +30,7 @@ $color2: #19A187;
 @if $variant == 'darkest' {
   $primary_color: #000;
   $secondary_color: #FFF;
+
   $bg_color: #050505;
   $highlight_color: #FFF;
   $fg_color: #FFF;
@@ -74,5 +78,6 @@ $destructive_color: $error_color;
 
 $link_color: $color1;
 $selected_fg_color: #FFF;
-$osd_fg_color: #FFF;
-$osd_bg_color: #000;
+$osd_fg_color: $panel_font_color;
+$osd_hover_fg_color: if($variant == 'light', black, $osd_fg_color);
+$osd_bg_color: if($variant == 'light', rgba(white, .2), opacify(lighten($panel-background_color, 10%), .1));

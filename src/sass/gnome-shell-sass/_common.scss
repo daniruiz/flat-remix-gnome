@@ -1651,11 +1651,11 @@ StScrollBar {
 .search-entry {
   width: 21em;
   border: none;
-  color: white;
-  caret-color: black;
+  color: $osd_fg_color;
+  caret-color: $osd_fg_color;
   caret-size: .1em;
   text-shadow: 0px 1px 2px rgba(black, 0.9);
-  background-color: rgba(white, 0.2);
+  background-color: $osd_bg_color;
   font-weight: bold;
   background-gradient-direction: none;
   padding: .63em .81em;
@@ -1666,13 +1666,14 @@ StScrollBar {
 
   &:focus, &:hover {
     font-weight: 400;
-    background-color: white;
-    color: black!important;
+    background-color: rgba($osd_bg_color, 1);
+    color: $osd_hover_fg_color!important;
+    caret-color: $osd_hover_fg_color;
     box-shadow: none;
     text-shadow: none;
 
     .search-entry-icon {
-      color: black;
+      color: $osd_hover_fg_color!important;
       icon-shadow: none;
     }
   }
@@ -1823,25 +1824,26 @@ StScrollBar {
 
 .app-view-control { //favorties | all toggle button
   background-gradient-direction: none;
-  background-color: rgba(white, 0.2);
+  background-color: $osd_bg_color;
   padding: .36em 1.5em;
   border-width: 0;
-  color: white;
+  color: $osd_fg_color;
   box-shadow: none;
   font-weight: bold;
   margin: 0;
 
   &:hover {
-    background-color: rgba(white, 0.3)!important;
+    background-color: opacify($osd_bg_color, 0.1)!important;
     border-width: 0;
     border: transparent;
     box-shadow: none;
+    color: $osd_fg_color;
   }
 
   &:checked, &:active {
-    color: black;
+    color: $osd_hover_fg_color;
     background-gradient-direction: none;
-    background-color: white!important;
+    background-color: opacify($osd_bg_color, 1)!important;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
@@ -1864,13 +1866,9 @@ StScrollBar {
 .list-search-result {
   @extend %icon_tile;
 
-  &:active, &:checked {
-    background-color: transparentize(darken($osd_bg_color, 10%), .1);
-  }
-
-  &:focus, &:selected, &:hover {
-    background-color: transparentize($osd_fg_color, .9);
-    transition-duration: 200ms;
+  &:active, &:checked, &:active, &:checked, &:focus, &:selected, &:hover {
+    background-color: $osd_bg_color;
+    transition-duration: 0;
   }
 }
 
@@ -1889,13 +1887,16 @@ StScrollBar {
   &:hover .overview-icon,
   &:focus .overview-icon,
   &:selected .overview-icon {
-    background-color: transparentize($osd_fg_color, .9);
-    transition-duration: 100ms;
+    background-color: opacify($osd_bg_color, .2);
+    transition-duration: 0;
     border-image: none;
     background-image: none;
     box-shadow: none;
   }
 
+  &:checked .overview-icon {
+    background-color: $osd_bg_color;
+  }
 }
 
 .app-well-app-running-dot { //running apps indicator
@@ -1915,7 +1916,7 @@ StScrollBar {
 }
 
 .app-well-app.app-folder > .overview-icon {
-  background-color: transparentize($osd_bg_color, .5);
+  background-color: opacify($osd_bg_color, .1);
 }
 
 .show-apps:checked .show-apps-icon,
@@ -1927,7 +1928,7 @@ StScrollBar {
 // Collections
 .app-folder-popup { //expanded collection
   -arrow-border-radius: 6px;
-  -arrow-background-color: transparentize($osd_bg_color, 0.5);
+  -arrow-background-color: opacify($osd_bg_color, .1);
   -arrow-base: 24px;
   -arrow-rise: 11px;
   border: 0;
