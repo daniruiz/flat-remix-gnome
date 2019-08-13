@@ -927,6 +927,7 @@ StScrollBar {
   color: $panel_font_color;
   background: $panel_background_color;
   background-gradient-direction: none;
+  transition-duration: 200ms;
 
   &:overview { background: transparent; }
 

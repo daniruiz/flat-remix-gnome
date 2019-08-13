@@ -678,7 +678,8 @@ StScrollBar {
   height: 2em;
   color: #FFF;
   background: rgba(21, 2, 42, 0.3);
-  background-gradient-direction: none; }
+  background-gradient-direction: none;
+  transition-duration: 200ms; }
   #panel:overview {
     background: transparent; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
