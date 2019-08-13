@@ -679,6 +679,8 @@ StScrollBar {
   color: #FFF;
   background: rgba(5, 5, 5, 0.3);
   background-gradient-direction: none; }
+  #panel:overview {
+    background: transparent; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
     background-color: transparent; }
   #panel #panelLeft, #panel #panelCenter {

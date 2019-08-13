@@ -928,6 +928,8 @@ StScrollBar {
   background: $panel_background_color;
   background-gradient-direction: none;
 
+  &:overview { background: transparent; }
+
   &.unlock-screen,
   &.login-screen,
   &.lock-screen {
