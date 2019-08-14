@@ -369,7 +369,7 @@ StScrollBar {
   .prompt-dialog .message-dialog-content {
     spacing: 1.14em; }
   .prompt-dialog .message-dialog-title {
-    color: #bfbfbf; }
+    color: #FFF; }
 
 .prompt-dialog-description:rtl {
   text-align: right; }
@@ -453,7 +453,7 @@ StScrollBar {
   spacing: 1.71em;
   padding: .71em; }
 .extension-dialog .message-dialog-title {
-  color: #bfbfbf; }
+  color: #FFF; }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
@@ -1685,7 +1685,7 @@ StScrollBar {
   color: white;
   padding: 5px;
   -arrow-border-radius: 6px;
-  -arrow-background-color: rgba(78, 84, 103, 0.1);
+  -arrow-background-color: #383C4A;
   -arrow-border-width: 2px;
   -arrow-border-color: #FFF;
   -arrow-base: 20px;
@@ -1916,7 +1916,7 @@ StScrollBar {
   .screen-shield-notifications-container .screen-shield-notification-source {
     padding: 12px 6px;
     border: 0;
-    background-color: rgba(78, 84, 103, 0);
+    background-color: #383C4A;
     color: #FFF;
     border-radius: 6px; }
   .screen-shield-notifications-container .notification {

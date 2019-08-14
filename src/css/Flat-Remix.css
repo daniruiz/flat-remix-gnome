@@ -369,7 +369,7 @@ StScrollBar {
   .prompt-dialog .message-dialog-content {
     spacing: 1.14em; }
   .prompt-dialog .message-dialog-title {
-    color: #bfbfbf; }
+    color: #60636E; }
 
 .prompt-dialog-description:rtl {
   text-align: right; }
@@ -453,7 +453,7 @@ StScrollBar {
   spacing: 1.71em;
   padding: .71em; }
 .extension-dialog .message-dialog-title {
-  color: #bfbfbf; }
+  color: #60636E; }
 
 /* Inhibit-Shortcuts Dialog */
 .inhibit-shortcuts-dialog {
@@ -558,7 +558,7 @@ StScrollBar {
     -barlevel-overdrive-color: #D41919;
     -barlevel-overdrive-separator-width: 0.2em; }
   .osd-window .level-bar {
-    background-color: #FFF;
+    background-color: #60636E;
     border-radius: 6px; }
 
 /* Pad OSD */
@@ -1548,7 +1548,7 @@ StScrollBar {
   -shell-counter-overlap-y: 3px;
   background-color: #367BF0;
   color: #FFF;
-  border: 2px solid #FFF;
+  border: 2px solid #60636E;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 0.9em; }
 
@@ -1685,7 +1685,7 @@ StScrollBar {
   color: white;
   padding: 5px;
   -arrow-border-radius: 6px;
-  -arrow-background-color: rgba(255, 255, 255, 0);
+  -arrow-background-color: #FFF;
   -arrow-border-width: 2px;
   -arrow-border-color: #000;
   -arrow-base: 20px;
@@ -1741,10 +1741,10 @@ StScrollBar {
 .user-icon, .framed-user-icon {
   background-size: contain;
   border: 0;
-  color: #FFF;
+  color: #60636E;
   border-radius: 100px; }
   .user-icon:hover, .framed-user-icon:hover {
-    color: white; }
+    color: #aeb1b9; }
 
 .login-dialog-banner-view {
   padding-top: 24px;
@@ -1842,7 +1842,7 @@ StScrollBar {
   .login-dialog-user-list-item .login-dialog-timed-login-indicator {
     height: 2px;
     margin-top: 6px;
-    background-color: #FFF; }
+    background-color: #60636E; }
   .login-dialog-user-list-item:focus .login-dialog-timed-login-indicator {
     background-color: #FFF; }
 
@@ -1916,8 +1916,8 @@ StScrollBar {
   .screen-shield-notifications-container .screen-shield-notification-source {
     padding: 12px 6px;
     border: 0;
-    background-color: rgba(255, 255, 255, 0);
-    color: #FFF;
+    background-color: #FFF;
+    color: #60636E;
     border-radius: 6px; }
   .screen-shield-notifications-container .notification {
     margin-right: 15px; }
