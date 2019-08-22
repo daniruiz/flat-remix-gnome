@@ -666,18 +666,20 @@ StScrollBar {
     spacing: 6px;
 
     &:ltr { padding: .4em 1.75em .4em 0em; }
+
     &:rtl { padding: .4em 0em .4em 1.75em; }
+
     &:checked {
       background-color: rgba($highlight_color, .1);
       box-shadow: none;
       font-weight: bold;
       color: $fg_color;
-      border-radius: 6px 6px 0 0!important;
+      border-radius: 6px 6px 0 0 !important;
     }
 
     &.selected, &:active {
       background-color: rgba($highlight_color, .1);
-      color: $fg_color!important;
+      color: $fg_color !important;
       border-radius: 6px;
     }
 
@@ -1670,13 +1672,13 @@ StScrollBar {
   &:focus, &:hover {
     font-weight: 400;
     background-color: rgba($osd_bg_color, 1);
-    color: $osd_hover_fg_color!important;
+    color: $osd_hover_fg_color !important;
     caret-color: $osd_hover_fg_color;
     box-shadow: none;
     text-shadow: none;
 
     .search-entry-icon {
-      color: $osd_hover_fg_color!important;
+      color: $osd_hover_fg_color !important;
       icon-shadow: none;
     }
   }
@@ -1836,7 +1838,7 @@ StScrollBar {
   margin: 0;
 
   &:hover {
-    background-color: opacify($osd_bg_color, 0.1)!important;
+    background-color: opacify($osd_bg_color, 0.1) !important;
     border-width: 0;
     border: transparent;
     box-shadow: none;
@@ -1846,7 +1848,7 @@ StScrollBar {
   &:checked, &:active {
     color: $osd_hover_fg_color;
     background-gradient-direction: none;
-    background-color: opacify($osd_bg_color, 1)!important;
+    background-color: opacify($osd_bg_color, 1) !important;
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
@@ -1988,7 +1990,7 @@ StScrollBar {
 // Workspace pager
 .workspace-thumbnails { //container ala dash
   color: $light_font_color;
-  background-color: $panel_background_color!important;
+  background-color: $panel_background_color !important;
   border: none;
   visible-width: 32px; //amount visible before hover
   spacing: 11px;
