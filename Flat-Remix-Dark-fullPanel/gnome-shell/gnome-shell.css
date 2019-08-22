@@ -12,19 +12,19 @@ stage {
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
-  color: #DBDEE0;
+  color: #FFF;
   font-weight: bold;
-  background-color: transparent;
+  background-color: red;
   background-gradient-direction: none;
   background-gradient-start: transparent;
   background-gradient-end: transparent;
   box-shadow: none;
   text-shadow: none;
   icon-shadow: none; }
-  .button:hover, .button:focus {
-    color: white;
+  .button:hover, .button:focus, .button:active {
+    color: #FFF;
     border: none;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     background-gradient-direction: none;
     background-gradient-start: none;
     background-gradient-end: none;
@@ -36,16 +36,6 @@ stage {
     border: none;
     background-color: transparent;
     background-gradient-direction: none;
-    box-shadow: none;
-    text-shadow: none;
-    icon-shadow: none; }
-  .button:active {
-    color: white;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.1);
-    background-gradient-direction: none;
-    background-gradient-start: rgba(0, 0, 0, 0.1);
-    background-gradient-end: rgba(0, 0, 0, 0.1);
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none; }

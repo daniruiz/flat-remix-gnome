@@ -28,7 +28,7 @@ stage {
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
-  color: #DBDEE0;
+  color: $fg_color;
   font-weight: bold;
   background-color: transparent;
   background-gradient-direction: none;
@@ -38,10 +38,10 @@ stage {
   text-shadow: none;
   icon-shadow: none;
 
-  &:hover, &:focus {
-    color: white;
+  &:hover, &:focus, &:active {
+    color: $fg_color;
     border: none;
-    background-color: rgba(white, 0.1);
+    background-color: transparentize($highlight_color, .8);
     background-gradient-direction: none;
     background-gradient-start: none;
     background-gradient-end: none;
@@ -51,22 +51,10 @@ stage {
   }
 
   &:insensitive {
-    color: rgba(white, 0.3);
+    color: rgba($fg_color, 0.3);
     border: none;
     background-color: transparent;
     background-gradient-direction: none;
-    box-shadow: none;
-    text-shadow: none;
-    icon-shadow: none;
-  }
-
-  &:active {
-    color: white;
-    border: none;
-    background-color: rgba(black, 0.1);
-    background-gradient-direction: none;
-    background-gradient-start: rgba(black, 0.1);
-    background-gradient-end: rgba(black, 0.1);
     box-shadow: none;
     text-shadow: none;
     icon-shadow: none;
