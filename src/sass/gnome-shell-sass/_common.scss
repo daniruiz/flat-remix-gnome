@@ -1664,6 +1664,8 @@ StScrollBar {
   box-shadow: none;
   transition-duration: 200ms;
   font-size: 1.1em;
+  selection-background-color: $osd_hover_fg_color;
+  selected-color: opacify($osd_bg_color, 1);
 
   &:focus, &:hover {
     font-weight: 400;

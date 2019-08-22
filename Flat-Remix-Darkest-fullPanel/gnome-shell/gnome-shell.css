@@ -1205,7 +1205,9 @@ StScrollBar {
   border-radius: 100px;
   box-shadow: none;
   transition-duration: 200ms;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  selection-background-color: #FFF;
+  selected-color: #1f1f1f; }
   .search-entry:focus, .search-entry:hover {
     font-weight: 400;
     background-color: #1f1f1f;
