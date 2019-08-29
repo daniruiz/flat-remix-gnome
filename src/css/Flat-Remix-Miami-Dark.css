@@ -14,7 +14,7 @@ stage {
   padding: 4px 32px;
   color: #FFF;
   font-weight: bold;
-  background-color: red;
+  background-color: transparent;
   background-gradient-direction: none;
   background-gradient-start: transparent;
   background-gradient-end: transparent;
@@ -168,7 +168,7 @@ StScrollBar {
   font-size: 110%; }
 
 .lightbox {
-  background-color: #FFF; }
+  background-color: black; }
 
 .flashspot {
   background-color: #15022A; }
