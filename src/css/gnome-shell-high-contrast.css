@@ -365,8 +365,10 @@ StScrollBar {
   text-align: right; }
 
 .prompt-dialog-password-box {
-  spacing: 1em;
-  padding-bottom: 1em; }
+  spacing: 1em; }
+
+.prompt-dialog-pim-box {
+  spacing: 1em; }
 
 .prompt-dialog-error-label {
   font-size: 10pt;
@@ -387,6 +389,12 @@ StScrollBar {
 .prompt-dialog-grid {
   spacing-rows: 15px;
   spacing-columns: 1em; }
+
+.prompt-dialog-keyfiles-box {
+  spacing: 1em; }
+
+.prompt-dialog-button.button {
+  padding: 8px; }
 
 /* Polkit Dialog */
 .polkit-dialog-user-layout {

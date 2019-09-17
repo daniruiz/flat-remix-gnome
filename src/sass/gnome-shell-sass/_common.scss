@@ -509,7 +509,10 @@ StScrollBar {
 
 .prompt-dialog-password-box {
   spacing: 1em;
-  padding-bottom: 1em;
+}
+
+.prompt-dialog-pim-box {
+  spacing: 1em;
 }
 
 .prompt-dialog-error-label {
@@ -535,6 +538,14 @@ StScrollBar {
 .prompt-dialog-grid {
   spacing-rows: 15px;
   spacing-columns: 1em;
+}
+
+.prompt-dialog-keyfiles-box {
+  spacing: 1em;
+}
+
+.prompt-dialog-button.button {
+  padding: 8px;
 }
 
 /* Polkit Dialog */
