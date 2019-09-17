@@ -1926,6 +1926,10 @@ StScrollBar {
     text-shadow: 0px 1px 2px rgba(black, 0.9);
   }
 
+  &:drop .overview-icon {
+    background-color: opacify($osd_bg_color,.2);
+  }
+
   &:active .overview-icon,
   &:checked .overview-icon,
   &:hover .overview-icon,

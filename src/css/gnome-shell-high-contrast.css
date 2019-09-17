@@ -1401,6 +1401,11 @@ StScrollBar {
 .grid-search-result .overview-icon {
   font-weight: bold;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
+.app-well-app:drop .overview-icon,
+.app-well-app.app-folder:drop .overview-icon,
+.show-apps:drop .overview-icon,
+.grid-search-result:drop .overview-icon {
+  background-color: rgba(31, 31, 31, 0.6); }
 .app-well-app:active .overview-icon, .app-well-app:checked .overview-icon, .app-well-app:hover .overview-icon, .app-well-app:focus .overview-icon, .app-well-app:selected .overview-icon,
 .app-well-app.app-folder:active .overview-icon,
 .app-well-app.app-folder:checked .overview-icon,
