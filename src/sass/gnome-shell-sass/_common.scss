@@ -1512,6 +1512,14 @@ StScrollBar {
 
 .ripple-box:rtl { border-radius: 0 0 0 52px; }
 
+.ripple-pointer-location {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 25px 25px 25px; // radius the size of the box give us the curve
+  background-color: lighten(transparentize($secondary_color, 0.7), 30%);
+  box-shadow: 0 0 2px 2px lighten($secondary_color, 20%);
+}
+
 // just a simple change to the border radius position
 
 // not really top bar only
