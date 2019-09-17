@@ -1623,8 +1623,9 @@ StScrollBar {
 }
 
 .window-clone-border {
-  border: 6px solid white;
+  border: 4px solid white;
   border-radius: 6px;
+  box-shadow: inset 0 0 0 2px white;
 }
 
 .window-caption {
@@ -1634,6 +1635,7 @@ StScrollBar {
   border-radius: 6px;
   padding: 4px 12px;
   -shell-caption-spacing: 12px;
+  box-shadow: $box-shadow;
 }
 
 //search entry
