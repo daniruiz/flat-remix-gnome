@@ -530,6 +530,11 @@ StScrollBar {
   border-bottom-width: 1px;
   border-bottom-style: solid; }
 
+.rename-folder-popup-box {
+  spacing: 6px;
+  margin-left: 12px;
+  margin-right: 12px; }
+
 .background-menu {
   -boxpointer-gap: 0px;
   -arrow-rise: 0px; }
