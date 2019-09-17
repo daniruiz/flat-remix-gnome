@@ -1247,6 +1247,7 @@ StScrollBar {
   max-width: 1000px; }
 
 #searchResultsContent {
+  max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
   spacing: 16px; }
