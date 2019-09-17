@@ -1500,7 +1500,6 @@ StScrollBar {
   border-radius: 6px;
   padding: 0; }
 
-.search-display > StBoxLayout,
 .all-apps,
 .frequent-apps > StBoxLayout {
   padding: 0px 88px 10px 88px; }
