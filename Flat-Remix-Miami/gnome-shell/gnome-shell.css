@@ -647,7 +647,8 @@ StScrollBar {
   padding: 0;
   spacing: 8px; }
 
-.ws-switcher-active-up, .ws-switcher-active-down {
+.ws-switcher-active-up, .ws-switcher-active-down,
+.ws-switcher-active-left, .ws-switcher-active-right {
   height: 30px;
   background-color: #F0F;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
