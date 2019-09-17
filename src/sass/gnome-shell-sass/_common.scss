@@ -532,6 +532,11 @@ StScrollBar {
   padding: 0;
 }
 
+.prompt-dialog-grid {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
 /* Polkit Dialog */
 
 .polkit-dialog-user-layout {
