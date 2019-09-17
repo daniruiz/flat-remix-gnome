@@ -1554,6 +1554,16 @@ StScrollBar {
   }
 }
 
+// Pointer accessibility notifications
+.pie-timer {
+  width: 60px;
+  height: 60px;
+  -pie-border-width: 3px;
+  -pie-border-color: $secondary_color;
+  -pie-background-color: lighten(transparentize($secondary_color, 0.7), 40%);
+}
+
+
 /* NETWORK DIALOGS */
 
 .nm-dialog {
