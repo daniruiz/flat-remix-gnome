@@ -1,3 +1,20 @@
+[20190918]
+ * Fix gnome-shell 3.34 colors
+ * Add folder editor styles
+ * Add folder icon visual drag-over feedback
+ * Add horizontal workspaces layout support
+ * App icon helper tweaks
+ * Increase window overview thumbnail border witdth
+ * Provide icon helper classes
+ * Don't apply overlap-preventing padding to search results
+ * Set search results content max width for gnome-shell 3.34
+ * Anotation 'UNTIL GNOME 3.32': custom styling of user submenu icon
+ * Add pie-timer styles
+ * Add ripple-pointer-location styles
+ * Support TCRYPT
+ * Move password entry to a grid
+ * Remove window-clone-border corner gap
+
 [20190829]
  * Change lightbox background color to black
 
