@@ -25,6 +25,7 @@ stage {
 /* Buttons */
 .button {
   border-radius: 6px;
+  min-height: 16px;
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
@@ -652,6 +653,8 @@ StScrollBar {
 
 .popup-menu {
   min-width: 15em;
+  color: $fg_color;
+  border-color: transparent;
 
   .popup-menu-arrow {}
 
@@ -1310,6 +1313,7 @@ StScrollBar {
   height: 1.8em;
   padding: 0.5em 0 0;
   margin: 6px;
+  background-color: transparent;
   color: rgba($fg_color, .4);
 }
 

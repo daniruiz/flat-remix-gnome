@@ -9,6 +9,7 @@ stage {
 /* Buttons */
 .button {
   border-radius: 6px;
+  min-height: 16px;
   border: none;
   margin-top: 0.5em;
   padding: 4px 32px;
@@ -472,7 +473,9 @@ StScrollBar {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 15em; }
+  min-width: 15em;
+  color: #60636E;
+  border-color: transparent; }
   .popup-menu .popup-sub-menu {
     background-color: rgba(155, 160, 179, 0.1);
     border-radius: 0 0 6px 6px;
@@ -947,6 +950,7 @@ StScrollBar {
   height: 1.8em;
   padding: 0.5em 0 0;
   margin: 6px;
+  background-color: transparent;
   color: rgba(96, 99, 110, 0.4); }
 
 /* Message list */
