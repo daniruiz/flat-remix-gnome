@@ -1,3 +1,6 @@
+[20190925]
+ * Improve popup-menu margins for gnome-shell 3.34
+
 [20190918]
  * Fix gnome-shell 3.34 colors
  * Add folder editor styles
