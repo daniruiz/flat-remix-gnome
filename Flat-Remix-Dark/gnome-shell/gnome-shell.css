@@ -516,12 +516,12 @@ StScrollBar {
 .candidate-popup-boxpointer {
   -arrow-border-radius: 6px;
   -arrow-background-color: #383C4A;
-  -arrow-border-width: 12px;
+  -arrow-border-width: 1.1em;
   -arrow-border-color: transparent;
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
-  margin: 0.3em 0.8em;
+  margin: 0.4em;
   background-color: rgba(56, 60, 74, 0.4);
   box-shadow: 0 2px 4px -6px black;
   border-radius: 9px; }
