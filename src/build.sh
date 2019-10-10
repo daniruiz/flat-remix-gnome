@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 USAGE="
 $(basename "$0") [--login-background FILE]
@@ -16,6 +16,24 @@ $(basename "$0") [--login-background FILE]
 TMP="/tmp/flat-remix-gnome"
 LOGIN_BACKGROUND=''
 BLUR=6
+
+get_login_background()
+{
+dconf read /org/gnome/desktop/screensaver/picture-uri | python <(cat <<EOF
+import sys
+if sys.version_info.major == 2:
+    from urllib import unquote
+    from urlparse import urlparse
+    data = raw_input()
+else:
+    from urllib.parse import urlparse, unquote
+    data = input()
+
+print(urlparse(unquote(data.strip("'"))).path)
+EOF
+)
+
+}
 
 while [ $# -gt 0 ]
 do
@@ -66,7 +84,7 @@ do
 done
 
 # Copy assets
-[ -n "$SYNC_LOGIN_BACKGROUND" ] && LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
+[ -n "$SYNC_LOGIN_BACKGROUND" ] && LOGIN_BACKGROUND=$(get_login_background)
 [ "${LOGIN_BACKGROUND##*.}" = xml ] && LOGIN_BACKGROUND=''
 if [ -n "$LOGIN_BACKGROUND" ]
 then
