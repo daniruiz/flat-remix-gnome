@@ -1565,7 +1565,8 @@ StScrollBar {
     background-color: #050505;
     border-radius: 6px;
     padding-top: 0px;
-    spacing: 1px; }
+    spacing: 1px;
+    border-color: transparent; }
   .notification-banner .notification-button {
     border: none;
     padding: 4px 4px 5px;
@@ -1642,7 +1643,7 @@ StScrollBar {
 
 .hotplug-notification-item {
   padding: 0.14em .35em;
-  color: #cccccc; }
+  color: #FFF; }
   .hotplug-notification-item:hover {
     color: #FFF; }
   .hotplug-notification-item:active {

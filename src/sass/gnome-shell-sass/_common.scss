@@ -2124,6 +2124,7 @@ StScrollBar {
     border-radius: 6px;
     padding-top: 0px;
     spacing: 1px;
+    border-color: transparent;
   }
 
   .notification-button {
@@ -2230,10 +2231,10 @@ StScrollBar {
 
 .hotplug-notification-item {
   padding: 0.14em .35em;
-  color: $light_font_color;
+  color: $fg_color;
 
   &:hover {
-    color: $fg_color;
+    color: $dark_font_color;
   }
 
   &:active {
