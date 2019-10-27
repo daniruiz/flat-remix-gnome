@@ -66,8 +66,16 @@ do
 done
 
 # Copy assets
-[ -n "$SYNC_LOGIN_BACKGROUND" ] && LOGIN_BACKGROUND=$(dconf read /org/gnome/desktop/screensaver/picture-uri | sed -e "s/file:\/\///" -e "s/'//g")
+if [ -n "$SYNC_LOGIN_BACKGROUND" ]
+then
+	LOGIN_BACKGROUND="$(printf \
+			$(dconf read /org/gnome/desktop/screensaver/picture-uri | \
+					sed -e 's/file:\/\///' -e 's/%/\\x/g' -e "s/'//g"))"
+fi
 [ "${LOGIN_BACKGROUND##*.}" = xml ] && LOGIN_BACKGROUND=''
+echo
+echo LOGIN_BACKGROUND:
+echo $LOGIN_BACKGROUND
 if [ -n "$LOGIN_BACKGROUND" ]
 then
 	if [ "$BLUR" -lt 1 ] || [ "$BLUR" -eq 1 ]
