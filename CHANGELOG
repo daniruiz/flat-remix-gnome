@@ -1,3 +1,6 @@
+[20191109]
+ * Add cursor accessibility missing icons
+
 [20191027]
  * Fix build.sh script does not parse URL encoded paths; Fixes #111
  * Improve hotplug notification styles
