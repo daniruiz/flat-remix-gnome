@@ -37,7 +37,7 @@ install:
 
 $(THEMES):
 ifeq ($(IS_UBUNTU), true)
-	-ln -sf $(PREFIX)/share/themes/$@/gnome-shell/assets/ $(PREFIX)/share/gnome-shell/theme/assets
+	-cp $(PREFIX)/share/themes/$@/gnome-shell/assets/ $(PREFIX)/share/gnome-shell/theme/assets
 	-update-alternatives --install $(PREFIX)/share/gnome-shell/theme/gdm3.css gdm3.css $(PREFIX)/share/themes/$@/gnome-shell/gnome-shell.css 100
 else
 	-mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
