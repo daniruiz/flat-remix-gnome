@@ -1,5 +1,8 @@
-[20191109]
+[20191110]
+ * Update CHANGELOG version 20191109
  * Fix theme not being applied to gdm
+
+[20191109]
  * Add cursor accessibility missing icons
 
 [20191027]
