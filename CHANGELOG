@@ -1,4 +1,5 @@
 [20191109]
+ * Fix theme not being applied to gdm
  * Add cursor accessibility missing icons
 
 [20191027]
