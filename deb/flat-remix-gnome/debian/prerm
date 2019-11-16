@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd /usr/share/flat-remix-gnome
-make && make install IS_UBUNTU=true
+make uninstall IS_UBUNTU=true

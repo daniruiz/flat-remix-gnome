@@ -20,20 +20,23 @@ build:
 	cd src && ./build.sh -r
 
 install:
-	mkdir -p $(DESTDIR)$(PREFIX)/share/themes
-	cp -a $(THEMES) $(DESTDIR)$(PREFIX)/share/themes/
-	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome-shell/theme
-	$(foreach theme, $(THEMES), ln -sf $(PREFIX)/share/themes/$(theme)/gnome-shell $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/$(theme);)
-	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome-shell/modes
-	cp -a src/modes/* $(DESTDIR)$(PREFIX)/share/gnome-shell/modes/
-	mkdir -p $(DESTDIR)$(PREFIX)/share/xsessions
-	cp -a src/sessions/xsessions/* $(DESTDIR)$(PREFIX)/share/xsessions/
-	mkdir -p $(DESTDIR)$(PREFIX)/share/wayland-sessions
-	cp -a src/sessions/wayland-sessions/* $(DESTDIR)$(PREFIX)/share/wayland-sessions/
-	ln -sf $(PREFIX)/share/themes/Flat-Remix/gnome-shell/assets/ $(DESTDIR)$(PREFIX)/share/gnome-shell/theme/assets
-
-	# skip replacing gnome's theme when packaging
-	$(if $(DESTDIR),, $(MAKE) Flat-Remix)
+ifeq ($(DESTDIR),)
+	mkdir -p $(PREFIX)/share/themes
+	cp -a $(THEMES) $(PREFIX)/share/themes/
+	mkdir -p $(PREFIX)/share/gnome-shell/theme
+	$(foreach theme, $(THEMES), ln -sf $(PREFIX)/share/themes/$(theme)/gnome-shell $(PREFIX)/share/gnome-shell/theme/$(theme);)
+	mkdir -p $(PREFIX)/share/gnome-shell/modes
+	cp -a src/modes/* $(PREFIX)/share/gnome-shell/modes/
+	mkdir -p $(PREFIX)/share/xsessions
+	cp -a src/sessions/xsessions/* $(PREFIX)/share/xsessions/
+	mkdir -p $(PREFIX)/share/wayland-sessions
+	cp -a src/sessions/wayland-sessions/* $(PREFIX)/share/wayland-sessions/
+	ln -sf $(PREFIX)/share/themes/Flat-Remix/gnome-shell/assets/ $(PREFIX)/share/gnome-shell/theme/assets
+	$(MAKE) Flat-Remix
+else
+	mkdir -p $(DESTDIR)$(PREFIX)/share/$(PKGNAME)
+	cp -a Makefile $(THEMES) src $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
+endif
 
 $(THEMES):
 ifeq ($(IS_UBUNTU), true)
