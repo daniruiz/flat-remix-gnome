@@ -7,7 +7,7 @@ Homepage: https://drasite.com/flat-remix-gnome
 
 Package: flat-remix-gnome
 Architecture: any
-Depends: gnome-shell, libglib2.0-dev-bin, imagemagick
+Depends: gnome-shell, make, libglib2.0-dev-bin, imagemagick
 Description: Flat Remix gnome-shell theme
  Flat Remix GNOME theme is a pretty simple shell theme inspired on material design following a modern design using "flat" colors with high contrasts and sharp borders.
  .
