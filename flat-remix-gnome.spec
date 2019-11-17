@@ -33,38 +33,17 @@ Variants:
 
 
 %post
-mv -n /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.old
-ln -sf /usr/share/themes/Flat-Remix/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource
+cd /usr/share/flat-remix-gnome
+make
+make install
 
 
-%postun
-mv /usr/share/gnome-shell/gnome-shell-theme.gresource.old /usr/share/gnome-shell/gnome-shell-theme.gresource
+%preun
+cd /usr/share/flat-remix-gnome
+make uninstall
 
 %files
 %defattr(-,root,root)
 %doc LICENSE README.md
-%{_datadir}/themes/Flat-Remix-Miami-Dark
-%{_datadir}/themes/Flat-Remix-Darkest
-%{_datadir}/themes/Flat-Remix-Dark
-%{_datadir}/themes/Flat-Remix-Miami
-%{_datadir}/themes/Flat-Remix
-%{_datadir}/gnome-shell/theme/Flat-Remix-Miami-Dark
-%{_datadir}/gnome-shell/theme/Flat-Remix-Darkest
-%{_datadir}/gnome-shell/theme/Flat-Remix-Dark
-%{_datadir}/gnome-shell/theme/Flat-Remix-Miami
-%{_datadir}/gnome-shell/theme/Flat-Remix
-%{_datadir}/themes/Flat-Remix-Miami-Dark-fullPanel
-%{_datadir}/themes/Flat-Remix-Darkest-fullPanel
-%{_datadir}/themes/Flat-Remix-Dark-fullPanel
-%{_datadir}/themes/Flat-Remix-Miami-fullPanel
-%{_datadir}/themes/Flat-Remix-fullPanel
-%{_datadir}/gnome-shell/theme/Flat-Remix-Miami-Dark-fullPanel
-%{_datadir}/gnome-shell/theme/Flat-Remix-Darkest-fullPanel
-%{_datadir}/gnome-shell/theme/Flat-Remix-Dark-fullPanel
-%{_datadir}/gnome-shell/theme/Flat-Remix-Miami-fullPanel
-%{_datadir}/gnome-shell/theme/Flat-Remix-fullPanel
-%{_datadir}/gnome-shell/theme/assets
-%{_datadir}/gnome-shell/modes
-%{_datadir}/xsessions
-%{_datadir}/wayland-sessions
+%{_datadir}/flat-remix-gnome
 
