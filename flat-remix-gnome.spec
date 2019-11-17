@@ -40,8 +40,11 @@ make install
 
 
 %preun
-cd /usr/share/flat-remix-gnome
-make uninstall
+if [ $1 == 0 ]
+then
+	cd /usr/share/flat-remix-gnome
+	make uninstall
+fi
 
 %files
 %defattr(-,root,root)
