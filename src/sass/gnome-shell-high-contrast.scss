@@ -1,18 +1,17 @@
-@import "Flat-Remix-Darkest";
+$variant: 'dark';
+
+@import "gnome-shell-sass/upstream/gnome-shell-sass/_high-contrast-colors"; //use gtk colors
+@import "gnome-shell-sass/upstream/gnome-shell-sass/_drawing";
+@import "gnome-shell-sass/upstream/gnome-shell-sass/_common";
+@import "gnome-shell-sass/upstream/gnome-shell-sass/_widgets";
 
 //force symbolic icons
 stage {
-  -st-icon-style: symbolic;
+	-st-icon-style: symbolic;
 }
 
-.toggle-switch {
-    background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
-    &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
-}
-
-@each $v in us, intl {
-  .toggle-switch-#{$v} {
-    background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
-    &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
-  }
+.toggle-switch { width: 48px; }
+.toggle-switch-us, .toggle-switch-intl {
+	background-image: url("resource:///org/gnome/shell/theme/toggle-off-hc.svg");
+	&:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-hc.svg"); }
 }

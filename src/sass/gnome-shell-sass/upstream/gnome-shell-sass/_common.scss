@@ -1,0 +1,177 @@
+//This is the RIGHT PLACE to edit the stylesheet
+
+//let's start by telling people not to edit the generated CSS:
+$cakeisalie: "This stylesheet is generated, DO NOT EDIT";
+/* #{$cakeisalie} */
+
+/* Copyright 2009, 2015 Red Hat, Inc.
+ *
+ * Portions adapted from Mx's data/style/default.css
+ *   Copyright 2009 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+/* Global Values */
+
+// padding, margin and spacing
+$base_padding: 6px;
+$base_margin: 4px;
+$base_spacing: 6px;
+
+// border radii
+$base_border_radius: 5px;
+
+$modal_radius:$base_border_radius * 2;
+
+// non-standard colors
+$bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
+// $bubble_borders_color: if($variant == 'light', rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+
+// hover
+$hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 5%));
+$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 5%));
+$hover_borders_color: lighten($borders_color,if($variant=='light', 5%, 3%));
+
+// active
+$active_bg_color: if($variant == 'light', darken($bg_color, 7%), darken($bg_color, 9%));
+$active_fg_color: darken($fg_color,if($variant=='light', 5%, 3%));
+$active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
+
+// fonts
+$base_font_size: 11;
+$text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
+
+// icons
+$base_icon_size: 1.09em;
+// $base_icon_size: 16px;
+
+// Stage
+stage {
+  @include fontsize($base_font_size);
+  color: $fg_color;
+}
+
+/* Common Stylings */
+
+// Text
+%status_text {
+  font-size: 2em;
+  font-weight: bold;
+  color: $osd_fg_color;
+}
+
+// osd panels
+%osd_panel {
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
+  border: 1px solid $osd_outer_borders_color;
+  border-radius: $base_border_radius * 2 + 4px;
+  padding: $base_padding * 2;
+}
+
+// Overview panels 
+// for the dash and workspace switcher
+%overview_panel {
+  color: $osd_fg_color;
+  background-color: transparentize($osd_bg_color, 0.2);
+  border: 1px solid $osd_outer_borders_color;
+}
+
+// icon tiles
+%icon_tile {
+  border-radius: $base_border_radius + 4px;
+  padding: $base_padding;
+  border: 2px solid transparent;
+  transition-duration: 100ms;
+  text-align: center;
+}
+
+// dialogs
+%bubble_panel {
+  color: $fg_color;
+  background-color: $bg_color;
+  border: 1px solid if($variant=='light', rgba(0,0,0, 0.6), $borders_color);
+}
+
+// button styling
+%button {
+  border-radius: $base_border_radius;
+  border-style: solid;
+  border-width: 1px;
+  min-height: 22px;
+  padding: $base_padding * 0.5 $base_padding * 4;
+
+  @include button(normal);
+  &:focus { @include button(focus);}
+  &:hover { @include button(hover);}
+  &:insensitive { @include button(insensitive);}
+  &:active { @include button(active);}
+}
+
+// buttons in dialogs
+%bubble_button {
+  @include button(normal, $shadow: none);
+  padding: $base_padding * 2;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 0;
+  border-bottom-width: 0;
+
+  &:insensitive { @include button(insensitive, $shadow: none); }
+  &:hover { @include button(hover, $shadow: none); }
+  &:focus { @include button(focus, $shadow: none); }
+  &:active { @include button(active, $shadow: none); }
+
+  // radius is 2 pixel less to fit in bubble
+  &:first-child {
+    border-radius: 0 0 0 $modal_radius - 2px;
+  }
+
+  &:last-child {
+    border-right-width: 0;
+    border-radius: 0 0 $modal_radius - 2px 0;
+  }
+  
+  &:first-child:last-child {
+    border-radius: 0 0 $modal_radius - 2px $modal_radius - 2px;
+  }
+}
+
+
+// notification styling
+@mixin notification_bubble($flat: false) {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $base_border_radius + 2px;
+  margin: $base_margin;
+
+  @if $flat {
+    @include button(undecorated);
+  } @else {
+    @include button(normal);
+  }
+
+  &:focus {
+    @include button(focus);
+  }
+
+  &:hover {
+    @include button(hover);
+  }
+
+  &:active {
+    @include button(active);
+  }
+}

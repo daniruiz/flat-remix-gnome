@@ -1,0 +1,16 @@
+/* Switches */
+
+// these are equal to the size of the SVG assets
+$switch_height: 22px;
+$switch_width: 46px;
+
+.toggle-switch {
+  color: $fg_color;
+  height: $switch_height;
+  width: $switch_width;
+  background-size: contain;
+  background-image: if($variant == 'light', url("assets/toggle-off.svg"),url("assets/toggle-off-dark.svg"));
+  &:checked { 
+    background-image: if($variant == 'light', url("assets/toggle-on.svg"),url("assets/toggle-on-dark.svg"));
+  }
+}

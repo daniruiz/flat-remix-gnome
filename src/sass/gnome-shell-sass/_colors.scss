@@ -1,83 +1,78 @@
-$primary_color: #FFF;
-$secondary_color: #000;
-
-$bg_color: #FFF;
-$highlight_color: lighten(#383C4A, 40%);
-$fg_color: #60636E;
-$dark_font_color: darken($fg_color, 30%);
-$light_font_color: lighten($fg_color, 30%);
-$panel_font_color: #FFF;
-$panel_background_color: rgba(0, 0, 0, .2);
-$color1: #367BF0;
-$color2: #19A187;
+// When color definition differs for dark and light variant
+// it gets @if ed depending on $variant
 
 
-@if $variant == 'dark' {
-  $primary_color: #2F343F;
-  $secondary_color: #FFF;
+$base_color: if($variant == 'light', darken(#ffffff, 2%), #272a34);
+$text_color: if($variant == 'light', black, white);
+$bg_color: if($variant == 'light', #ffffff, darken(#272a34, 2%));
+$fg_color: if($variant == 'light', #5c616c, #eeeeec);
 
-  $bg_color: #383C4A;
-  $highlight_color: #FFF;
-  $fg_color: #FFF;
-  $dark_font_color: #FFF;
-  $light_font_color: darken($fg_color, 20%);
-  $panel_font_color: #FFF;
-  $panel_background_color: rgba(#383c4a, .3);
-  $color1: #367BF0;
-  $color2: #19A187;
-}
+$selected_fg_color: #ffffff;
+$selected_bg_color: saturate(#367bf0, 20%);
+$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
+$borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 10%));
+$alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 18%));
+$borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
+$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
+$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
+$top_hilight: $borders_edge;
+$dark_fill: mix($borders_color, $bg_color, 35%);
+$headerbar_color: if($variant == 'light', lighten($bg_color, 5%), darken($bg_color, 3%));
+$menu_color: if($variant == 'light', $base_color, mix($borders_color, $bg_color, 15%));
+$popover_bg_color: $menu_color;
+$popover_hover_color: lighten($menu_color, 5%);
 
-@if $variant == 'darkest' {
-  $primary_color: #000;
-  $secondary_color: #FFF;
+$scrollbar_bg_color: $base_color;
+$scrollbar_slider_color: mix($fg_color, $bg_color, if($variant=='light', 30%, 15%));
+$scrollbar_slider_hover_color: mix($fg_color, $bg_color, if($variant=='light', 35%, 20%));
+$scrollbar_slider_active_color: $selected_bg_color;
 
-  $bg_color: #050505;
-  $highlight_color: #FFF;
-  $fg_color: #FFF;
-  $dark_font_color: #FFF;
-  $light_font_color: darken($fg_color, 20%);
-  $panel_font_color: #FFF;
-  $panel_background_color: rgba($bg_color, .3);
-  $color1: #367BF0;
-  $color2: #19A187;
-}
+$warning_color: #fd7d00;
+$error_color: #bf1717;
+$success_color: if($variant == 'light', #3db47e, darken(#3db47e, 10%));
+$destructive_color: if($variant == 'light', #d41919, darken(#d41919, 10%));
 
-@if $variant == 'miami' {
-  $primary_color: #000;
-  $secondary_color: #FFF;
+$osd_fg_color: white;
+$osd_text_color: white;
+$osd_bg_color: if($variant == 'light', #272a34, darken(#272a34, 10%));
+$osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
+$osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
+$osd_borders_color: black;
+$osd_outer_borders_color: transparentize(white, 0.9);
 
-  $bg_color: #290351;
-  $highlight_color: #FFF;
-  $fg_color: #FFF;
-  $dark_font_color: #FFF;
-  $light_font_color: rgba(255, 255, 255, .7);
-  $panel_font_color: #FFF;
-  $panel_background_color: rgba($bg_color, .3);
-  $color1: #F0F;
-  $color2: #08ECBE;
-}
+$sidebar_bg_color: mix($bg_color, $base_color, 50%);
+$base_hover_color: transparentize($fg_color, 0.95);
 
-@if $variant == 'miami-dark' {
-  $primary_color: #000;
-  $secondary_color: #FFF;
+$tooltip_borders_color: $osd_outer_borders_color;
+$shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
 
-  $bg_color: #15022A;
-  $highlight_color: #FFF;
-  $fg_color: #FFF;
-  $dark_font_color: #FFF;
-  $light_font_color: rgba(255, 255, 255, .7);
-  $panel_font_color: #FFF;
-  $panel_background_color: rgba($bg_color, .3);
-  $color1: #FC17AF;
-  $color2: #5AEED8;
-}
+$drop_target_color: #0a814b;
 
-$warning_color: #FD7D00;
-$error_color: #D41919;
-$destructive_color: $error_color;
+//insensitive state derived colors
+$insensitive_fg_color: mix($fg_color, $bg_color, 50%);
+$insensitive_bg_color: mix($bg_color, $base_color, 60%);
+$insensitive_borders_color: $borders_color;
 
-$link_color: $color1;
-$selected_fg_color: #FFF;
-$osd_fg_color: $panel_font_color;
-$osd_hover_fg_color: if($variant == 'light', black, $osd_fg_color);
-$osd_bg_color: if($variant == 'light', rgba(white, .2), opacify(lighten($panel-background_color, 10%), .1));
+//colors for the backdrop state, derived from the main colors.
+$backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 1%));
+$backdrop_text_color: mix($text_color, $backdrop_base_color, 80%);
+$backdrop_bg_color: $bg_color;
+$backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 50%);
+$backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
+$backdrop_selected_fg_color: if($variant == 'light', $backdrop_base_color, $backdrop_text_color);
+$backdrop_borders_color: mix($borders_color, $bg_color, 80%);
+$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 35%);
+$backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
+
+$backdrop_scrollbar_bg_color: $scrollbar_bg_color;
+$backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40%);
+
+$backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
+
+//special cased widget colors
+$suggested_bg_color: $selected_bg_color;
+$suggested_border_color: $selected_borders_color;
+$progress_bg_color: $selected_bg_color;
+$progress_border_color: $selected_borders_color;
+$checkradio_bg_color: $selected_bg_color;
+$checkradio_fg_color: $selected_fg_color;
