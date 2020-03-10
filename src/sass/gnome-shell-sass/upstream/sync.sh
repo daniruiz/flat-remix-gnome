@@ -16,6 +16,12 @@ do
 	echo -e " $GREEN[ * ]$RESET Downloading file $file"
 	wget https://gitlab.gnome.org/GNOME/gnome-shell/raw/$VERSION/data/theme/$file -O $file --quiet
 	sed 's/resource:\/\/\/org\/gnome\/shell\/theme/assets/g' -i $file
+
+	if [ -f $file.patch ]
+	then
+		echo -e " $YELLOW[ ~ ]$RESET Apply patch"
+		patch $file $file.patch --quiet
+	fi
 done <<- EOF
 	pad-osd.css
 	gnome-shell-high-contrast.scss
