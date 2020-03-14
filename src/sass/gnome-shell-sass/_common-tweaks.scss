@@ -1,0 +1,51 @@
+$panel-corner-radius: 0;
+
+.tile-preview-left.on-primary { border-radius: $panel-corner-radius 0 0 0; }
+
+.tile-preview-right.on-primary { border-radius: 0 $panel-corner-radius 0 0; }
+
+.tile-preview-left.tile-preview-right.on-primary { border-radius: $panel-corner-radius $panel-corner-radius 0 0; }
+
+#panel {
+  $_panel_bg: transparentize($bg_color, .2);
+  $_panel_fg: if($variant=='light', black, white);
+  $_panel_text_shadow: transparentize(black, .5) 0 1px 2px;
+  background: $_panel_bg;
+  text-shadow: $_panel_text_shadow;
+
+  StIcon { icon-shadow: $_panel_text_shadow; }
+
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen,
+  &:overview {
+    background-color: transparent;
+    .panel-button {
+      &, &:hover, &:active, &:focus, &:overview, &:checked { color: white; }
+    }
+  }
+
+  .panel-corner { -panel-corner-radius: $panel-corner-radius; }
+
+  .panel-button {
+    color: $_panel_fg;
+
+    &:hover { color: $_panel_fg; }
+
+    &:active, &:focus, &:overview, &:checked { color: $_panel_fg; }
+  }
+
+  #panelActivities.panel-button {
+    margin-left: .4em;
+    StLabel {
+      background-image: if($variant == 'light', url("assets/view-grid-symbolic.svg"),
+                                                url("assets/view-grid-symbolic-dark.svg"));
+      background-size: contain;
+      width: 1.5em;
+      height: 1.5em;
+      color: transparent;
+    }
+
+    &:overview StLabel { background-image: url("assets/view-grid-symbolic-checked.svg"); }
+  }
+}

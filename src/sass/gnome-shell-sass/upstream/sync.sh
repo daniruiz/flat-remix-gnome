@@ -24,7 +24,6 @@ do
 	fi
 done <<- EOF
 	pad-osd.css
-	gnome-shell-high-contrast.scss
 	gnome-shell-sass/_common.scss
 	gnome-shell-sass/_drawing.scss
 	gnome-shell-sass/_widgets.scss

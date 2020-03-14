@@ -2112,3 +2112,40 @@ StScrollBar {
     background-color: rgba(35, 37, 46, 0.5); }
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(39, 119, 255, 0.5); }
+
+.tile-preview-left.on-primary {
+  border-radius: 0 0 0 0; }
+
+.tile-preview-right.on-primary {
+  border-radius: 0 0 0 0; }
+
+.tile-preview-left.tile-preview-right.on-primary {
+  border-radius: 0 0 0 0; }
+
+#panel {
+  background: rgba(35, 37, 46, 0.8);
+  text-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
+  #panel StIcon {
+    icon-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
+  #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
+    background-color: transparent; }
+    #panel.unlock-screen .panel-button, #panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:checked, #panel.lock-screen .panel-button, #panel.lock-screen .panel-button:hover, #panel.lock-screen .panel-button:active, #panel.lock-screen .panel-button:focus, #panel.lock-screen .panel-button:overview, #panel.lock-screen .panel-button:checked, #panel:overview .panel-button, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:focus, #panel:overview .panel-button:overview, #panel:overview .panel-button:checked {
+      color: white; }
+  #panel .panel-corner {
+    -panel-corner-radius: 0; }
+  #panel .panel-button {
+    color: white; }
+    #panel .panel-button:hover {
+      color: white; }
+    #panel .panel-button:active, #panel .panel-button:focus, #panel .panel-button:overview, #panel .panel-button:checked {
+      color: white; }
+  #panel #panelActivities.panel-button {
+    margin-left: .4em; }
+    #panel #panelActivities.panel-button StLabel {
+      background-image: url("assets/view-grid-symbolic-dark.svg");
+      background-size: contain;
+      width: 1.5em;
+      height: 1.5em;
+      color: transparent; }
+    #panel #panelActivities.panel-button:overview StLabel {
+      background-image: url("assets/view-grid-symbolic-checked.svg"); }
