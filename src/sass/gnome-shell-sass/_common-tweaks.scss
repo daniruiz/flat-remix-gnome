@@ -1,5 +1,7 @@
 $panel-corner-radius: 0;
 
+/* Check Boxes */
+
 .check-box {
     StBin {
        background-image: if($variant == 'light', url("assets/checkbox-off.svg"), 
@@ -14,11 +16,15 @@ $panel-corner-radius: 0;
                                                                       url("assets/checkbox-focused-dark.svg")); }
 }
 
+/* Tiled window previews */
+
 .tile-preview-left.on-primary { border-radius: $panel-corner-radius 0 0 0; }
 
 .tile-preview-right.on-primary { border-radius: 0 $panel-corner-radius 0 0; }
 
 .tile-preview-left.tile-preview-right.on-primary { border-radius: $panel-corner-radius $panel-corner-radius 0 0; }
+
+/* TOP BAR */
 
 #panel {
   $_panel_bg: transparentize($bg_color, .2);
@@ -63,3 +69,17 @@ $panel-corner-radius: 0;
     &:overview StLabel { background-image: url("assets/view-grid-symbolic-checked.svg"); }
   }
 }
+
+/* DASHBOARD */
+
+#dash {
+    color: $osd_fg_color;
+    background-color: transparent;
+    border: none;
+
+    .overview-icon StIcon {
+        color: white;
+        icon-shadow: transparentize(black, .3) 0 2px 6px;
+    }
+}
+

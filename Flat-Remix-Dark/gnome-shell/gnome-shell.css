@@ -2113,6 +2113,7 @@ StScrollBar {
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(39, 119, 255, 0.5); }
 
+/* Check Boxes */
 .check-box StBin {
   background-image: url("assets/checkbox-off-dark.svg"); }
 
@@ -2125,6 +2126,7 @@ StScrollBar {
 .check-box:focus:checked StBin {
   background-image: url("assets/checkbox-focused-dark.svg"); }
 
+/* Tiled window previews */
 .tile-preview-left.on-primary {
   border-radius: 0 0 0 0; }
 
@@ -2134,6 +2136,7 @@ StScrollBar {
 .tile-preview-left.tile-preview-right.on-primary {
   border-radius: 0 0 0 0; }
 
+/* TOP BAR */
 #panel {
   background: rgba(35, 37, 46, 0.8);
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
@@ -2161,3 +2164,12 @@ StScrollBar {
       color: transparent; }
     #panel #panelActivities.panel-button:overview StLabel {
       background-image: url("assets/view-grid-symbolic-checked.svg"); }
+
+/* DASHBOARD */
+#dash {
+  color: white;
+  background-color: transparent;
+  border: none; }
+  #dash .overview-icon StIcon {
+    color: white;
+    icon-shadow: rgba(0, 0, 0, 0.7) 0 2px 6px; }
