@@ -67,47 +67,57 @@ $panel-corner-radius: 0;
 /* TOP BAR */
 
 #panel {
-  $_panel_bg: transparentize($bg_color, .2);
-  $_panel_fg: if($variant=='light', black, white);
-  $_panel_text_shadow: transparentize(black, .5) 0 1px 2px;
-  background: $_panel_bg;
-  text-shadow: $_panel_text_shadow;
+    $_panel_bg: transparentize(black, .9);
+    $_panel_fg: white;
+    $_panel_text_shadow: transparentize(black, 0.5) 0 1px 2px;
+    font-size: .9em;
+    height: 2em;
+    background: $_panel_bg;
+    text-shadow: $_panel_text_shadow;
 
-  StIcon { icon-shadow: $_panel_text_shadow; }
+    StIcon { icon-shadow: $_panel_text_shadow; }
 
-  &.unlock-screen,
-  &.login-screen,
-  &.lock-screen,
-  &:overview {
-    background-color: transparent;
+    &.unlock-screen,
+    &.login-screen,
+    &.lock-screen,
+    &:overview {
+        background-color: transparent;
+        .panel-button {
+            &, &:hover, &:active, &:focus, &:overview, &:checked { color: white; }
+        }
+    }
+
+    .panel-corner { -panel-corner-radius: $panel-corner-radius; }
+
     .panel-button {
-      &, &:hover, &:active, &:focus, &:overview, &:checked { color: white; }
-    }
-  }
-
-  .panel-corner { -panel-corner-radius: $panel-corner-radius; }
-
-  .panel-button {
-    color: $_panel_fg;
-
-    &:hover { color: $_panel_fg; }
-
-    &:active, &:focus, &:overview, &:checked { color: $_panel_fg; }
-  }
-
-  #panelActivities.panel-button {
-    margin-left: .4em;
-    StLabel {
-      background-image: if($variant == 'light', url("assets/view-grid-symbolic.svg"),
-                                                url("assets/view-grid-symbolic-dark.svg"));
-      background-size: contain;
-      width: 1.5em;
-      height: 1.5em;
-      color: transparent;
+        color: $_panel_fg;
+        &:active, &:focus, &:overview, &:checked {
+            color: $_panel_fg;
+            box-shadow: inset 0 -2px 0px white;
+        }
     }
 
-    &:overview StLabel { background-image: url("assets/view-grid-symbolic-checked.svg"); }
-  }
+    .panel-button.clock-display {
+        // Move highlight from .panel-button to .clock
+        &:active, &:overview, &:focus, &:checked {
+            box-shadow: none;
+
+            .clock {
+              box-shadow: inset 0 -2px 0px white;
+          }
+        }
+    }
+
+    #panelActivities.panel-button {
+        margin-left: .4em;
+        StLabel {
+            background-image: url("assets/view-grid-symbolic.svg");
+            background-size: contain;
+            width: 1.5em;
+            height: 1.5em;
+            color: transparent;
+        }
+    }
 }
 
 /* DASHBOARD */

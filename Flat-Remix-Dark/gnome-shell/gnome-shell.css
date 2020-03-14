@@ -2169,7 +2169,9 @@ StScrollBar {
 
 /* TOP BAR */
 #panel {
-  background: rgba(35, 37, 46, 0.8);
+  font-size: .9em;
+  height: 2em;
+  background: rgba(0, 0, 0, 0.1);
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
   #panel StIcon {
     icon-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
@@ -2181,20 +2183,21 @@ StScrollBar {
     -panel-corner-radius: 0; }
   #panel .panel-button {
     color: white; }
-    #panel .panel-button:hover {
-      color: white; }
     #panel .panel-button:active, #panel .panel-button:focus, #panel .panel-button:overview, #panel .panel-button:checked {
-      color: white; }
+      color: white;
+      box-shadow: inset 0 -2px 0px white; }
+  #panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+    box-shadow: none; }
+    #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+      box-shadow: inset 0 -2px 0px white; }
   #panel #panelActivities.panel-button {
     margin-left: .4em; }
     #panel #panelActivities.panel-button StLabel {
-      background-image: url("assets/view-grid-symbolic-dark.svg");
+      background-image: url("assets/view-grid-symbolic.svg");
       background-size: contain;
       width: 1.5em;
       height: 1.5em;
       color: transparent; }
-    #panel #panelActivities.panel-button:overview StLabel {
-      background-image: url("assets/view-grid-symbolic-checked.svg"); }
 
 /* DASHBOARD */
 #dash {
