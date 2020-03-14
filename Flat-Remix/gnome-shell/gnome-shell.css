@@ -2122,6 +2122,20 @@ StScrollBar {
 .check-box:focus:checked StBin {
   background-image: url("assets/checkbox-focused.svg"); }
 
+/* Popovers/Menus */
+.popup-menu-boxpointer, .candidate-popup-boxpointer,
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 6px;
+  -arrow-background-color: #ffffff;
+  -arrow-border-width: 12px;
+  -arrow-border-color: transparent;
+  -arrow-base: 0;
+  -arrow-rise: 0;
+  -arrow-box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 4px -6px black;
+  border-radius: 9px; }
+
 /* Tiled window previews */
 .tile-preview-left.on-primary {
   border-radius: 0 0 0 0; }

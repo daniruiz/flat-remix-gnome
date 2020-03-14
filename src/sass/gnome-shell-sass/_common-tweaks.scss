@@ -16,6 +16,23 @@ $panel-corner-radius: 0;
                                                                       url("assets/checkbox-focused-dark.svg")); }
 }
 
+/* Popovers/Menus */
+
+.popup-menu-boxpointer,
+.candidate-popup-boxpointer {
+    -arrow-border-radius: 6px;
+    -arrow-background-color: $bg_color;
+    -arrow-border-width: 12px;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: none;
+    //margin: if($full-panel == 'true', .2em, .45em);
+    background-color: transparentize($bg_color, .6);
+    box-shadow: 0 2px 4px -6px black;
+    border-radius: 9px;
+}
+
 /* Tiled window previews */
 
 .tile-preview-left.on-primary { border-radius: $panel-corner-radius 0 0 0; }
