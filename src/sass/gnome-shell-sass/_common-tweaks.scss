@@ -81,6 +81,8 @@ $panel-corner-radius: 0;
     background: $_panel_bg;
     text-shadow: $_panel_text_shadow;
 
+    .popup-menu-arrow { width: 0; }
+
     StIcon { icon-shadow: $_panel_text_shadow; }
 
     &.unlock-screen,

@@ -2178,6 +2178,8 @@ StScrollBar {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
+  #panel .popup-menu-arrow {
+    width: 0; }
   #panel StIcon {
     icon-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
