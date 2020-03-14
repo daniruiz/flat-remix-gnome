@@ -2132,6 +2132,7 @@ StScrollBar {
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
+  margin: 0.45em;
   background-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 2px 4px -6px black;
   border-radius: 9px; }

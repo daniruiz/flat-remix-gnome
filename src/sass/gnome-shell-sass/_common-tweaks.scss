@@ -27,7 +27,7 @@ $panel-corner-radius: 0;
     -arrow-base: 0;
     -arrow-rise: 0;
     -arrow-box-shadow: none;
-    //margin: if($full-panel == 'true', .2em, .45em);
+    margin: if($full-panel == 'true', .2em, .45em);
     background-color: transparentize($bg_color, .6);
     box-shadow: 0 2px 4px -6px black;
     border-radius: 9px;
