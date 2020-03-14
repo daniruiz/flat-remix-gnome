@@ -2109,6 +2109,18 @@ StScrollBar {
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(39, 119, 255, 0.5); }
 
+.check-box StBin {
+  background-image: url("assets/checkbox-off.svg"); }
+
+.check-box:focus StBin {
+  background-image: url("assets/checkbox-off-focused.svg"); }
+
+.check-box:checked StBin {
+  background-image: url("assets/checkbox.svg"); }
+
+.check-box:focus:checked StBin {
+  background-image: url("assets/checkbox-focused.svg"); }
+
 .tile-preview-left.on-primary {
   border-radius: 0 0 0 0; }
 

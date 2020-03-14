@@ -1,5 +1,19 @@
 $panel-corner-radius: 0;
 
+.check-box {
+    StBin {
+       background-image: if($variant == 'light', url("assets/checkbox-off.svg"), 
+                                                 url("assets/checkbox-off-dark.svg"));
+    }
+
+    &:focus StBin { background-image: if($variant == 'light', url("assets/checkbox-off-focused.svg"),
+                                                              url("assets/checkbox-off-focused-dark.svg")); }
+    &:checked StBin { background-image: if($variant == 'light', url("assets/checkbox.svg"),
+                                                                url("assets/checkbox-dark.svg")); }
+    &:focus:checked StBin { background-image: if($variant == 'light', url("assets/checkbox-focused.svg"),
+                                                                      url("assets/checkbox-focused-dark.svg")); }
+}
+
 .tile-preview-left.on-primary { border-radius: $panel-corner-radius 0 0 0; }
 
 .tile-preview-right.on-primary { border-radius: 0 $panel-corner-radius 0 0; }
