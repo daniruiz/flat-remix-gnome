@@ -33,6 +33,29 @@ $panel-corner-radius: 0;
     border-radius: 9px;
 }
 
+//close buttons
+.window-close {
+    background-image: url("assets/close-window.svg");
+    background-size: 32px;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    color: transparent;
+    height: 32px;
+    width: 32px;
+    -shell-close-overlap: 16px;
+
+    &:hover {
+        background-image: url("assets/close-window-hover.svg");
+        background-color: transparent;
+    }
+
+    &:active {
+        background-image: url("assets/close-window-active.svg");
+        background-color: transparent;
+    }
+}
+
 /* Tiled window previews */
 
 .tile-preview-left.on-primary { border-radius: $panel-corner-radius 0 0 0; }

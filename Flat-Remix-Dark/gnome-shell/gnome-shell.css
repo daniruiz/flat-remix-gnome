@@ -2140,6 +2140,23 @@ StScrollBar {
   box-shadow: 0 2px 4px -6px black;
   border-radius: 9px; }
 
+.window-close {
+  background-image: url("assets/close-window.svg");
+  background-size: 32px;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: transparent;
+  height: 32px;
+  width: 32px;
+  -shell-close-overlap: 16px; }
+  .window-close:hover {
+    background-image: url("assets/close-window-hover.svg");
+    background-color: transparent; }
+  .window-close:active {
+    background-image: url("assets/close-window-active.svg");
+    background-color: transparent; }
+
 /* Tiled window previews */
 .tile-preview-left.on-primary {
   border-radius: 0 0 0 0; }
