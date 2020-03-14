@@ -66,12 +66,18 @@ $panel-corner-radius: 0;
 
 /* TOP BAR */
 
+#panelBox {
+    padding: if($full-panel == 'true', 0, .35em .9em);
+    background: transparent;
+}
+
 #panel {
-    $_panel_bg: transparentize(black, .9);
+    $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
     $_panel_text_shadow: transparentize(black, 0.5) 0 1px 2px;
     font-size: .9em;
     height: 2em;
+    border-radius: if($full-panel == 'true', 0, 6px);
     background: $_panel_bg;
     text-shadow: $_panel_text_shadow;
 

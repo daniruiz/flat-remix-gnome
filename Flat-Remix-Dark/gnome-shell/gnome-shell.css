@@ -2168,10 +2168,15 @@ StScrollBar {
   border-radius: 0 0 0 0; }
 
 /* TOP BAR */
+#panelBox {
+  padding: 0.35em 0.9em;
+  background: transparent; }
+
 #panel {
   font-size: .9em;
   height: 2em;
-  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
   #panel StIcon {
     icon-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px; }
