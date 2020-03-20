@@ -164,6 +164,7 @@ $panel-corner-radius: 0;
 }
 
 /* Date/Time Menu */
+
 .events-section-title { padding: 1em; }
 
 .datemenu-today-button {
@@ -176,6 +177,7 @@ $panel-corner-radius: 0;
 .calendar { @include notification_bubble($flat: true); }
 
 /* World clocks */
+
 .world-clocks-button {
     @include notification_bubble($flat: true);
 }
@@ -195,5 +197,31 @@ $panel-corner-radius: 0;
         color: white;
         icon-shadow: transparentize(black, .3) 0 2px 6px;
     }
+}
+
+/* Frequent | All toggle */
+
+// buttons
+.app-view-control {
+   margin: 0;
+   &, &:hover, &:checked {
+       color: white;
+       background-color: transparentize(white, .8);
+       font-weight: bold;
+       border: 0;
+       box-shadow: none;
+       text-shadow: none;
+   }
+
+    &:hover { background: transparentize(white, .6); }
+
+    &:active, &:checked {
+        background: white;
+        color: black;
+    }
+
+    &:first-child { border-radius: $base_border_radius 0 0 $base_border_radius; }
+ 
+    &:last-child { border-radius: 0 $base_border_radius $base_border_radius 0; }
 }
 

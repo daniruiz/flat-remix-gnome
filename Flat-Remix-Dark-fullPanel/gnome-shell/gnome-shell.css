@@ -2334,3 +2334,23 @@ StScrollBar {
   #dash .overview-icon StIcon {
     color: white;
     icon-shadow: rgba(0, 0, 0, 0.7) 0 2px 6px; }
+
+/* Frequent | All toggle */
+.app-view-control {
+  margin: 0; }
+  .app-view-control, .app-view-control:hover, .app-view-control:checked {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none; }
+  .app-view-control:hover {
+    background: rgba(255, 255, 255, 0.4); }
+  .app-view-control:active, .app-view-control:checked {
+    background: white;
+    color: black; }
+  .app-view-control:first-child {
+    border-radius: 5px 0 0 5px; }
+  .app-view-control:last-child {
+    border-radius: 0 5px 5px 0; }
