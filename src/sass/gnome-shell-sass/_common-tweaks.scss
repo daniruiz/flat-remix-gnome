@@ -175,6 +175,15 @@ $panel-corner-radius: 0;
 
 .calendar { @include notification_bubble($flat: true); }
 
+/* World clocks */
+.world-clocks-button {
+    @include notification_bubble($flat: true);
+}
+
+.weather-button {
+    @include notification_bubble($flat: true);
+}
+
 /* DASHBOARD */
 
 #dash {
