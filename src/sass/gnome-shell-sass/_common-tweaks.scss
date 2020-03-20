@@ -163,6 +163,11 @@ $panel-corner-radius: 0;
     }
 }
 
+/* Date/Time Menu */
+.calendar {
+    @include notification_bubble($flat: true);
+}
+
 /* DASHBOARD */
 
 #dash {
