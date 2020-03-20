@@ -2129,6 +2129,14 @@ StScrollBar {
   box-shadow: 0 2px 4px -6px black;
   border-radius: 9px; }
 
+.popup-menu-item {
+  border-radius: 5px; }
+  .popup-menu-item:checked {
+    background-color: transparent; }
+  .popup-menu-item.selected, .popup-menu-item:active {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #5c616c; }
+
 .popup-sub-menu {
   border: 1px solid rgba(217, 217, 217, 0.8);
   border-radius: 5px; }
