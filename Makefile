@@ -2,6 +2,10 @@ _get_version:
 	$(eval VERSION ?= $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
 	@echo $(VERSION)
 
+_get_tag:
+	$(eval TAG := $(shell git describe --abbrev=0 --tags))
+	@echo $(TAG)
+
 dist: _get_version
 	color_variants="- -Dark"; \
 	theme_variants="- -fullPanel"; \
@@ -22,3 +26,14 @@ dist: _get_version
 			fi; \
 		done; \
 	done; \
+
+generate_changelog: _get_version _get_tag
+	git checkout $(TAG) CHANGELOG
+	mv CHANGELOG CHANGELOG.old
+	echo [$(VERSION)] > CHANGELOG
+	git log --pretty=format:' * %s' $(TAG)..HEAD >> CHANGELOG
+	echo | cat - CHANGELOG.old >> CHANGELOG
+	rm CHANGELOG.old
+	$$EDITOR CHANGELOG
+	git commit CHANGELOG -m "Update CHANGELOG version $(VERSION)"
+	git push origin HEAD

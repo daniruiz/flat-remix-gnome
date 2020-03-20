@@ -1,3 +1,29 @@
+[20200320-beta]
+ * Improve app-view-control buttons
+ * Flatten all calendar buttons
+ * Change calendar date-label font weight
+ * Increase calendar events-section-title padding
+ * Flatten calendar
+ * Remove slider handle
+ * Improve popup-menu-items
+ * Use $base_border_radius instead of hardcoded px
+ * Round out popup sub-menu
+
+[20200314-beta]
+ * Align right popover with panel end
+ * Add missing css files
+ * Remove panel button arrows
+ * Remove gnome-shell-high-contrast.scss
+ * Add fullPanel variant
+ * Change panel background to transparent black for all variants
+ * Modify overview window close buttons
+ * Add shadow to popovers
+ * Make dash transparent
+ * Configure checkbox light/dark variants
+ * Update panel design using Kali themes as reference
+ * Reduce font size
+ * Initial setup for gnome 3.36
+
 [20191116]
  * Configure Makefile and package scripts to auto generate login background on install
 
