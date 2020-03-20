@@ -20,7 +20,7 @@ $panel-corner-radius: 0;
 
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-    -arrow-border-radius: 6px;
+    -arrow-border-radius: $base_border_radius + 1px;
     -arrow-background-color: $bg_color;
     -arrow-border-width: 12px;
     -arrow-border-color: transparent;
@@ -30,7 +30,7 @@ $panel-corner-radius: 0;
     margin: if($full-panel == 'true', .2em, .45em);
     background-color: transparentize($bg_color, .6);
     box-shadow: 0 2px 4px -6px black;
-    border-radius: 9px;
+    border-radius: $base_border_radius + 4px;
 }
 
 .popup-sub-menu {
@@ -83,7 +83,7 @@ $panel-corner-radius: 0;
     $_panel_text_shadow: transparentize(black, 0.5) 0 1px 2px;
     font-size: .9em;
     height: 2em;
-    border-radius: if($full-panel == 'true', 0, 6px);
+    border-radius: if($full-panel == 'true', 0, $base_border_radius + 1px);
     background: $_panel_bg;
     text-shadow: $_panel_text_shadow;
 
