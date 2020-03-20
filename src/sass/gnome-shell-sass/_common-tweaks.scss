@@ -1,5 +1,20 @@
 $panel-corner-radius: 0;
 
+/* Slider */
+
+.slider {
+    height: 1.1em;
+    -barlevel-height: .35em;
+    -barlevel-background-color: $borders_color;
+    -barlevel-border-color: $selected_bg_color;
+    -barlevel-active-background-color: $selected_bg_color;
+    -barlevel-overdrive-color: $destructive_color;
+    -barlevel-overdrive-separator-width: 0.1em;
+    -barlevel-border-width: 0;
+
+    -slider-handle-radius: 0;
+}
+
 /* Check Boxes */
 
 .check-box {

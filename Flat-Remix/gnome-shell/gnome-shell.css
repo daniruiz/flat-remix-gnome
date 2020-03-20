@@ -2101,6 +2101,18 @@ StScrollBar {
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(39, 119, 255, 0.5); }
 
+/* Slider */
+.slider {
+  height: 1.1em;
+  -barlevel-height: .35em;
+  -barlevel-background-color: #d9d9d9;
+  -barlevel-border-color: #2777ff;
+  -barlevel-active-background-color: #2777ff;
+  -barlevel-overdrive-color: #d41919;
+  -barlevel-overdrive-separator-width: 0.1em;
+  -barlevel-border-width: 0;
+  -slider-handle-radius: 0; }
+
 /* Check Boxes */
 .check-box StBin {
   background-image: url("assets/checkbox-off.svg"); }
