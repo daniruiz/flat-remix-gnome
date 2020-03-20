@@ -2225,6 +2225,9 @@ StScrollBar {
       color: transparent; }
 
 /* Date/Time Menu */
+.events-section-title {
+  padding: 1em; }
+
 .calendar {
   border-width: 1px;
   border-style: solid;
