@@ -33,7 +33,13 @@ $panel-corner-radius: 0;
     border-radius: 9px;
 }
 
-//close buttons
+.popup-sub-menu {
+  border: 1px solid transparentize($borders_color, 0.2);
+  border-radius: $base_border_radius;
+}
+
+/* Window Picker */
+
 .window-close {
     background-image: url("assets/close-window.svg");
     background-size: 32px;
