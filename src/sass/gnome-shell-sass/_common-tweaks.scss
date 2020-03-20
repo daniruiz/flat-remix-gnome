@@ -164,8 +164,13 @@ $panel-corner-radius: 0;
 }
 
 /* Date/Time Menu */
-.events-section-title {
-    padding: 1em;
+.events-section-title { padding: 1em; }
+
+.datemenu-today-button {
+    .date-label {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
 }
 
 .calendar { @include notification_bubble($flat: true); }

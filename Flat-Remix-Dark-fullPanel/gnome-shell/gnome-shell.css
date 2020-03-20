@@ -2228,6 +2228,10 @@ StScrollBar {
 .events-section-title {
   padding: 1em; }
 
+.datemenu-today-button .date-label {
+  font-size: 1.5em;
+  font-weight: 300; }
+
 .calendar {
   border-width: 1px;
   border-style: solid;
