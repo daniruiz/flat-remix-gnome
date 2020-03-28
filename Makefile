@@ -10,11 +10,14 @@ install:
 	cp -r share/ $(PREFIX)/
 	mkdir -p $(PREFIX)/share/gnome-shell/theme/
 	ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
+	mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
+	cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 
 uninstall:
 	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/themes/$(theme))
 	-rm -f $(foreach file, $(shell find share/ -type f), $(PREFIX)/$(file))
 	-rm -f $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
+	-mv $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 
 _get_version:
 	$(eval VERSION ?= $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
