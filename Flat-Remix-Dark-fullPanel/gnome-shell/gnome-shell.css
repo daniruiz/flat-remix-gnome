@@ -2326,6 +2326,23 @@ StScrollBar {
     icon-shadow: none;
     box-shadow: none; }
 
+/* Search */
+.search-section .search-section-separator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1); }
+
+.search-section:last-child .search-section-separator {
+  background-color: transparent; }
+
+.search-section-content {
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0; }
+
+.search-provider-icon .list-search-provider-content .list-search-provider-details {
+  font-weight: bold; }
+
 /* DASHBOARD */
 #dash {
   color: white;

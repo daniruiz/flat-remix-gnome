@@ -186,6 +186,35 @@ $panel-corner-radius: 0;
     @include notification_bubble($flat: true);
 }
 
+
+/* Search */
+
+// search results
+.search-section {
+  // separator
+  .search-section-separator {
+    height: 1px;
+    background-color: $osd_outer_borders_color;
+  }
+
+  &:last-child .search-section-separator { background-color: transparent; }
+}
+
+// content
+.search-section-content {
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0;
+}
+
+// search result provider
+.search-provider-icon {
+  .list-search-provider-content {
+    .list-search-provider-details { font-weight: bold; }
+  }
+}
+
 /* DASHBOARD */
 
 #dash {
