@@ -1,4 +1,12 @@
-[20200320-beta]
+[20200329]
+ * Update login screen design
+ * Add login background
+ * Add gresource file installation to makefile
+ * Add gresource file
+ * Makefile add install and uninstall rules
+ * Remove search results box like background
+
+ [20200320]
  * Improve app-view-control buttons
  * Flatten all calendar buttons
  * Change calendar date-label font weight
@@ -9,7 +17,7 @@
  * Use $base_border_radius instead of hardcoded px
  * Round out popup sub-menu
 
-[20200314-beta]
+[20200314]
  * Align right popover with panel end
  * Add missing css files
  * Remove panel button arrows
