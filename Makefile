@@ -4,6 +4,11 @@ THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
 BASE_THEME ?= Flat-Remix
 PKGNAME = flat-remix-gnomeMAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 
+all:
+
+build:
+	$(MAKE) -C src build
+
 install:
 	mkdir -p $(PREFIX)/share/themes/
 	cp -r $(THEMES) $(PREFIX)/share/themes/
@@ -59,4 +64,4 @@ generate_changelog: _get_version _get_tag
 	git commit CHANGELOG -m "Update CHANGELOG version $(VERSION)"
 	git push origin HEAD
 
-.PHONY: install _get_version _get_tag dist generate_changelog
+.PHONY: all build install uninstall _get_version _get_tag dist generate_changelog

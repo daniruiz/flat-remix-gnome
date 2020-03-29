@@ -1981,7 +1981,6 @@ StScrollBar {
 
 .login-dialog-user-list {
   spacing: 12px;
-  font-size: 11pt;
   width: 23em; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
     background-color: #2777ff;
@@ -2373,3 +2372,23 @@ StScrollBar {
 #lockDialogGroup {
   background: url("assets/login-background");
   background-size: cover; }
+
+/* Login Dialog */
+.login-dialog {
+  font-size: 11pt; }
+  .login-dialog StEntry {
+    background: rgba(56, 60, 74, 0.3);
+    color: white; }
+    .login-dialog StEntry StLabel.hint-text {
+      margin-left: 2px;
+      color: rgba(92, 97, 108, 0.7); }
+  .login-dialog .cancel-button,
+  .login-dialog .switch-user-button,
+  .login-dialog .login-dialog-session-list-button {
+    border-color: transparent;
+    background-color: rgba(56, 60, 74, 0.3);
+    color: white; }
+    .login-dialog .cancel-button StIcon,
+    .login-dialog .switch-user-button StIcon,
+    .login-dialog .login-dialog-session-list-button StIcon {
+      icon-size: 1.09em; }
