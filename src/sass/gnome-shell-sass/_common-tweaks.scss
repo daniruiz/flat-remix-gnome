@@ -254,3 +254,14 @@ $panel-corner-radius: 0;
     &:last-child { border-radius: 0 $base_border_radius $base_border_radius 0; }
 }
 
+/* Screen Shield */
+
+#lockDialogGroup {
+    background: url("assets/login-background");
+    background-size: cover;
+}
+
+/* Login Dialog */
+
+.login-dialog-user-list { font-size: 11pt; }
+

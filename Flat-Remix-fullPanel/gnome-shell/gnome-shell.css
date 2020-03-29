@@ -1981,6 +1981,7 @@ StScrollBar {
 
 .login-dialog-user-list {
   spacing: 12px;
+  font-size: 11pt;
   width: 23em; }
   .login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
     background-color: #2777ff;
@@ -2367,3 +2368,8 @@ StScrollBar {
     border-radius: 5px 0 0 5px; }
   .app-view-control:last-child {
     border-radius: 0 5px 5px 0; }
+
+/* Screen Shield */
+#lockDialogGroup {
+  background: url("assets/login-background");
+  background-size: cover; }
