@@ -35,9 +35,9 @@ $app_grid_fg_color: #fff;
 }
 
 /* App Folders */
-.app-folder {
-  .overview-icon {
-  }
+.app-well-app.app-folder {
+  background-color: transparentize($osd_bg_color, 0.8);
+  border-radius: $base_border_radius + 4px; // same as %icon_tile
 }
 
 // expanded folder
@@ -73,10 +73,6 @@ $app_grid_fg_color: #fff;
       & > StIcon { icon-size: 16px }
     }
   }
-
-  & StButton#vhandle,
-  & StButton#vhandle:hover,
-  & StButton#vhandle:active { background-color: transparent; }
 }
 .app-folder-dialog-container {
   padding: 12px;
