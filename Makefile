@@ -1,10 +1,27 @@
-
+PKGNAME = flat-remix-gnome
+MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
 BASE_THEME ?= Flat-Remix
-PKGNAME = flat-remix-gnomeMAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
+BLUR ?= 6
 
-all:
+
+all: _get_login_background
+	if [ $(BLUR) -le 1 ] ;\
+	then \
+		cp -f "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
+	else \
+		convert -scale 10% -gaussian-blur 0x$(BLUR) -resize 1000% "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
+	fi
+	make -C src/gresource build
+
+_get_login_background:
+	$(eval LOGIN_BACKGROUND ?= \
+		$(shell printf $$(\
+			HOME=$$(eval echo ~$$SUDO_USER) \
+			dconf read /org/gnome/desktop/background/picture-uri | \
+			sed -e 's/file:\/\///' -e 's/%/\\x/g' -e s/\'//g)))
+	@echo "$(LOGIN_BACKGROUND)"
 
 build:
 	$(MAKE) -C src build
@@ -14,7 +31,7 @@ install:
 	cp -r $(THEMES) $(PREFIX)/share/themes/
 	cp -r share/ $(PREFIX)/
 	mkdir -p $(PREFIX)/share/gnome-shell/theme/
-	ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
+	@ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
 	mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
 	cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 
@@ -64,4 +81,7 @@ generate_changelog: _get_version _get_tag
 	git commit CHANGELOG -m "Update CHANGELOG version $(VERSION)"
 	git push origin HEAD
 
-.PHONY: all build install uninstall _get_version _get_tag dist generate_changelog
+clean:
+	make -C src clean
+
+.PHONY: _get_login_background all build install uninstall _get_version _get_tag dist generate_changelog
