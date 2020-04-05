@@ -1,4 +1,4 @@
-SUBDIRS=sass gresource
+SUBDIRS=sass gresource assets
 
 .PHONY: build clean
 

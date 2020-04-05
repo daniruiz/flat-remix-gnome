@@ -2126,6 +2126,12 @@ StScrollBar {
 .check-box:focus:checked StBin {
   background-image: url("assets/checkbox-focused.svg"); }
 
+/* Switches */
+.toggle-switch {
+  background-image: url("assets/toggle-off.svg"); }
+  .toggle-switch:checked {
+    background-image: url("assets/toggle-on.svg"); }
+
 /* Popovers/Menus */
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {

@@ -2130,6 +2130,12 @@ StScrollBar {
 .check-box:focus:checked StBin {
   background-image: url("assets/checkbox-focused-dark.svg"); }
 
+/* Switches */
+.toggle-switch {
+  background-image: url("assets/toggle-off-dark.svg"); }
+  .toggle-switch:checked {
+    background-image: url("assets/toggle-on-dark.svg"); }
+
 /* Popovers/Menus */
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {

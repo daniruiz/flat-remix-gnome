@@ -1,5 +1,6 @@
 $variant: 'light';
 $full-panel: 'true';
+$asset_suffix: '';
 
 @import "gnome-shell-sass/_colors"; //use gtk colors
 @import "gnome-shell-sass/upstream/gnome-shell-sass/_drawing";
