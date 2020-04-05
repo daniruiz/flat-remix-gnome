@@ -37,7 +37,7 @@ ifeq ($(DESTDIR),)
 	cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 else
 	mkdir -p $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
-	cp -a Makefile $(THEMES) src $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
+	cp -a Makefile $(THEMES) src share $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
 endif
 
 uninstall:
