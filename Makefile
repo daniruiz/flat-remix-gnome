@@ -27,6 +27,7 @@ build:
 	$(MAKE) -C src build
 
 install:
+ifeq ($(DESTDIR),)
 	mkdir -p $(PREFIX)/share/themes/
 	cp -r $(THEMES) $(PREFIX)/share/themes/
 	cp -r share/ $(PREFIX)/
@@ -34,6 +35,10 @@ install:
 	@ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
 	mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
 	cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
+else
+	mkdir -p $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
+	cp -a Makefile $(THEMES) src $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
+endif
 
 uninstall:
 	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/themes/$(theme))
@@ -70,6 +75,22 @@ dist: _get_version
 		done; \
 	done; \
 
+release: _get_version
+	$(MAKE) generate_changelog VERSION=$(VERSION)
+	$(MAKE) aur_release VERSION=$(VERSION)
+	git tag -f $(VERSION)
+	git push origin --tags
+	$(MAKE) dist
+
+aur_release: _get_version _get_tag
+	cd aur; \
+	sed "s/$(TAG)/$(VERSION)/g" -i PKGBUILD .SRCINFO; \
+	git commit -a -m "$(VERSION)"; \
+	git push origin master;
+
+	git commit aur -m "Update aur version $(VERSION)"
+	git push origin master
+
 generate_changelog: _get_version _get_tag
 	git checkout $(TAG) CHANGELOG
 	mv CHANGELOG CHANGELOG.old
@@ -84,4 +105,4 @@ generate_changelog: _get_version _get_tag
 clean:
 	make -C src clean
 
-.PHONY: _get_login_background all build install uninstall _get_version _get_tag dist generate_changelog
+.PHONY: _get_login_background all build install uninstall _get_version _get_tag dist release aur_release generate_changelog
