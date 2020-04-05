@@ -55,7 +55,7 @@ _get_tag:
 	@echo $(TAG)
 
 dist: _get_version
-	color_variants="- -Dark"; \
+	color_variants="- -Dark -Darkest -Miami -Miami-Dark"; \
 	theme_variants="- -fullPanel"; \
 	count=1; \
 	for color_variant in $$color_variants; \
