@@ -2327,6 +2327,14 @@ StScrollBar {
     box-shadow: none; }
 
 /* Search */
+.search-entry {
+  width: 280px;
+  padding: 8px 9px;
+  border-radius: 999px; }
+  .search-entry:focus {
+    padding: 8px 9px;
+    border-width: 1px; }
+
 .search-section .search-section-separator {
   height: 1px;
   background-color: rgba(255, 255, 255, 0.1); }

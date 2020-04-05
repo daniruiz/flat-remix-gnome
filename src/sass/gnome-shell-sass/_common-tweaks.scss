@@ -189,6 +189,21 @@ $panel-corner-radius: 0;
 
 /* Search */
 
+// search entry
+$search_entry_width: 280px;
+$search_entry_height: 40px;
+
+.search-entry {
+  width: 280px;
+  padding: $base_padding+2 $base_padding+3;
+  border-radius: 999px;
+
+  &:focus {
+    padding: $base_padding+2 $base_padding+3;
+    border-width: 1px;
+  }
+}
+
 // search results
 .search-section {
   // separator
