@@ -98,6 +98,8 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 }
 
 /* Workspace Switcher */
+.ws-switcher-box { border: none }
+
 .workspace-switcher-container { padding: 7px; }
 
 // active workspace in the switcher

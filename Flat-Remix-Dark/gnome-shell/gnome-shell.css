@@ -2181,6 +2181,9 @@ StScrollBar {
   font-weight: bold; }
 
 /* Workspace Switcher */
+.ws-switcher-box {
+  border: none; }
+
 .workspace-switcher-container {
   padding: 7px; }
 
