@@ -199,40 +199,40 @@ $search_entry_width: 280px;
 $search_entry_height: 40px;
 
 .search-entry {
-  width: 280px;
-  padding: $base_padding+2 $base_padding+3;
-  border-radius: 999px;
-
-  &:focus {
+    width: 280px;
     padding: $base_padding+2 $base_padding+3;
-    border-width: 1px;
-  }
+    border-radius: 999px;
+
+    &:focus {
+      padding: $base_padding+2 $base_padding+3;
+      border-width: 1px;
+    }
 }
 
 // search results
 .search-section {
-  // separator
-  .search-section-separator {
-    height: 1px;
-    background-color: $osd_outer_borders_color;
-  }
+    // separator
+    .search-section-separator {
+        height: 1px;
+        background-color: $osd_outer_borders_color;
+    }
 
-  &:last-child .search-section-separator { background-color: transparent; }
+    &:last-child .search-section-separator { background-color: transparent; }
 }
 
 // content
 .search-section-content {
-  background-color: transparent;
-  border-radius: 0;
-  border: 0;
-  box-shadow: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0;
 }
 
 // search result provider
 .search-provider-icon {
-  .list-search-provider-content {
-    .list-search-provider-details { font-weight: bold; }
-  }
+    .list-search-provider-content {
+        .list-search-provider-details { font-weight: bold; }
+    }
 }
 
 /* DASHBOARD */
