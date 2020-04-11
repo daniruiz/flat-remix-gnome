@@ -2330,12 +2330,33 @@ StScrollBar {
 
 /* Search */
 .search-entry {
-  width: 280px;
-  padding: 8px 9px;
-  border-radius: 999px; }
-  .search-entry:focus {
-    padding: 8px 9px;
-    border-width: 1px; }
+  color: black;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
+  border-radius: 100px;
+  font-size: 1.1em;
+  transition-duration: 200ms; }
+  .search-entry StLabel.hint-text {
+    color: white; }
+  .search-entry, .search-entry:focus, .search-entry:hover {
+    width: 21em;
+    padding: .6em .8em;
+    border: none; }
+  .search-entry:focus, .search-entry:hover {
+    background-color: white;
+    color: black;
+    font-weight: normal;
+    text-shadow: none;
+    box-shadow: none; }
+    .search-entry:focus StLabel.hint-text, .search-entry:hover StLabel.hint-text {
+      color: black; }
+    .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
+      color: black;
+      icon-shadow: none; }
+  .search-entry .search-entry-icon {
+    color: white;
+    icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
 
 .search-section .search-section-separator {
   height: 1px;
