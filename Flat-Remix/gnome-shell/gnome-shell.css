@@ -2189,14 +2189,10 @@ StScrollBar {
     background-color: transparent; }
 
 /* Tiled window previews */
-.tile-preview-left.on-primary {
-  border-radius: 0 0 0 0; }
-
-.tile-preview-right.on-primary {
-  border-radius: 0 0 0 0; }
-
+.tile-preview-left.on-primary,
+.tile-preview-right.on-primary,
 .tile-preview-left.tile-preview-right.on-primary {
-  border-radius: 0 0 0 0; }
+  border-radius: 0; }
 
 /* TOP BAR */
 #panelBox {
