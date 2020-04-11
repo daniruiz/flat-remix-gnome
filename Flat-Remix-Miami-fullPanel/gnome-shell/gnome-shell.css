@@ -2404,6 +2404,10 @@ StScrollBar {
 .workspace-thumbnail-indicator {
   border: 5px solid white; }
 
+/* App Folders */
+.app-well-app.app-folder {
+  background-color: rgba(255, 255, 255, 0.2); }
+
 /* Frequent | All toggle */
 .app-view-control {
   margin: 0; }

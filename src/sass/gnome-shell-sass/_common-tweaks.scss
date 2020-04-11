@@ -300,6 +300,9 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 // selected indicator
 .workspace-thumbnail-indicator { border: 5px solid white; }
 
+/* App Folders */
+.app-well-app.app-folder { background-color: $overview_transparent_bg; }
+
 /* Frequent | All toggle */
 
 // buttons
