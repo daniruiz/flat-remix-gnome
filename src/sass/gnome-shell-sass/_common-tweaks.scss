@@ -129,7 +129,7 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 #panel {
     $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
-    $_panel_text_shadow: transparentize(black, 0.5) 0 1px 2px;
+    $_panel_text_shadow: transparentize(black, 0.1) 0 1px 2px;
     font-size: .9em;
     height: 2em;
     border-radius: if($full-panel == 'true', 0, $base_border_radius + 1px);
