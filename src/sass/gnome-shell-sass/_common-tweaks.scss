@@ -1,6 +1,14 @@
 $overview_transparent_bg: transparentize(white, .8);
 $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 
+%osd_panel {
+  background-color: $bg_color;
+  color: $fg_color;
+  padding: 7px;
+  border: 2px solid transparentize(black, .9);
+  box-shadow: 0 0 0 6px transparentize($bg_color, .6);
+}
+
 /* Slider */
 
 .slider {

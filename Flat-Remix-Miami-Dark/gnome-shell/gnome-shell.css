@@ -2105,6 +2105,13 @@ StScrollBar {
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(207, 6, 248, 0.5); }
 
+.osd-window, .resize-popup, .switcher-list, .workspace-switcher-container {
+  background-color: #0e0123;
+  color: #eeeeec;
+  padding: 7px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 6px rgba(14, 1, 35, 0.4); }
+
 /* Slider */
 .slider {
   height: 1.1em;
