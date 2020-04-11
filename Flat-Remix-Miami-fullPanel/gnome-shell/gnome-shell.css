@@ -2110,6 +2110,8 @@ StScrollBar {
   color: #eeeeec;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 6px rgba(29, 1, 62, 0.4); }
+  .osd-window StIcon, .resize-popup StIcon, .switcher-list StIcon, .workspace-switcher-container StIcon {
+    icon-shadow: rgba(0, 0, 0, 0.7) 0 1px 6px; }
 
 /* Slider */
 .slider {
