@@ -287,6 +287,15 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
     }
 }
 
+.show-apps {
+    &:focus,
+    &:checked {
+        .overview-icon {
+            background-color: $overview_transparent_bg;
+            color: black;
+        }
+    }
+}
 
 /* Workspace pager */
 // thumbnails in overview
