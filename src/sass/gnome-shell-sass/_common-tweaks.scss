@@ -1,5 +1,6 @@
 $panel-corner-radius: 0;
 $overview_transparent_bg: transparentize(white, .8);
+$dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 
 /* Slider */
 
@@ -75,6 +76,22 @@ $overview_transparent_bg: transparentize(white, .8);
 
 /* Window Picker */
 
+// Borders on window thumbnails
+.window-clone-border {
+    border: 5px solid white;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 2px white;
+}
+
+// Window titles
+.window-caption {
+    color: black;
+    background-color: white;
+    border: none;
+    box-shadow: $dialog_box_shadow;
+}
+
+// Close button
 .window-close {
     background-image: url("assets/close-window.svg");
     background-size: 32px;
