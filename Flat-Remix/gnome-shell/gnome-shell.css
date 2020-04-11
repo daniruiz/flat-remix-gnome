@@ -2104,7 +2104,6 @@ StScrollBar {
 .osd-window, .resize-popup, .switcher-list, .workspace-switcher-container {
   background-color: #ffffff;
   color: #5c616c;
-  padding: 7px;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4); }
 
@@ -2165,6 +2164,17 @@ StScrollBar {
 .popup-sub-menu {
   border: 1px solid rgba(217, 217, 217, 0.8);
   border-radius: 5px; }
+
+/* App Switcher */
+.switcher-list .item-box:outlined {
+  padding: 6px;
+  border: 3px solid #2777ff;
+  border-radius: 8px; }
+
+.switcher-list .item-box:selected {
+  background-color: #2777ff;
+  color: #ffffff;
+  font-weight: bold; }
 
 /* Window Picker */
 .window-clone-border {

@@ -4,7 +4,6 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 %osd_panel {
   background-color: $bg_color;
   color: $fg_color;
-  padding: 7px;
   border: 2px solid transparentize(black, .9);
   box-shadow: 0 0 0 6px transparentize($bg_color, .6);
 }
@@ -80,6 +79,23 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
     border-radius: $base_border_radius;
 }
 
+/* App Switcher */
+// switcher onscreen panel
+.switcher-list {
+    .item-box {
+        &:outlined {
+            padding: 6px;
+            border: 3px solid $selected_bg_color;
+            border-radius: 8px;
+        }
+
+        &:selected {
+            background-color: $selected_bg_color;
+            color: $selected_fg_color;
+            font-weight: bold;
+        }
+    }
+}
 
 /* Window Picker */
 
