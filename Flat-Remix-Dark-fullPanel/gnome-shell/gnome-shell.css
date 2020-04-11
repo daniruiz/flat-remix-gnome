@@ -2180,6 +2180,16 @@ StScrollBar {
   color: #ffffff;
   font-weight: bold; }
 
+/* Workspace Switcher */
+.workspace-switcher-container {
+  padding: 7px; }
+
+.ws-switcher-active-up,
+.ws-switcher-active-down,
+.ws-switcher-active-left,
+.ws-switcher-active-right {
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5); }
+
 /* Window Picker */
 .window-clone-border {
   border: 5px solid white;
