@@ -389,17 +389,19 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
 /* Login Dialog */
 
 .login-dialog {
-    $_login_button_bg: transparentize(#383c4a, .7);
+    $_login_button_bg: transparentize(#383c4a, .65);
 
     font-size: 11pt;
 
     StEntry {
         background: $_login_button_bg;
         color: white;
+        border: none;
+        box-shadow: none;
 
         StLabel.hint-text {
             margin-left: 2px;
-            color: transparentize($fg_color, 0.3);
+            color: transparentize(white, 0.3);
         }
     }
 
