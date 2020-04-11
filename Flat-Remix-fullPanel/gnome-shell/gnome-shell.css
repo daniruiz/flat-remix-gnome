@@ -2390,6 +2390,16 @@ StScrollBar {
     color: white;
     icon-shadow: rgba(0, 0, 0, 0.7) 0 2px 6px; }
 
+/* Workspace pager */
+.workspace-thumbnails {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none; }
+  .workspace-thumbnails .placeholder {
+    background-image: none; }
+
+.workspace-thumbnail-indicator {
+  border: 5px solid white; }
+
 /* Frequent | All toggle */
 .app-view-control {
   margin: 0; }

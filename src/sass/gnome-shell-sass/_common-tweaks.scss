@@ -287,6 +287,19 @@ $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
     }
 }
 
+
+/* Workspace pager */
+// thumbnails in overview
+.workspace-thumbnails {
+    background-color: transparentize(black, .8);
+    border: none;
+
+    .placeholder { background-image: none; }
+}
+
+// selected indicator
+.workspace-thumbnail-indicator { border: 5px solid white; }
+
 /* Frequent | All toggle */
 
 // buttons
