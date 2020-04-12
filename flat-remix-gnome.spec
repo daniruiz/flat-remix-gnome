@@ -8,7 +8,7 @@ Group: User Interface/Desktops
 Source: https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 BuildArch: noarch
-Requires: gnome-shell, make, glib2-devel, ImageMagick
+Requires: gnome-shell >= 3.36, make, glib2-devel, ImageMagick
 
 %description
 Flat Remix is a GNOME Shell theme inspired by material design. It is mostly 
