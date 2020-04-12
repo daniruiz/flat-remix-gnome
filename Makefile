@@ -78,6 +78,7 @@ dist: _get_version
 release: _get_version
 	$(MAKE) generate_changelog VERSION=$(VERSION)
 	$(MAKE) aur_release VERSION=$(VERSION)
+	$(MAKE) copr_release VERSION=$(VERSION)
 	git tag -f $(VERSION)
 	git push origin --tags
 	$(MAKE) dist
@@ -89,6 +90,11 @@ aur_release: _get_version _get_tag
 	git push origin master;
 
 	git commit aur -m "Update aur version $(VERSION)"
+	git push origin master
+
+copr_release: _get_version _get_tag
+	sed "s/$(TAG)/$(VERSION)/g" -i $(PKGNAME).spec
+	git commit $(PKGNAME).spec -m "Update $(PKGNAME).spec version $(VERSION)"
 	git push origin master
 
 generate_changelog: _get_version _get_tag
