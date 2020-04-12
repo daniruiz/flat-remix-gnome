@@ -7,20 +7,23 @@ BLUR ?= 6
 
 
 all: _get_login_background
-	if [ $(BLUR) -le 1 ] ;\
+	-if [ ! -z "$(LOGIN_BACKGROUND)" ] && [ "$(suffix $(LOGIN_BACKGROUND))" != ".xml" ] ; \
 	then \
-		cp -f "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
-	else \
-		convert -scale 10% -gaussian-blur 0x$(BLUR) -resize 1000% "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
+		if [ $(BLUR) -le 1 ] ;\
+		then \
+			cp -f "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
+		else \
+			convert -scale 10% -gaussian-blur 0x$(BLUR) -resize 1000% "$(LOGIN_BACKGROUND)" src/gresource/login-background ;\
+		fi; \
 	fi
 	make -C src/gresource build
 
 _get_login_background:
 	$(eval LOGIN_BACKGROUND ?= \
-		$(shell printf $$(\
+		$(shell printf "$$(\
 			HOME=$$(eval echo ~$$SUDO_USER) \
 			dconf read /org/gnome/desktop/background/picture-uri | \
-			sed -e 's/file:\/\///' -e 's/%/\\x/g' -e s/\'//g)))
+			sed -e 's/file:\/\///' -e 's/%/\\x/g' -e s/\'//g)"))
 	@echo "$(LOGIN_BACKGROUND)"
 
 build:
