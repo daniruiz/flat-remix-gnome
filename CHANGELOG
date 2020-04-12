@@ -1,3 +1,19 @@
+[20200412]
+ * Fix osd transparent level bar
+ * Remove login entry outline
+ * Add shadow to app switcher icons
+ * Remove workspace switcher indicator borders
+ * Reduce workspace-switcher padding and add shadow to active workspace indicator
+ * Improve app switcher
+ * Match osd design with pop-overs
+ * Increase panel text and icon shadow
+ * Change show-apps button background to transparent white
+ * Make app folders transparent white
+ * Improve workspace pager
+ * Remove panel-corner-radius variable
+ * Overview window-picker improvements
+ * Make search entry transparent
+
 [20200405]
  * Add Miami variants
  * Improve searchbar design
