@@ -2105,6 +2105,7 @@ StScrollBar {
   #unlockDialogNotifications StButton#vhandle:active, #unlockDialogNotifications StButton#hhandle:active {
     background-color: rgba(39, 119, 255, 0.5); }
 
+/* OSD */
 .osd-window, .resize-popup, .switcher-list, .workspace-switcher-container {
   background-color: #23252e;
   color: #eeeeec;
@@ -2112,6 +2113,10 @@ StScrollBar {
   box-shadow: 0 0 0 6px rgba(35, 37, 46, 0.4); }
   .osd-window StIcon, .resize-popup StIcon, .switcher-list StIcon, .workspace-switcher-container StIcon {
     icon-shadow: rgba(0, 0, 0, 0.7) 0 1px 6px; }
+
+.osd-window .level {
+  -barlevel-background-color: rgba(238, 238, 236, 0.1);
+  -barlevel-active-background-color: #eeeeec; }
 
 /* Slider */
 .slider {
