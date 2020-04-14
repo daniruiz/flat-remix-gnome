@@ -104,8 +104,7 @@ generate_changelog: _get_version _get_tag
 	git checkout $(TAG) CHANGELOG
 	mv CHANGELOG CHANGELOG.old
 	echo [$(VERSION)] > CHANGELOG
-	git log --pretty=format:' * %s' $(TAG)..HEAD >> CHANGELOG
-	echo | cat - CHANGELOG.old >> CHANGELOG
+	printf "%s\n\n" "$$(git log --pretty=format:' * %s' $(TAG)..HEAD)" >> CHANGELOG
 	rm CHANGELOG.old
 	$$EDITOR CHANGELOG
 	git commit CHANGELOG -m "Update CHANGELOG version $(VERSION)"
