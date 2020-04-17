@@ -2491,3 +2491,12 @@ StScrollBar {
     .login-dialog .switch-user-button StIcon,
     .login-dialog .login-dialog-session-list-button StIcon {
       icon-size: 1.09em; }
+
+.panel-workspace-indicator {
+  box-shadow: inset 0 0 0 100px white;
+  color: black;
+  border-radius: 3px; }
+
+#panel:overview .panel-workspace-indicator {
+  box-shadow: inset 0 0 0 100px black;
+  color: white; }

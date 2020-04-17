@@ -1,0 +1,10 @@
+.panel-workspace-indicator {
+  box-shadow: inset 0 0 0 100px white; // Dirty trick to override hardcoded background color
+  color: black;
+  border-radius: 3px;
+}
+
+#panel:overview .panel-workspace-indicator {
+  box-shadow: inset 0 0 0 100px black;
+  color: white;
+}
