@@ -2103,11 +2103,13 @@ StScrollBar {
 
 /* OSD */
 .osd-window, .resize-popup, .switcher-list, .workspace-switcher-container {
+  font-weight: bold;
   background-color: #ffffff;
-  color: black;
+  color: #5c616c;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4); }
   .osd-window StIcon, .resize-popup StIcon, .switcher-list StIcon, .workspace-switcher-container StIcon {
+    color: black;
     icon-shadow: rgba(0, 0, 0, 0.7) 0 1px 6px; }
 
 .osd-window .level {
@@ -2180,8 +2182,7 @@ StScrollBar {
 
 .switcher-list .item-box:selected {
   background-color: #2777ff;
-  color: #ffffff;
-  font-weight: bold; }
+  color: #ffffff; }
 
 /* Workspace Switcher */
 .ws-switcher-box {
