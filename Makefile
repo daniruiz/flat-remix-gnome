@@ -4,6 +4,7 @@ PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
 BASE_THEME ?= Flat-Remix
 BLUR ?= 6
+IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo true)
 
 
 all: _get_login_background
@@ -36,8 +37,13 @@ ifeq ($(DESTDIR),)
 	cp -r share/ $(PREFIX)/
 	mkdir -p $(PREFIX)/share/gnome-shell/theme/
 	@ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
-	mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
-	cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
+    ifeq ($(IS_UBUNTU), true)
+		cp src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/gnome-shell-theme.gresource
+		update-alternatives --install $(PREFIX)/share/gnome-shell/gdm3-theme.gresource gdm3-theme.gresource $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/gnome-shell-theme.gresource 100
+    else
+		mv -n $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old
+		cp -f src/gresource/gnome-shell-theme.gresource $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
+    endif
 else
 	mkdir -p $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
 	cp -a Makefile $(THEMES) src share $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
@@ -47,7 +53,12 @@ uninstall:
 	-rm -rf $(foreach theme, $(THEMES), $(PREFIX)/share/themes/$(theme))
 	-rm -f $(foreach file, $(shell find share/ -type f), $(PREFIX)/$(file))
 	-rm -f $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
+ifeq ($(IS_UBUNTU), true)
+	-update-alternatives --remove gdm3-theme.gresource $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/gnome-shell-theme.gresource
+	-update-alternatives --auto gdm3-theme.gresource
+else
 	-mv $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
+endif
 
 _get_version:
 	$(eval VERSION ?= $(shell git show -s --format=%cd --date=format:%Y%m%d HEAD))
