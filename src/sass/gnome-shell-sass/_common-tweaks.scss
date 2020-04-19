@@ -108,6 +108,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
         &:selected {
             background-color: $selected_bg_color;
             color: $selected_fg_color;
+            text-shadow: transparentize(black, 0.1) 0 1px 2px;
         }
     }
 }

@@ -2186,7 +2186,8 @@ StScrollBar {
 
 .switcher-list .item-box:selected {
   background-color: #e90469;
-  color: #ffffff; }
+  color: #ffffff;
+  text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px; }
 
 /* Workspace Switcher */
 .ws-switcher-box {
