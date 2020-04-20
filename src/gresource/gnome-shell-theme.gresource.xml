@@ -12,10 +12,11 @@
     <file>checkbox-dark.svg</file>
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
-    <file alias="icons/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
+    <file alias="gdm3.css">gnome-shell.css</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
+    <file alias="icons/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
     <file alias="icons/eye-open-negative-filled-symbolic.svg">eye-open-negative-filled-symbolic.svg</file>
     <file alias="icons/eye-not-looking-symbolic.svg">eye-not-looking-symbolic.svg</file>
     <file alias="icons/pointer-double-click-symbolic.svg">pointer-double-click-symbolic.svg</file>

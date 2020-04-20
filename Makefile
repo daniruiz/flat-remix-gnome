@@ -124,4 +124,4 @@ generate_changelog: _get_version _get_tag
 clean:
 	make -C src clean
 
-.PHONY: _get_login_background all build install uninstall _get_version _get_tag dist release aur_release generate_changelog
+.PHONY: all _get_login_background build install uninstall _get_version _get_tag dist release aur_release copr_release generate_changelog
