@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/share/flat-remix-gnome
+make uninstall IS_UBUNTU=true

@@ -122,6 +122,6 @@ generate_changelog: _get_version _get_tag
 	git push origin HEAD
 
 clean:
-	make -C src clean
+	-make -C src clean
 
 .PHONY: all _get_login_background build install uninstall _get_version _get_tag dist release aur_release copr_release generate_changelog
