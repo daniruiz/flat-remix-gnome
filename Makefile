@@ -93,6 +93,7 @@ release: _get_version
 	$(MAKE) generate_changelog VERSION=$(VERSION)
 	$(MAKE) aur_release VERSION=$(VERSION)
 	$(MAKE) copr_release VERSION=$(VERSION)
+	$(MAKE) launchpad_release VERSION=$(VERSION)
 	git tag -f $(VERSION)
 	git push origin --tags
 	$(MAKE) dist
@@ -111,6 +112,16 @@ copr_release: _get_version _get_tag
 	git commit $(PKGNAME).spec -m "Update $(PKGNAME).spec version $(VERSION)"
 	git push origin master
 
+launchpad_release: _get_version
+	rm -rf /tmp/$(PKGNAME)
+	mkdir -p /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)
+	cp -a * /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)
+	cd /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION) ; \
+	sed "s/{}/$(VERSION)/g" -i debian/changelog ; \
+	echo " -- $(MAINTAINER)  $$(date -R)" >> debian/changelog ; \
+	debuild -S -d ; \
+	dput ppa /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)_source.changes
+
 generate_changelog: _get_version _get_tag
 	git checkout $(TAG) CHANGELOG
 	mv CHANGELOG CHANGELOG.old
@@ -124,4 +135,4 @@ generate_changelog: _get_version _get_tag
 clean:
 	-make -C src clean
 
-.PHONY: all _get_login_background build install uninstall _get_version _get_tag dist release aur_release copr_release generate_changelog
+.PHONY: all _get_login_background build install uninstall _get_version _get_tag dist release aur_release copr_release launchpad_release generate_changelog
