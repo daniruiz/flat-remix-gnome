@@ -1,3 +1,12 @@
+[20200420]
+* Fix gresource file for ubuntu 20.04
+* Update Makefile for Ubuntu installation
+* Transparentize window-clone-border
+* Add text-shadow to selected app in app switcher
+* Osd font tweaks: set font-weight to bold and change light variant color to $fg_color
+* Add darkest theme variant
+* Add workspace-indicator extension styles
+
 [20200412]
  * Fix osd transparent level bar
  * Remove login entry outline
