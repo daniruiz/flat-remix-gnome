@@ -333,6 +333,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     color: $osd_fg_color;
     background-color: transparent;
     border: none;
+    border-color: transparent;
 
     .overview-icon StIcon {
         color: white;

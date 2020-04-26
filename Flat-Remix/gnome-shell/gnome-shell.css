@@ -2424,7 +2424,8 @@ StScrollBar {
 #dash {
   color: white;
   background-color: transparent;
-  border: none; }
+  border: none;
+  border-color: transparent; }
   #dash .overview-icon StIcon {
     color: white;
     icon-shadow: rgba(0, 0, 0, 0.7) 0 2px 6px; }
