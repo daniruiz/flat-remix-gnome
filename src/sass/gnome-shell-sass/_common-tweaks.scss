@@ -130,9 +130,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 // Borders on window thumbnails
 .window-clone-border {
-    border: 5px solid transparentize(white, .5);
+    border: 6px solid transparentize(white, .75);
     border-radius: 6px;
-    box-shadow: inset 0 0 0 2px white;
 }
 
 // Window titles
