@@ -525,9 +525,10 @@ StScrollBar {
         background-color: #3681ff;
         color: #ffffff; }
   .calendar .calendar-day-with-events {
-    color: white;
-    font-weight: bold;
     background-image: url("assets/calendar-today.svg"); }
+    .calendar .calendar-day-with-events.calendar-work-day {
+      color: white;
+      font-weight: bold; }
   .calendar .calendar-other-month-day {
     color: rgba(238, 238, 236, 0.5); }
   .calendar .calendar-week-number {

@@ -153,9 +153,11 @@
   }
 
   .calendar-day-with-events {
-    color: lighten($fg_color,10%);
-    font-weight: bold;
     background-image: url("assets/calendar-today.svg");
+    &.calendar-work-day {
+       color: lighten($fg_color,10%);
+       font-weight: bold;
+    }
   }
 
   .calendar-other-month-day {
