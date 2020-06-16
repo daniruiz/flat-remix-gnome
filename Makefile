@@ -2,7 +2,7 @@ PKGNAME = flat-remix-gnome
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
-BASE_THEME ?= Flat-Remix
+BASE_THEME ?= Flat-Remix-Blue
 BLUR ?= 6
 IS_UBUNTU ?= $(shell [ "$$(lsb_release -si 2> /dev/null)" = Ubuntu ] && echo true)
 
