@@ -69,23 +69,27 @@ _get_tag:
 	@echo $(TAG)
 
 dist: _get_version
-	color_variants="- -Dark -Darkest -Miami -Miami-Dark"; \
+	variants="- -Dark -Darkest -Miami -Miami-Dark"; \
 	theme_variants="- -fullPanel"; \
+	color_variants="- -Blue -Green -Red -Yellow"; \
 	count=1; \
-	for color_variant in $$color_variants; \
+	for variant in $$variants; \
 	do \
-		[ "$$color_variant" = '-' ] && color_variant=''; \
+		[ "$$variant" = '-' ] && variant=''; \
 		for theme_variant in $$theme_variants; \
 		do \
 			[ "$$theme_variant" = '-' ] && theme_variant=''; \
-			file="Flat-Remix$${color_variant}$${theme_variant}"; \
-			if [ -d "$$file" ]; \
-			then \
-				count_pretty=$$(echo "0$${count}" | tail -c 3); \
-				tar -c "$$file" | \
-						xz -z - > "$${count_pretty}-$${file}_$(VERSION).tar.xz"; \
-				count=$$((count+1)); \
-			fi; \
+			files=''; \
+			for color_variant in $$color_variants; \
+			do \
+				[ "$$color_variant" = '-' ] && color_variant=''; \
+				file="Flat-Remix$${color_variant}$${variant}$${theme_variant}"; \
+				[ -d "$$file" ] && files="$$files $$file"; \
+			done; \
+			count_pretty=$$(echo "0$${count}" | tail -c 3); \
+			tar -c $$files | \
+				xz -z - > "$${count_pretty}-Flat-Remix$${variant}$${theme_variant}_$(VERSION).tar.xz"; \
+			count=$$((count+1)); \
 		done; \
 	done; \
 
