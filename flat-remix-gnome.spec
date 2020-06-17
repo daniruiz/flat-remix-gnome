@@ -25,6 +25,12 @@ Themes:
 Variants:
  • Full Panel: No topbar spacing
 
+Color Variants:
+ • Blue
+ • Green
+ • Red
+ • Yellow
+
 
 %prep
 %setup -q
