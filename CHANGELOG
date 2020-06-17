@@ -1,3 +1,9 @@
+[20200617]
+ * Fix makefile: set Flat-Remix-Blue as the base theme
+ * Change assets' colors for each variant
+ * Add new color variants to match Flat-Remix GTK themes
+ * Update upstream version to 3.36.3
+
 [20200502]
  * Improve miami-dark switch visibility
  * Update gnome-shell 3.36.2
