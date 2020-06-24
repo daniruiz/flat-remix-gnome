@@ -1,3 +1,7 @@
+[20200624]
+ * Fix Flat-Remix session not working
+ * Fix makefile: include PopOS as Ubuntu
+
 [20200617]
  * Fix makefile: set Flat-Remix-Blue as the base theme
  * Change assets' colors for each variant
