@@ -55,7 +55,6 @@ uninstall:
 	-rm -f $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
 ifeq ($(IS_UBUNTU), true)
 	-update-alternatives --remove gdm3-theme.gresource $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/gnome-shell-theme.gresource
-	-update-alternatives --auto gdm3-theme.gresource
 else
 	-mv $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource.old $(PREFIX)/share/gnome-shell/gnome-shell-theme.gresource
 endif
