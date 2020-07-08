@@ -587,7 +587,7 @@ StScrollBar {
   .world-clocks-button .world-clocks-time {
     font-weight: bold;
     color: #eeeeec;
-    font-feature-settings: "lnum";
+    font-feature-settings: "tnum";
     font-size: 10pt;
     text-align: right; }
   .world-clocks-button .world-clocks-timezone {
