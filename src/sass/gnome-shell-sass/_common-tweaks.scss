@@ -373,6 +373,21 @@ $_osd_color: if($variant=='light', black, $fg_color);
     &:checked { background: black; }
 }
 
+.app-folder-dialog {
+    background: black;
+    box-shadow: 0 0 20px black;
+    border: none;
+
+    & .folder-name-container {
+        & .edit-folder-button {
+            &, &:hover, &:active {
+                background: white;
+                color: black;
+            }
+        }
+    }
+}
+
 /* Frequent | All toggle */
 
 // buttons

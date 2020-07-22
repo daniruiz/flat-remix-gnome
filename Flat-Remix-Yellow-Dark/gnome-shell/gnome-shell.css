@@ -2457,6 +2457,14 @@ StScrollBar {
   .app-well-app.app-folder:checked {
     background: black; }
 
+.app-folder-dialog {
+  background: black;
+  box-shadow: 0 0 20px black;
+  border: none; }
+  .app-folder-dialog .folder-name-container .edit-folder-button, .app-folder-dialog .folder-name-container .edit-folder-button:hover, .app-folder-dialog .folder-name-container .edit-folder-button:active {
+    background: white;
+    color: black; }
+
 /* Frequent | All toggle */
 .app-view-control {
   margin: 0;
