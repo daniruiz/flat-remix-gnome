@@ -2151,7 +2151,7 @@ StScrollBar {
 /* Popovers/Menus */
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
-  -arrow-border-radius: 6px;
+  -arrow-border-radius: 11px;
   -arrow-background-color: #050505;
   -arrow-border-width: 12px;
   -arrow-border-color: transparent;
@@ -2161,10 +2161,10 @@ StScrollBar {
   margin: 0.45em;
   background-color: rgba(5, 5, 5, 0.4);
   box-shadow: 0 2px 4px -6px black;
-  border-radius: 9px; }
+  border-radius: 14px; }
 
 .popup-menu-item {
-  border-radius: 5px; }
+  border-radius: 10px; }
   .popup-menu-item:checked {
     background-color: transparent; }
   .popup-menu-item.selected, .popup-menu-item:active {
@@ -2173,7 +2173,7 @@ StScrollBar {
 
 .popup-sub-menu {
   border: 1px solid rgba(0, 0, 0, 0.8);
-  border-radius: 5px; }
+  border-radius: 10px; }
 
 /* App Switcher */
 .switcher-list .item-box:outlined {
@@ -2243,7 +2243,7 @@ StScrollBar {
   box-shadow: 0 1px 2px black;
   font-size: .9em;
   height: 2em;
-  border-radius: 6px;
+  border-radius: 7px;
   background: rgba(5, 5, 5, 0.2);
   text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px; }
   #panel .popup-menu-arrow {
@@ -2285,7 +2285,7 @@ StScrollBar {
 .calendar {
   border-width: 1px;
   border-style: solid;
-  border-radius: 7px;
+  border-radius: 12px;
   margin: 4px;
   border-color: transparent;
   background-color: transparent;
@@ -2317,7 +2317,7 @@ StScrollBar {
 .world-clocks-button {
   border-width: 1px;
   border-style: solid;
-  border-radius: 7px;
+  border-radius: 12px;
   margin: 4px;
   border-color: transparent;
   background-color: transparent;
@@ -2348,7 +2348,7 @@ StScrollBar {
 .weather-button {
   border-width: 1px;
   border-style: solid;
-  border-radius: 7px;
+  border-radius: 12px;
   margin: 4px;
   border-color: transparent;
   background-color: transparent;
@@ -2452,7 +2452,8 @@ StScrollBar {
 
 /* Frequent | All toggle */
 .app-view-control {
-  margin: 0; }
+  margin: 0;
+  padding: 7px 32px; }
   .app-view-control, .app-view-control:hover, .app-view-control:checked {
     color: white;
     background-color: rgba(255, 255, 255, 0.2);
@@ -2466,9 +2467,9 @@ StScrollBar {
     background: white;
     color: black; }
   .app-view-control:first-child {
-    border-radius: 5px 0 0 5px; }
+    border-radius: 6px 0 0 6px; }
   .app-view-control:last-child {
-    border-radius: 0 5px 5px 0; }
+    border-radius: 0 6px 6px 0; }
 
 /* Screen Shield */
 #lockDialogGroup {

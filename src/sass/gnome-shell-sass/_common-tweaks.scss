@@ -1,5 +1,6 @@
 $overview_transparent_bg: transparentize(white, .8);
 $dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
+$base_border_radius: 10px;
 
 
 /* OSD */
@@ -186,7 +187,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     box-shadow: 0 1px 2px black;
     font-size: .9em;
     height: 2em;
-    border-radius: if($full-panel == 'true', 0, $base_border_radius + 1px);
+    border-radius: if($full-panel == 'true', 0, 7px);
     background: $_panel_bg;
     text-shadow: $_panel_text_shadow;
 
@@ -372,6 +373,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 // buttons
 .app-view-control {
    margin: 0;
+   padding: 7px 32px;
+
    &, &:hover, &:checked {
        color: white;
        background-color: $overview_transparent_bg;
@@ -388,9 +391,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
         color: black;
     }
 
-    &:first-child { border-radius: $base_border_radius 0 0 $base_border_radius; }
+    &:first-child { border-radius: 6px 0 0 6px; }
  
-    &:last-child { border-radius: 0 $base_border_radius $base_border_radius 0; }
+    &:last-child { border-radius: 0 6px 6px 0; }
 }
 
 /* Screen Shield */
