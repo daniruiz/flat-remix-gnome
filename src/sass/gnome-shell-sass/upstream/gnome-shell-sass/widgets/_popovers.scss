@@ -76,8 +76,10 @@ $popover_arrow_height: 12px;
 
 // container for radio and check boxes
 .popup-menu-ornament {
-  text-align: right;
   width: 1.2em;
+
+  &:ltr { text-align: right };
+  &:rtl { text-align: left };
 }
 
 // separator

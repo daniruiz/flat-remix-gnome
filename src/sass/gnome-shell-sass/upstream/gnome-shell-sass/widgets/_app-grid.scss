@@ -7,7 +7,7 @@ $app_icon_padding: 24px;
 .icon-grid {
   -shell-grid-horizontal-item-size: $app_icon_size + $app_icon_padding * 2;
   -shell-grid-vertical-item-size: $app_icon_size + $app_icon_padding * 2;
-  spacing: $base_spacing * 6;
+  spacing: $base_spacing * 4;
 
   .overview-icon {
     icon-size: $app_icon_size;

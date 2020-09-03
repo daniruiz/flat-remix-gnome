@@ -309,8 +309,11 @@ StScrollBar {
   border-bottom: 1px solid rgba(5, 0, 12, 0.8); }
 
 .popup-menu-ornament {
-  text-align: right;
   width: 1.2em; }
+  .popup-menu-ornament:ltr {
+    text-align: right; }
+  .popup-menu-ornament:rtl {
+    text-align: left; }
 
 .popup-separator-menu-item {
   padding: 0; }
@@ -588,8 +591,11 @@ StScrollBar {
     font-weight: bold;
     color: #eeeeec;
     font-feature-settings: "tnum";
-    font-size: 10pt;
-    text-align: right; }
+    font-size: 10pt; }
+    .world-clocks-button .world-clocks-time:ltr {
+      text-align: right; }
+    .world-clocks-button .world-clocks-time:rtl {
+      text-align: left; }
   .world-clocks-button .world-clocks-timezone {
     color: #bebeb6;
     font-feature-settings: "tnum";
@@ -722,9 +728,12 @@ StScrollBar {
     .message .message-secondary-bin > .event-time {
       color: rgba(238, 238, 236, 0.5);
       font-size: 8pt;
-      text-align: right;
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.13em; }
+      .message .message-secondary-bin > .event-time:ltr {
+        text-align: right; }
+      .message .message-secondary-bin > .event-time:rtl {
+        text-align: left; }
   .message .message-close-button {
     color: white; }
     .message .message-close-button:hover {
@@ -1340,7 +1349,7 @@ StScrollBar {
 .icon-grid {
   -shell-grid-horizontal-item-size: 144px;
   -shell-grid-vertical-item-size: 144px;
-  spacing: 36px; }
+  spacing: 24px; }
   .icon-grid .overview-icon {
     icon-size: 96px; }
 
@@ -2014,12 +2023,13 @@ StScrollBar {
 .user-widget.horizontal .user-widget-label {
   font-size: 12pt;
   font-weight: bold;
-  text-align: left;
   padding-left: 15px; }
   .user-widget.horizontal .user-widget-label:ltr {
-    padding-left: 14px; }
+    padding-left: 14px;
+    text-align: left; }
   .user-widget.horizontal .user-widget-label:rtl {
-    padding-right: 14px; }
+    padding-right: 14px;
+    text-align: right; }
 
 .user-widget.vertical .user-widget-label {
   font-size: 15pt;

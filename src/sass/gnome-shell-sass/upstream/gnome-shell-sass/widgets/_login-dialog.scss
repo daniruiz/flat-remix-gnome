@@ -138,11 +138,10 @@
 .user-widget.horizontal .user-widget-label {
   @include fontsize($base_font_size + 2);
   font-weight: bold;
-  text-align: left;
   padding-left: 15px;
 
-  &:ltr { padding-left: 14px; }
-  &:rtl { padding-right: 14px; }
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
 }
 
 .user-widget.vertical .user-widget-label {
