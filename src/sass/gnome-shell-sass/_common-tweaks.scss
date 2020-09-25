@@ -130,10 +130,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 /* Window Picker */
 
 // Borders on window thumbnails
-.window-clone-border {
-    border: 6px solid transparentize(white, .75);
-    border-radius: 6px;
-}
+.window-clone-border { border-color: transparentize(white, .75); }
 
 // Window titles
 .window-caption {
@@ -153,7 +150,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     color: transparent;
     height: 32px;
     width: 32px;
-    -shell-close-overlap: 16px;
 
     &:hover {
         background-image: url("assets/close-window-hover.svg");
@@ -250,6 +246,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 .calendar { @include notification_bubble($flat: true); }
+
+/* Events */
+.events-button { @include notification_bubble($flat: true); }
 
 /* World clocks */
 

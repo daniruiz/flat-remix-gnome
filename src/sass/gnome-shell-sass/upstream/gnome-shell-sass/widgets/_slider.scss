@@ -16,7 +16,7 @@ $slider_size: 15px;
   -barlevel-overdrive-color: $destructive_color;
   -barlevel-overdrive-border-color: if($variant == 'light', darken($destructive_color, 4%), lighten($destructive_color, 2%)); //trough border when red;
   -barlevel-overdrive-separator-width:1px;
-  // slider hander
+  // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
   -slider-handle-border-width: 1px;
   -slider-handle-border-color: if($variant == 'light', $borders_color, $fg_color);

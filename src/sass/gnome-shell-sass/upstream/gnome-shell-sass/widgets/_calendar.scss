@@ -170,10 +170,35 @@
     height: 1.8em;
     width: 2.3em; 
     border-radius: 2px;
-    padding: 0.5em 0 0;
     margin: 6px;
     background-color: darken($bg_color, 2%);
     color: lighten($fg_color, 5%);
+  }
+}
+
+/* Events */
+.events-button {
+  @include notification_bubble;
+  padding: $base_padding * 2;
+
+  .events-box {
+    spacing: $base_spacing;
+  }
+
+  .events-list {
+    spacing: 2 * $base_spacing;
+  }
+
+  .events-title {
+    color: desaturate(darken($fg_color,40%), 10%);
+    font-weight: bold;
+    margin-bottom: $base_margin;
+  }
+
+  .event-time {
+    color: darken($fg_color,20%);
+    font-feature-settings: "tnum";
+    @include fontsize($base_font_size - 1);
   }
 }
 

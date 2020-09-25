@@ -54,6 +54,10 @@
   @extend %status_text;
 }
 
+.grid-search-results {
+  spacing: $base_spacing * 6;
+}
+
 // Search results with icons
 .grid-search-result {
   @extend %app-well-app;
