@@ -23,7 +23,7 @@ stage {
   color: #eeeeec; }
 
 /* Common Stylings */
-.search-statustext {
+.no-frequent-applications-label, .search-statustext {
   font-size: 2em;
   font-weight: bold;
   color: white; }
@@ -2248,6 +2248,9 @@ StScrollBar {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4); }
 
 .window-close {
+  -shell-close-overlap: 12px; }
+
+.window-close {
   background-image: url("assets/close-window.svg");
   background-size: 32px;
   background-color: transparent;
@@ -2347,6 +2350,8 @@ StScrollBar {
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none; }
+  .calendar .calendar-week-number {
+    padding: 0.7em 0 0; }
 
 /* Events */
 .events-button {
@@ -2528,7 +2533,25 @@ StScrollBar {
     background: white;
     color: black; }
 
+.app-folder-dialog-container {
+  width: 720px; }
+
+/********************************************************/
+/***************** REMOVE: GNOME <=3.36 *****************/
+/********************************************************/
+/* App Grid */
+.icon-grid {
+  -shell-grid-horizontal-item-size: 144px;
+  -shell-grid-vertical-item-size: 144px; }
+
+.all-apps,
+.frequent-apps > StBoxLayout {
+  padding: 0px 88px 10px 88px; }
+
 /* Frequent | All toggle */
+.app-view-controls {
+  padding-bottom: 32px; }
+
 .app-view-control {
   margin: 0;
   padding: 7px 32px; }
