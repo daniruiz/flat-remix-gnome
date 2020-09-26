@@ -1,3 +1,10 @@
+[20200926]
+ * Fix app grid for gnome 3.36
+ * Fix calendar-week-number's padding for gnome 3.36
+ * Fix frequent apps for gnome 3.36
+ * Fix activities' close window button position for gnome 3.36
+ * Recover black panel
+
 [20200925]
  * Update for gnome-shell 3.38
 
