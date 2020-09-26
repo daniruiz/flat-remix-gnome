@@ -247,7 +247,11 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
-.calendar { @include notification_bubble($flat: true); }
+.calendar {
+  @include notification_bubble($flat: true);
+
+  .calendar-week-number { padding: 0.7em 0 0; } // REMOVE: GNOME <=3.36
+}
 
 /* Events */
 .events-button { @include notification_bubble($flat: true); }
