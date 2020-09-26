@@ -393,14 +393,29 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
+.app-folder-dialog-container { width: 720px; }
+
 /********************************************************/
 /***************** REMOVE: GNOME <=3.36 *****************/
 /********************************************************/
 
-/* Frequent | All toggle */
+/* App Grid */
+.icon-grid {
+  $app_icon_padding: 24px;
+  -shell-grid-horizontal-item-size: $app_icon_size + $app_icon_padding * 2;
+  -shell-grid-vertical-item-size: $app_icon_size + $app_icon_padding * 2;
+}
+
+.all-apps,
+.frequent-apps > StBoxLayout { padding: 0px 88px 10px 88px; }
 
 // Label when no frequent apps
 .no-frequent-applications-label { @extend %status_text; }
+
+/* Frequent | All toggle */
+
+// container
+.app-view-controls { padding-bottom: 32px; }
 
 // buttons
 .app-view-control {
