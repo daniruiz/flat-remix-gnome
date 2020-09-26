@@ -140,6 +140,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
     box-shadow: $dialog_box_shadow;
 }
 
+// REMOVE: GNOME <=3.36
+.window-close { -shell-close-overlap: $window_close_button_size * 0.5; }
+
 // Close button
 .window-close {
     background-image: url("assets/close-window.svg");
