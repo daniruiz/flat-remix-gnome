@@ -176,11 +176,10 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 #panel {
-    $_panel_bg: transparentize($bg_color, .8);
+    $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
     $_panel_text_shadow: transparentize(black, 0.1) 0 1px 2px;
     padding: if($full-panel == 'true', .1em 0, 0);
-    box-shadow: 0 1px 2px black;
     font-size: .9em;
     height: 2em;
     border-radius: if($full-panel == 'true', 0, 7px);
