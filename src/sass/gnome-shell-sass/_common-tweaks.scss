@@ -389,7 +389,14 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
+/********************************************************/
+/***************** REMOVE: GNOME <=3.36 *****************/
+/********************************************************/
+
 /* Frequent | All toggle */
+
+// Label when no frequent apps
+.no-frequent-applications-label { @extend %status_text; }
 
 // buttons
 .app-view-control {
