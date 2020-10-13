@@ -2151,7 +2151,7 @@ StScrollBar {
   background-color: #23252e;
   color: #eeeeec;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 0 6px rgba(35, 37, 46, 0.4); }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
   .osd-window StIcon, .resize-popup StIcon, .switcher-list StIcon, .workspace-switcher-container StIcon {
     color: #eeeeec;
     icon-shadow: rgba(0, 0, 0, 0.7) 0 1px 6px; }
