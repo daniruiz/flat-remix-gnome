@@ -1,3 +1,10 @@
+[20201013]
+ * Fix shadows for osd panel
+ * Change the background of the search contents
+ * Change the background of the app folders to transparent dark
+ * Add missing color-pick icon
+ * Update gnome 3.38.1
+
 [20200926]
  * Fix app grid for gnome 3.36
  * Fix calendar-week-number's padding for gnome 3.36
