@@ -4,22 +4,22 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
-VERSION=3.38.0
+VERSION=3.38.1
 
 echo
-echo -e " $YELLOW[ i ]$RESET Upstream version $VERSION"
+echo " $YELLOW[ i ]$RESET Upstream version $VERSION"
 echo
 
 while read file;
 do
 	echo
-	echo -e " $GREEN[ * ]$RESET Downloading file $file"
+	echo " $GREEN[ * ]$RESET Downloading file $file"
 	wget https://gitlab.gnome.org/GNOME/gnome-shell/raw/$VERSION/data/theme/$file -O $file --quiet
 	sed 's/resource:\/\/\/org\/gnome\/shell\/theme/assets/g' -i $file
 
 	if [ -f $file.patch ]
 	then
-		echo -e " $YELLOW[ ~ ]$RESET Apply patch"
+		echo " $YELLOW[ ~ ]$RESET Apply patch"
 		patch $file $file.patch --quiet
 	fi
 done <<- EOF

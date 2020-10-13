@@ -1602,7 +1602,8 @@ StScrollBar {
 .user-icon {
   background-size: contain;
   color: white;
-  border-radius: 99px; }
+  border-radius: 99px;
+  border: 2px white; }
   .user-icon:hover {
     color: white; }
   .user-icon StIcon {
