@@ -309,22 +309,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 // search results
-.search-section {
-    // separator
-    .search-section-separator {
-        height: 1px;
-        background-color: $osd_outer_borders_color;
-    }
-
-    &:last-child .search-section-separator { background-color: transparent; }
-}
-
-// content
 .search-section-content {
-    background-color: transparent;
-    border-radius: 0;
-    border: 0;
-    box-shadow: 0;
+    background-color: $overview_transparent_bg;
+    border: none;
 }
 
 // search result provider
