@@ -10,6 +10,7 @@
     <file>checkbox-off-focused-dark.svg</file>
     <file>checkbox-off-dark.svg</file>
     <file>checkbox-dark.svg</file>
+    <file alias="icons/scalable/actions/color-pick.svg">color-pick.svg</file>
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
     <file alias="gdm3.css">gnome-shell.css</file>
