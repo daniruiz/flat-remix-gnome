@@ -1,0 +1,19 @@
+# Change default gnome-terminal color
+[org.gnome.Terminal.Legacy.Profile]
+use-theme-colors=true
+palette=['#1F2229', '#D41919', '#5EBDAB', '#FEA44C', '#367bf0', '#9755b3', '#49AEE6', '#E6E6E6', '#198388', '#EC0101', '#47D4B9', '#FF8A18', '#277FFF', '#962ac3', '#05A1F7', '#FFFFFF']
+bold-is-bright=true
+
+[org.gnome.shell.extensions.user-theme]
+name='Flat-Remix-Blue'
+
+[org.gnome.gedit.preferences.editor]
+scheme='Flat-Remix'
+
+[org.gnome.gnome-system-monitor]
+cpu-stacked-area-chart = true
+cpu-colors = [(0, '#fd3535'), (1, '#fd7d00'), (2, '#ffc730'), (3, '#0ca15e'), (4, '#14816c'), (5, '#4aaee6'), (6, '#367bf0'), (7, '#265ab1'), (8, '#153873'), (9, '#8c42ab'), (10, '#b8174c'), (11, '#d41919')]
+mem-color = '#B8174C'
+swap-color = '#19a187'
+net-in-color = '#367BF0'
+net-out-color = '#D41919'
