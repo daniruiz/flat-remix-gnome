@@ -1,3 +1,8 @@
+[20201022]
+ * Set flat-remix-gnome as default session
+ * Add Flat-Remix code color-schemes
+ * Add gschema override
+
 [20201013]
  * Fix shadows for osd panel
  * Change the background of the search contents
