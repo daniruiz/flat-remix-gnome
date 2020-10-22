@@ -43,6 +43,7 @@ ifeq ($(DESTDIR),)
 	mkdir -p $(PREFIX)/share/themes/
 	cp -r $(THEMES) $(PREFIX)/share/themes/
 	cp -r share/ $(PREFIX)/
+	glib-compile-schemas $(PREFIX)/share/glib-2.0/schemas/
 	mkdir -p $(PREFIX)/share/gnome-shell/theme/
 	@ln -sfv $(PREFIX)/share/themes/$(BASE_THEME)/gnome-shell/ $(PREFIX)/share/gnome-shell/theme/$(BASE_THEME)
     ifeq ($(IS_UBUNTU), true)
