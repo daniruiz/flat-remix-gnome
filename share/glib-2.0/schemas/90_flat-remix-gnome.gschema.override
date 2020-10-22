@@ -17,6 +17,3 @@ mem-color = '#B8174C'
 swap-color = '#19a187'
 net-in-color = '#367BF0'
 net-out-color = '#D41919'
-
-[org.gnome.desktop.session]
-session-name = 'flat-remix-gnome'
