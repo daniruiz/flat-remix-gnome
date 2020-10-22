@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<style-scheme id="Flat-Remix" name="Flat-Remix" version="1.0">
+	<author>Daniel Ruiz de Alegría</author>
+	<_description>A Flat-Remix theme for Gedit</_description>
+
+	<!-- Flat-Remix colors -->
+	<color name="background" value="#ffffff"/>
+	<color name="current-line" value="#f9f5f5"/>
+	<color name="selection" value="#eee"/>
+	<color name="foreground" value="#ffffff"/>
+	<color name="purple" value="#9755b3"/>
+	<color name="red" value="#d41919"/>
+	<color name="green" value="#5ebdab"/>
+	<color name="orange" value="#fd7d00"/>
+	<color name="blue" value="#367BF0"/>
+	<color name="pink" value="#bf2e5e"/>
+	<color name="cyan" value="#49AEE6"/>
+
+	<!-- Helper colors -->
+	<color name="white" value="#ffffff"/>
+	<color name="black" value="#5c616c"/>
+	<color name="bone-white" value="#f8f8f0"/>
+	<color name="light-black" value="#4c4f5c"/>
+	<color name="weird-gray" value="#cccccc"/>
+
+	<style name="text" foreground="light-black" background="background"/>
+
+	<style name="selection" foreground="white" background="blue"/>
+	<style name="cursor" foreground="black" background="black"/>
+	<style name="current-line" foreground="current-line" background="current-line"/>
+	<style name="line-numbers" foreground="light-black" background="background"/>
+	<style name="bracket-match" foreground="light-black" background="background" underline="true"/>
+	<style name="search-match" foreground="selection" background="blue"/>
+	<style name="draw-spaces" foreground="weird-gray"/>
+	<style name="background-pattern" background="#f9f9f9"/>
+
+
+	<style name="def:function" foreground="blue"/>
+	<style name="def:identifier" foreground="pink"/>
+	<style name="def:keyword" foreground="pink"/>
+	<style name="def:number" foreground="purple"/>
+	<style name="def:boolean" foreground="purple"/>
+	<style name="def:string" foreground="green"/>
+	<style name="def:special-char" foreground="red"/>
+	<style name="def:builtin" foreground="cyan"/>
+	<style name="def:type" foreground="blue"/>
+	<style name="def:preprocessor" foreground="pink"/>
+	<style name="def:comment" foreground="cyan"/>
+	<style name="def:statement" foreground="pink"/>
+
+	<style name="diff:added-line" background="green" bold="true" foreground="#fff" />
+	<style name="diff:removed-line" foreground="red"/>
+	<style name="diff:changed-line" background="#000" foreground="#fff"/>
+
+	<style name="sh:variable" foreground="purple"/>
+</style-scheme>
