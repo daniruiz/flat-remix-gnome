@@ -2353,6 +2353,12 @@ StScrollBar {
     box-shadow: none; }
   .calendar .calendar-week-number {
     padding: 0.7em 0 0; }
+  .calendar .calendar-day-base:active, .calendar .calendar-day-base:selected {
+    color: #5c616c;
+    background-color: #e6e6e6; }
+  .calendar .calendar-today:active, .calendar .calendar-today:selected {
+    background: #ec0101;
+    color: #ffffff; }
 
 /* Events */
 .events-button {

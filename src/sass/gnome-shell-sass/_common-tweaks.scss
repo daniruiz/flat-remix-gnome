@@ -251,6 +251,20 @@ $_osd_color: if($variant=='light', black, $fg_color);
   @include notification_bubble($flat: true);
 
   .calendar-week-number { padding: 0.7em 0 0; } // REMOVE: GNOME <=3.36
+
+  .calendar-day-base {
+    &:active,&:selected {
+      color: $fg_color;
+      background-color: if($variant=='light', darken($bg_color, 10%), lighten($bg_color, 10%));
+    }
+  }
+
+  .calendar-today {
+    &:active,&:selected {
+      background: $selected_bg_color;
+      color: $selected_fg_color;
+    }
+  }
 }
 
 /* Events */
