@@ -1,3 +1,7 @@
+[20201117]
+ * Fix top bar calendar contrast issue (fixes #165)
+ * Add cantarell font as a dependency for ubuntu
+
 [20201022]
  * Set flat-remix-gnome as default session
  * Add Flat-Remix code color-schemes
