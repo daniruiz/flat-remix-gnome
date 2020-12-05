@@ -481,3 +481,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
+// REMOVE: GNOME <=3.38
+.polkit-dialog-user-icon {
+    border-radius: 99px;
+    background-size: contain;
+}
+

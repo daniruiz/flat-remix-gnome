@@ -1008,9 +1008,6 @@ StScrollBar {
   text-align: center;
   spacing: 8px;
   margin-bottom: 6px; }
-  .polkit-dialog-user-layout .polkit-dialog-user-icon {
-    border-radius: 99px;
-    background-size: contain; }
   .polkit-dialog-user-layout .polkit-dialog-user-root-label {
     color: #fd7d00; }
 
@@ -1395,7 +1392,11 @@ StScrollBar {
   row-spacing: 36px;
   column-spacing: 36px;
   max-row-spacing: 72px;
-  max-column-spacing: 72px; }
+  max-column-spacing: 72px;
+  page-padding-top: 36px;
+  page-padding-bottom: 36px;
+  page-padding-left: 36px;
+  page-padding-right: 36px; }
 
 /* App Icons */
 .app-well-app .overview-icon,
@@ -1458,7 +1459,11 @@ StScrollBar {
         icon-size: 16px; }
   .app-folder-dialog .icon-grid {
     row-spacing: 12px;
-    column-spacing: 30px; }
+    column-spacing: 30px;
+    page-padding-top: 0;
+    page-padding-bottom: 0;
+    page-padding-left: 0;
+    page-padding-right: 0; }
   .app-folder-dialog .page-indicators {
     margin-bottom: 18px; }
     .app-folder-dialog .page-indicators .page-indicator {
@@ -2600,6 +2605,10 @@ StScrollBar {
     .login-dialog .switch-user-button StIcon,
     .login-dialog .login-dialog-session-list-button StIcon {
       icon-size: 1.09em; }
+
+.polkit-dialog-user-icon {
+  border-radius: 99px;
+  background-size: contain; }
 
 .panel-workspace-indicator {
   box-shadow: inset 0 0 0 100px white;
