@@ -17,3 +17,20 @@ mem-color = '#B8174C'
 swap-color = '#19a187'
 net-in-color = '#367BF0'
 net-out-color = '#D41919'
+
+[com.gexperts.Tilix.Profile]
+background-transparency-percent = 5
+palette=['#1F2229', '#D41919', '#5EBDAB', '#FEA44C', '#367bf0', '#9755b3', '#49AEE6', '#E6E6E6', '#198388', '#EC0101', '#47D4B9', '#FF8A18', '#277FFF', '#962ac3', '#05A1F7', '#FFFFFF']
+
+[org.gnome.eog.ui]
+sidebar = false
+
+[org.gtk.Settings.FileChooser]
+sort-directories-first=true
+
+# Add gnome-shell keybindings
+[org.gnome.desktop.wm.keybindings]
+switch-applications = ['<Super>Tab']
+switch-windows = ['<Alt>Tab']
+switch-applications-backward = ['<Shift><Super>Tab']
+switch-windows-backward = ['<Shift><Alt>Tab']
