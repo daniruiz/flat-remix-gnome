@@ -1,3 +1,7 @@
+[20201205]
+ * Update for gnome 3.38.2
+ * Add gschema configuration for tilix, eof, filechooser & gnome-shell keybindings
+
 [20201117]
  * Fix top bar calendar contrast issue (fixes #165)
  * Add cantarell font as a dependency for ubuntu
