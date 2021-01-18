@@ -1,3 +1,6 @@
+[20210118]
+ * Fix calendar event not visible
+
 [20201205]
  * Update for gnome 3.38.2
  * Add gschema configuration for tilix, eof, filechooser & gnome-shell keybindings
