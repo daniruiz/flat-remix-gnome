@@ -1391,11 +1391,7 @@ StScrollBar {
   row-spacing: 36px;
   column-spacing: 36px;
   max-row-spacing: 72px;
-  max-column-spacing: 72px;
-  page-padding-top: 36px;
-  page-padding-bottom: 36px;
-  page-padding-left: 36px;
-  page-padding-right: 36px; }
+  max-column-spacing: 72px; }
 
 /* App Icons */
 .app-well-app .overview-icon,
@@ -1458,11 +1454,7 @@ StScrollBar {
         icon-size: 16px; }
   .app-folder-dialog .icon-grid {
     row-spacing: 12px;
-    column-spacing: 30px;
-    page-padding-top: 0;
-    page-padding-bottom: 0;
-    page-padding-left: 0;
-    page-padding-right: 0; }
+    column-spacing: 30px; }
   .app-folder-dialog .page-indicators {
     margin-bottom: 18px; }
     .app-folder-dialog .page-indicators .page-indicator {
