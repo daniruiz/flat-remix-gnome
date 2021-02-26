@@ -5,14 +5,14 @@ THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
 BASE_THEME ?= Flat-Remix-Blue
 BLUR ?= 6
 IS_UBUNTU ?= $(shell echo "$$(lsb_release -si 2> /dev/null)" | grep -q 'Ubuntu\|Pop' && echo true)
-HOME ?= $(shell eval echo ~$$SUDO_USER)
+USER_HOME ?= $(shell eval echo ~$$SUDO_USER)
 
 # !! Patch for pamac
 # Pamac installs packages as root, no 'sudo' (due to pkexec), so dconf is unable
 # to get the user's background. As a workaround HOME env is set to the home
 # directory of the user with uid 1000, which probably will be the main user.
-ifeq ($(HOME),/root)
-    HOME = $(shell eval echo ~$(shell cut -d: -f1,3 /etc/passwd | grep -Po '.*(?=:1000)'))
+ifeq ($(USER_HOME),/root)
+	USER_HOME = $(shell eval echo ~$(shell cut -d: -f1,3 /etc/passwd | grep -Po '.*(?=:1000)'))
 endif
 
 
@@ -31,7 +31,7 @@ all: _get_login_background
 _get_login_background:
 	$(eval LOGIN_BACKGROUND ?= \
 		$(shell printf "$$(\
-			HOME=$(HOME) dconf read /org/gnome/desktop/background/picture-uri | \
+			HOME=$(USER_HOME) dconf read /org/gnome/desktop/background/picture-uri | \
 			sed -e 's/file:\/\///' -e 's/%/\\x/g' -e s/\'//g)"))
 	@echo "$(LOGIN_BACKGROUND)"
 
