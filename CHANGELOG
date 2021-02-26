@@ -1,3 +1,6 @@
+[20210226]
+ * Fix login background script when it's run with sudo
+
 [20210202]
  * Update for gnome 3.38.3
 
