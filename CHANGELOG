@@ -1,3 +1,6 @@
+[20210309]
+ * Fix login background script when sh is linked to dash
+
 [20210226]
  * Fix login background script when it's run with sudo
 
