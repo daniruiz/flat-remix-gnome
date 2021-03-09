@@ -29,8 +29,9 @@ all: _get_login_background
 	make -C src/gresource build
 
 _get_login_background:
+	$(eval SHELL:=/bin/bash)
 	$(eval LOGIN_BACKGROUND ?= \
-		$(shell printf "$$(\
+		$(shell printf "%b" "$$(\
 			HOME=$(USER_HOME) dconf read /org/gnome/desktop/background/picture-uri | \
 			sed -e 's/file:\/\///' -e 's/%/\\x/g' -e s/\'//g)"))
 	@echo "$(LOGIN_BACKGROUND)"
