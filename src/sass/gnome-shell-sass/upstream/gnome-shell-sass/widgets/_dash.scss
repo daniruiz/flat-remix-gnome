@@ -1,20 +1,18 @@
 /* Dash */
 
+$dash_background_color: #3b3b3b;
 $dash_placeholder_size: 32px;
-$dash_spacing: $base_padding + 4px;
+$dash_padding: $base_padding + 4px; // 10px
+$dash_spacing: $base_padding / 4;
+
+$dash_bottom_margin: $base_margin * 4;
+
 $dash_border_radius: $modal_radius * 1.5;
 
 #dash {
-  @extend %overview_panel;
   @include fontsize($base_font_size - 2);
-  padding: ($dash_spacing / 2) 0;
-
-  border-radius: 0 $dash_border_radius $dash_border_radius 0; 
-  border-left-width: 0;
-  &:rtl {
-    border-radius: $dash_border_radius 0 0 $dash_border_radius;
-    border-right-width: 0;
-  }
+  margin-top: $base_spacing * 2;
+  padding: 0 $dash_padding;
 
   .placeholder {
     // background-image: url("assets/dash-placeholder.svg");
@@ -27,23 +25,38 @@ $dash_border_radius: $modal_radius * 1.5;
     width: $dash_placeholder_size;
     height: $dash_placeholder_size;
   }
+
+  .overview-icon {
+    padding: $dash_padding / 2;
+  }
+}
+
+.dash-background {
+  background-color: $dash_background_color;
+  margin-bottom: $dash_bottom_margin;
+  padding: $dash_padding;
+  border-radius: $dash_border_radius;
 }
 
 // Dash Items
-.dash-item-container > StWidget {
-  padding: ($dash_spacing / 2) $dash_spacing;
+.dash-item-container .app-well-app, .show-apps {
+  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+}
+
+.dash-separator {
+  width: 1px;
+  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  background-color: transparentize($osd_fg_color,0.7);
 }
 
 // OSD Tooltip
 .dash-label {
-  background-color: transparentize($osd_bg_color,0.05);
-  border-radius: $base_border_radius + 2px;
-  border:none;
-  box-shadow:0 0 0 1px $osd_outer_borders_color;
   color: $osd_fg_color;
-  padding: $base_padding $base_padding + 2px;
+  background-color: $osd_bg_color;
+  border-radius: 99px;
+  padding: $base_padding $base_padding * 2;
   text-align: center;
-  -x-offset: $base_margin * 2; // distance from the dash edge
+  -y-offset: $base_margin * 3; // distance from the dash edge
 }
 
 // Show apps button
@@ -53,9 +66,8 @@ $dash_border_radius: $modal_radius * 1.5;
   &:focus,
   &:checked {
     .overview-icon {
-      background-color: darken($osd_bg_color,10%);
+      background-color: transparentize($osd_bg_color,0.5);
       color: $fg_color;
     }
   }
 }
-

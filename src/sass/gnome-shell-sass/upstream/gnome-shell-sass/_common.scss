@@ -31,7 +31,7 @@ $base_margin: 4px;
 $base_spacing: 6px;
 
 // border radii
-$base_border_radius: 5px;
+$base_border_radius: 8px;
 
 $modal_radius:$base_border_radius * 2;
 
@@ -76,7 +76,7 @@ stage {
 %osd_panel {
   color: $osd_fg_color;
   background-color: $osd_bg_color;
-  border: 1px solid $osd_outer_borders_color;
+  //border: 1px solid $osd_outer_borders_color;
   border-radius: $base_border_radius * 2 + 4px;
   padding: $base_padding * 2;
 }
@@ -85,8 +85,7 @@ stage {
 // for the dash and workspace switcher
 %overview_panel {
   color: $osd_fg_color;
-  background-color: transparentize($osd_bg_color, 0.2);
-  border: 1px solid $osd_outer_borders_color;
+  background-color: transparentize($osd_fg_color, 0.9);
 }
 
 // icon tiles

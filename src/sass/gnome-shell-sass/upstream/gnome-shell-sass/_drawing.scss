@@ -218,7 +218,8 @@
 
   &:drop {
     .overview-icon {
-      background-color: transparentize($selected_bg_color, .15);
+      border: 2px solid $selected_bg_color; //already 2px transparent so no jumping
+      background-color: transparentize($selected_bg_color, .8);
     }
   }
 

@@ -45,6 +45,7 @@ $base_hover_color: transparentize($fg_color, 0.95);
 
 $tooltip_borders_color: $osd_outer_borders_color;
 $shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
+$system_bg_color: #272a34;
 
 $drop_target_color: #0a814b;
 

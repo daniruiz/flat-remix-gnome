@@ -11,6 +11,8 @@ $search_entry_height: 36px;
   color: transparentize($fg_color,0.3);
   background-color: $bg_color;
   border-color: $borders_color;
+  margin-top: $base_spacing * 2;
+  margin-bottom: $base_spacing;
 
   &:hover {
     background-color: $hover_bg_color;

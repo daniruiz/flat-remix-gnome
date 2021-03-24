@@ -99,7 +99,7 @@
 
 /* Media Controls */
 .message-media-control {
-  padding: $base_padding * 2 $base_padding * 4;
+  padding: $base_padding * 2 1.64em; // $base_padding * 4 = 24px
   color: darken($fg_color, 15%);
 
   // uses $hover_bg_color since the media controls are in a notification_bubble

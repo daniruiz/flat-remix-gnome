@@ -1,8 +1,11 @@
 /* OVERVIEW */
 
-#overview {
-  spacing: 24px;
-  background-color: transparent;
+.controls-manager, .secondary-monitor-workspaces {
+  spacing: $base_spacing * 2;
+}
+
+#overviewGroup {
+  background-color: $system_bg_color;
 }
 
 .overview-controls {

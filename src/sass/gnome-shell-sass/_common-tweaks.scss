@@ -206,20 +206,22 @@ $_osd_color: if($variant=='light', black, $fg_color);
     .panel-corner { -panel-corner-radius: 0; }
 
     .panel-button {
+        border-radius: 99px;
         color: $_panel_fg;
         &:active, &:focus, &:overview, &:checked {
             color: $_panel_fg;
-            box-shadow: inset 0 -2px 0px white;
+            box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.20);
         }
     }
 
     .panel-button.clock-display {
+        border-radius: 99px;
         // Move highlight from .panel-button to .clock
         &:active, &:overview, &:focus, &:checked {
             box-shadow: none;
 
             .clock {
-              box-shadow: inset 0 -2px 0px white;
+              box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.20);
           }
         }
     }
@@ -347,6 +349,11 @@ $_osd_color: if($variant=='light', black, $fg_color);
         color: white;
         icon-shadow: transparentize(black, .3) 0 2px 6px;
     }
+}
+
+.dash-background {
+  background: rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 8px 0 transparentize(black, .2)
 }
 
 .show-apps {

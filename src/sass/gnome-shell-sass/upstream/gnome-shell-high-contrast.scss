@@ -15,3 +15,28 @@ stage {
 	background-image: url("assets/toggle-off-hc.svg");
 	&:checked { background-image: url("assets/toggle-on-hc.svg"); }
 }
+
+//force opaque panel
+#panel {
+  &.login-screen,
+  &.unlock-screen,
+  &:overview {
+    background-color: #000;
+
+    .panel-corner {
+      -panel-corner-opacity: 1;
+    }
+  }
+
+  .panel-button {
+    color: #fff !important;
+  }
+}
+
+//thumbnail app icons no dropshadow and forced color
+.window-picker .icon-dropshadow {
+  icon-shadow: none;
+  background-color: $osd_bg_color;
+  padding: $base_padding * 2;
+  border-radius: $modal_radius;
+}

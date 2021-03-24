@@ -5,18 +5,19 @@
   max-width: 23em;
 }
 
-.login-dialog {
+.login-dialog,
+.unlock-dialog {
   //reset
   border: none;
   background-color: transparent;
 
-  $_gdm_bg: lighten(#2e3436, 19%);
+  $_gdm_bg: $system_bg_color;
 
   StEntry {
     @if $variant=='dark' {
-      $_gdm_entry_bg: transparentize(lighten(desaturate(#241f31, 20%), 2%), 0.5);
+      $_gdm_entry_bg: darken($system_bg_color, 3%);
       background-color: $_gdm_entry_bg;
-      color: $osd_fg_color;
+      color: $fg_color;
     }
   }
 
@@ -24,9 +25,9 @@
   .modal-dialog-button {
     padding: 4px 18px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    background-color: $_gdm_bg;
-    border-color: $_gdm_bg;
-    color: $fg_color;
+    background-color: darken($system_bg_color, 3%);
+    border-color: darken($system_bg_color, 3%);
+    color: $osd_fg_color;
 
     $_hover_c: lighten($_gdm_bg, 5%);
     &:hover, &:focus {
@@ -43,7 +44,7 @@
       @include button(insensitive);
       border-color: darken($_gdm_bg, 5%);
       background-color: darken($_gdm_bg, 5%);
-      color: transparentize($fg_color, 0.3);
+      color: transparentize($osd_fg_color, 0.3);
     }
     &:default {
       @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
@@ -76,8 +77,8 @@
     border-radius: 99px;
     width: $base_icon_size * 2;
     height: $base_icon_size * 2;
-    border-color: transparentize($bg_color,0.7);
-    background-color: transparentize($bg_color,0.7);
+    border-color: darken($system_bg_color, 3%);
+    background-color: darken($system_bg_color, 3%);
 
     StIcon { icon-size: $base_icon_size; }
   }
@@ -92,7 +93,6 @@
 .login-dialog-banner { color: darken($osd_fg_color,10%); }
 .login-dialog-button-box { width: 23em; spacing: 5px; }
 .login-dialog-message { text-align: center; }
-.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
 .login-dialog-user-selection-box { padding: 100px 0px; }
 .login-dialog-not-listed-label {
   padding-left: 2px;

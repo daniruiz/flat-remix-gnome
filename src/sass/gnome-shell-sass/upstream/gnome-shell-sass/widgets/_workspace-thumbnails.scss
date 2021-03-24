@@ -2,24 +2,20 @@
 
 // thumbnails in overview
 .workspace-thumbnails {
-  @extend %overview_panel;
   visible-width: 32px; //amount visible before hover
   spacing: $base_spacing;
   padding: $base_padding;
 
-  border-radius: $modal_radius 0 0 $modal_radius;
-  border-right-width: 0;
-
-  &:rtl {
-    border-radius: 0 $modal_radius $modal_radius 0;
-    border-left-width: 0;
+  .workspace-thumbnail {
+    @extend %overview_panel;
+    border-radius: 3px;
   }
 
   // drag and drop indicator
   .placeholder {
     background-image: url("assets/dash-placeholder.svg");
     background-size: contain;
-    height: 24px;
+    width: 18px;
   }
 }
 

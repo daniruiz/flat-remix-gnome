@@ -162,3 +162,12 @@
 .audio-selection-device-icon {
   icon-size: $base_icon_size * 4;
 }
+
+/* Welcome dialog */
+.welcome-dialog-image {
+  background-image: url("assets/gnome-shell-start.svg");
+  background-size: contain;
+  /* Reasonable maximum dimensions */
+  height: 300px;
+  width: 300px;
+}

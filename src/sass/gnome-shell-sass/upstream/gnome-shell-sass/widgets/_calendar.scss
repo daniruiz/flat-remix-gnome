@@ -1,11 +1,11 @@
 /* Date/Time Menu */
 
 .clock-display-box {
-  spacing: $base_spacing / 2;
+  spacing: 2px;
 
   .clock {
-    padding-left: $base_padding;
-    padding-right: $base_padding;
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
   }
 }
 
