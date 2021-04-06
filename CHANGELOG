@@ -1,3 +1,12 @@
+[20210406]
+ * Fix workspace thumbnails for GNOME 40
+ * Fix panel text-shadow
+ * Set login styles to unlock-dialog
+ * Remove old gnome 3.36 code
+
+[20210324]
+ * Update for GNOME 40
+
 [20210309]
  * Fix login background script when sh is linked to dash
 
