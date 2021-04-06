@@ -407,7 +407,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 /* Login Dialog */
 
-.login-dialog {
+.login-dialog,
+.unlock-dialog {
     $_login_button_bg: transparentize(#383c4a, .65);
 
     font-size: 11pt;
