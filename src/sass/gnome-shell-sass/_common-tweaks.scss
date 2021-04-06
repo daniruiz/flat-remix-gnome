@@ -361,18 +361,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
-/* Workspace pager */
-// thumbnails in overview
-.workspace-thumbnails {
-    background-color: transparentize(black, .8);
-    border: none;
-
-    .placeholder { background-image: none; }
-}
-
-// selected indicator
-.workspace-thumbnail-indicator { border: 5px solid white; }
-
 /* App Folders */
 .app-well-app.app-folder {
     background-color: rgba(0, 0, 0, .1);
