@@ -140,9 +140,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     box-shadow: $dialog_box_shadow;
 }
 
-// REMOVE: GNOME <=3.36
-.window-close { -shell-close-overlap: $window_close_button_size * 0.5; }
-
 // Close button
 .window-close {
     background-image: url("assets/close-window.svg");
@@ -251,8 +248,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 .calendar {
   @include notification_bubble($flat: true);
-
-  .calendar-week-number { padding: 0.7em 0 0; } // REMOVE: GNOME <=3.36
 
   .calendar-day-base {
     &:active,&:selected {
@@ -402,54 +397,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 .app-folder-dialog-container { width: 720px; }
-
-/********************************************************/
-/***************** REMOVE: GNOME <=3.36 *****************/
-/********************************************************/
-
-/* App Grid */
-.icon-grid {
-  $app_icon_padding: 24px;
-  -shell-grid-horizontal-item-size: $app_icon_size + $app_icon_padding * 2;
-  -shell-grid-vertical-item-size: $app_icon_size + $app_icon_padding * 2;
-}
-
-.all-apps,
-.frequent-apps > StBoxLayout { padding: 0px 88px 10px 88px; }
-
-// Label when no frequent apps
-.no-frequent-applications-label { @extend %status_text; }
-
-/* Frequent | All toggle */
-
-// container
-.app-view-controls { padding-bottom: 32px; }
-
-// buttons
-.app-view-control {
-   margin: 0;
-   padding: 7px 32px;
-
-   &, &:hover, &:checked {
-       color: white;
-       background-color: $overview_transparent_bg;
-       font-weight: bold;
-       border: 0;
-       box-shadow: none;
-       text-shadow: none;
-   }
-
-    &:hover { background: transparentize(white, .6); }
-
-    &:active, &:checked {
-        background: white;
-        color: black;
-    }
-
-    &:first-child { border-radius: 6px 0 0 6px; }
- 
-    &:last-child { border-radius: 0 6px 6px 0; }
-}
 
 /* Screen Shield */
 
