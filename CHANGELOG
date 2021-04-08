@@ -1,10 +1,10 @@
-[20210406]
+[20210407]
+ * Update assets
+ * Update CHANGELOG version 20210406
  * Fix workspace thumbnails for GNOME 40
  * Fix panel text-shadow
  * Set login styles to unlock-dialog
  * Remove old gnome 3.36 code
-
-[20210324]
  * Update for GNOME 40
 
 [20210309]
