@@ -1,5 +1,5 @@
 Name: flat-remix-gnome
-Version: 20210309
+Version: 20210407
 Release: 1
 License: CC-BY-SA-4.0
 Summary: Flat Remix GNOME theme
@@ -8,7 +8,7 @@ Group: User Interface/Desktops
 Source: https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 BuildArch: noarch
-Requires: gnome-shell >= 3.36, make, glib2-devel, ImageMagick
+Requires: gnome-shell >= 40.0, make, glib2-devel, ImageMagick
 
 %description
 Flat Remix is a GNOME Shell theme inspired by material design. It is mostly 
