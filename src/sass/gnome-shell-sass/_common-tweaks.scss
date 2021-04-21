@@ -127,16 +127,10 @@ $_osd_color: if($variant=='light', black, $fg_color);
     box-shadow: 0 0px 6px transparentize(black, .5);
 }
 
-/* Window Picker */
-
-// Borders on window thumbnails
-.window-clone-border { border-color: transparentize(white, .75); }
-
 // Window titles
 .window-caption {
     color: black;
     background-color: white;
-    border: none;
     box-shadow: $dialog_box_shadow;
 }
 
@@ -145,7 +139,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     background-image: url("assets/close-window.svg");
     background-size: 32px;
     background-color: transparent;
-    border: 0;
     box-shadow: none;
     color: transparent;
     height: 32px;
@@ -372,7 +365,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
 .app-folder-dialog {
     background: black;
     box-shadow: 0 0 20px black;
-    border: none;
 
     & .folder-name-container {
         & .edit-folder-button {
@@ -423,10 +415,3 @@ $_osd_color: if($variant=='light', black, $fg_color);
         StIcon { icon-size: $base_icon_size; }
     }
 }
-
-// REMOVE: GNOME <=3.38
-.polkit-dialog-user-icon {
-    border-radius: 99px;
-    background-size: contain;
-}
-
