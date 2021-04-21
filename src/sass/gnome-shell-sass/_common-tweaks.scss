@@ -66,12 +66,11 @@ $_osd_color: if($variant=='light', black, $fg_color);
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
     -arrow-border-radius: $base_border_radius + 1px;
-    -arrow-background-color: $bg_color;
+    -arrow-background-color: $base_color;
     -arrow-border-width: 12px;
     -arrow-border-color: transparent;
     -arrow-base: 0;
     -arrow-rise: 0;
-    -arrow-box-shadow: none;
     margin: if($full-panel == 'true', .2em, .45em);
     background-color: transparentize($bg_color, .6);
     box-shadow: 0 2px 4px -6px black;
@@ -85,14 +84,15 @@ $_osd_color: if($variant=='light', black, $fg_color);
     &:checked { background-color: transparent; }
 
     &.selected, &:active {
-        background-color: transparentize(if($variant=='light', black, white), if($variant=='light', 0.96, 0.9));
+        background-color: transparentize($borders_color, .1);
         color: $fg_color;
     }
 }
 
 // popover submenus
 .popup-sub-menu {
-    border: 1px solid transparentize($borders_color, 0.2);
+    border: 1px solid $borders_color;
+    background-color: $bg_color;
     border-radius: $base_border_radius;
 }
 
