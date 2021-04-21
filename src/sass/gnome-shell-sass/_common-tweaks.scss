@@ -347,6 +347,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
   box-shadow: 0 2px 8px 0 transparentize(black, .2);
 }
 
+.dash-separator { background: $overview_transparent_bg; }
+
 .show-apps {
     &:focus,
     &:checked {
