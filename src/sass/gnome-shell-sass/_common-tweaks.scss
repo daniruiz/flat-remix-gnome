@@ -7,7 +7,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     font-weight: bold;
     background-color: $bg_color;
     color: $fg_color;
-    border: 2px solid transparentize(black, .9);
+    border: 2px solid $borders_color;
     box-shadow: 0 4px 10px transparentize(black, .8);
 
     StIcon {
