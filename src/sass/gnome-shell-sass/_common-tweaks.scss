@@ -343,8 +343,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 .dash-background {
-  background: rgba(0, 0, 0, .2);
-  box-shadow: 0 2px 8px 0 transparentize(black, .2)
+  background: $overview_transparent_bg;
+  box-shadow: 0 2px 8px 0 transparentize(black, .2);
 }
 
 .show-apps {
