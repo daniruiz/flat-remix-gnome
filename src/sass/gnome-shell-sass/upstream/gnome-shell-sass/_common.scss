@@ -31,9 +31,9 @@ $base_margin: 4px;
 $base_spacing: 6px;
 
 // border radii
-$base_border_radius: 5px;
+$base_border_radius: 8px;
 
-$modal_radius:$base_border_radius + 3px;
+$modal_radius:$base_border_radius * 2;
 
 // non-standard colors
 $bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
