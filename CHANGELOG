@@ -1,3 +1,17 @@
+[20210421]
+ * Regenerate all theme variants
+ * Make osd windows more visible for dark themes
+ * Make border-radius more consistent
+ * Make borders inside popovers more visible
+ * Improve assets for switches
+ * Update _colors.scss
+ * Make dash separator lighter
+ * Change dash background to white
+ * Fix window-picker close buttons
+ * Remove old code from previous gnome versions
+ * Remove styles for previous workspace-indicator extension
+ * Reduce base border-radius
+
 [20210407]
  * Update assets
  * Update CHANGELOG version 20210406
