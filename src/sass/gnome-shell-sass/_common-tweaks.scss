@@ -143,6 +143,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     color: transparent;
     height: 32px;
     width: 32px;
+    transition-duration: .2s;
 
     &:hover {
         background-image: url("assets/close-window-hover.svg");
@@ -152,6 +153,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
     &:active {
         background-image: url("assets/close-window-active.svg");
         background-color: transparent;
+        color: transparent;
+        transition-duration: 0s;
     }
 }
 
