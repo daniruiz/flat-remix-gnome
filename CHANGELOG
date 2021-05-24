@@ -1,3 +1,8 @@
+[20210524]
+ * Regenerate css
+ * Update for gnome 40.1
+ * Improve code syntax highlighting (fixes #181)
+
 [20210421]
  * Regenerate all theme variants
  * Make osd windows more visible for dark themes
