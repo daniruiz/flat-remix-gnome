@@ -34,7 +34,7 @@ $app_grid_fg_color: #fff;
 
 /* App Folders */
 .app-well-app.app-folder {
-  background-color: darken($system_bg_color, 3%);
+  background-color: $dash_background_color;
   border-radius: $base_border_radius + 4px; // same as %icon_tile
 }
 

@@ -81,7 +81,7 @@ stage {
   padding: $base_padding * 2;
 }
 
-// Overview panels 
+// Overview panels
 // for the dash and workspace switcher
 %overview_panel {
   color: $osd_fg_color;
@@ -129,8 +129,8 @@ stage {
   border-bottom-width: 0;
 
   &:insensitive { @include button(insensitive, $shadow: none); }
-  &:hover { @include button(hover, $shadow: none); }
   &:focus { @include button(focus, $shadow: none); }
+  &:hover { @include button(hover, $shadow: none); }
   &:active { @include button(active, $shadow: none); }
 
   // radius is 2 pixel less to fit in bubble
@@ -142,7 +142,7 @@ stage {
     border-right-width: 0;
     border-radius: 0 0 $modal_radius - 2px 0;
   }
-  
+
   &:first-child:last-child {
     border-radius: 0 0 $modal_radius - 2px $modal_radius - 2px;
   }

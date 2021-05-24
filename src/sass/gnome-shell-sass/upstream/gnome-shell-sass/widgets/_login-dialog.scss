@@ -151,6 +151,11 @@
   padding-top: 16px;
 }
 
+.login-dialog-timed-login-indicator {
+    height: 2px;
+    background-color: darken($fg_color,40%);
+}
+
 .login-dialog-prompt-layout {
   padding-top: 24px;
   padding-bottom: 12px;

@@ -11,7 +11,7 @@ $dash_border_radius: $modal_radius * 1.5;
 
 #dash {
   @include fontsize($base_font_size - 2);
-  margin-top: $base_spacing * 2;
+  margin-top: $base_spacing * 3;
   padding: 0 $dash_padding;
 
   .placeholder {

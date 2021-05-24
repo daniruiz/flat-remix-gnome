@@ -25,11 +25,6 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
   }
 
-  // spacing between activities, app menu and such
-  #panelLeft, #panelCenter {
-    spacing: $base_spacing;
-  }
-
   // the rounded outset corners
   .panel-corner {
     -panel-corner-radius: $panel_corner_radius;
