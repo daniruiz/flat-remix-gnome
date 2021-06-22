@@ -9,6 +9,7 @@ Source: https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 BuildArch: noarch
 Requires: gnome-shell >= 40.0, make, glib2-devel, ImageMagick
+BuildRequires: make
 
 %description
 Flat Remix is a GNOME Shell theme inspired by material design. It is mostly 
