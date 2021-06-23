@@ -2213,7 +2213,7 @@ StScrollBar {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
   .osd-window StIcon, .resize-popup StIcon, .switcher-list StIcon, .workspace-switcher-container StIcon {
     color: #eeeeec;
-    icon-shadow: rgba(0, 0, 0, 0.7) 0 1px 6px; }
+    icon-shadow: 0 0 6px rgba(0, 0, 0, 0.4); }
 
 .osd-window .level {
   -barlevel-background-color: rgba(238, 238, 236, 0.1);
@@ -2284,8 +2284,7 @@ StScrollBar {
 
 .switcher-list .item-box:selected {
   background-color: #e90469;
-  color: #ffffff;
-  text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px; }
+  color: #ffffff; }
 
 /* Workspace Switcher */
 .ws-switcher-box {
@@ -2340,11 +2339,11 @@ StScrollBar {
   height: 2em;
   border-radius: 7px;
   background: rgba(0, 0, 0, 0.2);
-  text-shadow: rgba(0, 0, 0, 0.9) 0 2px 5px; }
+  text-shadow: 0 0 10px black; }
   #panel .popup-menu-arrow {
     width: 0; }
   #panel StIcon {
-    icon-shadow: rgba(0, 0, 0, 0.9) 0 2px 5px; }
+    icon-shadow: 0 0 10px black; }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
     background-color: transparent; }
     #panel.unlock-screen .panel-button, #panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:checked, #panel.lock-screen .panel-button, #panel.lock-screen .panel-button:hover, #panel.lock-screen .panel-button:active, #panel.lock-screen .panel-button:focus, #panel.lock-screen .panel-button:overview, #panel.lock-screen .panel-button:checked, #panel:overview .panel-button, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:focus, #panel:overview .panel-button:overview, #panel:overview .panel-button:checked {
@@ -2514,7 +2513,6 @@ StScrollBar {
   color: black;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   border-radius: 999px;
   font-size: 1.1em;
   transition-duration: 200ms; }
@@ -2527,17 +2525,13 @@ StScrollBar {
   .search-entry:focus, .search-entry:hover {
     background-color: white;
     color: black;
-    font-weight: normal;
-    text-shadow: none;
-    box-shadow: none; }
+    font-weight: normal; }
     .search-entry:focus StLabel.hint-text, .search-entry:hover StLabel.hint-text {
       color: black; }
     .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
-      color: black;
-      icon-shadow: none; }
+      color: black; }
   .search-entry .search-entry-icon {
-    color: white;
-    icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
+    color: white; }
 
 .search-section-content {
   background-color: rgba(255, 255, 255, 0.2);
@@ -2554,7 +2548,7 @@ StScrollBar {
   border-color: transparent; }
   #dash .overview-icon StIcon {
     color: white;
-    icon-shadow: rgba(0, 0, 0, 0.7) 0 2px 6px; }
+    icon-shadow: 0 0 6px rgba(0, 0, 0, 0.4); }
 
 .dash-background {
   background: rgba(255, 255, 255, 0.2);

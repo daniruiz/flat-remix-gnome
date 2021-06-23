@@ -12,7 +12,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
     StIcon {
         color: $_osd_color;
-        icon-shadow: transparentize(black, .3) 0 1px 6px;
+        icon-shadow: 0 0 6px transparentize(black, .6);
     }
 }
 
@@ -106,7 +106,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
         &:selected {
             background-color: $selected_bg_color;
             color: $selected_fg_color;
-            text-shadow: transparentize(black, 0.1) 0 1px 2px;
         }
     }
 }
@@ -171,7 +170,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 #panel {
     $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
-    $_panel_text_shadow: transparentize(black, 0.1) 0 2px 5px;
+    $_panel_text_shadow: 0 0 10px black;
     padding: if($full-panel == 'true', .1em 0, 0);
     font-size: .9em;
     height: 2em;
@@ -276,7 +275,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     color: black;
     font-weight: bold;
     background-color: $overview_transparent_bg;
-    text-shadow: 0px 1px 2px rgba(black, 0.9);
     border-radius: 999px;
     font-size: 1.1em;
     transition-duration: 200ms;
@@ -293,20 +291,16 @@ $_osd_color: if($variant=='light', black, $fg_color);
         background-color: white;
         color: black;
         font-weight: normal;
-        text-shadow: none;
-        box-shadow: none;
 
         StLabel.hint-text { color: black; }
 
         .search-entry-icon {
             color: black;
-            icon-shadow: none;
         }
     }
 
     .search-entry-icon {
         color: white;
-        icon-shadow: 0px 1px 2px rgba(black, 0.9);
     }
 }
 
@@ -333,7 +327,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
     .overview-icon StIcon {
         color: white;
-        icon-shadow: transparentize(black, .3) 0 2px 6px;
+        icon-shadow: 0 0 6px transparentize(black, .6);
     }
 }
 
