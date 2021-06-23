@@ -1,3 +1,8 @@
+[20210623]
+ * Improve text and icon shadows to solve issue in GNOME 40
+ * Add fedora build-dependency
+ * Update sync for gnome 40.2
+
 [20210524]
  * Regenerate css
  * Update for gnome 40.1
