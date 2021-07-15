@@ -1318,7 +1318,6 @@ StScrollBar {
 
 .workspace-background {
   border-radius: 30px;
-  background-color: #303340;
   box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.3); }
 
 
@@ -2261,7 +2260,7 @@ StScrollBar {
   -arrow-rise: 0;
   margin: 0.2em;
   background-color: rgba(35, 37, 46, 0.4);
-  box-shadow: 0 2px 4px -6px black;
+  box-shadow: 0 2px 4px -6px rgba(0, 0, 0, 0.2);
   border-radius: 16px; }
 
 .popup-menu-item {
@@ -2284,7 +2283,8 @@ StScrollBar {
 
 .switcher-list .item-box:selected {
   background-color: #ffd86e;
-  color: #ffffff; }
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); }
 
 /* Workspace Switcher */
 .ws-switcher-box {
@@ -2292,12 +2292,6 @@ StScrollBar {
 
 .workspace-switcher-container {
   padding: 7px; }
-
-.ws-switcher-active-up,
-.ws-switcher-active-down,
-.ws-switcher-active-left,
-.ws-switcher-active-right {
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5); }
 
 .window-caption {
   color: black;
@@ -2339,11 +2333,11 @@ StScrollBar {
   height: 2em;
   border-radius: 0;
   background: rgba(0, 0, 0, 0.2);
-  text-shadow: 0 0 10px black; }
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
   #panel .popup-menu-arrow {
     width: 0; }
   #panel StIcon {
-    icon-shadow: 0 0 10px black; }
+    icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
   #panel.unlock-screen, #panel.login-screen, #panel.lock-screen, #panel:overview {
     background-color: transparent; }
     #panel.unlock-screen .panel-button, #panel.unlock-screen .panel-button:hover, #panel.unlock-screen .panel-button:active, #panel.unlock-screen .panel-button:focus, #panel.unlock-screen .panel-button:overview, #panel.unlock-screen .panel-button:checked, #panel.login-screen .panel-button, #panel.login-screen .panel-button:hover, #panel.login-screen .panel-button:active, #panel.login-screen .panel-button:focus, #panel.login-screen .panel-button:overview, #panel.login-screen .panel-button:checked, #panel.lock-screen .panel-button, #panel.lock-screen .panel-button:hover, #panel.lock-screen .panel-button:active, #panel.lock-screen .panel-button:focus, #panel.lock-screen .panel-button:overview, #panel.lock-screen .panel-button:checked, #panel:overview .panel-button, #panel:overview .panel-button:hover, #panel:overview .panel-button:active, #panel:overview .panel-button:focus, #panel:overview .panel-button:overview, #panel:overview .panel-button:checked {
@@ -2511,6 +2505,7 @@ StScrollBar {
 /* Search */
 .search-entry {
   color: black;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9);
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
@@ -2525,16 +2520,21 @@ StScrollBar {
   .search-entry:focus, .search-entry:hover {
     background-color: white;
     color: black;
-    font-weight: normal; }
+    font-weight: normal;
+    box-shadow: none;
+    text-shadow: none; }
     .search-entry:focus StLabel.hint-text, .search-entry:hover StLabel.hint-text {
       color: black; }
     .search-entry:focus .search-entry-icon, .search-entry:hover .search-entry-icon {
-      color: black; }
+      color: black;
+      icon-shadow: none; }
   .search-entry .search-entry-icon {
-    color: white; }
+    color: white;
+    icon-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9); }
 
 .search-section-content {
   background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
   border: none; }
 
 .search-provider-icon .list-search-provider-content .list-search-provider-details {
@@ -2548,11 +2548,10 @@ StScrollBar {
   border-color: transparent; }
   #dash .overview-icon StIcon {
     color: white;
-    icon-shadow: 0 0 6px rgba(0, 0, 0, 0.4); }
+    icon-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); }
 
 .dash-background {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8); }
+  background: rgba(255, 255, 255, 0.2); }
 
 .dash-separator {
   background: rgba(255, 255, 255, 0.2); }
@@ -2563,8 +2562,7 @@ StScrollBar {
 
 /* App Folders */
 .app-well-app.app-folder {
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 5px black; }
+  background-color: rgba(255, 255, 255, 0.2); }
   .app-well-app.app-folder:checked {
     background: black; }
 
