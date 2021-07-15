@@ -291,6 +291,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
         background-color: white;
         color: black;
         font-weight: normal;
+        box-shadow: none;
 
         StLabel.hint-text { color: black; }
 
