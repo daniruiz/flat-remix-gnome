@@ -1,3 +1,10 @@
+[20210715]
+ * Regenerate themes
+ * Recover icon and text shadows now fixed with GNOME 40.3
+ * Remove inset shadow from search-entry
+ * Fix shadows for gnome 40.3
+ * Update GNOME 40.3
+
 [20210623]
  * Improve text and icon shadows to solve issue in GNOME 40
  * Add fedora build-dependency
