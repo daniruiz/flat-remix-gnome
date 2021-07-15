@@ -71,7 +71,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
     -arrow-rise: 0;
     margin: if($full-panel == 'true', .2em, .45em);
     background-color: transparentize($bg_color, .6);
-    box-shadow: 0 2px 4px -6px black;
+    box-shadow: 0 2px 4px -6px transparentize(black, .8);
     border-radius: $base_border_radius + 8px;
 }
 
@@ -120,7 +120,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 .ws-switcher-active-down,
 .ws-switcher-active-left,
 .ws-switcher-active-right {
-    box-shadow: 0 0px 6px transparentize(black, .5);
+    //box-shadow: 0 0px 6px transparentize(black, .5);
 }
 
 // Window titles
@@ -307,6 +307,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 // search results
 .search-section-content {
     background-color: $overview_transparent_bg;
+    box-shadow: none;
     border: none;
 }
 
@@ -333,7 +334,7 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 .dash-background {
   background: $overview_transparent_bg;
-  box-shadow: 0 2px 8px 0 transparentize(black, .2);
+  //box-shadow: 0 2px 8px 0 transparentize(black, .2);
 }
 
 .dash-separator { background: $overview_transparent_bg; }
@@ -350,8 +351,8 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 /* App Folders */
 .app-well-app.app-folder {
-    background-color: rgba(0, 0, 0, .1);
-    box-shadow: 0 2px 5px black;
+    background-color: $overview_transparent_bg;
+    //box-shadow: 0 2px 5px black;
 
     &:checked { background: black; }
 }
