@@ -357,7 +357,9 @@ $_osd_color: if($variant=='light', black, $fg_color);
 
 /* App Folders */
 .app-well-app.app-folder {
-    background-color: $overview_transparent_bg;
+    &, & .overview-icon.overview-icon-with-label {
+      background-color: $overview_transparent_bg
+    }
     //box-shadow: 0 2px 5px black;
 
     &:checked { background: black; }

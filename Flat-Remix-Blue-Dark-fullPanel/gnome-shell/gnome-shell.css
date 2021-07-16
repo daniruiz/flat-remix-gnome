@@ -2561,10 +2561,11 @@ StScrollBar {
   color: black; }
 
 /* App Folders */
-.app-well-app.app-folder {
+.app-well-app.app-folder, .app-well-app.app-folder .overview-icon.overview-icon-with-label {
   background-color: rgba(255, 255, 255, 0.2); }
-  .app-well-app.app-folder:checked {
-    background: black; }
+
+.app-well-app.app-folder:checked {
+  background: black; }
 
 .app-folder-dialog {
   background: black;
