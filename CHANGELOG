@@ -1,3 +1,6 @@
+[20210716]
+ * Fix .app-folder background
+
 [20210715]
  * Regenerate themes
  * Recover icon and text shadows now fixed with GNOME 40.3
