@@ -3,7 +3,7 @@
 StEntry {
   border-radius: $base_border_radius;
   padding: 8px;
-  border-width: 1px;
+  border-width: 0;
   color: $fg_color;
   @include entry(normal);
   //&:hover { @include entry(hover);}

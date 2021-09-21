@@ -46,7 +46,7 @@
     border-color: if($fc==$selected_bg_color,
               $selected_borders_color,
               darken($fc,35%));
-    box-shadow: inset 0 0 0 1px $fc;
+    box-shadow: inset 0 0 0 2px $fc;
   }
   @if $t==hover { }
   @if $t==insensitive {

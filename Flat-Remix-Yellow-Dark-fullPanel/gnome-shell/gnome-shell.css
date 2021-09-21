@@ -152,7 +152,7 @@ stage {
 StEntry {
   border-radius: 8px;
   padding: 8px;
-  border-width: 1px;
+  border-width: 0;
   color: #eeeeec;
   background-color: #272a34;
   border-color: rgba(127, 127, 127, 0.2);
@@ -160,7 +160,7 @@ StEntry {
   selected-color: #ffffff; }
   StEntry:focus {
     border-color: #d49b00;
-    box-shadow: inset 0 0 0 1px #ffd86e; }
+    box-shadow: inset 0 0 0 2px #ffd86e; }
   StEntry:insensitive {
     color: #888a8d;
     border-color: #242731;
@@ -719,6 +719,13 @@ StScrollBar {
   margin: 8px 16px 0;
   padding: 4px;
   spacing: 12px; }
+  .message-list-controls .dnd-button {
+    border-width: 2px;
+    border-color: transparent;
+    border-radius: 99px;
+    border-style: solid; }
+    .message-list-controls .dnd-button:focus {
+      border-color: rgba(255, 216, 110, 0.6); }
 
 .message {
   border-width: 1px;
@@ -1327,18 +1334,16 @@ StScrollBar {
   border-radius: 18px;
   color: rgba(238, 238, 236, 0.7);
   background-color: #23252e;
-  border-color: rgba(127, 127, 127, 0.2);
   margin-top: 12px;
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+  border-width: 2px;
+  border-color: transparent; }
   
   .search-entry:hover {
     background-color: #2e313d;
-    border-color: rgba(135, 135, 135, 0.2);
     color: #fafaf9; }
   
   .search-entry:focus {
-    padding: 6px 8px;
-    border-width: 2px;
     border-style: solid;
     border-color: #ffd86e;
     color: #eeeeec;
@@ -1553,8 +1558,7 @@ StScrollBar {
   .rename-folder-popup .rename-folder-popup-item:ltr, .rename-folder-popup .rename-folder-popup-item:rtl {
     padding: 0 12px; }
 
-.app-menu,
-.app-well-menu {
+.app-menu {
   max-width: 27.25em; }
 
 .page-indicator {
