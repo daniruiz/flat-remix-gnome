@@ -2,12 +2,17 @@ Source: flat-remix-gnome
 Section: misc
 Priority: optional
 Maintainer: Daniel Ruiz de Alegría <daniel@drasite.com>
-Build-Depends: debhelper-compat (= 9)
+Build-Depends: debhelper-compat (= 12)
 Homepage: https://drasite.com/flat-remix-gnome
 
 Package: flat-remix-gnome
-Architecture: any
-Depends: gnome-shell, fonts-cantarell, make, libglib2.0-dev-bin, imagemagick
+Architecture: all
+Depends:
+ gnome-shell,
+ fonts-cantarell,
+ make,
+ libglib2.0-dev-bin,
+ graphicsmagick-imagemagick-compat,
 Description: Flat Remix gnome-shell theme
  Flat Remix is a GNOME Shell theme inspired by material design. It is mostly
  flat using a colorful palette with some shadows, highlights, and gradients for
