@@ -1,5 +1,6 @@
 PKGNAME = flat-remix-gnome
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
+UBUNTU_RELEASE = impish
 PREFIX ?= /usr
 THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
 BASE_THEME ?= Flat-Remix-Blue
@@ -129,10 +130,13 @@ launchpad_release: _get_version
 	rm -rf /tmp/$(PKGNAME)
 	mkdir -p /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)
 	cp -a * /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)
-	cd /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION) ; \
-	sed "s/{}/$(VERSION)/g" -i debian/changelog ; \
-	echo " -- $(MAINTAINER)  $$(date -R)" >> debian/changelog ; \
-	debuild -S -d ; \
+	cd /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION); \
+	echo "$(PKGNAME) ($(VERSION)) $(UBUNTU_RELEASE); urgency=low" > debian/changelog; \
+	echo >> debian/changelog; \
+	echo "  * Release $(VERSION)" >> debian/changelog; \
+	echo >> debian/changelog; \
+	echo " -- $(MAINTAINER)  $$(date -R)" >> debian/changelog; \
+	debuild -S -d; \
 	dput ppa:daniruiz/flat-remix /tmp/$(PKGNAME)/$(PKGNAME)_$(VERSION)_source.changes
 
 generate_changelog: _get_version _get_tag
