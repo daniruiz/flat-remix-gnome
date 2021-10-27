@@ -2573,7 +2573,7 @@ StScrollBar {
 
 .app-folder-dialog {
   background: black;
-  box-shadow: 0 0 20px black; }
+  box-shadow: 0 0 20px #030303; }
   .app-folder-dialog .folder-name-container .edit-folder-button, .app-folder-dialog .folder-name-container .edit-folder-button:hover, .app-folder-dialog .folder-name-container .edit-folder-button:active {
     background: white;
     color: black; }
