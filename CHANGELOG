@@ -1,3 +1,9 @@
+[20211028]
+ * Update gresource packaged theme
+ * Make folder shadow a bit lighter to improve contrast
+ * Update launchpad_release script
+ * Update debian packaging
+
 [20210921]
  * Update theme for GNOME 41
 
