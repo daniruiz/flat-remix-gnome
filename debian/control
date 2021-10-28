@@ -9,6 +9,7 @@ Package: flat-remix-gnome
 Architecture: all
 Depends:
  gnome-shell,
+ gnome-shell-extensions,
  fonts-cantarell,
  make,
  libglib2.0-dev-bin,
