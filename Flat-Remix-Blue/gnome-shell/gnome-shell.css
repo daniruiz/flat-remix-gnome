@@ -2559,6 +2559,9 @@ StScrollBar {
   background-color: rgba(255, 255, 255, 0.2);
   color: black; }
 
+#dashtodockContainer {
+  padding: 10px; }
+
 /* App Folders */
 .app-well-app.app-folder, .app-well-app.app-folder .overview-icon.overview-icon-with-label {
   background-color: rgba(255, 255, 255, 0.2); }
