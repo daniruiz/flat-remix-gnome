@@ -355,8 +355,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
     }
 }
 
-#dashtodockContainer { padding: $dash_padding; }
-
 /* App Folders */
 .app-well-app.app-folder {
     &, & .overview-icon.overview-icon-with-label {
