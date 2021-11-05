@@ -1,3 +1,10 @@
+[20211105]
+ * Make some widgets in the calendar popup more flat
+ * Update fedora package dependencies
+ * Add gnome-shell-extensions dependency for Ubuntu
+ * Update gresource packaged theme
+ * Fix gdm theme for Ubuntu
+
 [20211028]
  * Update gresource packaged theme
  * Make folder shadow a bit lighter to improve contrast
