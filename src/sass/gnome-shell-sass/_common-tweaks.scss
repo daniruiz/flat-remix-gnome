@@ -255,6 +255,33 @@ $_osd_color: if($variant=='light', black, $fg_color);
   }
 }
 
+// notification styling
+@mixin notification_bubble($flat: false) {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $base_border_radius + 2px;
+  margin: $base_margin;
+
+  @if $flat {
+    @include button(undecorated);
+  } @else {
+    @include button(normal);
+  }
+
+  &:focus {
+    @include button(focus);
+  }
+
+  &:hover {
+    @include button(hover);
+    box-shadow: none;
+  }
+
+  &:active {
+    @include button(active);
+  }
+}
+
 /* Events */
 .events-button { @include notification_bubble($flat: true); }
 

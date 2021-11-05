@@ -2429,7 +2429,8 @@ StScrollBar {
     border-color: #d1d1d1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     text-shadow: 0 1px rgba(255, 255, 255, 0.3);
-    icon-shadow: 0 1px rgba(255, 255, 255, 0.3); }
+    icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    box-shadow: none; }
   .events-button:active {
     color: #5c616c;
     background-color: #f7f7f7;
@@ -2461,7 +2462,8 @@ StScrollBar {
     border-color: #d1d1d1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     text-shadow: 0 1px rgba(255, 255, 255, 0.3);
-    icon-shadow: 0 1px rgba(255, 255, 255, 0.3); }
+    icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    box-shadow: none; }
   .world-clocks-button:active {
     color: #5c616c;
     background-color: #f7f7f7;
@@ -2492,7 +2494,8 @@ StScrollBar {
     border-color: #d1d1d1;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     text-shadow: 0 1px rgba(255, 255, 255, 0.3);
-    icon-shadow: 0 1px rgba(255, 255, 255, 0.3); }
+    icon-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    box-shadow: none; }
   .weather-button:active {
     color: #5c616c;
     background-color: #f7f7f7;

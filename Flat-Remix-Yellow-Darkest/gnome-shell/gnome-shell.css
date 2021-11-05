@@ -2429,7 +2429,8 @@ StScrollBar {
     border-color: black;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-    icon-shadow: 0 1px rgba(0, 0, 0, 0.2); }
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: none; }
   .events-button:active {
     color: #eeeeec;
     background-color: black;
@@ -2461,7 +2462,8 @@ StScrollBar {
     border-color: black;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-    icon-shadow: 0 1px rgba(0, 0, 0, 0.2); }
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: none; }
   .world-clocks-button:active {
     color: #eeeeec;
     background-color: black;
@@ -2492,7 +2494,8 @@ StScrollBar {
     border-color: black;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-    icon-shadow: 0 1px rgba(0, 0, 0, 0.2); }
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: none; }
   .weather-button:active {
     color: #eeeeec;
     background-color: black;
