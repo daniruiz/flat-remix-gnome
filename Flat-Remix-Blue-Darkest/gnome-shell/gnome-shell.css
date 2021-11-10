@@ -2365,9 +2365,40 @@ StScrollBar {
 .events-section-title {
   padding: 1em; }
 
-.datemenu-today-button .date-label {
-  font-size: 1.5em;
-  font-weight: 300; }
+.datemenu-today-button {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 4px;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0), 0 1px rgba(238, 238, 236, 0);
+  text-shadow: none;
+  icon-shadow: none; }
+  .datemenu-today-button:focus {
+    color: #eeeeec;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 2px rgba(39, 119, 255, 0.6); }
+  .datemenu-today-button:hover {
+    color: #eeeeec;
+    background-color: #121212;
+    border-color: black;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: none; }
+  .datemenu-today-button:active {
+    color: #eeeeec;
+    background-color: black;
+    border-color: black;
+    text-shadow: none;
+    icon-shadow: none;
+    box-shadow: none; }
+  .datemenu-today-button .date-label {
+    font-size: 1.5em;
+    font-weight: 300; }
 
 .calendar {
   border-width: 1px;
@@ -2391,7 +2422,8 @@ StScrollBar {
     border-color: black;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-    icon-shadow: 0 1px rgba(0, 0, 0, 0.2); }
+    icon-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: none; }
   .calendar:active {
     color: #eeeeec;
     background-color: black;
