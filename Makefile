@@ -59,7 +59,7 @@ ifeq ($(DESTDIR),)
     endif
 else
 	mkdir -p $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
-	cp -a Makefile $(THEMES) src share $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
+	cp -a Makefile themes src share $(DESTDIR)$(PREFIX)/share/$(PKGNAME)/
 endif
 
 uninstall:
