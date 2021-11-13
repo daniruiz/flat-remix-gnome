@@ -1,0 +1,11 @@
+$selected_bg_color: #2777ff;
+$selected_fg_color: #ffffff;
+$variant: 'dark';
+$full-panel: 'false';
+$asset_suffix: '-dark';
+
+@import "gnome-shell/_colors"; //use gtk colors
+@import "gnome-shell/upstream/gnome-shell-sass/_drawing";
+@import "gnome-shell/upstream/gnome-shell-sass/_common";
+@import "gnome-shell/upstream/gnome-shell-sass/_widgets";
+@import "gnome-shell/_common-tweaks";

@@ -5,7 +5,7 @@ palette=['#1F2229', '#D41919', '#5EBDAB', '#FEA44C', '#367bf0', '#9755b3', '#49A
 bold-is-bright=true
 
 [org.gnome.shell.extensions.user-theme]
-name='Flat-Remix-Blue'
+name='Flat-Remix-Blue-Light'
 
 [org.gnome.gedit.preferences.editor]
 scheme='Flat-Remix'

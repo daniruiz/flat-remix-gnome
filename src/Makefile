@@ -1,9 +1,17 @@
-SUBDIRS=sass gresource assets
+SUBDIRS=assets-renderer/gnome-shell sass
+THEMES_DIR=../themes
 
-.PHONY: build clean
+include Makefile.inc
 
-build:
-	$(foreach SUBDIR,$(SUBDIRS),$(MAKE) -C $(SUBDIR) build &&) true
+.PHONY: build $(SUBDIRS) clean
+
+build: $(SUBDIRS)
+	$(MAKE) -C gresource build
+	# Remove variants that are not valid
+	rm -rf $(foreach variant,$(UNWANTED_VARIANTS),$(THEMES_DIR)/Flat-Remix-$(variant)*)
+
+$(SUBDIRS):
+	$(MAKE) -C $@ build
 
 clean:
 	$(foreach SUBDIR,$(SUBDIRS),$(MAKE) -C $(SUBDIR) clean &&) true

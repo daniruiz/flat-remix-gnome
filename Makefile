@@ -2,8 +2,8 @@ PKGNAME = flat-remix-gnome
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 UBUNTU_RELEASE = impish
 PREFIX ?= /usr
-THEMES ?= $(patsubst %/index.theme,%,$(wildcard */index.theme))
-BASE_THEME ?= Flat-Remix-Blue
+THEMES ?= $(patsubst themes/%/,%,$(wildcard themes/*/))
+BASE_THEME ?= Flat-Remix-Blue-Light
 BLUR ?= 6
 IS_UBUNTU ?= $(shell echo "$$(lsb_release -si 2> /dev/null)" | grep -q 'Ubuntu\|Pop' && echo true)
 USER_HOME ?= $(shell eval echo ~$$SUDO_USER)
@@ -43,7 +43,7 @@ build:
 install:
 ifeq ($(DESTDIR),)
 	mkdir -p $(PREFIX)/share/themes/
-	cp -r $(THEMES) $(PREFIX)/share/themes/
+	cp -a $(foreach theme,$(THEMES),themes/$(theme)) $(DESTDIR)$(PREFIX)/share/themes
 	cp -r share/ $(PREFIX)/
 	glib-compile-schemas $(PREFIX)/share/glib-2.0/schemas/
 	mkdir -p $(PREFIX)/share/gnome-shell/theme/
