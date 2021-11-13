@@ -99,17 +99,13 @@ release: _get_version
 	git push origin --tags
 	$(MAKE) dist
 
-aur_release: _get_version _get_tag
+aur_release: _get_version
 	cd aur; \
-	sed "s/$(TAG)/$(VERSION)/g" -i PKGBUILD .SRCINFO; \
-	git commit -a -m "$(VERSION)"; \
-	git push origin master;
+	sed "s/pkgver *=.*/pkgver=$(VERSION)/" -i PKGBUILD .SRCINFO; \
+	
 
-	git commit aur -m "Update aur version $(VERSION)"
-	git push origin master
-
-copr_release: _get_version _get_tag
-	sed "s/$(TAG)/$(VERSION)/g" -i $(PKGNAME).spec
+copr_release: _get_version
+	sed "/Version:/c Version: $(VERSION)" -i $(PKGNAME).spec
 	git commit $(PKGNAME).spec -m "Update $(PKGNAME).spec version $(VERSION)"
 	git push origin master
 
