@@ -8,6 +8,8 @@ BLUR ?= 6
 IS_UBUNTU ?= $(shell echo "$$(lsb_release -si 2> /dev/null)" | grep -q 'Ubuntu\|Pop' && echo true)
 USER_HOME ?= $(shell eval echo ~$$SUDO_USER)
 
+include src/Makefile.inc
+
 # !! Patch for pamac
 # Pamac installs packages as root, no 'sudo' (due to pkexec), so dconf is unable
 # to get the user's background. As a workaround HOME env is set to the home
@@ -79,28 +81,13 @@ _get_tag:
 	@echo $(TAG)
 
 dist: _get_version
-	variants="- -Dark -Darkest -Miami -Miami-Dark"; \
-	theme_variants="- -fullPanel"; \
-	color_variants="- -Blue -Green -Red -Yellow"; \
 	count=1; \
-	for variant in $$variants; \
+	for color_variant in $(COLOR_VARIANTS) Miami; \
 	do \
-		[ "$$variant" = '-' ] && variant=''; \
-		for theme_variant in $$theme_variants; \
-		do \
-			[ "$$theme_variant" = '-' ] && theme_variant=''; \
-			files=''; \
-			for color_variant in $$color_variants; \
-			do \
-				[ "$$color_variant" = '-' ] && color_variant=''; \
-				file="Flat-Remix$${color_variant}$${variant}$${theme_variant}"; \
-				[ -d "$$file" ] && files="$$files $$file"; \
-			done; \
-			count_pretty=$$(echo "0$${count}" | tail -c 3); \
-			tar -c $$files | \
-				xz -z - > "$${count_pretty}-Flat-Remix$${variant}$${theme_variant}_$(VERSION).tar.xz"; \
-			count=$$((count+1)); \
-		done; \
+		count_pretty=$$(echo "0$${count}" | tail -c 3); \
+		(cd themes && tar -c "Flat-Remix-$${color_variant}"*) | \
+			xz -z - > "$${count_pretty}-Flat-Remix-$${color_variant}_$(VERSION).tar.xz"; \
+		count=$$((count+1)); \
 	done; \
 
 release: _get_version
