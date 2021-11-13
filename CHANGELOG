@@ -1,3 +1,12 @@
+[20211113]
+ * Improve script to package aur and fedora
+ * Package themes by color only
+ * Add script to generate custom themes
+ * Improve fedora package spec file
+ * Add all new color variants
+ * Make datemenu-today-button flat
+ * Fix Requires value in fedora spec
+
 [20211105]
  * Make some widgets in the calendar popup more flat
  * Update fedora package dependencies
