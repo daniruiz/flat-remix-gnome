@@ -101,7 +101,8 @@ release: _get_version
 
 aur_release: _get_version
 	cd aur; \
-	sed "s/pkgver *=.*/pkgver=$(VERSION)/" -i PKGBUILD .SRCINFO; \
+	sed "s/pkgver=.*/pkgver=$(VERSION)/" -i PKGBUILD; \
+	sed "s/pkgver =.*/pkgver = $(VERSION)/" -i .SRCINFO; \
 	git commit -a -m "$(VERSION)"; \
 	git push origin master;
 
