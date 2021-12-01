@@ -2272,7 +2272,7 @@ StScrollBar {
   .popup-menu-item:checked {
     background-color: transparent; }
   .popup-menu-item.selected, .popup-menu-item:active {
-    background-color: rgba(127, 127, 127, 0.1);
+    background-color: #1c1c1c;
     color: #eeeeec; }
 
 .popup-sub-menu {
@@ -2436,12 +2436,20 @@ StScrollBar {
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none; }
-  .calendar .calendar-day-base:active, .calendar .calendar-day-base:selected {
+  .calendar .pager-button:hover, .calendar .pager-button:focus {
+    background-color: #1c1c1c; }
+  .calendar .calendar-day-base:hover, .calendar .calendar-day-base:focus, .calendar .calendar-day-base:active, .calendar .calendar-day-base:selected {
     color: #eeeeec;
-    background-color: #1f1f1f; }
+    background-color: #1c1c1c; }
+  .calendar .calendar-today:hover, .calendar .calendar-today:focus {
+    background-color: #1c1c1c;
+    color: #eeeeec; }
   .calendar .calendar-today:active, .calendar .calendar-today:selected {
     background: #0099a1;
     color: #ffffff; }
+    .calendar .calendar-today:active:hover, .calendar .calendar-today:active:focus, .calendar .calendar-today:selected:hover, .calendar .calendar-today:selected:focus {
+      background-color: #1c1c1c;
+      color: #eeeeec; }
 
 /* Events */
 .events-button {
