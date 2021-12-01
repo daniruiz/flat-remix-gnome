@@ -11,9 +11,9 @@ stage {
 }
 
 .toggle-switch { width: 48px; }
-.toggle-switch-us, .toggle-switch-intl {
-	background-image: url("assets/toggle-off-hc.svg");
-	&:checked { background-image: url("assets/toggle-on-hc.svg"); }
+.toggle-switch {
+  background-image: url("assets/toggle-off-hc.svg");
+  &:checked { background-image: url("assets/toggle-on-hc.svg"); }
 }
 
 //force opaque panel
