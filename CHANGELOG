@@ -1,3 +1,8 @@
+[20211202]
+ * Update for GNOME 41.1
+ * Improve background of hovered itens in calendar popover
+ * Fix aur release script
+
 [20211113]
  * Improve script to package aur and fedora
  * Package themes by color only
