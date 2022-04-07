@@ -8,7 +8,7 @@ Group:          User Interface/Desktops
 Source:         https://github.com/daniruiz/%{name}/archive/%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
-Requires:       glib2-devel, gnome-extensions-app, gnome-shell >= 40.0, gnome-shell-extension-user-theme, ImageMagick, make
+Requires:       glib2-devel, gnome-extensions-app, gnome-shell >= 42.0, gnome-shell-extension-user-theme, ImageMagick, make
 BuildRequires:  make
 
 %description
