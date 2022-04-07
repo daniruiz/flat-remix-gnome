@@ -1,18 +1,14 @@
 /* Dash */
 
-$dash_background_color: #3b3b3b;
+$dash_background_color: lighten($system_bg_color, 5%);
 $dash_placeholder_size: 32px;
-$dash_padding: $base_padding + 4px; // 10px
-$dash_spacing: $base_padding / 4;
+$dash_padding: $base_padding*2; // 12px
+$dash_border_radius: $modal_radius + $dash_padding;
 
-$dash_bottom_margin: $base_margin * 4;
-
-$dash_border_radius: $modal_radius * 1.5;
-
+// container for the dash
 #dash {
-  @include fontsize($base_font_size - 2);
-  margin-top: $base_spacing * 3;
-  padding: 0 $dash_padding;
+  @extend %caption;
+  margin-top: $dash_padding;
 
   .placeholder {
     // background-image: url("assets/dash-placeholder.svg");
@@ -26,27 +22,46 @@ $dash_border_radius: $modal_radius * 1.5;
     height: $dash_placeholder_size;
   }
 
-  .overview-icon {
-    padding: $dash_padding / 2;
+  // Running app indicator (also shown in app grid)
+  .app-well-app-running-dot {
+    margin-bottom: 14px; // hardcoded
   }
 }
 
+// background of the dash behind app icons
 .dash-background {
   background-color: $dash_background_color;
-  margin-bottom: $dash_bottom_margin;
-  padding: $dash_padding;
   border-radius: $dash_border_radius;
+  padding: $dash_padding;
+  spacing: $base_padding;
+  margin-bottom: $dash_padding;
 }
 
-// Dash Items
-.dash-item-container .app-well-app, .show-apps {
-  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+// items on the dash
+.dash-item-container {
+  > * {margin: 0 2px;}
+  &:ltr:first-child {margin-left: 0;}
+  &:rtl:first-child {margin-right: 0;}
+
+  // each app item on the dash
+  .app-well-app .overview-icon {
+    padding: $base_padding;
+  }
+
+  // show apps button
+  .show-apps { @include overview_icon($osd_fg_color);}
+
+  .show-apps, .app-well-app {
+    padding-bottom: $dash_padding;
+  }
 }
 
+// separator between favourites and running apps
 .dash-separator {
   width: 1px;
-  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
-  background-color: transparentize($osd_fg_color,0.7);
+  margin: 0 $base_margin;
+  background-color: $borders_color;
+  margin-bottom: $dash_padding;
 }
 
 // OSD Tooltip
@@ -56,18 +71,5 @@ $dash_border_radius: $modal_radius * 1.5;
   border-radius: 99px;
   padding: $base_padding $base_padding * 2;
   text-align: center;
-  -y-offset: $base_margin * 3; // distance from the dash edge
-}
-
-// Show apps button
-.show-apps {
-  @include overview-icon($osd_fg_color);
-
-  &:focus,
-  &:checked {
-    .overview-icon {
-      background-color: transparentize($osd_bg_color,0.5);
-      color: $fg_color;
-    }
-  }
+  -y-offset: $base_margin * 2; // distance from the dash edge
 }

@@ -1,4 +1,4 @@
-/* Network Dialogs */
+/* Select Network dialogs */
 .nm-dialog {
   max-height: 34em;
   min-height: 31em;
@@ -10,47 +10,39 @@
   padding: 24px;
 }
 
-.nm-dialog-airplane-box { spacing: 12px; }
-
-.nm-dialog-airplane-headline {
-  font-weight: bold;
-  text-align: center;
-}
-
-.nm-dialog-airplane-text { color: $fg_color; }
-
-// header
-.nm-dialog-header {
-  font-weight: bold;
-}
-.nm-dialog-header-icon {
-  icon-size: $base_icon_size * 2;
-}
+.nm-dialog-header { @extend %heading; }
+.nm-dialog-subheader { color: $insensitive_fg_color;}
+.nm-dialog-header-icon { icon-size: $large_icon_size;}
 .nm-dialog-header-hbox { spacing: 10px; }
 
-// list of networks
 .nm-dialog-scroll-view {
-  border: 1px solid $borders_color;
-  padding:0;
-  background-color: darken($bg_color, 3%);
+  padding:$base_padding;
+  border-radius: $base_border_radius;
+  background-color: $base_color;
 }
 
-// list item
 .nm-dialog-item {
-  @include fontsize($base_font_size);
-  border-bottom: 1px solid $borders_color;
   padding: $base_padding * 2;
-  spacing: 0px;
+
   &:selected {
     background-color: $selected_bg_color;
+    border-radius: $base_border_radius - 3px;
     color: $selected_fg_color;
   }
+  &:hover { background-color:$hover_bg_color;}
 }
 
-// icons in list
 .nm-dialog-icon { icon-size: $base_icon_size; }
-.nm-dialog-icons { spacing: $base_spacing * 2; }
+.nm-dialog-icons { spacing: $base_padding * 2; }
 
 // no networks
-.no-networks-label { color: $insensitive_fg_color; }
 .no-networks-box { spacing: $base_padding; }
+.no-networks-label { color: $insensitive_fg_color; }
+
+// airplane mode
+.nm-dialog-airplane-box {
+  text-align: center;
+  spacing: 12px;
+}
+.nm-dialog-airplane-headline { @extend %title_3;}
+.nm-dialog-airplane-text { color: $insensitive_fg_color;}

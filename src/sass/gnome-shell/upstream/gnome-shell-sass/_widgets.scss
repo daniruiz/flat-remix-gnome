@@ -29,6 +29,7 @@
 @import 'widgets/osd';
 @import 'widgets/switcher-popup';
 @import 'widgets/workspace-switcher';
+@import 'widgets/screenshot';
 // Panel
 @import 'widgets/panel';
 @import 'widgets/corner-ripple';
@@ -43,7 +44,6 @@
 // A11y / misc
 @import 'widgets/a11y';
 @import 'widgets/misc';
-@import 'widgets/tiled-previews';
 @import 'widgets/keyboard';
 @import 'widgets/looking-glass';
 // Lock / login screens

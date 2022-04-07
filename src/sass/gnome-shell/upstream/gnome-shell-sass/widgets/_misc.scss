@@ -48,7 +48,7 @@
 .caps-lock-warning-label {
   text-align: center;
   padding-bottom: 8px;
-  @include fontsize($base_font_size - 1);
+  @extend %caption;
   color: $warning_color;
 }
 
@@ -56,4 +56,10 @@
 
 .workspace-animation {
   background-color: $system_bg_color;
+}
+
+/* Tiled window previews */
+.tile-preview {
+  background-color: transparentize($selected_bg_color,0.5);
+  border: 1px solid $selected_bg_color;
 }

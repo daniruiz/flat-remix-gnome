@@ -22,10 +22,6 @@ stage {
   &.unlock-screen,
   &:overview {
     background-color: #000;
-
-    .panel-corner {
-      -panel-corner-opacity: 1;
-    }
   }
 
   .panel-button {

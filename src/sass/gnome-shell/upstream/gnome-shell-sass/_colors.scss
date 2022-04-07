@@ -1,34 +1,36 @@
 // When color definition differs for dark and light variant,
-// it gets @if ed depending on $variant
+// it gets @if-ed depending on $variant
 
-$base_color: if($variant == 'light', #fff, lighten(desaturate(#241f31, 20%), 2%));
-$bg_color: if($variant == 'light', #f6f5f4, darken(desaturate(#3d3846, 100%), 4%));
-$fg_color: if($variant == 'light', #2e3436, #eeeeec);
+$base_color: if($variant == 'light', #fff, darken(desaturate(#241f31, 100%), 2%));
+$bg_color: if($variant == 'light', #f6f5f4, lighten($base_color, 5%));
+$fg_color: if($variant == 'light', transparentize(black, .2), white);
 
 $selected_fg_color: #fff;
-$selected_bg_color: if($variant == 'light', #3584e4, darken(#3584e4, 10%));
+$selected_bg_color: #3584e4;
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
-$borders_color: if($variant == 'light', darken($bg_color, 18%), darken($bg_color, 8%));
-$borders_edge: if($variant == 'light', rgba(255,255,255,0.8), transparentize($fg_color, 0.93));
+
+$borders_color: if($variant == 'light', transparentize($fg_color, .5), transparentize($fg_color, .9));
+$borders_edge: if($variant == 'light', rgba(255,255,255,0.8), lighten($bg_color, 5%));
+
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
-$top_hilight: $borders_edge;
 
-$warning_color: #f57900;
-$error_color: #ff8080;
-$success_color: if($variant == 'light', #33d17a, darken(#33d17a, 10%));
+$warning_color: if($variant == 'light', #e5a50a, #f5c211);;
+$error_color: if($variant == 'light', #e01b24, #c01c28);
+$success_color: if($variant == 'light', #2ec27e, #26a269);
 $destructive_color: if($variant == 'light', #e01b24, darken(#e01b24, 10%));
 
-$osd_fg_color: #eeeeec;
-$osd_text_color: white;
-$osd_bg_color: transparentize(darken(desaturate(#3d3846, 100%), 12%),0.04);
+$osd_fg_color: white;
+$osd_bg_color: transparentize(desaturate($bg_color, 100%),0.04);
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
-$osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
+$osd_insensitive_fg_color: if($variant == 'light', mix($osd_fg_color, $osd_bg_color, 80%),  mix($osd_fg_color, $osd_bg_color, 70%));
 $osd_borders_color: transparentize(black, 0.3);
-$osd_outer_borders_color: transparentize(white, 0.84);
+$osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 
 $shadow_color: if($variant == 'light', rgba(0,0,0,0.1), rgba(0,0,0,0.2));
-$system_bg_color: desaturate(#241f31,100%); //neutralize the HIG color
+
+// overview background color
+$system_bg_color: $base_color;
 
 //insensitive state derived colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 50%);

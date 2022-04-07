@@ -1,36 +1,25 @@
 /* Workspace Switcher */
-.workspace-switcher-group {
-  padding: $base_padding * 2;
-}
 
-.workspace-switcher-container {
-  @extend %osd_panel;
-}
+$ws_indicator_height: $large_icon_size;
+$ws_dot_active: $ws_indicator_height / 3;
+$ws_dot_inactive: $ws_indicator_height / 6;
 
 .workspace-switcher {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  spacing: $base_spacing * 2;
+  @extend %osd_panel;
+  margin-bottom: 4em;
+  spacing: $base_padding * 2;
+  padding: $base_padding * 2 $base_padding * 3;
 }
 
-.ws-switcher-box {
-  background: transparent;
-  height: 50px;
-  background-size: 32px;
-  border: 1px solid transparentize($osd_fg_color,0.9);
-  border-radius: $base_border_radius + 3px;
-}
+.ws-switcher-indicator {
+  background-color: transparentize($osd_fg_color,0.5);
+  padding: $ws_dot_inactive / 2;
+  margin: ($ws_indicator_height - $ws_dot_inactive) / 2;
+  border-radius: $ws_indicator_height;
 
-// active workspace in the switcher
-.ws-switcher-active-up,
-.ws-switcher-active-down,
-.ws-switcher-active-left,
-.ws-switcher-active-right {
-  height: 52px;
-  background-color: $selected_bg_color;
-  border: 1px solid if($variant=='light', darken($selected_bg_color, 8%), lighten($selected_bg_color, 5%));
-  border-radius: $base_border_radius + 3px;
-  color: $selected_fg_color;
+  &:active {
+    background-color: $osd_fg_color;
+    padding: $ws_dot_active / 2;
+    margin: ($ws_indicator_height - $ws_dot_active) / 2;
+  }
 }

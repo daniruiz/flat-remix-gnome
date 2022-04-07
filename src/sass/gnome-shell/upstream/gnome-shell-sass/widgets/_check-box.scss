@@ -1,7 +1,7 @@
 /* Check Boxes */
 
 // these are equal to the size of the SVG assets
-$check_height: 22px;
+$check_height: 24px;
 $check_width: 24px;
 
 
@@ -10,9 +10,9 @@ $check_width: 24px;
   StBin {
     width: $check_width;
     height: $check_height;
-    background-image: url("assets/checkbox-off.svg");
+    background-image: if($variant == 'light', url("assets/checkbox-off-light.svg"), url("assets/checkbox-off.svg"));
   }
-  &:focus StBin { background-image: url("assets/checkbox-off-focused.svg"); }
+  &:focus StBin { background-image: if($variant == 'light', url("assets/checkbox-off-focused-light.svg"), url("assets/checkbox-off-focused.svg"));; }
   &:checked StBin { background-image: url("assets/checkbox.svg"); }
   &:focus:checked StBin { background-image: url("assets/checkbox-focused.svg"); }
 }
