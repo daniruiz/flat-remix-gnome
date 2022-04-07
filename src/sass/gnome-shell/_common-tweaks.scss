@@ -1,41 +1,40 @@
-$overview_transparent_bg: transparentize(white, .8);
-$dialog_box_shadow: 0 2px 8px 0 transparentize(black, .6);
+$overview_transparent_bg: transparentize(white, .9);
+$dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
-/* OSD */
-$_osd_color: if($variant=='light', black, $fg_color);
-%osd_panel {
-    font-weight: bold;
-    background-color: $bg_color;
-    color: $fg_color;
-    border: 2px solid $borders_color;
-    box-shadow: 0 4px 10px transparentize(black, .8);
-
-    StIcon {
-        color: $_osd_color;
-        icon-shadow: 0 0 6px transparentize(black, .6);
-    }
+// Dropshadow for large icons
+.icon-dropshadow {
+  icon-shadow: 0 1px 5px $shadow_color;
 }
 
-.osd-window {
-    .level {
-        -barlevel-background-color: transparentize($_osd_color, if($variant=='light', 0.7, 0.9));
-        -barlevel-active-background-color: $_osd_color;
-    }
+/* OSD */
+%osd_panel {
+  background-color: transparentize($osd_bg_color, 0.04);
+  box-shadow: $dialog_box_shadow;
+}
+
+// buttons on OSD elements
+// that are undecorated by default and use OSD colors
+%osd_button {
+  @include button(undecorated);
+  border: 0!important;
+  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color); }
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color); }
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color); }
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color); }
+  &:outlined, &:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color); }
+}
+
+/* Switches */
+.toggle-switch {
+  height: 22px;
+  width: 44px;
 }
 
 /* Slider */
-
 .slider {
-    height: 1.1em;
-    -barlevel-height: .35em;
-    -barlevel-background-color: $borders_color;
-    -barlevel-border-color: $selected_bg_color;
-    -barlevel-active-background-color: $selected_bg_color;
-    -barlevel-overdrive-color: $destructive_color;
-    -barlevel-overdrive-separator-width: 0.1em;
-    -barlevel-border-width: 0;
-
-    -slider-handle-radius: 0;
+  -barlevel-background-color: $borders_color;
+  -barlevel-border-width: 0;
+  -slider-handle-radius: 0;
 }
 
 /* Check Boxes */
@@ -60,102 +59,131 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 /* Popovers/Menus */
-
-.popup-menu-boxpointer,
-.candidate-popup-boxpointer {
-    -arrow-border-radius: $base_border_radius + 4px;
-    -arrow-background-color: $base_color;
-    -arrow-border-width: 12px;
-    -arrow-border-color: transparent;
-    -arrow-base: 0;
-    -arrow-rise: 0;
-    margin: if($full-panel == 'true', .2em, .45em);
-    background-color: transparentize($bg_color, .6);
-    box-shadow: 0 2px 4px -6px transparentize(black, .8);
-    border-radius: $base_border_radius + 8px;
+.popup-menu-boxpointer {
+  -arrow-rise: if($full-panel == 'true', .6em, .8em);
 }
 
-// menu items
+.popup-menu-content {
+  padding: 4px;
+  box-shadow: $dialog_box_shadow;
+  background-color: $base_color;
+}
+
 .popup-menu-item {
-    border-radius: $base_border_radius;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
-    &:checked { background-color: transparent; }
-
-    &.selected, &:active {
-        background-color: $popover_hover_color;
-        color: $fg_color;
-    }
+  &:checked {
+    border-color: $borders_color;
+    background-color: $bg_color!important;
+  }
 }
 
-// popover submenus
 .popup-sub-menu {
-    border: 1px solid $borders_color;
-    background-color: $bg_color;
-    border-radius: $base_border_radius;
+  background-color: $bg_color;
+  border: 1px solid $borders_color;
+  border-top: 0;
+
+  .popup-menu-item {
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    &:focus, &:hover { background-color: $hover_bg_color!important; }
+    &:checked { background-color: $checked_bg_color!important; }
+    &:active { background-color: $active_bg_color!important; }
+  }
 }
 
-/* App Switcher */
-// switcher onscreen panel
-.switcher-list {
-    .item-box {
-        &:outlined {
-            padding: 6px;
-            border: 3px solid $selected_bg_color;
-        }
+.popup-separator-menu-item { margin: 6px 0; }
 
-        &:selected {
-            background-color: $selected_bg_color;
-            color: $selected_fg_color;
-            text-shadow: 0 1px 4px transparentize(black, 0.6);
-        }
-    }
+/* Message List */
+.message-list .message-list-placeholder,
+.message-list-controls {
+  font-weight: normal;
 }
 
-/* Workspace Switcher */
-.ws-switcher-box { border: none }
-
-.workspace-switcher-container { padding: 7px; }
-
-// active workspace in the switcher
-.ws-switcher-active-up,
-.ws-switcher-active-down,
-.ws-switcher-active-left,
-.ws-switcher-active-right {
-    //box-shadow: 0 0px 6px transparentize(black, .5);
+.message-list-controls {
+  spacing: $base_padding * 2;
+  @include fontsize(10);
 }
 
+.message {
+  .message-content {
+    padding: $base_padding;
+    spacing: 0;
+  }
+  .message-title { padding-top: .5em; }
+  .message-secondary-bin > .event-time { padding-bottom: .5em; }
+}
+
+/* Notifications & Message Tray */
+.notification-banner {
+  box-shadow: $dialog_box_shadow
+}
+
+/* Window Picker */
 // Window titles
 .window-caption {
-    color: black;
-    background-color: white;
-    box-shadow: $dialog_box_shadow;
+  color: black;
+  background-color: white;
+  box-shadow: $dialog_box_shadow;
 }
 
 // Close button
 .window-close {
-    background-image: url("assets/close-window.svg");
-    background-size: 32px;
+  background-image: url("assets/close-window.svg");
+  background-size: 32px;
+  background-color: transparent;
+  box-shadow: none;
+  color: transparent;
+  height: 32px;
+  width: 32px;
+  transition-duration: .2s;
+
+  &:hover {
+    background-image: url("assets/close-window-hover.svg");
     background-color: transparent;
-    box-shadow: none;
+  }
+
+  &:active {
+    background-image: url("assets/close-window-active.svg");
+    background-color: transparent;
     color: transparent;
-    height: 32px;
-    width: 32px;
-    transition-duration: .2s;
-
-    &:hover {
-        background-image: url("assets/close-window-hover.svg");
-        background-color: transparent;
-    }
-
-    &:active {
-        background-image: url("assets/close-window-active.svg");
-        background-color: transparent;
-        color: transparent;
-        transition-duration: 0s;
-    }
+    transition-duration: 0s;
+  }
 }
 
-/* Tiled window previews */
+/* Workspace Switcher */
+.ws-switcher-indicator {
+  padding: 2px;
+  margin: 10px;
+
+  &:active {
+    padding: 4px;
+    margin: 8px;
+  }
+}
+
+/* Date/Time Menu */
+.events-button,.world-clocks-button,.weather-button {
+  box-shadow: none;
+}
+
+/* Screenshot UI */
+.screenshot-ui-shot-cast-container {
+  background-color: lighten($osd_bg_color, 4%);
+}
+
+.screenshot-ui-shot-cast-button {
+  background-color: transparent;
+  &:hover, &:focus { background-color: lighten($osd_bg_color, 10%); }
+  &:active { background-color: lighten($osd_bg_color, 15%); }
+  &:checked { background-color: white; color: black; }
+}
 
 .tile-preview-left.on-primary,
 .tile-preview-right.on-primary,
@@ -171,15 +199,13 @@ $_osd_color: if($variant=='light', black, $fg_color);
 #panel {
     $_panel_bg: transparentize(black, .8);
     $_panel_fg: white;
-    $_panel_text_shadow: 0 1px 2px transparentize(black, 0.3);
+    $_panel_text_shadow: 0 1px 2px transparentize(black, 0.5);
     padding: if($full-panel == 'true', .1em 0, 0);
     font-size: .9em;
     height: 2em;
     border-radius: if($full-panel == 'true', 0, 7px);
     background: $_panel_bg;
     text-shadow: $_panel_text_shadow;
-
-    .popup-menu-arrow { width: 0; }
 
     StIcon { icon-shadow: $_panel_text_shadow; }
 
@@ -192,8 +218,6 @@ $_osd_color: if($variant=='light', black, $fg_color);
             &, &:hover, &:active, &:focus, &:overview, &:checked { color: white; }
         }
     }
-
-    .panel-corner { -panel-corner-radius: 0; }
 
     .panel-button {
         color: $_panel_fg;
@@ -227,201 +251,83 @@ $_osd_color: if($variant=='light', black, $fg_color);
 }
 
 /* Date/Time Menu */
-
-// notification styling
-@mixin notification_bubble($flat: false) {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: $base_border_radius + 2px;
-  margin: $base_margin;
-
-  @if $flat {
-    @include button(undecorated);
-  } @else {
-    @include button(normal);
-  }
-
-  &:focus {
-    @include button(focus);
-  }
-
-  &:hover {
-    @include button(hover);
-    box-shadow: none;
-  }
-
-  &:active {
-    @include button(active);
-  }
-}
-
-.events-section-title { padding: 1em; }
-
 .datemenu-today-button {
-    @include notification_bubble($flat: true);
+  &:insensitive { color: inherit; }
 
-    .date-label {
-        font-size: 1.5em;
-        font-weight: 300;
-    }
+  .day-label { font-weight: normal; }
+
+  .date-label { font-weight: lighter; }
 }
-
-.calendar {
-  @include notification_bubble($flat: true);
-
-  .pager-button {
-    &:hover, &:focus { background-color: $popover_hover_color }
-  }
-
-  .calendar-day-base {
-    &:hover, &:focus,
-    &:active,&:selected {
-      color: $fg_color;
-      background-color: $popover_hover_color;
-    }
-  }
-
-  .calendar-today {
-    &:hover,&:focus {
-      background-color: $popover_hover_color;
-      color: $fg_color;
-    }
-    &:active,&:selected {
-      background: $selected_bg_color;
-      color: $selected_fg_color;
-      &:hover,&:focus {
-        background-color: $popover_hover_color;
-        color: $fg_color;
-      }
-    }
-  }
-}
-
-/* Events */
-.events-button { @include notification_bubble($flat: true); }
-
-/* World clocks */
-
-.world-clocks-button {
-    @include notification_bubble($flat: true);
-}
-
-.weather-button {
-    @include notification_bubble($flat: true);
-}
-
 
 /* Search */
-
 // search entry
 .search-entry {
+  $_text-shadow: 0px 1px 2px transparentize(black, 0.5);
+  color: black;
+  text-shadow: $_text-shadow;
+  font-weight: bold;
+  background-color: $overview_transparent_bg;
+  font-size: 1.1em;
+  transition-duration: 200ms;
+
+  StLabel.hint-text { color: $osd_fg_color; }
+
+  &, &:focus, &:hover {
+    width: 21em;
+    padding: .6em .8em;
+    border: none;
+  }
+
+  &:focus, &:hover {
+    background-color: white;
     color: black;
-    text-shadow: 0px 1px 2px rgba(black, 0.9);
-    font-weight: bold;
-    background-color: $overview_transparent_bg;
-    border-radius: 999px;
-    font-size: 1.1em;
-    transition-duration: 200ms;
+    font-weight: normal;
+    box-shadow: none;
+    text-shadow: none;
 
-    StLabel.hint-text { color: $osd_fg_color; }
-
-    &, &:focus, &:hover {
-        width: 21em;
-        padding: .6em .8em;
-        border: none;
-    }
-
-    &:focus, &:hover {
-        background-color: white;
-        color: black;
-        font-weight: normal;
-        box-shadow: none;
-        text-shadow: none;
-
-        StLabel.hint-text { color: black; }
-
-        .search-entry-icon {
-            color: black;
-            icon-shadow: none;
-        }
-    }
+    StLabel.hint-text { color: black; }
 
     .search-entry-icon {
-        color: white;
-        icon-shadow: 0px 1px 2px rgba(black, 0.9);
+      color: black;
+      icon-shadow: none;
     }
+  }
+
+  .search-entry-icon {
+    color: white;
+    icon-shadow: $_text-shadow;
+  }
 }
 
 // search results
 .search-section-content {
-    background-color: $overview_transparent_bg;
-    box-shadow: none;
-    border: none;
+  background-color: $overview_transparent_bg;
+  border: none;
 }
 
 // search result provider
-.search-provider-icon {
-    .list-search-provider-content {
-        .list-search-provider-details { font-weight: bold; }
-    }
+.search-provider-icon .list-search-provider-details { font-weight: bold; }
+
+.list-search-result .list-search-result-description {
+  color: transparentize($osd_fg_color, .2);
 }
 
-/* DASHBOARD */
-
+/* Dash */
 #dash {
-    color: $osd_fg_color;
-    background-color: transparent;
-    border: none;
-    border-color: transparent;
-
-    .overview-icon StIcon {
-        color: white;
-        icon-shadow: 0 2px 6px transparentize(black, .6);
-    }
+  color: $osd_fg_color;
+  icon-shadow: 0 2px 6px transparentize(black, .6);
 }
 
-.dash-background {
-  background: $overview_transparent_bg;
-  //box-shadow: 0 2px 8px 0 transparentize(black, .2);
-}
+.dash-background, .dash-separator { background: $overview_transparent_bg; }
 
-.dash-separator { background: $overview_transparent_bg; }
-
-.show-apps {
-    &:focus,
-    &:checked {
-        .overview-icon {
-            background-color: $overview_transparent_bg;
-            color: black;
-        }
-    }
-}
-
-/* App Folders */
-.app-well-app.app-folder {
-    &, & .overview-icon.overview-icon-with-label {
-      background-color: $overview_transparent_bg
-    }
-    //box-shadow: 0 2px 5px black;
-
-    &:checked { background: black; }
-}
+/* App Grid */
+// Icon tiles in the app grid
+.app-well-app { color: white; }
 
 .app-folder-dialog {
-    background: black;
-    box-shadow: 0 0 20px lighten(black, 1%);
-
-    & .folder-name-container {
-        & .edit-folder-button {
-            &, &:hover, &:active {
-                background: white;
-                color: black;
-            }
-        }
-    }
+  background: black;
+  box-shadow: 0 0 20px lighten(black, 1%);
 }
-
-.app-folder-dialog-container { width: 720px; }
 
 /* Screen Shield */
 

@@ -130,12 +130,19 @@
 }
 
 
+@function draw_border_color ($c) {
+  //
+  // colored buttons want the border form the base color
+  //
+  @return if($variant == 'light', darken($c, 18%), darken($c, 4%));
+}
+
 // buttons
 // since buttons are all flat an borderless now the mixin is simpler
 
 @mixin button($t, $tc:$fg_color, $c:$bg_color) {
 
-$button_bg_color: mix($tc, $c, 5%);
+$button_bg_color: lighten($c, 5%);
 //
 // Button drawing function
 //
@@ -149,10 +156,13 @@ $button_bg_color: mix($tc, $c, 5%);
 // osd, osd-hover, osd-active, osd-insensitive, osd-backdrop, undecorated
 //
 
+  border: 1px solid transparent;
+
   // normal button
   @if $t==normal {
     color: $tc;
     background-color: $button_bg_color;
+    border-color: draw_border_color($c);
   }
 
   // focused button
@@ -173,19 +183,21 @@ $button_bg_color: mix($tc, $c, 5%);
   // hover button
   @else if $t==hover {
     color: $tc;
-    background-color: lighten($button_bg_color, 3%);
+    background-color: mix($tc, $button_bg_color, 3%);
+    border-color: if($variant == 'light', draw_border_color(lighten($c, 7%)), draw_border_color($c));
   }
 
   // active button
   @else if $t==active {
     color: $tc;
-    background-color:  lighten($button_bg_color, 6%);
+    background-color:  mix($tc, $button_bg_color, 6%);
+    border-color: draw_border_color(if($variant == 'light', $c, darken($c,7%)));
   }
 
   // checked button
   @else if $t==checked {
     color: $tc;
-    background-color: lighten($button_bg_color, 9%);
+    background-color: mix($tc, $button_bg_color, 9%);
     &:hover { background-color: lighten($button_bg_color, 12%);}
     &:active { background-color: lighten($button_bg_color, 15%);}
   }
@@ -194,6 +206,7 @@ $button_bg_color: mix($tc, $c, 5%);
   @else if $t==insensitive {
     color: transparentize($tc, 0.5);
     background-color: transparentize($tc, .95);
+    border-color: $insensitive_borders_color;
   }
 
   // default/suggested button
@@ -204,7 +217,7 @@ $button_bg_color: mix($tc, $c, 5%);
       box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.4);
     }
     &:hover, &:focus { 
-      background-color: lighten($selected_bg_color, 5%);
+      background-color: mix($tc, $selected_bg_color, 5%);
       color: lighten($selected_fg_color, 5%);
     }
     &:active {
@@ -222,10 +235,11 @@ $button_bg_color: mix($tc, $c, 5%);
   @else if $t==undecorated {
     background-color: transparent;
     background-color: none;
+    border-color: transparent;
     &:insensitive {
       @include button(insensitive);
       background-color: transparent;
-      color: transparentize($selected_fg_color, .5);
+      //color: transparentize($selected_fg_color, .5);
     }
   }
 }
@@ -294,6 +308,7 @@ $button_bg_color: mix($tc, $c, 5%);
   @if $flat {
     @include button(undecorated);
     box-shadow: none !important;
+    &:insensitive { border-color: transparent; }
   } @else {
     @include button(normal);
   }
