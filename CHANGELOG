@@ -1,3 +1,9 @@
+[20220407]
+ * Update packaging
+ * Generate new themes
+ * Update theme tweaks for gnome 42
+ * Update upstream code to gnome 42
+
 [20211223]
  * Add missing icon checkbox-off-focused-darkest
 
