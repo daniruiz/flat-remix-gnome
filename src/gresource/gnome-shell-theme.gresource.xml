@@ -2,8 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
     <file>calendar-today.svg</file>
-    <file alias="icons/scalable/status/carousel-arrow-next-24-symbolic.svg">carousel-arrow-next-24-symbolic.svg</file>
-    <file alias="icons/scalable/status/carousel-arrow-back-24-symbolic.svg">carousel-arrow-back-24-symbolic.svg</file>
+    <file>calendar-today-light.svg</file>
     <file>checkbox-focused.svg</file>
     <file>checkbox-off-focused.svg</file>
     <file>checkbox-off.svg</file>
@@ -12,27 +11,11 @@
     <file>checkbox-off-focused-dark.svg</file>
     <file>checkbox-off-dark.svg</file>
     <file>checkbox-dark.svg</file>
-    <file alias="icons/scalable/actions/color-pick.svg">color-pick.svg</file>
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
     <file>gnome-shell-start.svg</file>
     <file alias="gdm.css">gnome-shell.css</file>
-    <file>no-events.svg</file>
-    <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
-    <file alias="icons/message-indicator-symbolic.svg">message-indicator-symbolic.svg</file>
-    <file alias="icons/eye-open-negative-filled-symbolic.svg">eye-open-negative-filled-symbolic.svg</file>
-    <file alias="icons/eye-not-looking-symbolic.svg">eye-not-looking-symbolic.svg</file>
-    <file alias="icons/pointer-double-click-symbolic.svg">pointer-double-click-symbolic.svg</file>
-    <file alias="icons/pointer-drag-symbolic.svg">pointer-drag-symbolic.svg</file>
-    <file alias="icons/pointer-primary-click-symbolic.svg">pointer-primary-click-symbolic.svg</file>
-    <file alias="icons/pointer-secondary-click-symbolic.svg">pointer-secondary-click-symbolic.svg</file>
-    <file alias="icons/scalable/actions/preview-close-symbolic.svg">window-close-24-symbolic.svg</file>
-    <file alias="icons/keyboard-caps-lock-filled-symbolic.svg">keyboard-caps-lock-filled-symbolic.svg</file>
-    <file alias="icons/keyboard-enter-symbolic.svg">keyboard-enter-symbolic.svg</file>
-    <file alias="icons/keyboard-hide-symbolic.svg">keyboard-hide-symbolic.svg</file>
-    <file alias="icons/keyboard-layout-filled-symbolic.svg">keyboard-layout-filled-symbolic.svg</file>
-    <file alias="icons/keyboard-shift-filled-symbolic.svg">keyboard-shift-filled-symbolic.svg</file>
     <file>process-working.svg</file>
     <file>toggle-off.svg</file>
     <file>toggle-on.svg</file>
@@ -43,5 +26,6 @@
     <file>close-window-hover.svg</file>
     <file>view-grid-symbolic.svg</file>
     <file>login-background</file>
+    <file>workspace-placeholder.svg</file>
   </gresource>
 </gresources>
