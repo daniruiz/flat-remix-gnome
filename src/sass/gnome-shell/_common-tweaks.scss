@@ -305,10 +305,12 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   color: transparentize($osd_fg_color, .2);
 }
 
-/* Dash */
 #dash {
   color: $osd_fg_color;
-  icon-shadow: 0 2px 6px transparentize(black, .6);
+
+  StIcon {
+    icon-shadow: 0 2px 6px transparentize(black, .6);
+  }
 }
 
 .dash-background, .dash-separator { background: $overview_transparent_bg; }
