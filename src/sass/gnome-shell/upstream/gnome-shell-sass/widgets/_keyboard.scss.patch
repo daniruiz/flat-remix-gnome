@@ -1,0 +1,12 @@
+5c5
+< $key_bg_color:  darken($osd_fg_color, 70%);
+---
+> $key_bg_color:  $osd_bg_color;
+7c7
+< $default_key_bg_color: if($variant=='light', darken($key_bg_color, 11%), darken($key_bg_color, 10%));
+---
+> $default_key_bg_color: lighten($osd_bg_color, 10%);
+13c13
+<   background-color: $osd_bg_color;
+---
+>   background-color: transparentize(darken($osd_bg_color, 10%), 0.04);
