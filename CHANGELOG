@@ -1,3 +1,11 @@
+[20220421]
+ * Regenerate all themes
+ * Update assets for gresources file
+ * Update assets
+ * Add icon-shadow to dash icons
+ * Add patch for keyboard stylesheet
+ * Fix indentation
+
 [20220407]
  * Update packaging
  * Generate new themes
