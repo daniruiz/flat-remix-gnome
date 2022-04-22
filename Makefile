@@ -1,6 +1,6 @@
 PKGNAME = flat-remix-gnome
 MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
-UBUNTU_RELEASE = impish
+UBUNTU_RELEASE = jammy
 PREFIX ?= /usr
 THEMES ?= $(patsubst themes/%/,%,$(wildcard themes/*/))
 BASE_THEME ?= Flat-Remix-Blue-Light
