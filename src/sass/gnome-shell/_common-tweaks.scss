@@ -60,7 +60,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 /* Popovers/Menus */
 .popup-menu-boxpointer {
-  -arrow-rise: if($full-panel == 'true', .6em, .8em);
+  -arrow-rise: if($full-panel == 'true', 8px, 10px);
 }
 
 .popup-menu-content {
@@ -185,7 +185,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 /* Top Bar */
 #panelBox {
-    padding: if($full-panel == 'true', 0, .35em .9em);
+    padding: if($full-panel == 'true', 0, 5px 12px);
     background: transparent;
 }
 
@@ -193,8 +193,8 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   $_panel_bg: transparentize(black, .8);
   $_panel_fg: white;
   $_panel_text_shadow: 0 1px 2px transparentize(black, 0.5);
-  padding: if($full-panel == 'true', .1em 0, 0);
-  font-size: .9em;
+  padding: if($full-panel == 'true', 1px 0, 0);
+  font-size: 90%;
   height: 2em;
   border-radius: if($full-panel == 'true', 0, 7px);
   background: $_panel_bg;

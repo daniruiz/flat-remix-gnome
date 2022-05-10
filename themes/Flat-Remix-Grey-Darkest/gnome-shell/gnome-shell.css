@@ -2750,7 +2750,7 @@ StScrollBar {
 
 /* Popovers/Menus */
 .popup-menu-boxpointer, .candidate-popup-boxpointer {
-  -arrow-rise: 0.8em; }
+  -arrow-rise: 10px; }
 
 .popup-menu-content, .candidate-popup-content {
   padding: 4px;
@@ -2860,12 +2860,12 @@ StScrollBar {
 
 /* Top Bar */
 #panelBox {
-  padding: 0.35em 0.9em;
+  padding: 5px 12px;
   background: transparent; }
 
 #panel {
   padding: 0;
-  font-size: .9em;
+  font-size: 90%;
   height: 2em;
   border-radius: 7px;
   background: rgba(0, 0, 0, 0.2);
