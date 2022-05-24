@@ -1,3 +1,7 @@
+[20220524]
+ * Use grey color for selected user in gdm
+ * Gnome-Shell: add background for panel-button on mouse-over
+
 [20220510]
  * Fix calendar legibility caused by em margins
  * Update ubuntu release
