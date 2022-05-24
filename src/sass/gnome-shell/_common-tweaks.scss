@@ -334,9 +334,11 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 /* Login Dialog */
 
+$login_transparent_bg: transparentize(#383c4a, .65);
+
 .login-dialog,
 .unlock-dialog {
-    $_login_button_bg: transparentize(#383c4a, .65);
+    $_login_button_bg: $login_transparent_bg;
 
     font-size: 11pt;
 
@@ -361,4 +363,13 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
         StIcon { icon-size: $base_icon_size; }
     }
+}
+
+.login-dialog-auth-list-item {
+  &:focus, &:selected { background-color: $login_transparent_bg; }
+}
+
+.login-dialog-user-list {
+  &:expanded .login-dialog-user-list-item:selected { background-color: $login_transparent_bg; }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $login_transparent_bg; }
 }

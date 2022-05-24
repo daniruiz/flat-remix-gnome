@@ -2878,12 +2878,12 @@ StScrollBar {
       color: white; }
   #panel .panel-button {
     color: white; }
-    #panel .panel-button:active, #panel .panel-button:focus, #panel .panel-button:overview, #panel .panel-button:checked {
+    #panel .panel-button:hover, #panel .panel-button:active, #panel .panel-button:focus, #panel .panel-button:overview, #panel .panel-button:checked {
       color: white;
       box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2); }
-  #panel .panel-button.clock-display:active, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:checked {
+  #panel .panel-button.clock-display:hover, #panel .panel-button.clock-display:active, #panel .panel-button.clock-display:focus, #panel .panel-button.clock-display:overview, #panel .panel-button.clock-display:checked {
     box-shadow: none; }
-    #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:checked .clock {
+    #panel .panel-button.clock-display:hover .clock, #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:checked .clock {
       box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2); }
   #panel #panelActivities.panel-button {
     margin-left: .4em; }
@@ -2943,6 +2943,7 @@ StScrollBar {
 .list-search-result .list-search-result-description {
   color: rgba(255, 255, 255, 0.8); }
 
+/* Dash */
 #dash {
   color: white; }
   #dash StIcon {
@@ -2994,3 +2995,12 @@ StScrollBar {
     .unlock-dialog .switch-user-button StIcon,
     .unlock-dialog .login-dialog-session-list-button StIcon {
       icon-size: 1.09em; }
+
+.login-dialog-auth-list-item:focus, .login-dialog-auth-list-item:selected {
+  background-color: rgba(56, 60, 74, 0.35); }
+
+.login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
+  background-color: rgba(56, 60, 74, 0.35); }
+
+.login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
+  border-right: 2px solid rgba(56, 60, 74, 0.35); }
