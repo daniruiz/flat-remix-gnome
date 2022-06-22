@@ -1,3 +1,6 @@
+[20220622]
+ * Match side panel button's border-radius with panel corners
+
 [20220524]
  * Use grey color for selected user in gdm
  * Gnome-Shell: add background for panel-button on mouse-over
