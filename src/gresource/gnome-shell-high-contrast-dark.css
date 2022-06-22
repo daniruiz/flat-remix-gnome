@@ -2885,14 +2885,19 @@ StScrollBar {
     box-shadow: none; }
     #panel .panel-button.clock-display:hover .clock, #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:overview .clock, #panel .panel-button.clock-display:checked .clock {
       box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2); }
-  #panel #panelActivities.panel-button {
-    margin-left: .4em; }
-    #panel #panelActivities.panel-button StLabel {
-      background-image: url("resource:///org/gnome/shell/theme/view-grid-symbolic.svg");
-      background-size: contain;
-      width: 1.5em;
-      height: 1.5em;
-      color: transparent; }
+  #panel #panelActivities.panel-button StLabel {
+    padding: 0 .2em;
+    background-image: url("resource:///org/gnome/shell/theme/view-grid-symbolic.svg");
+    background-size: contain;
+    width: 1.5em;
+    height: 1.5em;
+    color: transparent; }
+
+#panel :first-child > :first-child > .panel-button:hover {
+  border-radius: 8px; }
+
+#panel :last-child > :last-child > .panel-button:last-child:hover, #panel :last-child > :last-child > .panel-button:last-child:active, #panel :last-child > :last-child > .panel-button:last-child:focus, #panel :last-child > :last-child > .panel-button:last-child:overview, #panel :last-child > :last-child > .panel-button:last-child:checked {
+  border-radius: 12px 8px 8px 12px; }
 
 /* Date/Time Menu */
 .datemenu-today-button:insensitive {

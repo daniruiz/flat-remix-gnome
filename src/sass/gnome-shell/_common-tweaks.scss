@@ -231,15 +231,23 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
     }
   }
 
-  #panelActivities.panel-button {
-    margin-left: .4em;
-    StLabel {
-      background-image: url("assets/view-grid-symbolic.svg");
-      background-size: contain;
-      width: 1.5em;
-      height: 1.5em;
-      color: transparent;
-    }
+  #panelActivities.panel-button StLabel {
+    padding: 0 .2em;
+    background-image: url("assets/view-grid-symbolic.svg");
+    background-size: contain;
+    width: 1.5em;
+    height: 1.5em;
+    color: transparent;
+  }
+}
+
+#panel :first-child > :first-child > .panel-button:hover {
+  border-radius: 8px;
+}
+
+#panel :last-child > :last-child > .panel-button:last-child {
+  &:hover, &:active, &:focus, &:overview, &:checked {
+    border-radius: 12px 8px 8px 12px;
   }
 }
 
