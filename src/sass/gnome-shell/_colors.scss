@@ -3,6 +3,8 @@
 
 $_dark_base_color: #272a34;
 
+$is_highcontrast: "false";
+
 $base_color: if($variant == 'light', darken(#ffffff, 2%), $_dark_base_color)!default;
 $text_color: if($variant == 'light', black, white);
 $bg_color: if($variant == 'light', #ffffff, darken($_dark_base_color, 2%))!default;
@@ -11,7 +13,7 @@ $fg_color: if($variant == 'light', #5c616c, #eeeeec);
 $selected_fg_color: #ffffff!default;
 $selected_bg_color: saturate(#367bf0, 20%)!default;
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
-$borders_color: rgba(127, 127, 127, .2);
+$borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 18%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
@@ -26,8 +28,8 @@ $popover_bg_color: $menu_color;
 $popover_hover_color: $menu_selected_color;
 
 $scrollbar_bg_color: $base_color;
-$scrollbar_slider_color: mix($fg_color, $bg_color, if($variant=='light', 30%, 15%));
-$scrollbar_slider_hover_color: mix($fg_color, $bg_color, if($variant=='light', 35%, 20%));
+$scrollbar_slider_color: mix($fg_color, $bg_color, 60%);
+$scrollbar_slider_hover_color: mix($fg_color, $bg_color, 80%);
 $scrollbar_slider_active_color: $selected_bg_color;
 
 $warning_color: #fd7d00;
@@ -53,6 +55,15 @@ $tooltip_borders_color: $osd_outer_borders_color;
 $shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
 $system_bg_color: $_dark_base_color;
 
+// button
+$button_mix_factor: 5%;
+
+// cards
+$card_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 2%));
+
+// notifications
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 10%));
+
 $drop_target_color: #19a187;
 
 //insensitive state derived colors
@@ -71,10 +82,22 @@ $backdrop_borders_color: $borders_color;
 $backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 35%);
 $backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
 
-$backdrop_scrollbar_bg_color: $scrollbar_bg_color;
+$backdrop_scrollbar_bg_color: darken($backdrop_bg_color, 3%);
 $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40%);
 
 $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
+
+// derived checked colors
+$checked_bg_color: if($variant=='light', darken($base_color, 7%), lighten($base_color, 9%));
+$checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
+
+// derived hover colors
+$hover_bg_color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 4%));
+$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 10%));
+
+// derived active colors
+$active_bg_color: if($variant=='light', darken($base_color, 5%), lighten($base_color, 6%));
+$active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
 
 //special cased widget colors
 $suggested_bg_color: $selected_bg_color;
@@ -89,17 +112,3 @@ $switch_borders_color: if($variant == 'light',darken($switch_bg_color,15%),darke
 $focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
 $alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
 $dim_label_opacity: 0.55;
-
-//colors for cinnamon
-$button_bg: if($variant == 'light', lighten($bg_color, 2%), lighten($base_color, 2%));
-$button_border: $borders_color;
-$entry_bg: $base_color;
-$entry_border: $borders_color;
-$osd_button_bg: transparentize(lighten($osd_bg_color, 22%), 0.6);
-$osd_button_border: transparentize(darken($osd_bg_color, 12%), 0.6);
-$osd_entry_bg: $osd_button_bg;
-$osd_entry_border: $osd_button_border;
-$separator_color: if($variant == 'light', #DFDFDF, darken($bg_color, 6%));
-$tooltip_bg_color: #fbeaa0;
-$tooltip_border_color: #d0d0d0;
-$tooltip_fg_color: #4a4a4a;

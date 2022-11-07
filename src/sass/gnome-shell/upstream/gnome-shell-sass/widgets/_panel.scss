@@ -40,7 +40,14 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
     &.screen-recording-indicator {
       box-shadow: inset 0 0 0 100px $screenshot_ui_button_red;
+    }
+    &.screen-sharing-indicator {
+      box-shadow: inset 0 0 0 100px $warning_color;
+      StBoxLayout { margin: 0 $base_padding; }
+    }
 
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
       StBoxLayout {
         spacing: $base_padding;
       }
@@ -66,6 +73,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       &.screen-recording-indicator {
         box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.15);
       }
+      &.screen-sharing-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.15);
+      }
     }
 
     &:hover {
@@ -80,6 +90,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       &.screen-recording-indicator {
         box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.1);
       }
+      &.screen-sharing-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.1);
+      }
     }
     
     &:active:hover, &:overview:hover, &:focus:hover, &:checked:hover {
@@ -93,6 +106,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
       &.screen-recording-indicator {
         box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.2);
+      }
+      &.screen-sharing-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.2);
       }
     }
 
@@ -137,6 +153,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
         &.screen-recording-indicator {
           box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.15);
         }
+        &.screen-sharing-indicator {
+          box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.15);
+        }
       }
 
       &:hover {
@@ -151,6 +170,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
         &.screen-recording-indicator {
           box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.1);
         }
+        &.screen-sharing-indicator {
+          box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.1);
+        }
       }
       
       &:active:hover, &:overview:hover, &:focus:hover, &:checked:hover {
@@ -164,6 +186,9 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
 
         &.screen-recording-indicator {
           box-shadow: inset 0 0 0 100px transparentize($screenshot_ui_button_red, 0.2);
+        }
+        &.screen-sharing-indicator {
+          box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.2);
         }
       }
     }

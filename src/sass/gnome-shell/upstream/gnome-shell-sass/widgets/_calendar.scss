@@ -60,7 +60,7 @@
     }
   }
 
-  $calendar_day_size: 32px;
+  $calendar_day_size: 3em;
 
   .calendar-day-base {
     text-align: center;
@@ -69,6 +69,7 @@
     height: $calendar_day_size !important;
     width: $calendar_day_size !important;
     border-radius: 99px;
+    transition-duration: 100ms;
     @extend %numeric;
     @extend %smaller;
     

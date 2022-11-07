@@ -9,7 +9,7 @@
   color: $osd_fg_color;
   padding: $base_padding;
   spacing: $base_padding;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px 0 $shadow_color;
 
   & > #Toolbar {
     border: none;
@@ -79,6 +79,8 @@
     color: $insensitive_fg_color;
     &:hover { color: lighten($insensitive_fg_color, 20%); }
     &:active { color: darken($insensitive_fg_color, 20%); }
+
+    & StIcon { icon-size: 12px; }
    }
 }
 

@@ -48,7 +48,9 @@
 }
 
 .unlock-dialog-notification-label {
-  padding: 0 0 0 12px;
+  padding-left: 12px;
+  padding-right: 0;
+  &:rtl { padding-right: 12px; padding-left: 0; }
 }
 
 .unlock-dialog-notification-count-text {

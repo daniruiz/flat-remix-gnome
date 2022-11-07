@@ -16,7 +16,6 @@
   .modal-dialog-button-box { spacing: 3px; }
   .modal-dialog-button {
     padding: 4px 18px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     background-color: darken($system_bg_color, 3%);
     border-color: darken($system_bg_color, 3%);
     color: $osd_fg_color;
@@ -28,7 +27,6 @@
     }
     &:active {
       $_active_c: darken($_gdm_bg, 5%);
-      box-shadow: none;
       background-color: $_active_c;
       border-color: $_active_c;
     }
@@ -103,7 +101,6 @@
   @include fontsize($base_font_size + 2);
   font-weight: bold;
   padding-left: 15px;
-
   &:ltr { padding-left: 14px; text-align: left; }
   &:rtl { padding-right: 14px; text-align: right; }
 }

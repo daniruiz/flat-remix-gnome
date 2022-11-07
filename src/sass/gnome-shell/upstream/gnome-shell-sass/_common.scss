@@ -35,17 +35,10 @@ $base_border_radius: 8px;
 // radii of things that display over other things, e.g. popovers
 $modal_radius: $base_border_radius*2; // 24px
 
-// derived hover colors
-$hover_bg_color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 4%));
-$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 4%));
-
-// derived active colors
-$active_bg_color: if($variant=='light', darken($base_color, 5%), lighten($base_color, 6%));
-$active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 6%));
-
-// derived checked colors
-$checked_bg_color: if($variant=='light', darken($base_color, 7%), lighten($base_color, 9%));
-$checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 9%));
+// Chroma key to flag when a background-color is always occluded, not visible.
+// This allows any box-shadow behind it to be rendered more efficiently by
+// omitting the middle rectangle.
+$invisible_occluded_bg_color: rgba(3,2,1,0);
 
 // fonts
 $base_font_size: 10;
@@ -86,7 +79,7 @@ stage {
   padding: $base_padding;
   spacing: $base_padding;
   border: 2px solid transparent;
-  transition-duration: 100ms;
+  transition-duration: 200ms;
   text-align: center;
 }
 
@@ -114,11 +107,28 @@ stage {
   &:checked { @include button(checked);}
 }
 
+// normal icon-only button
+%icon_button {
+  border-radius: 99px;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: bold;
+  padding: $base_padding*2;
+
+  @include button(normal);
+  &:focus { @include button(focus);}
+  &:hover { @include button(hover);}
+  &:insensitive { @include button(insensitive);}
+  &:active { @include button(active);}
+  &:checked { @include button(checked);}
+
+  & > StIcon { icon-size: $base_icon_size; }
+}
+
 // buttons in dialogs/notifications
 // lighter in color and have a greater radius
 
 $bubble_button_radius:$base_border_radius*1.25;
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 7%));
 
 %bubble_button {
   padding: $base_padding * 2;
@@ -163,11 +173,11 @@ $bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($
 // that are undecorated by default and use OSD colors
 %osd_button {
   @include button(undecorated);
-  &:insensitive { @include button(undecorated, $c:$osd_bg_color);}
-  &:focus { @include button(focus, $c:$osd_bg_color);}
-  &:hover { @include button(hover, $c:$osd_bg_color);}
-  &:active { @include button(active, $c:$osd_bg_color);}
-  &:outlined,&:checked { @include button(checked, $c:$osd_bg_color);}
+  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color);}
 }
 
 /* General Typography */

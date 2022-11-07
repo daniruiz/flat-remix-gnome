@@ -123,6 +123,8 @@
     margin: 1px;
     &:hover {background-color: transparentize($fg_color, 0.8);}
     &:active {background-color: transparentize($fg_color, 0.9);}
+
+    & StIcon { icon-size: $base_icon_size; }
   }
 
   // body
@@ -157,6 +159,8 @@
   // fix margin for last button
   &:last-child:ltr { margin-right: $base_margin*3; }
   &:last-child:rtl { margin-left: $base_margin*3; }
+
+  & StIcon { icon-size: $base_icon_size; }
 }
 
 // album-art

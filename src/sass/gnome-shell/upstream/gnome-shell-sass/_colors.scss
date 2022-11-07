@@ -1,7 +1,13 @@
 // When color definition differs for dark and light variant,
 // it gets @if-ed depending on $variant
 
-$base_color: if($variant == 'light', #fff, darken(desaturate(#241f31, 100%), 2%));
+@import '_palette.scss';
+
+$is_highcontrast: "false";
+
+$_dark_base_color: darken(desaturate(#241f31, 100%), 2%);
+
+$base_color: if($variant == 'light', #fff, $_dark_base_color);
 $bg_color: if($variant == 'light', #f6f5f4, lighten($base_color, 5%));
 $fg_color: if($variant == 'light', transparentize(black, .2), white);
 
@@ -15,19 +21,28 @@ $borders_edge: if($variant == 'light', rgba(255,255,255,0.8), lighten($bg_color,
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
 
-$warning_color: if($variant == 'light', #e5a50a, #f5c211);;
-$error_color: if($variant == 'light', #e01b24, #c01c28);
-$success_color: if($variant == 'light', #2ec27e, #26a269);
-$destructive_color: if($variant == 'light', #e01b24, darken(#e01b24, 10%));
+$warning_color: if($variant == 'light', $yellow_5, #cd9309);
+$error_color: if($variant == 'light', $red_3, $red_4);
+$success_color: if($variant == 'light', $green_4, $green_5);
+$destructive_color: $error_color;
 
 $osd_fg_color: white;
-$osd_bg_color: transparentize(desaturate($bg_color, 100%),0.04);
+$osd_bg_color: $_dark_base_color; //hardcoded for both light & dark
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: if($variant == 'light', mix($osd_fg_color, $osd_bg_color, 80%),  mix($osd_fg_color, $osd_bg_color, 70%));
 $osd_borders_color: transparentize(black, 0.3);
 $osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 
 $shadow_color: if($variant == 'light', rgba(0,0,0,0.1), rgba(0,0,0,0.2));
+
+// button
+$button_mix_factor: 5%;
+
+// cards
+$card_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 2%));
+
+// notifications
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 10%));
 
 // overview background color
 $system_bg_color: $base_color;
@@ -44,3 +59,16 @@ $backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 80%);
 $backdrop_insensitive_color: if($variant =='light', darken($backdrop_bg_color,15%), lighten($backdrop_bg_color,15%));
 $backdrop_borders_color: mix($borders_color, $bg_color, 90%);
 $backdrop_dark_fill: mix($backdrop_borders_color,$backdrop_bg_color, 35%);
+
+
+// derived checked colors
+$checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 7%));
+$checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
+
+// derived hover colors
+$hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 10%));
+$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 10%));
+
+// derived active colors
+$active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color, 12%));
+$active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));

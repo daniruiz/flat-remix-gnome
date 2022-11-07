@@ -61,6 +61,12 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
     &:active { @include keyboard_key(active, $default_key_bg_color, $osd_fg_color);}
     &:checked { @include keyboard_key(checked, $default_key_bg_color, $osd_fg_color);}
     border-radius: $key_border_radius;
+
+    // keys that may be latched: ctrl/alt/shift
+    &:latched {
+      border-color: lighten($selected_bg_color, 5%);
+      background-color: $selected_bg_color;
+    }
   }
 
   // enter key is suggested-action
@@ -130,9 +136,9 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
 
 // suggestions
 .word-suggestions {
-  @include fontsize($base_font_size + 3);
+  @include fontsize($base_font_size + 1);
   spacing: 12px;
-  min-height: 20pt;
+  min-height: 17pt;
   padding: $base_padding*2;
   color: $osd_fg_color;
 
@@ -141,7 +147,7 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
     margin: 0 3px;
     min-width: 32px;
     border-radius: $base_border_radius - 2px;
-    padding: $base_padding $base_padding*3;
+    padding: 0px $base_padding*3;
 
     @include keyboard_key(undecorated, $key_bg_color, $osd_fg_color);
 

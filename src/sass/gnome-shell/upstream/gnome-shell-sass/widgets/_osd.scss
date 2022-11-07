@@ -14,8 +14,6 @@ $osd_levelbar_height:6px;
 
   StIcon { icon-size:$large_icon_size;}
 
-  .osd-monitor-label { font-size: 3em; }
-  
   StLabel {
     &:ltr { margin-right: 6px; }
     &:rtl { margin-left: 6px; }
@@ -35,6 +33,17 @@ $osd_levelbar_height:6px;
     &:ltr { margin-right: 6px; }
     &:rtl { margin-left: 6px; }
   }
+}
+
+// Monitor number label
+.osd-monitor-label { 
+  @extend %osd_panel;
+  border-radius: $modal_radius;
+  font-size: 3em;
+  font-weight: bold;
+  margin: $base_margin * 3;
+  text-align: center;
+  min-width: 1.3em;
 }
 
 /* Pad OSD */

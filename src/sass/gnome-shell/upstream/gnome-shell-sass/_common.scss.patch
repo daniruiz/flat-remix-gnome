@@ -1,16 +1,4 @@
-39c39
-< $hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 4%));
----
-> $hover_bg_color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 4%));
-43c43
-< $active_bg_color: if($variant=='light', darken($bg_color, 5%), lighten($bg_color, 6%));
----
-> $active_bg_color: if($variant=='light', darken($base_color, 5%), lighten($base_color, 6%));
-47c47
-< $checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 9%));
----
-> $checked_bg_color: if($variant=='light', darken($base_color, 7%), lighten($base_color, 9%));
-51c51
+44c44
 < $base_font_size: 11;
 ---
 > $base_font_size: 10;

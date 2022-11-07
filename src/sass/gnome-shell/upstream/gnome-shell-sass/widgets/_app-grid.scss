@@ -78,8 +78,8 @@ $app_icon_size: 96px;
 
 .app-folder-dialog-container {
   padding: $base_padding*2;
-  width: 640px;
-  height: 640px;
+  width: 720px;
+  height: 720px;
 }
 
 // Running app indicator (also shown in dash)
@@ -102,6 +102,7 @@ $app_icon_size: 96px;
 // App Grid pagination indicators
 .page-indicator {
   padding: $base_padding $base_padding * 2 0;
+  transition-duration:400ms;
 
   .page-indicator-icon {
     width: 10px;
@@ -124,8 +125,6 @@ $app_icon_size: 96px;
 }
 
 .page-navigation-hint {
-  width: 300px;
-
   &.dnd {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -148,7 +147,15 @@ $app_icon_size: 96px;
 }
 
 .page-navigation-arrow {
-  margin: 6px;
-  width: 24px;
-  height: 24px;
+  &  > StIcon {
+    margin: 6px;
+    padding: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+  }
+
+  &:insensitive > StIcon { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:hover > StIcon { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:active > StIcon { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
 }

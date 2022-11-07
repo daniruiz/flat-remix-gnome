@@ -4,3 +4,7 @@
   @extend %button; // that's it
   min-height: 22px;
 }
+
+.icon-button {
+  @extend %icon_button; // that's it
+}

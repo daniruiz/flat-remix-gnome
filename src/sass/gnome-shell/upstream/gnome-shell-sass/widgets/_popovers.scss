@@ -19,27 +19,27 @@
 // popover content
 .popup-menu-content {
   padding: $base_padding;
-  border-radius: $modal_radius - 2px;
+  border-radius: $modal_radius*1.25;
   border: 1px solid $borders_edge;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px 0 $shadow_color;
   background-color: $bg_color;
 }
 
 // menu items
 .popup-menu-item {
   padding: $base_padding*1.5 $base_padding*2;
-  border-radius: $base_border_radius;
+  border-radius: $base_border_radius*1.5;
   spacing: $base_padding;
-  transition: 0.2s all ease;
+  transition-duration: 100ms;
   background-color: transparent;
 
   &:ltr {padding-left: $base_padding;}
   &:rtl {padding-right: $base_padding;}
 
   &:focus, &:hover {
-   background-color: $hover_bg_color !important;
-   &:active { background-color: $active_bg_color !important;}
- }
+    background-color: $hover_bg_color !important;
+    &:active { background-color: $active_bg_color !important;}
+  }
 
   &:checked {background-color: $checked_bg_color !important;}
 
@@ -100,12 +100,12 @@
       border-radius: 0 0 $base_border_radius $base_border_radius;
     }
 
-    &:focus,&:hover { background-color: lighten($hover_bg_color, 10%) !important;}
+    &:focus,&:hover { background-color: $hover_bg_color !important;}
     &:checked {
-      background-color: lighten($checked_bg_color, 10%) !important;
+      background-color: $checked_bg_color !important;
       &:focus,&:hover { background-color: lighten($checked_bg_color, 8%) !important;}
     }
-    &:active { background-color: lighten($active_bg_color, 10%) !important;}
+    &:active { background-color: $active_bg_color !important;}
   }
 
   .popup-menu-section {
@@ -162,28 +162,6 @@
 .background-menu {
   -boxpointer-gap: 0px;
   -arrow-rise: 0px; // hide the beak on the menu
-}
-
-// system status menu
-.aggregate-menu {
-  min-width: 22em;
-
-  // this is unneeded at the top-level in this menu, hide it
-  .popup-menu-ornament { width: 0 !important; }
-
-  // lock screen, shutdown, etc. buttons
-  .popup-menu-icon {
-    -st-icon-style: symbolic;
-    &:ltr {margin-right: $base_margin*2;}
-    &:rtl {margin-left: $base_margin*2;}
-  }
-
-  // account for ornaments in submenus with padding
-  .popup-sub-menu .popup-menu-item > :first-child {
-    // this value is hardcoded for visual effect
-    &:ltr { margin-left: 1em;}
-    &:rtl { margin-right: 1em;}
-  }
 }
 
 // right-click (and panel) app menu

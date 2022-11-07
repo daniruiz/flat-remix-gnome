@@ -29,8 +29,11 @@
   .horizontal & { padding-left: $base_padding*2; }
 }
 
-.candidate-page-button { padding: $base_padding;}
+.candidate-page-button {
+  padding: $base_padding;
+
+  & StIcon { icon-size: $base_icon_size; }
+}
 
 .candidate-page-button-previous { border-radius: $base_border_radius 0px 0px $base_border_radius; border-right-width: 0;box-shadow: none;}
 .candidate-page-button-next { border-radius: 0px $base_border_radius $base_border_radius 0px;box-shadow: none;}
-.candidate-page-button-icon { icon-size: $base_icon_size; }
