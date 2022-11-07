@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<style-scheme id="Kali-Dark" name="Kali Dark" version="1.0">
+	<author>Daniel Ruiz de Alegría</author>
+	<_description>Kali Dark colorscheme</_description>
+
+	<metadata>
+		<property name="variant">dark</property>
+		<property name="light-variant">Kali-Light</property>
+		<property name="accent_bg_color">#2777ff</property>
+		<property name="accent_fg_color">#000000</property>
+	</metadata>
+
+	<!-- Kali-Dark colors -->
+	<color name="background" value="#16171d"/>
+	<color name="current-line" value="#333"/>
+	<color name="selection" value="#111"/>
+	<color name="foreground" value="#ffffff"/>
+	<color name="purple" value="#9755b3"/>
+	<color name="red" value="#d41919"/>
+	<color name="green" value="#5ebdab"/>
+	<color name="orange" value="#fd7d00"/>
+	<color name="blue" value="#4a88f1"/>
+	<color name="bordeaux" value="#bf2e5e"/>
+	<color name="cyan" value="#49AEE6"/>
+
+	<!-- Helper colors -->
+	<color name="white" value="#ffffff"/>
+	<color name="black" value="#000000"/>
+	<color name="bone-white" value="#f8f8f0"/>
+	<color name="light-black" value="#4c4f5c"/>
+	<color name="gray" value="#cccccc"/>
+
+	<style name="text" foreground="bone-white" background="background"/>
+	<style name="selection" foreground="blue" background="selection"/>
+	<style name="cursor" foreground="white" background="white"/>
+	<style name="current-line" foreground="current-line" background="current-line"/>
+	<style name="line-numbers" foreground="bone-white" background="background"/>
+	<style name="bracket-match" foreground="bone-white" background="background" underline="true"/>
+	<style name="bracket-mismatch" foreground="white" background="red"/>
+	<style name="search-match" foreground="selection" background="blue"/>
+	<style name="draw-spaces" foreground="light-black"/>
+	<style name="background-pattern" background="#1D1D1D"/>
+
+	<style name="def:boolean" foreground="purple"/>
+	<style name="def:builtin" foreground="cyan"/>
+	<style name="def:comment" foreground="cyan"/>
+	<style name="def:constant" foreground="blue"/>
+	<style name="def:doc-comment-element" italic="true"/>
+	<style name="def:error" background="red" bold="true"/>
+	<style name="def:function" foreground="blue"/>
+	<style name="def:identifier" foreground="bordeaux"/>
+	<style name="def:keyword" foreground="bordeaux"/>
+	<style name="def:net-address" italic="true" underline="single"/>
+	<style name="def:note" foreground="blue" background="yellow" bold="true"/>
+	<style name="def:number" foreground="purple"/>
+	<style name="def:preprocessor" foreground="bordeaux"/>
+	<style name="def:shebang" foreground="blue" bold="true"/>
+	<style name="def:special-char" foreground="red"/>
+	<style name="def:statement" foreground="bordeaux"/>
+	<style name="def:string" foreground="green"/>
+	<style name="def:type" foreground="blue"/>
+	<style name="def:warning" background="yellow"/>
+
+	<!-- diff -->
+	<style name="diff:added-line" foreground="green"/>
+	<style name="diff:removed-line" foreground="purple"/>
+	<style name="diff:changed-line" use-style="def:preprocessor"/>
+	<style name="diff:special-case" use-style="def:constant"/>
+	<style name="diff:location" use-style="def:statement"/>
+	<style name="diff:diff-file" use-style="def:type"/>
+
+	<!-- sh -->
+	<style name="sh:variable" foreground="purple"/>
+
+	<!-- Markup -->
+	<style name="def:emphasis" italic="true"/>
+	<style name="def:strong-emphasis" foreground="purple" bold="true"/>
+	<style name="def:inline-code" foreground="green"/>
+	<style name="def:insertion" underline="single"/>
+	<style name="def:deletion" strikethrough="true"/>
+	<style name="def:link-text" foreground="cyan"/>
+	<style name="def:link-symbol" foreground="cyan" bold="true"/>
+	<style name="def:link-destination" italic="true" underline="single"/>
+	<style name="def:heading" foreground="blue" bold="true"/>
+	<style name="def:thematic-break" foreground="blue" bold="true"/>
+	<style name="def:preformatted-section" foreground="green"/>
+	<style name="def:list-marker" foreground="purple" bold="true"/>
+
+	<!-- Latex -->
+	<style name="latex:display-math" foreground="purple"/>
+	<style name="latex:command" foreground="green" bold="true"/>
+	<style name="latex:include" use-style="def:preprocessor"/>
+</style-scheme>
+
