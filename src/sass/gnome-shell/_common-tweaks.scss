@@ -6,106 +6,28 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   icon-shadow: 0 1px 5px $shadow_color;
 }
 
-/* OSD */
-%osd_panel {
-  background-color: transparentize($osd_bg_color, 0.04);
-  box-shadow: $dialog_box_shadow;
-}
+/* Check Boxes */
+.check-box {
+  StBin {
+     background-image: url("assets/checkbox-off#{$asset_suffix}.svg");
+  }
 
-// buttons on OSD elements
-// that are undecorated by default and use OSD colors
-%osd_button {
-  @include button(undecorated);
-  border: 0!important;
-  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color); }
-  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color); }
-  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color); }
-  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color); }
-  &:outlined, &:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color); }
+  &:focus StBin { background-image: url("assets/checkbox-off-focused#{$asset_suffix}.svg"); }
+  &:checked StBin { background-image: url("assets/checkbox#{$asset_suffix}.svg"); }
+  &:focus:checked StBin { background-image: url("assets/checkbox-focused#{$asset_suffix}.svg"); }
 }
 
 /* Switches */
 .toggle-switch {
   height: 22px;
   width: 44px;
-}
-
-/* Slider */
-.slider {
-  -barlevel-background-color: $borders_color;
-  -barlevel-border-width: 0;
-  -slider-handle-radius: 0;
-}
-
-/* Check Boxes */
-
-.check-box {
-    StBin {
-       background-image: url("assets/checkbox-off#{$asset_suffix}.svg");
-    }
-
-    &:focus StBin { background-image: url("assets/checkbox-off-focused#{$asset_suffix}.svg"); }
-    &:checked StBin { background-image: url("assets/checkbox#{$asset_suffix}.svg"); }
-    &:focus:checked StBin { background-image: url("assets/checkbox-focused#{$asset_suffix}.svg"); }
-}
-
-/* Switches */
-
-.toggle-switch {
   background-image: url("assets/toggle-off#{$asset_suffix}.svg");
   &:checked {
     background-image: url("assets/toggle-on#{$asset_suffix}.svg");
   }
 }
 
-/* Popovers/Menus */
-.popup-menu-boxpointer {
-  -arrow-rise: if($full-panel == 'true', 8px, 10px);
-}
-
-.popup-menu-content {
-  padding: 4px;
-  box-shadow: $dialog_box_shadow;
-  background-color: $base_color;
-}
-
-.popup-menu-item {
-  border: 1px solid transparent;
-  border-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 8px;
-  padding-bottom: 8px;
-
-  &:checked {
-    border-color: $borders_color;
-    background-color: $bg_color!important;
-  }
-}
-
-.popup-sub-menu {
-  background-color: $bg_color;
-  border: 1px solid $borders_color;
-  border-top: 0;
-
-  .popup-menu-item {
-    padding-top: 7px;
-    padding-bottom: 7px;
-
-    &:focus, &:hover { background-color: $hover_bg_color!important; }
-    &:checked { background-color: $checked_bg_color!important; }
-    &:active { background-color: $active_bg_color!important; }
-  }
-}
-
-.popup-separator-menu-item { margin: 6px 0; }
-
 /* Message List */
-.message-list .message-list-placeholder,
-.message-list-controls {
-  font-weight: normal;
-}
-
 .message-list-controls {
   spacing: $base_padding * 2;
   @include fontsize(10);
@@ -169,18 +91,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 /* Date/Time Menu */
 .events-button,.world-clocks-button,.weather-button {
   box-shadow: none;
-}
-
-/* Screenshot UI */
-.screenshot-ui-shot-cast-container {
-  background-color: lighten($osd_bg_color, 4%);
-}
-
-.screenshot-ui-shot-cast-button {
-  background-color: transparent;
-  &:hover, &:focus { background-color: lighten($osd_bg_color, 10%); }
-  &:active { background-color: lighten($osd_bg_color, 15%); }
-  &:checked { background-color: white; color: black; }
 }
 
 /* Top Bar */
@@ -254,10 +164,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 /* Date/Time Menu */
 .datemenu-today-button {
   &:insensitive { color: inherit; }
-
-  .day-label { font-weight: normal; }
-
-  .date-label { font-weight: lighter; }
 }
 
 /* Search */
