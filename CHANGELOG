@@ -1,3 +1,8 @@
+[20221107]
+ * Regenerate all themes
+ * Update tweaks for gnome 43
+ * Update upstream code to gnome 43
+
 [20220622]
  * Match side panel button's border-radius with panel corners
 
