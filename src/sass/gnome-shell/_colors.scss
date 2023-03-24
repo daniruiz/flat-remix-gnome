@@ -3,7 +3,7 @@
 
 $_dark_base_color: #272a34;
 
-$is_highcontrast: "false";
+$is_highcontrast: false;
 
 $base_color: if($variant == 'light', darken(#ffffff, 2%), $_dark_base_color)!default;
 $text_color: if($variant == 'light', black, white);
@@ -16,6 +16,7 @@ $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%),
 $borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 10%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 18%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
+$outer_borders_color: $borders_edge;
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
 $top_hilight: $borders_edge;
@@ -43,7 +44,7 @@ $osd_bg_color: lighten($_dark_base_color, 4%);
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: black;
-$osd_outer_borders_color: transparentize(white, 0.9);
+$osd_outer_borders_color: transparentize($osd_fg_color, 0.9);
 
 $sidebar_bg_color: mix($bg_color, $base_color, 50%);
 $base_hover_color: transparentize($fg_color, 0.95);
@@ -56,13 +57,10 @@ $shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
 $system_bg_color: $_dark_base_color;
 
 // button
-$button_mix_factor: 5%;
-
-// cards
-$card_bg_color: if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 2%));
+$button_mix_factor: 9%;
 
 // notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 12%), lighten($bg_color, 10%));
+$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
 $drop_target_color: #19a187;
 
