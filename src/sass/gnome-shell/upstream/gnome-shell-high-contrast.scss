@@ -5,11 +5,6 @@ $variant: 'dark';
 @import "gnome-shell-sass/_common";
 @import "gnome-shell-sass/_widgets";
 
-//force symbolic icons
-stage {
-	-st-icon-style: symbolic;
-}
-
 .toggle-switch { width: 48px; }
 .toggle-switch {
   background-image: url("assets/toggle-off-hc.svg");

@@ -17,10 +17,7 @@ $window_close_button_padding: 3px;
 
 // Window titles
 .window-caption {
-  color: $osd_fg_color;
-  background-color: lighten($osd_bg_color, 5%);
-  border-radius: 99px;
-  padding: $base_padding $base_padding * 2;
+  @extend %tooltip;
 }
 
 // Close button
@@ -42,6 +39,10 @@ $window_close_button_padding: 3px;
 
   &:active {
     background-color: lighten($window_close_button_color, 13%);
+  }
+
+  @if $is_highcontrast {
+    border:2px solid $outer_borders_color;
   }
 }
 
