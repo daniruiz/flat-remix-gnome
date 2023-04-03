@@ -2813,7 +2813,9 @@ StScrollBar {
     margin: 8px; }
 
 /* Date/Time Menu */
-.events-button, .world-clocks-button, .weather-button {
+.events-button,
+.world-clocks-button,
+.weather-button {
   box-shadow: none; }
 
 /* Top Bar */
@@ -2903,7 +2905,7 @@ StScrollBar {
     icon-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); }
 
 /* App Grid */
-#overview {
+#overview, .app-well-app, .grid-search-result {
   color: white; }
 
 .app-well-app.app-folder, .app-folder.grid-search-result {
@@ -2932,9 +2934,14 @@ StScrollBar {
 
 .app-folder-dialog {
   background: black;
+  color: white;
   box-shadow: 0 0 100px #0a0a0a; }
   .app-folder-dialog .folder-name-container .folder-name-entry {
     color: white; }
+
+/* OSD */
+.osd-window, .workspace-switcher {
+  margin-bottom: 128px; }
 
 /* Workspace pager */
 .workspace-thumbnail-indicator {
