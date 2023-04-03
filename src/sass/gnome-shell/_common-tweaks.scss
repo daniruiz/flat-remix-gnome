@@ -245,7 +245,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 }
 
 /* App Grid */
-#overview { color: $osd_fg_color; }
+#overview, .app-well-app { color: $osd_fg_color; }
 
 // Icon tiles in the app grid
 .app-well-app.app-folder {
@@ -257,6 +257,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 .app-folder-dialog {
   background: black;
+  color: $osd_fg_color;
   box-shadow: 0 0 100px lighten(black, 4%);
 
   & .folder-name-container .folder-name-entry { color: white; }
