@@ -260,6 +260,13 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   & .folder-name-container .folder-name-entry { color: white; }
 }
 
+/* OSD */
+
+// Raise volume and workspace-switcher osd dialogs
+.osd-window, .workspace-switcher {
+  margin-bottom: 128px;
+}
+
 /* Workspace pager */
 // thumbnails in overview
 .workspace-thumbnails {
