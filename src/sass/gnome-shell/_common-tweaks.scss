@@ -95,7 +95,9 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 }
 
 /* Date/Time Menu */
-.events-button,.world-clocks-button,.weather-button {
+.events-button,
+.world-clocks-button,
+.weather-button {
   box-shadow: none;
 }
 
