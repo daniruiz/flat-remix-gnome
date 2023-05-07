@@ -1,3 +1,16 @@
+[20230507]
+ * Update gnome-shell version in fedora .spec file
+ * Merge remote-tracking branch 'origin/gnome-44'
+ * Regenerate all themes
+ * Fix app grid text color in light themes
+ * Code clean
+ * Avoid showing volume and workspace-switcher osd over dash-to-dock
+ * Regenerate themes
+ * Update _common-tweaks.scss
+ * Sync _colors.scss with upstream updates
+ * Update upstream code
+ * Add color-scheme for gnome-text-editor
+
 [20221107]
  * Regenerate all themes
  * Update tweaks for gnome 43
