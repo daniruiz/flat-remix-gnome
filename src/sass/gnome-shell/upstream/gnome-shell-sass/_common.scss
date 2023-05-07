@@ -64,13 +64,9 @@ stage {
   border: 1px solid $osd_outer_borders_color;
   border-radius: 999px;
   padding: $base_padding*2;
-}
-
-// Overview panels
-// for the dash and workspace switcher
-%overview_panel {
-  color: $osd_fg_color;
-  background-color: transparentize($osd_fg_color, 0.9);
+  @if $is_highcontrast {
+    border: 2px solid $hc_inset_color;
+  }
 }
 
 // icon tiles
@@ -81,19 +77,14 @@ stage {
   border: 2px solid transparent;
   transition-duration: 200ms;
   text-align: center;
-}
-
-// dialogs
-%bubble_panel {
-  color: $fg_color;
-  background-color: $bg_color;
-  border-radius: $base_border_radius*1.25 + 1px;
-  border: 1px solid $borders_edge;
+  @if $is_highcontrast {
+    border-color: $hc_inset_color;
+  }
 }
 
 // normal button styling
 %button {
-  border-radius: $base_border_radius - 2px; // 6px
+  border-radius: $base_border_radius;
   border-style: solid;
   border-width: 1px;
   font-weight: bold;
@@ -103,33 +94,39 @@ stage {
   &:focus { @include button(focus);}
   &:hover { @include button(hover);}
   &:insensitive { @include button(insensitive);}
-  &:active { @include button(active);}
-  &:checked { @include button(checked);}
-}
-
-// normal icon-only button
-%icon_button {
-  border-radius: 99px;
-  border-style: solid;
-  border-width: 1px;
-  font-weight: bold;
-  padding: $base_padding*2;
-
-  @include button(normal);
-  &:focus { @include button(focus);}
-  &:hover { @include button(hover);}
-  &:insensitive { @include button(insensitive);}
+  &:selected,
   &:active { @include button(active);}
   &:checked { @include button(checked);}
 
-  & > StIcon { icon-size: $base_icon_size; }
+  &.flat {
+    @include button(normal, $flat:true);
+    &:focus { @include button(focus, $flat:true);}
+    &:hover { @include button(hover, $flat:true);}
+    &:insensitive { @include button(insensitive, $flat:true);}
+    &:selected,
+    &:active { @include button(active, $flat:true);}
+    &:checked { @include button(checked, $flat:true);}
+  }
 }
+
+
+// normal entry style
+%entry {
+  border-radius: $base_border_radius;
+  padding: $base_padding*1.5 $base_padding*1.5;
+  color: $fg_color;
+  selection-background-color: $selected_bg_color;
+  selected-color: $selected_fg_color;
+
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
+}
+
 
 // buttons in dialogs/notifications
 // lighter in color and have a greater radius
-
-$bubble_button_radius:$base_border_radius*1.25;
-
 %bubble_button {
   padding: $base_padding * 2;
   font-weight: bold !important;
@@ -143,27 +140,27 @@ $bubble_button_radius:$base_border_radius*1.25;
   &:hover { @include button(hover, $c:$bubble_buttons_color);}
   &:active { @include button(active, $c:$bubble_buttons_color);}
   &:checked { @include button(checked, $c:$bubble_buttons_color);}
-  
+
   &:first-child:ltr {
-    border-radius: 0 0 0 $bubble_button_radius; 
+    border-radius: 0 0 0 $modal_radius;
   }
 
   &:last-child:ltr {
-    border-radius: 0 0 $bubble_button_radius 0;
+    border-radius: 0 0 $modal_radius;
     margin-right: 0 !important;
   }
 
   &:first-child:rtl {
-    border-radius: 0 0 $bubble_button_radius 0;
+    border-radius: 0 0 $modal_radius;
   }
 
   &:last-child:rtl {
-    border-radius: 0 0 0 $bubble_button_radius;
+    border-radius: 0 0 0 $modal_radius;
     margin-left: 0 !important;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $bubble_button_radius $bubble_button_radius !important;
+    border-radius: 0 0 $modal_radius $modal_radius;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -178,6 +175,23 @@ $bubble_button_radius:$base_border_radius*1.25;
   &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color);}
   &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color);}
   &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color);}
+}
+
+
+// tooltip
+%tooltip {
+  background-color: $osd_bg_color;
+  color: $osd_fg_color;
+  border:1px solid $osd_outer_borders_color;
+  border-radius: 99px;
+  padding: $base_padding $base_padding * 2;
+  text-align: center;
+
+  @if $is_highcontrast {
+    background-color: $osd_bg_color;
+    color: $osd_fg_color;
+    border: 1px solid $hc_inset_color;
+  }
 }
 
 /* General Typography */

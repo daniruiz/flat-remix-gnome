@@ -15,7 +15,7 @@
   spacing: $base_padding*3;
 
   // separator (unstyled)
-  .search-section-separator { 
+  .search-section-separator {
     height: $base_margin*2; // use it as a spacer
     background-color: transparent;
   }
@@ -25,7 +25,7 @@
 .search-section-content {
   background-color: lighten($system_bg_color, 5%);
   border-radius: $modal_radius*1.5;
-  border: 1px solid $osd_outer_borders_color;
+  box-shadow:inset 0 0 0 1px solid $outer_borders_color;
   color: $osd_fg_color;
   padding: $base_padding*2;
   margin:0 $base_margin*3;

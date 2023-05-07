@@ -1,5 +1,11 @@
-$overview_transparent_bg: transparentize(white, .9);
 $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
+
+%overview-transparent-bg {
+  $_overview_transparent_bg: transparentize(white, .9); 
+
+  background-color: $_overview_transparent_bg;
+  box-shadow: inset 0 0 0 1px $_overview_transparent_bg;
+}
 
 // Dropshadow for large icons
 .icon-dropshadow {
@@ -89,7 +95,9 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 }
 
 /* Date/Time Menu */
-.events-button,.world-clocks-button,.weather-button {
+.events-button,
+.world-clocks-button,
+.weather-button {
   box-shadow: none;
 }
 
@@ -165,34 +173,39 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 .datemenu-today-button {
   &:insensitive { color: inherit; }
 }
+/* Quick Settings */
+.quick-toggle-menu {
+  & .header {
+    & .icon {
+      &.active { color: $selected_fg_color; }
+    }
+  }
+}
 
 /* Search */
 // search entry
 .search-entry {
   $_text-shadow: 0px 1px 2px transparentize(black, 0.5);
-  color: black;
-  text-shadow: $_text-shadow;
-  font-weight: bold;
-  background-color: $overview_transparent_bg;
+
+  @extend %overview-transparent-bg;
+
+  width: 21em;
+  padding: .6em .8em;
   font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  text-shadow: $_text-shadow;
   transition-duration: 200ms;
 
-  StLabel.hint-text { color: $osd_fg_color; }
-
-  &, &:focus, &:hover {
-    width: 21em;
-    padding: .6em .8em;
-    border: none;
-  }
+  &, StLabel.hint-text { color: $osd_fg_color; }
 
   &:focus, &:hover {
     background-color: white;
-    color: black;
     font-weight: normal;
     box-shadow: none;
     text-shadow: none;
 
-    StLabel.hint-text { color: black; }
+    &, StLabel.hint-text { color: black; }
 
     .search-entry-icon {
       color: black;
@@ -208,8 +221,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 // search results
 .search-section-content {
-  background-color: $overview_transparent_bg;
-  border: none;
+  @extend %overview-transparent-bg;
 }
 
 // search result provider
@@ -228,23 +240,46 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   }
 }
 
-.dash-background, .dash-separator { background: $overview_transparent_bg; }
+.dash-background, .dash-separator {
+  @extend %overview-transparent-bg;
+}
 
 /* App Grid */
+#overview, .app-well-app { color: $osd_fg_color; }
+
 // Icon tiles in the app grid
-.app-well-app { color: white; }
+.app-well-app.app-folder {
+  @include overview_icon(white, $flat: false);
+  .overview-icon {
+    @extend %overview-transparent-bg;
+  }
+}
 
 .app-folder-dialog {
   background: black;
-  box-shadow: 0 0 20px lighten(black, 1%);
+  color: $osd_fg_color;
+  box-shadow: 0 0 100px lighten(black, 4%);
+
+  & .folder-name-container .folder-name-entry { color: white; }
 }
 
-/* Screen Shield */
+/* OSD */
 
-#lockDialogGroup {
-    background: url("assets/login-background");
-    background-size: cover;
+// Raise volume and workspace-switcher osd dialogs
+.osd-window, .workspace-switcher {
+  margin-bottom: 128px;
 }
+
+/* Workspace pager */
+// thumbnails in overview
+.workspace-thumbnails {
+  .workspace-thumbnail {
+    @extend %overview-transparent-bg;
+  }
+}
+
+// selected indicator
+.workspace-thumbnail-indicator { border: 2px solid white; }
 
 /* Login Dialog */
 
@@ -252,12 +287,12 @@ $login_transparent_bg: transparentize(#383c4a, .65);
 
 .login-dialog,
 .unlock-dialog {
-    $_login_button_bg: $login_transparent_bg;
-
     font-size: 11pt;
+    background: url("assets/login-background");
+    background-size: cover;
 
     StEntry {
-        background: $_login_button_bg;
+        background: $login_transparent_bg;
         color: white;
         border: none;
         box-shadow: none;
@@ -272,7 +307,7 @@ $login_transparent_bg: transparentize(#383c4a, .65);
     .switch-user-button,
     .login-dialog-session-list-button {
         border-color: transparent;
-        background-color: $_login_button_bg;
+        background-color: $login_transparent_bg;
         color: white;
 
         StIcon { icon-size: $base_icon_size; }

@@ -2,7 +2,7 @@
 
 // generic drawing of more complex things
 
-@function draw_widget_edge($c:$borders_edge) {
+@function draw_widget_edge($c:$outer_borders_color) {
 // outer highlight "used" on most widgets
   @return 0 1px $c;
 }
@@ -35,29 +35,31 @@
 // possible $t values:
 // normal, focus, insensitive
 //
+  transition-duration: 100ms;
 
   @if $t==normal {
-    background-color: lighten($bg_color, 5%);
+    background-color: transparentize($fg_color, 0.9);
     color: transparentize($fg_color,0.3);
-    border: 2px solid lighten($bg_color, 5%);
+
+    @if $is_highcontrast {
+      box-shadow: inset 0 0 0 1px $hc_inset_color;
+    }
   }
 
   @if $t==focus {
-    background-color: mix(lighten($bg_color, 5%), $selected_bg_color, 95%);
-    border-color: $fc;
+    background-color: mix(transparentize($fg_color, 0.8), $selected_bg_color, 95%);
+    box-shadow: inset 0 0 0 2px $fc;
     color: $fg_color;
     &:hover {}
   }
 
   @if $t==hover {
-    background-color:lighten($hover_bg_color, 5%);
-    border-color:lighten($hover_bg_color, 5%);
-    color: transparentize($fg_color,0.3);
+    background-color:transparentize($fg_color, 0.8);
+    color: inherit;
   }
 
   @if $t==insensitive {
-    background-color:lighten($insensitive_bg_color, 5%);
-    border-color: lighten($insensitive_bg_color, 5%);
+    background-color:transparentize($insensitive_fg_color, 0.8);
     color: $insensitive_fg_color;
   }
 }
@@ -143,7 +145,7 @@
 //
 // since buttons are all flat an borderless now the mixin is simpler
 
-@mixin button($t, $tc:$fg_color, $c:$bg_color) {
+@mixin button($t, $tc:$fg_color, $c:$bg_color, $flat: false) {
 
   $button_bg_color: mix($tc, $c, $button_mix_factor);
   transition-duration: 100ms;
@@ -152,9 +154,35 @@
   @if $t==normal {
     color: $tc;
     background-color: $button_bg_color;
-    @if $is_highcontrast == "true" {
-      box-shadow: inset 0 0 0 1px $button_inset_color;
+    @if $flat {
+      background-color: transparent;
     }
+    @if $is_highcontrast {
+      box-shadow: inset 0 0 0 1px $hc_inset_color;
+    }
+  }
+
+  // hover button
+  @else if $t==hover {
+    color: $tc;
+    background-color: lighten($button_bg_color, 3%);
+    @if $is_highcontrast {
+      box-shadow: inset 0 0 0 1px $hc_inset_color !important;
+    }
+  }
+
+  // active button
+  @else if $t==active {
+    color: $tc;
+    background-color:  lighten($button_bg_color, 9%);
+  }
+
+  // checked button
+  @else if $t==checked {
+    color: $tc;
+    background-color: lighten($button_bg_color, 9%);
+    &:hover { background-color: lighten($button_bg_color, 12%);}
+    &:active { background-color: lighten($button_bg_color, 15%);}
   }
 
   // focused button
@@ -172,57 +200,21 @@
     }
   }
 
-  // hover button
-  @else if $t==hover {
-    color: $tc;
-    background-color: lighten($button_bg_color, 3%);
-
-    @if $is_highcontrast == "true" {
-      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 3%);
-      background-color: mix(lighten($button_bg_color, 3%), $button_inset_color, 10%);
-    }
-  }
-
-  // active button
-  @else if $t==active {
-    color: $tc;
-    background-color:  lighten($button_bg_color, 6%);
-    @if $is_highcontrast == "true" {
-      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 6%);
-      background-color: mix(lighten($button_bg_color, 6%), $button_inset_color, 10%);
-    }
-  }
-
-  // checked button
-  @else if $t==checked {
-    color: $tc;
-    background-color: lighten($button_bg_color, 9%);
-    @if $is_highcontrast == "true" {
-      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 9%);
-      background-color: mix(lighten($button_bg_color, 9%), $button_inset_color, 10%);
-    }
-    &:hover { background-color: lighten($button_bg_color, 12%);}
-    &:active { background-color: lighten($button_bg_color, 15%);}
-  }
-
   // insensitive button
   @else if $t==insensitive {
     color: transparentize($tc, 0.5);
     background-color: transparentize($tc, .95);
-    @if $is_highcontrast == "true" {
-      box-shadow: inset 0 0 0 1px transparentize($button_inset_color, 0.5);
-    }
   }
 
   // default/suggested button
   @else if $t==default {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
-    box-shadow: none;
+
     &:focus {
-      box-shadow: inset 0 0 0 2px lighten($selected_bg_color, 10%);
+      box-shadow: inset 0 0 0 2px transparentize($selected_fg_color, .4) !important;
     }
-    &:hover, &:focus { 
+    &:hover, &:focus {
       background-color: lighten($selected_bg_color, 5%);
       color: lighten($selected_fg_color, 5%);
     }
@@ -257,6 +249,9 @@
     background-color: transparent;
   } @else {
     background-color: transparentize($color, .84);
+    @if $is_highcontrast {
+      box-shadow: inset 999px 0 0 0 transparentize($color, .2); // bit of a hack
+    }
   }
   &:hover { background-color: transparentize($color, .9);}
   &:selected, &:focus {
@@ -279,11 +274,15 @@
 // overview icon, dash, app grid
 @mixin overview_icon($color, $flat: true) {
   transition-duration: 400ms;
-  .overview-icon { @extend %tile; }
+  .overview-icon { 
+    @extend %tile;
+  }
   @if $flat {
     .overview-icon { background-color: transparent;}
   } @else {
-    .overview-icon { background-color: transparentize($color, .81);}
+    .overview-icon { 
+      background-color: transparentize($color, .93);
+    }
   }
   &:hover .overview-icon { background-color: transparentize($color, .9);}
 
@@ -308,26 +307,44 @@
 
 // styling for elements within popovers that look like notifications
 @mixin card($flat: false) {
-  border-radius: $base_border_radius;
+  border-radius: $base_border_radius*1.5;
   margin: $base_margin;
-  box-shadow: 0 1px 1px 0 $shadow_color;
 
   @if $flat {
     @include button(undecorated);
     box-shadow: none !important;
   } @else {
-    @include button(normal, $c:$card_bg_color);
+    @include button(normal);
   }
+  &:hover {@include button(hover);}
+  &:active {@include button(active);}
+  &:focus {@include button(focus);}
+}
 
-  &:focus {
-    @include button(focus, $c:$card_bg_color);
+// styling for all menuitems in popovers
+@mixin menuitem($bg, $flat: true) {
+
+  // lighten the background color always
+  $bg: lighten($bg,5%);
+
+  font-weight: normal;
+  spacing: $base_padding;
+  transition-duration: 100ms;
+  padding: $base_padding*1.5 $base_padding*2;
+
+  &:ltr {padding-left: $base_padding;}
+  &:rtl {padding-right: $base_padding;}
+
+  @if $flat {
+    @include button(undecorated);
+    box-shadow: none !important;
+  } @else {
+    @include button(normal, $c:$bg);
   }
-
+  &:focus,
   &:hover {
-    @include button(hover, $c:$card_bg_color);
+    @include button(hover, $c:$bg);
   }
-
-  &:active {
-    @include button(active, $c:$card_bg_color);
-  }
+  &:active {@include button(active, $c:$bg);}
+  &:checked {@include button(checked, $c:$bg);}
 }
