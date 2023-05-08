@@ -1,3 +1,6 @@
+[20230508]
+ * Ignore error on make install if gnome-shell-theme.gresource.old already exists
+
 [20230507]
  * Update gnome-shell version in fedora .spec file
  * Merge remote-tracking branch 'origin/gnome-44'
