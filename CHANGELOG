@@ -1,3 +1,7 @@
+[20230606]
+ * Regenerate all themes
+ * Update for gnome-shell 44.2
+
 [20230508]
  * Ignore error on make install if gnome-shell-theme.gresource.old already exists
 
