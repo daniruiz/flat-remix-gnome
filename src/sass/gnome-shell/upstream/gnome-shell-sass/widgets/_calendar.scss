@@ -78,7 +78,7 @@
     &:hover {background-color: $hover_bg_color;}
     &:focus {
       background-color: mix($bg_color, $selected_bg_color, 80%);
-      color: $selected_fg_color;
+      color: inherit;
       box-shadow:inset 0 0 0 2px transparentize($selected_bg_color, 0.4);
     }
 
@@ -94,7 +94,7 @@
     &.calendar-day-heading {
       color: $insensitive_fg_color;
       padding-top: $base_padding;
-      height: 16px !important; // force heading to be smaller height
+      height: 1.1em !important; // force heading to be smaller height
       font-weight: 600;
       @extend %smaller;
     }
@@ -166,11 +166,11 @@
 
   .events-list {
     spacing: 2 * $base_padding;
+    color: $fg_color;
   }
 
   .events-title {
     @extend %heading;
-    color: $insensitive_fg_color;
     margin-bottom: $base_margin;
   }
 

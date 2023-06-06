@@ -24,7 +24,7 @@ $switcher_padding: $base_padding*2;
 
   // each item in the list
   .item-box {
-    @include tile_button($osd_fg_color);
+    @include tile_button($fg_color);
     // override over style so mouse doesn't steal focus
     &:hover {background: none;}
     @if $is_highcontrast {

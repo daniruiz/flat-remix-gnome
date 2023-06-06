@@ -18,11 +18,12 @@ $app_icon_size: 96px;
 
 // Icon tiles in the app grid
 .app-well-app {
-  @include overview_icon($osd_fg_color);
+  @include overview_icon($system_fg_color);
 
   .overview-icon {
     padding: $base_padding*2;
     border-radius: $base_border_radius*3;
+    color: $system_fg_color;
   }
   .overview-icon.overview-icon-with-label {
     > StBoxLayout {
@@ -33,7 +34,7 @@ $app_icon_size: 96px;
 
 // app folders
 .app-well-app.app-folder {
-  @include overview_icon($fg_color, $flat: false);
+  @include overview_icon($system_fg_color, $flat: false);
 }
 
 // expanded folder
@@ -62,7 +63,7 @@ $app_icon_size: 96px;
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
-    & .folder-name-label { padding: 5px 7px; color: $osd_fg_color; }
+    & .folder-name-label { padding: 5px 7px; color: $system_fg_color; }
 
     & .edit-folder-button {
       @extend %button;
@@ -100,7 +101,7 @@ $app_icon_size: 96px;
   width: 5px;
   border-radius:5px;
   margin-bottom: 8px;
-  background-color: $osd_fg_color;
+  background-color: $system_fg_color;
 }
 
 // Rename popup for app folders
@@ -130,8 +131,8 @@ $app_icon_size: 96px;
 
 // shutdown and other actions in the grid
 .system-action-icon {
-  background-color: rgba(0,0,0,0.8);
-  color: white;
+  background-color: transparentize($system_fg_color,.9);
+  color: $system_fg_color;
   border-radius: 99px;
   icon-size: $app_icon_size * 0.5;
   @if $is_highcontrast {
@@ -167,11 +168,14 @@ $app_icon_size: 96px;
   width: 24px;
   height: 24px;
   border-radius: 99px;
+
+  > StIcon { color: $system_fg_color;}
+
   @if $is_highcontrast {
-    @include button(normal, $osd_fg_color, transparentize($osd_bg_color, 0.5));
+    @include button(normal, $system_fg_color, transparentize($system_bg_color, 0.5));
   }
 
-  &:insensitive { @include button(undecorated, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:hover { @include button(hover, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
-  &:active { @include button(active, $osd_fg_color, transparentize($osd_bg_color, 0.5));}
+  &:insensitive { @include button(undecorated, $system_fg_color, transparentize($system_bg_color, 0.5));}
+  &:hover { @include button(hover, $system_fg_color, transparentize($system_bg_color, 0.5));}
+  &:active { @include button(active, $system_fg_color, transparentize($system_bg_color, 0.5));}
 }

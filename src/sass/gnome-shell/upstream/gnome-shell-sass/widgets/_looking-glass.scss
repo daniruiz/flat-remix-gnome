@@ -2,19 +2,21 @@
 
 // Dialog
 #LookingGlassDialog {
-  background-color: transparentize($bg_color,0.05);
+
+  @extend %osd_panel;
+  background-color: transparentize($osd_bg_color,0.02);
+  color: $osd_fg_color;
+
   border-radius: 0 0 $modal_radius $modal_radius;
-  border: 1px solid $outer_borders_color;
+
   border-top-width: 0;
-  color: $fg_color;
   padding: $base_padding;
   spacing: $base_padding;
   box-shadow: 0 2px 4px 0 $shadow_color;
 
   @if $is_highcontrast {
     border: 2px solid $hc_inset_color;
-    background-color: $bg_color;
-    border-top-width: 0;
+    background-color: $osd_bg_color;
     box-shadow:none;
   }
 
@@ -26,21 +28,21 @@
     spacing: $base_padding;
 
     .lg-toolbar-button {
+      @extend %osd_button;
       padding: $base_padding $base_padding*2;
-      @extend %button;
 
       & > StIcon { icon-size: $base_icon_size; }
     }
   }
 
-  .labels { 
+  .labels {
     spacing: $base_padding;
   }
 
   .notebook-tab {
+    @extend %osd_button;
     -natural-hpadding: $base_padding*2;
     -minimum-hpadding: $base_padding*2;
-    @extend %button;
     padding: $base_padding $base_padding*2;
   }
 
@@ -51,8 +53,8 @@
 .lg-dialog {
 
   StEntry {
+    @extend %osd_entry;
     min-height: 22px;
-    @extend %entry;
   }
 
   .shell-link {
@@ -118,9 +120,9 @@
 .lg-debug-flag-button {
   StLabel { padding: $base_padding, 2 * $base_padding; }
 
-  color: $fg_color;
-  &:hover { color: lighten($fg_color, 20%); }
-  &:active { color: darken($fg_color, 20%); }
+  color: $osd_fg_color;
+  &:hover { color: lighten($osd_fg_color, 20%); }
+  &:active { color: darken($osd_fg_color, 20%); }
 }
 
 .lg-debug-flags-header {

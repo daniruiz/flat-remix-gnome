@@ -33,7 +33,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-type-button {
-  @extend %osd_button;
+  @extend %osd_button_flat;
   min-width: 48px;
   padding: $base_padding * 2 $base_padding * 3 !important;
   border-radius: $screenshot_ui_panel_border_radius - $screenshot_ui_panel_padding;
@@ -106,7 +106,7 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-show-pointer-button {
-  @extend %osd_button;
+  @extend %osd_button_flat;
   border-radius: 99px;
   padding: $base_padding * 2 !important;
   StIcon { icon-size: $base_icon_size;}
@@ -129,7 +129,7 @@ $screenshot_ui_button_red: $error_color;
 .screenshot-ui-area-selector-handle {
   border-radius: 99px;
   background-color: white;
-  box-shadow: 0 1px 3px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px 2px $shadow_color;
   width: 24px;
   height: 24px;
 }

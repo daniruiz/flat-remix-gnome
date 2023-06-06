@@ -48,7 +48,9 @@
     max-width: auto;
 
     &:ltr { border-radius: 99px 0 0 99px; }
+    &:ltr > StBoxLayout { padding-right: $base_padding*1.5; }
     &:rtl { border-radius: 0 99px 99px 0; }
+    &:rtr > StBoxLayout { padding-left: $base_padding*1.5; }
 
     &:ltr:last-child { border-radius: 99px; }
     &:rtl:last-child { border-radius: 99px; }
@@ -89,6 +91,11 @@
 
 .quick-toggle-menu {
   @include card;
+
+  // override some card styles
+  background-color: $bg_color !important;
+  color: $fg_color !important;
+
   border-radius: $base_border_radius*3;
   padding: $base_padding*2;
   margin: $base_padding*2 $base_padding*3 0;
@@ -106,7 +113,10 @@
       padding: 1.5 * $base_padding;
       background-color: transparentize($fg_color, 0.8);
 
-      &.active { background-color: $selected_bg_color;}
+      &.active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
     }
 
     & .title {
@@ -144,7 +154,7 @@
   .popup-menu-icon { -st-icon-style: symbolic; }
 }
 
-.bt-menu-placeholder {
+.bt-menu-placeholder.popup-menu-item {
   @extend %title_4;
   text-align: center;
 

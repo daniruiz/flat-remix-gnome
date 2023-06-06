@@ -1,8 +1,11 @@
 /* Top Bar */
 // a.k.a. the panel
 
-$panel_bg_color: #000;
-$panel_fg_color: if($variant == 'light', lighten($bg_color, 10%), darken($fg_color, 5%));
+$panel_bg_color: if($variant == 'light', $light_3, $dark_5);
+$panel_fg_color: if($variant == 'light', $fg_color, darken($fg_color, 5%));
+$panel_border_color: if($variant == 'light', darken($panel_bg_color, 2%), $panel_bg_color);
+
+$panel_system_fg_color: $system_fg_color; // always light for lockscreen, overview and other transparent panels
 $panel_height: 2.2em;
 $panel_transition_duration: 250ms; // same as the overview transition duration
 
@@ -12,12 +15,17 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   height: $panel_height;
   @extend %numeric;
   transition-duration: $panel_transition_duration;
+  box-shadow: inset 0 -1px 0 0  $panel_border_color;
 
   // transparent panel on lock & login screens
   &.unlock-screen,
   &.login-screen,
   &:overview {
     background-color: transparent;
+    box-shadow: none;
+    .panel-button {
+      color: $panel_system_fg_color !important;
+    }
   }
 
   // panel menus
@@ -141,13 +149,13 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   &:overview {
     .panel-button {
       &:active, &:overview, &:focus, &:checked {
-        box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.15);
+        box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.85);
 
         &.clock-display {
           box-shadow: none;
 
           .clock {
-            box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.15);
+            box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.85);
           }
         }
 
@@ -160,11 +168,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       }
 
       &:hover {
-        box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.10);
+        box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.90);
         &.clock-display {
           box-shadow: none;
           .clock {
-            box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.10);
+            box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.90);
           }
         }
 
@@ -177,11 +185,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       }
 
       &:active:hover, &:overview:hover, &:focus:hover, &:checked:hover {
-        box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.2);
+        box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.8);
         &.clock-display {
           box-shadow: none;
           .clock {
-            box-shadow: inset 0 0 0 100px rgba(255,255,255, 0.2);
+            box-shadow: inset 0 0 0 100px transparentize($panel_system_fg_color, 0.8);
           }
         }
 

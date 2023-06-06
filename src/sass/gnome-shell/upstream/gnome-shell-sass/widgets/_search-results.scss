@@ -23,22 +23,22 @@
 
 // content
 .search-section-content {
-  background-color: lighten($system_bg_color, 5%);
+  background-color: $system_overlay_bg_color;
+  color: $system_fg_color;
   border-radius: $modal_radius*1.5;
-  box-shadow:inset 0 0 0 1px solid $outer_borders_color;
-  color: $osd_fg_color;
   padding: $base_padding*2;
   margin:0 $base_margin*3;
 }
 
 %search_section_content_item {
-  @include tile_button($osd_fg_color);
+  @include tile_button($system_fg_color);
   border-radius: $base_border_radius+3px;
 }
 
 // "no results" text
 .search-statustext {
   @extend %title_1;
+  color: transparentize($system_fg_color, .2);
 }
 
 .grid-search-results {
@@ -64,7 +64,7 @@
     // provider labels
     .list-search-provider-details {
       width: 120px;
-      color: $osd_fg_color;
+      color: $system_fg_color;
     }
   }
 }
@@ -91,6 +91,6 @@
 
   // list item description
   .list-search-result-description {
-    color: $osd_insensitive_fg_color;
+    color: $system_insensitive_fg_color;
   }
 }

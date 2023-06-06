@@ -5,6 +5,8 @@
   margin-bottom: $base_padding;
   width: 24em;
 
+  @extend %system_entry;
+
   .search-entry-icon {
     icon-size: $base_icon_size;
     margin-top: 2px; // center vertically

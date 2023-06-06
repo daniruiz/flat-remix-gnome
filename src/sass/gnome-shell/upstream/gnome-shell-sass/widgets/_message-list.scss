@@ -10,9 +10,9 @@
   &:ltr {margin-left: 0; margin-right: $base_margin; padding-right: $base_padding; border-right-width: 1px; }
   &:rtl {margin-right: 0; margin-left: $base_margin; padding-left: $base_padding; border-left-width: 1px; }
 
-  .message-list-placeholder { 
+  .message-list-placeholder {
     @extend %title_2;
-    color: transparentize($insensitive_fg_color, .5);
+    color: $insensitive_fg_color;
 
     // icon size and color
     > StIcon {
@@ -25,7 +25,7 @@
 
 .message-list-sections {
   spacing: $base_padding;
-  margin: 0; 
+  margin: 0;
   padding-bottom: $base_padding;
 
   // to account for scrollbar
@@ -117,14 +117,14 @@
   // close button
   .message-close-button {
     color: $fg_color;
-    background-color: transparentize($fg_color, 0.9);
+    background-color: transparentize($fg_color, 0.8);
     border-radius: 99px;
     padding: $base_padding - 1px;
     margin: 1px;
-    &:hover {background-color: transparentize($fg_color, 0.8);}
-    &:active {background-color: transparentize($fg_color, 0.9);}
+    &:hover {background-color: transparentize($fg_color, 0.7);}
+    &:active {background-color: transparentize($fg_color, 0.8);}
 
-    & StIcon { icon-size: $base_icon_size; }
+    > StIcon { icon-size: $base_icon_size; }
   }
 
   // body
@@ -154,7 +154,7 @@
     color: $fg_color;
   }
 
-  &:active { 
+  &:active {
     background-color: lighten($active_bg_color, 5%);
     color: $fg_color;
   }
@@ -165,7 +165,7 @@
       border-color: transparent;
     }
   }
-  
+
   // fix margin for last button
   &:last-child:ltr { margin-right: $base_margin*3; }
   &:last-child:rtl { margin-left: $base_margin*3; }

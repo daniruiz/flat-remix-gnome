@@ -37,10 +37,14 @@ $warning_color: #fd7d00;
 $error_color: #bf1717;
 $success_color: if($variant == 'light', #3db47e, darken(#3db47e, 10%));
 $destructive_color: if($variant == 'light', #d41919, darken(#d41919, 10%));
+$drop_target_color: #19a187;
 
+// color definitions for OSD elements
 $osd_fg_color: white;
 $osd_text_color: white;
 $osd_bg_color: lighten($_dark_base_color, 4%);
+
+// derived osd colors
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: black;
@@ -49,25 +53,34 @@ $osd_outer_borders_color: transparentize($osd_fg_color, 0.9);
 $sidebar_bg_color: mix($bg_color, $base_color, 50%);
 $base_hover_color: transparentize($fg_color, 0.95);
 
-$panel_bg : transparentize($bg_color, if($variant=='light', 0.1, 0.2));
+$panel_bg: transparentize($bg_color, if($variant=='light', 0.1, 0.2));
 $panel_fg: if($variant=='light', darken($fg_color, 10%), $fg_color);
 
 $tooltip_borders_color: $osd_outer_borders_color;
+
 $shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
-$system_bg_color: $_dark_base_color;
+
+// color definitions for system elements (e.g. the overview)
+$system_base_color: $_dark_base_color; // always dark
+$system_fg_color: white;
+
+// derived system colors
+$system_bg_color: lighten($system_base_color, 5%);
+$system_borders_color: transparentize($system_fg_color, .9);
+$system_insensitive_fg_color: mix($system_fg_color, $system_bg_color, 50%);
+$system_overlay_bg_color: mix($system_base_color, $system_fg_color, 90%); // for non-transparent items, e.g. dash
+
+// derived global colors
+// insensitive state
+$insensitive_fg_color: if($variant == 'light', mix($fg_color, $bg_color, 60%),  mix($fg_color, $bg_color, 50%));
+$insensitive_bg_color: mix($bg_color, $base_color, 60%);
+$insensitive_borders_color: mix($borders_color, $base_color, 60%);
 
 // button
 $button_mix_factor: 9%;
 
 // notifications
 $bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
-
-$drop_target_color: #19a187;
-
-//insensitive state derived colors
-$insensitive_fg_color: mix($fg_color, $bg_color, 50%);
-$insensitive_bg_color: mix($bg_color, $base_color, 60%);
-$insensitive_borders_color: $borders_color;
 
 //colors for the backdrop state, derived from the main colors.
 $backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 1%));
@@ -85,17 +98,17 @@ $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40
 
 $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
 
-// derived checked colors
-$checked_bg_color: if($variant=='light', darken($base_color, 7%), lighten($base_color, 9%));
+// checked state
+$checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 7%));
 $checked_fg_color: if($variant=='light', darken($fg_color, 7%), lighten($fg_color, 7%));
 
-// derived hover colors
-$hover_bg_color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 4%));
-$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 10%));
+// hover state
+$hover_bg_color: if($variant=='light', darken($bg_color,9%), lighten($bg_color, 10%));
+$hover_fg_color: if($variant=='light', darken($fg_color,9%), lighten($fg_color, 10%));
 
-// derived active colors
-$active_bg_color: if($variant=='light', darken($base_color, 5%), lighten($base_color, 6%));
-$active_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 12%));
+// active state
+$active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 12%));
+$active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
 //special cased widget colors
 $suggested_bg_color: $selected_bg_color;
@@ -110,3 +123,8 @@ $switch_borders_color: if($variant == 'light',darken($switch_bg_color,15%),darke
 $focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
 $alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
 $dim_label_opacity: 0.55;
+
+// Gnome's color palette
+$light_1: white;
+$light_3: red;
+$dark_5: black;

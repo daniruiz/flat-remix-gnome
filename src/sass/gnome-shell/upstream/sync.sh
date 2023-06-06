@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
-VERSION=44.rc
+VERSION=44.2
 
 echo
 printf " $YELLOW[ i ]$RESET Upstream version $VERSION\n"
@@ -26,6 +26,7 @@ done <<- EOF
 	pad-osd.css
 	gnome-shell-high-contrast.scss
 	gnome-shell-sass/_colors.scss
+	gnome-shell-sass/_palette.scss
 	gnome-shell-sass/_common.scss
 	gnome-shell-sass/_drawing.scss
 	gnome-shell-sass/_widgets.scss

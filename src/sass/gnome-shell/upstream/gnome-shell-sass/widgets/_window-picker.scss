@@ -3,9 +3,9 @@
 $window_picker_spacing: $base_padding; // 6px
 $window_picker_padding: $base_padding * 2; // 12px
 
-$window_thumbnail_label_color: transparentize($osd_bg_color, 0.4);
+$window_thumbnail_label_color: transparentize($system_bg_color, 0.4);
 
-$window_close_button_color: transparentize(lighten($osd_bg_color, 7%), .02);
+$window_close_button_color: transparentize(lighten($system_bg_color, 7%), .02);
 $window_close_button_size: 30px;
 $window_close_button_padding: 3px;
 
@@ -23,7 +23,7 @@ $window_close_button_padding: 3px;
 // Close button
 .window-close {
   background-color: $window_close_button_color;
-  color: $osd_fg_color;
+  color: $system_fg_color;
   border-radius: 99px;
   box-shadow: 0 2px 4px 0 $shadow_color;
   padding: $window_close_button_padding;
@@ -50,5 +50,5 @@ $window_close_button_padding: 3px;
   // keep in sync with BACKGROUND_CORNER_RADIUS_PIXELS in workspace.js
   border-radius: 30px;
   background-color: $invisible_occluded_bg_color;
-  box-shadow: 0 4px 16px 4px transparentize(darken($osd_bg_color, 30%), 0.7);
+  box-shadow: 0 4px 16px 4px $shadow_color;
 }

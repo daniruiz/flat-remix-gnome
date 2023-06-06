@@ -57,18 +57,6 @@ stage {
 
 /* Common Stylings */
 
-// osd panels
-%osd_panel {
-  color: $osd_fg_color;
-  background-color: $osd_bg_color;
-  border: 1px solid $osd_outer_borders_color;
-  border-radius: 999px;
-  padding: $base_padding*2;
-  @if $is_highcontrast {
-    border: 2px solid $hc_inset_color;
-  }
-}
-
 // icon tiles
 %tile {
   border-radius: $base_border_radius * 2; // 16px
@@ -77,19 +65,24 @@ stage {
   border: 2px solid transparent;
   transition-duration: 200ms;
   text-align: center;
+  color: inherit;
+
   @if $is_highcontrast {
     border-color: $hc_inset_color;
   }
 }
 
 // normal button styling
-%button {
+%button_common {
   border-radius: $base_border_radius;
   border-style: solid;
   border-width: 1px;
   font-weight: bold;
   padding: $base_padding*.5 $base_padding*4;
+}
 
+%button {
+  @extend %button_common;
   @include button(normal);
   &:focus { @include button(focus);}
   &:hover { @include button(hover);}
@@ -111,19 +104,24 @@ stage {
 
 
 // normal entry style
-%entry {
+%entry_common {
   border-radius: $base_border_radius;
   padding: $base_padding*1.5 $base_padding*1.5;
-  color: $fg_color;
   selection-background-color: $selected_bg_color;
   selected-color: $selected_fg_color;
-
-  @include entry(normal);
-  &:hover { @include entry(hover);}
-  &:focus { @include entry(focus);}
-  &:insensitive { @include entry(insensitive);}
 }
 
+%entry {
+  @extend %entry_common;
+  @include entry(normal, $c:$fg_color);
+  &:hover { @include entry(hover, $c:$fg_color);}
+  &:focus { @include entry(focus, $c:$fg_color);}
+  &:insensitive { @include entry(insensitive, $c:$fg_color);}
+
+  StLabel.hint-text {
+    color: transparentize($fg_color, 0.3);
+  }
+}
 
 // buttons in dialogs/notifications
 // lighter in color and have a greater radius
@@ -166,36 +164,21 @@ stage {
   }
 }
 
-// buttons on OSD elements
-// that are undecorated by default and use OSD colors
-%osd_button {
-  @include button(undecorated);
-  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color);}
-}
-
-
 // tooltip
 %tooltip {
-  background-color: $osd_bg_color;
-  color: $osd_fg_color;
-  border:1px solid $osd_outer_borders_color;
+  background-color: transparentize(black, 0.1);
+  color: $light_1;
+
   border-radius: 99px;
   padding: $base_padding $base_padding * 2;
   text-align: center;
 
   @if $is_highcontrast {
-    background-color: $osd_bg_color;
-    color: $osd_fg_color;
-    border: 1px solid $hc_inset_color;
+    border-color: $hc_inset_color;
   }
 }
 
 /* General Typography */
-
 %large_title {
   font-weight: 300;
   @include fontsize(24);
@@ -243,3 +226,68 @@ stage {
 
 %monospace {font-family: monospace;}
 %numeric { font-feature-settings: "tnum";}
+
+
+/* OSD Elements */
+%osd_panel {
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
+  border: 1px solid $osd_outer_borders_color;
+  border-radius: 999px;
+  padding: $base_padding*2;
+
+  @if $is_highcontrast {
+    border: 2px solid $hc_inset_color;
+  }
+}
+
+// entries
+%osd_entry {
+  @extend %entry_common;
+  @include entry(normal, $c:$osd_fg_color,);
+  &:hover { @include entry(hover, $c:$osd_fg_color,);}
+  &:focus { @include entry(focus, $c:$osd_fg_color,);}
+  &:insensitive { @include entry(insensitive, $c:$osd_fg_color,);}
+
+  StLabel.hint-text {color: transparentize($osd_fg_color, 0.3); }
+}
+
+// buttons on OSD elements
+%osd_button {
+  @extend %button_common;
+  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color);
+  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color);}
+}
+
+%osd_button_flat {
+  @extend %osd_button;
+  @include button(undecorated);
+  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color);}
+}
+
+/* System Elements */
+
+// entries
+%system_entry {
+  @extend %entry_common;
+  @include entry(normal, $c:$system_fg_color,);
+  &:hover { @include entry(hover, $c:$system_fg_color,);}
+  &:focus { @include entry(focus, $c:$system_fg_color,);}
+  &:insensitive { @include entry(insensitive, $c:$system_fg_color,);}
+
+  StLabel.hint-text { color: transparentize($system_fg_color, 0.3);}
+}
+
+// buttons
+%system_button {
+  @include button(normal, $tc:$system_fg_color, $c:$system_bg_color);
+  &:insensitive { @include button(insensitive, $tc:$system_fg_color, $c:$system_bg_color);}
+  &:focus { @include button(focus, $tc:$system_fg_color, $c:$system_bg_color);}
+  &:hover { @include button(hover, $tc:$system_fg_color, $c:$system_bg_color);}
+  &:active { @include button(active, $tc:$system_fg_color, $c:$system_bg_color);}
+  &:outlined,&:checked { @include button(checked, $tc:$system_fg_color, $c:$system_bg_color);}
+}

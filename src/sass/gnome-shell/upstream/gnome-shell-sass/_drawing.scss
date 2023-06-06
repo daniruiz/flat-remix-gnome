@@ -23,23 +23,22 @@
   @else { box-shadow: $shadow1; }
 }
 
-// entries
 
-@mixin entry($t, $fc:$selected_bg_color) {
+// Text entries
+@mixin entry($t, $c) {
 //
 // Entries drawing function
 //
 // $t: entry type
-// $fc: focus color
+// $c: text color, used to derive background color of entries
 //
-// possible $t values:
-// normal, focus, insensitive
+// possible $t values: normal, focus, insensitive
 //
   transition-duration: 100ms;
 
   @if $t==normal {
-    background-color: transparentize($fg_color, 0.9);
-    color: transparentize($fg_color,0.3);
+    background-color: transparentize($c, 0.85);
+    color: transparentize($c,0.3);
 
     @if $is_highcontrast {
       box-shadow: inset 0 0 0 1px $hc_inset_color;
@@ -47,20 +46,19 @@
   }
 
   @if $t==focus {
-    background-color: mix(transparentize($fg_color, 0.8), $selected_bg_color, 95%);
-    box-shadow: inset 0 0 0 2px $fc;
-    color: $fg_color;
+    background-color: mix(transparentize($c, 0.75), $selected_bg_color, 95%);
+    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.3);
+    color: $c;
     &:hover {}
   }
 
   @if $t==hover {
-    background-color:transparentize($fg_color, 0.8);
-    color: inherit;
+    background-color: transparentize($c, 0.75);
   }
 
   @if $t==insensitive {
-    background-color:transparentize($insensitive_fg_color, 0.8);
-    color: $insensitive_fg_color;
+    background-color:transparentize($c, 0.75);
+    color: transparentize($c, 0.5);
   }
 }
 
@@ -162,29 +160,6 @@
     }
   }
 
-  // hover button
-  @else if $t==hover {
-    color: $tc;
-    background-color: lighten($button_bg_color, 3%);
-    @if $is_highcontrast {
-      box-shadow: inset 0 0 0 1px $hc_inset_color !important;
-    }
-  }
-
-  // active button
-  @else if $t==active {
-    color: $tc;
-    background-color:  lighten($button_bg_color, 9%);
-  }
-
-  // checked button
-  @else if $t==checked {
-    color: $tc;
-    background-color: lighten($button_bg_color, 9%);
-    &:hover { background-color: lighten($button_bg_color, 12%);}
-    &:active { background-color: lighten($button_bg_color, 15%);}
-  }
-
   // focused button
   @if $t==focus {
     color: $tc;
@@ -198,6 +173,39 @@
       background-color: mix(lighten($button_bg_color, 6%), $selected_bg_color, 90%);
       box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.3) !important;
     }
+  }
+
+  // hover button
+  @else if $t==hover {
+    color: $tc;
+    background-color: if($variant == 'light', darken($button_bg_color, 3%), lighten($button_bg_color, 3%));
+
+    @if $is_highcontrast == "true" {
+      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 3%);
+      background-color: mix(lighten($button_bg_color, 3%), $button_inset_color, 10%);
+    }
+  }
+
+  // active button
+  @else if $t==active {
+    color: $tc;
+    background-color: if($variant == 'light', darken($button_bg_color, 6%), lighten($button_bg_color, 6%));
+    @if $is_highcontrast == "true" {
+      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 6%);
+      background-color: mix(lighten($button_bg_color, 6%), $button_inset_color, 10%);
+    }
+  }
+
+  // checked button
+  @else if $t==checked {
+    color: $tc;
+    background-color: if($variant == 'light', darken($button_bg_color, 9%), lighten($button_bg_color, 9%));
+    @if $is_highcontrast == "true" {
+      box-shadow: inset 0 0 0 1px lighten($button_inset_color, 9%);
+      background-color: mix(lighten($button_bg_color, 9%), $button_inset_color, 10%);
+    }
+    &:hover { background-color: lighten($button_bg_color, 12%);}
+    &:active { background-color: lighten($button_bg_color, 15%);}
   }
 
   // insensitive button
@@ -274,17 +282,15 @@
 // overview icon, dash, app grid
 @mixin overview_icon($color, $flat: true) {
   transition-duration: 400ms;
-  .overview-icon { 
+  .overview-icon {
     @extend %tile;
   }
   @if $flat {
     .overview-icon { background-color: transparent;}
   } @else {
-    .overview-icon { 
-      background-color: transparentize($color, .93);
-    }
+    .overview-icon { background-color: transparentize($color, .93); }
   }
-  &:hover .overview-icon { background-color: transparentize($color, .9);}
+  &:hover .overview-icon { background-color: transparentize($color, .87);}
 
   &:selected .overview-icon,
   &:focus .overview-icon {
@@ -319,6 +325,12 @@
   &:hover {@include button(hover);}
   &:active {@include button(active);}
   &:focus {@include button(focus);}
+  &:insensitive {
+    @include button(insensitive);
+    @if $flat {
+     background-color: transparent;
+    }
+  }
 }
 
 // styling for all menuitems in popovers

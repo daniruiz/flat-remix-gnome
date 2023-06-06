@@ -117,6 +117,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   border-radius: if($full-panel == 'true', 0, 7px);
   background: $_panel_bg;
   text-shadow: $_panel_text_shadow;
+  box-shadow: none;
 
   StIcon { icon-shadow: $_panel_text_shadow; }
 
