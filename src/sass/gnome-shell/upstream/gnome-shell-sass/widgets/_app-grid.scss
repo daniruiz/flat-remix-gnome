@@ -40,9 +40,9 @@ $app_icon_size: 96px;
 // expanded folder
 .app-folder-dialog {
   border-radius: $modal_radius*4;
-  background-color: $bg_color;
+  background-color: $system_overlay_bg_color;
   padding: $base_padding*2;
-  box-shadow:inset 0 0 0 1px $outer_borders_color;
+  box-shadow:inset 0 0 0 1px $system_borders_color;
 
   @if $is_highcontrast {
     box-shadow:inset 0 0 0 2px $hc_inset_color;
@@ -59,7 +59,7 @@ $app_icon_size: 96px;
 
     & .folder-name-entry {
       width: 12em;
-      border-radius: $base_border_radius*2;
+      color: $system_fg_color !important;
     }
 
     /* FIXME: this is to keep the label in sync with the entry */
@@ -122,6 +122,7 @@ $app_icon_size: 96px;
     height: 10px;
     border-radius: 10px; // the same as height&width
     background-color: white;
+    transition-duration: 400ms;
   }
 }
 
@@ -168,6 +169,7 @@ $app_icon_size: 96px;
   width: 24px;
   height: 24px;
   border-radius: 99px;
+  transition-duration: 100ms;
 
   > StIcon { color: $system_fg_color;}
 

@@ -22,14 +22,14 @@ $outer_borders_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg
 $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
 
-$warning_color: if($variant == 'light', $yellow_5, $yellow_3);
-$error_color: if($variant == 'light', $red_3, $red_4);
+$warning_color: if($variant == 'light', $yellow_4, $yellow_3);
+$error_color: if($variant == 'light', $red_4, $red_3);
 $success_color: if($variant == 'light', $green_4, $green_5);
 $destructive_color: $error_color;
 
 // color definitions for OSD elements
-$osd_fg_color: if($variant == 'light', $_dark_base_color, $light_1);
-$osd_bg_color: if($variant == 'light', $light_3, lighten($_dark_base_color, 5%));
+$osd_fg_color: $light_1;
+$osd_bg_color: lighten($_dark_base_color, 5%);
 
 // derived osd colors
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);

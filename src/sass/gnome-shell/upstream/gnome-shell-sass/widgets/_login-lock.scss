@@ -155,6 +155,11 @@ $_gdm_dialog_width: 23em;
 
 .unlock-dialog {
   background-color: transparent;
+
+  // %system_entry style override to have neutral focus color with wallpaper background
+  .login-dialog-prompt-entry {
+    &:focus { @include entry(focus, $c:$system_fg_color, $fc:transparentize($system_fg_color, 0.5));}
+  }
 }
 
 .screen-shield-background { // just the shadow, really

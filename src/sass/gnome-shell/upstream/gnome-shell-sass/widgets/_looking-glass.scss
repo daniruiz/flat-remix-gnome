@@ -7,8 +7,8 @@
   background-color: transparentize($osd_bg_color,0.02);
   color: $osd_fg_color;
 
-  border-radius: 0 0 $modal_radius $modal_radius;
-
+  border-radius: $modal_radius;
+  margin-top: $base_margin;
   border-top-width: 0;
   padding: $base_padding;
   spacing: $base_padding;

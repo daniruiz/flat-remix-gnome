@@ -25,7 +25,7 @@
 
 
 // Text entries
-@mixin entry($t, $c) {
+@mixin entry($t, $c, $fc:$selected_bg_color) {
 //
 // Entries drawing function
 //
@@ -46,8 +46,8 @@
   }
 
   @if $t==focus {
-    background-color: mix(transparentize($c, 0.75), $selected_bg_color, 95%);
-    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, 0.3);
+    background-color: mix(transparentize($c, 0.75), $fc, 95%);
+    box-shadow: inset 0 0 0 2px transparentize($fc, 0.3);
     color: $c;
     &:hover {}
   }
@@ -143,10 +143,14 @@
 //
 // since buttons are all flat an borderless now the mixin is simpler
 
-@mixin button($t, $tc:$fg_color, $c:$bg_color, $flat: false) {
+@mixin button($t, $tc:$fg_color, $c:$bg_color, $flat: false, $osd: false) {
 
   $button_bg_color: mix($tc, $c, $button_mix_factor);
   transition-duration: 100ms;
+
+  @if $osd {
+    $button_bg_color: transparentize($tc, 0.9);
+  }
 
   // normal button
   @if $t==normal {
@@ -210,8 +214,8 @@
 
   // insensitive button
   @else if $t==insensitive {
-    color: transparentize($tc, 0.5);
-    background-color: transparentize($tc, .95);
+    color: if($variant == 'light', transparentize($tc, .6), transparentize($tc, .5));
+    background-color: if($variant == 'light', transparentize($tc, .9), transparentize($tc, .95));
   }
 
   // default/suggested button
@@ -245,7 +249,6 @@
     &:insensitive {
       @include button(insensitive);
       background-color: transparent;
-      color: transparentize($selected_fg_color, .5);
     }
   }
 }
@@ -344,9 +347,6 @@
   transition-duration: 100ms;
   padding: $base_padding*1.5 $base_padding*2;
 
-  &:ltr {padding-left: $base_padding;}
-  &:rtl {padding-right: $base_padding;}
-
   @if $flat {
     @include button(undecorated);
     box-shadow: none !important;
@@ -359,4 +359,86 @@
   }
   &:active {@include button(active, $c:$bg);}
   &:checked {@include button(checked, $c:$bg);}
+}
+
+//
+// Panel menu/button drawing function
+//
+// $bg: background color, derived from $panel_fg_color
+// $fg: foreground color, also derived from $panel_fg_color
+//
+// $flat:               if true, the button is filled instead of transparent
+// $highlighted_child:  if true, applies some special overrides for to a
+//                      child element, see _panel.scss for details
+// $child_class:        class name of the child element
+//
+
+@mixin panel_button($bg:$panel_fg_color, $fg:$panel_fg_color, $flat: true, $highlighted_child: false, $child_class:"") {
+
+  transition-duration: 150ms;
+  border: 3px solid transparent;
+  border-radius: 99px;
+
+  font-weight: bold;
+  background-color: transparent;
+  color: $fg;
+
+  @if $flat {
+    box-shadow: none;
+
+    &:active, &:focus, &:checked {
+      box-shadow: inset 0 0 0 100px transparentize($fg, 0.75);
+      &:hover {
+        box-shadow: inset 0 0 0 100px transparentize($fg, 0.65);
+      }
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 100px transparentize($fg, 0.8);
+    }
+
+  } @else {
+    box-shadow: inset 0 0 0 100px transparentize($bg, 0.2);
+
+    &:active, &:focus, &:checked {
+      box-shadow: inset 0 0 0 100px $bg;
+      &:hover {
+        box-shadow: inset 0 0 0 100px transparentize($bg, 0.05);
+      }
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 100px transparentize($bg, 0.1);
+    }
+  }
+
+  // some overrides to style a child element
+  @if $highlighted_child {
+    box-shadow: none !important;
+
+    #{$child_class} {
+      transition-duration: 150ms;
+      border: 3px solid transparent;
+      border-radius: 99px;
+    }
+
+    &:active, &:focus, &:checked {
+      box-shadow: none !important;
+
+      #{$child_class} {
+        box-shadow: inset 0 0 0 100px transparentize($fg, 0.75);
+
+        &:hover {
+          box-shadow: inset 0 0 0 100px transparentize($fg, 0.65) !important;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: none !important;
+      #{$child_class} {
+        box-shadow: inset 0 0 0 100px transparentize($fg, 0.8);
+      }
+    }
+  }
 }

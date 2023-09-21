@@ -48,110 +48,80 @@
       @extend %heading;
       padding: 8px 0;
     }
+
     .pager-button {
-      background-color: transparent;
+      @extend .button, .flat;
+      padding: 0 !important;
       height: 32px;
       width: 32px;
       margin: 2px;
       border-radius: $base_border_radius;
-      &:hover, &:focus {background-color: $hover_bg_color;}
-      &:active {background-color: $active_bg_color;}
-      @if $is_highcontrast {
-        border:1px solid $hc_inset_color;
-      }
+      transition-duration: 100ms;
     }
   }
 
-  $calendar_day_size: 3em;
-
-  .calendar-day-base {
-    text-align: center;
-    margin: 2px;
-    padding: 0 !important;
-    height: $calendar_day_size !important;
-    width: $calendar_day_size !important;
-    border-radius: 99px;
-    transition-duration: 100ms;
+  // day style
+  .calendar-day {
     @extend %numeric;
     @extend %smaller;
+    @extend .button, .flat;
 
-    &:hover {background-color: $hover_bg_color;}
-    &:focus {
-      background-color: mix($bg_color, $selected_bg_color, 80%);
-      color: inherit;
-      box-shadow:inset 0 0 0 2px transparentize($selected_bg_color, 0.4);
-    }
-
-    &:active,&:selected {
-      color: $active_fg_color;
-      background-color: $active_bg_color;
-      &:focus {
-        background-color: mix($active_bg_color, $selected_bg_color, 80%);
-      }
-    }
+    border-radius: 99px;
+    height: 3em !important;
+    width: 3em !important;
+    margin: 2px;
+    padding: 0 !important;
+    font-weight: 600;
+    text-align: center;
+    transition-duration: 100ms;
 
     // day of week heading
     &.calendar-day-heading {
+      background-color: transparent;
       color: $insensitive_fg_color;
-      padding-top: $base_padding;
-      height: 1.1em !important; // force heading to be smaller height
-      font-weight: 600;
-      @extend %smaller;
-    }
-  }
-
-  .calendar-day {
-    font-weight: 600;
-    @if $is_highcontrast {
-      border:1px solid $hc_inset_color;
+      height: 0.93em !important; // force heading to be smaller height
+      padding-top: $base_padding !important;
+      margin-bottom: 0;
       border-radius: 9px;
     }
-  }
-  .calendar-work-day {}
-  .calendar-nonwork-day {color: $insensitive_fg_color;}
-  .calendar-other-month-day {
-    color: transparentize($fg_color, 0.5);
-    &.calendar-nonwork-day {
-      color: transparentize($insensitive_fg_color, 0.5);
+
+    &.calendar-weekday {}
+
+    &.calendar-weekend {
+      color: $insensitive_fg_color;
+    }
+
+    &.calendar-other-month {
+      color: transparentize($insensitive_fg_color, 0.7) !important;
+      font-weight: normal;
+    }
+
+    &.calendar-today {
+      @extend .button, .default;
+      color: $selected_fg_color; /* override weekends */
+    }
+
+    &.calendar-day-with-events {
+      background-image: if($variant == 'light', url("assets/calendar-today-light.svg"),url("assets/calendar-today.svg"));
+      background-size: contain;
     }
   }
 
-  // Today
-  .calendar-today {
-    background-color: $selected_bg_color;
-    font-weight: 800;
-    color: $selected_fg_color !important;
-
-    &:hover,&:focus {
-      background-color:lighten($selected_bg_color, 3%);
-      color: inherit;
-    }
-
-    &:active,&:selected {
-      background-color: $selected_bg_color;
-      color: inherit;
-
-      &:hover,&:focus {
-        background-color:lighten($selected_bg_color, 3%);
-        color: inherit;
-      }
-    }
-  }
-
-  .calendar-day-with-events {
-    background-image: if($variant == 'light', url("assets/calendar-today-light.svg"),url("assets/calendar-today.svg"));
-    background-size: contain;
-  }
-
+  // week number style
   .calendar-week-number {
     @include fontsize($base_font_size - 4);
     font-weight: bold;
     font-feature-settings: "tnum";
+    text-align: center;
     margin: 6px;
     padding: 0 $base_padding;
     border-radius: 3px;
     background-color: transparentize($fg_color, 0.9);
-    color: $insensitive_fg_color
+    color: $insensitive_fg_color;
+
+    @if $is_highcontrast {
+      border:1px solid $hc_inset_color;
+    }
   }
 }
 

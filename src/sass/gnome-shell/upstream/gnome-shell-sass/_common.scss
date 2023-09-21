@@ -90,6 +90,7 @@ stage {
   &:selected,
   &:active { @include button(active);}
   &:checked { @include button(checked);}
+  &.default { @include button(default);}
 
   &.flat {
     @include button(normal, $flat:true);
@@ -99,6 +100,7 @@ stage {
     &:selected,
     &:active { @include button(active, $flat:true);}
     &:checked { @include button(checked, $flat:true);}
+    &.default { @include button(default, $flat:false);}
   }
 }
 
@@ -167,6 +169,7 @@ stage {
 // tooltip
 %tooltip {
   background-color: transparentize(black, 0.1);
+  border: 1px solid transparentize($light_1, 0.9);
   color: $light_1;
 
   border-radius: 99px;
@@ -174,6 +177,7 @@ stage {
   text-align: center;
 
   @if $is_highcontrast {
+    background-color: black;
     border-color: $hc_inset_color;
   }
 }
@@ -245,9 +249,9 @@ stage {
 %osd_entry {
   @extend %entry_common;
   @include entry(normal, $c:$osd_fg_color,);
-  &:hover { @include entry(hover, $c:$osd_fg_color,);}
-  &:focus { @include entry(focus, $c:$osd_fg_color,);}
-  &:insensitive { @include entry(insensitive, $c:$osd_fg_color,);}
+  &:hover { @include entry(hover, $c:$osd_fg_color);}
+  &:focus { @include entry(focus, $c:$osd_fg_color);}
+  &:insensitive { @include entry(insensitive, $c:$osd_fg_color);}
 
   StLabel.hint-text {color: transparentize($osd_fg_color, 0.3); }
 }
@@ -255,18 +259,18 @@ stage {
 // buttons on OSD elements
 %osd_button {
   @extend %button_common;
-  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color);
-  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color);}
-  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);
+  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
 }
 
 %osd_button_flat {
   @extend %osd_button;
-  @include button(undecorated);
-  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color);}
+  @include button(undecorated, $osd:true);
+  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
 }
 
 /* System Elements */
@@ -275,12 +279,13 @@ stage {
 %system_entry {
   @extend %entry_common;
   @include entry(normal, $c:$system_fg_color,);
-  &:hover { @include entry(hover, $c:$system_fg_color,);}
-  &:focus { @include entry(focus, $c:$system_fg_color,);}
-  &:insensitive { @include entry(insensitive, $c:$system_fg_color,);}
+  &:hover { @include entry(hover, $c:$system_fg_color);}
+  &:focus { @include entry(focus, $c:$system_fg_color, $fc:$selected_bg_color);}
+  &:insensitive { @include entry(insensitive, $c:$system_fg_color);}
 
   StLabel.hint-text { color: transparentize($system_fg_color, 0.3);}
 }
+
 
 // buttons
 %system_button {
