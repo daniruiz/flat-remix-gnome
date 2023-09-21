@@ -133,20 +133,45 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
   .panel-button {
     color: $_panel_fg;
-    &:hover, &:active, &:focus, &:overview, &:checked {
-      color: $_panel_fg;
-      box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2);
-    }
-  }
 
-  .panel-button.clock-display {
-    // Move highlight from .panel-button to .clock
-    &:hover, &:active, &:focus, &:overview, &:checked {
-      box-shadow: none;
-
-      .clock {
-        box-shadow: inset 0 0 0 100px rgba(255, 255, 255, 0.2);
+    &:active, &:focus, &:checked {
+      box-shadow: inset 0 0 0 100px transparentize(white, .75);
+      &:hover {
+        box-shadow: inset 0 0 0 100px transparentize(white, .65);
       }
+    }
+    &:hover {
+      box-shadow: inset 0 0 0 100px transparentize(white, .8);
+    }
+
+    &.clock-display {
+      color: $_panel_fg;
+
+      &:active, &:focus, &:checked {
+        .clock {
+          box-shadow: inset 0 0 0 100px transparentize(white, .75);
+          &:hover {
+            box-shadow: inset 0 0 0 100px transparentize(white, .65);
+          }
+        }
+      }
+      &:hover {
+        box-shadow: none !important;
+        .clock {
+          box-shadow: inset 0 0 0 100px transparentize(white, .8);
+        }
+      }
+    }
+
+    &#panelActivities {
+      & .workspace-dot {
+        background-color: $_panel_fg;
+      }
+    }
+
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
+      color: white;
     }
   }
 
@@ -258,10 +283,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 .app-folder-dialog {
   background: black;
-  color: $osd_fg_color;
   box-shadow: 0 0 100px lighten(black, 4%);
-
-  & .folder-name-container .folder-name-entry { color: white; }
 }
 
 /* OSD */
