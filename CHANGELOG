@@ -1,3 +1,11 @@
+[20231026]
+ * Update gtk3 sourceview color-themes
+ * Update gtk4 sourceview color-themes
+ * Remove slider handle
+ * Regenerate all themes
+ * Update theme tweaks
+ * Update upstream theme for version 45
+
 [20230606]
  * Regenerate all themes
  * Update for gnome-shell 44.2
