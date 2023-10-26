@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<style-scheme id="Flat-Remix" name="Flat-Remix" version="1.0">
+<style-scheme id="Flat-Remix-Light" name="Flat-Remix-Light" version="1.0">
 	<author>Daniel Ruiz de Alegría</author>
-	<_description>A Flat-Remix theme for Gedit</_description>
+	<_description>Flat-Remix Light colorscheme</_description>
 
-	<!-- Flat-Remix colors -->
+	<!-- Flat-Remix-Light colors -->
 	<color name="background" value="#ffffff"/>
 	<color name="current-line" value="#f9f5f5"/>
 	<color name="selection" value="#eee"/>

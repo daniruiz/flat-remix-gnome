@@ -2,9 +2,9 @@
 
 <style-scheme id="Flat-Remix-Dark" name="Flat-Remix-Dark" version="1.0">
 	<author>Daniel Ruiz de Alegría</author>
-	<_description>A Flat-Remix theme for Gedit</_description>
+	<_description>Flat-Remix Dark colorscheme</_description>
 
-	<!-- Flat-Remix colors -->
+	<!-- Flat-Remix-Dark colors -->
 	<color name="background" value="#23252e"/>
 	<color name="current-line" value="#333"/>
 	<color name="selection" value="#111"/>
