@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<style-scheme id="Kali-Light" _name="Kali Light" version="1.0">
+<style-scheme id="Flat-Remix-Light" _name="Flat-Remix Light" version="1.0">
 	<author>Daniel Ruiz de Alegría</author>
-	<_description>Kali Light colorscheme</_description>
+	<_description>Flat-Remix Light colorscheme</_description>
 
 	<metadata>
 		<property name="variant">light</property>
-		<property name="dark-variant">Kali-Dark</property>
+		<property name="dark-variant">Flat-Remix-Dark</property>
 		<property name="accent_bg_color">#2777ff</property>
+		<property name="accent_fg_color">#ffffff</property>
 	</metadata>
 
-	<!-- Kali-Light colors -->
+	<!-- Flat-Remix-Light colors -->
 	<color name="background" value="#ffffff"/>
-	<color name="current-line" value="#f9f5f5"/>
-	<color name="selection" value="#eee"/>
+	<color name="current-line" value="#rgba(0,0,0,.05)"/>
+	<color name="selection" value="#rgba(0,0,0,.07)"/>
 	<color name="foreground" value="#ffffff"/>
 	<color name="purple" value="#9755b3"/>
 	<color name="red" value="#d41919"/>
@@ -31,7 +32,7 @@
 	<color name="gray" value="#cccccc"/>
 
 	<style name="text" foreground="light-black" background="background"/>
-	<style name="selection" foreground="white" background="blue"/>
+	<style name="selection" foreground="blue" background="selection"/>
 	<style name="cursor" foreground="black" background="black"/>
 	<style name="current-line" foreground="current-line" background="current-line"/>
 	<style name="line-numbers" foreground="light-black" background="background"/>
@@ -39,7 +40,7 @@
 	<style name="bracket-mismatch" foreground="white" background="red"/>
 	<style name="search-match" foreground="selection" background="blue"/>
 	<style name="draw-spaces" foreground="gray"/>
-	<style name="background-pattern" background="#f9f9f9"/>
+	<style name="background-pattern" background="#rgba(0,0,0,.03)"/>
 
 	<style name="def:boolean" foreground="purple"/>
 	<style name="def:builtin" foreground="cyan"/>

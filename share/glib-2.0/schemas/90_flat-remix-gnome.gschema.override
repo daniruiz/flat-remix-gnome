@@ -8,10 +8,12 @@ bold-is-bright=true
 name='Flat-Remix-Blue-Light'
 
 [org.gnome.gedit.preferences.editor]
-scheme = 'Kali-Dark'
+scheme = 'Flat-Remix-Dark'
+background-pattern = 'grid'
 
 [org.gnome.TextEditor]
-style-scheme = 'Kali-Dark'
+style-scheme = 'Flat-Remix-Dark'
+show-grid = true
 
 [org.gnome.gnome-system-monitor]
 cpu-stacked-area-chart = true
