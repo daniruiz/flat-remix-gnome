@@ -2999,6 +2999,12 @@ StScrollBar {
   .toggle-switch:checked {
     background-image: url("assets/toggle-on-dark.svg"); }
 
+/* Slider */
+.slider {
+  -barlevel-border-width: 0;
+  -barlevel-height: 6px;
+  -slider-handle-radius: 0; }
+
 /* Message List */
 .message-list-controls {
   spacing: 12px;
