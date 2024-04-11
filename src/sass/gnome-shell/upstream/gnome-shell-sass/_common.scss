@@ -25,29 +25,41 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
 
 /* Global Values */
 
-// padding, margin and spacing
-$base_padding: 6px;
-$base_margin: 4px;
+// Base values of elements of the shell in their smallest "unit".
+// These are used in calculations elsewhere to have elements in proportion
+$base_font_size: 10pt;      // font size
+$base_padding: 6px;         // internal padding of elements
+$base_margin: 4px;          // margin between elements
+$base_border_radius: 8px;   // radii on all elements
 
-// border radii
-$base_border_radius: 8px;
+// Radius used to make sure elements that have rounded corners stay as such.
+// This is a workaround for 50% not working.
+$forced_circular_radius: 999px;
 
 // radii of things that display over other things, e.g. popovers
-$modal_radius: $base_border_radius*2; // 24px
+$modal_radius: $base_border_radius * 2;
 
 // Chroma key to flag when a background-color is always occluded, not visible.
 // This allows any box-shadow behind it to be rendered more efficiently by
 // omitting the middle rectangle.
 $invisible_occluded_bg_color: rgba(3,2,1,0);
 
-// fonts
-$base_font_size: 10;
-$text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
+// Fixed icon sizes
+$base_icon_size: 16px;
+$medium_icon_size: $base_icon_size * 1.5; // 24px
+$large_icon_size: $base_icon_size * 2; // 32px
 
-// icons
-$base_icon_size: 1.09em;
-$large_icon_size: $base_icon_size*2; // 32px
-// $base_icon_size: 16px;
+// Scaled values
+// Used in elements that follow text scaling factors
+$scaled_padding: to_em(6px); // same as $base_padding
+
+// Used for symbolic icons that scale
+$scalable_icon_size: to_em(16px);
+$medium_scalable_icon_size: $scalable_icon_size * 1.5;
+$large_scalable_icon_size: $scalable_icon_size * 2;
+
+// animation definition
+$ease_out_quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 // Stage
 stage {
@@ -56,29 +68,31 @@ stage {
 }
 
 /* Common Stylings */
+%reset {
+  background: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
 
 // icon tiles
 %tile {
-  border-radius: $base_border_radius * 2; // 16px
+  border-radius: $base_border_radius * 2;
   padding: $base_padding;
   spacing: $base_padding;
-  border: 2px solid transparent;
-  transition-duration: 200ms;
   text-align: center;
-  color: inherit;
-
-  @if $is_highcontrast {
-    border-color: $hc_inset_color;
-  }
+  transition-duration: 100ms;
 }
 
-// normal button styling
+// common button styling
 %button_common {
   border-radius: $base_border_radius;
-  border-style: solid;
-  border-width: 1px;
+  padding: $base_padding * .5 $base_padding * 4;
   font-weight: bold;
-  padding: $base_padding*.5 $base_padding*4;
+  transition: border-width 300ms $ease_out_quad,
+              box-shadow 300ms $ease_out_quad;
 }
 
 %button {
@@ -90,35 +104,84 @@ stage {
   &:selected,
   &:active { @include button(active);}
   &:checked { @include button(checked);}
-  &.default { @include button(default);}
+}
 
-  &.flat {
-    @include button(normal, $flat:true);
-    &:focus { @include button(focus, $flat:true);}
-    &:hover { @include button(hover, $flat:true);}
-    &:insensitive { @include button(insensitive, $flat:true);}
-    &:selected,
-    &:active { @include button(active, $flat:true);}
-    &:checked { @include button(checked, $flat:true);}
-    &.default { @include button(default, $flat:false);}
+%flat_button {
+  @include button(normal, $style: flat);
+  &:focus { @include button(focus, $style: flat);}
+  &:hover { @include button(hover, $style: flat);}
+  &:insensitive { @include button(insensitive, $style: flat);}
+  &:selected,
+  &:active { @include button(active, $style: flat);}
+  &:checked { @include button(checked, $style: flat);}
+}
+
+%default_button {
+  @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color, $style: default);
+  &:focus { @include button(focus, $c:$selected_bg_color, $tc:$selected_fg_color, $style: default);}
+  &:hover { @include button(hover, $c:$selected_bg_color, $tc:$selected_fg_color, $style: default);}
+  &:insensitive { @include button(insensitive, $c:$selected_bg_color, $tc:$selected_fg_color, $style: default);}
+  &:active { @include button(active, $c:$selected_bg_color, $tc:$selected_fg_color, $style: default);}
+}
+
+// items in popover menus
+%menuitem {
+  font-weight: normal;
+  spacing: $base_padding;
+  transition-duration: 100ms;
+  padding: $base_padding * 1.5 $base_padding * 2;
+}
+
+// common style for card elements
+%card_common {
+  border-radius: $base_border_radius * 1.5;
+  padding: $scaled_padding * 2;
+  margin: $base_margin;
+  background-color: $card_bg_color;
+  box-shadow: 0 1px 2px 0 $card_shadow_color;
+  // bit of a hack here with border since we can't have double box-shadow
+  border: 1px solid $card_shadow_border_color;
+
+  @if $contrast == 'high' {
+    border-color: transparent;
+    box-shadow: none;
   }
+}
+
+%card {
+  @extend %card_common;
+  @include button(normal, $style: card);
+  &:hover { @include button(hover, $style: card);}
+  &:active { @include button(active, $style: card);}
+  &:focus { @include button(focus, $style: card);}
+  &:insensitive { @include button(insensitive, $style: card);}
+}
+
+%card_flat {
+  @extend %card_common;
+  border: 1px solid transparent !important; // override of the button style needed here
+  @include button(undecorated, $style: flat);
+  &:hover { @include button(hover, $style: flat);}
+  &:active { @include button(active, $style: flat);}
+  &:focus { @include button(focus, $style: card);}
+  &:insensitive { @include button(insensitive, $style: card);}
 }
 
 
 // normal entry style
 %entry_common {
   border-radius: $base_border_radius;
-  padding: $base_padding*1.5 $base_padding*1.5;
+  padding: $base_padding * 1.5 $base_padding * 1.5;
   selection-background-color: $selected_bg_color;
   selected-color: $selected_fg_color;
 }
 
 %entry {
   @extend %entry_common;
-  @include entry(normal, $c:$fg_color);
-  &:hover { @include entry(hover, $c:$fg_color);}
-  &:focus { @include entry(focus, $c:$fg_color);}
-  &:insensitive { @include entry(insensitive, $c:$fg_color);}
+  @include entry(normal);
+  &:hover { @include entry(hover);}
+  &:focus { @include entry(focus);}
+  &:insensitive { @include entry(insensitive);}
 
   StLabel.hint-text {
     color: transparentize($fg_color, 0.3);
@@ -134,33 +197,36 @@ stage {
   &:ltr {margin-right: 1px;}
   &:rtl {margin-left: 1px;}
 
-  @include button(normal, $c:$bubble_buttons_color);
-  &:insensitive { @include button(insensitive, $c:$bubble_buttons_color);}
-  &:focus { @include button(focus, $c:$bubble_buttons_color);}
-  &:hover { @include button(hover, $c:$bubble_buttons_color);}
-  &:active { @include button(active, $c:$bubble_buttons_color);}
-  &:checked { @include button(checked, $c:$bubble_buttons_color);}
+  // needs a 1px adjustment to fit exactly into the outer radius
+  $bubble_button_radius: $modal_radius - 1px;
+
+  @include button(normal, $style: bubble);
+  &:focus { @include button(focus, $style: bubble);}
+  &:hover { @include button(hover, $style: bubble);}
+  &:active { @include button(active, $style: bubble);}
+  &:checked { @include button(checked, $style: bubble);}
+  &:insensitive { @include button(insensitive, $style: bubble);}
 
   &:first-child:ltr {
-    border-radius: 0 0 0 $modal_radius;
+    border-radius: 0 0 0 $bubble_button_radius;
   }
 
   &:last-child:ltr {
-    border-radius: 0 0 $modal_radius;
+    border-radius: 0 0 $bubble_button_radius;
     margin-right: 0 !important;
   }
 
   &:first-child:rtl {
-    border-radius: 0 0 $modal_radius;
+    border-radius: 0 0 $bubble_button_radius;
   }
 
   &:last-child:rtl {
-    border-radius: 0 0 0 $modal_radius;
+    border-radius: 0 0 0 $bubble_button_radius;
     margin-left: 0 !important;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $modal_radius $modal_radius;
+    border-radius: 0 0 $bubble_button_radius $bubble_button_radius;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -172,11 +238,11 @@ stage {
   border: 1px solid transparentize($light_1, 0.9);
   color: $light_1;
 
-  border-radius: 99px;
+  border-radius: $forced_circular_radius;
   padding: $base_padding $base_padding * 2;
   text-align: center;
 
-  @if $is_highcontrast {
+  @if $contrast == 'high' {
     background-color: black;
     border-color: $hc_inset_color;
   }
@@ -185,47 +251,47 @@ stage {
 /* General Typography */
 %large_title {
   font-weight: 300;
-  @include fontsize(24);
+  @include fontsize(24pt);
 }
 
 %title_1 {
   font-weight: 800;
-  @include fontsize(20);
+  @include fontsize(20pt);
 }
 
 %title_2 {
   font-weight: 800;
-  @include fontsize(15);
+  @include fontsize(15pt);
 }
 
 %title_3 {
   font-weight: 700;
-  @include fontsize(15);
+  @include fontsize(15pt);
 }
 
 %title_4 {
   font-weight: 700;
-  @include fontsize(13);
+  @include fontsize(13pt);
 }
 
 %heading {
   font-weight: 700;
-  @include fontsize(11);
+  @include fontsize(11pt);
 }
 
 %caption_heading {
   font-weight: 700;
-  @include fontsize(9);
+  @include fontsize(9pt);
 }
 
 %caption {
   font-weight: 400;
-  @include fontsize(9);
+  @include fontsize(9pt);
 }
 
 %smaller {
   font-weight: 400;
-  @include fontsize(8);
+  @include fontsize(8pt);
 }
 
 %monospace {font-family: monospace;}
@@ -237,21 +303,20 @@ stage {
   color: $osd_fg_color;
   background-color: $osd_bg_color;
   border: 1px solid $osd_outer_borders_color;
-  border-radius: 999px;
-  padding: $base_padding*2;
-
-  @if $is_highcontrast {
-    border: 2px solid $hc_inset_color;
+  border-radius: $forced_circular_radius;
+  padding: $base_padding * 2;
+  @if $contrast == 'high' {
+    @include draw_hc_inset($width: 2px,$border: true);
   }
 }
 
 // entries
 %osd_entry {
   @extend %entry_common;
-  @include entry(normal, $c:$osd_fg_color,);
-  &:hover { @include entry(hover, $c:$osd_fg_color);}
-  &:focus { @include entry(focus, $c:$osd_fg_color);}
-  &:insensitive { @include entry(insensitive, $c:$osd_fg_color);}
+  @include entry(normal, $c:$osd_fg_color, $bc:$osd_bg_color, $always_dark: true);
+  &:hover { @include entry(hover, $c:$osd_fg_color, $bc:$osd_bg_color, $always_dark: true);}
+  &:focus { @include entry(focus, $c:$osd_fg_color, $bc:$osd_bg_color, $always_dark: true);}
+  &:insensitive { @include entry(insensitive, $c:$osd_fg_color, $bc:$osd_bg_color, $always_dark: true);}
 
   StLabel.hint-text {color: transparentize($osd_fg_color, 0.3); }
 }
@@ -259,18 +324,22 @@ stage {
 // buttons on OSD elements
 %osd_button {
   @extend %button_common;
-  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);
-  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
-  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
-  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
-  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
-  &:outlined,&:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);}
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);}
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);}
+  &:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);}
+  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color, $always_dark: true);}
 }
 
 %osd_button_flat {
-  @extend %osd_button;
-  @include button(undecorated, $osd:true);
-  &:insensitive { @include button(undecorated, $tc:$osd_fg_color, $c:$osd_bg_color, $osd:true);}
+  @extend %button_common;
+  @include button(normal, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);
+  &:focus { @include button(focus, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);}
+  &:hover { @include button(hover, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);}
+  &:active { @include button(active, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);}
+  &:checked { @include button(checked, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);}
+  &:insensitive { @include button(insensitive, $tc:$osd_fg_color, $c:$osd_bg_color, $style: flat, $always_dark: true);}
 }
 
 /* System Elements */
@@ -278,14 +347,13 @@ stage {
 // entries
 %system_entry {
   @extend %entry_common;
-  @include entry(normal, $c:$system_fg_color,);
-  &:hover { @include entry(hover, $c:$system_fg_color);}
-  &:focus { @include entry(focus, $c:$system_fg_color, $fc:$selected_bg_color);}
-  &:insensitive { @include entry(insensitive, $c:$system_fg_color);}
+  @include entry(normal, $c:$system_fg_color, $bc:$system_bg_color, $always_dark: true);
+  &:hover { @include entry(hover, $c:$system_fg_color, $bc:$system_bg_color, $always_dark: true);}
+  &:focus { @include entry(focus, $c:$system_fg_color, $bc:$system_bg_color, $always_dark: true);}
+  &:insensitive { @include entry(insensitive, $c:$system_fg_color, $bc:$system_bg_color, $always_dark: true);}
 
   StLabel.hint-text { color: transparentize($system_fg_color, 0.3);}
 }
-
 
 // buttons
 %system_button {
@@ -294,5 +362,30 @@ stage {
   &:focus { @include button(focus, $tc:$system_fg_color, $c:$system_bg_color);}
   &:hover { @include button(hover, $tc:$system_fg_color, $c:$system_bg_color);}
   &:active { @include button(active, $tc:$system_fg_color, $c:$system_bg_color);}
-  &:outlined,&:checked { @include button(checked, $tc:$system_fg_color, $c:$system_bg_color);}
+  &:checked { @include button(checked, $tc:$system_fg_color, $c:$system_bg_color);}
 }
+
+/* Lockscreen Elements */
+
+// buttons
+%lockscreen_button {
+  @extend %button_common;
+  @include button(normal, $tc:$system_fg_color, $style: lockscreen);
+  &:focus { @include button(focus, $tc:$system_fg_color, $style: lockscreen);}
+  &:hover { @include button(hover, $tc:$system_fg_color, $style: lockscreen);}
+  &:active { @include button(active, $tc:$system_fg_color, $style: lockscreen);}
+  &:checked { @include button(checked, $tc:$system_fg_color, $style: lockscreen);}
+  &:insensitive { @include button(insensitive, $tc:$system_fg_color, $style: lockscreen);}
+}
+
+// entries
+%lockscreen_entry {
+  @extend %entry_common;
+  @include entry(normal, $c:$system_fg_color, $style: lockscreen, $always_dark: true);
+  &:hover { @include entry(hover, $c:$system_fg_color, $style: lockscreen, $always_dark: true);}
+  &:focus { @include entry(focus, $c:$system_fg_color, $style: lockscreen, $always_dark: true);}
+  &:insensitive { @include entry(insensitive, $c:$system_fg_color, $style: lockscreen, $always_dark: true);}
+
+  StLabel.hint-text { color: transparentize($system_fg_color, 0.3);}
+}
+

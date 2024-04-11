@@ -17,7 +17,7 @@
 }
 
 .candidate-box {
-  padding: $base_padding $base_padding*2 $base_padding $base_padding*2;
+  padding: $base_padding $base_padding * 2 $base_padding $base_padding * 2;
   border-radius: $base_border_radius;
   &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
   &:hover { background-color: $hover_bg_color; color: $hover_fg_color; }
@@ -25,8 +25,8 @@
 
 .candidate-page-button-box {
   height: 2em;
-  .vertical & { padding-top: $base_padding*2; }
-  .horizontal & { padding-left: $base_padding*2; }
+  .vertical & { padding-top: $base_padding * 2; }
+  .horizontal & { padding-left: $base_padding * 2; }
 }
 
 .candidate-page-button {

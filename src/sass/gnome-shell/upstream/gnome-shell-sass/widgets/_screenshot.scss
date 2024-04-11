@@ -1,24 +1,15 @@
 // Screenshot UI
-.icon-label-button-container {
-  spacing: $base_padding;
-  @extend %caption;
 
-  StIcon { icon-size: 32px;}
-}
-
-$screenshot_ui_panel_padding: $base_padding*3;
-$screenshot_ui_shot_cast_margin: 21px;
-$screenshot_ui_panel_border_radius: $modal_radius + $screenshot_ui_shot_cast_margin;
-$screenshot_ui_shot_cast_spacing: 3px;
-
-$screenshot_ui_button_red: $error_color;
+$screenshot_ui_panel_padding: $base_padding * 3;
+$screenshot_ui_panel_border_radius: $modal_radius * 2;
+$screenshot_ui_button_red: $red_4;
 
 .screenshot-ui-panel {
   @extend %osd_panel;
   border-radius: $screenshot_ui_panel_border_radius;
   padding: $screenshot_ui_panel_padding;
   // Reduce the bottom padding a little to accommodate the large capture button.
-  padding-bottom: $screenshot_ui_panel_padding - 6px;
+  padding-bottom: $screenshot_ui_panel_padding - $base_padding;
   margin-bottom: 4em;
   spacing: $base_padding * 2;
 }
@@ -26,36 +17,43 @@ $screenshot_ui_button_red: $error_color;
 .screenshot-ui-close-button {
   @extend .window-close; // copy window close button
   padding: $base_padding !important; // but with more padding
-  margin-top: 12px;
+  margin-top: $base_margin * 3;
   box-shadow: 0 2px 4px 0 $shadow_color;
-  &.left { margin-left: 12px;}
-  &.right { margin-right: 12px;}
+  &.left { margin-left: $base_margin * 3;}
+  &.right { margin-right: $base_margin * 3;}
 }
 
 .screenshot-ui-type-button {
   @extend %osd_button_flat;
   min-width: 48px;
-  padding: $base_padding * 2 $base_padding * 3 !important;
+  padding: $base_padding * 2 $base_padding * 3;
   border-radius: $screenshot_ui_panel_border_radius - $screenshot_ui_panel_padding;
+
+  .icon-label-button-container {
+    @extend %caption;
+    spacing: $scaled_padding;
+
+    > StIcon { icon-size: $large_icon_size;}
+  }
 }
 
 .screenshot-ui-capture-button {
-  width: 36px;
-  height: 36px;
-  border-radius: 99px;
+  width: $large_icon_size;
+  height: $large_icon_size;
+  border-radius: $forced_circular_radius;
   border: 4px $osd_fg_color;
-  padding: 4px;
+  padding: $base_margin;
 
   .screenshot-ui-capture-button-circle {
     background-color: $osd_fg_color;
     transition-duration: 200ms;
     &:hover, &:focus { background-color: $hover_bg_color;}
-    border-radius: 99px;
+    border-radius: $forced_circular_radius;
   }
 
   &:hover, &:focus {
     .screenshot-ui-capture-button-circle {
-      background-color: darken($osd_fg_color, 15%);
+      background-color: darken($osd_fg_color, 20%);
     }
   }
 
@@ -84,32 +82,36 @@ $screenshot_ui_button_red: $error_color;
 
 .screenshot-ui-shot-cast-container {
   background-color: transparentize($osd_fg_color,0.9);
-  border-radius: $modal_radius;
-  padding: $screenshot_ui_shot_cast_spacing;
-  spacing: $screenshot_ui_shot_cast_spacing;
+  border-radius: $forced_circular_radius;
+  padding: $base_padding * 0.5;
+  spacing: $base_padding * 0.5;
 
-  &:ltr { margin-left: $screenshot_ui_shot_cast_margin - $screenshot_ui_panel_padding;}
-  &:rtl { margin-right: $screenshot_ui_shot_cast_margin - $screenshot_ui_panel_padding;}
+  @if $contrast == 'high' {
+    @include draw_hc_inset();
+  }
 }
 
+// non-standard button style
 .screenshot-ui-shot-cast-button {
-  padding: $base_padding $base_padding*2;
+  padding: $base_padding $base_padding * 2;
   background-color: transparent;
+  border-radius: $forced_circular_radius;
+
+  @if $contrast == 'high' {
+    @include draw_hc_inset();
+  }
+
+  > StIcon { icon-size: $base_icon_size;}
+
   &:hover, &:focus { background-color: transparentize($osd_fg_color, 0.8);}
   &:active { background-color: transparentize($osd_fg_color, .5);}
   &:checked { background-color: $osd_fg_color; color: $osd_bg_color;}
   &:insensitive { color: transparentize($osd_fg_color, 0.5);}
-
-  border-radius: $modal_radius - $screenshot_ui_shot_cast_spacing;
-
-  StIcon { icon-size: $base_icon_size;}
 }
 
 .screenshot-ui-show-pointer-button {
   @extend %osd_button_flat;
-  border-radius: 99px;
-  padding: $base_padding * 2 !important;
-  StIcon { icon-size: $base_icon_size;}
+  @extend .icon-button;
 }
 
 .screenshot-ui-area-indicator-shade {
@@ -127,15 +129,15 @@ $screenshot_ui_button_red: $error_color;
 }
 
 .screenshot-ui-area-selector-handle {
-  border-radius: 99px;
+  border-radius: $forced_circular_radius;
   background-color: white;
   box-shadow: 0 1px 3px 2px $shadow_color;
-  width: 24px;
-  height: 24px;
+  width: $medium_icon_size;
+  height: $medium_icon_size;
 }
 
 .screenshot-ui-window-selector {
-  background-color: $system_bg_color;
+  background-color: $system_base_color;
 
   .screenshot-ui-window-selector-window-container {
     margin: 100px;
@@ -158,9 +160,9 @@ $screenshot_ui_button_red: $error_color;
 .screenshot-ui-window-selector-check {
   transition-duration: 200ms;
   color: transparent;
-  border-radius: 99px;
+  border-radius: $forced_circular_radius;
   border-width: 12px;
-  icon-size: 24px;
+  icon-size: $medium_icon_size;
 }
 
 .screenshot-ui-window-selector-window {
@@ -197,5 +199,5 @@ $screenshot_ui_button_red: $error_color;
 .screenshot-ui-tooltip {
   @extend %tooltip;
   text-align: center;
-  -y-offset: 24px;
+  -y-offset: $base_margin * 6;
 }

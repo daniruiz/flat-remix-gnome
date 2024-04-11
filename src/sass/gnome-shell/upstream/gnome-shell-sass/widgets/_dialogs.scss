@@ -10,8 +10,8 @@
   box-shadow: inset 0 0 0 1px $outer_borders_color;
 
   .modal-dialog-content-box {
-    margin: 32px 40px;
-    spacing: 32px;
+    margin: $base_margin * 8 $base_margin * 10;
+    spacing: $base_margin * 8;
     max-width: 28em;
   }
 
@@ -32,7 +32,7 @@
 
 /* Message Dialog */
 .message-dialog-content {
-  spacing: 18px;
+  spacing: $base_padding * 3;
 
   .message-dialog-title {
     text-align: center;
@@ -45,7 +45,7 @@
 
 /* Dialog List */
 .dialog-list {
-  spacing: 18px;
+  spacing: $base_padding * 3;
 
   .dialog-list-title {
     text-align: center;
@@ -71,8 +71,8 @@
 /* Run Dialog */
 .run-dialog {
   .modal-dialog-content-box {
-    margin-top: 24px;
-    margin-bottom: 14px;
+    margin-top: $base_padding * 4;
+    margin-bottom: $base_padding * 2;
   }
   .run-dialog-entry { width: 20em; }
   .run-dialog-description {
@@ -88,25 +88,25 @@
   width: 28em;
 
   .modal-dialog-content-box {
-    margin-bottom: 24px;
+    margin-bottom: $base_margin * 6;
   }
 }
 
 .prompt-dialog-password-grid {
-  spacing-rows: 8px;
-  spacing-columns: 4px;
+  spacing-rows: $base_margin * 2;
+  spacing-columns: $base_margin;
 
   .prompt-dialog-password-entry {
     width: auto;
 
     // 4px (spacing) + 16px (spinner-width)
-    &:ltr { margin-left: 20px; }
-    &:rtl { margin-right: 20px; }
+    &:ltr { margin-left: $base_margin+$base_icon_size; }
+    &:rtl { margin-right: $base_margin+$base_icon_size; }
   }
 }
 
 .prompt-dialog-password-layout {
-  spacing: 8px;
+  spacing: $base_margin * 2;
 }
 
 .prompt-dialog-password-entry {
@@ -129,30 +129,30 @@
 
 .polkit-dialog-user-layout {
   text-align: center;
-  spacing: 8px;
-  margin-bottom: 6px;
+  spacing: $base_margin * 2;
+  margin-bottom: $base_padding;
 
   .polkit-dialog-user-root-label { color: $warning_color; }
 }
 
 /* Audio selection dialog */
 .audio-device-selection-dialog {
-  .modal-dialog-content-box { margin-bottom: 28px; }
-  .audio-selection-box { spacing: 20px; }
+  .modal-dialog-content-box { margin-bottom: $base_margin * 7; }
+  .audio-selection-box { spacing: $base_margin * 5; }
 }
 
 .audio-selection-device {
-  border-radius: $base_border_radius*2;
+  border-radius: $base_border_radius * 2;
   &:hover,&:focus { background-color: $hover_bg_color; }
-  &:active { 
+  &:active {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
   }
 }
 
 .audio-selection-device-box {
-  padding: 20px;
-  spacing: 20px;
+  padding: $base_margin * 5;
+  spacing: $base_margin * 5;
 }
 
 .audio-selection-device-icon {

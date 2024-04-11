@@ -7,21 +7,21 @@
 // User icon
 .user-icon {
   background-size: contain;
+  border-radius: $forced_circular_radius;
+  icon-size: $base_icon_size * 4;
+
+  background-color: transparentize($osd_fg_color,0.95);
   color: $osd_fg_color;
-  border-radius: 99px;
-  icon-size: $base_icon_size * 4; // 64px
 
   & StIcon {
-    background-color: transparentize($osd_fg_color,0.95);
-    border-radius: 99px;
-    padding: $base_padding * 2 ; // 12px
-    width: $base_icon_size * 2.5; height:  $base_icon_size * 2.5; // 40px;
+    padding: $base_padding * 2;
   }
 
   &.user-avatar {
     box-shadow:inset 0 0 0 1px transparentize($osd_fg_color, 0.9);
-    @if $is_highcontrast {
-      box-shadow:inset 0 0 0 1px $hc_inset_color;
+
+    @if $contrast == 'high' {
+      @include draw_hc_inset();
     }
   }
 }

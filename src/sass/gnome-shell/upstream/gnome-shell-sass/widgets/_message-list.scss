@@ -12,36 +12,37 @@
 
   .message-list-placeholder {
     @extend %title_2;
-    color: $insensitive_fg_color;
-
+    color: transparentize($fg_color, .75);
+    @if $contrast == 'high' {
+      color: transparentize($fg_color, .5);
+    }
     // icon size and color
     > StIcon {
-      icon-size: $base_icon_size*3; // 48px
-      margin-bottom: $base_margin*3;
+      icon-size: 96px; // non-em asset size
+      margin-bottom: $base_margin * 3;
       -st-icon-style: symbolic;
     }
   }
 }
 
 .message-list-sections {
-  spacing: $base_padding;
-  margin: 0;
-  padding-bottom: $base_padding;
-
   // to account for scrollbar
   &:ltr {margin-right: $base_margin * 3; }
   &:rtl {margin-left: $base_margin * 3;}
+
+  spacing: $base_padding * 2;
 }
 
 .message-list-section,
 .message-list-section-list {
-  spacing: $base_padding;
+  spacing: $base_padding * 2;
 }
 
 // do-not-disturb + clear button
 .message-list-controls {
   // NOTE: remove the padding if notification_bubble could remove margin for drop shadow
-  padding: $base_padding;
+  padding: $base_padding * 2;
+  padding-bottom: $base_padding;
   spacing: $base_padding;
   @extend %heading;
 
@@ -62,73 +63,112 @@
 
 // message bubbles
 .message {
-  @include card;
+  @extend %card;
+  padding: 0;
+  margin: 0;
+  border-radius: $modal_radius;
 
-  // icon container
-  .message-icon-bin {
-    padding: ($base_padding * 3);
+  // subtract side padding to accommodate the close button's border
+  &:ltr { padding-right:-2px; };
+  &:rtl { padding-left:-2px; };
 
-    &:ltr {padding-right:$base_padding;}
-    &:rtl {padding-left:$base_padding;}
+  // message header
+  .message-header {
+    padding: 0 $scaled_padding;
+    margin: $base_padding;
+    margin-bottom: 0;
+    spacing: $base_padding;
+    color: $insensitive_fg_color;
 
-    // icon size and color
-    > StIcon {
-      icon-size: $large_icon_size; // 32px
+    // header source icon
+    .message-source-icon {
+      icon-size: $scalable_icon_size; // 16px
       -st-icon-style: symbolic;
     }
 
-    // fallback
-    > .fallback-app-icon {
-      width: $base_icon_size;
-      height: $base_icon_size;
+    // box that contains the source icon, source name and timestamp of the message
+    .message-header-content {
+      spacing: $base_padding;
+      min-height: to_em(24px);
+      padding-bottom: $base_padding;
+
+      // header source title
+      .message-source-title {
+        font-weight: bold;
+      }
+
+      // Time label
+      .event-time {
+        @extend %caption;
+        color: $insensitive_fg_color;
+        // Add bottom padding to align the app name with the time horizontally
+        padding-bottom: to_em(1px);
+
+        &:ltr { text-align: right };
+        &:rtl { text-align: left };
+      }
+    }
+
+    // buttons in the message header
+    .message-expand-button,
+    .message-close-button {
+      @extend .icon-button;
+      color: $fg_color;
+      background-color: transparentize($fg_color, .9);
+      padding: 4px;
+      &:hover { background-color: transparentize($fg_color, .81);}
+      &:active,
+      &:active:hover { background-color: transparentize($fg_color, .76);}
+      &:insensitive { background-color: transparentize($fg_color, .93);}
+    }
+
+    .message-expand-button {
+      padding: 6px;
+      &:ltr { margin-right: $base_padding; }
+      &:rtl { margin-left: $base_padding; }
     }
   }
 
-  // content
-  .message-content {
-    spacing: 4px;
-    padding: ($base_padding*1.5);
-    margin-bottom: $base_margin*2;
-  }
+  // container for message contents
+  .message-box {
+    padding: $base_padding;
+    margin: $base_padding;
+    margin-top: 0;
+    spacing: $base_padding;
 
-  // title
-  .message-title {
-    font-weight: bold;
-    /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
-    padding-top: 0.57em;
-  }
+    // icon of the message
+    .message-icon {
+      &:ltr { margin-right:$base_padding;}
+      &:rtl { margin-left:$base_padding;}
 
-  // secondary container in title box
-  .message-secondary-bin {
-    padding: 0 $base_margin * 2;
+      // icon size and color
+      icon-size: $base_icon_size * 3; // 48px
+      -st-icon-style: symbolic;
 
-    // notification time stamp
-    > .event-time {
-      color: transparentize($fg_color, 0.5);
-      @include fontsize($base_font_size - 2);
-      /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
-      padding-bottom: 0.13em;
+      &.message-themed-icon {
+        border-radius: $forced_circular_radius; // is circular
+        background-color: transparentize($fg_color, 0.8);
+        icon-size: $base_icon_size;
+        min-width: $base_icon_size * 3;
+        min-height: $base_icon_size * 3;
+      }
+    }
 
-      &:ltr { text-align: right };
-      &:rtl { text-align: left };
+    // If the header isn't displayed we need more top margin
+    &:first-child {
+      margin-top: $base_padding * 2;
+    }
+
+    // text of the message
+    .message-content {
+      spacing: $base_margin;
+
+      // message title
+      .message-title {
+        font-weight: bold;
+      }
     }
   }
-
-  // close button
-  .message-close-button {
-    color: $fg_color;
-    background-color: transparentize($fg_color, 0.8);
-    border-radius: 99px;
-    padding: $base_padding - 1px;
-    margin: 1px;
-    &:hover {background-color: transparentize($fg_color, 0.7);}
-    &:active {background-color: transparentize($fg_color, 0.8);}
-
-    > StIcon { icon-size: $base_icon_size; }
-  }
-
-  // body
-  .message-body {color: darken($fg_color, 10%);}
 }
 
 // URLs in messages
@@ -138,14 +178,14 @@
 
 /* Media Controls */
 .message-media-control {
-  padding: 0 $base_padding*3;
-  margin: $base_padding*2 0;
+  padding: 0 $base_padding * 3;
   border-radius: $base_border_radius;
   color: $fg_color;
+  border: 1px solid transparent;
 
-  @if $is_highcontrast {
-    border: 1px solid $hc_inset_color;
-    margin: $base_padding*2 2px;
+  @if $contrast == 'high' {
+    border-color: $hc_inset_color;
+    margin: $base_padding * 2 2px;
   }
 
   // colors are lightened since the media controls are in a card
@@ -161,30 +201,22 @@
 
   &:insensitive {
     color: lighten($insensitive_fg_color, 5%);
-     @if $is_highcontrast {
+
+    @if $contrast == 'high' {
       border-color: transparent;
     }
   }
 
-  // fix margin for last button
-  &:last-child:ltr { margin-right: $base_margin*3; }
-  &:last-child:rtl { margin-left: $base_margin*3; }
-
   & StIcon { icon-size: $base_icon_size; }
 }
 
-// album-art
-.media-message-cover-icon {
-  icon-size: $base_icon_size*3 !important; // 48px
-  border-radius: $base_border_radius;
+.media-message {
+  // album-art
+  .message-icon {
+    border-radius: $base_border_radius !important;
 
-  // when there is no artwork
-  &.fallback {
-    color: darken($fg_color, 17%);
-    background-color: $bg_color;
-    border: 1px solid transparent;
-    border-radius: $base_border_radius;
-    icon-size: $large_icon_size !important; // 32px
-    padding: ($base_padding*2 + 2); // 16px
+    &.message-themed-icon {
+      icon-size: $large_icon_size !important; // 32px
+    }
   }
 }

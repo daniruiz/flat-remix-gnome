@@ -1,8 +1,8 @@
 /* App Switcher */
 
 // same as dash
-$switcher_padding: $base_padding*2;
-
+$switcher_padding: $base_padding * 2;
+$switcher_radius: $modal_radius + $switcher_padding;
 
 // the full screen container of the switcher
 .switcher-popup {
@@ -14,7 +14,7 @@ $switcher_padding: $base_padding*2;
 .switcher-list {
   @extend %osd_panel;
   padding: $switcher_padding;
-  border-radius: $modal_radius+$switcher_padding;
+  border-radius: $switcher_radius;
   box-shadow: 0 8px 8px 0 $shadow_color;
 
   // container for items in list
@@ -24,11 +24,19 @@ $switcher_padding: $base_padding*2;
 
   // each item in the list
   .item-box {
-    @include tile_button($osd_fg_color);
-    // override over style so mouse doesn't steal focus
+    @include tile_button($fg:$osd_fg_color, $bg:$osd_bg_color);
+    // override %tile style so mouse doesn't steal focus
     &:hover {background: none;}
-    @if $is_highcontrast {
-      box-shadow: inset 0 0 0 999px transparentize($hc_inset_color,0.2);
+
+    // brighter than normal selected style
+    &:selected {
+      background-color: transparentize($osd_fg_color, 0.8);
+    }
+
+    @if $contrast == 'high' {
+      &:selected {
+        background-color: transparentize($osd_fg_color, 0.7);
+      }
     }
   }
 

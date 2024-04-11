@@ -1,18 +1,10 @@
 /* Window Picker */
-
-$window_picker_spacing: $base_padding; // 6px
-$window_picker_padding: $base_padding * 2; // 12px
-
-$window_thumbnail_label_color: transparentize($system_bg_color, 0.4);
-
 $window_close_button_color: transparentize(lighten($system_bg_color, 7%), .02);
-$window_close_button_size: 30px;
-$window_close_button_padding: 3px;
 
 // Window picker
 .window-picker {
   // Space between window thumbnails
-  spacing: $window_picker_spacing;
+  spacing: $base_padding;
 }
 
 // Window titles
@@ -24,14 +16,19 @@ $window_close_button_padding: 3px;
 .window-close {
   background-color: $window_close_button_color;
   color: $system_fg_color;
-  border-radius: 99px;
+  border-radius: $forced_circular_radius;
   box-shadow: 0 2px 4px 0 $shadow_color;
-  padding: $window_close_button_padding;
-  height: $window_close_button_size;
-  width: $window_close_button_size;
+  padding: $base_padding * 0.5;
+  height: $large_icon_size;
+  width: $large_icon_size;
   transition-duration: 100ms;
+  border: 2px solid transparent;
 
-  & StIcon { icon-size: 24px; } // uses non standard icon size
+  @if $contrast == 'high' {
+    border-color: $hc_inset_color;
+  }
+
+  & StIcon { icon-size: $medium_icon_size; }
 
   &:hover {
     background-color: lighten($window_close_button_color, 7%);
@@ -41,9 +38,6 @@ $window_close_button_padding: 3px;
     background-color: lighten($window_close_button_color, 13%);
   }
 
-  @if $is_highcontrast {
-    border:2px solid $outer_borders_color;
-  }
 }
 
 .workspace-background {

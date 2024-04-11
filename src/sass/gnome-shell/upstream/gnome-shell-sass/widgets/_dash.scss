@@ -4,75 +4,92 @@
 $dash_background_color: $system_overlay_bg_color;
 
 $dash_placeholder_size: 32px;
-$dash_padding: $base_padding*2; // 12px
+$dash_padding: $base_padding * 2;
+$dash_edge_offset: $base_margin * 3;
 $dash_border_radius: $modal_radius + $dash_padding;
+$dash_spacing: $base_margin * 0.5;
 
 // container for the dash
 #dash {
-  @extend %caption;
-  margin-top: $dash_padding;
+  margin-top: $dash_edge_offset;
 
-  .placeholder {
-    // background-image: url("assets/dash-placeholder.svg");
-    background-image:none;
-    background-size: contain;
-    height: $dash_placeholder_size;
-  }
-
-  .empty-dash-drop-target {
-    width: $dash_placeholder_size;
-    height: $dash_placeholder_size;
-  }
-
-  // Running app indicator (also shown in app grid)
-  .app-well-app-running-dot {
-    margin-bottom: 14px; // hardcoded
-  }
-}
-
-// background of the dash behind app icons
-.dash-background {
-  background-color: $dash_background_color;
-  border-radius: $dash_border_radius;
-  padding: $dash_padding;
-  spacing: $base_padding;
-  margin-bottom: $dash_padding;
-
-  @if $is_highcontrast {
-    border: 2px solid $hc_inset_color;
-    box-shadow:none;
-  }
-}
-
-// items on the dash
-.dash-item-container {
-  > * {margin: 0 2px;}
-  &:ltr{&:first-child {margin-left: 0;}}
-  &:rtl{&:first-child {margin-right: 0;}}
-
-  // each app item on the dash
-  .app-well-app .overview-icon {
-    padding: $base_padding;
-    border-radius: $base_border_radius*2;
-  }
-
-  // show apps button
-  .show-apps { @include overview_icon($system_fg_color);}
-
-  .show-apps, .app-well-app {
+  // background behind item container
+  .dash-background {
+    background-color: $dash_background_color;
+    border-radius: $dash_border_radius;
+    padding-top: $dash_padding;
     padding-bottom: $dash_padding;
-    color: $system_fg_color;
-  }
-}
+    padding-left: $dash_padding - $dash_spacing; // subtract the margins added to .overview-tile below
+    padding-right: $dash_padding - $dash_spacing;
 
-// separator between favourites and running apps
-.dash-separator {
-  width: 1px;
-  margin: 0 $base_margin;
-  background-color: $system_borders_color;
-  margin-bottom: $dash_padding;
-  @if $is_highcontrast {
-    width: 2px;
+    @if $contrast == 'high' {
+      @include draw_hc_inset($width: 2px);
+    }
+  }
+
+  // items on the dash
+  .dash-item-container {
+
+    .placeholder {
+      // background-image: url("assets/dash-placeholder.svg");
+      background-image: none;
+      background-size: contain;
+      height: $dash_placeholder_size;
+    }
+
+    .empty-dash-drop-target {
+      width: $dash_placeholder_size;
+      height: $dash_placeholder_size;
+    }
+
+    // IMPORTANT: items on the dash need to extend to the edge to be adequate click targets
+    // as such the %tile style is overriden and button styles are applied to the child class .overview-icon
+    .show-apps,
+    .overview-tile {
+      // remove styles
+      @extend %reset;
+
+      margin: 0 $dash_spacing;
+      padding-bottom: $dash_edge_offset; // align with other items
+
+      $fg:$system_fg_color;
+      $bg:$dash_background_color;
+
+      .overview-icon {
+        @extend %tile;
+        @include button(normal, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);
+      }
+
+      &:focus .overview-icon { @include button(focus, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
+      &:hover .overview-icon { @include button(hover, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
+      &:active .overview-icon { @include button(active, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
+      &:checked .overview-icon { @include button(checked, $tc:$fg, $c:$bg, $style: flat, $always_dark: true);}
+    }
+
+    // running app dot
+    .app-grid-running-dot {
+      // manually position the dot within the dash item
+      margin-bottom: $dash_padding + $dash_edge_offset - 3px; // 3px = size of dot (5px) subtracted from its translationY from appDisplay.js
+    }
+  }
+
+  // separator between pinned and running apps
+  .dash-separator {
+    width: 1px;
+    margin-left:$base_margin;
+    margin-right:$base_margin;
+    background-color: $system_borders_color;
+
+    @if $contrast == 'high' {
+      width: 2px;
+      background-color: $hc_inset_color;
+    }
+  }
+
+  // make sure all dash components have same margin from screen edge
+  .dash-separator,
+  .dash-background {
+    margin-bottom: $dash_edge_offset;
   }
 }
 

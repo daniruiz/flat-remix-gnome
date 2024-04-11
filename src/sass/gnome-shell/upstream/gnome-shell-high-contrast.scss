@@ -1,33 +1,7 @@
 $variant: 'dark';
+$contrast: "high";
 
 @import "gnome-shell-sass/_high-contrast-colors"; //use gtk colors
 @import "gnome-shell-sass/_drawing";
 @import "gnome-shell-sass/_common";
 @import "gnome-shell-sass/_widgets";
-
-.toggle-switch { width: 48px; }
-.toggle-switch {
-  background-image: url("assets/toggle-off-hc.svg");
-  &:checked { background-image: url("assets/toggle-on-hc.svg"); }
-}
-
-//force opaque panel
-#panel {
-  &.login-screen,
-  &.unlock-screen,
-  &:overview {
-    background-color: #000;
-  }
-
-  .panel-button {
-    color: #fff !important;
-  }
-}
-
-//thumbnail app icons no dropshadow and forced color
-.window-picker .icon-dropshadow {
-  icon-shadow: none;
-  background-color: $osd_bg_color;
-  padding: $base_padding * 2;
-  border-radius: $modal_radius;
-}

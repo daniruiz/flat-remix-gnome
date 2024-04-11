@@ -1,4 +1,4 @@
-44c44
-< $base_font_size: 11;
+30c30
+< $base_font_size: 11pt;      // font size
 ---
-> $base_font_size: 10;
+> $base_font_size: 10pt;      // font size

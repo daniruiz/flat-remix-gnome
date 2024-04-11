@@ -4,17 +4,17 @@ StEntry {
   @extend %entry;
 
   StIcon.capslock-warning {
-    icon-size: $base_icon_size;
+    icon-size: $scalable_icon_size;
     warning-color: $warning_color;
-    padding: 0 4px;
+    padding: 0 $base_margin;
   }
 
   StIcon.peek-password {
-    icon-size: $base_icon_size;
-    padding: 0 4px;
+    icon-size: $scalable_icon_size;
+    padding: 0 $base_margin;
   }
 
   StLabel.hint-text {
-    margin-left: 2px;
+    margin-left: $base_margin * 0.5;
   }
 }

@@ -2,25 +2,31 @@
 
 // overall menu
 #calendarArea {
-  padding: $base_padding - 2px;
+  padding: $base_margin;
 }
 
-// Calendar menu side column
+.datemenu-popover {
+  border-radius: $base_border_radius * 1.5 + $base_padding * 3;
+}
+
+// calendar menu side column
 .datemenu-calendar-column {
   spacing: $base_padding;
-  &:ltr {padding-left: $base_padding;}
-  &:rtl {padding-right: $base_padding;}
-  .datemenu-displays-box {spacing: $base_padding;}
+  &:ltr { margin-left: $base_padding;}
+  &:rtl { margin-right: $base_padding;}
+  .datemenu-displays-box {
+    spacing: $base_padding;
+  }
 }
 
-/* today button (the date) */
+// today button (the date)
 .datemenu-today-button {
-  @include card(flat);
+  @extend %card_flat;
   padding: $base_padding * 1.5;
 
   // weekday label
   .day-label {
-    @extend %heading;
+    font-weight: bold;
   }
 
   // date label
@@ -29,10 +35,11 @@
   }
 }
 
-/* Calendar */
+// the mini calendar
 .calendar {
-  @include card(flat);
+  @extend %card_flat;
   margin-top: 0;
+  padding: 0;
 
   // month header
   .calendar-month-header {
@@ -40,23 +47,25 @@
     // prev/next month icons
     .calendar-change-month-back StIcon,
     .calendar-change-month-forward StIcon {
-      icon-size: $base_icon_size;
+      icon-size: $scalable_icon_size;
     }
 
     // month label
     .calendar-month-label {
       @extend %heading;
+      @extend %flat_button;
+      color: $fg_color !important;
       padding: 8px 0;
+      width: 10em;
+      border-radius: $forced_circular_radius;
+      text-align: center;
     }
 
     .pager-button {
-      @extend .button, .flat;
-      padding: 0 !important;
-      height: 32px;
-      width: 32px;
-      margin: 2px;
-      border-radius: $base_border_radius;
-      transition-duration: 100ms;
+      @extend .icon-button, .flat;
+      height: 2.6em;
+      width: 2.6em;
+      padding: 0;
     }
   }
 
@@ -64,41 +73,48 @@
   .calendar-day {
     @extend %numeric;
     @extend %smaller;
-    @extend .button, .flat;
-
-    border-radius: 99px;
-    height: 3em !important;
-    width: 3em !important;
+    @extend %flat_button;
+    border-radius: $forced_circular_radius;
+    height: 3em;
+    width: 3em;
     margin: 2px;
-    padding: 0 !important;
-    font-weight: 600;
+    padding: 0;
+    font-weight: bold;
     text-align: center;
-    transition-duration: 100ms;
-
-    // day of week heading
-    &.calendar-day-heading {
-      background-color: transparent;
-      color: $insensitive_fg_color;
-      height: 0.93em !important; // force heading to be smaller height
-      padding-top: $base_padding !important;
-      margin-bottom: 0;
-      border-radius: 9px;
-    }
 
     &.calendar-weekday {}
 
     &.calendar-weekend {
       color: $insensitive_fg_color;
+      @if $contrast == 'high' {
+        font-style: italic;
+      }
     }
 
     &.calendar-other-month {
-      color: transparentize($insensitive_fg_color, 0.7) !important;
+      color: transparentize($fg_color, 0.5);
       font-weight: normal;
+
+      &.calendar-weekend {
+        color: transparentize($fg_color, 0.5);
+        @if $contrast == 'high' {
+          color: $fg_color;
+        }
+      }
+
+      @if $contrast == 'high' {
+        color: $fg_color;
+        font-style: italic; // differentiate with a font-style instead of text color
+      }
     }
 
     &.calendar-today {
-      @extend .button, .default;
-      color: $selected_fg_color; /* override weekends */
+      @extend %default_button;
+      // override colors above for when today is a weekend
+      color: $selected_fg_color !important;
+      &.calendar-day-with-events {
+        background-image: url("assets/calendar-today.svg") !important; // always use light asset with .default style
+      }
     }
 
     &.calendar-day-with-events {
@@ -107,129 +123,165 @@
     }
   }
 
+  // day of week heading
+  .calendar-day-heading {
+    @extend %numeric;
+    @extend %smaller;
+    @extend %flat_button;
+    font-weight: bold;
+    text-align: center;
+    margin: $base_margin;
+    padding: $base_padding * 0.5 $base_padding;
+    border-radius: $base_border_radius;
+  }
+
   // week number style
   .calendar-week-number {
-    @include fontsize($base_font_size - 4);
+    @extend %smaller;
     font-weight: bold;
     font-feature-settings: "tnum";
     text-align: center;
-    margin: 6px;
+    margin: $base_padding;
     padding: 0 $base_padding;
-    border-radius: 3px;
-    background-color: transparentize($fg_color, 0.9);
+    border-radius: $base_border_radius * 0.5;
+    background-color: transparentize($insensitive_fg_color, .8);
     color: $insensitive_fg_color;
+  }
+}
 
-    @if $is_highcontrast {
-      border:1px solid $hc_inset_color;
+// common style for the date menu widgets
+.events-button,
+.world-clocks-button,
+.weather-button {
+  @extend %card;
+}
+
+// events
+.events-button {
+
+  .events-box {
+
+    // event title
+    .events-title {
+      @extend %heading;
+      color: $insensitive_fg_color;
+      padding-bottom: $base_padding;
+    }
+
+    // list of events
+    .events-list {
+      spacing: $base_padding;
+
+      // container for an event
+      .event-box {
+        spacing: $base_padding;
+        border-radius: $base_border_radius;
+
+        .event-summary {
+          @extend %heading;
+        }
+
+        .event-time {
+          @extend %numeric;
+          @extend %caption;
+          color: $insensitive_fg_color;
+        }
+      }
+
+      .event-placeholder {
+        color: $insensitive_fg_color;
+        font-style: italic;
+      }
     }
   }
 }
 
-/* Events */
-.events-button {
-  @include card;
-  padding: $base_padding * 2;
-
-  .events-box {
-    spacing: $base_padding;
-  }
-
-  .events-list {
-    spacing: 2 * $base_padding;
-    color: $fg_color;
-  }
-
-  .events-title {
-    @extend %heading;
-    margin-bottom: $base_margin;
-  }
-
-  .event-time {
-    @extend %numeric;
-    @extend %caption;
-    color: $insensitive_fg_color;
-  }
-}
-
-/* World clocks */
+// world clocks
 .world-clocks-button {
-  @include card;
-  padding: $base_padding * 2;
-
-  .world-clocks-grid {
-    spacing-rows: $base_padding;
-    spacing-columns: $base_padding * 2;
-  }
 
   // title
   .world-clocks-header {
     @extend %heading;
     color: $insensitive_fg_color;
-  }
 
-  // city label
-  .world-clocks-city {
-    color: $fg_color;
-  }
-
-  // timezone time
-  .world-clocks-time {
-    @extend %heading;
-    @extend %numeric;
-    color: $fg_color;
-
-    &:ltr {text-align: right;}
-    &:rtl {text-align: left;}
-  }
-
-  // timezone offset label
-  .world-clocks-timezone {
-    @extend %numeric;
-    @extend %caption;
-    color: $insensitive_fg_color;
-  }
-}
-
-/* Weather */
-.weather-button {
-  @include card;
-  padding: $base_padding * 2;
-
-  .weather-box {
-    spacing: $base_padding + $base_margin;
-  }
-
-  .weather-header-box {
-    spacing: $base_padding;
-  }
-
-  .weather-header {
-    color: $insensitive_fg_color;
-    @extend %heading;
-
-    &.location {
-      font-weight: normal;
+    // change style when no world clocks are configured
+    &.no-world-clocks {
+      color: $fg_color;
     }
   }
 
-  .weather-grid {
+  // clocks
+  .world-clocks-grid {
     spacing-rows: $base_padding;
     spacing-columns: $base_padding * 2;
-  }
 
-  .weather-forecast-time {
-    @extend %numeric;
-    @extend %caption;
-    color: darken($fg_color,30%);
-    padding-top: 0.2em;
-    padding-bottom: 0.4em;
-  }
+    // city label
+    .world-clocks-city {
+    }
 
-  .weather-forecast-icon {
-    icon-size: $large_icon_size;
-  }
+    // timezone time
+    .world-clocks-time {
+      @extend %numeric;
+      font-weight: bold;
 
-  .weather-forecast-temp {
-    @extend %heading;
+      &:ltr {text-align: right;}
+      &:rtl {text-align: left;}
+    }
+
+    // timezone offset label
+    .world-clocks-timezone {
+      @extend %numeric;
+      @extend %caption;
+      color: $insensitive_fg_color;
+    }
+  }
+}
+
+// weather
+.weather-button {
+
+  .weather-box {
+    spacing: $base_padding;
+
+    // header
+    .weather-header-box {
+      spacing: $base_padding;
+
+      .weather-header {
+        @extend %heading;
+        color: $insensitive_fg_color;
+
+         // change style when no location is configured
+        &.no-location {
+          color: $fg_color;
+        }
+
+        &.location {
+          font-weight: normal;
+        }
+      }
+    }
+
+    // weather items
+    .weather-grid {
+      spacing-rows: $base_padding;
+      spacing-columns: $base_padding * 2;
+
+      .weather-forecast-time {
+        @extend %numeric;
+        @include fontsize(10pt);
+        padding-top: 0.2em;
+        padding-bottom: 0.4em;
+      }
+      .weather-forecast-icon {
+        icon-size: $large_scalable_icon_size;
+        margin-bottom: $base_margin;
+      }
+
+      .weather-forecast-temp {
+        @extend %numeric;
+        font-weight: bold;
+      }
+    }
   }
 }

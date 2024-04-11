@@ -1,0 +1,54 @@
+// Named Colors
+
+// base colors
+$_base_color_dark: desaturate($dark_4, 100%);
+$_base_color_light: desaturate($light_2, 100%);
+
+// colors for destructive elements
+$destructive_bg_color: if($variant == 'light', $red_3, $red_4);
+$destructive_fg_color: $light_1;
+$destructive_color: $destructive_bg_color;
+
+// colors for levelbars, entries, labels and infobars
+$success_bg_color: if($variant == 'light', $green_4, $green_5);
+$success_fg_color: $light_1;
+$success_color: $success_bg_color;
+
+$warning_bg_color: if($variant == 'light', $yellow_4, $yellow_3);
+$warning_fg_color: transparentize(black, .2);
+$warning_color: $warning_bg_color;
+
+$error_bg_color: if($variant == 'light', $red_3, $red_4);
+$error_fg_color: $light_1;
+$error_color: $error_bg_color;
+
+// colors for selected or default elements
+$selected_bg_color: if($variant == 'light', $blue_4, $blue_3);
+$selected_fg_color: $light_1;
+
+// link colors
+$link_color: if($variant == 'light', $blue_4, $blue_2);
+$link_visited_color: transparentize($link_color, .6);
+
+// special cased widget definitions
+$background_mix_factor: if($variant == 'light', 12%, 9%); // used to boost the color of backgrounds in different variants
+$border_opacity: if($variant == 'light', .85, .9); // change the border opacity in different variants
+
+// shadows
+$shadow_color: if($variant == 'light', rgba(0,0,0,.05), rgba(0,0,0,0.2));
+$text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
+
+// focus colors
+$focus_color: $selected_bg_color;
+$focus_border_color: transparentize($focus_color, 0.5);
+
+// High Contrast overrides
+@if $contrast == 'high' {
+    // increase border opacity
+    $border_opacity: .5;
+    // remove shadows
+    $shadow_color: transparent;
+    $text_shadow_color: transparent;
+    // less transparent focus color
+    $focus_border_color: transparentize($focus_color, 0.2);
+}

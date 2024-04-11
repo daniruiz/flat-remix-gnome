@@ -6,17 +6,17 @@
 }
 
 #searchResultsContent {
-  max-width: 1072px;
+  max-width: 1044px;
 }
 
 // search results sections "the boxes"
 .search-section {
   // This should be equal to #searchResultsContent spacing
-  spacing: $base_padding*3;
+  spacing: $base_padding * 3;
 
   // separator (unstyled)
   .search-section-separator {
-    height: $base_margin*2; // use it as a spacer
+    height: $base_margin * 2; // use it as a spacer
     background-color: transparent;
   }
 }
@@ -25,14 +25,19 @@
 .search-section-content {
   background-color: $system_overlay_bg_color;
   color: $system_fg_color;
-  border-radius: $modal_radius*1.5;
-  padding: $base_padding*2;
-  margin:0 $base_margin*3;
+  border-radius: $modal_radius * 1.5;
+  padding: $base_padding * 2;
+  margin:0 $base_margin * 3;
+  border: 2px solid transparent;
+
+  @if $contrast == 'high' {
+    border-color: $hc_inset_color;
+  }
 }
 
 %search_section_content_item {
-  @include tile_button($system_fg_color);
-  border-radius: $base_border_radius+3px;
+  @include tile_button($bg:$system_overlay_bg_color);
+  border-radius: $base_border_radius * 1.65;
 }
 
 // "no results" text
@@ -42,13 +47,13 @@
 }
 
 .grid-search-results {
-  spacing: $base_padding*5;
-  margin:0 $base_margin*3;
+  spacing: $base_padding * 5;
+  margin:0 $base_margin * 3;
 }
 
 // Search results with icons
 .grid-search-result {
-  @extend .app-well-app;
+  @extend .overview-tile;
 }
 
 // search result provider
@@ -86,11 +91,18 @@
   // list item title (with leading icon)
   .list-search-result-title {
     spacing: $base_padding * 2;
-    // font-weight: bold;
+
+    @if $contrast == 'high' {
+      font-weight: bold;
+    }
   }
 
   // list item description
   .list-search-result-description {
     color: $system_insensitive_fg_color;
+
+    @if $contrast == 'high' {
+      color: $system_fg_color;
+    }
   }
 }

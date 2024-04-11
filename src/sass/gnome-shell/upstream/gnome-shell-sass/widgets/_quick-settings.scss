@@ -1,45 +1,46 @@
 .quick-settings {
-  padding: $base_padding*3;
-  border-radius: $modal_radius*2.25;
+  padding: $base_padding * 3;
+  border-radius: $modal_radius * 2.25;
 
   .icon-button, .button {
-    padding: $base_padding*1.75;
+    padding: $base_padding * 1.75;
   }
 }
 
 .quick-settings-grid {
-  spacing-rows: $base_padding*2;
-  spacing-columns: $base_padding*2;
+  spacing-rows: $base_padding * 2;
+  spacing-columns: $base_padding * 2;
 }
 
 .quick-toggle, .quick-menu-toggle {
-  border-radius: 99px;
+  border-radius: $forced_circular_radius;
   min-width: 12em;
   max-width: 12em;
-  min-height: 48px;
+  min-height: $scalable_icon_size * 3; // use icon size so the button scales
   border:none;
 }
 
 .quick-toggle {
-  &:checked { @include button(default, $c:$selected_bg_color); }
+  background-color: none;
+  &:checked { @extend %default_button;}
 
-  & > StBoxLayout { spacing: $base_padding*1.5; }
+  & > StBoxLayout { spacing: $base_padding * 1.5; }
 
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
   &.button { padding: 0; }
-  & > StBoxLayout { padding: 0 $base_padding*2; }
-  &:ltr > StBoxLayout { padding-left: $base_padding*2.5; }
-  &:rtl > StBoxLayout { padding-right: $base_padding*2.5; }
+  & > StBoxLayout { padding: 0 $base_padding * 2; }
+  &:ltr > StBoxLayout { padding-left: $base_padding * 2.5; }
+  &:rtl > StBoxLayout { padding-right: $base_padding * 2.5; }
 
   .quick-toggle-title { font-weight: bold; }
 
   & StBoxLayout > .quick-toggle-subtitle {
+    @extend %caption;
     font-weight: normal;
-    font-size: 12px;
   }
 
-  .quick-toggle-icon { icon-size: $base_icon_size; }
+  .quick-toggle-icon { icon-size: $scalable_icon_size; }
 }
 
 .quick-menu-toggle {
@@ -47,31 +48,31 @@
     min-width: auto;
     max-width: auto;
 
-    &:ltr { border-radius: 99px 0 0 99px; }
-    &:ltr > StBoxLayout { padding-right: $base_padding*1.5; }
-    &:rtl { border-radius: 0 99px 99px 0; }
-    &:rtr > StBoxLayout { padding-left: $base_padding*1.5; }
+    &:ltr { border-radius: $forced_circular_radius 0 0 $forced_circular_radius; }
+    &:ltr > StBoxLayout { padding-right: $scaled_padding * 1.5; }
+    &:rtl { border-radius: 0 $forced_circular_radius $forced_circular_radius 0; }
+    &:rtr > StBoxLayout { padding-left: $scaled_padding * 1.5; }
 
-    &:ltr:last-child { border-radius: 99px; }
-    &:rtl:last-child { border-radius: 99px; }
+    &:ltr:last-child { border-radius: $forced_circular_radius; }
+    &:rtl:last-child { border-radius: $forced_circular_radius; }
   }
 
   & .quick-toggle-arrow {
-    padding: $base_padding $base_padding*1.75;
+    padding: $scaled_padding $scaled_padding * 1.75;
     border-width: 0;
     border-color: transparentize($fg_color, .75);
 
     &:checked {
-      @include button(default, $c:$selected_bg_color);
+      @extend %default_button;
       border-color: $selected_borders_color;
     }
 
     &:ltr {
-      border-radius: 0 99px 99px 0;
+      border-radius: 0 $forced_circular_radius $forced_circular_radius 0;
       border-left-width: 1px;
     }
     &:rtl {
-      border-radius: 99px 0 0 99px;
+      border-radius: $forced_circular_radius 0 0 $forced_circular_radius;
       border-right-width: 1px;
     }
   }
@@ -84,39 +85,50 @@
 
   .slider-bin {
     &:focus {@include button(focus);}
-    min-height: 16px; // slider size
     padding: $base_padding;
-    border-radius: 99px;
+    border-radius: $forced_circular_radius;
   }
 }
 
 .quick-toggle-menu {
-  @include card;
+  @extend %card;
 
-  // override some card styles
-  background-color: $bg_color !important;
-  color: $fg_color !important;
+  &:insensitive {
+    // override insensitive style on submenu
+    @include button(normal);
+  }
 
-  border-radius: $base_border_radius*3;
-  padding: $base_padding*2;
-  margin: $base_padding*2 $base_padding*3 0;
+  border-radius: $base_border_radius * 3;
 
-  .popup-menu-item > StIcon { -st-icon-style: symbolic; }
+  margin: $base_padding * 2 $base_padding * 3 0;
+
+  .popup-menu-item > StIcon {
+    -st-icon-style: symbolic;
+    icon-size: $scalable_icon_size;
+  }
 
   & .header {
-    spacing-rows: 0.5 * $base_padding;
-    spacing-columns: $base_padding*2;
-    padding-bottom: 2 * $base_padding;
+    spacing-rows: $base_padding * 0.5;
+    spacing-columns: $base_padding * 2;
+    padding-bottom: $base_padding * 2;
 
     & .icon {
-      icon-size: $base_icon_size*1.5; // a non-standard symbolic size but ok
-      border-radius: 999px;
+      icon-size: $medium_scalable_icon_size;
+      border-radius: $forced_circular_radius;
       padding: 1.5 * $base_padding;
       background-color: transparentize($fg_color, 0.8);
 
       &.active {
         background-color: $selected_bg_color;
         color: $selected_fg_color;
+      }
+
+      // draw hc outline
+      @if $contrast == 'high' {
+        @include draw_hc_inset();
+        &.active {
+          @include draw_hc_inset($no_inset: true);
+        }
       }
     }
 
@@ -134,7 +146,7 @@
 }
 
 .quick-settings-system-item {
-  & > StBoxLayout { spacing: 2 * $base_padding; }
+  & > StBoxLayout { spacing: $base_padding * 2; }
 
   & .power-item {
     min-height: 0;
@@ -148,7 +160,7 @@
 }
 
 .nm-network-item {
-  .wireless-secure-icon { icon-size: 0.5 * $base_icon_size; }
+  .wireless-secure-icon { icon-size: $scalable_icon_size * 0.5; } // half-size symbolic
 }
 
 .bt-device-item {
@@ -164,23 +176,19 @@
 
 .device-subtitle { color: transparentize($fg_color, 0.5); }
 
-.keyboard-brightness-item .slider {
-  min-height: 16px;
-}
-
 .keyboard-brightness-level {
   spacing: $base_padding;
 
-  .button:checked { @include button(default, $c:$selected_bg_color); }
+  .button:checked { @extend %default_button; }
 }
 
 // background apps
 
 .background-apps-quick-toggle {
-  min-height: 40px;
+  min-height: to_em(40px);
   background-color: transparent;
 
-  & StIcon { icon-size: $base_icon_size !important; }
+  & StIcon { icon-size: $scalable_icon_size !important; }
 }
 
 .background-app-item {
@@ -190,9 +198,14 @@
     icon-size: $large_icon_size !important;
     -st-icon-style: regular !important;
   }
-  & .close-button {
-    @extend .icon-button;
+  & .icon-button {
     padding: $base_padding;
+
+    // override some background colors since it's a button on an already styled background
+    // FIXME: may need a generic drawing method for button in menu item in future
+    background-color: transparentize($fg_color, 0.87);
+    &:hover { background-color: transparentize($fg_color, 0.78);}
+    &:active { background-color: transparentize($fg_color, 0.69);}
   }
   & .spinner {
     padding: $base_padding;

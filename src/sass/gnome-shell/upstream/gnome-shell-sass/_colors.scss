@@ -1,61 +1,53 @@
-// When color definition differs for dark and light variant,
-// it gets @if-ed depending on $variant
+//
+// Main color definitions
+//
+// When color definition differs for dark and light variant, it gets @if-ed depending on $variant
 
 @import '_palette.scss';
+@import '_default-colors.scss';
 
-$is_highcontrast:false;
 
-// base color for light theme
-$_dark_base_color: desaturate($dark_4, 100%);
+// global colors
+$base_color: if($variant == 'light', $light_1, $_base_color_dark);
+$bg_color: if($variant == 'light', $_base_color_light, lighten($base_color, 5%));
+$fg_color: if($variant == 'light', $_base_color_dark, $light_1);
 
-$base_color: if($variant == 'light', $light_1, $_dark_base_color);
-$bg_color: if($variant == 'light', $light_2, lighten($base_color, 5%));
-$fg_color: if($variant == 'light', $_dark_base_color, white);
+// OSD elements
+$osd_fg_color: $light_1;
+$osd_bg_color: lighten($_base_color_dark, 5%);
 
-$selected_fg_color: $light_1;
-$selected_bg_color: $blue_3;
-$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 20%));
+// system elements (e.g. the overview) that are always dark
+$system_base_color: $_base_color_dark;
+$system_fg_color: $_base_color_light;
 
-$borders_color: if($variant == 'light', transparentize($fg_color, .85), transparentize($fg_color, .9));
+// panel colors
+$panel_bg_color: if($variant == 'light', $_base_color_light, $dark_5);
+$panel_fg_color: if($variant == 'light', $_base_color_dark, $light_1);
+
+// card elements
+$card_bg_color: if($variant == 'light', $light_1, lighten($bg_color, 7%));
+$card_shadow_color: if($variant == 'light', transparentize($dark_5, .97), transparent);
+$card_shadow_border_color: if($variant == 'light', transparentize($dark_5, .91), transparent);
+
+//
+// Derived Colors
+//
+// colors based on the global defines above
+
+// borders
+$borders_color: transparentize($fg_color, $border_opacity);
 $outer_borders_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
-$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
-
-$warning_color: if($variant == 'light', $yellow_4, $yellow_3);
-$error_color: if($variant == 'light', $red_4, $red_3);
-$success_color: if($variant == 'light', $green_4, $green_5);
-$destructive_color: $error_color;
-
-// color definitions for OSD elements
-$osd_fg_color: $light_1;
-$osd_bg_color: lighten($_dark_base_color, 5%);
-
-// derived osd colors
-$osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
-$osd_insensitive_fg_color: mix($osd_fg_color, $osd_bg_color, 70%);
+// osd colors
 $osd_borders_color: transparentize($osd_fg_color, 0.9);
 $osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 
-$shadow_color: if($variant == 'light', rgba(0,0,0,.05), rgba(0,0,0,0.2));
-
-// buttons
-$button_mix_factor: if($variant == 'light', 12%, 9%);
-
-// notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
-
-// color definitions for system elements (e.g. the overview)
-$system_base_color: $_dark_base_color; // always dark
-$system_fg_color: $light_2;
-
-// derived system colors
+// system colors
 $system_bg_color: lighten($system_base_color, 5%);
 $system_borders_color: transparentize($system_fg_color, .9);
 $system_insensitive_fg_color: mix($system_fg_color, $system_bg_color, 50%);
 $system_overlay_bg_color: mix($system_base_color, $system_fg_color, 90%); // for non-transparent items, e.g. dash
 
-// derived global colors
 // insensitive state
 $insensitive_fg_color: if($variant == 'light', mix($fg_color, $bg_color, 60%),  mix($fg_color, $bg_color, 50%));
 $insensitive_bg_color: mix($bg_color, $base_color, 60%);
@@ -72,3 +64,6 @@ $hover_fg_color: if($variant=='light', darken($fg_color,9%), lighten($fg_color, 
 // active state
 $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_color, 12%));
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
+
+// selection colors
+$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), lighten($selected_bg_color, 15%));
