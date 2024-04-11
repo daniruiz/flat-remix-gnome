@@ -1,3 +1,9 @@
+[20240411]
+ * Regenerate all themes
+ * Add new color variables
+ * Update theme tweaks for GNOME 46
+ * Update upstream theme for version 46
+
 [20231026]
  * Update gtk3 sourceview color-themes
  * Update gtk4 sourceview color-themes
