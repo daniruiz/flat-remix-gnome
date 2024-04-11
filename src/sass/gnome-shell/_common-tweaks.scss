@@ -9,7 +9,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 // Dropshadow for large icons
 .icon-dropshadow {
-  icon-shadow: 0 1px 5px $shadow_color;
+  icon-shadow: 0 2px 4px $shadow_color;
 }
 
 /* Check Boxes */
@@ -38,21 +38,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   -barlevel-border-width: 0;
   -barlevel-height: 6px;
   -slider-handle-radius: 0;
-}
-
-/* Message List */
-.message-list-controls {
-  spacing: $base_padding * 2;
-  @include fontsize(10);
-}
-
-.message {
-  .message-content {
-    padding: $base_padding;
-    spacing: 0;
-  }
-  .message-title { padding-top: .5em; }
-  .message-secondary-bin > .event-time { padding-bottom: .5em; }
 }
 
 /* Notifications & Message Tray */
@@ -229,6 +214,7 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   border: none;
   text-shadow: $_text-shadow;
   transition-duration: 200ms;
+  selection-background-color: transparentize($selected_bg_color, .7);
 
   &, StLabel.hint-text { color: $osd_fg_color; }
 
@@ -278,14 +264,18 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 }
 
 /* App Grid */
-#overview, .app-well-app { color: $osd_fg_color; }
-
-// Icon tiles in the app grid
-.app-well-app.app-folder {
-  @include overview_icon(white, $flat: false);
-  .overview-icon {
-    @extend %overview-transparent-bg;
+.overview-tile {
+  &, .app-folder-dialog & {
+    background: transparent;
+    &, &:hover, &:active, &:checked, &:focus, &:highlighted, &:selected {
+      &:hover, &:active, &:focus { background: transparentize(white, .8); }
+    }
   }
+}
+
+// app folders
+.overview-tile.app-folder {
+  @extend %overview-transparent-bg;
 }
 
 .app-folder-dialog {
@@ -294,7 +284,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 }
 
 /* OSD */
-
 // Raise volume and workspace-switcher osd dialogs
 .osd-window, .workspace-switcher {
   margin-bottom: 128px;
