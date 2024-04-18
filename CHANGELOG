@@ -1,3 +1,12 @@
+[20240418]
+ * Regenerate all themes
+ * Remove background from icons in dash
+ * Remove old code
+ * Use less transparent background for hovered apps inside folder-dialog
+ * Remove outline in focused search-bar
+ * Add outline to popover cards
+ * Make dash transparent
+
 [20240411]
  * Regenerate all themes
  * Add new color variables
