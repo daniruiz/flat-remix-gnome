@@ -24,7 +24,6 @@
     <file>close-window.svg</file>
     <file>close-window-active.svg</file>
     <file>close-window-hover.svg</file>
-    <file>view-grid-symbolic.svg</file>
     <file>login-background</file>
   </gresource>
 </gresources>

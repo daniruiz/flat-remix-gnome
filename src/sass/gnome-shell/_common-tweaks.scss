@@ -86,17 +86,10 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   }
 }
 
-/* Date/Time Menu */
-.events-button,
-.world-clocks-button,
-.weather-button {
-  box-shadow: none;
-}
-
 /* Top Bar */
 #panelBox {
-    padding: if($full-panel == 'true', 0, 5px 12px);
-    background: transparent;
+  padding: if($full-panel == 'true', 0, 5px 12px);
+  background: transparent;
 }
 
 #panel {
@@ -166,15 +159,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
       color: white;
     }
   }
-
-  #panelActivities.panel-button StLabel {
-    padding: 0 .2em;
-    background-image: url("assets/view-grid-symbolic.svg");
-    background-size: contain;
-    width: 1.5em;
-    height: 1.5em;
-    color: transparent;
-  }
 }
 
 #panel :first-child > :first-child > .panel-button:hover {
@@ -184,19 +168,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 #panel :last-child > :last-child > .panel-button:last-child {
   &:hover, &:active, &:focus, &:overview, &:checked {
     border-radius: 12px 8px 8px 12px;
-  }
-}
-
-/* Date/Time Menu */
-.datemenu-today-button {
-  &:insensitive { color: inherit; }
-}
-/* Quick Settings */
-.quick-toggle-menu {
-  & .header {
-    & .icon {
-      &.active { color: $selected_fg_color; }
-    }
   }
 }
 
