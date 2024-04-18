@@ -269,11 +269,16 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 /* App Grid */
 .overview-tile {
-  &, .app-folder-dialog & {
-    background: transparent;
-    &, &:hover, &:active, &:checked, &:focus, &:highlighted, &:selected {
-      &:hover, &:active, &:focus { background: transparentize(white, .8); }
-    }
+  background: transparent;
+  &, &:hover, &:active, &:checked, &:focus, &:highlighted, &:selected {
+    &:hover, &:active, &:focus { background: transparentize(white, .9); }
+  }
+}
+
+.app-folder-dialog .overview-tile {
+  background: transparent;
+  &, &:hover, &:active, &:checked, &:focus, &:highlighted, &:selected {
+    &:hover, &:active, &:focus { background: transparentize(white, .85); }
   }
 }
 
