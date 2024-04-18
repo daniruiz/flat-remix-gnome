@@ -63,7 +63,7 @@ $panel_fg_color: if($variant=='light', darken($fg_color, 10%), $fg_color);
 // card elements
 $card_bg_color: mix($fg_color, $bg_color, $background_mix_factor);
 $card_shadow_color: transparent;
-$card_shadow_border_color: $card_bg_color;
+$card_shadow_border_color: transparentize($fg_color, .95);
 
 $tooltip_borders_color: $osd_outer_borders_color;
 
