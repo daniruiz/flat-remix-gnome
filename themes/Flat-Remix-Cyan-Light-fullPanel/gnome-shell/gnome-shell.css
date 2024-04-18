@@ -189,7 +189,7 @@ stage {
   margin: 4px;
   background-color: #ebeced;
   box-shadow: 0 1px 2px 0 transparent;
-  border: 1px solid #ebeced; }
+  border: 1px solid rgba(92, 97, 108, 0.05); }
 
 .lg-extension, .quick-toggle-menu, .message, .events-button,
 .world-clocks-button,
@@ -3104,7 +3104,7 @@ StScrollBar {
     .unlock-dialog .user-widget.vertical .user-icon StIcon {
       padding: 24px; }
 
-.workspace-thumbnails .workspace-thumbnail, .overview-tile.app-folder, .app-folder.grid-search-result, .dash-background, .dash-separator, .search-section-content, .search-entry {
+.workspace-thumbnails .workspace-thumbnail, .overview-tile.app-folder, .app-folder.grid-search-result, .dash-background, .dash-separator, #dash .dash-background, .search-section-content, .search-entry {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 
@@ -3174,12 +3174,6 @@ StScrollBar {
     padding: 4px;
     margin: 8px; }
 
-/* Date/Time Menu */
-.events-button,
-.world-clocks-button,
-.weather-button {
-  box-shadow: none; }
-
 /* Top Bar */
 #panelBox {
   padding: 0;
@@ -3221,27 +3215,12 @@ StScrollBar {
       background-color: white; }
     #panel .panel-button.screen-recording-indicator, #panel .panel-button.screen-sharing-indicator {
       color: white; }
-  #panel #panelActivities.panel-button StLabel {
-    padding: 0 .2em;
-    background-image: url("assets/view-grid-symbolic.svg");
-    background-size: contain;
-    width: 1.5em;
-    height: 1.5em;
-    color: transparent; }
 
 #panel :first-child > :first-child > .panel-button:hover {
   border-radius: 8px; }
 
 #panel :last-child > :last-child > .panel-button:last-child:hover, #panel :last-child > :last-child > .panel-button:last-child:active, #panel :last-child > :last-child > .panel-button:last-child:focus, #panel :last-child > :last-child > .panel-button:last-child:overview, #panel :last-child > :last-child > .panel-button:last-child:checked {
   border-radius: 12px 8px 8px 12px; }
-
-/* Date/Time Menu */
-.datemenu-today-button:insensitive {
-  color: inherit; }
-
-/* Quick Settings */
-.quick-toggle-menu .header .icon.active {
-  color: #000000; }
 
 /* Search */
 .search-entry {
@@ -3258,7 +3237,7 @@ StScrollBar {
   .search-entry:focus, .search-entry:hover {
     background-color: white;
     font-weight: normal;
-    box-shadow: none;
+    box-shadow: none !important;
     text-shadow: none; }
     .search-entry:focus, .search-entry:focus StLabel.hint-text, .search-entry:hover, .search-entry:hover StLabel.hint-text {
       color: black; }
@@ -3280,12 +3259,21 @@ StScrollBar {
   color: white; }
   #dash StIcon {
     icon-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); }
+  #dash .dash-item-container .show-apps .overview-icon,
+  #dash .dash-item-container .overview-tile .overview-icon,
+  #dash .dash-item-container .grid-search-result .overview-icon {
+    background: transparent; }
 
 /* App Grid */
-.overview-tile, .grid-search-result, .app-folder-dialog .overview-tile {
+.overview-tile, .grid-search-result {
   background: transparent; }
-  .overview-tile:hover, .grid-search-result:hover, .overview-tile:active, .grid-search-result:active, .overview-tile:focus, .grid-search-result:focus, .overview-tile:active:hover, .overview-tile:focus:hover, .overview-tile:focus:active, .overview-tile:checked:hover, .overview-tile:checked:active, .overview-tile:checked:focus, .overview-tile:highlighted:focus, .overview-tile:highlighted:hover, .overview-tile:highlighted:active, .overview-tile:selected:hover, .overview-tile:selected:active, .overview-tile:selected:focus, .app-folder-dialog .overview-tile:hover, .app-folder-dialog .overview-tile:active, .app-folder-dialog .overview-tile:focus, .app-folder-dialog .overview-tile:active:hover, .app-folder-dialog .overview-tile:focus:hover, .app-folder-dialog .overview-tile:focus:active, .app-folder-dialog .overview-tile:checked:hover, .app-folder-dialog .overview-tile:checked:active, .app-folder-dialog .overview-tile:checked:focus, .app-folder-dialog .overview-tile:highlighted:focus, .app-folder-dialog .overview-tile:highlighted:hover, .app-folder-dialog .overview-tile:highlighted:active, .app-folder-dialog .overview-tile:selected:hover, .app-folder-dialog .overview-tile:selected:active, .app-folder-dialog .overview-tile:selected:focus {
-    background: rgba(255, 255, 255, 0.2); }
+  .overview-tile:hover, .grid-search-result:hover, .overview-tile:active, .grid-search-result:active, .overview-tile:focus, .grid-search-result:focus, .overview-tile:active:hover, .overview-tile:focus:hover, .overview-tile:focus:active, .overview-tile:checked:hover, .overview-tile:checked:active, .overview-tile:checked:focus, .overview-tile:highlighted:focus, .overview-tile:highlighted:hover, .overview-tile:highlighted:active, .overview-tile:selected:hover, .overview-tile:selected:active, .overview-tile:selected:focus {
+    background: rgba(255, 255, 255, 0.1); }
+
+.app-folder-dialog .overview-tile, .app-folder-dialog .grid-search-result {
+  background: transparent; }
+  .app-folder-dialog .overview-tile:hover, .app-folder-dialog .grid-search-result:hover, .app-folder-dialog .overview-tile:active, .app-folder-dialog .grid-search-result:active, .app-folder-dialog .overview-tile:focus, .app-folder-dialog .grid-search-result:focus, .app-folder-dialog .overview-tile:active:hover, .app-folder-dialog .overview-tile:focus:hover, .app-folder-dialog .overview-tile:focus:active, .app-folder-dialog .overview-tile:checked:hover, .app-folder-dialog .overview-tile:checked:active, .app-folder-dialog .overview-tile:checked:focus, .app-folder-dialog .overview-tile:highlighted:focus, .app-folder-dialog .overview-tile:highlighted:hover, .app-folder-dialog .overview-tile:highlighted:active, .app-folder-dialog .overview-tile:selected:hover, .app-folder-dialog .overview-tile:selected:active, .app-folder-dialog .overview-tile:selected:focus {
+    background: rgba(255, 255, 255, 0.15); }
 
 .app-folder-dialog {
   background: black;
