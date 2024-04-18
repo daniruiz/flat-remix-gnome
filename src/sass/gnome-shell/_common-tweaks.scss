@@ -254,6 +254,10 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 #dash {
   color: $osd_fg_color;
 
+  .dash-background {
+    @extend %overview-transparent-bg;
+  }
+
   StIcon {
     icon-shadow: 0 2px 6px transparentize(black, .6);
   }
