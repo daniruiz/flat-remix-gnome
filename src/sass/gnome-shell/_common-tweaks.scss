@@ -232,6 +232,13 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   StIcon {
     icon-shadow: 0 2px 6px transparentize(black, .6);
   }
+
+  .dash-item-container {
+    .show-apps,
+    .overview-tile {
+      .overview-icon { background:transparent; }
+    }
+  }
 }
 
 .dash-background, .dash-separator {
