@@ -214,6 +214,13 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   @extend %overview-transparent-bg;
 }
 
+%search_section_content_item {
+  background: transparent;
+  &:hover {
+    @extend %overview-transparent-bg;
+  }
+}
+
 // search result provider
 .search-provider-icon .list-search-provider-details { font-weight: bold; }
 
