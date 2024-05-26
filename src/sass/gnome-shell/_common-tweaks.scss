@@ -296,42 +296,52 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 
 /* Login Dialog */
 
-$login_transparent_bg: transparentize(#383c4a, .65);
+$login_transparent_bg: transparentize(white, .8);
+
+%login_transparent_bg {
+  background-color: $login_transparent_bg;
+  color: white;
+  border: 1px solid $login_transparent_bg;
+  box-shadow: none !important;
+}
+
+%login_button {
+  @extend %login_transparent_bg;
+  &:focus, &:hover, &:active, &:checked, &:selected {
+    @extend %login_transparent_bg;
+    background-color: transparentize(white, .8)!important;
+  }
+
+  StIcon { icon-size: $base_icon_size; }
+}
 
 .login-dialog,
 .unlock-dialog {
-    font-size: 11pt;
-    background: url("assets/login-background");
-    background-size: cover;
+  font-size: 11pt;
+  background: url("assets/login-background");
+  background-size: cover;
 
-    StEntry {
-        background: $login_transparent_bg;
-        color: white;
-        border: none;
-        box-shadow: none;
+  .login-dialog-prompt-entry {
+    border-radius: 999px;
+    &, &:hover, &:focus, &:insensitive { @extend %login_transparent_bg; }
 
-        StLabel.hint-text {
-            margin-left: 2px;
-            color: transparentize(white, 0.3);
-        }
-    }
-
-    .cancel-button,
-    .switch-user-button,
-    .login-dialog-session-list-button {
-        border-color: transparent;
-        background-color: $login_transparent_bg;
-        color: white;
-
-        StIcon { icon-size: $base_icon_size; }
-    }
+    StLabel.hint-text { color: transparentize($system_fg_color, 0.3); }
+  }
 }
 
-.login-dialog-auth-list-item {
-  &:focus, &:selected { background-color: $login_transparent_bg; }
+.login-dialog-not-listed-button { @extend %login_button; }
+
+.login-dialog-button {
+  &.cancel-button,
+  &.switch-user-button,
+  &.login-dialog-session-list-button { @extend %login_button; }
 }
 
-.login-dialog-user-list {
-  &:expanded .login-dialog-user-list-item:selected { background-color: $login_transparent_bg; }
-  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $login_transparent_bg; }
+// User list
+.login-dialog-user-list-view {
+  .login-dialog-user-list {
+    .login-dialog-user-list-item {
+      @extend %login_button;
+    }
+  }
 }
