@@ -3291,43 +3291,30 @@ StScrollBar {
   border: 2px solid white; }
 
 /* Login Dialog */
+.login-dialog .login-dialog-prompt-entry, .login-dialog .login-dialog-prompt-entry:hover, .login-dialog .login-dialog-prompt-entry:focus, .login-dialog .login-dialog-prompt-entry:insensitive,
+.unlock-dialog .login-dialog-prompt-entry,
+.unlock-dialog .login-dialog-prompt-entry:hover,
+.unlock-dialog .login-dialog-prompt-entry:focus,
+.unlock-dialog .login-dialog-prompt-entry:insensitive, .login-dialog-not-listed-button:focus, .login-dialog-not-listed-button:hover, .login-dialog-not-listed-button:active, .login-dialog-not-listed-button:checked, .login-dialog-not-listed-button:selected, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item, .login-dialog-button.cancel-button, .login-dialog-button.switch-user-button, .login-dialog-button.login-dialog-session-list-button, .login-dialog-not-listed-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none !important; }
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus, .login-dialog-button.cancel-button:focus, .login-dialog-button.switch-user-button:focus, .login-dialog-button.login-dialog-session-list-button:focus, .login-dialog-not-listed-button:focus, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:hover, .login-dialog-button.cancel-button:hover, .login-dialog-button.switch-user-button:hover, .login-dialog-button.login-dialog-session-list-button:hover, .login-dialog-not-listed-button:hover, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:active, .login-dialog-button.cancel-button:active, .login-dialog-button.switch-user-button:active, .login-dialog-button.login-dialog-session-list-button:active, .login-dialog-not-listed-button:active, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:checked, .login-dialog-button.cancel-button:checked, .login-dialog-button.switch-user-button:checked, .login-dialog-button.login-dialog-session-list-button:checked, .login-dialog-not-listed-button:checked, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected, .login-dialog-button.cancel-button:selected, .login-dialog-button.switch-user-button:selected, .login-dialog-button.login-dialog-session-list-button:selected, .login-dialog-not-listed-button:selected {
+  background-color: rgba(255, 255, 255, 0.2) !important; }
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item StIcon, .login-dialog-button.cancel-button StIcon, .login-dialog-button.switch-user-button StIcon, .login-dialog-button.login-dialog-session-list-button StIcon, .login-dialog-not-listed-button StIcon {
+  icon-size: 16px; }
+
 .login-dialog,
 .unlock-dialog {
   font-size: 11pt;
   background: url("assets/login-background");
   background-size: cover; }
-  .login-dialog StEntry,
-  .unlock-dialog StEntry {
-    background: rgba(56, 60, 74, 0.35);
-    color: white;
-    border: none;
-    box-shadow: none; }
-    .login-dialog StEntry StLabel.hint-text,
-    .unlock-dialog StEntry StLabel.hint-text {
-      margin-left: 2px;
+  .login-dialog .login-dialog-prompt-entry,
+  .unlock-dialog .login-dialog-prompt-entry {
+    border-radius: 999px; }
+    .login-dialog .login-dialog-prompt-entry StLabel.hint-text,
+    .unlock-dialog .login-dialog-prompt-entry StLabel.hint-text {
       color: rgba(255, 255, 255, 0.7); }
-  .login-dialog .cancel-button,
-  .login-dialog .switch-user-button,
-  .login-dialog .login-dialog-session-list-button,
-  .unlock-dialog .cancel-button,
-  .unlock-dialog .switch-user-button,
-  .unlock-dialog .login-dialog-session-list-button {
-    border-color: transparent;
-    background-color: rgba(56, 60, 74, 0.35);
-    color: white; }
-    .login-dialog .cancel-button StIcon,
-    .login-dialog .switch-user-button StIcon,
-    .login-dialog .login-dialog-session-list-button StIcon,
-    .unlock-dialog .cancel-button StIcon,
-    .unlock-dialog .switch-user-button StIcon,
-    .unlock-dialog .login-dialog-session-list-button StIcon {
-      icon-size: 16px; }
-
-.login-dialog-auth-list-item:focus, .login-dialog-auth-list-item:selected {
-  background-color: rgba(56, 60, 74, 0.35); }
-
-.login-dialog-user-list:expanded .login-dialog-user-list-item:selected {
-  background-color: rgba(56, 60, 74, 0.35); }
-
-.login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-  border-right: 2px solid rgba(56, 60, 74, 0.35); }
