@@ -268,10 +268,9 @@
       spacing-columns: $base_padding * 2;
 
       .weather-forecast-time {
-        @extend %numeric;
-        @include fontsize(10pt);
-        padding-top: 0.2em;
-        padding-bottom: 0.4em;
+        @extend %smaller;
+        padding-top: $base_padding;
+        padding-bottom: $base_padding;
       }
       .weather-forecast-icon {
         icon-size: $large_scalable_icon_size;

@@ -69,7 +69,11 @@ $dash_spacing: $base_margin * 0.5;
     // running app dot
     .app-grid-running-dot {
       // manually position the dot within the dash item
-      margin-bottom: $dash_padding + $dash_edge_offset - 3px; // 3px = size of dot (5px) subtracted from its translationY from appDisplay.js
+      @if $contrast == 'high' {
+        offset-y: -$dash_padding - 1px; // don't draw dot directly on inset
+      } @else {
+        offset-y: -$dash_padding;
+      }
     }
   }
 

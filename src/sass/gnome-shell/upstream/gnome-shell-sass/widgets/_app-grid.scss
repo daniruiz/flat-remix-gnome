@@ -47,12 +47,7 @@ $app_folder_size: 720px;
   width: 5px;
   border-radius:5px;
   background-color: $system_fg_color;
-
-  @if $contrast == 'high' {
-    margin-bottom: 4px;
-  } @else {
-    margin-bottom: 2px;
-  }
+  offset-y: 6px;
 }
 
 .app-folder-dialog-container {

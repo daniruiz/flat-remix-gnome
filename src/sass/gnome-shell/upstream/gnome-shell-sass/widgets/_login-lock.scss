@@ -80,6 +80,11 @@ $_gdm_dialog_width: 25em;
   text-align: center;
 }
 
+.login-dialog-message-hint, .login-dialog-message {
+  color: darken($_gdm_fg, 10%);
+  min-height: 2.75em;
+}
+
 .login-dialog-user-selection-box {
   // padding to ensure the box doesn't overlap the panel
   padding-top: 4em;

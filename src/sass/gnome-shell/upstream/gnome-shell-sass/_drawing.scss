@@ -368,9 +368,6 @@
   // extend common styles
   @extend %menuitem;
 
-  // lighten the background color always
-  $bg: lighten($bg,5%);
-
   @if $style == 'flat' {
     @include button(undecorated);
   } @else {

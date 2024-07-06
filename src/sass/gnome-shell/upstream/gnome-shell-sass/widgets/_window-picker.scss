@@ -7,6 +7,19 @@ $window_close_button_color: transparentize(lighten($system_bg_color, 7%), .02);
   spacing: $base_padding;
 }
 
+// Window icons
+.window-icon {
+  // styled only with .icon-dropshadow
+  // but has a different style in high-contrast
+  @if $contrast == 'high' {
+    background-color: $osd_bg_color;
+    padding: $base_padding * 2;
+    border-radius: $modal_radius;
+    border: 2px solid $hc_inset_color;
+    margin: $base_padding * 3;
+  }
+}
+
 // Window titles
 .window-caption {
   @extend %tooltip;
