@@ -248,6 +248,8 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   }
 }
 
+#dashtodockContainer .dash-item-container .app-grid-running-dot { offset-y: 8px; }
+
 .dash-background, .dash-separator {
   @extend %overview-transparent-bg;
 }
@@ -271,6 +273,8 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
 .overview-tile.app-folder {
   @extend %overview-transparent-bg;
 }
+
+.app-grid-running-dot { offset-y: 8px; }
 
 .app-folder-dialog {
   background: black;
