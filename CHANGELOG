@@ -1,3 +1,7 @@
+[20240706]
+ * Fix dash and grid running-dot position
+ * Update upstream code for version 46.3.1
+
 [20240526]
  * Regenerate all themes
  * Update gdm theme
