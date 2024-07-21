@@ -274,8 +274,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   @extend %overview-transparent-bg;
 }
 
-.app-grid-running-dot { offset-y: 8px; }
-
 .app-folder-dialog {
   background: black;
   box-shadow: 0 0 100px lighten(black, 4%);
