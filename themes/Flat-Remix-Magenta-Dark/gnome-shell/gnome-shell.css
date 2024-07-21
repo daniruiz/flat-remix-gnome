@@ -370,11 +370,11 @@ StEntry {
   font-weight: 400;
   font-size: 0.818em; }
 
-.calendar .calendar-week-number, .calendar .calendar-day-heading, .calendar .calendar-day {
+.weather-button .weather-box .weather-grid .weather-forecast-time, .calendar .calendar-week-number, .calendar .calendar-day-heading, .calendar .calendar-day {
   font-weight: 400;
-  font-size: 0.727em; }
+  font-size: 0.818em; }
 
-.unlock-dialog-clock .unlock-dialog-clock-time, #panel, .weather-button .weather-box .weather-grid .weather-forecast-temp, .weather-button .weather-box .weather-grid .weather-forecast-time, .world-clocks-button .world-clocks-grid .world-clocks-timezone, .world-clocks-button .world-clocks-grid .world-clocks-time, .events-button .events-box .events-list .event-box .event-time, .calendar .calendar-day-heading, .calendar .calendar-day {
+.unlock-dialog-clock .unlock-dialog-clock-time, #panel, .weather-button .weather-box .weather-grid .weather-forecast-temp, .world-clocks-button .world-clocks-grid .world-clocks-timezone, .world-clocks-button .world-clocks-grid .world-clocks-time, .events-button .events-box .events-list .event-box .event-time, .calendar .calendar-day-heading, .calendar .calendar-day {
   font-feature-settings: "tnum"; }
 
 /* OSD Elements */
@@ -856,35 +856,36 @@ StScrollBar {
 .popup-sub-menu {
   border-radius: 0 0 13px 13px;
   margin-bottom: 6px;
-  border: 1px solid transparent; }
+  border: 1px solid transparent;
+  background-color: #3f4454; }
   .popup-sub-menu .popup-menu-item {
     border-radius: 0;
+    border-top-width: 0;
     background-color: transparent;
     border-color: transparent;
-    box-shadow: none;
-    border-top-width: 0; }
+    box-shadow: none; }
     .popup-sub-menu .popup-menu-item:insensitive {
       background-color: transparent !important; }
     .popup-sub-menu .popup-menu-item:focus, .popup-sub-menu .popup-menu-item:hover {
       color: #eeeeec;
-      background-color: #565b6a; }
+      background-color: #585d6d; }
     .popup-sub-menu .popup-menu-item:active {
       color: #eeeeec;
-      background-color: #626778; }
+      background-color: #63697b; }
       .popup-sub-menu .popup-menu-item:active:hover {
-        background-color: #6b7084; }
+        background-color: #6d7287; }
       .popup-sub-menu .popup-menu-item:active:focus {
-        background-color: #676276; }
+        background-color: #696379; }
     .popup-sub-menu .popup-menu-item:checked {
       color: #eeeeec;
-      background-color: #5f6476; }
+      background-color: #616679; }
       .popup-sub-menu .popup-menu-item:checked:hover {
-        background-color: #686e81; }
+        background-color: #6a7084; }
       .popup-sub-menu .popup-menu-item:checked:active {
-        background-color: #747a8e; }
+        background-color: #777c91; }
     .popup-sub-menu .popup-menu-item:insensitive {
       color: rgba(238, 238, 236, 0.5);
-      background-color: #464a57; }
+      background-color: #484c5a; }
     .popup-sub-menu .popup-menu-item:last-child {
       border-radius: 0 0 12px 12px;
       border-bottom-width: 0; }
@@ -1043,9 +1044,8 @@ StScrollBar {
     spacing-rows: 6px;
     spacing-columns: 12px; }
     .weather-button .weather-box .weather-grid .weather-forecast-time {
-      font-size: 0.909em;
-      padding-top: 0.2em;
-      padding-bottom: 0.4em; }
+      padding-top: 6px;
+      padding-bottom: 6px; }
     .weather-button .weather-box .weather-grid .weather-forecast-icon {
       icon-size: 2.182em;
       margin-bottom: 4px; }
@@ -1153,16 +1153,15 @@ StScrollBar {
     margin-top: 0;
     spacing: 6px; }
     .message .message-box .message-icon {
-      icon-size: 48px;
-      -st-icon-style: symbolic; }
+      icon-size: 48px; }
       .message .message-box .message-icon:ltr {
         margin-right: 6px; }
       .message .message-box .message-icon:rtl {
         margin-left: 6px; }
       .message .message-box .message-icon.message-themed-icon {
         border-radius: 999px;
-        background-color: rgba(238, 238, 236, 0.2);
-        icon-size: 16px;
+        background-color: rgba(238, 238, 236, 0.07);
+        icon-size: 1.091em;
         min-width: 48px;
         min-height: 48px; }
     .message .message-box:first-child {
@@ -1507,13 +1506,13 @@ StScrollBar {
 
 .ws-switcher-indicator {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 4px;
-  margin: 20px;
-  border-radius: 48px; }
+  padding: 2.6666666667px;
+  margin: 13.3333333333px;
+  border-radius: 32px; }
   .ws-switcher-indicator:active {
     background-color: white;
-    padding: 8px;
-    margin: 16px; }
+    padding: 5.3333333333px;
+    margin: 10.6666666667px; }
 
 .screenshot-ui-panel {
   border-radius: 32px;
@@ -2167,8 +2166,7 @@ StScrollBar {
   color: rgba(255, 255, 255, 0.8); }
 
 .grid-search-results {
-  spacing: 30px;
-  margin: 0 12px; }
+  spacing: 30px; }
 
 .search-provider-icon:ltr {
   margin-right: 4px; }
@@ -2263,7 +2261,7 @@ StScrollBar {
       #dash .dash-item-container .grid-search-result:checked .overview-icon:active {
         background-color: #656877; }
   #dash .dash-item-container .app-grid-running-dot {
-    margin-bottom: 21px; }
+    offset-y: -12px; }
   #dash .dash-separator {
     width: 1px;
     margin-left: 4px;
@@ -2363,7 +2361,7 @@ StScrollBar {
   width: 5px;
   border-radius: 5px;
   background-color: white;
-  margin-bottom: 2px; }
+  offset-y: 6px; }
 
 .app-folder-dialog-container {
   padding-top: 2.2em; }
@@ -2917,6 +2915,10 @@ StScrollBar {
 .login-dialog-message {
   text-align: center; }
 
+.login-dialog-message-hint, .login-dialog-message {
+  color: #e6e6e6;
+  min-height: 2.75em; }
+
 .login-dialog-user-selection-box {
   padding-top: 4em;
   padding-bottom: 8em; }
@@ -3266,6 +3268,9 @@ StScrollBar {
   #dash .dash-item-container .overview-tile .overview-icon,
   #dash .dash-item-container .grid-search-result .overview-icon {
     background: transparent; }
+
+#dashtodockContainer .dash-item-container .app-grid-running-dot {
+  offset-y: 8px; }
 
 /* App Grid */
 .overview-tile, .grid-search-result {
