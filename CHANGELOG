@@ -1,3 +1,7 @@
+[20240721]
+ * Generate all theme variants
+ * Fix dash-to-dock running-dot
+
 [20240706]
  * Fix dash and grid running-dot position
  * Update upstream code for version 46.3.1
