@@ -1,3 +1,7 @@
+[20240813]
+ * Update for GNOME 46.4
+ * Use reverse changes list order in CHANGELOG
+
 [20240721]
  * Generate all theme variants
  * Fix dash-to-dock running-dot
