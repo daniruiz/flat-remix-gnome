@@ -374,6 +374,9 @@ StEntry {
   font-weight: 400;
   font-size: 0.818em; }
 
+#EvalBox {
+  font-family: monospace; }
+
 .unlock-dialog-clock .unlock-dialog-clock-time, #panel, .weather-button .weather-box .weather-grid .weather-forecast-temp, .world-clocks-button .world-clocks-grid .world-clocks-timezone, .world-clocks-button .world-clocks-grid .world-clocks-time, .events-button .events-box .events-list .event-box .event-time, .calendar .calendar-day-heading, .calendar .calendar-day {
   font-feature-settings: "tnum"; }
 

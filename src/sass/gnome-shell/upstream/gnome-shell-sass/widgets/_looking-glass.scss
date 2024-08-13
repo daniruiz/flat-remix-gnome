@@ -88,6 +88,10 @@
   &:hover { border: 1px solid $fg_color; }
 }
 
+#EvalBox {
+  @extend %monospace;
+}
+
 // Extensions
 #lookingGlassExtensions { padding: $base_padding; }
 
