@@ -3225,27 +3225,6 @@ StScrollBar {
 .icon-dropshadow {
   icon-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
 
-/* Check Boxes */
-.check-box StBin {
-  background-image: url("assets/checkbox-off.svg"); }
-
-.check-box:focus StBin {
-  background-image: url("assets/checkbox-off-focused.svg"); }
-
-.check-box:checked StBin {
-  background-image: url("assets/checkbox.svg"); }
-
-.check-box:focus:checked StBin {
-  background-image: url("assets/checkbox-focused.svg"); }
-
-/* Switches */
-.toggle-switch {
-  height: 22px;
-  width: 44px;
-  background-image: url("assets/toggle-off.svg"); }
-  .toggle-switch:checked {
-    background-image: url("assets/toggle-on.svg"); }
-
 /* Slider */
 .slider {
   -barlevel-height: 6px; }
