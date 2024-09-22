@@ -111,7 +111,7 @@
     &.calendar-today {
       @extend %default_button;
       // override colors above for when today is a weekend
-      color: $selected_fg_color !important;
+      color: -st-accent-fg-color !important;
       &.calendar-day-with-events {
         background-image: url("assets/calendar-today.svg") !important; // always use light asset with .default style
       }

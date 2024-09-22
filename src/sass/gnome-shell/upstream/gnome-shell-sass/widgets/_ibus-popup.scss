@@ -19,7 +19,7 @@
 .candidate-box {
   padding: $base_padding $base_padding * 2 $base_padding $base_padding * 2;
   border-radius: $base_border_radius;
-  &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+  &:selected { background-color: -st-accent-color; color: -st-accent-fg-color; }
   &:hover { background-color: $hover_bg_color; color: $hover_fg_color; }
 }
 

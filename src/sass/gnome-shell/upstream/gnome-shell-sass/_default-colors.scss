@@ -22,13 +22,9 @@ $error_bg_color: if($variant == 'light', $red_3, $red_4);
 $error_fg_color: $light_1;
 $error_color: $error_bg_color;
 
-// colors for selected or default elements
-$selected_bg_color: if($variant == 'light', $blue_4, $blue_3);
-$selected_fg_color: $light_1;
-
 // link colors
-$link_color: if($variant == 'light', $blue_4, $blue_2);
-$link_visited_color: transparentize($link_color, .6);
+$link_color: if($variant == 'light', st-darken(-st-accent-color, 10%), st-lighten(-st-accent-color, 20%));
+$link_visited_color: st-transparentize($link_color, .6);
 
 // special cased widget definitions
 $background_mix_factor: if($variant == 'light', 12%, 9%); // used to boost the color of backgrounds in different variants
@@ -39,8 +35,8 @@ $shadow_color: if($variant == 'light', rgba(0,0,0,.05), rgba(0,0,0,0.2));
 $text_shadow_color: if($variant == 'light', rgba(255,255,255,0.3), rgba(0,0,0,0.2));
 
 // focus colors
-$focus_color: $selected_bg_color;
-$focus_border_color: transparentize($focus_color, 0.5);
+$focus_color: -st-accent-color;
+$focus_border_color: st-transparentize($focus_color, 0.5);
 
 // High Contrast overrides
 @if $contrast == 'high' {
@@ -50,5 +46,5 @@ $focus_border_color: transparentize($focus_color, 0.5);
     $shadow_color: transparent;
     $text_shadow_color: transparent;
     // less transparent focus color
-    $focus_border_color: transparentize($focus_color, 0.2);
+    $focus_border_color: st-transparentize($focus_color, 0.2);
 }

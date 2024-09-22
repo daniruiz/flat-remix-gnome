@@ -16,12 +16,12 @@
   // $mc: mix color, defined in High Contrast specific stylesheet
   // $mf: mix factor (%), defined in High Contrast specific stylesheet
   //
-  @return mix($c, $mc, $mf);
+  @return st-mix($c, $mc, $mf);
 }
 
 // Function to mix the color and make the focus background
 @function focus_bg_color($bg, $fc:$focus_color) {
-  @return mix($fc, $bg, 5%);
+  @return st-mix($fc, $bg, 5%);
 }
 
 //
@@ -160,12 +160,12 @@
   //                  - normal, focus, hover, active, checked, insensitive, default, undecorated
   // $c:            button bg color, derived from bg_color
   // $tc:           button text color, derived from fg_color
-  // $style:        button style, possible values: card, bubble, flat, default
+  // $style:        button style, possible values: card, notification, dialog, flat, default
   // $always_dark:  override the light theme check to use dark colors, true or false
   //
 
   // mix input colors to get button background color
-  $button_bg_color: mix($tc, $c, $background_mix_factor);
+  $button_bg_color: st-mix($tc, $c, $background_mix_factor);
 
   // background color override for card elements
   @if $style == 'card' { $button_bg_color: $card_bg_color;}
@@ -187,35 +187,44 @@
   }
 
   // button base state background colors
-  $hover_button_bg_color: if($variant == 'light', darken($button_bg_color, $hover_factor), lighten($button_bg_color, $hover_factor));
-  $active_button_bg_color: if($variant == 'light', darken($button_bg_color, $active_factor), lighten($button_bg_color, $active_factor));
-  $checked_button_bg_color: if($variant == 'light', darken($button_bg_color, $checked_factor), lighten($button_bg_color, $checked_factor));
-  $insensitive_button_bg_color: if($variant == 'light', lighten($button_bg_color, $insensitive_factor), darken($button_bg_color, $insensitive_factor));
+  $hover_button_bg_color: if($variant == 'light', st-darken($button_bg_color, $hover_factor), st-lighten($button_bg_color, $hover_factor));
+  $active_button_bg_color: if($variant == 'light', st-darken($button_bg_color, $active_factor), st-lighten($button_bg_color, $active_factor));
+  $checked_button_bg_color: if($variant == 'light', st-darken($button_bg_color, $checked_factor), st-lighten($button_bg_color, $checked_factor));
+  $insensitive_button_bg_color: if($variant == 'light', st-lighten($button_bg_color, $insensitive_factor), st-darken($button_bg_color, $insensitive_factor));
 
   // button extended state background colors
-  $active_hover_button_bg_color: if($variant == 'light', darken($active_button_bg_color, $hover_factor), lighten($active_button_bg_color, $hover_factor));
-  $checked_hover_button_bg_color: if($variant == 'light', darken($checked_button_bg_color, $hover_factor), lighten($checked_button_bg_color, $hover_factor));
-  $checked_active_button_bg_color: if($variant == 'light', darken($checked_button_bg_color, $active_factor), lighten($checked_button_bg_color, $active_factor));
+  $active_hover_button_bg_color: if($variant == 'light', st-darken($active_button_bg_color, $hover_factor), st-lighten($active_button_bg_color, $hover_factor));
+  $checked_hover_button_bg_color: if($variant == 'light', st-darken($checked_button_bg_color, $hover_factor), st-lighten($checked_button_bg_color, $hover_factor));
+  $checked_active_button_bg_color: if($variant == 'light', st-darken($checked_button_bg_color, $active_factor), st-lighten($checked_button_bg_color, $active_factor));
 
   // override button background colours if element is always dark
   @if $always_dark {
-    $hover_button_bg_color: lighten($button_bg_color, $hover_factor);
-    $active_button_bg_color: lighten($button_bg_color, $active_factor);
-    $checked_button_bg_color: lighten($button_bg_color, $checked_factor);
-    $insensitive_button_bg_color: darken($button_bg_color, $insensitive_factor);
+    $hover_button_bg_color: st-lighten($button_bg_color, $hover_factor);
+    $active_button_bg_color: st-lighten($button_bg_color, $active_factor);
+    $checked_button_bg_color: st-lighten($button_bg_color, $checked_factor);
+    $insensitive_button_bg_color: st-darken($button_bg_color, $insensitive_factor);
     // extended
-    $active_hover_button_bg_color: lighten($active_button_bg_color, $hover_factor);
-    $checked_hover_button_bg_color: lighten($checked_button_bg_color, $hover_factor);
-    $checked_active_button_bg_color: lighten($checked_button_bg_color, $active_factor);
+    $active_hover_button_bg_color: st-lighten($active_button_bg_color, $hover_factor);
+    $checked_hover_button_bg_color: st-lighten($checked_button_bg_color, $hover_factor);
+    $checked_active_button_bg_color: st-lighten($checked_button_bg_color, $active_factor);
   }
 
   // background color override for buttons that use transparency
-  // styles: notification bubbles, lockscreen
-  @if $style == 'bubble' or $style == 'lockscreen' {
+  // styles: dialogs bubbles, lockscreen
+  @if $style == 'dialog' or $style == 'lockscreen' {
     $button_bg_color: transparentize($tc, .9);
     $hover_button_bg_color: transparentize($tc, .87);
     $active_button_bg_color: transparentize($tc, .84);
     $active_hover_button_bg_color: transparentize($tc, .81);
+  }
+
+  // background color overrides for notification style
+  @if $style == 'notification' {
+    $button_bg_color: transparentize($tc, .85);
+    $hover_button_bg_color: transparentize($tc, .7);
+    $insensitive_button_bg_color: transparentize($tc, .9);
+    $active_button_bg_color: transparentize($tc, .8);
+    $active_hover_button_bg_color: transparentize($tc, .8);
   }
 
   // flat style overrides
@@ -283,7 +292,7 @@
 
   // insensitive button
   @else if $type == 'insensitive' {
-    $insensitive_button_fg_color: if($variant == 'light', transparentize($tc, .6), transparentize($tc, .5));
+    $insensitive_button_fg_color: if($variant == 'light', st-transparentize($tc, .6), st-transparentize($tc, .5));
     color: $insensitive_button_fg_color;
     background-color: $insensitive_button_bg_color;
 
@@ -300,7 +309,7 @@
 
     // use a different focus ring color for default style
     @if $style == 'default' {
-      @include focus_ring($fc:$selected_borders_color);
+      @include focus_ring($fc:$accent_borders_color);
     }
     // change background color if style is flat
     @if $style == 'flat' {
@@ -357,8 +366,8 @@
   }
 
   &:drop {
-    background-color: transparentize($selected_bg_color, .8);
-    box-shadow: inset 0 0 0 2px transparentize($selected_bg_color, .2);
+    background-color: st-transparentize(-st-accent-color, .8);
+    box-shadow: inset 0 0 0 2px st-transparentize(-st-accent-color, .2);
   }
 }
 
@@ -373,11 +382,11 @@
   } @else {
     @include button(normal, $c:$bg);
   }
-  &:focus,
   &:hover {
     @include button(hover, $c:$bg);
   }
   &:active {@include button(active, $c:$bg);}
+  &:selected,
   &:checked {@include button(checked, $c:$bg);}
   &:insensitive {@include button(insensitive, $c:$bg);}
 }

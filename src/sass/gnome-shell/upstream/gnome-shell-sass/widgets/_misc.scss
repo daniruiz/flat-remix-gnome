@@ -1,7 +1,7 @@
 // Rubberband for select-area screenshots
 .select-area-rubberband {
-  background-color: transparentize($selected_bg_color,0.7);
-  border: 1px solid $selected_bg_color;
+  background-color: st-transparentize(-st-accent-color,0.7);
+  border: 1px solid -st-accent-color;
 }
 
 // User icon
@@ -48,6 +48,6 @@
 
 /* Tiled window previews */
 .tile-preview {
-  background-color: transparentize($selected_bg_color,0.5);
-  border: 1px solid $selected_bg_color;
+  background-color: st-transparentize(-st-accent-color,0.5);
+  border: 1px solid -st-accent-color;
 }

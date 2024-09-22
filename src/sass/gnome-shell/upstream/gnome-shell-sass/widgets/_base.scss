@@ -3,7 +3,7 @@
   color: $link_color;
 
   &:hover {
-    color: lighten($link_color, 10%);
+    color: st-lighten($link_color, 10%);
   }
 }
 

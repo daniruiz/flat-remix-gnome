@@ -56,7 +56,7 @@
     border-style: solid;
 
     &:focus {
-      border-color: transparentize($selected_bg_color, 0.4);
+      border-color: st-transparentize(-st-accent-color, 0.4);
     }
   }
 }
@@ -64,21 +64,19 @@
 // message bubbles
 .message {
   @extend %card;
-  padding: 0;
+  padding: $base_padding;
   margin: 0;
   border-radius: $modal_radius;
 
-  // subtract side padding to accommodate the close button's border
-  &:ltr { padding-right:-2px; };
-  &:rtl { padding-left:-2px; };
-
   // message header
   .message-header {
-    padding: 0 $scaled_padding;
-    margin: $base_padding;
-    margin-bottom: 0;
     spacing: $base_padding;
     color: $insensitive_fg_color;
+    padding:0 $base_padding;
+
+    // side padding to accommodate the close button
+    &:ltr { padding-right:$base_padding - 2px; };
+    &:rtl { padding-left:$base_padding - 2px; };
 
     // header source icon
     .message-source-icon {
@@ -113,17 +111,14 @@
     .message-expand-button,
     .message-close-button {
       @extend .icon-button;
+      @extend %notification_button;
+      border-radius: $forced_circular_radius; // make circular
       color: $fg_color;
-      background-color: transparentize($fg_color, .9);
       padding: 4px;
-      &:hover { background-color: transparentize($fg_color, .81);}
-      &:active,
-      &:active:hover { background-color: transparentize($fg_color, .76);}
-      &:insensitive { background-color: transparentize($fg_color, .93);}
     }
 
     .message-expand-button {
-      padding: 6px;
+      padding: $base_padding;
       &:ltr { margin-right: $base_padding; }
       &:rtl { margin-left: $base_padding; }
     }
@@ -132,7 +127,6 @@
   // container for message contents
   .message-box {
     padding: $base_padding;
-    margin: $base_padding;
     margin-top: 0;
     spacing: $base_padding;
 
@@ -166,6 +160,26 @@
       // message title
       .message-title {
         font-weight: bold;
+      }
+    }
+  }
+
+  // container for message buttons
+  .message-action-bin {
+    padding: $base_margin;
+    spacing: $base_padding;
+
+    // set margin on children
+    * {
+      margin: 0 $base_margin;
+      // remove margins
+      &:first-child {
+        &:ltr { margin-left:0;}
+        &:rtl { margin-right:0;}
+      }
+      &:last-child {
+        &:ltr { margin-right:0;}
+        &:rtl { margin-left:0;}
       }
     }
   }

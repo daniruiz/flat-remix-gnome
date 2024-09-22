@@ -64,7 +64,7 @@
 
     &:checked {
       @extend %default_button;
-      border-color: $selected_borders_color;
+      border-color: $accent_borders_color;
     }
 
     &:ltr {
@@ -119,8 +119,8 @@
       background-color: transparentize($fg_color, 0.8);
 
       &.active {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
+        background-color: -st-accent-color;
+        color: -st-accent-fg-color;
       }
 
       // draw hc outline

@@ -128,8 +128,8 @@ $_gdm_dialog_width: 25em;
   color: darken($_gdm_fg,30%);
 
   &:focus, &:selected {
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
+    background-color: -st-accent-color;
+    color: -st-accent-fg-color;
   }
 }
 
@@ -175,9 +175,9 @@ $_gdm_dialog_width: 25em;
       &:logged-in {
         // color border for logged-in user
         .user-icon {
-          border-color: $selected_bg_color;
+          border-color: -st-accent-color;
           StIcon {
-            background-color: transparentize($selected_bg_color, .7);
+            background-color: st-transparentize(-st-accent-color, .7);
           }
         }
       }
@@ -217,7 +217,7 @@ $_gdm_dialog_width: 25em;
   .unlock-dialog-clock-time {
     @extend %numeric;
     @include fontsize(72pt);
-    font-weight: 200;
+    font-weight: 800;
   }
 
   .unlock-dialog-clock-date {
@@ -238,7 +238,7 @@ $_gdm_dialog_width: 25em;
   StButton#vhandle, StButton#hhandle {
     background-color: transparentize($bg_color,0.7);
     &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
-    &:active { background-color: transparentize($selected_bg_color,0.5); }
+    &:active { background-color: st-transparentize(-st-accent-color,0.5); }
   }
 }
 
@@ -318,7 +318,8 @@ $_gdm_dialog_width: 25em;
       spacing: $base_padding * 4;
 
       .user-widget-label {
-        @extend %title_1;
+        font-weight: 400;
+        @include fontsize(20pt);
         text-align: center;
         margin-bottom: .75em;
       }
@@ -327,7 +328,7 @@ $_gdm_dialog_width: 25em;
         icon-size: $base_icon_size * 10;
 
         & StIcon {
-          padding: $base_padding * 4;
+          padding: $base_padding * 5;
         }
       }
     }

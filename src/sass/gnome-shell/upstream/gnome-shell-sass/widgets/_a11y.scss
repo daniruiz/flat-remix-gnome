@@ -3,8 +3,8 @@
   width: $ripple_size;
   height: $ripple_size;
   border-radius: $ripple_size * 0.5; // radius equals the size of the box to give us the curve
-  background-color: lighten(transparentize($selected_bg_color, 0.7), 30%);
-  box-shadow: 0 0 2px 2px lighten($selected_bg_color, 20%);
+  background-color: st-lighten(st-transparentize(-st-accent-color, 0.7), 30%);
+  box-shadow: 0 0 2px 2px st-lighten(-st-accent-color, 20%);
 }
 
 // Pointer accessibility notifications
@@ -12,13 +12,13 @@
   width: 60px;
   height: 60px;
   -pie-border-width: 3px;
-  -pie-border-color: $selected_bg_color;
-  -pie-background-color: lighten(transparentize($selected_bg_color, 0.7), 40%);
+  -pie-border-color: -st-accent-color;
+  -pie-background-color: st-lighten(st-transparentize(-st-accent-color, 0.7), 40%);
 }
 
 // Screen zoom/Magnifier
 .magnifier-zoom-region {
-  border: 2px solid $selected_bg_color;
+  border: 2px solid -st-accent-color;
 
   &.full-screen { border-width: 0; }
 }

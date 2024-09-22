@@ -36,8 +36,8 @@ $osd_levelbar_height:6px;
 
 // Monitor number label
 .osd-monitor-label {
-  background-color: $selected_bg_color;
-  color: $selected_fg_color;
+  background-color: -st-accent-color;
+  color: -st-accent-fg-color;
   border-radius: $modal_radius;
   font-size: 3em;
   font-weight: bold;

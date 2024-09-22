@@ -63,17 +63,17 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
 
     // keys that may be latched: ctrl/alt/shift
     &:latched {
-      border-color: lighten($selected_bg_color, 5%);
-      background-color: $selected_bg_color;
+      border-color: st-lighten(-st-accent-color, 5%);
+      background-color: -st-accent-color;
     }
   }
 
   // enter key is suggested-action
   &.enter-key {
-    @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
-    &:hover { @include button(hover, $c:$selected_bg_color, $tc:$selected_fg_color);}
-    &:active { @include button(active, $c:$selected_bg_color, $tc:$selected_fg_color);}
-    &:checked { @include button(checked, $c:$selected_bg_color, $tc:$selected_fg_color);}
+    @include button(normal, $c:-st-accent-color, $tc:-st-accent-fg-color);
+    &:hover { @include button(hover, $c:-st-accent-color, $tc:-st-accent-fg-color);}
+    &:active { @include button(active, $c:-st-accent-color, $tc:-st-accent-fg-color);}
+    &:checked { @include button(checked, $c:-st-accent-color, $tc:-st-accent-fg-color);}
     border-radius: $key_border_radius;
     color: $osd_fg_color;
   }
@@ -128,8 +128,8 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
 
 .emoji-panel {
   .keyboard-key:latched {
-    border-color: lighten($selected_bg_color, 5%);
-    background-color: $selected_bg_color;
+    border-color: st-lighten(-st-accent-color, 5%);
+    background-color: -st-accent-color;
   }
 }
 
