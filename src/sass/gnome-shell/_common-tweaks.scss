@@ -12,27 +12,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   icon-shadow: 0 2px 4px $shadow_color;
 }
 
-/* Check Boxes */
-.check-box {
-  StBin {
-     background-image: url("assets/checkbox-off#{$asset_suffix}.svg");
-  }
-
-  &:focus StBin { background-image: url("assets/checkbox-off-focused#{$asset_suffix}.svg"); }
-  &:checked StBin { background-image: url("assets/checkbox#{$asset_suffix}.svg"); }
-  &:focus:checked StBin { background-image: url("assets/checkbox-focused#{$asset_suffix}.svg"); }
-}
-
-/* Switches */
-.toggle-switch {
-  height: 22px;
-  width: 44px;
-  background-image: url("assets/toggle-off#{$asset_suffix}.svg");
-  &:checked {
-    background-image: url("assets/toggle-on#{$asset_suffix}.svg");
-  }
-}
-
 /* Slider */
 .slider {
   -barlevel-height: 6px;
