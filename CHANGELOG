@@ -1,3 +1,12 @@
+[20240922]
+ * Update upstream code to 47.0 release
+ * Remove no longer needed switch and checkbox assets
+ * Add new missing color variable
+ * Update slider tweaks
+ * Remove slider-handle-radius
+ * Remove css pointing to old assets
+ * Regenerate all themes
+
 [20240813]
  * Update for GNOME 46.4
  * Use reverse changes list order in CHANGELOG
