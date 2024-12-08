@@ -1,3 +1,13 @@
+[20241208]
+ * Improve gtk4 source code highlighting theme
+ * Update upstream code for version 47.2
+ * Update theme tweaks
+ * Regenerate all themes
+ * Remove color variants now that gnome supports accent colors
+ * Update build process
+ * Remove no longer needed files
+ * Update Makefile
+
 [20240922]
  * Update upstream code to 47.0 release
  * Remove no longer needed switch and checkbox assets
