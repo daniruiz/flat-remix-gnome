@@ -86,7 +86,7 @@ dist: _get_version
 	for theme_variant in $(foreach THEME, $(THEME_VARIANTS), $(THEME) $(THEME)-fullPanel); \
 	do \
 		count_pretty=$$(echo "0$${count}" | tail -c 3); \
-		(cd themes && tar -cJf "$${count_pretty}-Flat-Remix-$${theme_variant}_$(VERSION).tar.xz" "Flat-Remix-$${theme_variant}") | \
+		(cd themes && tar -c "Flat-Remix-$${theme_variant}") | \
 			xz -z - > "$${count_pretty}-Flat-Remix-$${theme_variant}_$(VERSION).tar.xz"; \
 		count=$$((count+1)); \
 	done; \
