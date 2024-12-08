@@ -94,8 +94,6 @@ dist: _get_version
 release: _get_version
 	$(MAKE) generate_changelog VERSION=$(VERSION)
 	$(MAKE) aur_release VERSION=$(VERSION)
-	$(MAKE) copr_release VERSION=$(VERSION)
-	#$(MAKE) launchpad_release VERSION=$(VERSION)
 	git tag -f $(VERSION)
 	git push origin --tags
 	$(MAKE) dist
