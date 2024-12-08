@@ -1,6 +1,6 @@
 SCSS=sassc
-BASE_THEME ?= ../../themes/Flat-Remix-Blue
-HIGH_CONTRAST_THEME ?= ../../themes/Flat-Remix-Blue-Dark-fullPanel
+BASE_THEME ?= ../../themes/Flat-Remix
+HIGH_CONTRAST_THEME ?= ../../themes/Flat-Remix-Dark-fullPanel
 
 .PHONY: build clean
 
