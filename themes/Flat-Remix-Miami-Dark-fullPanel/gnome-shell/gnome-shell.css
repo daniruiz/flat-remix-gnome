@@ -35,7 +35,7 @@ stage {
 
 .app-folder-dialog .overview-tile, .app-folder-dialog .grid-search-result, .app-folder, .overview-tile, .grid-search-result, #dash .dash-item-container .show-apps .overview-icon,
 #dash .dash-item-container .overview-tile .overview-icon,
-#dash .dash-item-container .grid-search-result .overview-icon, .list-search-result, .search-provider-icon, .switcher-list .item-box {
+#dash .dash-item-container .grid-search-result .overview-icon, .list-search-result, .search-provider-icon, .switcher-list .item-box, .audio-device-selection-dialog .audio-selection-box .audio-selection-device {
   border-radius: 16px;
   padding: 6px;
   spacing: 6px;
@@ -324,36 +324,36 @@ StEntry {
     color: st-transparentize(#eeeeec, 0.5);
     background-color: rgba(238, 238, 236, 0.1); }
 
-.modal-dialog .modal-dialog-linked-button {
+.modal-dialog .modal-dialog-button-box .modal-dialog-button {
   font-weight: bold;
   padding: 12px;
   border-radius: 12px;
   color: #eeeeec;
   background-color: rgba(238, 238, 236, 0.1); }
-  .modal-dialog .modal-dialog-linked-button:focus {
+  .modal-dialog .modal-dialog-button-box .modal-dialog-button:focus {
     color: #eeeeec;
     box-shadow: inset 0 0 0 2px rgba(207, 6, 248, 0.7) !important;
     background-color: st-mix(#cf06f8, rgba(238, 238, 236, 0.1), 5%); }
-    .modal-dialog .modal-dialog-linked-button:focus:hover {
+    .modal-dialog .modal-dialog-button-box .modal-dialog-button:focus:hover {
       background-color: st-mix(#cf06f8, rgba(238, 238, 236, 0.13), 5%); }
-  .modal-dialog .modal-dialog-linked-button:hover {
+  .modal-dialog .modal-dialog-button-box .modal-dialog-button:hover {
     color: #eeeeec;
     background-color: rgba(238, 238, 236, 0.13); }
-  .modal-dialog .modal-dialog-linked-button:active {
+  .modal-dialog .modal-dialog-button-box .modal-dialog-button:active {
     color: #eeeeec;
     background-color: rgba(238, 238, 236, 0.16); }
-    .modal-dialog .modal-dialog-linked-button:active:hover {
+    .modal-dialog .modal-dialog-button-box .modal-dialog-button:active:hover {
       background-color: rgba(238, 238, 236, 0.19); }
-    .modal-dialog .modal-dialog-linked-button:active:focus {
+    .modal-dialog .modal-dialog-button-box .modal-dialog-button:active:focus {
       background-color: st-mix(#cf06f8, rgba(238, 238, 236, 0.16), 5%); }
-  .modal-dialog .modal-dialog-linked-button:checked {
+  .modal-dialog .modal-dialog-button-box .modal-dialog-button:checked {
     color: #eeeeec;
     background-color: st-lighten(st-mix(#eeeeec, #0e0123, 9%), 8%); }
-    .modal-dialog .modal-dialog-linked-button:checked:hover {
+    .modal-dialog .modal-dialog-button-box .modal-dialog-button:checked:hover {
       background-color: st-lighten(st-lighten(st-mix(#eeeeec, #0e0123, 9%), 8%), 4%); }
-    .modal-dialog .modal-dialog-linked-button:checked:active {
+    .modal-dialog .modal-dialog-button-box .modal-dialog-button:checked:active {
       background-color: st-lighten(st-lighten(st-mix(#eeeeec, #0e0123, 9%), 8%), 9%); }
-  .modal-dialog .modal-dialog-linked-button:insensitive {
+  .modal-dialog .modal-dialog-button-box .modal-dialog-button:insensitive {
     color: st-transparentize(#eeeeec, 0.5);
     background-color: st-darken(st-mix(#eeeeec, #0e0123, 9%), 3%); }
 
@@ -379,7 +379,8 @@ StEntry {
   font-weight: 700;
   font-size: 1.364em; }
 
-.login-dialog-auth-list-label, #LookingGlassDebugFlags .lg-debug-flags-header, #LookingGlassExtensions .lg-extensions-none, .word-suggestions, .bt-menu-placeholder.popup-menu-item, .message-dialog-content .message-dialog-title.lightweight, .headline {
+.login-dialog-auth-list-label, #LookingGlassDebugFlags .lg-debug-flags-header, #LookingGlassExtensions .lg-extensions-none, .word-suggestions, .bt-menu-placeholder.popup-menu-item, .restart-message, .polkit-dialog-user-layout .polkit-dialog-user-label,
+.polkit-dialog-user-layout .polkit-dialog-user-root-label, .message-dialog-content .message-dialog-title.lightweight {
   font-weight: 700;
   font-size: 1.182em; }
 
@@ -391,9 +392,9 @@ StEntry {
   font-weight: 700;
   font-size: 0.818em; }
 
-.lg-completions-text, .caps-lock-warning-label, .background-app-item .subtitle, .quick-toggle StBoxLayout > .quick-toggle-subtitle, .screenshot-ui-type-button .icon-label-button-container, .prompt-dialog-error-label,
-.prompt-dialog-info-label,
-.prompt-dialog-null-label, .run-dialog .run-dialog-description, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description, .message .message-header .message-header-content .event-time, .world-clocks-button .world-clocks-grid .world-clocks-timezone, .events-button .events-box .events-list .event-box .event-time {
+.lg-completions-text, .caps-lock-warning-label, .background-app-item .subtitle, .quick-toggle StBoxLayout > .quick-toggle-subtitle, .screenshot-ui-type-button .icon-label-button-container, .prompt-dialog .prompt-dialog-error-label,
+.prompt-dialog .prompt-dialog-info-label,
+.prompt-dialog .prompt-dialog-null-label, .run-dialog .run-dialog-description, .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description, .message .message-header .message-header-content .event-time, .world-clocks-button .world-clocks-grid .world-clocks-timezone, .events-button .events-box .events-list .event-box .event-time {
   font-weight: 400;
   font-size: 0.818em; }
 
@@ -1179,9 +1180,9 @@ StScrollBar {
     color: #7e7788;
     padding: 0 6px; }
     .message .message-header:ltr {
-      padding-right: 4px; }
+      padding-right: 0; }
     .message .message-header:rtl {
-      padding-left: 4px; }
+      padding-left: 0; }
     .message .message-header .message-source-icon {
       icon-size: 1.091em;
       -st-icon-style: symbolic; }
@@ -1201,14 +1202,12 @@ StScrollBar {
     .message .message-header .message-expand-button,
     .message .message-header .message-close-button {
       border-radius: 999px;
-      color: #eeeeec;
-      padding: 4px; }
+      color: #eeeeec; }
     .message .message-header .message-expand-button {
       padding: 6px; }
-      .message .message-header .message-expand-button:ltr {
-        margin-right: 6px; }
-      .message .message-header .message-expand-button:rtl {
-        margin-left: 6px; }
+    .message .message-header .message-close-button {
+      margin: 3px;
+      padding: 4px; }
   .message .message-box {
     padding: 6px;
     margin-top: 0;
@@ -1325,30 +1324,16 @@ StScrollBar {
 .modal-dialog {
   background-color: #0e0123;
   border-radius: 18px;
-  box-shadow: inset 0 0 0 1px rgba(238, 238, 236, 0.07);
-  padding: 24px; }
+  padding: 24px;
+  spacing: 18px;
+  box-shadow: 0 12px 8px 12px rgba(0, 0, 0, 0.03); }
   .modal-dialog .modal-dialog-content-box {
-    spacing: 32px;
-    margin-top: 8px;
-    margin-bottom: 16px;
+    padding-top: 12px;
+    spacing: 18px;
     max-width: 28em; }
+  .modal-dialog .modal-dialog-button-box {
+    padding-top: 6px; }
 
-/* End Session Dialog */
-.end-session-dialog {
-  width: 24em; }
-  .end-session-dialog .end-session-dialog-battery-warning,
-  .end-session-dialog .dialog-list-title {
-    color: #fd7d00; }
-
-/* Message Dialog */
-.message-dialog-content {
-  spacing: 18px; }
-  .message-dialog-content .message-dialog-title {
-    text-align: center; }
-  .message-dialog-content .message-dialog-description {
-    text-align: center; }
-
-/* Dialog List */
 .dialog-list {
   spacing: 18px; }
   .dialog-list .dialog-list-title {
@@ -1364,47 +1349,57 @@ StScrollBar {
       .dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description {
         color: #e2e2df; }
 
+/* End Session Dialog */
+.end-session-dialog {
+  width: 24em; }
+  .end-session-dialog .end-session-dialog-battery-warning,
+  .end-session-dialog .dialog-list-title {
+    color: #fd7d00;
+    background-color: rgba(253, 125, 0, 0.1);
+    padding: 9px;
+    border-radius: 8px;
+    margin: 4px 0; }
+
+/* Message Dialog */
+.message-dialog-content {
+  spacing: 18px; }
+  .message-dialog-content .message-dialog-title {
+    text-align: center; }
+  .message-dialog-content .message-dialog-description {
+    text-align: center; }
+
 /* Run Dialog */
-.run-dialog .modal-dialog-content-box {
-  margin-top: 24px;
-  margin-bottom: 12px; }
-
-.run-dialog .run-dialog-entry {
-  width: 20em; }
-
-.run-dialog .run-dialog-description {
-  text-align: center;
-  color: #bebeb6; }
+.run-dialog {
+  width: 24em;
+  padding-bottom: 6px; }
+  .run-dialog .run-dialog-entry {
+    padding: 12px 9px; }
+  .run-dialog .run-dialog-description {
+    color: #bebeb6; }
 
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 28em; }
-  .prompt-dialog .modal-dialog-content-box {
-    margin-bottom: 24px; }
-
-.prompt-dialog-password-grid {
-  spacing-rows: 8px;
-  spacing-columns: 4px; }
-  .prompt-dialog-password-grid .prompt-dialog-password-entry {
-    width: auto; }
-    .prompt-dialog-password-grid .prompt-dialog-password-entry:ltr {
-      margin-left: 20px; }
-    .prompt-dialog-password-grid .prompt-dialog-password-entry:rtl {
-      margin-right: 20px; }
-
-.prompt-dialog-password-layout {
-  spacing: 8px; }
-
-.prompt-dialog-password-entry {
-  width: 20em; }
-
-.prompt-dialog-error-label,
-.prompt-dialog-info-label,
-.prompt-dialog-null-label {
-  text-align: center; }
-
-.prompt-dialog-error-label {
-  color: #fd7d00; }
+  .prompt-dialog .prompt-dialog-password-grid {
+    spacing-rows: 8px;
+    spacing-columns: 4px; }
+    .prompt-dialog .prompt-dialog-password-grid .prompt-dialog-password-entry {
+      width: auto; }
+      .prompt-dialog .prompt-dialog-password-grid .prompt-dialog-password-entry:ltr {
+        margin-left: 20px; }
+      .prompt-dialog .prompt-dialog-password-grid .prompt-dialog-password-entry:rtl {
+        margin-right: 20px; }
+  .prompt-dialog .prompt-dialog-password-layout {
+    spacing: 8px; }
+  .prompt-dialog .prompt-dialog-password-entry {
+    width: 20em;
+    padding: 12px 9px; }
+  .prompt-dialog .prompt-dialog-error-label,
+  .prompt-dialog .prompt-dialog-info-label,
+  .prompt-dialog .prompt-dialog-null-label {
+    text-align: center; }
+  .prompt-dialog .prompt-dialog-error-label {
+    color: #fd7d00; }
 
 /* Polkit Dialog */
 .polkit-dialog-user-layout {
@@ -1415,26 +1410,47 @@ StScrollBar {
     color: #fd7d00; }
 
 /* Audio selection dialog */
-.audio-device-selection-dialog .modal-dialog-content-box {
-  margin-bottom: 28px; }
-
-.audio-device-selection-dialog .audio-selection-box {
-  spacing: 20px; }
-
-.audio-selection-device {
-  border-radius: 16px; }
-  .audio-selection-device:hover, .audio-selection-device:focus {
-    background-color: #220255; }
-  .audio-selection-device:active {
-    background-color: -st-accent-color;
-    color: -st-accent-fg-color; }
-
-.audio-selection-device-box {
-  padding: 20px;
-  spacing: 20px; }
-
-.audio-selection-device-icon {
-  icon-size: 64px; }
+.audio-device-selection-dialog {
+  min-width: 24em; }
+  .audio-device-selection-dialog .audio-selection-box {
+    spacing: 12px; }
+    .audio-device-selection-dialog .audio-selection-box .audio-selection-device {
+      color: white;
+      background-color: #303340; }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:focus {
+        color: white;
+        box-shadow: inset 0 0 0 2px rgba(207, 6, 248, 0.7) !important;
+        background-color: st-mix(#cf06f8, rgba(48, 51, 64, 0.25), 5%); }
+        .audio-device-selection-dialog .audio-selection-box .audio-selection-device:focus:hover {
+          background-color: st-mix(#cf06f8, st-lighten(#303340, 7%), 5%); }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:hover {
+        color: white;
+        background-color: st-lighten(#303340, 7%); }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:active {
+        color: white;
+        background-color: st-lighten(#303340, 9%); }
+        .audio-device-selection-dialog .audio-selection-box .audio-selection-device:active:hover {
+          background-color: st-lighten(st-lighten(#303340, 9%), 7%); }
+        .audio-device-selection-dialog .audio-selection-box .audio-selection-device:active:focus {
+          background-color: st-mix(#cf06f8, st-lighten(#303340, 9%), 5%); }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:highlighted, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:selected, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked {
+        color: white;
+        background-color: st-lighten(#303340, 8%); }
+        .audio-device-selection-dialog .audio-selection-box .audio-selection-device:highlighted:hover, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:selected:hover, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked:hover {
+          background-color: st-lighten(st-lighten(#303340, 8%), 7%); }
+        .audio-device-selection-dialog .audio-selection-box .audio-selection-device:highlighted:active, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:selected:active, .audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked:active {
+          background-color: st-lighten(st-lighten(#303340, 8%), 9%); }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:insensitive {
+        color: st-transparentize(white, 0.5);
+        background-color: #303340; }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device:drop {
+        background-color: st-transparentize(-st-accent-color, 0.8);
+        box-shadow: inset 0 0 0 2px st-transparentize(-st-accent-color, 0.2); }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device .audio-selection-device-box {
+        padding: 12px;
+        spacing: 12px; }
+      .audio-device-selection-dialog .audio-selection-box .audio-selection-device .audio-selection-device-icon {
+        icon-size: 64px; }
 
 /* Welcome dialog */
 .welcome-dialog-image {
@@ -3218,9 +3234,17 @@ StScrollBar {
     .unlock-dialog .user-widget.vertical .user-icon StIcon {
       padding: 30px; }
 
-.workspace-thumbnails .workspace-thumbnail, .overview-tile.app-folder, .app-folder.grid-search-result, .dash-background, .dash-separator, #dash .dash-background, .search-provider-icon:hover, .list-search-result:hover, .search-section-content, .search-entry {
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.workspace-thumbnails .workspace-thumbnail, .overview-tile.app-folder, .app-folder.grid-search-result, .dash-background, .dash-separator, #dash .dash-item-container .show-apps:checked .overview-icon,
+#dash .dash-item-container .overview-tile:checked .overview-icon,
+#dash .dash-item-container .grid-search-result:checked .overview-icon, #dash .dash-item-container .show-apps:active .overview-icon,
+#dash .dash-item-container .overview-tile:active .overview-icon,
+#dash .dash-item-container .grid-search-result:active .overview-icon, #dash .dash-item-container .show-apps:hover .overview-icon,
+#dash .dash-item-container .overview-tile:hover .overview-icon,
+#dash .dash-item-container .grid-search-result:hover .overview-icon, #dash .dash-item-container .show-apps:focus .overview-icon,
+#dash .dash-item-container .overview-tile:focus .overview-icon,
+#dash .dash-item-container .grid-search-result:focus .overview-icon, #dash .dash-background, .search-provider-icon:hover, .list-search-result:hover, .search-section-content, .search-entry, #searchResults :selected {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important; }
 
 .icon-dropshadow {
   icon-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
@@ -3326,7 +3350,7 @@ StScrollBar {
   .search-entry, .search-entry StLabel.hint-text {
     color: white; }
   .search-entry:focus, .search-entry:hover {
-    background-color: white;
+    background-color: white !important;
     font-weight: normal;
     box-shadow: none !important;
     text-shadow: none; }
@@ -3356,10 +3380,7 @@ StScrollBar {
   #dash .dash-item-container .show-apps .overview-icon,
   #dash .dash-item-container .overview-tile .overview-icon,
   #dash .dash-item-container .grid-search-result .overview-icon {
-    background: transparent; }
-
-#dashtodockContainer .dash-item-container .app-grid-running-dot {
-  offset-y: 8px; }
+    background: transparent !important; }
 
 /* App Grid */
 .overview-tile, .grid-search-result {
@@ -3390,16 +3411,13 @@ StScrollBar {
 .unlock-dialog .login-dialog-prompt-entry:hover,
 .unlock-dialog .login-dialog-prompt-entry:focus,
 .unlock-dialog .login-dialog-prompt-entry:insensitive, .login-dialog-not-listed-button:focus, .login-dialog-not-listed-button:hover, .login-dialog-not-listed-button:active, .login-dialog-not-listed-button:checked, .login-dialog-not-listed-button:selected, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item, .login-dialog-button.cancel-button, .login-dialog-button.switch-user-button, .login-dialog-button.login-dialog-session-list-button, .login-dialog-not-listed-button {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: none !important; }
 
 .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus, .login-dialog-button.cancel-button:focus, .login-dialog-button.switch-user-button:focus, .login-dialog-button.login-dialog-session-list-button:focus, .login-dialog-not-listed-button:focus, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:hover, .login-dialog-button.cancel-button:hover, .login-dialog-button.switch-user-button:hover, .login-dialog-button.login-dialog-session-list-button:hover, .login-dialog-not-listed-button:hover, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:active, .login-dialog-button.cancel-button:active, .login-dialog-button.switch-user-button:active, .login-dialog-button.login-dialog-session-list-button:active, .login-dialog-not-listed-button:active, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:checked, .login-dialog-button.cancel-button:checked, .login-dialog-button.switch-user-button:checked, .login-dialog-button.login-dialog-session-list-button:checked, .login-dialog-not-listed-button:checked, .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected, .login-dialog-button.cancel-button:selected, .login-dialog-button.switch-user-button:selected, .login-dialog-button.login-dialog-session-list-button:selected, .login-dialog-not-listed-button:selected {
   background-color: rgba(255, 255, 255, 0.2) !important; }
-
-.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item StIcon, .login-dialog-button.cancel-button StIcon, .login-dialog-button.switch-user-button StIcon, .login-dialog-button.login-dialog-session-list-button StIcon, .login-dialog-not-listed-button StIcon {
-  icon-size: 16px; }
 
 .login-dialog,
 .unlock-dialog {
