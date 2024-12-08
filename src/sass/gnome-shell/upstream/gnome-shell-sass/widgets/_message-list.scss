@@ -74,9 +74,9 @@
     color: $insensitive_fg_color;
     padding:0 $base_padding;
 
-    // side padding to accommodate the close button
-    &:ltr { padding-right:$base_padding - 2px; };
-    &:rtl { padding-left:$base_padding - 2px; };
+    // remove side padding to accommodate the close button
+    &:ltr { padding-right: 0; }
+    &:rtl { padding-left: 0; }
 
     // header source icon
     .message-source-icon {
@@ -102,8 +102,8 @@
         // Add bottom padding to align the app name with the time horizontally
         padding-bottom: to_em(1px);
 
-        &:ltr { text-align: right };
-        &:rtl { text-align: left };
+        &:ltr { text-align: right; }
+        &:rtl { text-align: left; }
       }
     }
 
@@ -114,13 +114,17 @@
       @extend %notification_button;
       border-radius: $forced_circular_radius; // make circular
       color: $fg_color;
-      padding: 4px;
     }
 
+    // increase padding to expand button to make it larger
     .message-expand-button {
       padding: $base_padding;
-      &:ltr { margin-right: $base_padding; }
-      &:rtl { margin-left: $base_padding; }
+    }
+
+    // add margin to close button to balance it with the expand button
+    .message-close-button {
+      margin: $base_padding * 0.5;
+      padding: 4px;
     }
   }
 
