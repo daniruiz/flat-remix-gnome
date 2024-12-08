@@ -3,7 +3,8 @@ MAINTAINER = Daniel Ruiz de Alegría <daniel@drasite.com>
 UBUNTU_RELEASE = jammy
 PREFIX ?= /usr
 THEMES ?= $(patsubst themes/%/,%,$(wildcard themes/*/))
-BASE_THEME ?= Flat-Remix-Blue-Light
+THEME_VARIANTS = Light Dark Darkest Miami Miami-Dark
+BASE_THEME ?= Flat-Remix-Light
 BLUR ?= 6
 IS_UBUNTU ?= $(shell echo "$$(lsb_release -si 2> /dev/null)" | grep -q 'Ubuntu\|Pop' && echo true)
 USER_HOME ?= $(shell eval echo ~$$SUDO_USER)
@@ -82,11 +83,11 @@ _get_tag:
 
 dist: _get_version
 	count=1; \
-	for color_variant in $(COLOR_VARIANTS) Miami; \
+	for theme_variant in $(foreach THEME, $(THEME_VARIANTS), $(THEME) $(THEME)-fullPanel); \
 	do \
 		count_pretty=$$(echo "0$${count}" | tail -c 3); \
-		(cd themes && tar -c "Flat-Remix-$${color_variant}"*) | \
-			xz -z - > "$${count_pretty}-Flat-Remix-$${color_variant}_$(VERSION).tar.xz"; \
+		(cd themes && tar -cJf "$${count_pretty}-Flat-Remix-$${theme_variant}_$(VERSION).tar.xz" "Flat-Remix-$${theme_variant}") | \
+			xz -z - > "$${count_pretty}-Flat-Remix-$${theme_variant}_$(VERSION).tar.xz"; \
 		count=$$((count+1)); \
 	done; \
 
