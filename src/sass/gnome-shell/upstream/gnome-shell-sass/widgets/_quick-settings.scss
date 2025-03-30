@@ -12,16 +12,15 @@
   spacing-columns: $base_padding * 2;
 }
 
-.quick-toggle, .quick-menu-toggle {
+.quick-toggle, .quick-toggle-has-menu {
   border-radius: $forced_circular_radius;
   min-width: 12em;
   max-width: 12em;
   min-height: $scalable_icon_size * 3; // use icon size so the button scales
-  border:none;
 }
 
+// standalone toggle button
 .quick-toggle {
-  background-color: none;
   &:checked { @extend %default_button;}
 
   & > StBoxLayout { spacing: $base_padding * 1.5; }
@@ -29,13 +28,18 @@
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
   &.button { padding: 0; }
-  & > StBoxLayout { padding: 0 $base_padding * 2; }
+  & > StBoxLayout {
+    padding: 0 $base_padding * 2;
+  }
+
   &:ltr > StBoxLayout { padding-left: $base_padding * 2.5; }
   &:rtl > StBoxLayout { padding-right: $base_padding * 2.5; }
 
-  .quick-toggle-title { font-weight: bold; }
+  .quick-toggle-title {
+    @extend %heading;
+  }
 
-  & StBoxLayout > .quick-toggle-subtitle {
+  .quick-toggle-subtitle {
     @extend %caption;
     font-weight: normal;
   }
@@ -43,38 +47,91 @@
   .quick-toggle-icon { icon-size: $scalable_icon_size; }
 }
 
-.quick-menu-toggle {
+// toggle with a menu button
+.quick-toggle-has-menu {
   & .quick-toggle {
     min-width: auto;
     max-width: auto;
 
-    &:ltr { border-radius: $forced_circular_radius 0 0 $forced_circular_radius; }
-    &:ltr > StBoxLayout { padding-right: $scaled_padding * 1.5; }
-    &:rtl { border-radius: 0 $forced_circular_radius $forced_circular_radius 0; }
-    &:rtr > StBoxLayout { padding-left: $scaled_padding * 1.5; }
+    &:ltr {
+      border-radius: $forced_circular_radius 0 0 $forced_circular_radius;
+      > StBoxLayout { padding-right: $scaled_padding * 1.5; }
+    }
+
+    &:rtl {
+      border-radius: 0 $forced_circular_radius $forced_circular_radius 0;
+      > StBoxLayout { padding-left: $scaled_padding * 1.5; }
+    }
 
     &:ltr:last-child { border-radius: $forced_circular_radius; }
     &:rtl:last-child { border-radius: $forced_circular_radius; }
   }
 
-  & .quick-toggle-arrow {
+  & .quick-toggle-menu-button {
     padding: $scaled_padding $scaled_padding * 1.75;
-    border-width: 0;
-    border-color: transparentize($fg_color, .75);
-
-    &:checked {
-      @extend %default_button;
-      border-color: $accent_borders_color;
-    }
 
     &:ltr {
       border-radius: 0 $forced_circular_radius $forced_circular_radius 0;
-      border-left-width: 1px;
     }
     &:rtl {
       border-radius: $forced_circular_radius 0 0 $forced_circular_radius;
-      border-right-width: 1px;
     }
+  }
+
+  & .quick-toggle-separator {
+    width: 1px;
+  }
+}
+
+
+// Set the color of separators and menu buttons within the toggle.
+// This is bit of a mess but needed to have working colors in
+// both light, dark and high contrast styles.
+
+// menu button colors
+$quick_toggle_menubutton_bg_color: if(
+  $contrast == 'high', lighten($bg_color, 22%),
+  if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 8%))
+);
+$quick_toggle_menubutton_checked_bg_color: if(
+  $contrast == 'high', st-mix(-st-accent-color, $fg_color, 75%),
+  if($variant == 'light', st-mix(-st-accent-color, $fg_color, 92%), st-mix(-st-accent-color, $fg_color, 85%))
+);
+
+// separator colors
+$quick_toggle_separator_color: if(
+  $contrast == 'high', transparent,
+  transparentize($fg_color, .75)
+);
+
+$quick_toggle_checked_separator_color: if(
+  $contrast == 'high', transparent,
+  if($variant == 'light', st-mix(-st-accent-fg-color, -st-accent-color, 20%), st-mix(-st-accent-fg-color, -st-accent-color, 30%),)
+);
+
+.quick-toggle-has-menu {
+  & .quick-toggle-menu-button {
+    @include button(normal, $c: $quick_toggle_menubutton_bg_color);
+    &:focus { @include button(focus, $c: $quick_toggle_menubutton_bg_color);}
+    &:hover { @include button(hover, $c: $quick_toggle_menubutton_bg_color);}
+    &:active { @include button(active, $c: $quick_toggle_menubutton_bg_color);}
+
+    &:checked {
+      @include button(normal, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);
+      &:focus { @include button(focus, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
+      &:hover { @include button(hover, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
+      &:active { @include button(active, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
+    }
+  }
+
+  &:checked {
+    & .quick-toggle-separator {
+      background-color: $quick_toggle_checked_separator_color;
+    }
+  }
+
+  & .quick-toggle-separator {
+    background-color: $quick_toggle_separator_color;
   }
 }
 

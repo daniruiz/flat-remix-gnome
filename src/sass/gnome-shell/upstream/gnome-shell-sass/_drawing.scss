@@ -20,7 +20,7 @@
 }
 
 // Function to mix the color and make the focus background
-@function focus_bg_color($bg, $fc:$focus_color) {
+@function focus_bg_color($bg, $fc:$accent_color) {
   @return st-mix($fc, $bg, 5%);
 }
 
@@ -54,10 +54,13 @@
 }
 
 // Draw the focus ring
-@mixin focus_ring($width: 2px, $fc: $focus_border_color, $border: false) {
-  box-shadow: inset 0 0 0 $width $fc !important;
+@mixin focus_ring($width: 2px, $fc: $accent_color, $border: false) {
+
+  $focus_color: st-transparentize($fc, $focus_border_opacity);
+
+  box-shadow: inset 0 0 0 $width $focus_color !important;
   @if $border {
-    border:$width solid $fc !important;
+    border:$width solid $focus_color !important;
     box-shadow: none;
   }
 }
@@ -90,7 +93,7 @@
   // entry colors
   $entry_fg_color: $c;
   $entry_bg_color: mix($c, $bc, $background_mix_factor);
-  $entry_focus_color: $focus_color;
+  $entry_focus_color: $accent_color;
 
   // entry color overrides for lockscreen style
   @if $style == 'lockscreen' {
@@ -128,7 +131,7 @@
 
   // focus styles
   @if $type == 'focus' {
-    @include focus_ring();
+    @include focus_ring($fc:$entry_focus_color);
     background-color: focus_bg_color($entry_bg_color);
     color: $entry_fg_color;
 
@@ -357,6 +360,9 @@
     &:insensitive { @include button(insensitive, $tc:$fg, $c:$bg, $always_dark: $system);}
   } @else {
     @include button(normal, $tc:$fg, $c:$bg, $style: flat, $always_dark: $system);
+    // override the mixin to have the flat button always be transparent
+    // fixes issue with overlapping tiles
+    background-color: transparent;
     &:focus { @include button(focus, $tc:$fg, $c:$bg, $style: flat, $always_dark: $system);}
     &:hover { @include button(hover, $tc:$fg, $c:$bg, $style: flat, $always_dark: $system);}
     &:active { @include button(active, $tc:$fg, $c:$bg, $style: flat, $always_dark: $system);}
@@ -372,23 +378,15 @@
 }
 
 // styling for all menuitems in popovers
-@mixin menuitem($bg, $style: flat) {
+@mixin menuitem($bg) {
 
   // extend common styles
   @extend %menuitem;
 
-  @if $style == 'flat' {
-    @include button(undecorated);
-  } @else {
-    @include button(normal, $c:$bg);
-  }
-  &:hover {
-    @include button(hover, $c:$bg);
-  }
-  &:active {@include button(active, $c:$bg);}
-  &:selected,
-  &:checked {@include button(checked, $c:$bg);}
-  &:insensitive {@include button(insensitive, $c:$bg);}
+  @include button(undecorated, $c:$bg, $style: flat);
+  &:active { @include button(active, $c:$bg, $style: flat);}
+  &:hover, &:selected, &:checked { @include button(hover, $c:$bg, $style: flat);}
+  &:insensitive { @include button(insensitive, $c:$bg, $style: flat);}
 }
 
 // Panel menu/button drawing function

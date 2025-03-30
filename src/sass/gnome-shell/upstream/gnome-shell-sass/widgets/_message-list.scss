@@ -11,10 +11,10 @@
   &:rtl {margin-right: 0; margin-left: $base_margin; padding-left: $base_padding; border-left-width: 1px; }
 
   .message-list-placeholder {
-    @extend %title_2;
-    color: transparentize($fg_color, .75);
+    @extend %title_3;
+    color: transparentize($fg_color, .55);
     @if $contrast == 'high' {
-      color: transparentize($fg_color, .5);
+      color: $fg_color;
     }
     // icon size and color
     > StIcon {
@@ -25,17 +25,16 @@
   }
 }
 
-.message-list-sections {
+.message-view {
   // to account for scrollbar
   &:ltr {margin-right: $base_margin * 3; }
   &:rtl {margin-left: $base_margin * 3;}
 
-  spacing: $base_padding * 2;
-}
+  -st-vfade-offset: 68px;
 
-.message-list-section,
-.message-list-section-list {
-  spacing: $base_padding * 2;
+  .message {
+    margin-bottom: $base_padding * 2 !important;
+  }
 }
 
 // do-not-disturb + clear button
@@ -61,12 +60,49 @@
   }
 }
 
+// message notification group
+.message-notification-group {
+  spacing: $base_padding * 2;
+
+  .message-group-header {
+    padding: $base_padding;
+    .message-group-title {
+      @extend %title_2;
+      margin: 0 $base_margin;
+    }
+  }
+
+  // close button
+  .message-collapse-button {
+    @extend .icon-button;
+    color: $fg_color;
+    background-color: transparentize($fg_color, 0.8);
+    padding: 4px !important;
+    border: 4px transparent solid;
+    &:hover {background-color: transparentize($fg_color, 0.7);}
+    &:active {background-color: transparentize($fg_color, 0.8);}
+  }
+}
+
 // message bubbles
 .message {
   @extend %card;
   padding: $base_padding;
   margin: 0;
   border-radius: $modal_radius;
+
+  background-color: if($variant == 'light', $card_bg_color, lighten($card_bg_color, 5%));
+
+  &:second-in-stack {
+    background-color: if($variant == 'light', darken($card_bg_color, 4%), darken($card_bg_color, 1%));
+    box-shadow: 0 1px 1px 0 $card_shadow_color;
+  }
+
+  &:lower-in-stack {
+    background-color: if($variant == 'light', darken($card_bg_color, 7%), darken($card_bg_color, 4%));
+    box-shadow: none;
+    border-color: if($variant == 'light', darken($card_bg_color, 10%), transparent); // a not ideal workaround for light theme
+  }
 
   // message header
   .message-header {

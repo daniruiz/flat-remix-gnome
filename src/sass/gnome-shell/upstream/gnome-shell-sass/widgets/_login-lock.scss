@@ -120,16 +120,29 @@ $_gdm_dialog_width: 25em;
 
 .login-dialog-auth-list-title {
   margin-left: 2em;
+  padding-bottom: $base_padding;
 }
 
-.login-dialog-auth-list-item {
-  border-radius: $base_border_radius * 2;
-  padding: $base_margin;
-  color: darken($_gdm_fg,30%);
+.login-dialog {
+  .login-dialog-auth-list-item {
+    @extend %button_common;
+    @include button(normal, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);
+    &:selected,
+    &:focus { @include button(focus, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);}
+    &:hover { @include button(hover, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);}
+    &:active { @include button(active, $tc:$_gdm_fg, $c:$system_base_color, $always_dark: true);}
 
-  &:focus, &:selected {
-    background-color: -st-accent-color;
-    color: -st-accent-fg-color;
+    border-radius: $modal_radius * 0.6;
+    padding: $base_padding * 1.2;
+  }
+}
+
+.unlock-dialog {
+  .login-dialog-auth-list-item {
+    @extend %lockscreen_button;
+
+    border-radius: $modal_radius * 0.6;
+    padding: $base_padding * 1.2;
   }
 }
 

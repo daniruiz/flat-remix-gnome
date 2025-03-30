@@ -158,7 +158,7 @@
 
     // styled similar to switcher-popup
     .audio-selection-device {
-      @include tile_button($fg:$osd_fg_color, $bg:$osd_bg_color);
+      @include tile_button($fg:$fg_color, $bg:$bg_color, $system:false);
 
       .audio-selection-device-box {
         padding: $base_padding * 2;

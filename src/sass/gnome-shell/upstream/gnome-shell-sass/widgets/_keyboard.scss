@@ -1,16 +1,14 @@
 /* On-screen Keyboard */
 
-$key_size: 1.2em;
-$key_border_radius: $base_border_radius * 1.25;
-$key_bg_color:  $osd_bg_color;
-// $default_key_bg_color: darken($key_bg_color, 4%);
-$default_key_bg_color: lighten($osd_bg_color, 10%);
+$key_border_radius: to_em($base_border_radius);
+$key_bg_color:  darken($osd_fg_color, 70%);
+$default_key_bg_color: if($variant=='light', darken($key_bg_color, 11%), darken($key_bg_color, 10%));
 
 
 // draw keys using button function
 #keyboard {
   // background-color: transparentize(if($variant=='light', darken($bg_color, 5%), darken($bg_color, 8%)), 0.1);
-  background-color: transparentize(darken($osd_bg_color, 10%), 0.04);
+  background-color: $osd_bg_color;
   box-shadow: inset 0 1px 0 0 $osd_outer_borders_color;
 
   .page-indicator {
@@ -33,10 +31,6 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
 .keyboard-key {
   @include fontsize($base_font_size + 5pt);
   font-weight: bold;
-  min-height: $key_size;
-  min-width: $key_size;
-  border-width: 1px;
-  border-style: solid;
   border-radius: $key_border_radius;
   box-shadow: 0 1px 0 0 $shadow_color;
 
@@ -47,73 +41,40 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
   &:active { @include button(active, $c:$key_bg_color, $tc:$osd_fg_color); }
   &:checked { @include button(checked, $c:$key_bg_color, $tc:$osd_fg_color); }
 
-  &:grayed { //FIXMEy
-    background-color: darken($bg_color, 3%);
-    color: $osd_fg_color;
-    border-color: $osd_borders_color;
-  }
-
   // non-character keys
   &.default-key {
     @include button(normal, $c:$default_key_bg_color, $tc:$osd_fg_color);
     &:hover { @include button(hover, $c:$default_key_bg_color, $tc:$osd_fg_color);}
     &:active { @include button(active, $c:$default_key_bg_color, $tc:$osd_fg_color);}
     &:checked { @include button(checked, $c:$default_key_bg_color, $tc:$osd_fg_color);}
-    border-radius: $key_border_radius;
+    border:none;
 
     // keys that may be latched: ctrl/alt/shift
     &:latched {
-      border-color: st-lighten(-st-accent-color, 5%);
       background-color: -st-accent-color;
     }
   }
 
-  // enter key is suggested-action
-  &.enter-key {
-    @include button(normal, $c:-st-accent-color, $tc:-st-accent-fg-color);
-    &:hover { @include button(hover, $c:-st-accent-color, $tc:-st-accent-fg-color);}
-    &:active { @include button(active, $c:-st-accent-color, $tc:-st-accent-fg-color);}
-    &:checked { @include button(checked, $c:-st-accent-color, $tc:-st-accent-fg-color);}
-    border-radius: $key_border_radius;
-    color: $osd_fg_color;
-  }
-
-  &.shift-key-lowercase {}
-
-  // pressed shift has different style
-  &.shift-key-uppercase {
-    background-color: lighten($key_bg_color, 20%);
-    color: $osd_bg_color;
-    &:hover {
-      background-color: lighten($key_bg_color, 25%);
-      color: lighten($osd_bg_color, 5%);
-    }
-  }
-
   // size of icons on keys
-  StIcon { icon-size: $medium_icon_size; }
+  StIcon { icon-size: $medium_scalable_icon_size; }
 }
 
 // long press on a key popup
-.keyboard-subkeys {
-  -arrow-border-radius: $base_border_radius * 2;
+.keyboard-subkeys-boxpointer {
+  -arrow-border-radius: $base_border_radius * 2 + $base_padding;
   -arrow-background-color: $osd_bg_color;
   -arrow-border-width: 1px;
   -arrow-border-color: lighten($osd_bg_color, 9%);
   -arrow-base: 20px;
   -arrow-rise: 10px;
-  -boxpointer-gap: $base_padding;
-  padding: $base_padding;
+  -boxpointer-gap: $base_margin;
 
-  .keyboard-key {
-    @include button(normal, $c:$key_bg_color, $tc:$osd_fg_color);
+  border-radius: $base_border_radius * 2 + $base_padding;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1);
 
-    &:focus { @include button(focus);}
-    &:hover { @include button(hover, $c:$key_bg_color, $tc:$osd_fg_color);}
-    &:active { @include button(active, $c:$key_bg_color, $tc:$osd_fg_color); }
-    &:checked { @include button(checked, $c:$key_bg_color, $tc:$osd_fg_color); }
-
-    border-radius:$key_border_radius;
+  .key-container {
+    padding: $base_padding * 2;
+    spacing: $base_margin * 2;
   }
 }
 
@@ -146,7 +107,7 @@ $default_key_bg_color: lighten($osd_bg_color, 10%);
     margin: 0 3px;
     min-width: 32px;
     border-radius: 4px;
-    padding: 0px $base_padding * 3;
+    padding: $base_padding $base_padding * 3;
 
     @include button(undecorated, $c:$key_bg_color, $tc:$osd_fg_color);
 
