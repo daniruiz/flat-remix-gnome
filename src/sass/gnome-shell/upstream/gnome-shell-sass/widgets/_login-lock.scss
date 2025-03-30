@@ -188,9 +188,9 @@ $_gdm_dialog_width: 25em;
       &:logged-in {
         // color border for logged-in user
         .user-icon {
-          border-color: -st-accent-color;
+          border-color: $selected_bg_color;
           StIcon {
-            background-color: st-transparentize(-st-accent-color, .7);
+            background-color: st-transparentize($selected_bg_color, .7);
           }
         }
       }
@@ -251,7 +251,7 @@ $_gdm_dialog_width: 25em;
   StButton#vhandle, StButton#hhandle {
     background-color: transparentize($bg_color,0.7);
     &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
-    &:active { background-color: st-transparentize(-st-accent-color,0.5); }
+    &:active { background-color: st-transparentize($selected_bg_color,0.5); }
   }
 }
 

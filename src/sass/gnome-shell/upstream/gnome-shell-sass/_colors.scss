@@ -66,4 +66,4 @@ $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_colo
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
 // accent colors
-$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));
+$accent_borders_color: if($variant== 'light', st-darken($selected_bg_color, 20%), st-lighten($selected_bg_color, 30%));

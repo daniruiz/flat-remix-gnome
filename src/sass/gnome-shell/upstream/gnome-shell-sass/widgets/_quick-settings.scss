@@ -94,8 +94,8 @@ $quick_toggle_menubutton_bg_color: if(
   if($variant == 'light', darken($bg_color, 5%), lighten($bg_color, 8%))
 );
 $quick_toggle_menubutton_checked_bg_color: if(
-  $contrast == 'high', st-mix(-st-accent-color, $fg_color, 75%),
-  if($variant == 'light', st-mix(-st-accent-color, $fg_color, 92%), st-mix(-st-accent-color, $fg_color, 85%))
+  $contrast == 'high', st-mix($selected_bg_color, $fg_color, 75%),
+  if($variant == 'light', st-mix($selected_bg_color, $fg_color, 92%), st-mix($selected_bg_color, $fg_color, 85%))
 );
 
 // separator colors
@@ -106,7 +106,7 @@ $quick_toggle_separator_color: if(
 
 $quick_toggle_checked_separator_color: if(
   $contrast == 'high', transparent,
-  if($variant == 'light', st-mix(-st-accent-fg-color, -st-accent-color, 20%), st-mix(-st-accent-fg-color, -st-accent-color, 30%),)
+  if($variant == 'light', st-mix($selected_fg_color, $selected_bg_color, 20%), st-mix($selected_fg_color, $selected_bg_color, 30%),)
 );
 
 .quick-toggle-has-menu {
@@ -117,10 +117,10 @@ $quick_toggle_checked_separator_color: if(
     &:active { @include button(active, $c: $quick_toggle_menubutton_bg_color);}
 
     &:checked {
-      @include button(normal, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);
-      &:focus { @include button(focus, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
-      &:hover { @include button(hover, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
-      &:active { @include button(active, $c: $quick_toggle_menubutton_checked_bg_color, $tc:-st-accent-fg-color, $style: default);}
+      @include button(normal, $c: $quick_toggle_menubutton_checked_bg_color, $tc:$selected_fg_color, $style: default);
+      &:focus { @include button(focus, $c: $quick_toggle_menubutton_checked_bg_color, $tc:$selected_fg_color, $style: default);}
+      &:hover { @include button(hover, $c: $quick_toggle_menubutton_checked_bg_color, $tc:$selected_fg_color, $style: default);}
+      &:active { @include button(active, $c: $quick_toggle_menubutton_checked_bg_color, $tc:$selected_fg_color, $style: default);}
     }
   }
 
@@ -176,8 +176,8 @@ $quick_toggle_checked_separator_color: if(
       background-color: transparentize($fg_color, 0.8);
 
       &.active {
-        background-color: -st-accent-color;
-        color: -st-accent-fg-color;
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
       }
 
       // draw hc outline

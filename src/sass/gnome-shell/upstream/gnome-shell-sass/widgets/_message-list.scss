@@ -55,7 +55,7 @@
     border-style: solid;
 
     &:focus {
-      border-color: st-transparentize(-st-accent-color, 0.4);
+      border-color: st-transparentize($selected_bg_color, 0.4);
     }
   }
 }

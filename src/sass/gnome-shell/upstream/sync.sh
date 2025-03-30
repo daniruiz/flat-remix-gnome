@@ -64,3 +64,6 @@ done <<- EOF
 	gnome-shell-sass/widgets/_workspace-switcher.scss
 	gnome-shell-sass/widgets/_workspace-thumbnails.scss
 EOF
+
+grep -rl -- $selected_bg_color | xargs sed -i 's/$selected_bg_color/$selected_bg_color/g'
+grep -rl -- $selected_fg_color | xargs sed -i 's/$selected_fg_color/$selected_fg_color/g'
