@@ -168,7 +168,6 @@ $dialog_box_shadow: 0 2px 6px -2px transparentize(black, .8);
   border: none;
   text-shadow: $_text-shadow;
   transition-duration: 200ms;
-  selection-background-color: transparentize($selected_bg_color, .7);
 
   &, StLabel.hint-text { color: $osd_fg_color; }
 
