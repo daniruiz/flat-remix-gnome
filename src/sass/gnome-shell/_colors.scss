@@ -117,7 +117,7 @@ $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_colo
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
 // accent colors
-$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 15%), st-lighten(-st-accent-color, 15%));
+$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));
 
 //special cased widget colors
 $suggested_bg_color: $selected_bg_color;
@@ -135,6 +135,7 @@ $switch_borders_color: if($variant == 'light',darken($switch_bg_color,15%),darke
 
 $focus_color: $selected_bg_color;
 $focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
+$focus_border_opacity: .2;
 $alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
 
 $dim_label_opacity: 0.55;
@@ -145,3 +146,4 @@ $light_1: #ffffff;
 $orange_3: $warning_color; // privacy_indicator_color
 $orange_4: $warning_color; // privacy_indicator_color
 $red_4: $error_color; // recording_indicator_color
+$accent_color: -st-accent-color;
