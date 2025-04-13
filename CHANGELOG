@@ -1,3 +1,9 @@
+[20250413]
+ * Fix accent-color for miami themes
+ * Simplificate _colors.scss vased on upstream code variables
+ * Remove no longer used parameter asset_suffix
+ * Fix variable name
+
 [20250330]
  * Update make release
  * Update upstream code for version 48.0
