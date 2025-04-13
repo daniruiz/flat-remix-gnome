@@ -148,11 +148,11 @@ stage {
 
 .keyboard-brightness-level .button:checked, .quick-toggle:checked, .calendar .calendar-day.calendar-today, .icon-button.default, .default.login-dialog-button.cancel-button, .default.login-dialog-button.switch-user-button, .default.login-dialog-button.login-dialog-session-list-button, .default.screenshot-ui-show-pointer-button, .message .message-header .default.message-expand-button,
 .message .message-header .default.message-close-button, .message-notification-group .default.message-collapse-button, .calendar .calendar-month-header .default.pager-button, .button.default {
-  color: -st-fg-accent-color;
+  color: -st-accent-fg-color;
   background-color: -st-accent-color; }
   .keyboard-brightness-level .button:focus:checked, .quick-toggle:focus:checked, .calendar .calendar-day.calendar-today:focus, .icon-button.default:focus, .default.login-dialog-button.cancel-button:focus, .default.login-dialog-button.switch-user-button:focus, .default.login-dialog-button.login-dialog-session-list-button:focus, .default.screenshot-ui-show-pointer-button:focus, .message .message-header .default.message-expand-button:focus,
   .message .message-header .default.message-close-button:focus, .message-notification-group .default.message-collapse-button:focus, .calendar .calendar-month-header .default.pager-button:focus, .button.default:focus {
-    color: -st-fg-accent-color;
+    color: -st-accent-fg-color;
     box-shadow: inset 0 0 0 2px st-transparentize(-st-accent-color, 0.2) !important;
     box-shadow: inset 0 0 0 2px st-transparentize(st-darken(-st-accent-color, 20%), 0.2) !important;
     background-color: st-mix(-st-accent-color, -st-accent-color, 5%); }
@@ -161,15 +161,15 @@ stage {
       background-color: st-mix(-st-accent-color, st-darken(-st-accent-color, 4%), 5%); }
   .keyboard-brightness-level .button:hover:checked, .quick-toggle:hover:checked, .calendar .calendar-day.calendar-today:hover, .icon-button.default:hover, .default.login-dialog-button.cancel-button:hover, .default.login-dialog-button.switch-user-button:hover, .default.login-dialog-button.login-dialog-session-list-button:hover, .default.screenshot-ui-show-pointer-button:hover, .message .message-header .default.message-expand-button:hover,
   .message .message-header .default.message-close-button:hover, .message-notification-group .default.message-collapse-button:hover, .calendar .calendar-month-header .default.pager-button:hover, .button.default:hover {
-    color: -st-fg-accent-color;
+    color: -st-accent-fg-color;
     background-color: st-darken(-st-accent-color, 4%); }
   .keyboard-brightness-level .button:insensitive:checked, .quick-toggle:insensitive:checked, .calendar .calendar-day.calendar-today:insensitive, .icon-button.default:insensitive, .default.login-dialog-button.cancel-button:insensitive, .default.login-dialog-button.switch-user-button:insensitive, .default.login-dialog-button.login-dialog-session-list-button:insensitive, .default.screenshot-ui-show-pointer-button:insensitive, .message .message-header .default.message-expand-button:insensitive,
   .message .message-header .default.message-close-button:insensitive, .message-notification-group .default.message-collapse-button:insensitive, .calendar .calendar-month-header .default.pager-button:insensitive, .button.default:insensitive {
-    color: st-transparentize(-st-fg-accent-color, 0.6);
+    color: st-transparentize(-st-accent-fg-color, 0.6);
     background-color: st-lighten(-st-accent-color, 3%); }
   .keyboard-brightness-level .button:active:checked, .quick-toggle:active:checked, .calendar .calendar-day.calendar-today:active, .icon-button.default:active, .default.login-dialog-button.cancel-button:active, .default.login-dialog-button.switch-user-button:active, .default.login-dialog-button.login-dialog-session-list-button:active, .default.screenshot-ui-show-pointer-button:active, .message .message-header .default.message-expand-button:active,
   .message .message-header .default.message-close-button:active, .message-notification-group .default.message-collapse-button:active, .calendar .calendar-month-header .default.pager-button:active, .button.default:active {
-    color: -st-fg-accent-color;
+    color: -st-accent-fg-color;
     background-color: st-darken(-st-accent-color, 9%); }
     .keyboard-brightness-level .button:active:hover:checked, .quick-toggle:active:hover:checked, .calendar .calendar-day.calendar-today:active:hover, .icon-button.default:active:hover, .default.login-dialog-button.cancel-button:active:hover, .default.login-dialog-button.switch-user-button:active:hover, .default.login-dialog-button.login-dialog-session-list-button:active:hover, .default.screenshot-ui-show-pointer-button:active:hover, .message .message-header .default.message-expand-button:active:hover,
     .message .message-header .default.message-close-button:active:hover, .message-notification-group .default.message-collapse-button:active:hover, .calendar .calendar-month-header .default.pager-button:active:hover, .button.default:active:hover {
@@ -810,16 +810,16 @@ StEntry StLabel.hint-text {
 
 .check-box:checked StIcon {
   background-color: -st-accent-color;
-  color: -st-fg-accent-color;
+  color: -st-accent-fg-color;
   border-color: transparent; }
 
 .check-box:checked:hover StIcon {
   background-color: st-lighten(-st-accent-color, 5%);
-  color: st-lighten(-st-fg-accent-color, 5%); }
+  color: st-lighten(-st-accent-fg-color, 5%); }
 
 .check-box:checked:active StIcon {
   background-color: st-darken(-st-accent-color, 7%);
-  color: st-darken(-st-fg-accent-color, 7%); }
+  color: st-darken(-st-accent-fg-color, 7%); }
 
 /* Switches */
 .toggle-switch {
@@ -842,10 +842,10 @@ StEntry StLabel.hint-text {
     transition-duration: 100ms; }
   .toggle-switch:checked {
     background: -st-accent-color;
-    color: -st-fg-accent-color; }
+    color: -st-accent-fg-color; }
     .toggle-switch:checked:hover {
       background-color: st-lighten(-st-accent-color, 5%);
-      color: st-lighten(-st-fg-accent-color, 5%); }
+      color: st-lighten(-st-accent-fg-color, 5%); }
     .toggle-switch:checked .handle {
       background: white; }
 
@@ -1061,7 +1061,7 @@ StScrollBar {
       .calendar .calendar-day.calendar-other-month.calendar-weekend {
         color: rgba(92, 97, 108, 0.5); }
     .calendar .calendar-day.calendar-today {
-      color: -st-fg-accent-color !important; }
+      color: -st-accent-fg-color !important; }
       .calendar .calendar-day.calendar-today.calendar-day-with-events {
         background-image: url("resource:///org/gnome/shell/theme/calendar-today.svg") !important; }
     .calendar .calendar-day.calendar-day-with-events {
@@ -1316,7 +1316,7 @@ StScrollBar {
   border-radius: 8px; }
   .candidate-box:selected {
     background-color: -st-accent-color;
-    color: -st-fg-accent-color; }
+    color: -st-accent-fg-color; }
   .candidate-box:hover {
     background-color: #e8e8e8;
     color: #474b53; }
@@ -1530,7 +1530,7 @@ StScrollBar {
 
 .osd-monitor-label, .osd-break-countdown-label {
   background-color: -st-accent-color;
-  color: -st-fg-accent-color;
+  color: -st-accent-fg-color;
   border-radius: 16px;
   font-size: 3em;
   font-weight: bold;
@@ -1754,7 +1754,7 @@ StScrollBar {
   background-color: st-transparentize(-st-accent-color, 0.8); }
 
 .screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-check {
-  color: -st-fg-accent-color;
+  color: -st-accent-fg-color;
   background-color: -st-accent-color; }
 
 .screenshot-ui-screen-selector {
@@ -2104,20 +2104,20 @@ StScrollBar {
     .quick-toggle-has-menu .quick-toggle-menu-button:active:focus {
       background-color: st-mix(-st-accent-color, st-darken(st-mix(#5c616c, #f2f2f2, 12%), 9%), 5%); }
   .quick-toggle-has-menu .quick-toggle-menu-button:checked {
-    color: -st-fg-accent-color;
+    color: -st-accent-fg-color;
     background-color: st-mix(-st-accent-color, #5c616c, 92%); }
     .quick-toggle-has-menu .quick-toggle-menu-button:checked:focus {
-      color: -st-fg-accent-color;
+      color: -st-accent-fg-color;
       box-shadow: inset 0 0 0 2px st-transparentize(-st-accent-color, 0.2) !important;
       box-shadow: inset 0 0 0 2px st-transparentize(st-darken(-st-accent-color, 20%), 0.2) !important;
       background-color: st-mix(-st-accent-color, st-mix(-st-accent-color, #5c616c, 92%), 5%); }
       .quick-toggle-has-menu .quick-toggle-menu-button:checked:focus:hover {
         background-color: st-mix(-st-accent-color, st-darken(st-mix(-st-accent-color, #5c616c, 92%), 4%), 5%); }
     .quick-toggle-has-menu .quick-toggle-menu-button:checked:hover {
-      color: -st-fg-accent-color;
+      color: -st-accent-fg-color;
       background-color: st-darken(st-mix(-st-accent-color, #5c616c, 92%), 4%); }
     .quick-toggle-has-menu .quick-toggle-menu-button:checked:active {
-      color: -st-fg-accent-color;
+      color: -st-accent-fg-color;
       background-color: st-darken(st-mix(-st-accent-color, #5c616c, 92%), 9%); }
       .quick-toggle-has-menu .quick-toggle-menu-button:checked:active:hover {
         background-color: st-darken(st-darken(st-mix(-st-accent-color, #5c616c, 92%), 9%), 4%); }
@@ -2125,7 +2125,7 @@ StScrollBar {
         background-color: st-mix(-st-accent-color, st-darken(st-mix(-st-accent-color, #5c616c, 92%), 9%), 5%); }
 
 .quick-toggle-has-menu:checked .quick-toggle-separator {
-  background-color: st-mix(-st-fg-accent-color, -st-accent-color, 20%); }
+  background-color: st-mix(-st-accent-fg-color, -st-accent-color, 20%); }
 
 .quick-toggle-has-menu .quick-toggle-separator {
   background-color: rgba(92, 97, 108, 0.25); }
@@ -2168,7 +2168,7 @@ StScrollBar {
       background-color: rgba(92, 97, 108, 0.2); }
       .quick-toggle-menu .header .icon.active {
         background-color: -st-accent-color;
-        color: -st-fg-accent-color; }
+        color: -st-accent-fg-color; }
 
 .quick-settings-system-item > StBoxLayout {
   spacing: 12px; }
@@ -3012,10 +3012,10 @@ StScrollBar {
       background: rgba(255, 255, 255, 0.2); }
     #LookingGlassDebugFlags .lg-debug-flag-button .toggle-switch:checked {
       background: -st-accent-color;
-      color: -st-fg-accent-color; }
+      color: -st-accent-fg-color; }
       #LookingGlassDebugFlags .lg-debug-flag-button .toggle-switch:checked:hover {
         background-color: st-lighten(-st-accent-color, 5%);
-        color: st-lighten(-st-fg-accent-color, 5%); }
+        color: st-lighten(-st-accent-fg-color, 5%); }
 
 .login-dialog,
 .unlock-dialog {

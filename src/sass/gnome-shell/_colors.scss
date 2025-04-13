@@ -3,7 +3,7 @@ $contrast: 'normal';
 @import 'upstream/gnome-shell-sass/_palette.scss';
 
 $selected_bg_color: -st-accent-color!default;
-$selected_fg_color: -st-fg-accent-color!default;
+$selected_fg_color: -st-accent-fg-color!default;
 
 @import 'upstream/gnome-shell-sass/_default-colors.scss';
 
