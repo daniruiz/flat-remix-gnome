@@ -1,108 +1,72 @@
-// When color definition differs for dark and light variant
-// it gets @if ed depending on $variant
-
-$_dark_base_color: #272a34;
-
-$is_highcontrast: false;
 $contrast: 'normal';
 
-$background_mix_factor: if($variant == 'light', 12%, 9%);
+@import 'upstream/gnome-shell-sass/_palette.scss';
 
-$base_color: if($variant == 'light', darken(#ffffff, 2%), $_dark_base_color)!default;
-$text_color: if($variant == 'light', black, white);
-$bg_color: if($variant == 'light', #ffffff, darken($_dark_base_color, 2%))!default;
+$selected_bg_color: -st-accent-color!default;
+$selected_fg_color: -st-fg-accent-color!default;
+
+@import 'upstream/gnome-shell-sass/_default-colors.scss';
+
+$_base_color_dark: #272a34;
+$_base_color_light: #ffffff;
+
+// accent colors
+$accent_color: $selected_bg_color;
+
+// link colors
+$link_color: $selected_bg_color;
+$link_visited_color: st-transparentize($link_color, .6);
+
+
+// ----------------------------------------------------------------------------- 
+// Modified from _colors.scss
+//
+
+// global colors
+$base_color: if($variant == 'light', darken(#ffffff, 2%), $_base_color_dark)!default;
+$bg_color: if($variant == 'light', #ffffff, darken($_base_color_dark, 2%))!default;
 $fg_color: if($variant == 'light', #5c616c, #eeeeec);
 
-$selected_fg_color: -st-fg-accent-color!default;
-$selected_bg_color: -st-accent-color!default;
-$selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
-$borders_color: if($variant == 'light', darken($bg_color, 15%), darken($bg_color, 10%));
-$alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 18%));
-$borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
-$outer_borders_color: $borders_edge;
-$link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
-$top_hilight: $borders_edge;
-$dark_fill: mix($borders_color, $bg_color, 35%);
-$headerbar_color: if($variant == 'light', lighten($bg_color, 5%), darken($bg_color, 3%));
-$headerbar_bg_color: $headerbar_color;
-$menu_color: if($variant == 'light', $base_color, mix($borders_color, $bg_color, 15%));
-$menu_selected_color: mix($fg_color, $base_color, 10%);
-$popover_bg_color: $menu_color;
-$popover_hover_color: $menu_selected_color;
+// OSD elements
+$osd_fg_color: $light_1;
+$osd_bg_color: lighten($_base_color_dark, 5%);
 
-$scrollbar_bg_color: $base_color;
-$scrollbar_slider_color: mix($fg_color, $bg_color, 60%);
-$scrollbar_slider_hover_color: mix($fg_color, $bg_color, 80%);
-$scrollbar_slider_active_color: $selected_bg_color;
-
-$warning_color: #fd7d00;
-$error_color: #bf1717;
-$success_color: if($variant == 'light', #3db47e, darken(#3db47e, 10%));
-$destructive_color: if($variant == 'light', #d41919, darken(#d41919, 10%));
-$drop_target_color: #19a187;
-
-// color definitions for OSD elements
-$osd_fg_color: white;
-$osd_text_color: white;
-$osd_bg_color: lighten($_dark_base_color, 4%);
-
-// derived osd colors
-$osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
-$osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
-$osd_borders_color: black;
-$osd_outer_borders_color: transparentize($osd_fg_color, 0.9);
-
-$sidebar_bg_color: mix($bg_color, $base_color, 50%);
-$base_hover_color: transparentize($fg_color, 0.95);
+// system elements (e.g. the overview) that are always dark
+$system_base_color: $_base_color_dark;
+$system_fg_color: $_base_color_light;
 
 // panel colors
-$panel_bg_color: transparentize($bg_color, if($variant=='light', 0.1, 0.2));
-$panel_fg_color: if($variant=='light', darken($fg_color, 10%), $fg_color);
+$panel_bg_color: if($variant == 'light', $_base_color_light, $dark_5);
+$panel_fg_color: if($variant == 'light', $_base_color_dark, $light_1);
 
 // card elements
-$card_bg_color: mix($fg_color, $bg_color, $background_mix_factor);
-$card_shadow_color: transparent;
+$card_bg_color: if($variant == 'light', mix($fg_color, $bg_color, $background_mix_factor), lighten($bg_color, 7%));
+$card_shadow_color: if($variant == 'light', transparentize($dark_5, .97), transparent);
 $card_shadow_border_color: transparentize($fg_color, .95);
 
-$tooltip_borders_color: $osd_outer_borders_color;
+//
+// Derived Colors
+//
+// colors based on the global defines above
 
-$shadow_color: transparentize(black, if($variant == 'light', 0.9, 0.7));
+// borders
+$borders_color: transparentize($fg_color, $border_opacity);
+$outer_borders_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
 
-// color definitions for system elements (e.g. the overview)
-$system_base_color: $_dark_base_color; // always dark
-$system_fg_color: white;
+// osd colors
+$osd_borders_color: transparentize($osd_fg_color, 0.9);
+$osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 
-// derived system colors
+// system colors
 $system_bg_color: lighten($system_base_color, 5%);
 $system_borders_color: transparentize($system_fg_color, .9);
 $system_insensitive_fg_color: mix($system_fg_color, $system_bg_color, 50%);
 $system_overlay_bg_color: mix($system_base_color, $system_fg_color, 90%); // for non-transparent items, e.g. dash
 
-// derived global colors
 // insensitive state
 $insensitive_fg_color: if($variant == 'light', mix($fg_color, $bg_color, 60%),  mix($fg_color, $bg_color, 50%));
 $insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_borders_color: mix($borders_color, $base_color, 60%);
-
-// notifications
-$bubble_buttons_color: if($variant == 'light', darken($bg_color, 7%), lighten($bg_color, 5%));
-
-//colors for the backdrop state, derived from the main colors.
-$backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 1%));
-$backdrop_text_color: mix($text_color, $backdrop_base_color, 80%);
-$backdrop_bg_color: $bg_color;
-$backdrop_fg_color: mix($fg_color, $backdrop_bg_color, 50%);
-$backdrop_insensitive_color: if($variant == 'light', darken($backdrop_bg_color, 15%), lighten($backdrop_bg_color, 15%));
-$backdrop_selected_fg_color: if($variant == 'light', $backdrop_base_color, $backdrop_text_color);
-$backdrop_borders_color: $borders_color;
-$backdrop_dark_fill: mix($backdrop_borders_color, $backdrop_bg_color, 35%);
-$backdrop_sidebar_bg_color: mix($backdrop_bg_color, $backdrop_base_color, 50%);
-
-$backdrop_scrollbar_bg_color: darken($backdrop_bg_color, 3%);
-$backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, 40%);
-
-$backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdrop_bg_color, $backdrop_base_color, 20%));
 
 // checked state
 $checked_bg_color: if($variant=='light', darken($bg_color, 7%), lighten($bg_color, 7%));
@@ -117,33 +81,4 @@ $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_colo
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
 // accent colors
-$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));
-
-//special cased widget colors
-$suggested_bg_color: $selected_bg_color;
-$suggested_border_color: $selected_borders_color;
-
-$progress_bg_color: $selected_bg_color;
-$progress_border_color: $selected_borders_color;
-
-$checkradio_bg_color: $selected_bg_color;
-$checkradio_fg_color: $selected_fg_color;
-$checkradio_borders_color: if($variant == 'light', darken($checkradio_bg_color,20%), darken($checkradio_bg_color,40%));
-
-$switch_bg_color: $selected_bg_color;
-$switch_borders_color: if($variant == 'light',darken($switch_bg_color,15%),darken($switch_bg_color,30%));
-
-$focus_color: $selected_bg_color;
-$focus_border_color: if($variant == 'light', transparentize($selected_bg_color, 0.5), transparentize($selected_bg_color, 0.3));
-$focus_border_opacity: .2;
-$alt_focus_border_color: if($variant == 'light', transparentize(white, 0.2), transparentize(white,0.7));
-
-$dim_label_opacity: 0.55;
-
-// Gnome's color palette
-$_base_color_light: #ffffff;
-$light_1: #ffffff;
-$orange_3: $warning_color; // privacy_indicator_color
-$orange_4: $warning_color; // privacy_indicator_color
-$red_4: $error_color; // recording_indicator_color
-$accent_color: -st-accent-color;
+$accent_borders_color: if($variant== 'light', st-darken($selected_bg_color, 20%), st-lighten($selected_bg_color, 30%));
