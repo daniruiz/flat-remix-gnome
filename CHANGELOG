@@ -1,3 +1,9 @@
+[20250926]
+ * Recover custom theme generator script
+ * Check changes for 48.1
+ * Update upstream code for GNOME 49
+ * Generate themes
+
 [20250413]
  * Fix accent-color for miami themes
  * Simplificate _colors.scss vased on upstream code variables
