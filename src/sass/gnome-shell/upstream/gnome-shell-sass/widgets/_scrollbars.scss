@@ -18,7 +18,7 @@ StScrollBar {
     background-color: transparent;
   }
 
-  StButton#vhandle, StButton#hhandle {
+  > .vhandle, > .hhandle {
     border-radius: 8px;
     background-color: mix($fg_color, $bg_color, 30%);
     border: 3px solid transparent; //would be nice to margin or at least to transparent

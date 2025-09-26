@@ -26,14 +26,22 @@ $_gdm_dialog_width: 25em;
   }
 }
 
+.login-dialog-bottom-button-group {
+  padding: 32px;
+  spacing: 16px;
+}
+
 // buttons on login screen
 .login-dialog-button {
 
+  &.a11y-button,
   &.cancel-button,
   &.switch-user-button,
   &.login-dialog-session-list-button {
     @extend .icon-button;
     @extend %system_button;
+
+    padding: to_em(16px);
   }
 
   &.cancel-button {
@@ -188,9 +196,9 @@ $_gdm_dialog_width: 25em;
       &:logged-in {
         // color border for logged-in user
         .user-icon {
-          border-color: $selected_bg_color;
+          border-color: -st-accent-color;
           StIcon {
-            background-color: st-transparentize($selected_bg_color, .7);
+            background-color: st-transparentize(-st-accent-color, .7);
           }
         }
       }
@@ -248,10 +256,10 @@ $_gdm_dialog_width: 25em;
 
 // Notifications
 #unlockDialogNotifications {
-  StButton#vhandle, StButton#hhandle {
+  > .vhandle, > .hhandle {
     background-color: transparentize($bg_color,0.7);
     &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
-    &:active { background-color: st-transparentize($selected_bg_color,0.5); }
+    &:active { background-color: st-transparentize(-st-accent-color,0.5); }
   }
 }
 
@@ -266,7 +274,7 @@ $_gdm_dialog_width: 25em;
     padding-bottom: 0;
   }
 
-  .notification,
+  .message,
   .unlock-dialog-notification-source {
     padding: $base_margin * 3 $base_margin * 4;
     border: none;
@@ -275,6 +283,16 @@ $_gdm_dialog_width: 25em;
     border-radius: $modal_radius;
 
     &.critical { background-color: transparentize($_gdm_fg,0.8) }
+    &:active { background-color: transparentize($_gdm_fg,0.9); }
+
+    & StButton {
+         @extend %lockscreen_button;
+         background-color: transparent;
+         &:insensitive { background-color: transparent; opacity: 0.5; }
+    }
+    .message-header {
+        color: $_gdm_fg;
+    }
   }
 }
 

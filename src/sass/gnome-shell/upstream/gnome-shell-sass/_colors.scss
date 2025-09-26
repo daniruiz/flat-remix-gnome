@@ -23,6 +23,7 @@ $system_fg_color: $_base_color_light;
 // panel colors
 $panel_bg_color: if($variant == 'light', $_base_color_light, $dark_5);
 $panel_fg_color: if($variant == 'light', $_base_color_dark, $light_1);
+$panel_border_color: if($variant == 'light', transparentize($_base_color_dark, .9), transparent);
 
 // card elements
 $card_bg_color: if($variant == 'light', $light_1, lighten($bg_color, 7%));
@@ -45,7 +46,7 @@ $osd_outer_borders_color: transparentize($osd_fg_color, 0.98);
 // system colors
 $system_bg_color: lighten($system_base_color, 5%);
 $system_borders_color: transparentize($system_fg_color, .9);
-$system_insensitive_fg_color: mix($system_fg_color, $system_bg_color, 50%);
+$system_insensitive_fg_color: mix($system_bg_color, $system_fg_color, 37%);
 $system_overlay_bg_color: mix($system_base_color, $system_fg_color, 90%); // for non-transparent items, e.g. dash
 
 // insensitive state
@@ -66,4 +67,4 @@ $active_bg_color: if($variant=='light', darken($bg_color, 11%), lighten($bg_colo
 $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_color, 12%));
 
 // accent colors
-$accent_borders_color: if($variant== 'light', st-darken($selected_bg_color, 20%), st-lighten($selected_bg_color, 30%));
+$accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));

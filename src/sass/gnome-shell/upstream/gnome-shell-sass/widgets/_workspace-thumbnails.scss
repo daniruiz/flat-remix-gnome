@@ -27,6 +27,6 @@
 
 // selected indicator
 .workspace-thumbnail-indicator {
-  border: 3px solid $selected_bg_color;
+  border: 3px solid -st-accent-color;
   border-radius: $base_border_radius;
 }

@@ -9,7 +9,7 @@ $slider_size: $scalable_icon_size;
   -barlevel-height: 4px;
   -barlevel-background-color: transparentize($fg_color, 0.9);
   // fill style
-  -barlevel-active-background-color: $selected_bg_color;
+  -barlevel-active-background-color: -st-accent-color;
   // overfill style (red in this case)
   -barlevel-overdrive-color: $destructive_color;
   -barlevel-overdrive-separator-width:1px;

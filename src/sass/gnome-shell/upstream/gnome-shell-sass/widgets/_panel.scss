@@ -17,6 +17,11 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   @extend %numeric;
   transition-duration: $panel_transition_duration;
 
+  @if $variant == 'light' {
+    // uses half a pixel to compensate for box-shadow weirdness
+    box-shadow: inset 0 -0.5px 0 0 $panel_border_color;
+  }
+
   // panel menus
   .panel-button {
     @include panel_button();
@@ -30,14 +35,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
       margin: 0 $base_margin;
     }
 
-    // app menu icon
-    .app-menu-icon {
-      -st-icon-style: symbolic;
-      // dimensions of the icon are hardcoded
-    }
-
     // reduce margin between icons in combined menu
-    .panel-status-menu-box,
     .panel-status-indicators-box {
       spacing: $base_margin;
 
@@ -144,8 +142,7 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
     }
   }
 
-  .panel-status-indicators-box,
-  .panel-status-menu-box {
+  .panel-status-indicators-box {
     spacing: 2px;
   }
 
@@ -157,18 +154,6 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   // important privacy related indicators
   .privacy-indicator { color: $privacy_indicator_color; }
 }
-
-// App Menu
-#appMenu {
-  spacing: $scaled_padding;
-  .label-shadow { color: transparent; }
-}
-
-#appMenu .panel-status-menu-box {
-  padding: 0 $scaled_padding;
-  spacing: $scaled_padding;
-}
-
 
 // Clock
 .clock-display-box {

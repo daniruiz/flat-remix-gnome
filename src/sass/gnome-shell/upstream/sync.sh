@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
-VERSION=48.1
+VERSION=49.0
 
 echo
 printf " $YELLOW[ i ]$RESET Upstream version $VERSION\n"
@@ -64,6 +64,3 @@ done <<- EOF
 	gnome-shell-sass/widgets/_workspace-switcher.scss
 	gnome-shell-sass/widgets/_workspace-thumbnails.scss
 EOF
-
-grep -rl -- -st-accent-color gnome-shell-sass | xargs sed -i 's/-st-accent-color/$selected_bg_color/g'
-grep -rl -- -st-accent-fg-color gnome-shell-sass | xargs sed -i 's/-st-accent-fg-color/$selected_fg_color/g'

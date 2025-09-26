@@ -51,7 +51,7 @@ $default_key_bg_color: if($variant=='light', darken($key_bg_color, 11%), darken(
 
     // keys that may be latched: ctrl/alt/shift
     &:latched {
-      background-color: $selected_bg_color;
+      background-color: -st-accent-color;
     }
   }
 
@@ -89,8 +89,8 @@ $default_key_bg_color: if($variant=='light', darken($key_bg_color, 11%), darken(
 
 .emoji-panel {
   .keyboard-key:latched {
-    border-color: st-lighten($selected_bg_color, 5%);
-    background-color: $selected_bg_color;
+    border-color: st-lighten(-st-accent-color, 5%);
+    background-color: -st-accent-color;
   }
 }
 
