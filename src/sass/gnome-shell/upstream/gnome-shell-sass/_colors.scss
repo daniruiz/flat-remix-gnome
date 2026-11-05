@@ -68,3 +68,10 @@ $active_fg_color: if($variant=='light', darken($fg_color, 11%), lighten($fg_colo
 
 // accent colors
 $accent_borders_color: if($variant== 'light', st-darken(-st-accent-color, 20%), st-lighten(-st-accent-color, 30%));
+
+//
+// Special Case Colors
+//
+
+// increase contrast on insensitive_fg_color since card elements have a lighter background
+$card_insensitive_fg_color: if($variant =='light', darken($insensitive_fg_color, 5%), lighten($insensitive_fg_color, 9%));

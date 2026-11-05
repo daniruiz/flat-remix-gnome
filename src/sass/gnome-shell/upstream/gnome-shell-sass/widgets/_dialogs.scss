@@ -126,10 +126,19 @@
   .prompt-dialog-null-label {
     @extend %caption;
     text-align: center;
+    padding: $base_padding * 1.5;
+    border-radius: $base_border_radius;
+    margin: $base_margin 0;
   }
 
   .prompt-dialog-error-label {
     color: $warning_color;
+    background-color: transparentize($warning_color, 0.9);
+  }
+
+  .prompt-dialog-info-label {
+    color: $fg_color;
+    background-color: transparentize($fg_color, 0.9);
   }
 }
 

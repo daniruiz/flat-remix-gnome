@@ -164,7 +164,7 @@
     // event title
     .events-title {
       @extend %heading;
-      color: $insensitive_fg_color;
+      color: $card_insensitive_fg_color;
       padding-bottom: $base_padding;
     }
 
@@ -184,12 +184,12 @@
         .event-time {
           @extend %numeric;
           @extend %caption;
-          color: $insensitive_fg_color;
+          color: $card_insensitive_fg_color;
         }
       }
 
       .event-placeholder {
-        color: $insensitive_fg_color;
+        color: $card_insensitive_fg_color;
         font-style: italic;
       }
     }
@@ -202,7 +202,7 @@
   // title
   .world-clocks-header {
     @extend %heading;
-    color: $insensitive_fg_color;
+    color: $card_insensitive_fg_color;
 
     // change style when no world clocks are configured
     &.no-world-clocks {
@@ -224,15 +224,14 @@
       @extend %numeric;
       font-weight: bold;
 
-      &:ltr {text-align: right;}
-      &:rtl {text-align: left;}
+      text-align: end;
     }
 
     // timezone offset label
     .world-clocks-timezone {
       @extend %numeric;
       @extend %caption;
-      color: $insensitive_fg_color;
+      color: $card_insensitive_fg_color;
     }
   }
 }
@@ -249,7 +248,7 @@
 
       .weather-header {
         @extend %heading;
-        color: $insensitive_fg_color;
+        color: $card_insensitive_fg_color;
 
          // change style when no location is configured
         &.no-location {

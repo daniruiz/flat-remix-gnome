@@ -157,7 +157,7 @@ $quick_toggle_checked_separator_color: if(
 
   border-radius: $base_border_radius * 3;
 
-  margin: $base_padding * 2 $base_padding * 3 0;
+  margin: $base_padding * 2 0 0;
 
   .popup-menu-item > StIcon {
     -st-icon-style: symbolic;

@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
-VERSION=49.0
+VERSION=51.1
 
 echo
 printf " $YELLOW[ i ]$RESET Upstream version $VERSION\n"
@@ -52,6 +52,7 @@ done <<- EOF
 	gnome-shell-sass/widgets/_overview.scss
 	gnome-shell-sass/widgets/_panel.scss
 	gnome-shell-sass/widgets/_popovers.scss
+	gnome-shell-sass/widgets/qr-code.scss
 	gnome-shell-sass/widgets/_quick-settings.scss
 	gnome-shell-sass/widgets/_screenshot.scss
 	gnome-shell-sass/widgets/_scrollbars.scss

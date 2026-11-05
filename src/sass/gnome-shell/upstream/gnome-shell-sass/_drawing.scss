@@ -219,6 +219,7 @@
     $hover_button_bg_color: transparentize($tc, .87);
     $active_button_bg_color: transparentize($tc, .84);
     $active_hover_button_bg_color: transparentize($tc, .81);
+    $insensitive_button_bg_color: transparentize($tc, .9);
   }
 
   // background color overrides for notification style
@@ -313,6 +314,10 @@
     // use a different focus ring color for default style
     @if $style == 'default' {
       @include focus_ring($fc:$accent_borders_color);
+    }
+    // use the text color for the focus ring in lockscreen
+    @if $style == 'lockscreen' {
+      @include focus_ring($fc: transparentize($tc, if($contrast == 'high', 0.3, 0.6)));
     }
     // change background color if style is flat
     @if $style == 'flat' {

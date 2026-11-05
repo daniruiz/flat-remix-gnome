@@ -378,3 +378,14 @@ stage {
   StLabel.hint-text { color: transparentize($system_fg_color, 0.3);}
 }
 
+/* Login Dialog Elements */
+
+@mixin login_dialog_item_button($style: normal) {
+  @extend %button_common;
+  @include button(normal, $tc:$system_fg_color, $c:$system_base_color, $style: $style, $always_dark: true);
+  &:selected,
+  &:focus { @include button(focus, $tc:$system_fg_color, $c:$system_base_color, $style: $style, $always_dark: true);}
+  &:hover { @include button(hover, $tc:$system_fg_color, $c:$system_base_color, $style: $style, $always_dark: true);}
+  &:active { @include button(active, $tc:$system_fg_color, $c:$system_base_color, $style: $style, $always_dark: true);}
+  &:insensitive { @include button(insensitive, $tc:$system_fg_color, $c:$system_base_color, $style: $style, $always_dark: true);}
+}
