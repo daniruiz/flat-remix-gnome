@@ -1,3 +1,8 @@
+[20261117]
+ * Update upstream code for GNOME 51.1
+ * Add missing color variable
+ * Regenerate themes
+
 [20250926]
  * Recover custom theme generator script
  * Check changes for 48.1
